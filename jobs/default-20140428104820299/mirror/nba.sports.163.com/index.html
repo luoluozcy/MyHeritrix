@@ -1,0 +1,1008 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>NBA直播,NBA比分直播,NBA数据直播系统_网易体育</title>
+<base target="_self" />
+<meta name="keywords" content="NBA,NBA直播,NBA数据直播,网易体育" />
+<meta name="description" content="NBA直播、比分直播、数据直播尽在网易NBA数据直播系统，另外还包括NBA赛程、NBA球员、NBA球队、NBA数据等信息。" />
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/sports/css07/style.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.1.css" />
+<link href="/css/nba.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js"></script>
+<script type="text/javascript" src="/js/commen.js?r=8"></script>
+</head>
+<body>
+<!--channel_nav -->
+<div class="NTES-nav">
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a> |</span>
+
+    <div class="rightCon">
+		<div class="NTES-link">
+			<a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a>
+		</div>
+		<a href="http://www.163.com/rss"><img width="26" height="14" border="0" src="http://img3.cache.netease.com/cnews/img07/rss.gif" class="rss" alt="Rss"></a>
+	</div>
+</div>
+
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var logiframe = "";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"..." : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO || logstate=="1") {
+		var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+		if(mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入我的邮箱</a>';
+			}
+		if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入我的博客</a><a href="http://photo.163.com/?username='+passport+'\">进入我的相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入我的约会</a><a href="http://t.163.com">进入我的微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				logiframe = '<iframe allowTransparency=\"true\" style=\"width: 56px; height:26px; float:left; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.'+logdomain+'/mailinfo/shownewmsg_www_1222.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div>'+logiframe+'|<a class=\"ntes-usercenter-loginout\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+		};
+	}
+})
+//]]>
+</script>
+<!--nav -->
+<div class="banner-area"  name="top" id="top"></div>
+<div class="nav-con">
+<ul class="nav">
+  <li><a href="/" id="nav_live">比分直播</a></li>
+  <li><a href="/schedule/" id="nav_schedule">赛程表</a></li>
+  <li>
+  <div id="teamcon"><a href="/team/" class="arr" id="nav_team">球队</a>
+  <div class="moreinfo-con" id="teamdetail">
+  <div class="l-con">
+  <h2 class="lh2">东部球队</h2>
+  <span class="blank3"></span>
+  <dl>
+    <dd>
+    <h2><a class="fB">大西洋</a></h2>
+    </dd>
+    <dd><a href="/team/26/">波士顿凯尔特人</a></dd>
+    <dd><a href="/team/29/">纽约尼克斯</a></dd>
+    <dd><a href="/team/27/">费城76人</a></dd>
+    <dd><a href="/team/28/">多伦多猛龙</a></dd>
+    <dd><a href="/team/30/">布鲁克林篮网</a></dd>
+  </dl>
+  <span class="blank3"></span>
+  <dl>
+    <dd>
+    <h2><a class="fB">中</a></h2>
+    </dd>
+    <dd><a href="/team/23/">芝加哥公牛</a></dd>
+    <dd><a href="/team/24/">印第安纳步行者</a></dd>
+    <dd><a href="/team/22/">密尔沃基雄鹿</a></dd>
+    <dd><a href="/team/25/">底特律活塞</a></dd>
+    <dd><a href="/team/21/">克里夫兰骑士</a></dd>
+  </dl>
+  <span class="blank3"></span>
+  <dl>
+    <dd>
+    <h2><a class="fB">东南</a></h2>
+    </dd>
+    <dd><a href="/team/18/">迈阿密热火</a></dd>
+    <dd><a href="/team/17/">奥兰多魔术</a></dd>
+    <dd><a href="/team/16/">亚特兰大老鹰</a></dd>
+    <dd><a href="/team/20/">夏洛特山猫</a></dd>
+    <dd><a href="/team/19/">华盛顿奇才</a></dd>
+  </dl>
+  </div>
+  <!--left end-->
+  <div class="l-con">
+  <h2 class="lh2 rh2">西部球队</h2>
+  <span class="blank3"></span>
+  <dl>
+    <dd>
+    <h2><a class="fB">西南</a></h2>
+    </dd>
+    <dd><a href="/team/3/">圣安东尼奥马刺</a></dd>
+    <dd><a href="/team/1/">达拉斯小牛</a></dd>
+    <dd><a href="/team/4/">新奥尔良鹈鹕</a></dd>
+    <dd><a href="/team/2/">休斯敦火箭</a></dd>
+    <dd><a href="/team/5/">孟菲斯灰熊</a></dd>
+  </dl>
+  <span class="blank3"></span>
+  <dl>
+    <dd>
+    <h2><a class="fB">西北</a></h2>
+    </dd>
+    <dd><a href="/team/9/">犹他爵士</a></dd>
+    <dd><a href="/team/8/">俄克拉荷马雷霆</a></dd>
+    <dd><a href="/team/6/">丹佛掘金</a></dd>
+    <dd><a href="/team/7/">波特兰开拓者</a></dd>
+    <dd><a href="/team/10/">明尼苏达森林狼</a></dd>
+  </dl>
+  <span class="blank3"></span>
+  <dl>
+    <dd>
+    <h2><a class="fB">太平洋</a></h2>
+    </dd>
+    <dd><a href="/team/12/">洛杉矶湖人</a></dd>
+    <dd><a href="/team/11/">菲尼克斯太阳</a></dd>
+    <dd><a href="/team/15/">金州勇士</a></dd>
+    <dd><a href="/team/14/">洛杉矶快船</a></dd>
+    <dd><a href="/team/13/">萨克拉门托国王</a></dd>
+  </dl>
+  </div>
+  <!--left end--></div>
+  <!--moreinfo end--></div>
+  </li>
+  <li>
+  <div id="playercon"><a href="/player/" class="arr" id="nav_player">球员</a>
+  <script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery("#query").keyup(function(){
+			var keyword=jQuery.trim(jQuery("#query").val());
+			if(keyword.length>0){
+				jQuery.get("/api/search/player.json",{name:keyword}, function(data){
+					jQuery("#playerdetail > h4").each(function(){
+						jQuery(this).remove();
+					});
+					jQuery.each(eval(data), function(i,item){
+						var h4style="";
+						if(i%2==0){
+							h4style='style="border-top: none"';
+						}
+						jQuery("#queryBut").after('<h4 '+h4style+'><a href="/player/'+item.playerId+'/">'+item.playerFullCn+'</a></h4>');
+					});
+  				});
+			}
+		});
+	});
+  </script>
+  <div class="player-info" id="playerdetail"><input id="query" type="text" class="inputtxt" /> <input id="queryBut"
+    type="button" value="搜索" class="button-sty" />
+  <h4 style="border-top: none"><a href="/player/1125/">林书豪</a></h4>
+  <h4><a href="/player/167/">科比·布莱恩特</a></h4>
+  <h4 style="border-top: none"><a href="/player/183/">勒布朗·詹姆斯</a></h4>
+  <h4><a href="/player/237/">克里斯·波什</a></h4>
+  <h4 style="border-top: none"><a href="/player/294/">凯文·杜兰特</a></h4>
+  <span class="blank9" style="border-top: 1px solid #c5c7d5; margin: 0 15px"></span></div>
+  </div>
+  </li>
+  <li><a href="/stat/" id="nav_stat">数据统计</a></li>
+  <li><a href="/standings/" id="nav_standings">战绩排名</a></li>
+  <li><a href="/trans/" id="nav_trans">转会</a></li>
+  <li><a href="/injury/" id="nav_injury">伤病</a></li>
+  <li><a href="/salary/" id="nav_salary">薪资榜</a></li>
+  <li><a href="/compare/" id="nav_compare">对比</a></li>
+  <li><a href="http://caipiao.163.com/order/jclq/?from=deportes_3">篮彩</a></li>
+</ul>
+</div>
+
+<!-- cba guide end-->
+<script type="text/javascript"> 
+//<![CDATA[
+//导航
+
+//var strid = "#sublist_a>#sub_dd_"+i;
+//球队弹出
+new NTES.ui.PopupLayer($("#teamcon"), $("#teamdetail"), "mouseover",0);
+$("#teamcon").addEvent("mouseover",function()
+{$("#teamcon>a").addCss("arrdq")
+}
+ )
+
+$("#teamcon").addEvent("mouseout",function()
+{$("#teamcon>a").removeCss("arrdq")
+}
+)
+
+//球员弹出
+new NTES.ui.PopupLayer($("#playercon"), $("#playerdetail"), "mouseover",0);
+$("#playercon").addEvent("mouseover",function()
+{$("#playercon>a").addCss("arrdq")
+}
+ )
+
+$("#playercon").addEvent("mouseout",function()
+{$("#playercon>a").removeCss("arrdq")
+}
+)
+</script>
+<div class="cba-area clearfix">
+<h2 class="navpath nor-bluec"><a href="http://sports.163.com/">网易体育</a> &gt; <a href="http://sports.163.com/nba/">NBA</a> &gt; <a href="http://nba.sports.163.com/">NBA数据直播系统</a> </h2>
+<span class="blank3"></span>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	if(typeof(nav_type)!="undefined"){
+		jQuery("#nav_"+nav_type).addClass("dq");
+	}
+});
+</script>
+
+<script language="javascript">var nav_type = "live";</script>
+<div class="time-con">
+<!--time-->
+<span class="blank15" ></span>
+<span  class="left nor-bluec">2013-14 赛季比分直播</span> <span class="right nor-bluec" style="padding-right:10px;">2014/04/28</span>
+<span class="blank3" ></span>
+  <ul class="tagList-time">
+                            <li><a href="/20140425.html"><span class="f26px">04 </span> <span class="f18px">25</span></a></li>
+                                          <li><a href="/20140426.html"><span class="f26px">04 </span> <span class="f18px">26</span></a></li>
+                                          <li><a href="/20140427.html"><span class="f26px">04 </span> <span class="f18px">27</span></a></li>
+                                          <li class="on"><span class="f26px">04</span>月<span class="f18px">28</span>号</li>
+                                          <li><a href="/20140429.html"><span class="f26px">04 </span> <span class="f18px">29</span></a></li>
+                                          <li><a href="/20140430.html"><span class="f26px">04 </span> <span class="f18px">30</span></a></li>
+                                          <li><a href="/20140501.html"><span class="f26px">05 </span> <span class="f18px">01</span></a></li>
+                    </ul>
+  <div class="left" style="padding-left:16px;">
+  <a href="/schedule/"><img src="/2013/images/maintime_07.png" width="86" height="22" /></a><br/>
+  <a href="/"><img src="/2013/images/maintime_10.png" width="86" height="22" /></a></div>
+  </div>
+  <!--timecon end-->
+<span class="blank9"></span>
+</div>
+<!--manDataArea end-->
+<!--scoreArea end-->
+<div class="nba-area clearfix">
+  <div class="colLM">
+  <!--最佳 start-->
+  
+  
+  
+  <ul class="tagList-title2">
+<li class="on">今日最佳</li>
+<li>常规赛最佳</li>
+</ul>
+<div class="in-con">
+<ul class="toplist none on">
+<span class="blank12"></span>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">得分榜</span> <span class="c2"><a href="/stat/playerrank/all-point/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/311/"><img src="/2013/images/player/small/311.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/311/">库里</a><br/>33</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/413/">吉布森</td>
+    <td width="22%">32</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/426/">阿里扎</td>
+    <td width="22%">30</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/78/">阿尔德里奇</td>
+    <td width="22%">29</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/296/">哈登</td>
+    <td width="22%">28</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">篮板榜</span> <span class="c2"><a href="/stat/playerrank/all-reboundTotal/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/420/"><img src="/2013/images/player/small/420.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/420/">诺阿</a><br/>15</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/29/">霍华德</td>
+    <td width="22%">14</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/202/">洛佩兹</td>
+    <td width="22%">11</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/78/">阿尔德里奇</td>
+    <td width="22%">10</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/1282/">帕特森</td>
+    <td width="22%">9</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">助攻榜</span> <span class="c2"><a href="/stat/playerrank/all-assist/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/1241/"><img src="/2013/images/player/small/1241.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/1241/">沃尔</a><br/>10</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/1254/">瓦斯奎兹</td>
+    <td width="22%">9</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/270/">伊戈达拉</td>
+    <td width="22%">9</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/1500/">利拉德</td>
+    <td width="22%">8</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/311/">库里</td>
+    <td width="22%">7</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">盖帽榜</span> <span class="c2"><a href="/stat/playerrank/all-block/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/78/"><img src="/2013/images/player/small/78.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/78/">阿尔德里奇</a><br/>4</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/1237/">布克</td>
+    <td width="22%">3</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/1544/">德拉蒙德</td>
+    <td width="22%">2</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/29/">霍华德</td>
+    <td width="22%">2</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/420/">诺阿</td>
+    <td width="22%">2</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+</ul>
+<ul class="toplist none">
+<span class="blank12"></span>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">得分榜</span> <span class="c2"><a href="/stat/playerrank/all-point/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/294/"><img src="/2013/images/player/small/294.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/294/">杜兰特</a><br/>32</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/224/">安东尼</td>
+    <td width="22%">27.4</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/183/">詹姆斯</td>
+    <td width="22%">27.1</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/287/">勒夫</td>
+    <td width="22%">26.1</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/296/">哈登</td>
+    <td width="22%">25.4</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">篮板榜</span> <span class="c2"><a href="/stat/playerrank/all-reboundTotal/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/114/"><img src="/2013/images/player/small/114.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/114/">乔丹</a><br/>13.6</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/1494/">德拉蒙德</td>
+    <td width="22%">13.2</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/287/">勒夫</td>
+    <td width="22%">12.5</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/29/">霍华德</td>
+    <td width="22%">12.2</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/1227/">考辛斯</td>
+    <td width="22%">11.7</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">助攻榜</span> <span class="c2"><a href="/stat/playerrank/all-assist/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/374/"><img src="/2013/images/player/small/374.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/374/">保罗</a><br/>10.7</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/1512/">肯道尔</td>
+    <td width="22%">8.8</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/1241/">沃尔</td>
+    <td width="22%">8.8</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/230/">劳森</td>
+    <td width="22%">8.8</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/1411/">卢比奥</td>
+    <td width="22%">8.6</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+<li>
+<h2 class="htitle"><span class="nor-bluec left">盖帽榜</span> <span class="c2"><a href="/stat/playerrank/all-block/">更多</a></span></h2>
+<div class="mcon">
+      <h2 class="f1st">1</h2>
+    <a href="/player/1529/"><img src="/2013/images/player/small/1529.jpg" onerror="this.src='/2013/images/player/small/0.jpg'" height="48" width="39" /></a><h3 class="titletxt"><a href="/player/1529/">安东尼</a><br/>2.8</h3>
+    <span class="blank12"></span>
+    <table class="daTb02" border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tbody>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">2</h4></td>
+    <td width="58%" align="left"><a href="/player/297/">伊巴卡</td>
+    <td width="22%">2.7</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">3</h4></td>
+    <td width="58%" align="left"><a href="/player/114/">乔丹</td>
+    <td width="22%">2.5</td>
+    </tr>
+              <tr class="bg1">
+        <td width="20%"><h4 class="bg4">4</h4></td>
+    <td width="58%" align="left"><a href="/player/157/">希伯特</td>
+    <td width="22%">2.2</td>
+    </tr>
+              <tr>
+        <td width="20%"><h4 class="bg4">5</h4></td>
+    <td width="58%" align="left"><a href="/player/385/">邓肯</td>
+    <td width="22%">1.9</td>
+    </tr>
+      </tbody>
+    </table>
+</div>
+</li>
+</ul>
+</div>
+  
+  <!--最佳 end-->
+  <span class="blank12"></span>
+  <div class="in-con2 clearfix">
+  <span class="blank3"></span>
+  <h1 class="tb-title">比分直播</h1>
+  <span class="blank3"></span>
+  <script language="javascript" type="text/javascript">
+function scoreFormat(num,len){
+  for(i=0;i<len-String(num).length;i++){
+    num=num+'&nbsp;';
+  }
+  return num
+} 
+function scoreboard() {
+    jQuery.ajax({
+        url: "/2013/match/daily/20140428.html",
+        type: "GET",
+        dataType: "json",
+        timeout: 5000,
+        error: function() {},
+        success: function(datas) {
+            for (var idx = 0; idx < datas.length; idx++) {
+                var data = datas[idx];
+                var mid = data.mid;
+                
+                //比分
+                var scoreHome=scoreFormat(data.homeScoreTotal,3)
+                +' ('+scoreFormat(data.homeScore1,2)
+                +' '+scoreFormat(data.homeScore2,2)
+                +' '+scoreFormat(data.homeScore3,2)
+                +' '+scoreFormat(data.homeScore4,2);
+                var scoreAway=scoreFormat(data.awayScoreTotal,3)
+                +' ('+scoreFormat(data.awayScore1,2)
+                +' '+scoreFormat(data.awayScore2,2)
+                +' '+scoreFormat(data.awayScore3,2)
+                +' '+scoreFormat(data.awayScore4,2);
+
+                // 处理加时赛
+                var scoreHomeOt = '';
+                var scoreAwayOt = '';
+                for (var i = 0; i < data.homeScoreOts.length; i++) {
+                  if(i==data.homeScoreOts.length-1){
+                    scoreHomeOt += ' '+ scoreFormat(data.homeScoreOts[i],2) +')';
+                    scoreAwayOt += ' '+ scoreFormat(data.awayScoreOts[i],2) +')';
+                  }else{
+                    scoreHomeOt += ' '+ scoreFormat(data.homeScoreOts[i],2);
+                    scoreAwayOt += ' '+ scoreFormat(data.awayScoreOts[i],2);
+                  }
+                }
+                if(scoreHomeOt!=''){
+                  scoreHome += scoreHomeOt;
+                  scoreAway += scoreAwayOt;
+                }else{
+                  scoreHome += ')';
+                  scoreAway += ')';
+                }
+                jQuery("#score"+ mid).html(scoreAway+'<br/>'+scoreHome);
+                
+                // 处理最佳球员信息
+                var homeTopPlayerTech = data.homeTopPlayerTech;
+                var awayTopPlayerTech = data.awayTopPlayerTech;
+                if (homeTopPlayerTech != null && awayTopPlayerTech != null) {
+                    var playerDetailAway = '<a href="/player/'+ awayTopPlayerTech.playerId +'/">'+ awayTopPlayerTech.nameCn +'</a> ('+ awayTopPlayerTech.point +'分  '+ awayTopPlayerTech.reboundTotal +'篮板  '+ awayTopPlayerTech.assist +'助攻)';
+                    var playerDetailHome = '<a href="/player/'+ homeTopPlayerTech.playerId +'/">'+ homeTopPlayerTech.nameCn +'</a> ('+ homeTopPlayerTech.point +'分  '+ homeTopPlayerTech.reboundTotal +'篮板  '+ homeTopPlayerTech.assist +'助攻)';
+                    jQuery("#playerDetail"+ mid).html(playerDetailAway+'<br/>'+playerDetailHome);
+                }
+                
+                // 处理比赛状态，直播统计战报链接
+                var status = '未开赛';
+                var link = ''
+                if (data.live == 1) {
+                    link += '<a href="/2013/match/stat/'+ mid +'.html">直播/统计</a> ';
+                }else{
+                    link += '<a href="/2013/match/stat/'+ mid +'.html">统计</a> ';
+                }
+                if (data.status == 0 ) {
+                    if(data.linkPreview && data.linkPreview!=""){
+                      link='<a href="/2013/match/preview/'+ mid +'.html">前瞻</a> '+link;
+                    }
+                    status = '未开赛 '+data.date.split(" ")[1].substring(0,5);
+                } else if (data.status == 1) {
+                    var rstatus=data.time;
+                    if(rstatus=='本节结束'){
+                      rstatus='结束';
+                    }
+                    status = '<h4 class="redbg">'+getRound(data.round) +' '+ rstatus +'</h4>';
+                } else if (data.status == 2) {
+                    status = '已结束';
+                    if (data.linkReport && data.linkReport != "") {
+                        link += '<a href="/2013/match/report/'+ mid +'.html">战报</a>';
+                    }
+                } else if (data.status == 3) {
+                    status = '延期';
+                    if(data.linkPreview && data.linkPreview!=""){
+                      link='<a href="/2013/match/preview/'+ mid +'.html">前瞻</a> '+link;
+                    }
+                }
+                jQuery("#status"+ mid).html(status);
+                jQuery("#link"+ mid).html(link);
+            }
+        }
+    });
+    nbaAnalysis();
+}
+
+function getRound(round) {
+    switch(round) {
+    case 1:
+        return "第一节";
+        break;
+    case 2:
+        return "第二节";
+        break;
+    case 3:
+        return "第三节";
+        break;
+    case 4:
+        return "第四节";
+        break;
+    default:
+        return "加时"+ (round - 4);
+        break;
+   }
+}
+
+function refresh() {
+    scoreboard();
+    setTimeout("refresh()", 65000);
+}
+
+jQuery(document).ready(function(){
+    refresh();
+    var slice3 = new NTES.ui.Slide(NTES("ul.cul> li"), NTES("div.none"), "on", "mouseover"); 
+    var slice4 = new NTES.ui.Slide(NTES("ul.tagList-title2 > li"), NTES("ul.toplist"), "on", "mouseover"); 
+});
+</script>
+  <table cellpadding="0" cellspacing="0"  class="dataTB1" width="84%">
+    <tr class="bgborder">
+      <th class="leftTH">比赛状态</th>
+      <th>对阵</th>
+      <th>比分</th>
+      <th>球队之星</th>
+      <th  width="20%" class="rightTH">更多信息</th>
+    </tr>
+        <tr  class="bg1" >
+      <td valign="top" id="status18571">未开赛</td>
+      <td><a href="/team/23/" class="f14blue">芝加哥公牛</a><br/><a href="/team/19/" class="f14blue">华盛顿奇才</a></td>
+      <td id="score18571">-<br/>-</td>
+      <td id="playerDetail18571">-<br/>-</td> 
+      <td id="link18571">-</td>
+    </tr>
+        <tr  class="bgGreenNone" >
+      <td valign="top" id="status18572">未开赛</td>
+      <td><a href="/team/14/" class="f14blue">洛杉矶快船</a><br/><a href="/team/15/" class="f14blue">金州勇士</a></td>
+      <td id="score18572">-<br/>-</td>
+      <td id="playerDetail18572">-<br/>-</td> 
+      <td id="link18572">-</td>
+    </tr>
+        <tr  class="bg1" >
+      <td valign="top" id="status18573">未开赛</td>
+      <td><a href="/team/28/" class="f14blue">多伦多猛龙</a><br/><a href="/team/30/" class="f14blue">布鲁克林篮网</a></td>
+      <td id="score18573">-<br/>-</td>
+      <td id="playerDetail18573">-<br/>-</td> 
+      <td id="link18573">-</td>
+    </tr>
+        <tr  class="bgGreenNone" >
+      <td valign="top" id="status18574">未开赛</td>
+      <td><a href="/team/2/" class="f14blue">休斯敦火箭</a><br/><a href="/team/7/" class="f14blue">波特兰开拓者</a></td>
+      <td id="score18574">-<br/>-</td>
+      <td id="playerDetail18574">-<br/>-</td> 
+      <td id="link18574">-</td>
+    </tr>
+      </table>
+  <span class="blank20"></span>
+  </div>
+  </div>
+  <!--colLM1 end-->
+  <div class="colR1">
+  <iframe src="http://caipiao.163.com/outside/nbamatch.html?t=56546" width="210" height="363" frameborder="0" scrolling="no"></iframe>
+<div class="blank9" style="background: #E0E1EB"></div>
+  <div class="titleBar ui_sr"><h2>联盟排行榜</h2></div>
+<span class="blank9"></span>
+<div class="rightContent">
+<ul class="cul" id="calendarTag">
+<li class="on">东部排名</li>
+<li>西部排名</li>
+</ul>
+<div class="none on">
+      <table cellpadding="0" cellspacing="0"  width="100%" class="data-tab2 jblue-color">
+        <tr>
+          <td><span class="jyellow-color">排名</span></td>
+          <td align="left"><span class="jyellow-color">队名</span></td>
+          <td><span class="jyellow-color">胜/负</span></td>
+          <td><span class="jyellow-color">胜差</span></td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="fbg" >1</h2></td>
+          <td width="35%" align="left"><a href="/team/24/" class="jgray-color">步行者</a></td>
+          <td width="30%">56/26</td>
+          <td width="20%">0.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="fbg" >2</h2></td>
+          <td width="35%" align="left"><a href="/team/18/" class="jgray-color">热火</a></td>
+          <td width="30%">54/28</td>
+          <td width="20%">2.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="fbg" >3</h2></td>
+          <td width="35%" align="left"><a href="/team/28/" class="jgray-color">猛龙</a></td>
+          <td width="30%">48/34</td>
+          <td width="20%">8.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >4</h2></td>
+          <td width="35%" align="left"><a href="/team/23/" class="jgray-color">公牛</a></td>
+          <td width="30%">48/34</td>
+          <td width="20%">8.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >5</h2></td>
+          <td width="35%" align="left"><a href="/team/19/" class="jgray-color">奇才</a></td>
+          <td width="30%">44/38</td>
+          <td width="20%">12.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >6</h2></td>
+          <td width="35%" align="left"><a href="/team/30/" class="jgray-color">篮网</a></td>
+          <td width="30%">44/38</td>
+          <td width="20%">12.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >7</h2></td>
+          <td width="35%" align="left"><a href="/team/20/" class="jgray-color">山猫</a></td>
+          <td width="30%">43/39</td>
+          <td width="20%">13.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >8</h2></td>
+          <td width="35%" align="left"><a href="/team/16/" class="jgray-color">老鹰</a></td>
+          <td width="30%">38/44</td>
+          <td width="20%">18.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >9</h2></td>
+          <td width="35%" align="left"><a href="/team/29/" class="jgray-color">尼克斯</a></td>
+          <td width="30%">37/45</td>
+          <td width="20%">19.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >10</h2></td>
+          <td width="35%" align="left"><a href="/team/21/" class="jgray-color">骑士</a></td>
+          <td width="30%">33/49</td>
+          <td width="20%">23.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >11</h2></td>
+          <td width="35%" align="left"><a href="/team/25/" class="jgray-color">活塞</a></td>
+          <td width="30%">29/53</td>
+          <td width="20%">27.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >12</h2></td>
+          <td width="35%" align="left"><a href="/team/26/" class="jgray-color">凯尔特人</a></td>
+          <td width="30%">25/57</td>
+          <td width="20%">31.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >13</h2></td>
+          <td width="35%" align="left"><a href="/team/17/" class="jgray-color">魔术</a></td>
+          <td width="30%">23/59</td>
+          <td width="20%">33.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >14</h2></td>
+          <td width="35%" align="left"><a href="/team/27/" class="jgray-color">76人</a></td>
+          <td width="30%">19/63</td>
+          <td width="20%">37.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >15</h2></td>
+          <td width="35%" align="left"><a href="/team/22/" class="jgray-color">雄鹿</a></td>
+          <td width="30%">15/67</td>
+          <td width="20%">41.0</td>
+        </tr>
+              </table>
+<span class="blank12"></span>
+<table cellpadding="0" cellspacing="0"  width="100%" class="data-tab2 jblue-color"><tr><td style="text-align:left">x：已经获得季后赛资格<br/>y：分区冠军<br/>z：获得了季后赛对阵的主场优势</td></tr></table>
+      </div>
+      <div class="none">
+      <table cellpadding="0" cellspacing="0"  width="100%" class="data-tab2 jblue-color">
+         <tr>
+          <td><span class="jyellow-color">排名</span></td>
+          <td align="left"><span class="jyellow-color">队名</span></td>
+          <td><span class="jyellow-color">胜/负</span></td>
+          <td><span class="jyellow-color">胜差</span></td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="fbg" >1</h2></td>
+          <td width="35%" align="left"><a href="/team/3/" class="jgray-color">马刺</a></td>
+          <td width="30%">62/20</td>
+          <td width="20%">0.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="fbg" >2</h2></td>
+          <td width="35%" align="left"><a href="/team/8/" class="jgray-color">雷霆</a></td>
+          <td width="30%">59/23</td>
+          <td width="20%">3.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="fbg" >3</h2></td>
+          <td width="35%" align="left"><a href="/team/14/" class="jgray-color">快船</a></td>
+          <td width="30%">57/25</td>
+          <td width="20%">5.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >4</h2></td>
+          <td width="35%" align="left"><a href="/team/2/" class="jgray-color">火箭</a></td>
+          <td width="30%">54/28</td>
+          <td width="20%">8.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >5</h2></td>
+          <td width="35%" align="left"><a href="/team/7/" class="jgray-color">开拓者</a></td>
+          <td width="30%">54/28</td>
+          <td width="20%">8.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >6</h2></td>
+          <td width="35%" align="left"><a href="/team/15/" class="jgray-color">勇士</a></td>
+          <td width="30%">51/31</td>
+          <td width="20%">11.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >7</h2></td>
+          <td width="35%" align="left"><a href="/team/5/" class="jgray-color">灰熊</a></td>
+          <td width="30%">50/32</td>
+          <td width="20%">12.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >8</h2></td>
+          <td width="35%" align="left"><a href="/team/1/" class="jgray-color">小牛</a></td>
+          <td width="30%">49/33</td>
+          <td width="20%">13.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >9</h2></td>
+          <td width="35%" align="left"><a href="/team/11/" class="jgray-color">太阳</a></td>
+          <td width="30%">48/34</td>
+          <td width="20%">14.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >10</h2></td>
+          <td width="35%" align="left"><a href="/team/10/" class="jgray-color">森林狼</a></td>
+          <td width="30%">40/42</td>
+          <td width="20%">22.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >11</h2></td>
+          <td width="35%" align="left"><a href="/team/6/" class="jgray-color">掘金</a></td>
+          <td width="30%">36/46</td>
+          <td width="20%">26.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >12</h2></td>
+          <td width="35%" align="left"><a href="/team/4/" class="jgray-color">鹈鹕</a></td>
+          <td width="30%">34/48</td>
+          <td width="20%">28.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >13</h2></td>
+          <td width="35%" align="left"><a href="/team/13/" class="jgray-color">国王</a></td>
+          <td width="30%">28/54</td>
+          <td width="20%">34.0</td>
+        </tr>
+                              <tr>
+                    
+                              <td width="15%" ><h2  class="sbg" >14</h2></td>
+          <td width="35%" align="left"><a href="/team/12/" class="jgray-color">湖人</a></td>
+          <td width="30%">27/55</td>
+          <td width="20%">35.0</td>
+        </tr>
+                              <tr class="bg2">
+                    
+                              <td width="15%" ><h2  class="sbg" >15</h2></td>
+          <td width="35%" align="left"><a href="/team/9/" class="jgray-color">爵士</a></td>
+          <td width="30%">25/57</td>
+          <td width="20%">37.0</td>
+        </tr>
+              </table>
+<span class="blank12"></span>
+<table cellpadding="0" cellspacing="0"  width="100%" class="data-tab2 jblue-color"><tr><td style="text-align:left">x：已经获得季后赛资格<br/>y：分区冠军<br/>z：获得了季后赛对阵的主场优势</td></tr></table>
+</div>
+<span class="blank12"></span>
+  </div>
+  <!--rightcontent end-->
+  </div>
+</div>
+<!--parea end-->
+</div>
+<!--cba-area -->
+<iframe id="analysis" width="0px" height="0px" src="" style="display:none"></iframe>
+<!--极光系统锚点统计 -->
+
+<script>!function(n){function t(){this.proc={inca:function(t,i,a){var e=a.start||1;n("a",i).each(function(n,i){r(t+c(e++),i)})},subdiv:function(t,i,e){for(var o=1,f=e.level||1,u=[i],s=0;f>s;s++){var d=[];n.each(u,function(t,i){var e=0;"a"==i.tagName.toLowerCase()||/ntes-nav-select/.test(i.className)||n.each(i.children,function(n,t){a(t)&&(d.push(t),e++)}),e||d.push(i)}),u=d}n.each(u,function(n,i){r(t+c(o++),i)})},uniq:function(n,t,i){r(n+c(i.start||1),t,i.all)},form:function(t,i){var a=n(">form",i);a[0]&&a.addEvent("submit",function(){f.call(this,t+"1")})},tabgroup:function(t,i,a){var e=n(a.h,i),o=n(a.b,i);if(e&&o){var f=a.step||10,u=2;r(t+"1",i),e.each(function(n,i){r(t+c(u+n*f),i)}),o.each(function(n,i){r(t+c(u+n*f+1),i)})}},tabgroups:function(t,i,e){var o=e.union||"",f={};if(/^[\s\d,]+$/.test(o)){var u=0;n.each(o.split(/\s*,\s*/),function(n,t){if(t=parseInt(t))for(var i=0;t>i;i++)f[u++]=n})}var s=2;r(t+"1",i);var d=parseInt(e.step)||10,l=n(e.h,i);if(l&&h){n.each(l,function(n,i){r(t+c(n*d+s),i)});var h=n(e.b,i);n.each(h,function(i,e){var o=i*d+s+1,u=e.children;if(0==u.length)u=[e];else for(;1==u.length;)u=u[0].children;var l=0;n.each(u,function(n,i){a(i)&&("undefined"!=typeof f[n]&&(l=f[n]),r(t+c(o+l),i),l++)})})}}}}function i(){var n=_ntes_page_data.getRunTime()||0;return 0>n?0:n}function a(n){var t=n.className,i=n.tagName.toLowerCase(),a={script:1,style:1,link:1,img:1,hr:1,br:1},e=!0;return a[i]?e=!1:/blank\d/.test(t)&&(e=!1),e}function e(t){g||(h&&window._ntes_sendInfo?(n.each(p,function(n,t){u(t)}),g=!0):p.push(t)),g&&u(t)}function c(n){return 10>n?n.toString():n>62?"z":String.fromCharCode(n+(36>n?55:61))}function o(n,t){if(!t)return n;var i=n.length-1,a=n.charCodeAt(i);return 58>a?a-=48:91>a?a-=55:123>a&&(a-=61),n.substr(0,i)+c(a+t)}function r(n,t,i){t&&t.setAttribute((i?"_":"")+"jcid",n)}function f(n){if(n){var t="";"a"==this.tagName.toLowerCase()&&(t=this.getAttribute("href")||""),_++;var a="/ntes_p?"+m+"&_nct="+i()+"&_nah="+escape(t)+"&_nat={id}_"+n;e(a)}}function u(n){_ntes_sendInfo("cl",_ntes_src_addr+n.replace("{id}",h))}function s(n,t,i){for(var a=0;"a"!=n.tagName.toLowerCase();){if(i=n.getAttribute("_jcid"))return i;if(n=n.parentNode,!n.tagName||a++>5)return null}for(;n&&n!=t&&!(i=n.getAttribute("jcid"));)n=n.parentNode;return i}function d(t,i,a){if("iframe"!=t.tagName.toLowerCase())i(t,a);else{var e,c=l(t),o=function(){if("function"==typeof e&&e.call(this),c=l(t)){var o=c.body;n(o).addEvent("click",function(n){var t=n.target;f.call(t,s(t,o))}),i(o,a)}};c&&/^http/.test(c.location.href)?o():t.attachEvent?t.attachEvent("onload",o):(e=t.onload,t.onload=o)}}function l(n){var t;try{t=n.contentDocument}catch(i){}if(!t&&n.contentWindow){try{"object"==typeof n.contentWindow.document&&(t=n.contentWindow.document)}catch(i){}if(!t)return null}var a=1;try{t.location&&(a=0)}catch(i){}return a?null:t}var h,v,m="_nacc=siteclick&_npurl="+escape(document.URL),_=0,g=!1,p=[],b=document.body;t.prototype={init:function(t,a){t&&5==t.length&&(h=t),v||(v=Math.random()<(a||.1),v&&(n("body").addEvent("click",function(n){var t=n.target;f.call(t,s(t,b))}),n.ready(function(){function t(){a&&(e("/ntes_u?"+a+"&_nct="+i()+"&_mcn="+_+c),a=0)}var a=m+"&_nch={id}",c="",o="";if(window.NTES_logger_start_time){var r=NTES_logger_start_time.getTime();o="&_msl="+((new Date).getTime()-r),n(window).addEvent("load",function(){c="&_msl="+((new Date).getTime()-r)})}e("/ntes_u?"+a+o),_ntes_bindEvent(window,"beforeunload",t);var f=window.navigator.userAgent.toLowerCase();!/compatible/.test(f)&&/firefox/.test(f)&&_ntes_bindEvent(window,"unload",t)}),this.retain&&this.area(b,this.retain)))},area:function(t,i){var a=this,e=function(n,t){a.area(n,t)};for(var c in i){var o=i[c],r=0;/(.*?)\*$/.test(c)&&(c=RegExp.$1,r=1);var f=c?/^#/.test(c)?n(c):n(c,t):[t];n.util.isArray(f)||(f=[f]);for(var u=0;u<f.length;u++){var s=r?o[0]:o[u];if(s&&f[u])if(s.i)for(var l=s.s||1,h=0;l>h;h++)o[u].j=h,this.zone(f[u+h],s);else d(f[u],e,s)}}},zone:function(t,i){var a=o(i.i,i.j),e=this.proc[i.f||"uniq"],c=i.p||{};t&&e&&(c.dyn?n(t).addEvent("mouseover",function(){for(var n=t.children[0];n&&n.children[0];)n=n.children[0];n&&!n.getAttribute("jdyn")&&(e(a,t,c),n.setAttribute("jdyn",1))}):d(t,function(n){e(a,n,c)}))},batch:function(n){v?this.area(b,n):this.retain=n}},window._aCM=new t}(NTES),function(){_aCM.init("tyn01"),setTimeout(function(){_aCM.batch({">.NTES-nav":[{">.nav-link":[{"":[{i:"111",f:"inca"}]}],".NTES-link":[{"":[{i:"121",f:"inca",p:{dyn:1}}]}],a:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{"":[{i:"131"}]}]}],">.nav-con":[{li:[{"":[{i:"211"}]},{"":[{i:"221"}]},{dl:[{i:"231",f:"inca",s:6}]},{h4:[{i:"241",f:"inca",s:5}]},{"":[{i:"251"}]},{"":[{i:"261"}]},{"":[{i:"271"}]},{"":[{i:"281"}]},{"":[{i:"291"}]},{"":[{i:"2A1"}]},{"":[{i:"2B1"}]}]}],">.cba-area":[{">.navpath":[{"":[{i:"311"}]}],li:[{"":[{i:"321"}]},{"":[{i:"331"}]},{"":[{i:"341"}]},{"":[{i:"351"}]},{"":[{i:"361"}]},{"":[{i:"371"}]},{"":[{i:"381"}]}],".left":[0,{"":[{i:"391",f:"inca"}]}]}],">.nba-area":[{li:[0,0,{".c2":[{i:"411",f:"inca"}],">.mcon":[{i:"412",f:"inca"}]},{".c2":[{i:"421",f:"inca"}],">.mcon":[{i:"422",f:"inca"}]},{".c2":[{i:"431",f:"inca"}],">.mcon":[{i:"432",f:"inca"}]},{".c2":[{i:"441",f:"inca"}],">.mcon":[{i:"442",f:"inca"}]},{".c2":[{i:"451",f:"inca"}],">.mcon":[{i:"452",f:"inca"}]},{".c2":[{i:"461",f:"inca"}],">.mcon":[{i:"462",f:"inca"}]},{".c2":[{i:"471",f:"inca"}],">.mcon":[{i:"472",f:"inca"}]},{".c2":[{i:"481",f:"inca"}],">.mcon":[{i:"482",f:"inca"}]}],tbody:[0,0,0,0,0,0,0,0,{td:[0,{i:"491",f:"inca"},0,{i:"492",f:"inca"},{i:"493",f:"inca"},0,{i:"494",f:"inca"},0,{i:"495",f:"inca"},{i:"496",f:"inca"}]}],".rightContent":[{"":[{i:"4A1",f:"inca",p:{dyn:1}}]}]}],">.foot":[{"":[{"":[{i:"511",f:"inca"}]}]}]})},50)}(NTES);</script>
+<div align="center" class="foot">
+<div class="text">策划：张增辉 林志霖 美术：高洁 技术：吴肇宣 张振朋 李俊葵 王季冬　<a style="color:red" target="_blank" href="http://fankui.163.com/ft/comment.fb?pid=10004&fid=14006">意见反馈</a></div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://gb.corp.163.com/gb/cs.html">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://help.163.com/">帮助中心</a><br>
+网易公司版权所有<br>
+<span class="cRed">&copy;1997-2014</span>
+</div>
+<!-- Dicky Lau -->
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0505010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0505010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<!-- NetEase Analytics code 2006-06-27 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    _ntes_nacc = "sports"; //站点ID。
+    neteaseTracker();
+</script>
+</body>
+</html>
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.1.js"></script>
+

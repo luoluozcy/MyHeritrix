@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" media="all" href="http://w.163.com/special/00314P2E/emop.css" />
+<script type="text/javascript" src="http://img1.cache.netease.com/game/wow/pandaria/images/jquery.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/game/wow/pandaria/images/core.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/game/wow/pandaria/images/tooltip.js"></script>
+<style type="text/css">
+.mop-map { height:770px; background:url(http://img1.cache.netease.com/game/wow/pandaria/images/mop-ft.jpg) no-repeat -1px top; }
+.map-block {width:960px; height:10px;}
+.mop-map .map-top { width:960px; height:100px; background:url(http://img1.cache.netease.com/game/wow/pandaria/images/maptop.jpg) no-repeat -1px top; }
+.mop-map .map-top h2 { font-size:18px; padding:10px 0 0 80px; }
+.mop-map .map-bottom {width:960px; height:62px; background:url(http://img1.cache.netease.com/game/wow/pandaria/images/map-bottom-1.jpg) no-repeat -1px top; }
+.mop-map-content { }
+.mop-map { padding: 50px 0; }
+.mop-map .map { width: 837px; height:558px; margin: 0 auto; position:relative; background: none; box-shadow: #000 0 0 25px; }
+.mop-map .map img { width: 837px; height:558px; }
+.ui-tooltip { background-color: rgba(15, 15, 15, 0.9); border: 1px solid #353837; border-radius: 5px 5px 5px 5px; box-shadow: 0 0 15px #000000; color: #FFFFFF; font-size: 12px; padding: 10px; }
+.ui-tooltip { height: auto; max-width: 300px; position: absolute; width: auto; z-index: 9005; }
+.ui-tooltip .tooltip-content .map-tooltip { padding:5px 10px }
+.ui-tooltip .tooltip-content .map-tooltip h3 { font: normal 22px/1.5 Palatino Linotype !important; color: #008467; }
+.ui-tooltip .tooltip-content .map-tooltip h4 { font-size:13px !important; color:#9c6012; font-weight:normal; line-height:1.5em }
+.ui-tooltip .tooltip-content .map-tooltip p { color:#dfb783; line-height:1.5em!important }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot { border-radius:6px; width:279px; height:142px; display:block; margin:0 auto; background:url(http://img1.cache.netease.com/game/wow/pandaria/images/ss-zone-thumb.jpg) no-repeat }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot.dread-wastes { background-position:-279px -994px }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot.krasarang-wilds { background-position:-279px -426px }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot.four-winds { background-position:-279px -284px }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot.townlong-steppes { background-position:-279px -710px }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot.eternal-blossoms { background-position:-279px -852px }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot.kun-lai { background-position:-279px -568px }
+.ui-tooltip .tooltip-content .map-tooltip .zone-screenshot.jade-forest { background-position:-279px -142px }
+#dread-wastes-tooltip { top:350px; left: 400px }
+#krasarang-wilds-tooltip { top:300px; left: 550px }
+#four-winds-tooltip { top:300px; left: 600px }
+#townlong-steppes-tooltip { top:250px; left: 450px }
+#eternal-blossoms-tooltip { top:290px; left: 580px }
+#kun-lai-tooltip { top:200px; left: 550px }
+#jade-forest-tooltip { top:300px; left: 250px }
+.pandaria-sub.map-page #wrapper #content .category { margin-bottom:37px }
+.pandaria-sub.map-page #content .content-bot { min-height: 1350px; }
+.ie6 .pandaria-sub.map-page #content .content-bot { height: 1150px }
+.ie7 .pandaria-sub.map-page #content .content-bot { min-height: 1150px }
+</style>
+</head>
+<body>
+<div class="mop-map">
+<div class="map-block"></div>
+<div class="map-top">
+<h2>全新大陆：潘达利亚</h2>
+</div>
+<div class="mop-map-content">
+<div class="map"> 
+<img id="pandaria-map" src="http://img1.cache.netease.com/game/wow/pandaria/images/map.jpg" alt="Mists of Pandaria Map" usemap="#pandaria-image-map" onmouseover="PandariaMap.zoneShow('ocean');" />
+<map class="image-map" name="pandaria-image-map">
+<area shape="poly"  alt="恐惧废土"
+		onmouseover="PandariaMap.zoneShow('dread-wastes');"
+		coords="193,325, 269,300, 316,300, 341,307, 353,330, 348,350, 338,371, 338,397, 327,426, 229,475, 192,421" />
+<area shape="poly"  alt="卡桑琅荒林"
+		onmouseover="PandariaMap.zoneShow('krasarang-wilds');"
+		coords="335,430, 354,419, 367,422, 393,417, 433,402, 449,406, 485,379, 491,364, 513,348, 515,324, 529,336, 549,408, 547,453, 439,537, 360,500" />
+<area shape="poly" href="http://w.163.com/12/0319/16/7SVK8J7000314C3U.html" target="_blank" alt="四风谷"
+		onmouseover="PandariaMap.zoneShow('four-winds');"
+		coords="335,425, 344,396, 342,371, 356,350, 364,331, 382,339, 420,335, 461,331, 480,323, 495,309, 508,322, 506,342, 447,397, 411,391, 389,413, 354,414" />
+<area shape="poly"  alt="螳螂高原"
+		onmouseover="PandariaMap.zoneShow('townlong-steppes');"
+		coords="142,257, 116,191, 161,128, 214,121, 269,196, 295,190, 316,206, 315,329, 326,245, 353,261, 354,272, 338,302, 310,296, 278,292, 241,302, 188,305" />
+<area shape="poly"  alt="锦绣谷"
+		onmouseover="PandariaMap.zoneShow('eternal-blossoms');"
+		coords="348,302, 354,283, 380,274, 404,279, 416,273, 429,277, 451,268, 481,282, 490,306, 492,318, 461,329, 420,333, 382,337, 363,329, 356,327" />
+<area shape="poly"  alt="昆莱山"
+		onmouseover="PandariaMap.zoneShow('kun-lai');"
+		coords="241,167, 251,134, 309,87, 373,75, 427,70, 478,59, 492,79, 493,116, 481,171, 481,223, 460,255, 449,266, 414,271, 379,272, 353,259, 329,241, 318,205, 319,229, 297,188, 270,192" />
+<area shape="poly" href="http://w.163.com/12/0319/16/7SVK8J7000314C3U.html" target="_blank" alt="翡翠林"
+		onmouseover="PandariaMap.zoneShow('jade-forest');"
+		coords="459,269, 462,255, 486,255, 483,223, 485,193, 483,171, 538,123, 639,159, 660,177, 678,227, 690,270, 692,317, 684,352, 692,377, 699,406, 686,430, 660,413, 639,434, 600,471, 568,452, 551,408, 531,336, 523,325, 502,305, 481,280" />
+</map>
+</div>
+</div>
+<div class="map-bottom"></div>
+</div>
+<div id="dread-wastes-tooltip" style="display:none" class="zone-tooltip-wrapper ui-tooltip">
+<div class="tooltip-content">
+<div class="map-tooltip">
+<h3>恐惧废土</h3>
+<h4>适合等级： 89-90</h4>
+<p>敬请期待</p>
+</div>
+</div>
+</div>
+<div id="krasarang-wilds-tooltip" style="display:none" class="zone-tooltip-wrapper ui-tooltip">
+<div class="tooltip-content">
+<div class="map-tooltip">
+<h3>卡桑琅荒林</h3>
+<h4>适合等级： 86-88</h4>
+<p>延绵于潘达利亚南海岸的卡桑琅荒林藏有许多失落王朝的古老秘密，吸引了联盟与部落预言探寻者们的到来。卡桑琅荒林也是残暴无良、专横跋扈的魔古族家乡，并且更大的危险潜伏者：惘之煞已从禁锢之地朱鹤寺逃脱，令人窒息的抑郁已开始覆盖所经之途的每片寸土。</p>
+<span class="zone-screenshot krasarang-wilds"></span> </div>
+</div>
+</div>
+<div id="four-winds-tooltip" style="display:none" class="zone-tooltip-wrapper ui-tooltip">
+<div class="tooltip-content">
+<div class="map-tooltip">
+<h3>四风谷</h3>
+<h4>适合等级： 86-88</h4>
+<p>宁静的原野，富足的耕地，四风谷的南面是郁郁葱葱地神秘雨林，北面则耸立着难以逾越的高山。一直以来这片谷地被誉为潘达利亚的"鱼米之乡"，但今年的收成却非常糟糕；而且居住在海岸附近的熊猫人也被一种惴惴不安的情绪所占据，仿佛要发生什么劫难。四风谷也是传说中风暴酿造厂的创始之地，熊猫酒仙陈&#8226;风暴烈酒和他的侄女丽丽正欲踏上征途，探寻他们失落已久的祖先们的踪迹。</p>
+<span class="zone-screenshot four-winds"></span> </div>
+</div>
+</div>
+<div id="townlong-steppes-tooltip" style="display:none" class="zone-tooltip-wrapper ui-tooltip">
+<div class="tooltip-content">
+<div class="map-tooltip">
+<h3>螳螂高原</h3>
+<h4>适合等级： 89-90</h4>
+<p>雄伟的长城以外便是螳螂高原，这片土地与潘达利亚其他地区都显得格格不入。在那里，凶残暴戾的螳螂人把所到之处都掠夺一空，鲁莽的螳螂人战士们和诡计多端的领主们一心想要建立起属于他们自己的水晶帝国。千年轮回，周而复始；当螳螂人提早一百多年再次吹响入侵号角的时候，当他们最强大的武士跨过长城涌入潘达利亚的时候，熊猫人猝不及防。家园遭到围攻，熊猫人这次不仅要面对有史以来最大规模的入侵，同时还要查出螳螂人诡异行为背后的神秘真相。</p>
+<span class="zone-screenshot townlong-steppes"></span> </div>
+</div>
+</div>
+<div id="eternal-blossoms-tooltip" style="display:none" class="zone-tooltip-wrapper ui-tooltip">
+<div class="tooltip-content">
+<div class="map-tooltip">
+<h3>锦绣谷</h3>
+<h4>适合等级： 90</h4>
+<p>数代熊猫人帝国隐蔽地坐落于锦绣谷，这里升腾着迷离的浓雾，周围群山环绕。人们相信锦绣谷中的水流携带着神秘的力量…它吸引着古老的敌人，以及联盟和部落当中对力量极度饥渴的各个派系。在这股神秘的力量背后，到底掩盖着怎样的秘密？</p>
+<span class="zone-screenshot eternal-blossoms"></span> </div>
+</div>
+</div>
+<div id="kun-lai-tooltip" style="display:none" class="zone-tooltip-wrapper ui-tooltip">
+<div class="tooltip-content">
+<div class="map-tooltip">
+<h3>昆莱山</h3>
+<h4>适合等级： 87-89</h4>
+<p>昆莱山脉北部陡峭的山峰之巅，古老的猛虎寺在云雾中依稀可辨。此地正是白虎之灵及其精英武学祭司的修炼场。山脉更深处则是影踪派的驻地。这个神秘的组织以保护潘达利亚免受黑暗势力的侵袭为己任，而真正的黑暗似乎正潜藏于潘达利亚祥和平静的表面之下。昆莱山的人民与世无争，现在却正受到来自西方掠夺者的威胁，而赞达拉巨魔则意图从北部海岸展开入侵。于是，他们不得不向来自联盟和部落的冒险者们求助。</p>
+<span class="zone-screenshot kun-lai"></span> </div>
+</div>
+</div>
+<div id="jade-forest-tooltip" style="display:none" class="zone-tooltip-wrapper ui-tooltip">
+<div class="tooltip-content">
+<div class="map-tooltip">
+<h3>翡翠林</h3>
+<h4>适合等级： 85-86</h4>
+<p>在一次大规模的海战之后，联盟和部落的海军两败俱伤；幸存者们随波逐流，却被海浪被冲到了翡翠林树影婆娑的海滩上。为了在这莽莽密林中求生，他们不得不与当地的原住民势力结盟。也正是在这里的冒险旅途中，他们遭遇了熊猫人…以及那些塑造和保护潘达利亚的强大力量。 </p>
+<span class="zone-screenshot jade-forest"></span> 
+</div>
+</div>
+</div>
+<script type="text/javascript">
+        //<![CDATA[
+		var PandariaMap = {
+			mapImg: null,
+			initialized: false,
+			runOnce: false,
+			init: function() {
+				if (PandariaMap.initialized) {
+					return;
+				}
+				PandariaMap.mapImg = document.getElementById('pandaria-map');
+				setTimeout(function() {
+						var img0 = new Image();
+						img0.src = "http://img1.cache.netease.com/game/wow/pandaria/images/dread-wastes-hover.jpg";
+						var img1 = new Image();
+						img1.src = "http://img1.cache.netease.com/game/wow/pandaria/images/krasarang-wilds-hover.jpg";
+						var img2 = new Image();
+						img2.src = "http://img1.cache.netease.com/game/wow/pandaria/images/four-winds-hover.jpg";
+						var img3 = new Image();
+						img3.src = "http://img1.cache.netease.com/game/wow/pandaria/images/townlong-steppes-hover.jpg";
+						var img4 = new Image();
+						img4.src = "http://img1.cache.netease.com/game/wow/pandaria/images/eternal-blossoms-hover.jpg";
+						var img5 = new Image();
+						img5.src = "http://img1.cache.netease.com/game/wow/pandaria/images/kun-lai-hover.jpg";
+						var img6 = new Image();
+						img6.src = "http://img1.cache.netease.com/game/wow/pandaria/images/jade-forest-hover.jpg";
+				}, 1000);
+				PandariaMap.initialized = true;
+			},
+			zoneShow: function(zone) {
+				if (!PandariaMap.initialized) {
+					PandariaMap.init();
+				}
+				$(".zone-tooltip-wrapper").hide();
+				if (zone === 'ocean') {
+					PandariaMap.mapImg.src = "http://img1.cache.netease.com/game/wow/pandaria/images/map.jpg";
+				} else {
+					PandariaMap.mapImg.src = "http://img1.cache.netease.com/game/wow/pandaria/images/" + zone + "-hover.jpg";
+					$("#" + zone + "-tooltip").show();
+				}
+			}
+		};
+		$(function() {
+			PandariaMap.init();
+		});
+        //]]>
+</script> 
+</body>
+</html>

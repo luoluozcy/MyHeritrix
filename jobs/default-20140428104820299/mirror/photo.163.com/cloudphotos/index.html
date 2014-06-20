@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="gbk"/>
+	<title>网易云相册-为散落的相片找个家-iPhone/iPad/Android/PC相片轻松统一管理和浏览</title>
+	<meta name="keywords" content="手机相册，手机拍照，iPhone拍照，android拍照，网易云相册"/>
+	<meta name="description" content="网易云相册是一款移动端的相片管理工具，分为iphone、ipad(ios)版本和android版本。用户通过网易云相册可以方便的管理移动端的相片相册，并和网易相册云端进行同步备份，同时通过相片群方便快捷的分享自己的相片。"/>
+	<link href="http://photo.163.com/html/cloudPhotos/css/cloudphotos.css?v=20120812" rel="stylesheet" type="text/css" />
+	<link href="http://photo.163.com/html/cloudPhotos/css/xbox.css?v=20120812" rel="stylesheet" type="text/css" />
+	<script>
+		if(/iPhone|android/i.test(navigator.userAgent)){ // /iPhone|NokiaN[^\/]*|Android \d\.\d|webOS\/\d\.\d/
+			location.href = 'http://photo.163.com/cloudphotos/mobile/';
+		}
+	</script>
+</head>
+<body>
+	<div class="g-header">
+		<h1>为散落的相片找个家 -- iPhone / iPad / Android / PC 相片多端同步、统一管理、随心浏览</h1>
+		<ul class="platforms">
+			<li class="p1">
+				<a href="javascript:;" id="J-iphone">iphone</a>
+				<!-- <span class="tip">下载点评就送5G</span> -->
+			</li>
+			<li class="p3"><a href="javascript:;" id="J-ipad">ipad</a></li>
+			<li class="p2">
+			 <a href="javascript:;" id="J-android">android</a>
+			 <!-- <span class="tip">下载反馈就送5G</span>  -->
+			</li>
+		</ul>
+		<div class="features" id="carousel">
+			<ul class="pics">
+				<li class="f1" style=""></li>
+				<li class="f2" style="display:none;"></li>
+				<!--  
+				<li class="f3" style="display:none;"></li>
+				<li class="f4" style="display:none;"></li>
+				-->
+			</ul>
+			<ul class="dots">
+				<li class="selected"></li>
+				<li></li>
+				<!-- 
+				<li></li>
+				<li></li>
+				-->
+			</ul>
+		</div>
+	</div>
+	<div class="g-body">
+		<ul>
+		  <li class="intro0">
+          <h2>无需数据线<br />iPhone、iPad、Android直接互传</h2>
+          <p style="width:480px;">多端快传是一根无形数据线，能轻松连接各种无线设备，零流量秒传相片</p>
+          <img src="http://r.ph.126.net/html/cloudPhotos/images/intro4.jpg" />
+      </li>
+			<li class="intro1">
+					<img src="http://r.ph.126.net/html/cloudPhotos/images/intro0.jpg" />
+					<h2>支持原图备份，更有无限存储空间</h2>
+					<p>支持原图无损上传。超出限额后每月继续享受免费300M空间，国内首家无限总量空间！</p>
+			</li>
+			<li class="intro2">
+					<h2>批量备份，安全快捷，稳定可靠</h2>
+					<p>千张相片一口气搞定，三重备份全程保护数据安全，不再出现回忆丢失的悲剧。</p>
+					<img src="http://r.ph.126.net/html/cloudPhotos/images/intro1.jpg" />
+			</li>
+			<li class="intro3">
+					<img src="http://r.ph.126.net/html/cloudPhotos/images/intro2.jpg" />
+					<h2>网易相册，十年品牌</h2>
+					<p>十年相片专业存储经验，1.2亿用户，55亿相片，专业的产品团队。倾心打造更优质的移动相片应用体验。</p>
+			</li>
+		</ul>
+		<dl class="weibo">
+			<dt>关注我们：</dt>
+			<dd><a href="http://t.163.com/cloudphoto" class="t163" target="_blank">网易微博</a></dd>
+			<dd><a href="http://weibo.com/163album" class="tsina" target="_blank">新浪微博</a></dd>
+			<dd><a href="http://t.qq.com/cloudphoto163" class="tqq" target="_blank">腾讯微博</a></dd>
+		</dl>
+	</div>
+
+	<div class="g-cloudFooter">
+		<p>
+			<a class="link" href="http://gb.corp.163.com/gb/home.shtml" target="_blank">关于网易</a>
+			<a class="link" href="http://blog.163.com/photo_admin/" target="_blank">相册官方博客</a>
+			<a class="link" href="http://fankui.163.com/ft/tutorial.fb?pid=3" target="_blank">意见反馈</a>
+			<a class="link" href="http://fankui.163.com/ft/faqList.fb?pid=3" target="_blank">常见问题</a>
+			<a class="link" href="http://hr.163.com/" target="_blank">招聘信息</a>
+			<a class="link" href="http://help.163.com/" target="_blank">客户服务</a>
+			<a class="link lastcol" href="http://gb.corp.163.com/gb/legal.html" target="_blank">相关法律</a>
+		</p>
+		<p class="copyright">网易公司版权所有&#169;1997-2014</p>
+	</div>
+	
+	<div class="g-fixed">
+	  <div class="m-code">
+	    <h4>网易云相册</h4>
+	    <img src="http://r.ph.126.net/html/cloudPhotos/images/iphone_2code4.0.png" />
+	    <p>扫描下载</p>
+	  </div>
+	</div>
+	
+	<div class="f-hide" style="display:none;">
+		<div id="J-xbox-iphone" class="m-down">
+		<!--
+			<dl class="activity">
+				<dt>点评就送5G空间</dt>
+				<dd>活动说明： 2013年4月18日之前,在App store评价网易云相册，并将app store评论时所使用的昵称和网易账号，私信给<a href="http://weibo.com/163album" target="_blank">@网易相册</a> ，在4月18日当天就能获得网易相册5G空间。</dd>
+			</dl>
+			-->
+			<dl class="iphone">
+				<dt class="title">1.电脑同步安装</dt>
+				<dd class="item">点击下方按钮，打开页面，点击”View In iTunes”,在iTunes中下载该应用程序，并同步到iPhone上。或通过同步推安装。</dd>
+				<dd class="item f-tc"><a href="http://itunes.apple.com/cn/app/id451931841?mt=8" target="_blank" hideFocus="true" title="App Store：立即从App Store免费获取"  class="w-btn w-btn-ios" id="J-down-ios">app store</a></dd>
+				<dd class="item f-tc f-hide"><a href="#" target="_blank" hideFocus="true" title="同步助手"  class="yijian">同步助手一键安装</a></dd>
+				<dt class="title">2.手机上网安装</dt>
+				<dd class="item">在App Store搜”网易云相册”，点”网易云相册”安装。<br />或使用您手机上的条码扫描程序扫描下方的二维码，即可获得安装链接。</dd>
+				<dd class="item f-tc code2"><img src="http://photo.163.com/html/cloudPhotos/images_20111020/cloud_placeHolder.png?v=20111025" alt="二维码" /></dd>
+			</dl>
+		</div>
+		<div id="J-xbox-android" class="m-down">
+		<!--
+		  <dl class="activity">
+        <dt>点评就送5G空间</dt>
+        <dd>活动说明： 2013年4月18日之前,通过Android最新版应用内反馈意见,在4月18日就能获网易相册5G空间。</dd>
+      </dl>
+      -->
+			<dl class="android">
+				<dt class="title">1.下载到电脑</dt>
+				<dd class="item">下载apk文件，通过数据线或读卡器传输到手机内存卡中，在文件管理器里执行安装。</dd>
+				<dd class="item f-tc"><a href="http://photo.163.com/bin/Album_m_netease.apk" target="_self" hideFocus="true" title="免费下载APK适用版本：Android 1.6以上" id="J-down-apk" class="w-btn w-btn-android">免费下载APK适用版本：Android 1.6以上</a></dd>
+				<dt class="title">2.Android Market 电子市场下载</dt>
+				<dd class="item f-tc">
+					<a href="zhushou360://type=apk&name=网易云相册&refer=m_360&url=http://photo.163.com/bin/Album_m_netease.apk" hideFocus="true" id="" class="yijian" style="margin-right:30px;">通过360手机助手安装</a>
+					<a href="https://market.android.com/details?id=com.netease.cloudalbum" class="yijian" target="_blank" id="J-down-Market">Android电子市场下载</a>
+				</dd>
+				<dd class="item"></dd>
+				<dt class="title">3.使用二维码下载到手机</dt>
+				<dd class="item f-tc code2"><img src="http://photo.163.com/html/cloudPhotos/images_20111020/cloud_placeHolder.png?v=20111025" alt="二维码" /></dd>
+			</dl>
+		</div>
+		<div id="J-xbox-ipad" class="m-down">
+			<dl class="iphone ipad">
+				<dt class="title">1.电脑同步安装</dt>
+				<dd class="item">点击下方按钮，打开页面，点击”View In iTunes”,在iTunes中下载该应用程序，并同步到iPad上。或通过同步推安装。</dd>
+				<dd class="item f-tc"><a href="http://itunes.apple.com/cn/app/wang-yi-yun-xiang-ce-for-ipad/id548191422?ls=1&mt=8" target="_blank" hideFocus="true" title="App Store：立即从App Store免费获取"  class="w-btn w-btn-ios" id="J-down-ipad">app store</a></dd>
+				<dd class="item f-tc f-hide"><a href="#" target="_blank" hideFocus="true" title="同步助手"  class="yijian">同步助手一键安装</a></dd>
+				<dt class="title">2.手机上网安装</dt>
+				<dd class="item">在App Store搜”网易云相册”，点”网易云相册”安装。<br />或使用您ipad上的条码扫描程序扫描下方的二维码，即可获得安装链接。</dd>
+				<dd class="item f-tc code2"><img src="http://photo.163.com/html/cloudPhotos/images_20111020/cloud_placeHolder.png?v=20111025" alt="二维码" /></dd>
+			</dl>
+		</div>
+	</div>
+	<script src="http://photo.163.com/html/cloudPhotos/js/ntsbase.js?v=20111025" charaset="gbk"></script>
+	<script src="http://photo.163.com/html/cloudPhotos/js/ntsglobal.js?v=20111025" charaset="gbk"></script>
+	<script src="http://photo.163.com/html/cloudPhotos/js/carousel.js?v=20111025" charaset="gbk"></script>
+	<script src="http://photo.163.com/html/cloudPhotos/js/xbox.js?v=20111025" charaset="gbk"></script>
+	<script src="http://zhushou.360.cn/script/360mobilemgrdownload.js"></script>
+	<script type="text/javascript">
+		var _iphoneXbox = new np.exploriper._$$XBOX({
+										'title': 'iPhone版下载',
+										'targetDom' : 'J-xbox-iphone',
+										'showLayer' : true,
+										'outClick' : true
+									});
+		var _androidXbox = new np.exploriper._$$XBOX({
+										'title': 'Android版下载',
+										'targetDom' : 'J-xbox-android',
+										'showLayer' : true,
+										'outClick' : true
+								});
+		var _ipadXbox = new np.exploriper._$$XBOX({
+										'title': 'iPad版下载',
+										'targetDom' : 'J-xbox-ipad',
+										'showLayer' : true,
+										'outClick' : true
+								});
+		V._$addEvent('J-android', 'click', function(e){
+			_androidXbox && _androidXbox._$show();
+			V._$stop(e);
+		});
+		V._$addEvent('J-iphone', 'click', function(e){
+			_iphoneXbox && _iphoneXbox._$show();
+			V._$stop(e);
+		});
+		V._$addEvent('J-ipad', 'click', function(e){
+			_ipadXbox && _ipadXbox._$show();
+			V._$stop(e);
+		});
+	V._$addEvent('J-down-ios','click',function(e){
+		var _img = new Image();
+		_img.src = 'http://photo.163.com/image/sniff.png?p=cloudphotos&t=ios&v=1&from=photo';
+	});	
+	V._$addEvent('J-down-ipad','click',function(e){
+		var _img = new Image();
+		_img.src = 'http://photo.163.com/image/sniff.png?p=cloudphotos&t=ipad&v=1&from=photo';
+	});
+	V._$addEvent('J-down-apk','click',function(e){
+		var _img = new Image();
+		_img.src = 'http://photo.163.com/image/sniff.png?p=cloudphotos&t=android&v=1&from=photo';
+	});
+	V._$addEvent('J-down-Market','click',function(e){
+		var _img = new Image();
+		_img.src = 'http://photo.163.com/image/sniff.png?p=cloudphotos&t=androidmarket&v=1&from=photo';
+	});	
+	</script>
+</body>
+</html>

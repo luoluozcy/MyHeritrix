@@ -1,0 +1,901 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Keywords" content="沪江,机构评选,教育" />
+	<meta name="Description" content="2011沪江教育机构评选" />
+
+	<title>2011沪江教育机构评选</title>
+            <script type="text/javascript">
+            function doVote(id, control) {
+                alert("活动已结束，截止投票！");
+                    return;
+            }
+            </script>
+</head>
+<body>
+<div id="wrapper">
+	
+<link rel="stylesheet" type="text/css" href="/zt/2011pingxuan/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/zt/2011pingxuan/css/style.css" />
+
+<script src="http://common.hjfile.cn/site/js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+    //添加关注用户
+    function addFollow() {
+        var followCount = +$(".guanzhu span:first").html() + 1;
+
+
+        //未登录用户
+        if ($(".hiUserID:first").val() == "0") {
+            var loginUrl = "http://pass.hujiang.com/?url=" + location.href;
+            location.href = loginUrl;
+            return;
+        }
+
+        var followID = $(".hiTagID").val();
+        var alias = $(".hiAlias").val();
+        var tag = $(".hiTag").val();
+
+        $.get(
+   "/zt/2011pingxuan/handler/user_follow.ashx",
+   { type: 1, followid: followID, followtype: 2, alias: alias, tag: tag },
+	 function (data) {
+	     if (+data == 1) {
+	         $("#divAttention").addClass("btn_yiguanzhu");
+	         $("#divAttention").removeClass("btn_guanzhu");
+	         $(".guanzhu span:first").html(followCount);
+	         //$(".spFollowCount:first").html(followCount);
+	     }
+	     else if (+data == 2) {
+	         alert("关注失败，请刷新后重试！");
+	     }
+	     else if (+data == 3) {
+	         alert("关注失败，请先登录！");
+	     }
+	     else if (data == "") {
+	         $("#divAttention").addClass("btn_yiguanzhu");
+	         $("#divAttention").removeClass("btn_guanzhu");
+
+	     }
+	 });
+    }
+
+
+    $(function () {
+        var url = location.href;
+        if (url.indexOf("guize") > 0) {
+            $("#li_guize").addClass("show");
+            $("#li_guize").siblings().removeClass("show");
+        } 
+         else if (url.indexOf("genzong") > 0) {
+            $("#li_genzong").addClass("show");
+            $("#li_genzong").siblings().removeClass("show");
+        } else if (url.indexOf("choujiang") > 0) {
+            $("#li_choujiang").addClass("show");
+            $("#li_choujiang").siblings().removeClass("show");
+        } else if (url.indexOf("suisui") > 0) {
+            $("#li_suisui").addClass("show");
+            $("#li_suisui").siblings().removeClass("show");
+        } else if (url.indexOf("en") > 0) {
+            $("#li_en").addClass("show");
+            $("#li_en").siblings().removeClass("show");
+        }
+        else if (url.indexOf("jp") > 0) {
+            $("#li_jp").addClass("show");
+            $("#li_jp").siblings().removeClass("show");
+        }
+        else if (url.indexOf("min") > 0) {
+            $("#li_min").addClass("show");
+            $("#li_min").siblings().removeClass("show");
+        } else if (url.indexOf("intro") > 0) {
+            $("#li_intro").addClass("show");
+            $("#li_intro").siblings().removeClass("show");
+        } else if (url.indexOf("app") > 0) {
+            $("#li_app").addClass("show");
+            $("#li_app").siblings().removeClass("show");
+        } else if (url == "http://www.hujiang.com/zt/2011top/") {
+            $("#li_result").addClass("show");
+            $("#li_result").siblings().removeClass("show");
+        }
+
+
+        $("#li_guize").click(function () {
+            $("#li_guize").addClass("show");
+            $(this).siblings().removeClass("show");
+        });
+
+        $("#li_genzong").click(function () {
+            $("#li_genzong").addClass("show");
+            $(this).siblings().removeClass("show");
+        });
+
+        $("#li_choujiang").click(function () {
+            $("#li_choujiang").addClass("show");
+            $(this).siblings().removeClass("show");
+        });
+
+        $("#li_suisui").click(function () {
+            $("#li_suisui").addClass("show");
+
+            $(this).siblings().removeClass("show");
+        });
+    });
+</script>
+
+<link href="http://common.hjfile.cn/site/css/hjpassport2014.css?v=2014031401" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://common.hjfile.cn/site/js/hjbase.js?v=20120423"></script>
+<script type="text/javascript" src="http://common.hjfile.cn/site/js/hjpassport2014.js?v=2014031401"></script>
+
+<div id="hjpassport">
+    <div id="pass_c" class="cf">
+		 <div id="sound" class="sound2" >
+            <a hidefocus="true" class="soundimg" href="javascript:;"></a>
+        </div>
+		 <ul id="pass_c_l" class="cf">
+            <li class="home pass_x">
+                <div class="home_t pass_x_t">
+                    <span class="icon_home_cate">分类</span>
+                    <b></b>
+                </div>
+                <div class="home_b pass_x_b">
+                    <ul>
+                        <li class="home_i0"><a target="_blank" href="http://www.hujiang.com/"><span>沪江网</span></a></li>
+                        <li class="home_i1"><a rel="nofollow" target="_blank" href="http://class.hujiang.com/"><span>沪江网校</span></a></li>
+                        <li class="home_i2"><a rel="nofollow" target="_blank" href="http://s.hujiang.com/"><span>沪江论坛</span></a></li>
+                        <li class="home_i3"><a rel="nofollow" target="_blank" href="http://bulo.hujiang.com/"><span>沪江部落</span></a></li>
+                        <li class="home_i4"><a rel="nofollow" target="_blank" href="http://tuan.hujiang.com/"><span>沪江团购</span></a></li>
+                        <li class="home_i5"><a rel="nofollow" target="_blank" href="http://www.cctalk.com/"><span>CT课堂</span></a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="yidong">
+                <a target="_blank" href="http://www.hujiang.com/zt/mobile/" rel="nofollow">
+                    <span>移动版</span>
+                </a>
+            </li>
+
+            
+
+            <li class="dh pass_x">
+                <div class="dh_t pass_x_t">
+                    <span>学习站点</span>
+                    <b></b>
+                </div>
+                <div class="dh_b pass_x_b cf">
+                    <ul id="dh_b_con1" class="fl ">
+                        <li id="dh_b_i1" class="pass_site">
+                            <a target="_blank" href="http://www.hjenglish.com/">
+                                <span>英语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i2" class="pass_site">
+                            <a target="_blank" href="http://jp.hjenglish.com/">
+                                <span>日语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i3" class="pass_site">
+                            <a target="_blank" href="http://kr.hujiang.com/">
+                                <span>韩语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i4" class="pass_site">
+                            <a target="_blank" href="http://fr.hujiang.com/">
+                                <span>法语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i5" class="pass_site">
+                            <a target="_blank" href="http://th.hujiang.com/">
+                                <span>泰语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i6" class="pass_site">
+                            <a target="_blank" href="http://de.hujiang.com/">
+                                <span>德语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i7" class="pass_site">
+                            <a target="_blank" href="http://es.hujiang.com/">
+                                <span>西语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i8" class="pass_site">
+                            <a target="_blank" href="http://ru.hujiang.com/">
+                                <span>俄语</span>
+                            </a>
+                        </li>
+                        <li id="dh_b_i9" class="pass_site">
+                            <a target="_blank" rel="nofollow" href="http://cn.hujiang.com/" >
+                                <span>汉语</span>
+                            </a>
+                        </li>
+                    </ul>  
+                    <ul id="dh_b_con2" class="fr borLeft">
+                        <li id="dh_b_z1" class="pass_site"><a target="_blank" href="http://xiaoxue.hujiang.com/">
+                            <span>小学</span></a>
+                        </li>
+                        <li id="dh_b_z2" class="pass_site"><a target="_blank" href="http://zhongxue.hujiang.com/">
+                            <span>中学</span></a>
+                        </li>
+                        <li id="dh_b_z3" class="pass_site"><a target="_blank" href="http://gaokao.hujiang.com/">
+                            <span>高考</span></a>
+                        </li>
+                        <li id="dh_b_z6" class="pass_site"><a target="_blank" href="http://liuxue.hujiang.com">
+                            <span>留学</span></a>
+                        </li>
+                        <li id="dh_b_z4" class="pass_site"><a target="_blank" href="http://bb.hujiang.com/">
+                            <span>儿歌</span></a>
+                        </li>
+                        <li id="dh_b_z5" class="pass_site"><a target="_blank" href="http://yuer.hujiang.com/">
+                            <span>育儿</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+             <li class="bl pass_x">
+               <div class="bl_t pass_x_t">
+                    <a target="_blank" href="http://bulo.hujiang.com/home" id="myBulo" rel="nofollow">学习工具</a><b></b>
+               </div>
+                <ul class="bl_b pass_x_b" id="MyHJInfo"></ul>
+            </li>
+        </ul>
+</div>
+    
+        <div class="top_warning plugin_sync_hotmessage " id="hotMessage"  data-url="/load/hotmessage?v=20130624153949"></div>
+    
+</div>
+<div class="pass_c2"></div>
+<script type="text/javascript">    HJRunMark.run("hjpassport")</script>
+<input name="header1$Passport1$hiUserID" type="hidden" id="header1_Passport1_hiUserID" class="hiUserID" value="0" />
+
+
+<div id="header">
+    <div id="banner">
+        <img src="/zt/2011pingxuan/images/banner.jpg" alt="评选banner" />
+        <a href="http://www.hujiang.com" title="沪江网">
+            <div id="logo">
+            </div>
+        </a>
+        <!--end: logo -->
+        <div class="guanzhu fs18">
+            <div id="divAttention" class='btn_guanzhu'>
+                <a onclick="addFollow();" href="javascript:void(0);"></a>
+            </div>
+            &nbsp;已有<span>120291</span>人关注
+        </div>
+        <div class="fenxiang">
+            <!-- JiaThis Button BEGIN -->
+            <div id="ckepop">
+                <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt" target="_blank">
+                    <img src="http://v2.jiathis.com/code_mini/images/btn/v1/jiathis1.gif" border="0" /></a>
+                <a class="jiathis_counter_style_display:none"></a>
+            </div>
+            <script type="text/javascript" src="http://v2.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+            <!-- JiaThis Button END -->
+        </div>
+    </div>
+    <!--end: banner -->
+    <div id="nav">
+        <ul>
+			<li class="bn" id="li_home"><a href="/zt/2011top/default/">首页</a></li>
+                         <li id="li_result"><a href="/zt/2011top/">评选结果</a></li>
+            <li id="li_en"><a href="/zt/2011top/langs/en/">英语</a></li>
+            <li id="li_jp"><a href="/zt/2011top/langs/jp/">日语</a></li>
+            <li id="li_min"><a href="/zt/2011top/langs/min/">小语种</a></li>
+			<li id="li_intro"><a href="/zt/2011top/intro/">活动介绍</a></li>
+            <li id="li_guize"><a href="/zt/2011top/#guize">评选规则</a></li>
+
+            <li id="li_choujiang"><a href="/zt/2011top/#choujiang">活动抽奖</a></li>
+            <li id="li_suisui"><a href="/zt/2011top/#suisui">网友评论</a></li>
+            <li id="li_app"><a href="/zt/2011top/app/">移动应用</a></li>
+        </ul>
+    </div>
+    <!--end: nav -->
+</div>
+<!--end: header -->
+<input name="header1$hiTagID" type="hidden" id="header1_hiTagID" class="hiTagID" value="-370" />
+<input name="header1$hiAlias" type="hidden" id="header1_hiAlias" class="hiAlias" value="top2011" />
+<input name="header1$hiTag" type="hidden" id="header1_hiTag" class="hiTag" value="沪江网2011外语教育评选榜" />
+	<div id="container">
+		<div class="content_block pt5">
+			   <h2 class="content_block_title_8"><span class="yc"> </span></h2>
+			   <div class="content_block_c fl">
+				  <ul>
+                  
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d170/">
+                                                    <img src="/zt/2011pingxuan/upImages/logo23357.jpg" alt="上海新东方学校" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                上海新东方学校</div>
+                                            <div class="jg_jj mb5">
+                                                新东方教育科技集团，18年办学经验，2011年末培训学员将达到1500万，业务涵盖早教，学…
+                                                <a href="/zt/2011top/d170/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_170">36145</span></span>
+                                                 <span class="fr" id="span_toupiao_170" >
+                                                     <a href="javascript:void(0);" id="tid_170" onclick="doVote(170,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d126/">
+                                                    <img src="http://i1.w.hjfile.cn/doc/201111/145-85logo58415.jpg" alt="VIPABC" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                VIPABC</div>
+                                            <div class="jg_jj mb5">
+                                                VIPABC集团旗下品牌创建于1998年，为专业的英语培训机构，以学习者需求为核心，以服务…
+                                                <a href="/zt/2011top/d126/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_126">35341</span></span>
+                                                 <span class="fr" id="span_toupiao_126" >
+                                                     <a href="javascript:void(0);" id="tid_126" onclick="doVote(126,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d147/">
+                                                    <img src="/zt/2011pingxuan/upImages/未标题-148429.jpg" alt="线话英语" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                线话英语</div>
+                                            <div class="jg_jj mb5">
+                                                【线话英语】是同步线话教育咨询（北京）有限公司旗下的一个外语教育品牌，创立于2005…
+                                                <a href="/zt/2011top/d147/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_147">31971</span></span>
+                                                 <span class="fr" id="span_toupiao_147" >
+                                                     <a href="javascript:void(0);" id="tid_147" onclick="doVote(147,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d128/">
+                                                    <img src="/zt/2011pingxuan/upImages/log   56207.jpg" alt="北京市海淀区齐进培训学校" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                北京市海淀区齐进培训学校</div>
+                                            <div class="jg_jj mb5">
+                                                齐进法语(Allons-Y Francais)，国内权威的专业法语培训机构，秉承“以诚求成，以实信人…
+                                                <a href="/zt/2011top/d128/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_128">31475</span></span>
+                                                 <span class="fr" id="span_toupiao_128" >
+                                                     <a href="javascript:void(0);" id="tid_128" onclick="doVote(128,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d167/">
+                                                    <img src="/zt/2011pingxuan/upImages/hjlogo58395.jpg" alt="KTOP连邦日语" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                KTOP连邦日语</div>
+                                            <div class="jg_jj mb5">
+                                                KTOP连邦日语隶属于连邦教育集团，是一家集研发、教学为一体的专业日语培训机构，始终…
+                                                <a href="/zt/2011top/d167/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_167">31309</span></span>
+                                                 <span class="fr" id="span_toupiao_167" >
+                                                     <a href="javascript:void(0);" id="tid_167" onclick="doVote(167,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d166/">
+                                                    <img src="/zt/2011pingxuan/upImages/未标题-148703.jpg" alt="韦博国际英语" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                韦博国际英语</div>
+                                            <div class="jg_jj mb5">
+                                                韦博国际英语携特有的英语口语培训及商务英语培训等特色培训方式，基于上海、辐射全国…
+                                                <a href="/zt/2011top/d166/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_166">31268</span></span>
+                                                 <span class="fr" id="span_toupiao_166" >
+                                                     <a href="javascript:void(0);" id="tid_166" onclick="doVote(166,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d113/">
+                                                    <img src="/zt/2011pingxuan/upImages/1458568673.jpg" alt="OLE西班牙语文化基地" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                OLE西班牙语文化基地</div>
+                                            <div class="jg_jj mb5">
+                                                OLE西班牙语文化基地
+国家办学许可证：教民3101107002050，是一所经国家教育局批准设…
+                                                <a href="/zt/2011top/d113/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_113">30775</span></span>
+                                                 <span class="fr" id="span_toupiao_113" >
+                                                     <a href="javascript:void(0);" id="tid_113" onclick="doVote(113,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d160/">
+                                                    <img src="/zt/2011pingxuan/upImages/B_conew162850.jpg" alt="青岛华兴日语学校" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                青岛华兴日语学校</div>
+                                            <div class="jg_jj mb5">
+                                                青岛华兴日语学校创立于1992年，是青岛第一家日语专修学校，中国海洋大学日语教学基地…
+                                                <a href="/zt/2011top/d160/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_160">30186</span></span>
+                                                 <span class="fr" id="span_toupiao_160" >
+                                                     <a href="javascript:void(0);" id="tid_160" onclick="doVote(160,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                               <div  class="shijia" style=""><img src="/zt/2011pingxuan/images/sj.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				  </ul>
+			   </div>
+			   <div class="clear"></div>
+		</div>
+
+<div class="content_block pt5">
+			   <h2 class="content_block_title_9"><span class="yc"> </span></h2>
+			   <div class="content_block_c fl">
+				  <ul>
+
+				  
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d130/">
+                                                    <img src="/zt/2011pingxuan/upImages/logo -110391.jpg" alt="上海大嘴外教" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                上海大嘴外教</div>
+                                            <div class="jg_jj mb5">
+                                                大嘴外教网是上海较早从事一对一私人外教、学校兼职全职外教、公司企业外教推荐的外教…
+                                                <a href="/zt/2011top/d130/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_130">29716</span></span>
+                                                 <span class="fr" id="span_toupiao_130" >
+                                                     <a href="javascript:void(0);" id="tid_130" onclick="doVote(130,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d129/">
+                                                    <img src="/zt/2011pingxuan/upImages/130001.jpg" alt="凯育培训" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                凯育培训</div>
+                                            <div class="jg_jj mb5">
+                                                凯育培训目前是全国范围内规模最大的专业从事小语种培训的教育机构，成立至今已有8年历…
+                                                <a href="/zt/2011top/d129/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_129">29110</span></span>
+                                                 <span class="fr" id="span_toupiao_129" >
+                                                     <a href="javascript:void(0);" id="tid_129" onclick="doVote(129,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d117/">
+                                                    <img src="/zt/2011pingxuan/upImages/aaalogo39147.jpg" alt="A.A.A.国际语言中心" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                A.A.A.国际语言中心</div>
+                                            <div class="jg_jj mb5">
+                                                来自巴黎的AAA，同时拥有法国教育部及巴黎教育委员颁发的教育认证证书（同时拥有这两个…
+                                                <a href="/zt/2011top/d117/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_117">28367</span></span>
+                                                 <span class="fr" id="span_toupiao_117" >
+                                                     <a href="javascript:void(0);" id="tid_117" onclick="doVote(117,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d148/">
+                                                    <img src="/zt/2011pingxuan/upImages/logo地址-0113029.jpg" alt="上海杨浦区环球雅思培训学校" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                上海杨浦区环球雅思培训学校</div>
+                                            <div class="jg_jj mb5">
+                                                环球雅思学校成立于2001年，2006年9月获得软银赛富基金数亿投资组建环球天下教育科技有…
+                                                <a href="/zt/2011top/d148/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_148">28160</span></span>
+                                                 <span class="fr" id="span_toupiao_148" >
+                                                     <a href="javascript:void(0);" id="tid_148" onclick="doVote(148,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d134/">
+                                                    <img src="/zt/2011pingxuan/upImages/logo75052.gif" alt="顶艺法语" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                顶艺法语</div>
+                                            <div class="jg_jj mb5">
+                                                顶艺法语是国内知名的法语培训品牌！成立近两年已经3000多名的学生，包括留法，移民魁…
+                                                <a href="/zt/2011top/d134/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_134">28078</span></span>
+                                                 <span class="fr" id="span_toupiao_134" >
+                                                     <a href="javascript:void(0);" id="tid_134" onclick="doVote(134,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d155/">
+                                                    <img src="http://i1.w.hjfile.cn/doc/201112/YIBEIJIAOYU43402.jpg" alt="易说堂电话英语" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                易说堂电话英语</div>
+                                            <div class="jg_jj mb5">
+                                                易说堂电话英语，全球领先的唯一综合电话外语培训机构,中国电话英语培训的创始者以及领…
+                                                <a href="/zt/2011top/d155/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_155">27942</span></span>
+                                                 <span class="fr" id="span_toupiao_155" >
+                                                     <a href="javascript:void(0);" id="tid_155" onclick="doVote(155,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d163/">
+                                                    <img src="/zt/2011pingxuan/upImages/logo32170.jpg" alt="昂立新日语" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                昂立新日语</div>
+                                            <div class="jg_jj mb5">
+                                                昂立教育是目前上海最大、全国知名的非学历教育培训机构和在校生学业辅导机构，其母体…
+                                                <a href="/zt/2011top/d163/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_163">25624</span></span>
+                                                 <span class="fr" id="span_toupiao_163" >
+                                                     <a href="javascript:void(0);" id="tid_163" onclick="doVote(163,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d114/">
+                                                    <img src="http://i1.w.hjfile.cn/doc/201111/ACB62251.gif" alt="朝日教育集团" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                朝日教育集团</div>
+                                            <div class="jg_jj mb5">
+                                                朝日培训1998年开始对外资企业开展企业内培的项目，至今有10年的历史。客户包括国际知…
+                                                <a href="/zt/2011top/d114/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_114">24354</span></span>
+                                                 <span class="fr" id="span_toupiao_114" >
+                                                     <a href="javascript:void(0);" id="tid_114" onclick="doVote(114,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d116/">
+                                                    <img src="/zt/2011pingxuan/upImages/aaalogo39147.jpg" alt="A.A.A.国际语言中心" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                A.A.A.国际语言中心</div>
+                                            <div class="jg_jj mb5">
+                                                来自巴黎的AAA，同时拥有法国教育部及巴黎教育委员颁发的教育认证证书（同时拥有这两个…
+                                                <a href="/zt/2011top/d116/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_116">20179</span></span>
+                                                 <span class="fr" id="span_toupiao_116" >
+                                                     <a href="javascript:void(0);" id="tid_116" onclick="doVote(116,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d133/">
+                                                    <img src="/zt/2011pingxuan/upImages/沪江196173.gif" alt="天之聪教育" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                天之聪教育</div>
+                                            <div class="jg_jj mb5">
+                                                Believe to Achieve 相信自己，就能成功。天之聪教育韩刚口译，独特的听力训练、脑记训…
+                                                <a href="/zt/2011top/d133/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_133">16999</span></span>
+                                                 <span class="fr" id="span_toupiao_133" >
+                                                     <a href="javascript:void(0);" id="tid_133" onclick="doVote(133,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d154/">
+                                                    <img src="/zt/2011pingxuan/upImages/LOGO腾迅要求尺寸42071.jpg" alt="必克英语" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                必克英语</div>
+                                            <div class="jg_jj mb5">
+                                                必克英语，全球电话英语培训领航者、中国电话英语培训及教学系统的创始和开发者。总部…
+                                                <a href="/zt/2011top/d154/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_154">16022</span></span>
+                                                 <span class="fr" id="span_toupiao_154" >
+                                                     <a href="javascript:void(0);" id="tid_154" onclick="doVote(154,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   <li>
+                            <div class="jg_block">
+                                            <div class="jg_logo">
+                                                <a href="/zt/2011top/d152/">
+                                                    <img src="/zt/2011pingxuan/upImages/未标题-147835.jpg" alt="麦考瑞雅思" width="145" height="85"/>
+                                                </a>
+                                            </div>
+                                            <div class="jg_title red">
+                                                麦考瑞雅思</div>
+                                            <div class="jg_jj mb5">
+                                                麦考瑞雅思作为全国唯一开在复旦大学城的专业雅思培训机构，凭借高端而科学的快速突破…
+                                                <a href="/zt/2011top/d152/">更多&gt;&gt;</a>
+                                            </div>
+                                            <div class="toupiao">
+                                                <span class="fl red fs16">票数：<span id="votes_152">15960</span></span>
+                                                 <span class="fr" id="span_toupiao_152" >
+                                                     <a href="javascript:void(0);" id="tid_152" onclick="doVote(152,this);">
+                                                        <img src="/zt/2011pingxuan/images/btn_toupiao.gif" alt="投票" />
+                                                    </a>
+                                                </span>
+                                              	<div  class="tuijian" style=""><img src="/zt/2011pingxuan/images/tuijian.gif" /></div>
+                                               
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+				   </li>
+                            
+				   
+				  </ul>
+			   </div>
+			   <div class="clear"></div>
+		</div>
+
+		<div class="content_block">
+		   <h2 class="content_block_title_10"><span class="yc"> </span></h2>
+		   <div class="content_block_c roster">
+				<strong>特等奖（1名）：</strong> 古凌<br />
+<strong>一等奖 （3名）：</strong>无敌葱宝妹    &nbsp;&nbsp;lxfx       &nbsp;&nbsp;啊呜啊妙<br />
+<strong>二等奖 （5名）：</strong>coye89    &nbsp;&nbsp; 妍新    &nbsp;&nbsp;为爱定格时间    &nbsp;&nbsp;lzw_8898     &nbsp;&nbsp;李进银<br />
+<strong>三等奖 （10名）：</strong>mlsxb     &nbsp;&nbsp;飘逝的遗憾    &nbsp;&nbsp;工藤兰77    &nbsp;&nbsp;yaobecky   &nbsp;&nbsp; 雪寒柳飞    &nbsp;&nbsp;楼台月     &nbsp;&nbsp;flyingshoe97     &nbsp;&nbsp;pingting122     &nbsp;&nbsp;阿水and辉    &nbsp;&nbsp;ojiliar<br />
+
+			</div>
+		</div>
+
+	</div><!--end: container -->
+
+	<div id="footer">
+            <div class="ftLink">
+                <a target="_blank" href="/about/" class="bluelink">关于沪江</a>&nbsp;|&nbsp; <a href="http://blog.hujiang.com/hjpeople"
+                    target="_blank" class="bluelink">沪江动态</a>&nbsp;|&nbsp; <a target="_blank" href="http://a5.hujiang.com/page/help"
+                        class="bluelink">自助广告</a>&nbsp;|&nbsp; <a href="http://jobs.hujiang.com/" target="_blank"
+                            class="bluelink">在沪江工作</a>&nbsp;|&nbsp; <a href="/zt/about/biz/" target="_blank"
+                                class="bluelink">商务合作</a>&nbsp;|&nbsp; <a target="_blank" href="/zt/about/contact/"
+                                    class="bluelink">联系我们</a>&nbsp;| <a target="_blank" href="http://class.hujiang.com/qipei/"
+                                        class="bluelink">企业培训</a> &nbsp;CopyRight &copy; 沪江网 All
+                Rights Reserved. 2011&nbsp; <a title="沪ICP证" onclick="this.href='http://www.miitbeian.gov.cn'"
+                    target="_blank" href="javascript:;">沪B2-20110096</a>
+            </div>
+        </div>
+	
+	<!--end: footer -->
+</div><!--end: wrapper -->
+
+<!--统计代码在这里-->
+<div class="hide"></div>
+</body>
+</html>

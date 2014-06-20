@@ -1,0 +1,808 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content="网易电影票,买电影票,在线购票,影讯,热映影片"/>
+<meta name="description" content="网易电影票是一个能够让您在线购买电影票的在线选座平台，同时网易电影票还提供电影排期，影院信息查询等服务，方便您足不出户，在家中在线购票。看电影，来网易电影票选座"/>
+<title>网易电影票-电影票,购买电影票,电影排期,预告片,电影院查询</title>
+
+<link rel="stylesheet" href="http://pimg1.126.net/movie/css/base.css?v=26327"/>
+<link rel="stylesheet" href="http://pimg1.126.net/movie/css/core.css?v=26327"/>
+<link rel="stylesheet" href="http://pimg1.126.net/movie/css/activity/low/lowPriceMovie.css?v=26327"/>
+<script src="http://pimg1.126.net/movie/js/jquery-1.4.2.js?v=201205221605"></script>
+	
+	<script src="http://pimg1.126.net/movie/js/easyCore.js?v=26327"></script><script src="http://pimg1.126.net/movie/js/dialog.js?v=26327"></script><script src="http://pimg1.126.net/movie/js/autoComplete.js?v=26327"></script>
+
+  <script>
+  	Core.cdnBaseUrl="http://pimg1.126.net/movie";
+  	Core.curCity={'name':'哈尔滨','id':'1091','spell':'haerbin'};
+  </script>
+
+	
+	
+</head>
+<body>
+<noscript><div id="noScript">
+<div><h2>请开启浏览器的Javascript功能</h2><p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" target="_blank">猛击这里</a>！</p></div>
+</div></noscript>
+
+<!--自定义模板样式 开始-->
+<!--配置项-->  
+<!--背景色-->    
+<!--前景色-->
+<!--头图-->
+<!--头图链接-->
+<!--客户端下载链接-->
+<!--活动说明-->
+<!--自定义模板样式 结束-->
+
+<!--根据活动类型，生成不同的“立即购票”按钮的链接-->
+<style type="text/css">
+body{
+	background:#feeba8 url(http://pimg1.126.net/movie/product/activity/20140401205620782.jpg) center 137px no-repeat;}
+.header{
+	position:relative;
+	width:960px;
+	/*height:px;*/
+	margin:0 auto;
+	/*加background是为窗口缩小后，拖动滚动条不出现空白*/
+	/*background:#feeba8 url(http://pimg1.126.net/movie/product/activity/20140401205620782.jpg) center 0 no-repeat;*/
+    overflow: hidden;
+    }
+.header .link{
+	position:absolute;
+	left:0;
+	top:0;
+	width:960px;
+    outline: none;
+    height: 100%;
+	/*height:px;*/
+    }
+.lowLine{
+	background:#222;}
+.localCityName,.hotPlayingText,.hotPlayingMore a{
+	color:#222;}
+.btnBar{
+	color:#222;}
+.btnChange .triangle{
+	top:13px;
+	 _top:10px;
+	border-width:7px;
+	border-color:#222 transparent transparent transparent;}
+.active .triangle{
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	transform:rotate(180deg);
+	_border-width:8px;
+	_top:8px;
+	border-color:transparent transparent #222 transparent\9;
+	border-style:none dashed solid dashed\9;
+}
+/*IE9 IE10重设*/
+:root .active .triangle{
+	border-style:solid dashed none dashed;
+	border-color:#222 transparent transparent transparent;}
+</style>
+
+    <nav id="topNav">
+        <div id="topNavWrap">
+            <div id="topNavLeft"><script>Core.navInit("http://pimg1.126.net/movie","","26327","")</script></div>
+            <ul id="topNavRight">
+                <li><a href="http://order.mall.163.com/movie/list.html" id="myEpay" notice="false" user="y" target="_blank">我的订单</a>&nbsp;&nbsp;<span id="topEpayInfo"></span>|</li>
+                <li><a href="http://piao.163.com/order/code_list.html" target="_blank" user="y" rel="nofollow">我的优惠券</a>&nbsp;&nbsp;|</li>
+                <li><a href="http://mall.163.com/help/movie.html" target="_blank">帮助</a>&nbsp;&nbsp;|</li>
+                <li><a href="http://feedback.zxkf.163.com/movie/show.html?flag=1" target="_blank">提意见</a>&nbsp;&nbsp;|</li>
+                <li class="last"><a href="javascript:;" target="_blank" onMouseOver="$(this).parent().addClass('kf');" onMouseOut="$(this).parent().removeClass('kf');">联系客服</a>&nbsp;&nbsp;
+                    <div class="none">客服电话：020-83568090-2</div>
+                </li>
+            </ul>
+            <script>
+            
+            </script>
+        </div>
+    </nav>
+<header id="docHead">
+	<div id="docHeadWrap">	
+        	<a href="http://mall.163.com" class="logoLnk" title="网易商城" hidefocus="true"><h1 rel="nofollow" style="font-size:0px;">网易商城<img src="http://pimg1.126.net/movie/images/logos/mall.png?26327" alt="网易商城" title="网易商城"/></h1></a>
+	    	<a href="http://piao.163.com" class="homeLnk" onFocus="this.blur();"></a>
+    
+		<div id="switchTopCity" class="switchTopCity">
+		    <div class="curCity  "  id="curCity" pid="1091" pspell="haerbin">
+		    	<span class="cityName" id="myCity" pid="1091" pspell="haerbin">哈尔滨</span><span class="shiftBar" >[切换城市]</span><i class="triangle"></i>
+	            <input id="cityUrl" class="cityUrl" type="hidden" value="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=haerbin">
+		            <div class="cityList" id="cityTopList">
+	                    <div class="title">
+                          	<a href="javascript:;" class="close"></a>
+		                    <input type="text" class="cityTopSearch textGray" value="请输入城市或城市拼音" autocomplete="off" maxlength="15">
+                            <input type="submit" title="" class="cityTopSearchBtn" value="">
+		                    <ul class="titleChar">
+		                    	<li class="on first" rel="#cityList_0">热门</li>
+		                    	<li class="" rel="#cityList_1">A~G</li>
+		                    	<li class="" rel="#cityList_2">H~L</li>
+		                    	<li class="" rel="#cityList_3">M~T</li>
+		                    	<li class="" rel="#cityList_4">W~Z</li>
+		                    </ul>
+	                    </div>
+	                    <div id="cityListBox" class="cityListBox">
+	                    	<dl id="cityList_0" class="hotCity">
+	                    		<dd>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=beijing">北京</a>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shanghai">上海</a>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guangzhou">广州</a>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shenzhen">深圳</a>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hangzhou">杭州</a>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanjing">南京</a>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chengdu">成都</a>
+			                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chongqing">重庆</a>
+	                            </dd>
+	                    	</dl>
+	                        <dl id="cityList_1" class="none">
+		                                <dt>A</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=anlu">安陆</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=anning">安宁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ankang">安康</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=anshun">安顺</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=anyang">安阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=anqing">安庆</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=anshan">鞍山</a>
+		                                </dd>
+		                                <dt>B</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=bijie">毕节</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=bazhou">霸州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=bazhong">巴中</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=baishan">白山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=baoshan">保山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=baise">百色</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=bayannaoer">巴彦淖尔</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=baiyin">白银</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=bozhou">亳州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=beihai">北海</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=benxi">本溪</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=bangbu">蚌埠</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=baoding">保定</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=binzhou">滨州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=baotou">包头</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=baoji">宝鸡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=beijing">北京</a>
+		                                </dd>
+		                                <dt>C</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=conghua">从化</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changge">长葛</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chibi">赤壁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chengde">承德</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changji">昌吉</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chizhou">池州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chaohu">巢湖</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changzhi">长治</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chifeng">赤峰</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chaozhou">潮州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chuzhou">滁州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=cangzhou">沧州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changshu">常熟</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chenzhou">郴州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changde">常德</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changzhou">常州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changchun">长春</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changsha">长沙</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chuxiong">楚雄</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=cixi">慈溪</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chengdu">成都</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chongqing">重庆</a>
+		                                </dd>
+		                                <dt>D</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dongtai">东台</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dunhuang">敦煌</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dafeng">大丰</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=duyun">都匀</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dongyang">东阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=donggang">东港</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=diqing">迪庆</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=danjiangkou">丹江口</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dashiqiao">大石桥</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=danyang">丹阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dingxi">定西</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dujiangyan">都江堰</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dazhou">达州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=datong">大同</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=daqing">大庆</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dandong">丹东</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dezhou">德州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=deyang">德阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dongying">东营</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dali">大理</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dalian">大连</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dongguan">东莞</a>
+		                                </dd>
+		                                <dt>E</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=eerduosi">鄂尔多斯</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ezhou">鄂州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=enshi">恩施</a>
+		                                </dd>
+		                                <dt>F</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fengcheng2">丰城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fujian2">福建</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fuqing">福清</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fuyang1">阜阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fuzhou1">抚州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fangchenggang">防城港</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fuxin">阜新</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fushun">抚顺</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fuyang">富阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=foshan">佛山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fuzhou">福州</a>
+		                                </dd>
+		                                <dt>G</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guangyuan">广元</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guixi">贵溪</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ganzi">甘孜</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=gaizhou">盖州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guyuan">固原</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=gaoyou">高邮</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guanghan">广汉</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guigang">贵港</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ganzhou">赣州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guiyang">贵阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guilin">桂林</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guangzhou">广州</a>
+		                                </dd>
+	                    	</dl>
+	                        <dl id="cityList_2" class="none">
+		                                <dt>H</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=haiyan">海盐</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hulin">虎林</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huaying">华蓥</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=houma">侯马</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=heshan">鹤山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=honghu">洪湖</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huaihua1">怀化</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huaibei">淮北</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hengshui">衡水</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hechi">河池</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hegang">鹤岗</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=haimen">海门</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hebi">鹤壁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=haian">海安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huanggang">黄冈</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hanzhong">汉中</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hezhou">贺州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hulunbeier">呼伦贝尔</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huangshi">黄石</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=heyuan">河源</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huangshan">黄山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huainan">淮南</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=handan">邯郸</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huaian">淮安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=haikou">海口</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huldao">葫芦岛</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=heze">菏泽</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hengyang">衡阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hefei">合肥</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huzhou">湖州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=haerbin">哈尔滨</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=honghe">红河</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huizhou">惠州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huhehaote">呼和浩特</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hangzhou">杭州</a>
+		                                </dd>
+		                                <dt>J</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiangshan">江山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiangyou">江油</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jinjinag">晋江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jilin2">吉林</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jintan">金坛</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jimo">即墨</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jian">吉安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jinzhong">晋中</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jurong">句容</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiuquan">酒泉</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiaozhou">胶州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiayuguan">嘉峪关</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jixi">鸡西</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jingmen">荆门</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jingzhou">荆州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiyuan">济源</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jinzhou">锦州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiaozuo">焦作</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jieyang">揭阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiangyin">江阴</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jingdezhen">景德镇</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jincheng">晋城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiangmen">江门</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jinan">济南</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiamusi">佳木斯</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jining">济宁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiujiang">九江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jingjiang">靖江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiande">建德</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jinhua">金华</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jiaxing">嘉兴</a>
+		                                </dd>
+		                                <dt>K</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kelamayi">克拉玛依</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kashi">喀什</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kaili">凯里</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kaiping">开平</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kaifeng">开封</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kunshan">昆山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kunming">昆明</a>
+		                                </dd>
+		                                <dt>L</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lianjiang">廉江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lianzhou">连州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=laizhou">莱州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=luquanshi">鹿泉市</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liling">醴陵</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lichuan">利川</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=leping">乐平</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=linqing">临清</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=longkou">龙口</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=longquan">龙泉</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lvliang">吕梁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lasa">拉萨</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lijiang">丽江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lincang">临沧</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=longnan">陇南</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=luohe">漯河</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liaoyang">辽阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=laiyang">莱阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=linhai">临海</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liupanshui">六盘水</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=leiyang">耒阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liaoyuan">辽源</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liuan">六安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=linan">临安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liyang">溧阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=luzhou">泸州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=longyan">龙岩</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lishui">丽水</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lianyungang">连云港</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=linyi">临沂</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liuzhou">柳州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=laiwu">莱芜</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liaocheng">聊城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=leshan">乐山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=linfen">临汾</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=luoyang2">洛阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=langfang">廊坊</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=loudi">娄底</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lanzhou">兰州</a>
+		                                </dd>
+	                    	</dl>
+	                        <dl id="cityList_3" class="none">
+		                                <dt>M</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=mangshi">芒市</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=mianzhu">绵竹</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=macheng">麻城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=meishan">眉山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=meizhou">梅州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=maoming">茂名</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=mudanjiang">牡丹江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=mianyang">绵阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=maanshan">马鞍山</a>
+		                                </dd>
+		                                <dt>N</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ningguo">宁国</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanping">南平</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ningde">宁德</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=neijiang">内江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanchong">南充</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanyang">南阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanchang">南昌</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanjing">南京</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanning">南宁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ningbo">宁波</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nantong">南通</a>
+		                                </dd>
+		                                <dt>P</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=puer">普洱</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=pizhou">邳州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=pingliang">平凉</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=panzhihua">攀枝花</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=pingxiang">萍乡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=panjin">盘锦</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=puyang">濮阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=pingdingshan">平顶山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=putian">莆田</a>
+		                                </dd>
+		                                <dt>Q</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qingzhou">青州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qionghai">琼海</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qujing">曲靖</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qianjiang">潜江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qinzhou">钦州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qianan">迁安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qidong">启东</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qiqihaer">齐齐哈尔</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qinhuangdao">秦皇岛</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=quanzhou">泉州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qingyuan">清远</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qingdao">青岛</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=quzhou">衢州</a>
+		                                </dd>
+		                                <dt>R</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=renhuai">仁怀</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=rugao">如皋</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=rizhao">日照</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ruian">瑞安</a>
+		                                </dd>
+		                                <dt>S</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shifang">什邡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shangzhi">尚志</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shouguang">寿光</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=sanhe">三河市</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shaoshan">韶山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shangyu">上虞</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=suzhou1">宿州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shanwei">汕尾</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shangluo">商洛</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=sheyang">射阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=suihua">绥化</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=suizhou">随州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=sanmenxia">三门峡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shizuishan">石嘴山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=siping">四平</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=suining">遂宁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shihezi">石河子</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=songyuan">松原</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shangrao">上饶</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shaoguan">韶关</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=sanya">三亚</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shiyan">十堰</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shangqiu">商丘</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=suqian">宿迁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shantou">汕头</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shaoyang">邵阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=sanming">三明</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shaoxing">绍兴</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=suzhou">苏州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shijiazhuang">石家庄</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shenzhen">深圳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shenyang">沈阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shanghai">上海</a>
+		                                </dd>
+		                                <dt>T</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=taixing">泰兴</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tongren">铜仁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tongliao">通辽</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tongchuan">铜川</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tieling">铁岭</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tianmen">天门</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tonghua">通化</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tianshui">天水</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tengzhou">滕州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tongling">铜陵</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tongxiang">桐乡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=taian">泰安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=taizhou2">泰州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=taizhou">台州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tangshan">唐山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=taiyuan">太原</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tianjin">天津</a>
+		                                </dd>
+	                    	</dl>
+	                        <dl id="cityList_4" class="none">
+		                                <dt>W</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wulanhaote">乌兰浩特</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wuhai">乌海</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wuwei">武威</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=weinan">渭南</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wulumuqi">乌鲁木齐</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wuhu">芜湖</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wenzhou">温州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wujiang">吴江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=weifang">潍坊</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=weihai">威海</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wuxi">无锡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wuzhou">梧州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wuhan">武汉</a>
+		                                </dd>
+		                                <dt>X</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xinghua">兴化</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xiangxiang">湘乡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xichang">西昌</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xingcheng">兴城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xiangxi">湘西</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xishuangbanna">西双版纳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xiantao">仙桃</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xianning">咸宁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xuchang">许昌</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xiaogan">孝感</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xuancheng">宣城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xinyu">新余</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xinyang">信阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xianyang">咸阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xining">西宁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xiangtan2">湘潭</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xinxiang">新乡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xiangyang">襄阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xingtai">邢台</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xiamen">厦门</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xuzhou">徐州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xian2">西安</a>
+		                                </dd>
+		                                <dt>Y</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yongan">永安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yongkang">永康</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yanzhou">兖州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yuyao">余姚</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yiwu">义乌</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yulin1">玉林</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yunfu">云浮</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yingtan">鹰潭</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yangzhong">扬中</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yuxi">玉溪</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yiyang">益阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yongzhou">永州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yanan">延安</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yibin">宜宾</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yichun">宜春</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yanbian">延边</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yulin">榆林</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yueyang">岳阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yixing">宜兴</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yuncheng">运城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yinchuan">银川</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yancheng">盐城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yili">伊犁</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yingkou">营口</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yangquan">阳泉</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yichang">宜昌</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yangzhou">扬州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yangjiang">阳江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yizheng">仪征</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=yantai">烟台</a>
+		                                </dd>
+		                                <dt>Z</dt>
+		                                <dd>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhuji">诸暨</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zoucheng">邹城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhongwei">中卫</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhangye">张掖</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhangjiajie">张家界</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhucheng">诸城</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=ziyang">资阳</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zunyi">遵义</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhoushan">舟山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhangjiakou">张家口</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhangjiagang">张家港</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhangzhou">漳州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zaozhuang">枣庄</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhuhai">珠海</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zibo">淄博</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zigong">自贡</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhumadian">驻马店</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhuzhou">株洲</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhaoqing">肇庆</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhenjiang">镇江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhongshan">中山</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhengzhou">郑州</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhanjiang">湛江</a>
+		                                        <a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhoukou">周口</a>
+		                                </dd>
+	                    	</dl>
+	                    </div>
+		            </div>
+		    </div>
+	    </div>
+	    <div class="search">
+	        <div class="ie6">
+		        <form action="/search.html#from=search" id="top_sform">
+		            <input type="text" value="请输入影片或影院关键字" class="text textGray" name="keywords" id="mvTopSearch" autocomplete="off" maxlength="20"/>
+		            <input type="hidden" name="city" value="haerbin" />
+		            <input type="submit" value=""  class="sub" id="topSearchBtn" title=""/>
+		        </form>
+	        </div>
+	    </div>    	
+</div></header>
+<section class="searchBoxInd">
+	<div class="searchWrap">
+    	<ul class="shift">    		
+    		<li class="dy">
+				<a  class="" href="/haerbin/movie/page-1-type-0.html">电影</a>
+			</li>
+    		<li class="yy">
+				<a  class=""  href="/haerbin/cinema/category-ALL-area-0-type-0.html?keywords=#from=cinema">影院</a>
+			</li>
+    		<li class="tg">
+				<a  class=""  href="/haerbin/groupbuy/index.html">特惠</a>
+			</li>
+             <li class="khd" id="cltLink">
+            	<a id="cltLink_btn" target="_blank" class="" href="/haerbin/client.html#from=daohang">客户端</a>
+                <dl  id="cltList">
+                	<dd><a href="/haerbin/iphone.html">iPhone版</a></dd>
+                	<dd><a href="/haerbin/android.html">Android版</a></dd>                    
+                </dl>
+            </li> 
+    	</ul>
+        <a href="javascript:;" id="fastBuyNav" class="fastBuyNav"></a>
+    </div>
+</section>
+<!--头图位置-->
+<div class="header">
+    <img class="headerImg" src="http://pimg1.126.net/movie/product/activity/20140401205620782.jpg" />
+    <a href="http://piao.163.com/" target="_blank" class="link"  hidefocus="true">&nbsp;</a>
+</div>
+
+<div class="lowMain">
+	<div class="lowTop clearfix">
+		<div class="lowTopLeft"><p><strong><span style="font-size:16px;">活动说明：</span></strong></p><p><span style="font-size:14px;">1、有效期至：2014年5月31日前（法定节日能否使用，以影院公告为准）</span></p><p><span style="font-size:14px;">2、仅支持兑换2D场次（IMAX、VIP厅、首映礼、明星见面会除外）</span></p><p><span style="font-size:14px;">3、凭兑换短信直接到影院前台兑换</span></p><p><span style="font-size:14px;">4、特殊影片需补差价，具体补差金额以影院公告为准</span></p><p><span style="font-size:14px;">5、推荐精彩电影：《</span><span style="font-size:14px;">盟军夺宝队》3.28上映；《追爱大布局》4.1上映；《整容日记》4.4上映；《魔警》4.18上映；《最佳嫌疑人》4.18上映； </span></p><p><span style="font-size:14px;">6、客服电话：020-83568090转2</span></p></div>
+	    <div class="lowTopRight">
+	    	<a href="https://itunes.apple.com/cn/app/id628309462?ls=1&mt=8" class="link_ios" title="苹果手机下载" target="_blank"></a>
+            <a href="http://piao.163.com/dy/a" class="link_android" title="安卓手机下载"></a>
+            <span class="client_img"><img src="http://pimg1.126.net/movie/images/activity/low/client_img.jpg?v=26327" width="51" height="89" alt="" /></span>
+	    </div>
+	</div>
+    <div class="lowTitle" id="lowTitle">
+    	<div class="lowLine"></div>        
+        <div class="lowCityList">
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=beijing">北京</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shanghai">上海</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guangzhou">广州</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shenzhen">深圳</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=tianjin">天津</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chongqing">重庆</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanjing">南京</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=chengdu">成都</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=shenyang">沈阳</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changsha">长沙</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=changshu">常熟</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dalian">大连</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=dongguan">东莞</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=fuyang1">阜阳</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=guiyang">贵阳</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=haerbin">哈尔滨</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=hefei">合肥</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huaihua1">怀化</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huhehaote">呼和浩特</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=huldao">葫芦岛</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=jinhua">金华</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=kunming">昆明</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=lanzhou">兰州</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=linyi">临沂</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=liyang">溧阳</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=longyan">龙岩</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=luoyang2">洛阳</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanchang">南昌</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=nanning">南宁</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=qingdao">青岛</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=rugao">如皋</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=suqian">宿迁</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=weifang">潍坊</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=wuxi">无锡</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=xuzhou">徐州</a>
+            	<a href="/movie/xingMeilowPriceMovie.html?activityId=192&amp;city=zhuzhou">株洲</a>
+        </div>
+        <div class="localCityName">哈尔滨</div>	
+        <div class="btnChange" id="btnChange">
+        	<span class="btnBar">[切换城市]</span>
+            <i class="triangle"></i>
+        </div>
+	</div>
+	<ul class="couponList clearfix">
+	    <li>
+            <div class="pngBg"></div>
+	        <dl>
+	            <dt><h4><a title="星美国际影城(盛恒基店)" target="_blank" href="http://piao.163.com/cinema/1675.html">星美国际影城(盛恒基店)</a></h4></dt>
+	            <dd class="add">哈尔滨松北区中源大道8999号盛恒基生活广场5层[<a href="javascript:;" id='1675' onClick="Core.cinemaMapDialog(this.id);">查看地图</a>]</dd>
+	            <dd>0451-88030071</dd>
+	        </dl>
+	        <div class="couponPrice">
+	            <span class="price">活动价：<em class="imp">29<i style="font-size:12px;color:#000;">元起</i></em></span>
+	        </div>
+	        	<a target="_blank" class="btnBuy" href="/order/group_buy.html?deal_id=1100">立即购票</a>
+        </li>
+	</ul>
+
+        <div class="hotPlaying">
+            <div class="lowLine"></div>        
+            <div class="hotPlayingText">正在热映</div>
+            <div class="hotPlayingMore">
+            <a autofocus="true" href="//piao.163.com" target="_blank">查看更多&gt;&gt;</a></div>
+        </div>
+        <ul class="lowMovieList clearfix">
+                    <li class="movieListItem">
+                        <div class="movieListItemImg poster">
+                            <img src="http://pimg1.126.net/movie/product/movie/139773170154110625_148_197.jpg" style="width:100%;height:100%;">
+                        </div>
+                        <div class="movieListItemInfo">
+                            <em class="mLInfoScore">8.<i>0</i></em>
+                            <h2 class="mLInfoName"><a class="mLInfoNameLink" href="/haerbin/movie/43918.html" title="同桌的你" target="_blank">同桌的你</a></h2>          
+                        </div>
+                        <div class="movieListItemBuy">
+                            
+                            <a href="/haerbin/movie/43918.html" class="btn_orange66" target="_blank">选座购票</a>
+                        </div>
+                    </li>
+                    <li class="movieListItem">
+                        <div class="movieListItemImg poster">
+                            <img src="http://pimg1.126.net/movie/product/movie/139770287360710314_148_197.jpg" style="width:100%;height:100%;">
+                                <i class="sanD"></i>
+                        </div>
+                        <div class="movieListItemInfo">
+                            <em class="mLInfoScore">7.<i>5</i></em>
+                            <h2 class="mLInfoName"><a class="mLInfoNameLink" href="/haerbin/movie/43488.html" title="冰封" target="_blank">冰封</a></h2>          
+                        </div>
+                        <div class="movieListItemBuy">
+                            
+                            <a href="/haerbin/movie/43488.html" class="btn_orange66" target="_blank">选座购票</a>
+                        </div>
+                    </li>
+                    <li class="movieListItem">
+                        <div class="movieListItemImg poster">
+                            <img src="http://pimg1.126.net/movie/product/movie/139530023223910046_148_197.jpg" style="width:100%;height:100%;">
+                        </div>
+                        <div class="movieListItemInfo">
+                            <em class="mLInfoScore">8.<i>0</i></em>
+                            <h2 class="mLInfoName"><a class="mLInfoNameLink" href="/haerbin/movie/44010.html" title="魔警" target="_blank">魔警</a></h2>          
+                        </div>
+                        <div class="movieListItemBuy">
+                            
+                            <a href="/haerbin/movie/44010.html" class="btn_orange66" target="_blank">选座购票</a>
+                        </div>
+                    </li>
+                    <li class="movieListItem">
+                        <div class="movieListItemImg poster">
+                            <img src="http://pimg1.126.net/movie/product/movie/139573679768110145_148_197.jpg" style="width:100%;height:100%;">
+                                <i class="imax"></i>
+                        </div>
+                        <div class="movieListItemInfo">
+                            <em class="mLInfoScore">9.<i>2</i></em>
+                            <h2 class="mLInfoName"><a class="mLInfoNameLink" href="/haerbin/movie/43783.html" title="美国队长2" target="_blank">美国队长2</a></h2>          
+                        </div>
+                        <div class="movieListItemBuy">
+                            
+                            <a href="/haerbin/movie/43783.html" class="btn_orange66" target="_blank">选座购票</a>
+                        </div>
+                    </li>
+                    <li class="movieListItem">
+                        <div class="movieListItemImg poster">
+                            <img src="http://pimg1.126.net/movie/product/movie/139442051201211201_148_197.jpg" style="width:100%;height:100%;">
+                                <i class="imax"></i>
+                        </div>
+                        <div class="movieListItemInfo">
+                            <em class="mLInfoScore">8.<i>9</i></em>
+                            <h2 class="mLInfoName"><a class="mLInfoNameLink" href="/haerbin/movie/43705.html" title="超验骇客" target="_blank">超验骇客</a></h2>          
+                        </div>
+                        <div class="movieListItemBuy">
+                            
+                            <a href="/haerbin/movie/43705.html" class="btn_orange66" target="_blank">选座购票</a>
+                        </div>
+                    </li>
+        </ul>
+
+
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+
+<script type="text/javascript" src="http://pimg1.126.net/movie/js/movie/mvCommon.js"></script>
+<script type="text/javascript" src="http://pimg1.126.net/movie/js/activity/low/lowPriceMovie.js"></script>
+
+<script src="http://analytics.163.com/ntes.js"></script>
+<script>_ntes_nacc = "dianying";neteaseTracker();</script>
+</body>
+</html>
+

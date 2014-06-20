@@ -1,0 +1,1052 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>_期货行情_网易财经</title>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta name="author" content="网易财经" />
+<meta name="Copyright" content="Netease" />
+<meta name="keywords" content="，期货行情,商品期货,网易财经" />
+<meta name="description" content="网易期货行情,以专业、全面、准确的方式提供期货行情报价服务，覆盖国内主要市场期货品种，帮助投资者把握期货市场投资先机。" />
+<base target="_blank" />
+<link href="http://img1.cache.netease.com/f2e/finance/preterite/quotestyle.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/f2e/finance/preterite/static/futures/css/market1102.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/f2e/finance/preterite/static/futures/css/fix.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#global_slide ul { display: none}
+#global_slide .current { display: block}
+
+/*行情搜素框*/
+.tcbox { float:left; position: absolute; width: 270px; z-index: 99; top: 25px; left: 0; margin-left:0px; margin-top:6px; border: 1px solid #DCDDDD; background:#FFFFFF;}
+.tbText { border-collapse: collapse; line-height: 20px; font-size: 12px; text-align: left; color:#2B2B2B; width: 268px; margin-top:3px;}
+.tbText th,.tbText td { height: 20px; padding: 0 6px; text-align: left;}
+.tbText th { background: #E2F7FD; color:#1E50A2; font-weight:normal;}
+.tbText .nline {padding: 1px; color:#2B2B2B; display: block; outline-color: -moz-use-text-color; outline-style: none; outline-width: medium; text-decoration: none; width: 100%;}
+.tbText tr.alter td { background: #CCEDF7; }
+.tbText tr:hover {background: #CCEDF7;}
+.channel h3 {
+float: left;
+margin-left: 6px;
+}
+</style>
+</head>
+<body>
+<!-- 导航 -->
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.1.css" /> 
+<script charset="gb2312" src="http://img3.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script> 
+<div class="NTES-nav"> 
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a> |</span> 
+    <div class="rightCon"> 
+		<div class="NTES-link"> 
+			<a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a> 
+		</div> 
+		<a href="http://www.163.com/rss"><img width="26" height="14" border="0" src="http://img3.cache.netease.com/cnews/img07/rss.gif" class="rss" alt="Rss"></a> 
+	</div> 
+</div> 
+
+<script> 
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var logiframe = "";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"..." : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO || logstate=="1") {
+		var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+		if(mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入我的邮箱</a>';
+			}
+		if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入我的博客</a><a href="http://photo.163.com/?username='+passport+'\">进入我的相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入我的约会</a><a href="http://t.163.com">进入我的微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				logiframe = '<iframe allowTransparency=\"true\" style=\"width: 56px; height:26px; float:left; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.'+logdomain+'/mailinfo/shownewmsg_www_1222.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div>'+logiframe+'|<a class=\"ntes-usercenter-loginout\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+		};
+	}
+})
+//]]>
+</script><!-- nav end-->
+<span class="blank1"></span>
+<div class="channel">
+<h1><a id="top" href="http://money.163.com/"><img height="45" width="130" alt="网易财经" src="http://img1.cache.netease.com/finance/img07/index/moneylogo2.gif"/><br/>网易财经</a></h1>
+<h2><img src="http://img1.cache.netease.com/f2e/finance/preterite/static/futures/newqhlogo.gif" width="79" height="37" alt="期货行情" /></h2>
+<h3><a href="http://www.163.com/">网易首页</a> &gt; <a href="http://money.163.com/">财经频道</a> &gt; <a href="http://money.163.com/futures/">期货频道</a> &gt; <a href="http://quotes.money.163.com/stock/#FU">期货行情</a> &gt; <a href="http://quotes.money.163.com/futures/hq/.html"></a></h3>
+</div>
+<div class="nav_channel">
+<span class="nav">	
+	<span style="padding:0px 5px 0 5px; color:#FFE284; font-weight:bold">行情</span>
+	<a href="http://quotes.money.163.com/">沪深</a>
+	<a href="http://quotes.money.163.com/#FN">基金</a>
+	<a href="http://quotes.money.163.com/#HK">港股</a>
+	<a href="http://quotes.money.163.com/#US">美股</a>
+	<a href="http://quotes.money.163.com/#FX">外汇</a>
+	<a href="http://quotes.money.163.com/#FU">期货</a>
+	<span style="background:url(http://quotes.money.163.com/images/img_01.gif) left no-repeat; padding:0px 5px 0 10px; color:#FFE284; font-weight:bold">资讯</span>
+	<a href="http://money.163.com/stock/">股票</a>
+	<a href="http://money.163.com/fund/">基金</a>
+	<a href="http://money.163.com/hkstock/">港股</a>
+	<a href="http://money.163.com/usstock/">美股</a>
+	<a href="http://money.163.com/forex/">外汇</a>
+	<a href="http://money.163.com/futures/">期货</a>
+</span>
+<!-- 
+<div class="navSearch">
+<form id="futuresSearch" method="post" target="_self" action="">
+<input name="code" type="text" onfocus="this.value=''" value="名称/合约号 同时查询只用','隔开" class="textBox" />
+<input name="Submit" type="submit" value="查行情" class="btn" />
+</form>
+</div>
+ -->
+<div class="navSearch">
+ <!--股票搜索-->
+ <div class="search">
+ <select name="area" class="select01" id="selstockinput" style="margin-right:6px; float:left">
+   <option value="">全部</option>
+   <option value="HS">股票</option>
+   <option value="FN">基金</option>
+   <option value="FU">期货</option>
+   <option value="HK">港股</option>
+   <option value="US">美股</option>
+   <option value="FX">外汇</option>
+ </select>
+ <input id="socode2" type="text"  value="代码/拼音/名称" class="textBox" style="width:180px" />
+ <input type="button" value="查行情" class="btn" onclick="btnstocksearch()" />
+ </div>
+</div> 
+</div>
+</div>
+<div class="hq_stock">
+<div id="global_slide" class="hq_stock_text">
+<div class="mzgz"><span class="up"><br />升</span><span class="down"><br />降</span><h2>全球股指</h2></div>
+<ul class="current">
+<li>上证指数：<span _ntesquote_="code:0000001;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:0000001;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:0000001;attr:percent;percent:2;color:updown"></span></li>
+<li>恒生指数：<span _ntesquote_="code:hkHSI;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:hkHSI;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:hkHSI;attr:percent;percent:2;color:updown"></span></li>
+<li>日经225：<span _ntesquote_="code:FG_rj225;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_rj225;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_rj225;attr:percent;color:updown"></span></li>
+<li>新加坡：<span _ntesquote_="code:FG_xinjiapo;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_xinjiapo;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_xinjiapo;attr:percent;color:updown"></span></li>
+</ul>
+<ul>
+<li>英国富时：<span _ntesquote_="code:FG_yingguo;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_yingguo;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_yingguo;attr:percent;color:updown"></span></li>
+<li>德国DAX：<span _ntesquote_="code:FG_deguo;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_deguo;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_deguo;attr:percent;color:updown"></span></li>
+<li>法国CAC：<span _ntesquote_="code:FG_faguo;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_faguo;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_faguo;attr:percent;color:updown"></span></li>
+<li>俄罗斯RTSI：<span _ntesquote_="code:FG_eluosi;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_eluosi;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_eluosi;attr:percent;color:updown"></span></li>
+</ul>
+<ul>
+<li>道琼斯：<span _ntesquote_="code:US_DOWJONES;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:US_DOWJONES;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:US_DOWJONES;attr:percent;percent:2color:updown"></span></li>
+<li>纳斯达克：<span _ntesquote_="code:US_NASDAQ;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:US_NASDAQ;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:US_NASDAQ;attr:percent;percent:2;color:updown"></span></li>
+<li>标准普尔：<span _ntesquote_="code:US_SP500;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:US_SP500;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:US_SP500;attr:percent;percent:2;color:updown"></span></li>
+<li>巴西：<span _ntesquote_="code:FG_baxi;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_baxi;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_baxi;attr:percent;color:updown"></span></li>
+</ul>
+<ul>
+<li>黄金：<span _ntesquote_="code:FG_huangjin;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_huangjin;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_huangjin;attr:percent;color:updown"></span></li>
+<li>黄金期货：<span _ntesquote_="code:FG_huangjinqihuo;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_huangjinqihuo;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_huangjinqihuo;attr:percent;color:updown"></span></li>
+<li>布兰特原油：<span _ntesquote_="code:FG_blt_yuanyou;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_blt_yuanyou;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_blt_yuanyou;attr:percent;color:updown"></span></li>
+<li>纽约轻原油：<span _ntesquote_="code:FG_ny_qingyuanyou;attr:price;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_ny_qingyuanyou;attr:updown;fixed:2;color:updown"></span>&nbsp;<span _ntesquote_="code:FG_ny_qingyuanyou;attr:percent;color:updown"></span></li>
+</ul>
+<ul>
+<li>欧元：<span _ntesquote_="code:FX_USDEUR;attr:price;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDEUR;attr:updown;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDEUR;attr:percent;percent:2;color:updown"></span></li>
+<li>日元：<span _ntesquote_="code:FX_USDJPY;attr:price;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDJPY;attr:updown;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDJPY;attr:percent;percent:2;color:updown"></span></li>
+<li>澳元：<span _ntesquote_="code:FX_USDAUD;attr:price;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDAUD;attr:updown;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDAUD;attr:percent;percent:2;color:updown"></span></li>
+<li>人民币：<span _ntesquote_="code:FX_USDCNY;attr:price;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDCNY;attr:updown;fixed:4;color:updown"></span>&nbsp;<span _ntesquote_="code:FX_USDCNY;attr:percent;percent:2;color:updown"></span></li>
+</ul>
+<div class="end">&nbsp;</div>
+</div>
+<div class="hq_stock_bottom">
+<div><span class="r1"><a target="_self" href="javascript: futuresUtil.favor(location.href, '期货行情-网易财经')">[将本页加入收藏]</a></span></div>
+<div><span class="r2"><a href="http://help.3g.163.com/stock/">手机版</a></span></div>
+<div><span class="r3">北京时间：</span><span id="bjtime">-日 00：00：00</span> | 美东时间：<span id="mdtime">-日 00：00：00</span>　　<a href="http://post.news.163.com/msg/jubao_money.jsp">提交意见</a></div>
+</div>
+</div>
+<div class="area">
+<div class="colL">
+<div class="tabListL">
+<ul id="recent_tab">
+<li class="on">最近访问期货</li>
+<li>同品种期货</li>
+</ul>
+</div>
+<div class="f_border3 tab">
+<span class="blank9"></span>
+<div id="recent_cnt" class="content">
+<!-- 最新访问期货 start -->
+<div class="normal on">
+<table id="recentstock" width="188" border="0" cellspacing="0" cellpadding="0" class="dataList01">
+<thead>
+  <tr>
+    <th class="pinkBg">品种</th>
+    <th class="pinkBg">最新价</th>
+    <th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="pink">
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="pink">
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="pink">
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="pink">
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="pink">
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr class="pink">
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+</div>
+<!-- 最新访问期货 end -->
+
+<!-- 同品种期货 start -->
+<div class="normal">
+<table width="188" border="0" cellspacing="0" cellpadding="0" class="dataList01">
+<thead>
+  <tr>
+    <th class="pinkBg">品种</th>
+    <th class="pinkBg">最新价</th>
+    <th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<!-- 同品种期货 end -->
+</div>
+</div>
+<span class="blank9"></span>
+<div class="titleBar ui_s1"><h2><span style="color:#1F3F6D">关联股票</span></h2><span class="more"></span></div>
+<div class="f_border3">
+<span class="blank9"></span>
+<div class="content">
+<table id="table_stock" width="188" border="0" cellspacing="0" cellpadding="0" class="dataList01">
+<thead>
+  <tr>
+    <th class="pinkBg">名称</th>
+    <th class="pinkBg">最新价</th>
+    <th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<div style="width:188;text-align: right;margin-top:10px;margin-bottom:4px">
+	<a href="http://quotes.money.163.com/#query=&DataType=HS_RANK&sort=PERCENT&order=desc&count=24&page=0">&gt;&gt;更多</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="colMR">
+<div class="right_top">
+  <div class="r_top01">
+    <div class="r_left"><span class="r1"></span><span></span></div>
+    <div class="r_right"><span _ntesquote_="code:FU_;attr:time" class="r5">0000-00-00 00:00:00</span></div>
+  </div>
+  <span class="blank12"></span>
+  <div class="r_top02">
+    <div class="r_left02">
+      <h2 class="r2_1"><font _ntesquote_="code:FU_;attr:price;fixed:0;color:updown">-</font></h2>
+      <h3><span _ntesquote_="code:FU_;attr:updown;fixed:0;color:updown" class="c1">-</span>(<span _ntesquote_="code:FU_;attr:percent;percent:2;color:updown" class="c1">-%</span>)</h3>
+    </div>
+    <div class="r_right02">
+      <table width="100%" cellspacing="0" cellpadding="0" border="0" class="data01">
+        <tbody>
+          <tr>
+		              <td>买价:<span _ntesquote_="code:FU_;attr:bid;fixed:0;color:updown">-</span></td>
+            <td>买量:<span _ntesquote_="code:FU_;attr:bidvolume;fixed:0">-</span></td>
+		              <td>今开盘:<span _ntesquote_="code:FU_;attr:open;fixed:0;color:updown">-</span></td>
+            <td>最高价:<span _ntesquote_="code:FU_;attr:high;fixed:0;color:updown">-</span></td>
+            <td>成交量:<span _ntesquote_="code:FU_;attr:volume;fixed:0">-</span></td>
+          </tr>
+          <tr>
+		              <td>卖价:<span _ntesquote_="code:FU_;attr:ask;fixed:0;color:updown">-</span></td>
+            <td>卖量:<span _ntesquote_="code:FU_;attr:askvolume;fixed:0">-</span></td>
+		              <td>昨结算:<span _ntesquote_="code:FU_;attr:yestclear;fixed:0;color:updown">-</span></td>
+            <td>最低价:<span _ntesquote_="code:FU_;attr:low;fixed:0;color:updown">-</span></td>
+            <td>持仓量:<span _ntesquote_="code:FU_;attr:openinterest;fixed:0">-</span></td>
+          </tr>
+        </tbody>
+      </table>
+ </div>
+ <span class="blank12"></span>
+</div>
+</div>
+<span class="blank9"></span>
+<div class="colM">
+<div class="tagListM8Bg">
+<div class="tagListM8">
+<ul id="hqtab">
+<li tabtype="timechart" class="on">分时图</li>
+<li tabtype="day30">一月日K</li>
+<li tabtype="day90">三月日K</li>
+<li tabtype="day180">半年日K</li>
+<li tabtype="week">周K线</li>
+<li tabtype="month">月K线</li>
+</ul>
+<div class="hyselect">
+<select class="select01" onchange="change_future(this);">
+</select>
+</div>
+</div>
+</div>
+<div class="f_border3">
+<div class="marketShow">
+	<img id="chartTop" src="http://img1.money.126.net/chart/fu/time/520x300/.png"/> 
+</div>
+</div>
+<div style="text-align:right;line-height:20px;">
+<span title="网易免费提供股票、基金、外汇等行情数据以及其他资料均来自相关合作方，仅作为用户获取信息之目的，并不构成投资建议。网易以及其合作机构不为本页面提供信息的错误、残缺、延迟或因依靠此信息所采取的任何投资行动负责。">免责声明</span>
+</div>
+<span class="blank9"></span>
+
+<!--嵌套新闻-->
+<ul id="news_tab" class="tagListM">
+<li class="on">本类新闻</li>
+<li>综合新闻</li>
+<li>综合分析</li>
+</ul>
+<div class="f_border3">
+<div id="news_cnt" class="content">
+
+<div class="normal newslist on">
+<ul>
+</ul>
+<h5><a href="http://news.youdao.com/search?q=site%3Amoney.163.com+&start=0&length=10&ue=utf8&s=&tl=&keyfrom=search.index">&gt;&gt;更多</a></h5>
+</div>
+
+
+
+<div class="normal newslist">
+<ul>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/15/9QU7S4F700252895.html" target="_blank">收评：期指弱势下跌 IF1405跌1.30%</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/15/9QU74L8V00252895.html" target="_blank">收评：农产品表现亮眼 铁矿石暴跌4.52%</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTMKGNB00252895.html" target="_blank">中钢协：一季度钢铁行业进入新世纪最困难时代</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/09/9QTI5O6F00252895.html" target="_blank">结合国情设计外汇期货</a> <a target="_blank"  target="_blank" href="http://money.163.com/14/0428/08/9QTH61AK00253B0H.html">2至3年市场交易量增50%</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/09/9QTI3FOM00252895.html" target="_blank">工业化发展需求提振铜消费</a> | <a target="_blank"  target="_blank" href="http://money.163.com/14/0428/08/9QTHBMGI00252895.html">4月28日当周影响期市重要事件点评</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/08/9QTGTV4100252895.html" target="_blank">乌俄局势推动贵金属价格反弹</a> <a target="_blank"  target="_blank" href="http://money.163.com/14/0428/08/9QTGVUN400252895.html">原油涨价之门开启</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/08/9QTGJBH500252895.html" target="_blank">铁矿石或将继续向下运行</a> <a target="_blank"  target="_blank" href="http://money.163.com/14/0428/08/9QTGL21400252895.html">塑料短期回调空间不大</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/08/9QTGDS6900252895.html" target="_blank">胶合板现货市场处传统旺季</a> <a target="_blank"  target="_blank" href="http://money.163.com/14/0428/08/9QTGFR7K00252895.html">动力煤电厂补库可期</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/08/9QTG57T500252895.html" target="_blank">广西种蔗或降100万亩</a> <a target="_blank"  target="_blank" href="http://money.163.com/14/0428/09/9QTIDU5P00252895.html">生猪市场年内难现“拐点”</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+</ul>
+<h5><a href="http://money.163.com/futures/">&gt;&gt;更多</a></h5>
+</div>
+
+
+
+<div class="normal newslist">
+<ul>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTNIJLI002533MI.html" target="_blank">中大期货：白糖横盘整理 短线交易为主</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTNA01V002533MJ.html" target="_blank">中大期货：PTA震荡整理 偏空交易为主</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTN91GV002533MJ.html" target="_blank">中大期货：塑料向下破位 逢高轻仓试空</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTN7FI7002533MJ.html" target="_blank">先融期货：补库近期结束 动力煤偏空操作</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTN5A84002533MH.html" target="_blank">招金期货：超级周来临 或决定金价方向</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTN3UOC002533MH.html" target="_blank">招金期货：风险事件密集 静观白银动向</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0428/10/9QTN27IH002533MH.html" target="_blank">永安期货：黑色品种节前变化不大</a></h3>
+    <h4>2014-04-28</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0425/11/9QM23EM5002533MI.html" target="_blank">新纪元期货：鸡蛋攻关未遂 节前陷入动荡</a></h3>
+    <h4>2014-04-25</h4>
+  </li>
+  <li>
+    <h3>·<a href="http://money.163.com/14/0425/11/9QM22GQQ002533MI.html" target="_blank">安粮期货：棕榈油区间震荡关注上行阻力</a></h3>
+    <h4>2014-04-25</h4>
+  </li>
+</ul>
+<h5><a href="http://money.163.com/futures/">&gt;&gt;更多</a></h5>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="colR">
+<div class="colRBg clearfix">
+
+<div class="titleBar ui_sr"><h2>国内期货行情</h2></div>
+<span class="blank6"></span>
+<ul id="gnhq_tab" class="tagListR">
+<li class="on">中金所</li>
+<li>上期所</li>
+<li>大商所</li>
+<li>郑商所</li>
+</ul>
+<span class="blank9"></span>
+
+<div id="gnhq_cnt">
+<div class="normal on">
+<table width="202" border="0" cellspacing="0" cellpadding="0" class="dataList02">
+<thead>
+  <tr>
+    <th class="pinkBg">品种</th>
+    <th class="pinkBg">最新价</th>
+	<th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+  <tr >
+    <td><a href="/futures/hq/IF1405.html">期指1405</a></td>
+    <td><span _ntesquote_="code:FU_IF1405;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_IF1405;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/IF1406.html">期指1406</a></td>
+    <td><span _ntesquote_="code:FU_IF1406;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_IF1406;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/IF1409.html">期指1409</a></td>
+    <td><span _ntesquote_="code:FU_IF1409;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_IF1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/TF1406.html">国债1406</a></td>
+    <td><span _ntesquote_="code:FU_TF1406;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_TF1406;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/IF1412.html">期指1412</a></td>
+    <td><span _ntesquote_="code:FU_IF1412;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_IF1412;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/TF1409.html">国债1409</a></td>
+    <td><span _ntesquote_="code:FU_TF1409;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_TF1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/TF1412.html">国债1412</a></td>
+    <td><span _ntesquote_="code:FU_TF1412;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_TF1412;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/thismonth.html">当月连续</a></td>
+    <td><span _ntesquote_="code:FU_thismonth;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_thismonth;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/nextmonth.html">下月连续</a></td>
+    <td><span _ntesquote_="code:FU_nextmonth;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_nextmonth;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/nextseason.html">下季连续</a></td>
+    <td><span _ntesquote_="code:FU_nextseason;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_nextseason;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/nexthalfyear.html">隔季连续</a></td>
+    <td><span _ntesquote_="code:FU_nexthalfyear;attr:price;fixed:2;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_nexthalfyear;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="normal">
+<table id="sh_fq_internal" width="202" border="0" cellspacing="0" cellpadding="0" class="dataList02">
+<thead>
+  <tr>
+    <th class="pinkBg">品种</th>
+    <th class="pinkBg">最新价</th>
+	<th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+  <tr >
+    <td><a href="/futures/hq/rb1410.html">螺纹钢1410</a></td>
+    <td><span _ntesquote_="code:FU_rb1410;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_rb1410;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/ag1406.html">白银1406</a></td>
+    <td><span _ntesquote_="code:FU_ag1406;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_ag1406;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/ru1409.html">橡胶1409</a></td>
+    <td><span _ntesquote_="code:FU_ru1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_ru1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/cu1407.html">沪铜1407</a></td>
+    <td><span _ntesquote_="code:FU_cu1407;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_cu1407;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/au1406.html">黄金1406</a></td>
+    <td><span _ntesquote_="code:FU_au1406;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_au1406;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/al1407.html">沪铝1407</a></td>
+    <td><span _ntesquote_="code:FU_al1407;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_al1407;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/zn1407.html">沪锌1407</a></td>
+    <td><span _ntesquote_="code:FU_zn1407;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_zn1407;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/hc1410.html">热轧卷板1410</a></td>
+    <td><span _ntesquote_="code:FU_hc1410;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_hc1410;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/bu1406.html">沥青1406</a></td>
+    <td><span _ntesquote_="code:FU_bu1406;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_bu1406;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/pb1405.html">沪铅1405</a></td>
+    <td><span _ntesquote_="code:FU_pb1405;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_pb1405;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/fu1405.html">燃油1405</a></td>
+    <td><span _ntesquote_="code:FU_fu1405;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_fu1405;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/wr1407.html">线材1407</a></td>
+    <td><span _ntesquote_="code:FU_wr1407;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_wr1407;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/IMCI.html">有色指数</a></td>
+    <td><span _ntesquote_="code:FU_IMCI;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_IMCI;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="normal">
+<table id="dl_fq_internal" width="202" border="0" cellspacing="0" cellpadding="0" class="dataList02">
+<thead>
+  <tr>
+    <th class="pinkBg">品种</th>
+    <th class="pinkBg">最新价</th>
+	<th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+  <tr >
+    <td><a href="/futures/hq/m1409.html">豆粕1409</a></td>
+    <td><span _ntesquote_="code:FU_m1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_m1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/y1409.html">豆油1409</a></td>
+    <td><span _ntesquote_="code:FU_y1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_y1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/i1409.html">铁矿石1409</a></td>
+    <td><span _ntesquote_="code:FU_i1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_i1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/p1409.html">棕榈油1409</a></td>
+    <td><span _ntesquote_="code:FU_p1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_p1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/l1409.html">塑料1409</a></td>
+    <td><span _ntesquote_="code:FU_l1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_l1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/jm1409.html">焦煤1409</a></td>
+    <td><span _ntesquote_="code:FU_jm1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_jm1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/j1409.html">焦炭1409</a></td>
+    <td><span _ntesquote_="code:FU_j1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_j1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/c1409.html">玉米1409</a></td>
+    <td><span _ntesquote_="code:FU_c1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_c1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/a1409.html">豆一1409</a></td>
+    <td><span _ntesquote_="code:FU_a1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_a1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/jd1409.html">鸡蛋1409</a></td>
+    <td><span _ntesquote_="code:FU_jd1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_jd1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/pp1409.html">聚丙烯1409</a></td>
+    <td><span _ntesquote_="code:FU_pp1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_pp1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/fb1409.html">纤维板1409</a></td>
+    <td><span _ntesquote_="code:FU_fb1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_fb1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/bb1409.html">胶合板1409</a></td>
+    <td><span _ntesquote_="code:FU_bb1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_bb1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/v1409.html">聚氯乙烯1409</a></td>
+    <td><span _ntesquote_="code:FU_v1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_v1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/b1409.html">豆二1409</a></td>
+    <td><span _ntesquote_="code:FU_b1409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_b1409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="normal">
+<table id="zz_fq_internal" width="202" border="0" cellspacing="0" cellpadding="0" class="dataList02">
+<thead>
+  <tr>
+    <th class="pinkBg">品种</th>
+    <th class="pinkBg">最新价</th>
+	<th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+  <tr >
+    <td><a href="/futures/hq/RM409.html">菜粕1409</a></td>
+    <td><span _ntesquote_="code:FU_RM409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_RM409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/SR409.html">白糖1409</a></td>
+    <td><span _ntesquote_="code:FU_SR409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_SR409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/TA409.html">PTA1409</a></td>
+    <td><span _ntesquote_="code:FU_TA409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_TA409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/FG409.html">玻璃1409</a></td>
+    <td><span _ntesquote_="code:FU_FG409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_FG409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/OI409.html">菜籽油1409</a></td>
+    <td><span _ntesquote_="code:FU_OI409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_OI409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/CF501.html">棉花1501</a></td>
+    <td><span _ntesquote_="code:FU_CF501;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_CF501;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/TC409.html">动力煤1409</a></td>
+    <td><span _ntesquote_="code:FU_TC409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_TC409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/WH409.html">强麦1409</a></td>
+    <td><span _ntesquote_="code:FU_WH409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_WH409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/ME409.html">甲醇1409</a></td>
+    <td><span _ntesquote_="code:FU_ME409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_ME409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/RI409.html">早籼稻1409</a></td>
+    <td><span _ntesquote_="code:FU_RI409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_RI409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/RS409.html">菜籽1409</a></td>
+    <td><span _ntesquote_="code:FU_RS409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_RS409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr class="pink">
+    <td><a href="/futures/hq/JR409.html">粳稻谷1409</a></td>
+    <td><span _ntesquote_="code:FU_JR409;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_JR409;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+  <tr >
+    <td><a href="/futures/hq/PM405.html">普麦1405</a></td>
+    <td><span _ntesquote_="code:FU_PM405;attr:price;fixed:0;color:updown"></span></td>
+    <td><span _ntesquote_="code:FU_PM405;attr:percent;percent:2;color:updown"></span></td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div><!--国内期货行情-->
+
+<span class="blank9"></span>
+<span class="blank12"></span>
+
+<div class="titleBar ui_sr"><h2>国际期市品种合约</h2></div>
+<span class="blank9"></span>
+<table width="202" border="0" cellspacing="0" cellpadding="0" class="dataList02">
+<thead>
+  <tr>
+    <th class="pinkBg">名称</th>
+    <th class="pinkBg">最新价</th>
+    <th class="pinkBg">涨跌幅</th>
+  </tr>
+</thead>
+<tbody>
+  <tr >
+    <td>黄金期货</td>
+    <td><span _ntesquote_="code:FG_huangjin;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_huangjin;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr class="pink">
+    <td>银期货</td>
+    <td><span _ntesquote_="code:FG_yin;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_yin;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr >
+    <td>铜期货</td>
+    <td><span _ntesquote_="code:FG_tong;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_tong;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr class="pink">
+    <td>天然气期</td>
+    <td><span _ntesquote_="code:FG_tianranqiqi;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_tianranqiqi;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr >
+    <td>布兰特油期</td>
+    <td><span _ntesquote_="code:FG_blt_yuanyou;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_blt_yuanyou;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr class="pink">
+    <td>纽约轻原油</td>
+    <td><span _ntesquote_="code:FG_ny_qingyuanyou;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_ny_qingyuanyou;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr >
+    <td>燃油期货</td>
+    <td><span _ntesquote_="code:FG_ranyouqihuo;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_ranyouqihuo;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr class="pink">
+    <td>玉米期货</td>
+    <td><span _ntesquote_="code:FG_yumi;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_yumi;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr >
+    <td>小麦期货</td>
+    <td><span _ntesquote_="code:FG_xiaomai;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_xiaomai;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr class="pink">
+    <td>可可粉期货</td>
+    <td><span _ntesquote_="code:FG_kekefenqi;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_kekefenqi;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr >
+    <td>大豆期货</td>
+    <td><span _ntesquote_="code:FG_dadou;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_dadou;attr:percent;color:updown;"></span></td>
+  </tr>
+  <tr class="pink">
+    <td>大豆油期货</td>
+    <td><span _ntesquote_="code:FG_dadouyou;attr:price;fixed:2;color:updown;"></span></td>
+    <td><span _ntesquote_="code:FG_dadouyou;attr:percent;color:updown;"></span></td>
+  </tr>
+</tbody>
+</table>
+<span class="blank9"></span>
+</div>
+</div>
+</div>
+
+</div>
+
+<span class="blank12"></span>
+<div class="nav_channel_end">
+	<span class="nav">
+    <a href="http://www.163.com/" class="firstNode">网易首页</a> <a href="http://news.163.com/">新闻</a> <a href="http://sports.163.com/">体育</a> <a href="http://ent.163.com/">娱乐</a> <a href="http://money.163.com/">财经</a> <a href="http://lady.163.com/">女人</a> <a href="http://baby.163.com">亲子</a> <a href="http://auto.163.com/">汽车</a> <a href="http://tech.163.com/">科技</a> <a href="http://mobile.163.com/">手机</a> <a href="http://digi.163.com/">数码</a> <a href="http://bbs.163.com/">论坛</a> <a href="http://blog.163.com/blogs/">博客</a> <a href="http://t.163.com/">微博</a>
+    </span><span class="rightS"></span><a target="_self" href="#top" class="goHome">返回顶部</a><div class="search"><form action="http://news.yodao.com/search" method="get" name="nisearch1" id="formend" target="_blank"> 
+<input type="hidden" name="keyfrom" value="news.163" />  
+<input name="site" type="hidden" value="网易" />      
+<input name="suser" type="hidden" value="user163" />
+<input name="ue" type="hidden" value="gbk" />
+<label><span class="hidden">站内搜索</span><input name="q" id="searchInput1" type="text" onfocus="this.value=''" value="站内搜索" class="textBox" /></label>
+<input name="Submit" type="submit" value="提交" class="btn" /><input name="in" type="hidden" id="in2" value="page" />
+</form>
+    </div>
+</div>
+<span class="blank12"></span>
+<div class="foot">
+<a href="http://post.news.163.com/msg/jubao_money.jsp">主编信箱</a>　<a href="http://bbs3.news.163.com/board/postlist.jsp?b=idea">给网易提意见</a>
+<div class="text"></div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://gb.corp.163.com/gb/cs.html">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://help.163.com/">帮助中心</a><br />
+网易公司版权所有<br />
+<span class="cRed">&copy;1997-2014</span>
+</div>
+
+
+<script type="text/javascript" src="http://img1.cache.netease.com/f2e/finance/preterite/public/jquery-1.4.2.min.js" ></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/f2e/finance/preterite/public/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://comment.money.163.com/js/ntes_jslib_1.1.6.js" charset="gbk"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/f2e/finance/preterite/public/ntesquote-2.0.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/f2e/finance/preterite/js_2010/stocksearch_suggest-1.1.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/f2e/finance/preterite/static/innerjs/tabswitch-0.1.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/f2e/finance/preterite/static/futures/js/multiselect.js?32"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/f2e/finance/preterite/public/recentstocks.js"  charset="utf-8"></script>
+
+<script type="text/javascript">
+_$ = jQuery;
+var futureCode = '';
+
+//最近访问股
+var fustockRecent = Recent.addBean(futureCode,"recentstock",Recent.FU);
+
+//指数切换
+var slideIndex =  new NTES.ui.Slide(null, $("#global_slide>ul"), "current", "mouseover", 4000);
+hoverSwitch(jQuery("#gnhq_tab > li"), jQuery("#gnhq_cnt > div"), "on");
+hoverSwitch(jQuery("#recent_tab > li"), jQuery("#recent_cnt > div"), "on");
+hoverSwitch(jQuery("#news_tab > li"), jQuery("#news_cnt > div"), "on");
+
+// 行情图右上角切换
+function change_future(sel){
+	var val = sel.options[sel.selectedIndex].value;
+	location.href = ['/futures/hq/', val, '.html'].join('');
+}
+
+// 行情图
+var curChartType = "timechart";
+var chartHost = "http://img1.money.126.net";
+var chartImg = {
+	timechart:{top:"/chart/fu/time/520x300/{0}.png"},
+	day30:{top:"/chart/fu/kline/day/30/{0}.png"},
+	day90:{top:"/chart/fu/kline/day/90/{0}.png"},
+	day180:{top:"/chart/fu/kline/day/180/{0}.png"},
+	week:{top:"/chart/fu/kline/week/{0}.png"},
+	month:{top:"/chart/fu/kline/month/{0}.png"}
+};
+// 切换
+function changeChart(type, code, suffix){
+	var imgTop = _$("#chartTop").get(0);
+	var imgObj = chartImg[type];
+	if(!imgObj) return;
+	imgTop.src = ntesQuote.formatString(chartHost + imgObj.top, code) + (suffix ? "?"+suffix : "");
+	curChartType = type;
+}
+ 
+// 定时刷新行情图
+window.setInterval(function(){
+	changeChart(curChartType, futureCode, Math.random());
+}, 50*1000);
+
+// 行情图切换
+pressSwitch(_$("#hqtab > li"), null, "on", function(jtab, index){
+	changeChart(jtab.attr("tabtype"), futureCode,  null);
+});
+
+
+//北京,美东时间
+function fmtNum(nu){
+	return nu<10 ? "0"+nu : nu; 
+}
+//美东时间是否是夏令时 1 是 0 不是
+function isDST(){
+	return 1;
+}
+
+window.setInterval(function(){
+	var dt = new Date();
+	var time_span = 12; 
+	if (isDST() == 0)
+		time_span = 13;
+		
+	NTES("#bjtime").innerHTML = ntesQuote.formatString("{0}日 {1}：{2}：{3}", dt.getDate(), fmtNum(dt.getHours()), fmtNum(dt.getMinutes()), fmtNum(dt.getSeconds()));
+	dt.setHours(dt.getHours()-time_span);
+	NTES("#mdtime").innerHTML = ntesQuote.formatString("{0}日 {1}：{2}：{3}", dt.getDate(), fmtNum(dt.getHours()), fmtNum(dt.getMinutes()), fmtNum(dt.getSeconds()));
+}, 1000);
+</script>
+
+<script type="text/javascript">
+//股票搜索导航框
+var stockSuggest = new ntesStockSuggest({
+ // 输入框id
+ inputid: "socode2",
+ // 记录数
+ max: 10,
+ tooltip: "代码/拼音/名称",
+ // 左对齐的元素, 没有则按输入框
+ posElem: "selstockinput",
+ // 获取查询类型HS/HK/US/...
+ getType: function(){
+  //var sel = document.getElementById("selstockinput");
+  //return sel.options[sel.selectedIndex].value;
+  return "";
+ }
+});
+// 点击查行情
+function btnstocksearch(){
+ if(stockSuggest.aSug.length==1){
+  stockSuggest.oP.callback(stockSuggest.aSug[0]);
+ }else{
+  alert("请选择要查看的股票");
+ }
+}
+</script>
+
+<script language="JavaScript" src="http://analytics.news.163.com/log.js" type="text/javascript"></script>
+<!-- NetEase Analytics code 2006-06-27 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    _ntes_nacc = "stock"; //站点ID。
+    neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0507010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0507010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<!-- START monitor -->
+<script>!function(i){function n(){}function t(){var i=Math.round((+new Date-k)/1e3);return 0>i?0:i}function f(i){var n=i.className,t=d(i),f={script:1,style:1,link:1,img:1,hr:1,br:1},e=!0;return f[t]?e=!1:/blank\d/.test(n)&&(e=!1),e}function e(n){b||(l&&window._ntes_sendInfo?(i.each(m,function(i,n){u(n)}),b=!0):m.push(n)),b&&u(n)}function a(i){return 10>i?i.toString():i>62?"z":String.fromCharCode(i+(36>i?55:61))}function r(i,n){if(!n)return i;var t=i.length-1,f=i.charCodeAt(t);return 58>f?f-=48:91>f?f-=55:123>f&&(f-=61),i.substr(0,t)+a(f+n)}function c(i,n,t){n&&n.setAttribute((t?"_":"")+"jcid",i)}function o(i){if(i){var n=this.getAttribute("href")||"";g++;var f="/ntes_p?"+p+"&_nct="+t()+"&_nah="+escape(n)+"&_nat={id}_"+i;e(f)}}function u(i){_ntes_sendInfo("jc",_ntes_src_addr+i.replace("{id}",l))}function s(i,n,t){for(var f=0,e={a:1,area:1};!e[d(i)]&&!(t=i.getAttribute("_jcid"));)if(i=i.parentNode,!i.tagName||f++>5)return;var a=i;if(!t)for(;i&&i!=n&&!(t=i.getAttribute("jcid"));)i=i.parentNode;a&&t&&o.call(a,t)}function d(i){return i.tagName.toLowerCase()}function h(n,t,f){if("iframe"!=d(n))t(n,f);else{var e,a=v(n),r=function(){if("function"==typeof e&&e.call(this),a=v(n)){var r=a.body;i(r).addEvent("click",function(i){var n=i.target;s(n,r)}),t(r,f)}};a&&/^http/.test(a.location.href)?r():n.attachEvent?n.attachEvent("onload",r):(e=n.onload,n.onload=r)}}function v(i){var n;try{n=i.contentDocument}catch(t){}if(!n&&i.contentWindow){try{var f=i.contentWindow.document;"object"==typeof f&&(n=f)}catch(t){}if(!n)return null}var e=1;try{n.location&&(e=0)}catch(t){}return e?null:n}var l,_,p="_nacc=siteclick&_npurl="+escape(document.URL),g=0,b=!1,m=[],w=document.body,y=i(window),E=window.performance,k=E&&E.timing?E.timing.connectStart:+new Date,A=[function(i,n,t){c(i+a(t.start||1),n,t.all)},function(n,t,f){var e=f.start||1;i("a",t).each(function(i,t){c(n+a(e++),t)})},function(n,t,e){for(var r=1,o=e.level||1,u=[t],s=0;o>s;s++){var h=[];i.each(u,function(n,t){var e=0;"a"==d(t)||/ntes-nav-select/.test(t.className)||i.each(t.children,function(i,n){f(n)&&(h.push(n),e++)}),e||h.push(t)}),u=h}i.each(u,function(i,t){c(n+a(r++),t)})},function(n,t){var f=i(">form",t);f[0]&&f.addEvent("submit",function(){o.call(this,n+"1")})},function(n,t,f){var e=i(f.h,t),r=i(f.b,t);if(e&&r){var o=f.step||10,u=2;c(n+"1",t),e.each(function(i,t){c(n+a(u+i*o),t)}),r.each(function(i,t){c(n+a(u+i*o+1),t)})}},function(n,t,e){var r=e.union||"",o={};if(/^[\s\d,]+$/.test(r)){var u=0;i.each(r.split(/\s*,\s*/),function(i,n){if(n=parseInt(n))for(var t=0;n>t;t++)o[u++]=i})}var s=2;c(n+"1",t);var d=parseInt(e.step)||10,h=i(e.h,t);if(h&&v){i.each(h,function(i,t){c(n+a(i*d+s),t)});var v=i(e.b,t);i.each(v,function(t,e){var r=t*d+s+1,u=e.children;if(0==u.length)u=[e];else for(;1==u.length;)u=u[0].children;var h=0;i.each(u,function(i,t){f(t)&&("undefined"!=typeof o[i]&&(h=o[i]),c(n+a(r+h),t),h++)})})}}];n.prototype={init:function(n,f){n&&5==n.length&&(l=n),_||(_=Math.random()<(f||.1),_&&(i("body").addEvent("click",function(i){s(i.target,w)}),i.ready(function(){function i(){n&&(e("/ntes_u?"+n+"&_nct="+t()+"&_mcn="+g+f),n=0)}var n=p+"&_nch={id}",f="",a="&_msl="+t();y.addEvent("load",function(){f="&_msl="+t()}),e("/ntes_u?"+n+a),y.addEvent("beforeunload",i);var r=navigator.userAgent.toLowerCase();!/compatible/.test(r)&&/firefox/.test(r)&&y.addEvent("unload",i)}),this.retain&&this.area(w,this.retain)))},area:function(n,t){var f=this,e=function(i,n){f.area(i,n)};for(var a in t){var r=t[a],c=0;/(.*?)\*$/.test(a)&&(a=RegExp.$1,c=1);var o=a?/^#/.test(a)?i(a):i(a,n):[n];i.util.isArray(o)||(o=[o]);for(var u=0;u<o.length;u++){var s=c?r[0]:r[u];if(s&&o[u])if(s.i)for(var d=s.s||1,v=0;d>v;v++)s.j=v,this.zone(o[u+v],s);else h(o[u],e,s)}}},zone:function(n,t){var f=r(t.i,t.j),e=A[t.f||0],a=t.p||{};n&&e&&(a.dyn?i(n).addEvent("mouseover",function(){for(var i,t=n.children[0];t&&(i=t.children[0]);)t=i;t&&!t.getAttribute("jdyn")&&(e(f,n,a),t.setAttribute("jdyn",1))}):h(n,function(i){e(f,i,a)}))},batch:function(i){_?this.area(w,i):this.retain=i}},window._aCM=new n}(NTES),function(){_aCM.init("cjp08"),setTimeout(function(){_aCM.batch({">.NTES-nav":[{">.nav-link":[{"":[{i:"111",f:1}]}],">.rightCon":[{"":[{i:"121"}]}]}],">.channel":[{">h1":[{"":[{i:"211",f:1}]}],">h3":[{"":[{i:"221",f:1}]}]}],">.nav_channel":[{">.nav":[{"":[{i:"311",f:1}]}]}],">.hq_stock":[{ul:[{"":[{i:"411"}]},{"":[{i:"421"}]},{"":[{i:"431"}]},{"":[{i:"441"}]},{"":[{i:"451"}]}],div:[0,0,0,0,{">.r1":[{i:"461",f:1}]},{">.r2":[{i:"471",f:1}]},{"":[{i:"481",f:1}]}]}],">.area":[{".tabListL":[{"":[{i:"511"}]}],"#recent_cnt":[{"#recentstock":[{i:"521"}],tr:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,{i:"522",f:1},0,{i:"524",f:1},0,{i:"526",f:1},0,{i:"528",f:1}],".pink":[0,0,0,0,0,0,{i:"523",f:1},{i:"525",f:1},{i:"527",f:1},{i:"529",f:1}]}],".content":[0,{tr:[0,{i:"531",f:1},0,{i:"533",f:1},0,{i:"535",f:1},0,{i:"537",f:1},0,{i:"539",f:1},0,{i:"53B",f:1},0,{i:"53D",f:1}],".pink":[{i:"532",f:1},{i:"534",f:1},{i:"536",f:1},{i:"538",f:1},{i:"53A",f:1},{i:"53C",f:1},{i:"53E",f:1}],">div":[{i:"53F",f:1}]}],".tagListM8":[{"":[{i:"541"}]}],"#news_tab":[{"":[{i:"551"}]}],"#news_cnt":[{li:[{i:"561"},{i:"562"},{i:"563"},{i:"564"},{i:"565"},{i:"566"},{i:"567"},{i:"568"},{i:"569"},{i:"56B"},{i:"56C"},{i:"56D"},{i:"56E"},{i:"56F"},{i:"56G"},{i:"56H"},{i:"56I"},{i:"56J"},{i:"56L"},{i:"56M"},{i:"56N"},{i:"56O"},{i:"56P"},{i:"56Q"},{i:"56R"},{i:"56S"},{i:"56T"}],h5:[{i:"56A",f:1},{i:"56K",f:1},{i:"56U",f:1}]}],".colRBg":[{"#gnhq_tab":[{i:"571"}],"tbody>tr":[{i:"572",f:1},0,{i:"574",f:1},0,{i:"576",f:1},0,{i:"578",f:1},0,{i:"57A",f:1},0,{i:"57C",f:1},{i:"57D",f:1},0,{i:"57F",f:1},0,{i:"57H",f:1},0,{i:"57J",f:1},0,{i:"57L",f:1},0,{i:"57N",f:1},0,{i:"57P",f:1},0,{i:"57R",f:1},0,{i:"57T",f:1},0,{i:"57V",f:1},0,{i:"57X",f:1},0,{i:"57Z",f:1},0,{i:"57b",f:1},0,{i:"57d",f:1},0,{i:"57f",f:1},0,{i:"57h",f:1},0,{i:"57j",f:1},0,{i:"57l",f:1},0,{i:"57n",f:1},0,{i:"57p",f:1}],".pink":[{i:"573",f:1},{i:"575",f:1},{i:"577",f:1},{i:"579",f:1},{i:"57B",f:1},{i:"57E",f:1},{i:"57G",f:1},{i:"57I",f:1},{i:"57K",f:1},{i:"57M",f:1},{i:"57O",f:1},{i:"57Q",f:1},{i:"57S",f:1},{i:"57U",f:1},{i:"57W",f:1},{i:"57Y",f:1},{i:"57a",f:1},{i:"57c",f:1},{i:"57e",f:1},{i:"57g",f:1},{i:"57i",f:1},{i:"57k",f:1},{i:"57m",f:1},{i:"57o",f:1}]}]}],">.nav_channel_end":[{">.nav":[{"":[{i:"611",f:1}]}],">.goHome":[{"":[{i:"621"}]}],">.search":[{"":[{i:"631",f:3}]}]}],">.foot":[{"":[{"":[{i:"711",f:1}]}]}]})},50)}();</script>
+<!-- END monitor -->
+<!-- PAGE_TIME: 2014-04-28 18:56:24 -->
+</body>
+</html>

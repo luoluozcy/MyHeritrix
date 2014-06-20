@@ -1,0 +1,989 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>广州房地产资讯_最新房地产新闻_房地产最新动态-中原地产</title>
+    <meta name="keywords" content="广州房地产资讯，广州房地产新闻，广州房地产动态" />
+    <meta name="description" content="广州中原房产新闻频道，提供最新房地产新闻、房地产资讯、房产新政策以及房地产动态，预测广州房价走势，分析广州楼市成交数据。关注广州楼市动态，了解房地产信息，广州本土优质的房地产资讯网-中原地产。" />
+    <link href="/style_11/common.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/news/news.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/news/scrolltop.css" rel="Stylesheet" type="text/css" />
+
+    <script language="javascript" type="text/javascript">
+       function setHouseArticle(id)
+       {
+           var h1 =document.getElementById("house1");
+           var h2 =document.getElementById("house2");
+           var h3 =document.getElementById("house3");
+           
+           if(id=="house1")
+           {
+               document.getElementById("qian").style.display="block";
+               document.getElementById("zhong").style.display="none";
+               document.getElementById("hou").style.display="none";
+               h1.setAttribute("class", "tab-u current");
+               h2.setAttribute("class", "tab-u");
+               h3.setAttribute("class", "tab-u");
+              
+           }else if(id=="house2")
+           {
+               document.getElementById("zhong").style.display="block";
+               document.getElementById("qian").style.display="none";
+               document.getElementById("hou").style.display="none";
+               h1.setAttribute("class", "tab-u");
+               h2.setAttribute("class", "tab-u current");
+               h3.setAttribute("class", "tab-u");
+           }else if(id=="house3")
+           {
+               document.getElementById("hou").style.display="block";
+               document.getElementById("qian").style.display="none";
+               document.getElementById("zhong").style.display="none";
+               h1.setAttribute("class", "tab-u");
+               h2.setAttribute("class", "tab-u");
+               h3.setAttribute("class", "tab-u current");
+           }
+       }
+
+       function setArticle(id) {
+           var n1 = document.getElementById("new1");
+           var n2 = document.getElementById("new2");
+           var n3 = document.getElementById("new3");
+
+           if (id == "new1") {
+               document.getElementById("gznew").style.display = "block";
+               document.getElementById("zhence").style.display = "none";
+               document.getElementById("quan").style.display = "none";
+
+               n1.setAttribute("class","tab-u current");
+               n2.setAttribute("class", "tab-u");
+               n3.setAttribute("class", "tab-u");
+              
+           }else if(id=="new2")
+           {
+               document.getElementById("zhence").style.display="block";
+               document.getElementById("gznew").style.display="none";
+               document.getElementById("quan").style.display="none";
+               n1.setAttribute("class", "tab-u");
+               n2.setAttribute("class", "tab-u current");
+               n3.setAttribute("class", "tab-u");
+           }else if(id=="new3")
+           {
+               document.getElementById("quan").style.display="block";
+               document.getElementById("gznew").style.display="none";
+               document.getElementById("zhence").style.display="none";
+               n1.setAttribute("class", "tab-u");
+               n2.setAttribute("class", "tab-u");
+               n3.setAttribute("class", "tab-u current");
+           }
+       }
+      </script>
+
+    <script src="http://gz.centanet.com/js/jquery.min.js" type="text/javascript"></script>
+    <style type="text/css">
+    .txtSearchKey{ width:340px; height:30px; margin:0px; padding:0px; margin-top:-8px; margin-left:-10px; border:0px; line-height:30px; text-indent:4px;}
+    </style>
+    <script type="text/javascript">
+        var flagSearchKeyword = false;
+        var flagSearchRefNo = false;
+        var txtSearchKeyword = "请输入您需要查找的内容或关键字";
+        function searchcontrol_keyword_txtonfocus(control) {
+            if (!flagSearchKeyword) { control.value = ""; control.style.color = "#999"; }
+        }
+        function searchcontrol_keyword_txtonblur(control) {
+            if (control.value != "") { flagSearchKeyword = true; } else { flagSearchKeyword = false; }
+            if (!flagSearchKeyword) { control.value = txtSearchKeyword; control.style.color = "#999"; }
+        }
+        function GoToSearch() {
+            var key = document.getElementById("txtSearchKey").value;
+            var strKey = "请输入您需要查找的内容或关键字";
+            var url;
+            if (strKey.indexOf(key) >= 0 || key.length == 0) {
+                url = "http://gz.centanet.com/news/";
+            } else {
+                url = "/searchnews/kw" + encodeURI(key)+"-1";
+            }
+            window.location = url;
+        }
+        $(function () {
+            $("#theArea").click(function () {
+                $("#clmarea1").show();
+            });
+            $("#clmarea").bind("mouseleave", function () {
+                $("#clmarea1").hide();
+            });
+        });
+    </script>
+<title>
+
+</title></head>
+<body>
+    <div class="wrapp">
+	<!---top--->
+	<div class="head">
+		<div class="headbox">
+			<div class="left"><img src="/img_11/home/logo.jpg" width="140" height="48" /></div>
+			
+			<!---search--->
+			<div class="headsearch">
+				 <div class="headsearch-input">
+					<input id="txtSearchKey" name="txtSearchKey" class="txtSearchKey" maxlength="30" onfocus="searchcontrol_keyword_txtonfocus(this)" onblur="searchcontrol_keyword_textonblur(this)" onkeydown="if(event.keyCode==13){GoToSearch()}" value="请输入您需要查找的内容或关键字" type="text" />
+                    			</div>
+				<div class="left"><img src="/img_11/news/search_news.jpg" alt="搜资讯" width="80" height="34" onclick="GoToSearch()"/></div>
+			</div>
+			
+			<!---weblink--->
+			<div class="headweb">
+				<!--<a class="phone" onclick="" target="_blank" href="#"></a>-->
+				<div class="headerArea">
+					<div class="web_s">
+						<span><a title="汇瀚按揭" class="lnk_w_y" href="http://www.gzwellhead.com.cn/"target="_blank" rel="nofollow">汇瀚按揭</a></span>
+						<span>|</span>
+						<span><a title="官方微博" class="lnk_w_y" href="http://weibo.com/gzcentanet"target="_blank" rel="nofollow">官方微博</a></span>
+						<span>|</span>
+						<span><a title="收藏" class="lnk_w_y" href="#" onclick="javascript:window.external.AddFavorite('http://gz.centanet.com/news/','中原楼市热点')">收藏本站</a></span>					</div>
+					<div class="web_s">
+						<span><a class="lnk_w_y" href="http://gz.centanet.com/" target="_blank">广州</a></span>
+						<span style="margin-top: 7px;cursor:pointer;" id="theArea"><img src="/img_11/home/btn_up.png" /></span>					
+                    </div>
+                 <!-- 兄弟连接 -->  
+                        <div class="dk_options" id="clmarea1">
+                                <ul class="dk_options_inner" id="clmarea" style=" z-index:999">
+                                    <li class="dk_option_current"><a href="http://gz.centanet.com" target="_blank" style="color:#d00;">广州</a></li>
+                                    <li><a href="http://sh.centanet.com" target="_blank">上海</a></li> 
+                                    <li><a href="http://hk.centanet.com" target="_blank" >香港</a></li>
+                                    <li><a href="http://sz.centanet.com" target="_blank" >深圳</a></li>
+                                    <li><a href="http://bj.centanet.com" target="_blank" >北京</a></li>
+                                    <li><a href="http://tj.centanet.com" target="_blank" >天津</a></li>
+                                    <li><a href="http://cd.centanet.com/" target="_blank" >成都</a></li>
+                                    <li><a href="http://cq.centanet.com" target="_blank" >重庆</a></li>
+                                    <li><a href="http://dg.centaline.com.cn" target="_blank" >东莞</a></li>
+                                    <li><a href="http://www.centaline-macau.com" target="_blank" >澳门</a></li>
+                                    <li><a href="http://www.centaline.com.cn" target="_blank" >更多</a></li>
+                                </ul>
+                            </div> 
+			</div></div>
+		</div>
+	</div>
+	
+	<!---navigation--->
+	<div class="navi">
+		<ul class="mainBox_nohd">
+			<li><a href="http://gz.centanet.com/"  title="首页"  class="lnk_w_y_15b">首页</a></li>
+			<li><a href="http://gz.centanet.com/sale/gz/" title="二手房"  class="lnk_w_y_15b">二手房</a> </li>
+			<li><a title="出租房" href="http://gz.centanet.com/rental/gz/" class="lnk_w_y_15b">租房</a></li>
+			<li><a title="新房" href="http://gz.centanet.com/depart/" class="lnk_w_y_15b">新房</a></li>
+			<li><a title="写字楼" href="http://gz.centanet.com/office/" class="lnk_w_y_15b">写字楼</a> </li>
+			<li><a title="商铺" href="http://gz.centanet.com/premise/"  class="lnk_w_y_15b">商铺</a></li>
+			<li><a title="房团购" href="http://gz.centanet.com/tuangou/" class="lnk_w_y_15b">房团购</a> </li>
+			<li><a title="楼盘百科" href="http://gz.centanet.com/wiki/"  class="lnk_w_y_15b">楼盘百科</a></li>
+			<li class="current"><a title="楼市热点" href="http://gz.centanet.com/news/" class="lnk_w_y_15b">楼市热点</a><img src="http://gz.centanet.com/img_11/home/new.gif" alt="new" style="position: absolute;
+                    width: 22px; height: 12px;" /> </li>
+			<li><a title="网络经纪人" href="http://gz.centanet.com/agent/" class="lnk_w_y_15b">网络经纪人</a></li>
+			<li><a title="楼盘视频" href="http://gz.centanet.com/cpn/" class="lnk_w_y_15b">楼盘视频</a></li>
+			<li><a title="关于我们" href="http://gz.centanet.com/about/" class="lnk_w_y_15b">关于我们</a> </li>
+		</ul>
+	</div>
+</div>
+ 
+   <!---导航--->	
+<div class="mainBox_nohd">
+	<div class="crumb">
+		<span></span>
+		<span></span>
+		<span></span>	
+	</div>
+</div>
+<!---新闻--->
+<div class="newsbox">	
+	<!---left--->
+	<div class="arealeft">
+       
+		<div class="bigsize"><a href="http://gz.centanet.com/article/newsdetail-2-25041-1.htm" target="_blank">二手房租金为何涨价难？</a></div>
+		<p>
+		<a href="http://gz.centanet.com/article/newsdetail-2-25041-1.htm" target="_blank">俗话说，人比人，比死人。凭什么这间房屋可以租到5000元，而我的只能4500元？两年不加租，想涨个500元都未能如愿？记者身边就有几个朋友在租赁市场“不得意”，想着“近水楼台”找记者讨个说法。出租...</a>
+		</p>
+		<span class="blank15"></span>
+       
+		<div class="bigsize"><a href="http://gz.centanet.com/article/newsdetail-2-25039-1.htm" target="_blank">荔湾新货选择多 越秀有笋盘闪现</a></div>
+		<p>
+		<a href="http://gz.centanet.com/article/newsdetail-2-25039-1.htm" target="_blank">虽然从今年开始，相关部门对越秀高价盘的“指导价”门槛有所放松，因此不少越秀新货也顺利拿到预售证。但东风广场五期等备受实力买家关注的项目依然未能亮相。总体来说，越秀“五一”期间新推货量多数在4万元/...</a>
+		</p>
+		<span class="blank15"></span>
+       
+		<div class="bigsize"><a href="http://gz.centanet.com/article/newsdetail-2-25040-1.htm" target="_blank">女子抛国内房产 伦敦狂买5套房</a></div>
+		<p>
+		<a href="http://gz.centanet.com/article/newsdetail-2-25040-1.htm" target="_blank">卖掉北京房，买来伦敦房？近日，有市民追随李嘉诚的步伐，进行楼市“换仓”。该市民认为，长远来看北京房价肯定还是会涨，但是目前北京的房产增长点不明确了。而在国外投资房地产，则有着宜投资、宜自用等多重着...</a>
+		</p>
+		<span class="blank15"></span>
+       
+	</div>
+    	<!---right--->
+	<div class="arearight">
+    <div class="area_ad">
+		<!--广告-->
+      <!--UL标签class属性必需，图片alt属性值即标题文字-->
+   <div class="yx-rotaion">
+	<ul class="rotaion_list">
+       
+		<li><a href="http://gz.centanet.com/special/special-117.html" target="_blank"><img src="http://gz.centanet.com//UploadImage/AdvertiseImage/20140418/20140418184104.jpg" alt="150万刚需购房 海珠区有得挑" title="150万刚需购房 海珠区有得挑"/></a></li>
+      
+		<li><a href="http://gz.centanet.com/special/special-114.html" target="_blank"><img src="http://gz.centanet.com//UploadImage/AdvertiseImage/20140410/20140410183733.jpg" alt="150万刚需购房 白云区有得挑" title="150万刚需购房 白云区有得挑"/></a></li>
+      
+		<li><a href="http://gz.centanet.com/special/special-112.html" target="_blank"><img src="http://gz.centanet.com//UploadImage/AdvertiseImage/20140410/20140410113448.jpg" alt="抄底刚需房 置业一步到位" title="抄底刚需房 置业一步到位"/></a></li>
+      
+		<li><a href="http://gz.centanet.com/special/special-113.html" target="_blank"><img src="http://gz.centanet.com//UploadImage/AdvertiseImage/20140401/20140401165757.jpg" alt="旺季购学位房 政策行情你要知" title="旺季购学位房 政策行情你要知"/></a></li>
+      
+	</ul>
+</div>
+</div>
+   <script type="text/javascript" src="/js/jquery.yx_rotaion.js"></script>
+   <script type="text/javascript">
+         $(".yx-rotaion").yx_rotaion({ auto: true });
+    </script>
+        <!--广告结束-->
+		<div class="project">
+			<a href="http://gz.centanet.com/news/speciallist-1.htm" target="_blank"><img src="/img_11/news/news_zthc.jpg" alt="专题荟萃"/></a>
+            
+			<span><a href="http://gz.centanet.com/special/special-119.html" target="_blank">富力盈东国际写字楼</a></span>	
+			<span>|</span>	
+	       
+			<span><a href="http://gz.centanet.com/special/special-117.html" target="_blank">150万海珠刚需购房</a></span>	
+			<span>|</span>	
+	       
+			<span><a href="http://gz.centanet.com/special/special-114.html" target="_blank">150万置业白云区</a></span>	
+			<span>|</span>	
+	       
+		</div>
+	</div>
+   </div>
+    <!---楼市热点关注--->
+<div class="newsbox">	
+	<div class="follow">
+		<h3>楼市热点关注</h3>
+		<!--<a href="#" target="_blank" class="lnk_gray">更多&gt;&gt;</a>-->
+	</div>	
+    <div class="bd">            		
+		<ul class="hotwords">
+         
+			<li class="li_0 li_color_0">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24925-1.htm" target="_blank" class="hotwords_li_a" title="中小房企倒闭潮再现">中小房企倒闭潮再现</a>
+			</li>
+            
+			<li class="li_1 li_color_1">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24932-1.htm" target="_blank" class="hotwords_li_a" title="四大银行如常提供房贷" style="padding-top: 2.5px;">四大银行如常提供房贷</a>	        
+			</li>
+            
+			<li class="li_2 li_color_0">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24930-1.htm" target="_blank" class="hotwords_li_a" title="中心六区住宅车位" style="padding-top: 11.5px;">中心六区住宅车位</a>
+			</li>
+            
+			<li class="li_3 li_color_1">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24928-1.htm" target="_blank" class="hotwords_li_a" title="租房取公积金将简化">租房取公积金将简化</a>      
+			</li>
+            
+			<li class="li_4 li_color_0">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24926-1.htm" target="_blank" class="hotwords_li_a" title="最严公积金新政">最严公积金新政</a>
+			</li>
+            
+			<li class="li_5 li_color_1">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24931-1.htm" target="_blank" class="hotwords_li_a" title="“双合同”杀手太温柔" style="padding-top: 2.5px;">“双合同”杀手太温柔</a>	        
+			</li>
+            
+			<li class="li_6 li_color_0">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24929-1.htm" target="_blank" class="hotwords_li_a" title="近郊学位房" style="padding-top: 11.5px;">近郊学位房</a>
+			</li>
+            
+			<li class="li_7 li_color_1">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24927-1.htm" target="_blank" class="hotwords_li_a" title="广州楼市成交">广州楼市成交</a>      
+			</li>
+            
+			<li class="li_8 li_color_0">
+				<a href="http://gz.centanet.com/article/newsdetail-2-24932-1.htm" target="_blank" class="hotwords_li_a" title="四大行如常提供房贷">四大行如常提供房贷</a>      
+			</li>
+			
+		</ul>
+	</div>
+</div>
+<!---main--->
+<div class="newsbox">
+	<!---left 成交案例--->
+	<div class="casebox">		
+		<div class="case">
+			<div class="caseleft">
+				<h2><a href="http://gz.centanet.com/article/2-179-1" target="_blank">成交案例</a></h2>
+			</div>
+			<div class="caseright"><div class="caseright_lp">新鲜故事，一线提供</div><a href="http://gz.centanet.com/article/2-179-1" target="_blank" class="lnk_gray">更多&gt;&gt;</a></div>
+		</div>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25027-1.htm" target="_blank">买家一次性付款 业主降价20万售出嘉怡苑三房</a></h2>
+			<p class="info"><span class="casegray">2014-04-28 11:12:57</span></p>
+			<div class="pBody">
+              
+               <p>最近，中原地产新侨怡分行成交了一套广州嘉怡苑的三房单元，面积约115㎡，成交总价约250万元，折合单价约2.2万元/㎡，目前该楼盘市场成交均价约为2.5—2.6万元/㎡。据该分行高级营业经理张海鹏介绍，该物业是电梯中高层,三房两厅的户型，北向，装修保养情况良好，楼龄16...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25027-1.htm" target="_blank"" class="look">查看全文</a>
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25026-1.htm" target="_blank">买家看中装修保养好，268万购入中海名都花园两房</a></h2>
+			<p class="info"><span class="casegray">2014-04-28 11:08:05</span></p>
+			<div class="pBody">
+              
+               <p>最近,中原地产中海名都花园分行成交了一套中海名都花园的两房单元,面积约80㎡,成交总价约268万元,折合单价约3.3万元/㎡,目前该楼盘市场成交均价约为3.2-3.4万元/㎡。据该分行营业经理杨文硕介绍,该物业是电梯低层, 两房两厅的户型,西南向望花园。该单位房产证已过...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25026-1.htm" target="_blank"" class="look">查看全文</a>
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25025-1.htm" target="_blank">投资客500万“执到”大新路6%超高回报率餐饮铺</a></h2>
+			<p class="info"><span class="casegray">2014-04-28 11:00:43</span></p>
+			<div class="pBody">
+              
+               <p>近日，中原地产工商铺宜安分部成交了一间大新路商铺，这是一间经营餐饮生意的全首层临街铺，面积约169平方米，带租约出售，成交总价为500万元，折合单价约2.96万元/㎡。大新路是越秀区的一条东西走向的道路，位于广州起义路以西，人民南路以东。据了解，这次成交的大新路商铺位于...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25025-1.htm" target="_blank"" class="look">查看全文</a>
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25010-1.htm" target="_blank">买家看中带省级学位，392万购入广州东风广场三房</a></h2>
+			<p class="info"><span class="casegray">2014-04-25 11:12:10</span></p>
+			<div class="pBody">
+              
+               <p>最近,中原地产东风东路分行成交了一套东风广场的三房单元,面积约98㎡,成交总价约392万元,折合单价约4万元/㎡,目前该楼盘市场成交均价约为4万元/㎡。据该分行营业经理伍景强介绍,该物业是电梯中层, 三房两厅的户型,东向，装修保养情况良好。该单位房产证已过五年，楼龄14...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25010-1.htm" target="_blank"" class="look">查看全文</a>
+			</div>
+		</div>
+         
+      	<!---中原观点--->	
+		<div class="blank25"></div>
+		<div class="case">
+			<div class="caseleft">
+				<h2><a href="http://gz.centanet.com/article/2-194-1" target="_blank">中原观点</a></h2>
+			</div>
+			<div class="caseright"><div class="caseright_lp">前沿观点，把握行情</div><a href="http://gz.centanet.com/article/2-194-1" target="_blank" class="lnk_gray">更多&gt;&gt;</a></div>
+		</div>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25056-1.htm" target="_blank">地方救市蠢蠢欲动 住宅成交量滞价松</a></h2>
+			<p class="info"><span class="casegray">2014-04-28 18:13:01</span></p>
+			<div class="pBody">
+              
+                <p>上周，无锡户籍新政正式出台，购房落户门槛有所降低，此外杭州等地对限购松绑亦蠢蠢欲动。住宅成交上周的走势相对平稳，但4月整体表现不及3月已成定局，且市场的持续低迷令越来越多城市的房价步入了实质性松动阶段，土地市场冷热不均的分化也愈发明显。</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25056-1.htm" class="look" target="_blank">查看全文</a>
+				
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25044-1.htm" target="_blank">天河越秀330万难觅新净学位电梯三房</a></h2>
+			<p class="info"><span class="casegray">2014-04-28 13:59:35</span></p>
+			<div class="pBody">
+              
+                <p>近期，读者张小姐向我们咨询，希望求购朝向较好，楼龄在10年以内，周边配套齐全且带学位的电梯两房或小三房户型，总价在330万左右。就此，笔者采访了中原地产多家分行主管，他们表示，由于符合张小姐要求配套学位的二手住宅多是楼龄较长的电梯楼或楼梯楼，且朝向较好的单位放盘量较为紧...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25044-1.htm" class="look" target="_blank">查看全文</a>
+				
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25023-1.htm" target="_blank">地方政策松绑显现 信贷政策为关键</a></h2>
+			<p class="info"><span class="casegray">2014-04-25 14:10:06</span></p>
+			<div class="pBody">
+              
+                <p>近期多地楼盘降价新闻频传，信贷环境未有改善，包括温州、长沙、杭州、福建在内多个城市限购松绑的消息不胫而走。本周，无锡户籍新政降低购房落户条件。可见，部分城市虽然没有直接触碰限购的红线，但已在准入等执行尺度上暗松。但近期的政策也充分体现了两会上提出的分类调控的总体框架。</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25023-1.htm" class="look" target="_blank">查看全文</a>
+				
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25022-1.htm" target="_blank">广州中原：二手住宅价格低位趋势还将持续</a></h2>
+			<p class="info"><span class="casegray">2014-04-25 14:03:53</span></p>
+			<div class="pBody">
+              
+                <p>本周CLI广州二手住宅报价指数为39.90%，较上周降5.3个百分点。本周40%的房源报价上升，较上周升5个百分点；同时60%的房源报价下降，较上周降5个百分点；没有房源报价不变。本周报价指数较上周略有回升，但总体仍在低位。虽然上周一手楼市推货千余套且成交较好，但二手楼...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25022-1.htm" class="look" target="_blank">查看全文</a>
+				
+			</div>
+		</div>
+         
+     <!---中原动态--->	
+		<div class="blank25"></div>
+		<div class="case">
+			<div class="caseleft">
+				<h2><a href="http://gz.centanet.com/article/2-195-1" target="_blank">中原动态</a></h2>
+			</div>
+			<div class="caseright"><div class="caseright_lp">分享感悟，20年有你</div><a href="http://gz.centanet.com/article/2-195-1" target="_blank" class="lnk_gray">更多&gt;&gt;</a></div>
+		</div>
+         
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25054-1.htm" target="_blank">皇城国际两天迎客超200台 中原客户尊享95折</a></h2>
+			<p class="info"><span class="casegray">2014-04-28 17:53:42</span></p>
+			<div class="pBody">
+              
+                <p>4月26—27日,中原地产独家代理的“皇城国际”产权铺盛大开售。由于该项目位于地铁1号线长寿路站，地理位置优越，升值潜力大，一开售即吸引了大批客户前往现场看铺买铺，据悉,中原地产本周末销售期间，接待客户就达200多台,众多客户精心挑选铺位,并抢在第一时间订下自己的心仪靓铺...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25054-1.htm" class="look" target="_blank">查看全文</a>
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-25053-1.htm" target="_blank">广州中原物业部逆市创佳绩，业绩同比增长13.3%</a></h2>
+			<p class="info"><span class="casegray">2014-04-28 17:48:42</span></p>
+			<div class="pBody">
+              
+                <p>4月28日,广州中原物业部2014年第一季季会在南方医科大学大礼堂举行，主题是“气势如虹创新高，乘胜追击再突破”。大陆区总裁赖国强、华南总裁李耀智、广州中原董事总经理黄轩明及后勤一众代表获邀出席了会议。本季度恰逢春季淡季，但广州中原逆市创佳绩，虽然业绩环比略有下降，但同比...</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-25053-1.htm" class="look" target="_blank">查看全文</a>
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-24989-1.htm" target="_blank">花语水岸销售火爆，交通便利市区盘仅2.5万/㎡起</a></h2>
+			<p class="info"><span class="casegray">2014-04-23 12:02:29</span></p>
+			<div class="pBody">
+              
+                <p>近日,由中原地产联合代理的、位于荔湾区大坦沙岛的花语水岸开售。由于该项目地理位置优越，位于五、六号线交界，而且住宅单位低至2.5万元/㎡起,价格优惠，升值空间大，吸引众多刚需、改善型买家前来购房，现场销售火爆。</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-24989-1.htm" class="look" target="_blank">查看全文</a>
+			</div>
+		</div>
+         
+		<span class="dotline"></span>
+        
+        <div class="leftPic">
+			<h2><a href="http://gz.centanet.com/article/newsdetail-2-24969-1.htm" target="_blank">合景天峻销售旺盛，中原代理销售额超3亿</a></h2>
+			<p class="info"><span class="casegray">2014-04-22 12:17:05</span></p>
+			<div class="pBody">
+              
+                <p>近日,由中原地产联合代理的、位于黄埔区九龙大道中新知识城南起步区的合景天峻开售,公寓单位低至7500元/㎡起,吸引超1500台客前来抢购。而中原地产代理时间不到一周，已成功成交公寓、别墅500多套,销售金额超过3亿元。</p>
+                
+				<a href="http://gz.centanet.com/article/newsdetail-2-24969-1.htm" class="look" target="_blank">查看全文</a>
+			</div>
+		</div>
+         
+        </div>
+        <!---right--->
+	<div class="newsrightbox">
+    <div class="newsright">  
+	<div class="wgt-tab  wgt-tab-1" style="width: 305px;">
+        <span class="blank12"></span>
+        <div class="title-bar ui-til2">
+            <h2>楼市新闻</h2>
+            <h3 class="tab-hf tab-u-8  right clearfix">
+                <span class="tab-u current" id="new1" onmouseover="setArticle('new1')"><a href="http://gz.centanet.com/article/2-203-1" target="_blank">广州楼市</a></span>
+                <span class="tab-u" id="new2" onmouseover="setArticle('new2')"><a href="http://gz.centanet.com/article/2-205-1" target="_blank">政策资讯</a></span>
+                <span class="tab-u" id="new3" onmouseover="setArticle('new3')"><a href="http://gz.centanet.com/article/2-204-1" target="_blank">全国楼市</a></span>
+            </h3>
+        </div>        
+    </div>
+	<div class="zsbox" id="gznew">
+     <ul class="main-list">
+    
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25041-1.htm" target="_blank">二手房租金为何涨价难？</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25039-1.htm" target="_blank">荔湾新货选择多 越秀有笋盘闪现</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25035-1.htm" target="_blank">三房住宅将占楼市成交七成</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25020-1.htm" target="_blank">限价房升值 谁该拿大头？</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25016-1.htm" target="_blank">前3月广州建成2415套保障房</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25015-1.htm" target="_blank">房管局：买房分期首付须慎重</a></li>
+      
+      </ul>
+      </div>
+      <div class="zsbox" id="zhence" style="display:none;">
+         <ul class="main-list">
+    
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25040-1.htm" target="_blank">女子抛国内房产 伦敦狂买5套房</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25037-1.htm" target="_blank">2014年银行不良贷款增速将会继续攀升</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25036-1.htm" target="_blank">沟通不畅 电梯难装</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25018-1.htm" target="_blank">好山好水郊区房 想住配套跟上先得</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25017-1.htm" target="_blank">首对申请“单独二孩”夫妇拿到证啦</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25014-1.htm" target="_blank">白云区小学学位分配 须人户一致</a></li>
+      
+      </ul>
+      </div>
+      <div class="zsbox" id="quan" style="display:none;">
+         <ul class="main-list">
+    
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25038-1.htm" target="_blank">深圳公租房下半年可同城异地置换</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25034-1.htm" target="_blank">我国房地产贷款增势高位回落</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-25019-1.htm" target="_blank">房贷收紧 深圳福田南山近半购房全款</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-24995-1.htm" target="_blank">一季度全省商品房量跌价涨</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-24993-1.htm" target="_blank">广东省公积金将可支付首付款</a></li>
+      
+      <li><a href="http://gz.centanet.com/article/newsdetail-2-24986-1.htm" target="_blank">北京楼市近7万套库存创新高</a></li>
+      
+      </ul>
+      </div>
+    </div>
+	<!---中原指数--->
+	<div class="newsright">
+		<div class="newstopic">
+			<h2><a href="http://gz.centanet.com/article/2-206-1" target="_blank">中原指数</a></h2><span class="caseright_lp">广州楼市最新走势独家分析</span>
+			<a href="http://gz.centanet.com/article/2-206-1" target="_blank" class="lnk_gray">更多&gt;&gt;</a>
+		</div>
+        
+		<div class="zsbox">
+			<ul class="f12bla">
+				<li class="firstNd">
+					<a href="http://gz.centanet.com/article/newsdetail-2-24907-1.htm" target="_blank"><img src="http://img.gz.centanet.com/UploadImage/cmsImage/20140416/6353326957087601767558382.jpg" alt="2014.3 环比逐渐回暖 同比成色不足" width="136" height="80"/></a>
+					<h3><a href="http://gz.centanet.com/article/newsdetail-2-24907-1.htm" target="_blank">2014.3 环比逐渐回暖 同比成色不足</a></h3>
+					<span>2014年03月中原（广州）领先指数为5...<a href="/article/newsdetail-2-24907-1.htm" class="lnk_blue" target="_blank">[阅读全文]</a></span>
+				</li>
+			</ul>
+		</div>
+        
+        <div class="zsbox">
+			<ul class="main-list">
+            
+              <li><a href="http://gz.centanet.com/article/newsdetail-2-24590-1.htm" target="_blank">2014.2上旬成交低位 下旬暖象渐显</a></li>
+              
+              <li><a href="http://gz.centanet.com/article/newsdetail-2-24138-1.htm" target="_blank">2014.1.二手成交低迷 楼市回升近期难现</a></li>
+              
+              <li><a href="http://gz.centanet.com/article/newsdetail-2-23799-1.htm" target="_blank">中原（广州）领先指数2013年12月版</a></li>
+              
+              <li><a href="http://gz.centanet.com/article/newsdetail-2-23474-1.htm" target="_blank">中原（广州）领先指数2013年11月版</a></li>
+              
+              <li><a href="http://gz.centanet.com/article/newsdetail-2-23054-1.htm" target="_blank">中原（广州）领先指数2013年10月版</a></li>
+              
+              <li><a href="http://gz.centanet.com/article/newsdetail-2-22747-1.htm" target="_blank">中原（广州）领先指数2013年9月版</a></li>
+              
+            </ul>
+        </div>
+      </div>
+      <!---楼盘视频--->
+	<div class="newsright">
+		<div class="newstopic">
+			<h2><a href="http://gz.centanet.com/cpn/" target="_blank">楼盘视频</a></h2><span class="caseright_lp">广州热门楼盘现场真实呈现</span>
+			<a href="http://gz.centanet.com/cpn/" target="_blank" class="lnk_gray">更多&gt;&gt;</a>
+		</div>
+		<div class="vedio">
+			<ul>
+              
+              	<li>
+					<a href="/cpn/detail-1349.htm" class="lnk_g_o" title="中国美林湖" target="_blank"><img width="150" height="85" alt="000" src="http://gz.centanet.com//UploadImage/CpnImage/20140428/20140428164502.jpg" alt="中国美林湖"></a>
+					<span><a href="/cpn/detail-1349.htm" target="_blank">中国美林湖</a></span>
+                </li>
+              
+              	<li>
+					<a href="/cpn/detail-1348.htm" class="lnk_g_o" title="2014年3月一手市况" target="_blank"><img width="150" height="85" alt="000" src="http://gz.centanet.com//UploadImage/CpnImage/20140415/20140415180731.jpg" alt="2014年3月一手市况"></a>
+					<span><a href="/cpn/detail-1348.htm" target="_blank">2014年3月一手市况</a></span>
+                </li>
+              
+              	<li>
+					<a href="/cpn/detail-1347.htm" class="lnk_g_o" title="2014年3月二手市况" target="_blank"><img width="150" height="85" alt="000" src="http://gz.centanet.com//UploadImage/CpnImage/20140411/20140411163143.bmp" alt="2014年3月二手市况"></a>
+					<span><a href="/cpn/detail-1347.htm" target="_blank">2014年3月二手市况</a></span>
+                </li>
+              
+              	<li>
+					<a href="/cpn/detail-1346.htm" class="lnk_g_o" title="龙湖大厦" target="_blank"><img width="150" height="85" alt="000" src="http://gz.centanet.com//UploadImage/CpnImage/20140410/20140410144054.jpg" alt="龙湖大厦"></a>
+					<span><a href="/cpn/detail-1346.htm" target="_blank">龙湖大厦</a></span>
+                </li>
+              
+            </ul>
+        </div>
+    </div>
+    <!---C 观点--->
+	<div class="newsright">
+		<div class="newstopic">
+			<h2><a href="http://gz.centanet.com/article/2-222-1" target="_blank">施永青说</a></h2><span class="caseright_lp">中原集团创始人精彩时评</span>
+			<a href="http://gz.centanet.com/article/2-222-1" target="_blank" class="lnk_gray">更多&gt;&gt;</a>
+		</div>
+		<div class="zsbox">
+           
+			<ul class="f12bla">
+				<li class="firstNd">
+					<img src="/img_11/news/c.jpg" alt="施永青说"/>
+					<h3><a href="http://gz.centanet.com/article/newsdetail-2-25003-1.htm" target="_blank">工资受制於国际分工</a></h3>
+					<span>一般而言,工资的水平受制於劳动时间的长短。劳动的强度与巧度、劳动前所需的学习与经验,以及个别特殊劳动能力的稀有度与需求度。……[<a href="/article/newsdetail-2-25003-1.htm" class="lnk_blue" target="_blank">阅读全文</a>]</span>
+				</li>
+			</ul>
+           
+        </div>
+		<div class="zsbox">
+            <ul class="main-list">
+             
+            <li><a href="http://gz.centanet.com/article/newsdetail-2-25004-1.htm" class="lnk_b_o" target="_blank">为何有些工种要不起价？</a></li>
+            
+            <li><a href="http://gz.centanet.com/article/newsdetail-2-24960-1.htm" class="lnk_b_o" target="_blank">限制外劳有利本地人吗？</a></li>
+            
+            <li><a href="http://gz.centanet.com/article/newsdetail-2-24917-1.htm" class="lnk_b_o" target="_blank">地盘工人後继无人</a></li>
+            
+            <li><a href="http://gz.centanet.com/article/newsdetail-2-24918-1.htm" class="lnk_b_o" target="_blank">政制发展该多快</a></li>
+            
+            <li><a href="http://gz.centanet.com/article/newsdetail-2-24870-1.htm" class="lnk_b_o" target="_blank">人民币还会贬值吗？</a></li>
+            
+            <li><a href="http://gz.centanet.com/article/newsdetail-2-24871-1.htm" class="lnk_b_o" target="_blank">从力场效应看政局演变</a></li>
+            
+            </ul>
+		</div>
+		</div>
+		<!---官方微博--->
+	<div class="newsright">
+		<div class="newstopic">
+			<h2>官方微博</h2>
+			<a href="http://weibo.com/gzcentanet" target="_blank" class="lnk_gray">更多&gt;&gt;</a>
+		</div>
+		<div class="weibo">	
+        <iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=650&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1742872830&verifier=4d3ebf96&dpc=1"></iframe>
+         	</div>				
+	</div>
+	
+	<!---教你点买楼--->
+	<div class="blank15"></div>
+	<div class="grayborder"></div>
+	<div class="wgt-tab  wgt-tab-1">
+        <span class="blank12"></span>
+        <div class="title-bar ui-til2">
+            <h2><a href="http://gz.centanet.com/article/2-187-1" target="_blank">教你点买楼</a></h2>
+            <h3 class="tab-hd tab-u-8  right clearfix">
+                <span class="tab-u current" id="house1" onmouseover="setHouseArticle('house1')"><a href="http://gz.centanet.com/wordlist/2-191-1" target="_blank">购房前</a></span>
+                <span class="tab-u" id="house2" onmouseover="setHouseArticle('house2')"><a href="http://gz.centanet.com/wordlist/2-192-1" target="_blank">购房中</a></span>
+                <span class="tab-u" id="house3" onmouseover="setHouseArticle('house3')"><a href="http://gz.centanet.com/wordlist/2-193-1" target="_blank">购房后</a></span>
+            </h3>
+        </div>        
+    </div>
+	<div class="buybox">
+     <ul class="buy" id="qian">
+    
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25055-1.htm" target="_blank">0首付分期付款买车|</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25047-1.htm" target="_blank">上海浦东高端楼盘7折</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25046-1.htm" target="_blank">2014房地产救市|</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25043-1.htm" target="_blank">中国房价会跌吗|中国</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25033-1.htm" target="_blank">中国房价上涨的原因，</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25032-1.htm" target="_blank">房地产产能过剩，中原</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25031-1.htm" target="_blank">如何装修厨房？装修厨</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25030-1.htm" target="_blank">怎么降低电脑辐射？减</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25028-1.htm" target="_blank">一线城市房价走势|一</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25008-1.htm" target="_blank">如何选择房子？</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25006-1.htm" target="_blank">购房落户门槛降，无锡</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25005-1.htm" target="_blank">土地出让底价成交，杭</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24975-1.htm" target="_blank">未来房价走势：中原经</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24974-1.htm" target="_blank">楼市成交量|中原解读</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24973-1.htm" target="_blank">住房信贷政策变化，触</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24953-1.htm" target="_blank">住房公积金提取将收紧</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24952-1.htm" target="_blank">房价走势最新消息:高</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24924-1.htm" target="_blank">广州保障房申请条件|</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24906-1.htm" target="_blank">存量房是什么意思|什</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24904-1.htm" target="_blank">三四线城市房价走势|</a></li>
+      
+      </ul>
+    <ul class="buy" id="zhong" style="display:none;">
+    
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25012-1.htm" target="_blank">实木家具真假辨别|怎</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25011-1.htm" target="_blank">卧室壁纸| 卧室装修</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24863-1.htm" target="_blank">买商品房注意事项|交</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23309-1.htm" target="_blank">属相与楼层风水</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23269-1.htm" target="_blank">个人办理房产证流程</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23242-1.htm" target="_blank">0首付分期付款买车真</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23225-1.htm" target="_blank">怎样分期付款买车</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18892-1.htm" target="_blank">温度换算及温度换算表</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18738-1.htm" target="_blank">长度单位换算</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18576-1.htm" target="_blank">现在投资什么最赚钱</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18565-1.htm" target="_blank">使用权房</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18563-1.htm" target="_blank">人民币欧元汇率</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18549-1.htm" target="_blank">欧元对美元汇率</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18516-1.htm" target="_blank">温度换算</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18410-1.htm" target="_blank">英镑汇率</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18396-1.htm" target="_blank">新居入伙贺词</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18395-1.htm" target="_blank">新房入伙</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18378-1.htm" target="_blank">网签查询</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18342-1.htm" target="_blank">商品房预售许可证</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18339-1.htm" target="_blank">人民币汇率走势</a></li>
+      
+      </ul>
+    <ul class="buy" id="hou" style="display:none;">
+    
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25057-1.htm" target="_blank">户口迁移手续|迁户口</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-25029-1.htm" target="_blank">怎样清洁布艺沙发</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24936-1.htm" target="_blank">商品房装修注意事项|</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24018-1.htm" target="_blank">房地产行业常见的融资</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24017-1.htm" target="_blank">房地产年限过了怎么办</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-24019-1.htm" target="_blank">新房装修设计图片参考</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23995-1.htm" target="_blank">中国的房地产房价为什</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23712-1.htm" target="_blank">新房装修的注意事项及</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23674-1.htm" target="_blank">新房除味如何除甲醛?</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23673-1.htm" target="_blank">新房除味有什么好方法</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-23308-1.htm" target="_blank">楼梯设计规范</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18996-1.htm" target="_blank">玄关装修效果图大全2</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18985-1.htm" target="_blank">小户型装修效果图</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18971-1.htm" target="_blank">小户型 厨房装修效果</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18927-1.htm" target="_blank">万家乐热水器维修</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18921-1.htm" target="_blank">塑钢窗</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18916-1.htm" target="_blank">明天不封阳台教案</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18860-1.htm" target="_blank">使用权房、使用权房可</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18905-1.htm" target="_blank">空气能热水器十大品牌</a></li>
+      
+      <li><a href="http://gz.centanet.com/wordsinfo/articleshow-2-18893-1.htm" target="_blank">物业公司年度总结</a></li>
+      
+      </ul>
+    </div>
+    <!---楼市热点 导航--->
+	<div class="grayborder"></div>
+	<span class="blank12"></span>
+	<div class="map">楼市热点 <span class="mapred">导航</span></div>
+		<ul class="rankList">
+				<li>
+					<span class="ranknum">中原看市</span>
+					<div class="rankw">
+                    <span><a href="http://gz.centanet.com/article/2-194-1" target="_blank">中原观点</a></span>
+					<span><a href="http://gz.centanet.com/article/2-179-1" target="_blank">成交案例</a></span>
+                    <span><a href="http://gz.centanet.com/article/2-206-1" target="_blank">中原数据</a></span>
+					</div>
+				</li>		
+			</ul>
+			<ul class="rankList">
+				<li>
+				
+					<span class="ranknum">楼市新闻</span>
+					<div class="rankw">
+                        <span><a href="http://gz.centanet.com/article/2-203-1" target="_blank">广州地产新闻</a></span>
+                        <span><a href="http://gz.centanet.com/article/2-204-1" target="_blank">全国楼市播报</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span><a href="http://gz.centanet.com/article/2-205-1" target="_blank">房产政策资讯</a></span>
+					</div>
+				</li>		
+			</ul>
+			<ul class="rankList">
+				<li>
+					<span class="ranknum">教你点买楼</span>
+					<div class="rankw">
+                    <span><a href="http://gz.centanet.com/news/speciallist-1.htm" target="_blank">购房专题</a></span>
+                    <span><a href="http://gz.centanet.com/article/2-198-1" target="_blank">房产案例</a></span>
+                    <span><a href="http://gz.centanet.com/article/2-199-1" target="_blank">法律法规</a></span>
+                    <span><a href="http://gz.centanet.com/ask/all/" target="_blank">购房问答</a></span>
+					<span><a href="http://gz.centanet.com/words/2" target="_blank">购房手册</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span><a href="http://gz.centanet.com/article/2-187-1" target="_blank">交易流程/税费</a></span>
+					</div>
+				</li>		
+			</ul>
+			<ul class="rankList">
+				<li>
+					<span class="ranknum">人在中原</span>
+					<div class="rankw">
+                    <span><a href="http://gz.centanet.com/article/2-197-1" target="_blank">一二手联动快讯</a></span>
+					<span><a href="http://gz.centanet.com/article/2-222-1" target="_blank">施永青说</a></span>&nbsp;&nbsp;
+                    <span><a href="http://gz.centanet.com/article/2-195-1" target="_blank">中原动态</a></span>
+					<span><a href="http://gz.centanet.com/article/2-196-1" target="_blank">奖项嘉许</a></span>
+					</div>
+				</li>		
+			</ul>
+
+	</div>
+</div>
+<!---首页右侧悬浮窗--->
+<div class="sbar" id="backToTop" style="height: 140px; visibility: visible; bottom: 150px; position: fixed;display:none;" >
+	<ul class="sbar-box">
+		<li><a href="http://gz.centanet.com/article/2-179-1" target="_blank">成交案例</a><div class="pro_dotted"></div></li>
+		<li><a href="http://gz.centanet.com/article/2-194-1" target="_blank">中原观点</a><div class="pro_dotted"></div></li>
+		<li><a href="http://gz.centanet.com/article/2-195-1" target="_blank">中原动态</a><div class="pro_dotted"></div></li>	
+		<div class="backto_top"><a href="javascript:void(0)" title="返回顶部"/></a></div>
+	</ul>
+</div>
+<script type="text/javascript">
+    var obj = document.getElementById("backToTop");
+    function getScrollTop() {
+        return document.body.scrollTop || document.documentElement.scrollTop;
+    }
+    function setScrollTop(value) {
+        if (document.documentElement.scrollTop) {
+            document.documentElement.scrollTop = value;
+        }
+        else if (document.body.scrollTop) {
+            document.body.scrollTop = value;
+        }
+    }
+
+    window.onscroll = function () { getScrollTop() > 0 ? obj.style.display = "block" : obj.style.display = "none"; }
+    obj.onclick = function () {
+        var goTop = setInterval(scrollMove, 10);
+        function scrollMove() {
+            setScrollTop(getScrollTop() / 1.1);
+            if (getScrollTop() < 1) clearInterval(goTop);
+        }
+    }
+</script>
+
+   
+   <!--footer-->	
+<div class="footer">
+	                	<div class="footer_txt">
+		<span><a href="http://gz.centanet.com/sale/gz/"  target="_blank" class="lnk_blue">广州二手房信息</a></span>
+		<span><a href="http://gz.centanet.com/rental/gz/" target="_blank" class="lnk_blue">广州租房信息</a></span>	
+		<span><a href="http://gz.centanet.com/words/2" target="_blank" class="lnk_blue">购房手册</a></span>	
+		<span><a href="http://gz.centanet.com/sitemap.htm" target="_blank" class="lnk_blue">网站地图</a></span>	
+        
+          <span><a href="http://gz.centanet.com/letters/A/1.htm" target="_blank" class="lnk_blue">A</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/B/1.htm" target="_blank" class="lnk_blue">B</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/C/1.htm" target="_blank" class="lnk_blue">C</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/D/1.htm" target="_blank" class="lnk_blue">D</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/E/1.htm" target="_blank" class="lnk_blue">E</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/F/1.htm" target="_blank" class="lnk_blue">F</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/G/1.htm" target="_blank" class="lnk_blue">G</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/H/1.htm" target="_blank" class="lnk_blue">H</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/J/1.htm" target="_blank" class="lnk_blue">J</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/K/1.htm" target="_blank" class="lnk_blue">K</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/L/1.htm" target="_blank" class="lnk_blue">L</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/M/1.htm" target="_blank" class="lnk_blue">M</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/N/1.htm" target="_blank" class="lnk_blue">N</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/O/1.htm" target="_blank" class="lnk_blue">O</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/P/1.htm" target="_blank" class="lnk_blue">P</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/Q/1.htm" target="_blank" class="lnk_blue">Q</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/R/1.htm" target="_blank" class="lnk_blue">R</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/S/1.htm" target="_blank" class="lnk_blue">S</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/T/1.htm" target="_blank" class="lnk_blue">T</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/W/1.htm" target="_blank" class="lnk_blue">W</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/X/1.htm" target="_blank" class="lnk_blue">X</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/Y/1.htm" target="_blank" class="lnk_blue">Y</a></span>  
+        
+          <span><a href="http://gz.centanet.com/letters/Z/1.htm" target="_blank" class="lnk_blue">Z</a></span>  
+        
+	</div>
+    <div class="footer_txt">所提供资料仅作参考用途。若因错漏而引致任何不便或损失，中原网页及中原地产概不负责。<br />
+	中原地产网gz.centanet.com版权所有 Copyright &copy; 2014 Centaline Property Agency Limited 网络经营许可证 粤ICP备05081598号
+	<br />
+	地址:广州市东风中路410-412号时代地产中心(TPC)9楼 ( 邮编:510040 ) 电话:020-83486398</div>
+		
+</div>
+    <!-- 百度 -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2601a0f4477572ee12d6c06945adc380' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<!-- 谷歌 -->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-19321906-1']);
+    _gaq.push(['_setCampNameKey', 'shangpu']);
+    _gaq.push(['_setCampSourceKey', 'baidu']);
+    _gaq.push(['_setCampMediumKey', 'cpc']);
+    _gaq.push(['_setCampContentKey', 'esf']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })(); 
+</script>
+
+
+</body>
+</html>

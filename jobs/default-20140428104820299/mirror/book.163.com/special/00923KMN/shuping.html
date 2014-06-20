@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="keywords" content="书评，独立，评论，公共话题，热点，图书，热书，学术,网易读书，网易" />
+<meta name="description" content="拒绝商业书评，拒绝关系书评，拒绝吹捧书评。我们为海内外知识分子，评论家，书评作者评价，探讨和批判各类出版物和学术思潮提供自由平台。我们用书评，紧贴现实热点，公共讨论和社会思潮。在这里，我们读书，也阅读中国与世界。" />
+<meta name="author" content="网易" />
+<meta name="Copyright" content="网易版权所有" />
+<base target="_blank" />
+<title>书评_网易读书 </title>
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+<link href="http://img1.cache.netease.com/book/img/book09/style_book.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/book/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/book/img/bookDB10/bookDB_1.0.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+<div class="area">
+<div class="left"><iframe src="http://g.163.com/r?site=netease&affiliate=book&cat=other&type=column750x70&location=1" width="750" height="70" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+<div class="right"><iframe src="http://g.163.com/r?site=netease&affiliate=book&cat=other&type=logo200x70&location=1" width="200" height="70" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+<!-- 
+<div class="ggarea clearfix">
+<span class="blank9"></span>
+    <ul class="ggimg">
+    	<li class="gg125">
+        <iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=ent&cat=tv&type=logo125x80&location=1" width="125" height="80" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </li>
+        <li class="gg660">
+        <iframe 
+src="http://pro.163.com/html.ng/site=netease&affiliate=ent&cat=tv&type=column660x80&location=1" width="660" height="80" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </li>
+        <li class="gg125">
+        <iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=ent&cat=tv&type=logo125x80&location=2" width="125" height="80" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </li>
+    </ul>
+    <span class="blank9"></span>
+</div>
+ -->
+</div>
+<div class="channel">
+<h1><a href="http://book.163.com/" name="top"><img src="http://img1.cache.netease.com/book/img/book10/logo_107.gif" alt="网易读书" width="107" height="24" /><br />网易读书</a></h1>
+<h3><a href="http://www.163.com/">网易</a> > <a href="http://book.163.com/">网易读书</a> > 书评</h3>
+<div class="search-panel">
+<form action="http://data.book.163.com/list/search!find.action" method="get">
+<label class="search-label">搜书</label>
+<input type="text" class="search-text" name="searchvalue" />
+<select class="search-select" name="searchkey">
+<option value="searchkeywords">全部</option>
+<option value="name">书名</option>
+<option value="authorName">作者</option>
+<option value="publishCompany">出版社</option>
+</select>
+<button type="submit" class="search-submit"></button>
+</form>
+</div>
+</div>
+<div class="nav-channel">
+<ul class="nav-main">
+<li><a href="http://book.163.com/">首页</a></li>
+<li><a href="http://yuedu.163.com/book/category">连载书库</a></li>
+<li><a href="http://yc.163.com/">原创文学</a></li>
+<li><a href="http://vip.book.163.com/">VIP全本</a></li>
+<li><a href="http://yuedu.163.com/book/rank">排行榜</a></li>
+<li><a href="http://book.163.com/special/00923KMN/shuxun_more.html">书讯</a></li>
+<li class="nav-active"><a href="http://book.163.com/special/00923KMN/shuping.html">书评</a></li>
+<li><a href="http://book.163.com/special/00923KMN/wenzhai.html">文摘</a></li>
+<li><a href="http://book.163.com/special/00923KMN/yueduketing.html">访谈</a></li>
+<li><a href="http://blog.163.com/book.html">博客</a></li>
+<li><a href="http://bbs.culture.163.com/">论坛</a></li>
+<li><a href="http://t.163.com/rank/famous#literature">微博</a></li>
+<li class="nav-last"><a class="nav-art" href="http://book.163.com/art">艺术</a></li>
+<!--li class="nav-last"><a href="#">帮助中心</a></li-->
+</ul>
+<span class="nav-right">
+<img style="float: left; padding-top: 6px;" src="http://img6.cache.netease.com/book/img/book10/bg041.jpg">
+<a href="http://yuedu.163.com/client?act=rddsan_20121031_01&utm_source=dsan&utm_medium=20121031_01" class="icon-phone">网易云阅读</a>
+</span>
+</div><span class="blank9"></span>
+<div class="psn-hd">
+	<h2 class="psn-hd-title">读书个人中心：</h2>
+	<div class="psn-hd-login" style=" display:none;" id="psn-login">
+		<div class="login-panel">
+			<form action="https://reg.163.com/logins.jsp" method="post" target="_self">
+				<input type="hidden" name="url" value="" id="psn-url" />
+				<label for="psn-username">帐号</label>
+				<input type="text" name="username" class="login-text" id="psn-username" />
+				<label for="psn-password">密码</label>
+				<input type="password" name="password" class="login-text" id="psn-password" />
+				<button type="submit" class="login-submit"></button>
+			</form>
+		</div>
+		<div class="login-more"><a href="http://reg.163.com/RecoverPassword.shtml">找回密码</a> | <a href="http://reg.163.com/reg/reg0_new.jsp">注册通行证</a></div>
+	</div>
+	<div class="psn-hd-message" style=" display:none;" id="psn-message">
+		<h3>欢迎你，<a href="http://data.book.163.com/uc/" id="psn-user"></a></h3>
+		<span  class="psn-hd-menu"><a href="http://zz.yc.163.com/" class="author_new cDRed">作者中心</a> | <a href="http://data.book.163.com/uc/">个人中心</a> | <a href="http://reg.163.com/Logout.jsp" id="psn-logout" target="_self">安全退出</a> </span> 
+	</div>
+	<script charset="gb2312" src="http://img3.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script> 
+	<script type="text/javascript">
+(function () {
+	var doc = document,
+		pInfo = getCookie('P_INFO'),//从cookie里拿用户信息
+		sInfo = getCookie('S_INFO'),
+		userid = '',
+		logined = false,
+		newCookieInfo = '',//新添加的cookie，用来放登陆账号和作者角色信息
+		tmpInfo = '',
+		userIdInfo = '',//登陆账号信息
+		newRoleId = '',//作者角色信息
+		url = location.href;
+	
+	if ( typeof pInfo === 'string' && (pInfo != '' || pInfo != 'null') ) {
+		pInfo = pInfo.split("|");
+		userid = pInfo[0].replace(/@163\.com$/i, "");
+		logined = 1 == pInfo[2] || (0 == pInfo[2] && !!sInfo);
+	}
+	
+	elem('psn-username').value = userid;
+	elem('psn-url').value = url;
+	elem('psn-logout').href += '?url=' + url;
+	
+	
+	
+	
+	var roleurl = "http://data.book.163.com/uc/original/apply2";
+	var now = (new Date).getTime();
+	
+	
+	
+	 if(logined) {	
+		
+		newCookieInfo = NTES.cookie.get("isAuthor"); // 得到该cookie	
+		tmpInfo =  newCookieInfo.split("|");//以'|'分割该字符串
+		userIdInfo = tmpInfo[0];//登陆账号信息
+		newRoleId = tmpInfo[1];//作者角色信息
+		
+		
+		if(newRoleId != null && newRoleId != ""){//如果本地cookie中作者角色信息的值不为空				
+				
+			if(userIdInfo != userid ) {// 先本地的用户名与判断通行证的账号是否一致
+			
+				window['result' + now] = function(o){
+					if (NTES("#psn-hd-menu")) {	
+					
+						newCookieInfo = userid +"|"+o.isauthor;	
+						
+						//NTES.cookie.set("isAuthor", newCookieInfo , "1M"); 
+						NTES.cookie.set("isAuthor", newCookieInfo , "1M","book.163.com","/");
+						newCookieInfo = NTES.cookie.get("isAuthor"); // 得到该cookie	
+						var tmpInfo =  newCookieInfo.split("|");//以'|'分割该字符串
+						var userIdInfo = tmpInfo[0];//登陆账号信息
+						var newRoleId = tmpInfo[1];//作者角色信息
+						//存放到添加的cookie，用来放登陆账号和作者角色信息保存1个月	
+						
+					}	
+					
+					/*
+					NTES.cookie.get("isAuthor", newCookieInfo); // 保存5分钟	
+						tmpInfo =  newCookieInfo.split("|");
+						userIdInfo = tmpInfo[0];
+						newRoleId = tmpInfo[1];*/
+					
+					//if(newRoleId == "0"){							
+//							NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList' class='cDRed'>申请作者</a>"+" | ";					
+//						
+//						}
+//						else if (newRoleId == "1") {
+//							NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList'>管理作品</a>"+" | ";							
+//						}								
+				}
+				
+				NTES.ajax.importJs(roleurl + '?callback=result' + now, null, "UTF-8");						
+					
+			}
+			
+			////////////////
+			//if(newRoleId == "0"){
+//							
+//							NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList'  class='cDRed'>申请作者</a>"+" | ";						
+//						
+//						}
+//						else if (newRoleId == "1") {
+//							
+//							NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList'>管理作品</a>"+" | ";							
+//						
+//						}						
+			///////////////
+		}	
+		else{// 先本地的用户名与判断通行证的账号不一致，则向后台发请求
+			/// 如果登录了，判断该用户是否是原创作者，是则状态条增加"管理作品"，否则显示为"申请作者"
+		
+			//var roleurl = "http://postdata.book.163.com/uc/original/apply2" ;
+			// var roleurl = "http://data.book.163.com/uc/original/apply2";
+			// var now = (new Date).getTime();
+		
+			//一个动态的全局变量
+			window['result' + now]  = function (o) {						
+				if (NTES("#psn-hd-menu")) {	
+				
+						newCookieInfo = userid +"|"+o.isauthor;		
+						
+						NTES.cookie.set("isAuthor", newCookieInfo , "1M","book.163.com","/");
+						newCookieInfo = NTES.cookie.get("isAuthor"); 	
+						tmpInfo =  newCookieInfo.split("|");
+						userIdInfo = tmpInfo[0];
+						newRoleId = tmpInfo[1];						
+						
+						//从cookie里读作者信息
+						//if(newRoleId != null && newRoleId != ""){
+//							if(newRoleId == "0"){								
+//								NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList' class='cDRed'>申请作者</a>"+" | ";						
+//							
+//							}
+//							else if (newRoleId == "1") {								
+//								NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList'>管理作品</a>"+" | ";							
+//							
+//							}
+//							
+						}
+						
+						else{							
+							
+							//if (o.isauthor == "0") {		
+//									NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList'  class='cDRed'>申请作者</a>"+" | ";						
+//									
+//								}else if((o.isauthor == "1")){							
+//									NTES("#psn-hd-menu").innerHTML = "<a href='http://data.book.163.com/uc/#|uc|original|cover|toList'>管理作品</a>"+" | ";
+//								}
+//														
+//							}
+						
+						
+					}
+					
+						
+				window['result' + now] = undefined;
+				try {
+					delete window['result' + now];
+				} catch(e) {}
+				
+			}
+			
+			NTES.ajax.importJs(roleurl + '?callback=result' + now, null, "UTF-8");	
+		
+		}
+	///	
+		elem('psn-message').style.display = 'block';
+		elem('psn-user').innerHTML = userid;
+	} 
+	
+	else //如果未登录，则先删除该cookie
+	
+	{
+		
+		
+                NTES.cookie.del("isAuthor","book.163.com", "/");
+		
+		elem('psn-login').style.display = 'block';
+		
+	}	
+	/*else {
+		elem('psn-login').style.display = 'block';
+	} */
+	
+	function elem(id) {
+		return document.getElementById(id);
+	}
+	
+	function getCookie (name) {
+		name = '; ' + encodeURIComponent(name) + '=';
+		var cookie = '; ' + doc.cookie, beginPos = cookie.indexOf(name), endPos;
+		
+		if (beginPos === -1) {
+			return;
+		}
+		beginPos += name.length;
+		endPos = cookie.indexOf(';', beginPos);
+		if (endPos === -1) {
+			endPos = cookie.length;
+		}
+		
+		
+		return decodeURIComponent( cookie.substring(beginPos, endPos) );
+	}
+})()
+</script> 
+	<span class="psn-hd-quick"><a href="http://yuedu.163.com/recharge.do?operation=form">快速充值</a></span> </div>
+<span class="blank9"></span>
+<div class="area ui_bg10">
+<div class="colL2">
+<div class="titleBar ui_til8"><h2>书评</h2></div>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2013-12-27 11:00</span><a href="http://book.163.com/13/1227/11/9H3KACIO00923INF.html">《毛泽东人际交往丛书》出版</a></li>
+<li><span class="right">2013-12-27 09:59</span><a href="http://book.163.com/13/1227/09/9H3GPOBT00923INF.html">一号作家陈玉福华丽转身 《建军大业》获国家级大奖</a></li>
+<li><span class="right">2013-09-25 16:38</span><a href="http://book.163.com/13/0925/16/99KOM6JP00923INF.html">海豚社摆渡人文化沙龙第三期：陈子善主讲“从新世纪万有文库到海豚书馆”</a></li>
+<li><span class="right">2013-08-07 14:58</span><a href="http://book.163.com/13/0807/14/95MDFABS00923INF.html">瑜伽学术研讨会暨《瑜伽梦》首发式在京举行</a></li>
+<li><span class="right">2013-08-07 14:50</span><a href="http://book.163.com/13/0807/14/95MD23QI00923INF.html">《气候风暴》新书发布会在京举行</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2013-08-07 14:45</span><a href="http://book.163.com/13/0807/14/95MCOUGG00923INF.html">《农民、公民权与国家》新书发布会在京举行</a></li>
+<li><span class="right">2013-07-03 14:49</span><a href="http://book.163.com/13/0703/14/92S92JEL00923INF.html">“爱暴力”受害者：父母之爱害了李天一</a></li>
+<li><span class="right">2013-01-25 10:32</span><a href="http://book.163.com/13/0125/10/8M2D5UPG00923INF.html">老板的困境——《上市赌局》里的那些孤男寡女们</a></li>
+<li><span class="right">2013-01-08 10:23</span><a href="http://book.163.com/13/0108/10/8KMJT9MS00923INF.html">评《公司大拐点》：大拐点是超级牛股的基因</a></li>
+<li><span class="right">2012-11-06 13:29</span><a href="http://book.163.com/12/1106/13/8FKNFN2I00923INF.html">从心印心：《生命不应有边界》中的管理精髓</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2012-10-30 16:49</span><a href="http://book.163.com/12/1030/16/8F324H5R00923INF.html">评《世上每一朵哀伤的云》：没结果的花</a></li>
+<li><span class="right">2012-04-19 18:10</span><a href="http://book.163.com/12/0419/18/7VFLLFKC00923INF.html">陆家《帝王密码》：最真实的荒诞故事</a></li>
+<li><span class="right">2011-11-24 09:30</span><a href="http://book.163.com/11/1124/09/7JK7GL3I00923INF.html">不如，我们重新来过？</a></li>
+<li><span class="right">2011-06-08 13:38</span><a href="http://book.163.com/11/0608/13/761GGSJO00923INF.html">一个全新的童话世界——读《七星汇》有感</a></li>
+<li><span class="right">2011-04-15 16:19</span><a href="http://book.163.com/11/0415/16/71MO9OMP00923INF.html">像听相声一样看一本励志书</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2011-03-24 13:15</span><a href="http://book.163.com/11/0324/13/6VTP0RSR00923INF.html">赳赳的腔调</a></li>
+<li><span class="right">2011-03-01 13:21</span><a href="http://book.163.com/11/0301/13/6U2I7IGT00923INF.html">一抹清幽《扫除力》</a></li>
+<li><span class="right">2011-02-22 17:10</span><a href="http://book.163.com/11/0222/17/6TGUHQOA00923INF.html">用电视说人生</a></li>
+<li><span class="right">2011-02-21 14:53</span><a href="http://book.163.com/11/0221/14/6TE49Q2900923INF.html">一部系统总结当代中国马克思主义特色的佳作</a></li>
+<li><span class="right">2011-02-15 16:30</span><a href="http://book.163.com/11/0215/16/6SURELV000923INF.html">胡赳赳：用新鲜语文挠痒痒</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2011-01-18 15:05</span><a href="http://book.163.com/11/0118/15/6QMJFS7D00923INF.html">《北京的腔调》：有快感而没敬畏</a></li>
+<li><span class="right">2011-01-11 17:59</span><a href="http://book.163.com/11/0111/17/6Q4SKC4100923INF.html">旧时明月今世梦——读王彬先生的《旧时明月》</a></li>
+<li><span class="right">2011-01-11 17:55</span><a href="http://book.163.com/11/0111/17/6Q4SCCOJ00923INF.html">明月的折光 ——《旧时明月》读后</a></li>
+<li><span class="right">2010-12-27 17:07</span><a href="http://book.163.com/10/1227/17/6OU5N7FH00923INF.html">中国力量，见证中国十年经济</a></li>
+<li><span class="right">2010-08-25 17:01</span><a href="http://book.163.com/10/0825/17/6EUS273V00923INF.html">安德鲁&#8226;兰十二色童话：守护童年的彩色梦想</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2010-05-06 12:02</span><a href="http://book.163.com/10/0506/12/660GRSC600923INF.html">姜银《偿爱》的看点和启示</a></li>
+<li><span class="right">2010-03-01 13:58</span><a href="http://book.163.com/10/0301/13/60MP856V00923INF.html">《她比时尚寂寞》：出来格瑟总有一天要还的</a></li>
+<li><span class="right">2010-02-23 16:56</span><a href="http://book.163.com/10/0223/16/607L2C1M00923INF.html">《大匠无弃材》：用人的道与术与国企的秘密</a></li>
+<li><span class="right">2010-01-29 12:06</span><a href="http://book.163.com/10/0129/12/5U6OH35Q00923INF.html">评《孔子》：走下圣坛的孔夫子</a></li>
+<li><span class="right">2010-01-25 17:46</span><a href="http://book.163.com/10/0125/17/5TT2BPNK00923INF.html">评《从底层滚出来》：一线阳光照进来</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2010-01-21 12:14</span><a href="http://book.163.com/10/0121/12/5TI5Q0ML00923INF.html">《猎眼看人》：职场“论语”创业“圣经”</a></li>
+<li><span class="right">2010-01-19 13:49</span><a href="http://book.163.com/10/0119/13/5TD6F06900923INF.html">《赵六进城》：大王为什么是《响屁》</a></li>
+<li><span class="right">2010-01-06 15:13</span><a href="http://book.163.com/10/0106/15/5SBS2VH400923INF.html">评《战后日本》：日本为什么如此“暧昧”？</a></li>
+<li><span class="right">2009-12-31 10:14</span><a href="http://book.163.com/09/1231/10/5RRSJD1100923INF.html">张卓元评《第二次改革》：强国之路在改革</a></li>
+<li><span class="right">2009-12-30 17:41</span><a href="http://book.163.com/09/1230/17/5RQ3P1S800923INF.html">评《借我一生》：一条被人类爱情忽悠的狗</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="content">
+<ul class="list_f14d">
+<li><span class="right">2009-12-25 12:50</span><a href="http://book.163.com/09/1225/12/5RCN44TC00923INF.html">评《女人，明白要趁早》：一直在路上</a></li>
+<li><span class="right">2009-12-21 12:26</span><a href="http://book.163.com/09/1221/12/5R2C4VER00923INF.html">评《国情备忘录》：在阵痛与反思中前行</a></li>
+<li><span class="right">2009-12-17 18:14</span><a href="http://book.163.com/09/1217/18/5QOMFH8800923INF.html">《纵横》：职场江湖 纵横有道</a></li>
+<li><span class="right">2009-12-17 18:00</span><a href="http://book.163.com/09/1217/18/5QOLMGPC00923INF.html">黄帝内经十二经脉养生法：经典+通俗=科学实用</a></li>
+<li><span class="right">2009-12-17 15:44</span><a href="http://book.163.com/09/1217/15/5QODT15M00923INF.html">谢冕评《犹大开花》：象牙塔里的众生相</a></li>
+</ul>
+</div>
+<span class="dotLine"></span>
+<div class="pages">
+<a href="#" target="_self">上一页</a>
+<a href="http://book.163.com/special/00923KMN/shuping.html" target="_self" class="active">1</a>
+<a href="http://book.163.com/special/00923KMN/shuping_02.html" target="_self" >2</a>
+<a href="http://book.163.com/special/00923KMN/shuping_03.html" target="_self" >3</a>
+<a href="http://book.163.com/special/00923KMN/shuping_04.html" target="_self" >4</a>
+<a href="http://book.163.com/special/00923KMN/shuping_05.html" target="_self" >5</a>
+<a href="http://book.163.com/special/00923KMN/shuping_06.html" target="_self" >6</a>
+<a href="http://book.163.com/special/00923KMN/shuping_07.html" target="_self" >7</a>
+<a href="http://book.163.com/special/00923KMN/shuping_08.html" target="_self" >8</a>
+<a href="http://book.163.com/special/00923KMN/shuping_09.html" target="_self" >9</a>
+<a href="http://book.163.com/special/00923KMN/shuping_10.html" target="_self" >10</a>
+<a href="http://book.163.com/special/00923KMN/shuping_02.html" target="_self">下一页</a>
+</div>
+</div>
+<div class="colR2">
+<span class="bg_line"></span>
+<div class="titleBar ui_til1"><h3>读书新闻</h3></div>
+<div class="content">
+<ul class="list_f12d">
+<li><a href="http://book.163.com/13/0325/10/8QQAOHFO00923IN9.html">第二届“百座文学之城”揭晓</a></li>
+<li><a href="http://book.163.com/13/0128/13/8MAG3F4500923IN9.html">任正非:马世民,永远是我的老师</a></li>
+<li><a href="http://book.163.com/13/0114/14/8L6G7BOB00923IN9.html">新京报2012年度好书出炉</a></li>
+<li><a href="http://book.163.com/special/jinsinan/">《美成在久-金丝楠之美》出版</a></li>
+<li><a href="http://book.163.com/12/1121/17/8GRQBL3500923IN9.html">"国家记忆2012"致敬典礼揭晓</a></li>
+</ul>
+</div>
+<div class="titleBar ui_til1"><h3>文化评论</h3></div>
+<div class="content">
+<ul class="list_f12d">
+<li><a href="http://book.163.com/10/0121/11/5TI1UO1S00923INE.html">吴祚来：中国城市经济开着宝马，思想却骑着毛</a></li>
+<li><a href="http://book.163.com/10/0120/15/5TG04TG900923INE.html">韩松落：解读迪斯尼收购动作 要信就信技术哥</a></li>
+<li><a href="http://book.163.com/10/0119/10/5TCS17QE00923INE.html">张鸣：郭敬明，毁了年轻人的欣赏口味</a></li>
+<li><a href="http://book.163.com/10/0118/14/5TAKS7CD00923INE.html">小宝：余秋雨是文化大人物吗？</a></li>
+<li><a href="http://book.163.com/10/0118/10/5TAA0KFH00923INE.html">李公明：“政治无道德即是社会的毁灭”</a></li>
+</ul>
+</div>
+<div class="titleBar ui_til1"><h3>独立书评</h3></div>
+<div class="content">
+<ul class="list_f12d">
+<li><a href="http://book.163.com/10/0122/11/5TKMQBEA00923IND.html">评《重返1976》：追寻“总理遗言”案的真相</a></li>
+<li><a href="http://book.163.com/10/0119/18/5TDM4EFJ00923IND.html">评《文化名人的个性》：鲁迅的不宽恕不是不宽</a></li>
+<li><a href="http://book.163.com/10/0119/18/5TDKVG7J00923IND.html">评《造就美国人》：美国人缺常识，只因没教程</a></li>
+<li><a href="http://book.163.com/10/0119/16/5TDFVV8U00923IND.html">评《文字的故事》：几个字就能展现生孩子的画</a></li>
+<li><a href="http://book.163.com/10/0119/11/5TCT22M900923IND.html">评《从底层滚出来》：鸭子也可以抢到天鹅的池</a></li>
+</ul>
+</div>
+<div class="titleBar ui_til1"><h3>读书专题</h3></div>
+<div class="content">
+<ul class="list_f12d">
+<li><a href="http://book.163.com/special/009248UG/zgqydz.html">中国千亿大镇·容桂：一部镇域经验启示录</a></li>
+<li><a href="http://book.163.com/special/00923IQF/09guojiawenhuachanyeluntan.html">独家合作：2009中国·广州国际文化产业论坛</a></li>
+<li><a href="http://book.163.com/special/00923V3V/yangxianyi.html">杨宪益："翻译整个中国"的人走了</a></li>
+<li><a href="http://book.163.com/special/00923IQC/poe.html">独家策划：纪念文学大师爱伦·坡诞辰200年</a></li>
+<li><a href="http://book.163.com/special/00923QGT/falankefushuzhan.html">第61届法兰克福书展</a></li>
+</ul>
+</div>
+<div class="titleBar ui_til1"><h3>读书博客</h3></div>
+<div class="content">
+<ul class="list_f12d">
+<li><a href="http://112006111.blog.163.com/blog/static/13543165420100228182515/">林电锋：孙悟空为什么斗不过“小人物”？</a></li>
+<li><a href="http://zhjr930.blog.163.com/blog/static/13718147820100181146467/">竺家荣：书被疯狂盗版，我去找扫黄打非办维权</a></li>
+<li><a href="http://zgzjcxw.blog.163.com/blog/static/121957107201002042139997/">陈希我：盘点2009年阅读，摩罗是“爱国疯子”</a></li>
+<li><a href="http://msx9988.blog.163.com/blog/static/3909781420091025112045491/">奥威尔去世60周年：一代人冷峻的良心</a></li>
+<li><a href="http://sw0048.blog.163.com/blog/static/12131024820100193461709/">许博渊：中国道德水平需要一百年才能赶上北欧</a></li>
+</ul>
+</div>
+<div class="titleBar ui_til1"><h3>书摘文摘</h3></div>
+<div class="content">
+<ul class="list_f12d">
+<li><a href="http://book.163.com/10/0112/10/5SQRCE4000923K7T.html">[历史] 曾国藩执掌湘军后遭10次贬抑 为何不思</a></li>
+<li><a href="http://book.163.com/10/0108/15/5SH1NPNC00923K7T.html">[历史] 大将陈赓敢于直谏毛泽东 却缘何一生惧</a></li>
+<li><a href="http://book.163.com/10/0108/10/5SGGDBO900923K7T.html">[人物] 毛泽东一生内心深处最为痛恨的人是谁 </a></li>
+<li><a href="http://book.163.com/10/0107/10/5SDVJ3B800923K7T.html">[人物] 林彪的婚恋：一生最爱孙维世成“祸之 </a></li>
+<li><a href="http://book.163.com/10/0107/10/5SDUEBA900923K7T.html">[科学] 方舟子：雄海马为何怀孕 现在男人能怀</a></li>
+</ul>
+</div>
+<div class="titleBar ui_til1"><h3>订阅榜</h3></div>
+<div class="content" id="orderrank">
+</div>
+</div>
+<span class="bg_line"></span>
+</div>
+<span class="blank9"></span>
+<style type="text/css">
+.channel-end,.channelEnd-rightS,.channelEnd-link,.channelEnd-top {background:url(http://img3.cache.netease.com/cnews/img09/endnav_bg1001.jpg);}
+.channel-end {width:960px;height:37px;overflow:hidden;margin:10px auto 0;line-height:38px;background-position:left -67px;background-repeat:repeat;}
+.channelEnd-rightS {display:block;float:right;width:8px;height:37px;overflow:hidden;background-position:right -141px;background-repeat:no-repeat;}
+.channelEnd-link {float:left;height:37px;line-height:37px;overflow:hidden;color:#1E50A2;background-position:left -30px;background-repeat:no-repeat;}
+.channelEnd-link a {float:none;padding:0 5px;font-weight:normal;background:none;}
+.channelEnd-link .firstNode {margin-left:5px; background:none;}
+.channelEnd-top {display:block;float:right;width:70px;height:37px;overflow:hidden;line-height:37px;text-indent:10px;background-position:left -30px;background-repeat:no-repeat;}
+</style>
+<div class="channel-end">
+	<span class="channelEnd-link cBlue">
+    	<a class="firstNode" href="http://www.163.com/"  rel="nofollow">网易首页</a>-<a href="http://news.163.com/"  rel="nofollow">新闻</a>-<a href="http://sports.163.com/"  rel="nofollow">体育</a>-<a href="http://ent.163.com/"  rel="nofollow">娱乐</a>-<a href="http://money.163.com/"  rel="nofollow">财经</a>-<a href="http://auto.163.com/"  rel="nofollow">汽车</a>-<a href="http://tech.163.com"  rel="nofollow">科技</a>-<a href="http://digi.163.com/"  rel="nofollow">数码</a>-<a href="http://mobile.163.com/"  rel="nofollow">手机</a>-<a href="http://lady.163.com/"  rel="nofollow">女人</a>-<a href="http://house.163.com/"  rel="nofollow">房产</a>-<a href="http://game.163.com/"  rel="nofollow">游戏</a>-<a href="http://book.163.com/"  rel="nofollow">读书</a>-<a href="http://edu.163.com/"  rel="nofollow">教育</a>-<a href="http://travel.163.com/"  rel="nofollow">旅游</a>-<a href="http://bbs.163.com/"  rel="nofollow">论坛</a>-<a href="http://v.163.com/"  rel="nofollow">视频</a>-<a href="http://blog.163.com/blogs/"  rel="nofollow">博客</a>-<a href="http://t.163.com/"  rel="nofollow">微博</a>-<a href="http://jiu.163.com"  rel="nofollow">酒香</a>-<a href="http://help.3g.163.com/"  rel="nofollow">手机版</a>
+    </span>
+    <span class="channelEnd-rightS"></span>
+    <span class="channelEnd-top cBlue"><a href="#top" target="_self"  rel="nofollow">返回顶部&uarr;</a></span>
+</div><span class="blank12"></span>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a></div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<!-- 代码 -->
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript">
+	//<![CDATA[
+	function _jsonp(url,callback,_id){
+        var now = new Date().getTime();
+        var jsonp = "hi" + now + parseInt(Math.random() * 1000);
+        window[jsonp] = function(data) {
+                callback(data,_id);
+        };
+        NTES.ajax.importJs(url + '?callback=' + jsonp,null, "UTF-8");
+    }
+    _jsonp("http://yuedu.163.com/book_if/rank/5Ye654mI5Zu-5Lmm/5oC75qac/p1/s10",rankOne,"orderrank");
+ 
+    // 第一种排行无图无简介
+    function rankOne(data,_id){
+        var template = '<ul class="list_f12r">';
+        var books = data.list;
+        var len = books.length;
+        for(var i=0;i<len;i++){
+            var rank = i+1;
+            if(i < 3 ){
+                template += '<li class="hot" style="white-space:nowrap;"><span>'+rank+'</span><a href="'+books[i].root.url+'" target="_blank" title="'+books[i].root.title+'">'+books[i].root.title+'</a></li>'
+            }else{
+                template += '<li style="white-space:nowrap;"><span>'+rank+'</span><a href="'+books[i].root.url+'" target="_blank" title="'+books[i].root.title+'">'+books[i].root.title+'</a></li>' 
+            }
+        }
+        template += '</ul>';
+        var odiv = document.getElementById(_id);
+        odiv.innerHTML= template;
+    }
+	//]]>
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0512010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0512010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "book"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+<!-- minG -->
+</body>
+</html>

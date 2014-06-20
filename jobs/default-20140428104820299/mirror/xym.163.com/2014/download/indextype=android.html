@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>迷你西游下载</title>
+<meta charset="gb2312">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="address=no"/>
+<meta content="target-densitydpi=device-dpi,width=640" name="viewport" id="viewport">
+<style>
+ul,li,div,p,body{margin:0;padding:0;-moz-user-select: none;-khtml-user-select: none;user-select: none;text-align:left;background:#f6f6f6;}
+#tips{width:100%;}
+</style>
+</head>
+<body>
+<div id="tips"></div>
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+<script type="text/javascript">
+var params = function(u, p){
+	var m=new RegExp("(?:&|/?)"+p+"=([^&$]+)").exec(u);
+	return m?m[1]:'';
+}
+function is_weixin(){
+	var ua = navigator.userAgent.toLowerCase();
+	if(ua.match(/MicroMessenger/i)=="micromessenger") {
+		return true;
+ 	} else {
+		return false;
+	}
+}
+function check(){
+	var dtype = params(location.search, 'type');
+	if(is_weixin()) {
+		$('#tips').html('<img src="http://res.nie.netease.com/xym/qt/14/0414_tips/zy.png" width="100%" />');
+	} else {
+		if(dtype=='ios'){
+			document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=1455&s=a6EMbUHxd1jDfKMf74dIbwiLDGs%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			location.href='https://itunes.apple.com/cn/app/mi-ni-xi-you/id797349236?mt=8';
+		} else if(dtype=='android') {
+			document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=1456&s=2lMRvwg2jlCLrBYBMHoDVNggJ24%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			location.href="http://xym.gdl.netease.com/xym_netease_1.5.40.apk?channel=and_netease";
+		} else {
+			var ua = navigator.userAgent.toLowerCase();
+			var isIos = /ipad|iphone|ipod|ios/i;
+			var isAndroid = /android/i;
+			var fr = params(location.search, 'from');
+			if(fr=='qrcode') {
+				document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=1453&s=pm%2FF0t3KdDenIDb8qyoIq8nVtTM%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			} else if(fr=='msg') {
+				document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=1454&s=DaqirmEk5sKdodm45DU3A6flVps%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			} else if(fr=='baidu_m') {
+				location.href="http://xym.gdl.netease.com/xym_netease_baidu_keys_1.5.36.apk";
+				return;
+			} else if(fr=='m'){
+				document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=1458&s=Eggc1mT9VcZ0yaqycXQbOh9ZZhM%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			} else if(fr=='nvshen'){
+				document.write("<iframe  src=\"http://gad.netease.com/mmad/point?point_id=4&s=h4ZFSiv5NPnuFeKOSB3WdpTo8iw%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			} else if(fr=='caiyaojing'){
+				document.write("<iframe  src=\"http://gad.netease.com/mmad/point?point_id=2&s=xADpKtaBOHbjImKwHcsqiDChV74%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			} else if((ua.match(isIos) || ua == null)||ua.match(isAndroid)) {
+				document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=1458&s=Eggc1mT9VcZ0yaqycXQbOh9ZZhM%3D"+"\" width=\"0\" height=\"0\" style=\"border:0px\">><\/iframe>"); 
+			}
+			
+			if (ua.match(isIos) || ua == null) {
+				location.href='https://itunes.apple.com/tw/app/id797349236';
+			}else if(ua.match(isAndroid)){
+				location.href="http://xym.gdl.netease.com/xym_netease_1.5.40.apk?channel=and_netease";
+			}else{
+				location.href = "http://xym.gdl.netease.com/xym_netease_1.5.40.apk?channel=and_netease";
+			}
+		}
+	}
+}
+check();
+</script>
+</body>
+</html>

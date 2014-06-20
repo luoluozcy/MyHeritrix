@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  
+
+
+  <title> 《新大话西游3》（免费版）-网易首款双经济网游</title>
+  <meta name="keywords" content="新大话西游3,新大话3,免费,云交易,双经济,回合制" />
+  <meta name="description" content="国韵经典，玩味新篇！《新大话西游3》汇聚精英团队，架构全新云计算平台，独创云交易系统，打造网易首款双经济模式网游，升级界面引擎重现唯美西游画卷。" />
+  <meta name="robots" content="all" />
+  <meta name="author" content="网易，NetEase Inc." />
+  <meta name="copyright" content="网易，NetEase Inc." />
+  <meta name="pmid" content="273497" />
+  <meta name="editor" content="panda33,bingao" />
+  <meta name="designer" content="tangzhenkai" />
+  <meta name="front-end technicist" content="eyfan" />
+  
+  <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/x3/gw/13v2/page/css/index.css" media="all" />
+  <link rel="dns-prefetch" href="http://res.nie.netease.com">
+
+  <!--[if lte IE 8]>
+  <script charset="gb2312" src="http://res.nie.netease.com/xdw/gw/13v1/js/html5.js"></script>
+  <![endif]-->
+  
+  <!--[if IE 6]>
+  <script src="http://res.nie.netease.com/x3/gw/13v2/page/js/png-min.js" ></script>
+  <script>
+  	try{document.execCommand("BackgroundImageCache", false, true);}catch(e){}
+  	DD_belatedPNG.fix('.people');
+  </script>
+  <![endif]-->
+  
+  <!-- jquery mix NIE (最新版本）-->
+  <script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>    
+</head>
+<body class="fsoftware">
+<div id="NIE-topBar"></div>
+
+<div id="wrap">
+<div id="wrap-bg1">
+<div id="wrap-bg2">
+<div id="wrap-bg3">
+<div id="main">
+<header>
+
+<h1 class="hide">新大话3网易免费回合第一品牌</h1>
+
+<h2 class="hide">新闻列表</h2>
+
+<a href="http://x3.163.com/index.html" class="flogo">新大话3官网</a>
+
+<nav>
+
+<a href="http://x3.163.com/index.html" class="flink1">官网首页</a>
+
+<a href="http://x3.163.com/news/" class="flink2">新闻公告</a>
+
+<a href="http://x3.baike.163.com/?go=yxts" target="_blank" class="flink3">游戏特色</a>
+
+<a href="http://x3.baike.163.com/?go=yxwf" target="_blank" class="flink4">游戏资料</a>
+
+<a href="http://x3.163.com/download/" class="flink5">下载专区</a>
+
+<a href="http://x3.gm.163.com/" target="_blank" class="flink6">客服专区</a>
+
+<a href="http://x3.netease.com/" target="_blank" class="flink7">玩家论坛</a>
+
+</nav>
+
+</header>
+
+<article>
+<section class="fpos">您所在的位置：首页 > <span class="current">下载专区</span></section>
+
+<section class="fsearch">
+<form action="http://www.yodao.com/search" method="get" target="_blank">
+<input type="hidden" value="gbk" name="ue">
+<input type="hidden" value="x3.163.com" name="keyfrom">
+<input type="hidden" value="x3.163.com" name="site">
+<input id="q" name="q" type="text" class="search_key" placeholder="请输入关键字">
+<input class="submit" type="submit" value="">
+</form>
+</section>
+
+<section class="fmain">
+<ul class="fnav">
+<li class="on"><a href="javascript:void(0)" class="current">客户端下载</a></li>
+<li><a href="javascript:void(0)">补丁下载</a></li>
+<li><a href="javascript:void(0)">语言工具下载</a></li>
+<li class="flast"><a href="javascript:void(0)">UU加速器</a></li>
+</ul>
+
+<section class="ftabs fclient">
+<section class="ftab ftab1 current">
+<h3>迷你版游戏客户端下载：</h3>
+<p class="fbig mt25">·最新版本：  <em id="mini-version"></em>  ·大小：<em id="mini-size"></em></p>
+<p class="fbig">·更新日期：<em id="mini-update_date"></em>      ·Md5: <em id="mini-md5"></em></p>
+<a id="mini-link" class="btn_download btn_mdownload">迷你客户端下载</a>
+<p class="aside mt25">迷你客户端是为了方便玩家迅速下载体验游戏，进入游戏后会边玩边下载，迷你版最终将转变为完整版。已下载了完整版的玩家无需再下载。</p>
+
+<h3>完整版游戏客户端下载：</h3>
+<p class="fbig mt25">·最新版本： <em id="version"></em>  ·大小：<em id="size"></em></p>
+<p class="fbig">·更新日期：<em id="update_date"></em>      ·Md5: <em id="md5"></em></p>
+<a id="link" class="btn_download">官方下载</a>
+</section>
+
+
+<section class="ftab ftab2">
+<h3>最新补丁下载：</h3>
+<div class="pl">
+	<div class="patchList">
+	<table width="530" border="0" align="center" cellpadding="2" cellSpacing="1">
+  <tbody>
+   <tr class="b">
+    <td width="15%" align="center" bgcolor="#d4cebd">  日期  </td>
+    <td width="60%" align="center" bgcolor="#d4cebd">  文件名称  </td>
+    <td width="10%" align="center" bgcolor="#d4cebd">  大小  </td>
+    <td width="15%" align="center" bgcolor="#d4cebd">  说明  </td>
+   </tr> 
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/04/22</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.325.xy3">patch3.0.325.xy3补丁</A> <Br />md5：147f6f8da983e63324bc339faa5afd8a</td>
+    <td align="center" bgcolor="#f6f4f0"> 17387KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/04/15</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.324.xy3">patch3.0.324.xy3补丁</A> <Br />md5：80956ab90fef5842b99727898c9a8b13</td>
+    <td align="center" bgcolor="#f6f4f0"> 20200KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/04/08</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.323.xy3">patch3.0.323.xy3补丁</A> <Br />md5：b4288f6f921308fdc806fb93eeb55174</td>
+    <td align="center" bgcolor="#f6f4f0"> 59854KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/04/01</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.322.xy3">patch3.0.322.xy3补丁</A> <Br />md5：e35c57444ecca058616add39f0f9b8f0</td>
+    <td align="center" bgcolor="#f6f4f0"> 20409KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/03/25</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.321.xy3">patch3.0.321.xy3补丁</A> <Br />md5：fe42f3a56fb594a2001ba3ff8707a944</td>
+    <td align="center" bgcolor="#f6f4f0"> 22514KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/03/18</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.320.xy3">patch3.0.320.xy3补丁</A> <Br />md5：3699d0178f1c6282c4f000162677758c</td>
+    <td align="center" bgcolor="#f6f4f0"> 42671KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/03/11</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.319.xy3">patch3.0.319.xy3补丁</A> <Br />md5：fe6cf0da20b436f68b5030680c5fd4fe</td>
+    <td align="center" bgcolor="#f6f4f0"> 28034KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/03/04</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.318.xy3">patch3.0.318.xy3补丁</A> <Br />md5：6e2bd6db6d5ca581612f8c1394a8e6ac</td>
+    <td align="center" bgcolor="#f6f4f0"> 27666KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/02/26</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.317.xy3">patch3.0.317.xy3补丁</A> <Br />md5：1216fb8100969199b7856f40132eb8d2</td>
+    <td align="center" bgcolor="#f6f4f0"> 7809KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/02/25</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.316.xy3">patch3.0.316.xy3补丁</A> <Br />md5：da8b1b451360aff008c1c9597583a5f1</td>
+    <td align="center" bgcolor="#f6f4f0"> 24762KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/02/18</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.315.xy3">patch3.0.315.xy3补丁</A> <Br />md5：87f133e87dd360e196bf331851a628ae</td>
+    <td align="center" bgcolor="#f6f4f0"> 47773KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/02/11</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.314.xy3">patch3.0.314.xy3补丁</A> <Br />md5：c19ae91cbb6e72821a2f3fa79b3eaf02</td>
+    <td align="center" bgcolor="#f6f4f0"> 18911KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/01/28</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.313.xy3">patch3.0.313.xy3补丁</A> <Br />md5：cf2d0fc3fa15053483fc1bd2ccb97f4b</td>
+    <td align="center" bgcolor="#f6f4f0"> 30142KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/01/21</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.312.xy3">patch3.0.312.xy3补丁</A> <Br />md5：12521e0ceabfb7d76c632b9f7e779471</td>
+    <td align="center" bgcolor="#f6f4f0"> 26807KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/01/14</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.311.xy3">patch3.0.311.xy3补丁</A> <Br />md5：dc49637964496752882c57c2c36db660</td>
+    <td align="center" bgcolor="#f6f4f0"> 29249KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2014/01/07</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.310.xy3">patch3.0.310.xy3补丁</A> <Br />md5：0eadfda9dde2a8b6e78c172c6f716b84</td>
+    <td align="center" bgcolor="#f6f4f0"> 133486KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/12/30</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.309.xy3">patch3.0.309.xy3补丁</A> <Br />md5：2be44a82a017a7e60c7c363005f4b13e</td>
+    <td align="center" bgcolor="#f6f4f0"> 15889KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/12/24</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.308.xy3">patch3.0.308.xy3补丁</A> <Br />md5：0210f5592c7e868fec800b9a743d2b64</td>
+    <td align="center" bgcolor="#f6f4f0"> 20195KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/12/17</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.307.xy3">patch3.0.307.xy3补丁</A> <Br />md5：2f7745c69ce8d9a66dd905f74265c82c</td>
+    <td align="center" bgcolor="#f6f4f0"> 33894KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/12/10</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.306.xy3">patch3.0.306.xy3补丁</A> <Br />md5：7ed1aa8716008a1536c36edd1d205725</td>
+    <td align="center" bgcolor="#f6f4f0"> 16591KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/12/03</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.305.xy3">patch3.0.305.xy3补丁</A> <Br />md5：a90de7325337cb68df12cae0f1bbe697</td>
+    <td align="center" bgcolor="#f6f4f0"> 28302KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/11/26</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.304.xy3">patch3.0.304.xy3补丁</A> <Br />md5：0fa7523bd4b9c924bebbd516888f5883</td>
+    <td align="center" bgcolor="#f6f4f0"> 15603KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/11/19</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.303.xy3">patch3.0.303.xy3补丁</A> <Br />md5：74d6c3faaad1e3ab19e76fb658864ef7</td>
+    <td align="center" bgcolor="#f6f4f0"> 15636KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/11/12</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.302.xy3">patch3.0.302.xy3补丁</A> <Br />md5：c20ff44b77676ee3af5f03f3d14937d4</td>
+    <td align="center" bgcolor="#f6f4f0"> 19084KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/11/05</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.301.xy3">patch3.0.301.xy3补丁</A> <Br />md5：b86f4a2463530b004bc1343c59048a99</td>
+    <td align="center" bgcolor="#f6f4f0"> 58523KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/10/29</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.300.xy3">patch3.0.300.xy3补丁</A> <Br />md5：8d8aba71d8b4cb7a50cf6338f4f17ea9</td>
+    <td align="center" bgcolor="#f6f4f0"> 16089KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/10/22</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.299.xy3">patch3.0.299.xy3补丁</A> <Br />md5：5b5eac546537d280a3ebe809a0820b64</td>
+    <td align="center" bgcolor="#f6f4f0"> 45499KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/10/15</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.298.xy3">patch3.0.298.xy3补丁</A> <Br />md5：fd376433f0e8ab386cd35b39331e4f56</td>
+    <td align="center" bgcolor="#f6f4f0"> 19275KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/10/08</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.297.xy3">patch3.0.297.xy3补丁</A> <Br />md5：185374b82ba6e684d7abb1c173228157</td>
+    <td align="center" bgcolor="#f6f4f0"> 29929KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/09/24</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.296.xy3">patch3.0.296.xy3补丁</A> <Br />md5：49782e8ddb066081ce8f69fd710561b6</td>
+    <td align="center" bgcolor="#f6f4f0"> 25167KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/09/17</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.295.xy3">patch3.0.295.xy3补丁</A> <Br />md5：aab800557142330846b3267da874b205</td>
+    <td align="center" bgcolor="#f6f4f0"> 27941KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/09/10</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.294.xy3">patch3.0.294.xy3补丁</A> <Br />md5：38b636ebfc8872c2963a79a9565ee95d</td>
+    <td align="center" bgcolor="#f6f4f0"> 119901KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/09/03</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.293.xy3">patch3.0.293.xy3补丁</A> <Br />md5：f5b9089b00fff499435b5e89b62cddc1</td>
+    <td align="center" bgcolor="#f6f4f0"> 19921KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/08/27</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.292.xy3">patch3.0.292.xy3补丁</A> <Br />md5：da280deb36ee02ed99611d33717a9c48</td>
+    <td align="center" bgcolor="#f6f4f0"> 14930KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/08/20</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.291.xy3">patch3.0.291.xy3补丁</A> <Br />md5：77c090934b484f27da3cc9b0a19650e3</td>
+    <td align="center" bgcolor="#f6f4f0"> 21398KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/08/13</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.290.xy3">patch3.0.290.xy3补丁</A> <Br />md5：b7656bbeaf62ad3297fb121ea03fa57d</td>
+    <td align="center" bgcolor="#f6f4f0"> 12366KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/08/06</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.289.xy3">patch3.0.289.xy3补丁</A> <Br />md5：7b35c2d72212dcfb5df97c7c66c6fc31</td>
+    <td align="center" bgcolor="#f6f4f0"> 22686KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/07/30</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.288.xy3">patch3.0.288.xy3补丁</A> <Br />md5：c827ae7631ed35117c14bbd0a1fdc194</td>
+    <td align="center" bgcolor="#f6f4f0"> 27564KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/07/23</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.287.xy3">patch3.0.287.xy3补丁</A> <Br />md5：f4b2af4c8d5ebd7f5b21e697de5b8223</td>
+    <td align="center" bgcolor="#f6f4f0"> 14856KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/07/16</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.286.xy3">patch3.0.286.xy3补丁</A> <Br />md5：212b0d86e6280036ca18b1094a39b286</td>
+    <td align="center" bgcolor="#f6f4f0"> 33467KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/07/09</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.285.xy3">patch3.0.285.xy3补丁</A> <Br />md5：7cc339b92c82df63663266b69564f0ac</td>
+    <td align="center" bgcolor="#f6f4f0"> 14455KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/07/02</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.284.xy3">patch3.0.284.xy3补丁</A> <Br />md5：63f5c11485fe2b0040f5a49e63bc2e9f</td>
+    <td align="center" bgcolor="#f6f4f0"> 14978KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/06/25</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.283.xy3">patch3.0.283.xy3补丁</A> <Br />md5：81e8178bffe9c5df127c9430d21b2537</td>
+    <td align="center" bgcolor="#f6f4f0"> 44162KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/06/18</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.282.xy3">patch3.0.282.xy3补丁</A> <Br />md5：3075f4116cbf046086f3ab1a2b07671e</td>
+    <td align="center" bgcolor="#f6f4f0"> 14861KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+   <tr>
+    <td align="center" bgcolor="#f6f4f0">2013/06/09</td>
+    <td bgcolor="#f6f4f0"> <A href="http://xy3.gph.netease.com/patch3.0.281.xy3">patch3.0.281.xy3补丁</A> <Br />md5：578c7c233928109928d454683b6766cf</td>
+    <td align="center" bgcolor="#f6f4f0"> 14456KB </td>
+    <td bgcolor="#f6f4f0">&nbsp;  </td>
+   </tr>
+   
+
+  </tbody>
+ </table>
+
+	</div>
+</div>
+</section>
+
+<section class="ftab ftab3">
+<h3>语音工具CC下载：</h3>
+<p class="mt25">网易CC是网易旗下一款永久免费的语音客户端软件。致力于提供安全稳定、功能强大、音质清晰流畅、不占资源的语音服务。网易CC支持电信、网通、教育网三线合一，在任何一种网络环境下都可以获得稳定的服务。</p>
+<a href="http://cc.gdl.netease.com/CC_Setup.exe" class="btn_download">官方下载</a>
+<p class="aside mt25">最新版本：V2.1beta</p>
+<p class="aside">文件大小：10M</p>
+<p class="aside">更新日期：2012-06-07</p>
+
+<p class="mt25">软件特色功能：</p>
+<p>1.语音清晰、通畅，运行稳定，是团队作战、K歌娱乐的首选必备软件；</p> 　
+<p>2.不占系统资源和网络带宽，单个房间万人同时在线也能有条不紊地进行语聊、K歌；</p>
+<p>3.注重细节，注重人性化设计，软件个性化设置，让操作更简单，语音更方便；</p>
+<p>4.房间发图、动态分享、独有商城等更多个性化的功能，让您享受更专业语音服务，分享欢乐每一天！</p>
+
+<p class="mt25">联系我们：</p>
+<p>如您有任何问题，欢迎通过以下渠道及时与我们联系：</p> 　
+<p><span style="float:left;">CC论坛：</span><a href="http://cc.netease.com/" target="_blank">http://cc.netease.com/</a></p>
+<p><span style="float:left">CC官方客服语音答疑(网易CC房间11)：</span><a href="http://cc.163.com/go.html#11" target="_blank">http://cc.163.com/go.html#11</a></p>
+</section>
+
+<section class="ftab ftab4">
+<h3>网易UU加速器下载：</h3>
+<p class="mt25">&nbsp;&nbsp;&nbsp;&nbsp;网易UU是网易自主研发的一款网游加速器。采用了High-Speed“极速引擎”，为网游平均提速80%。拥有顶级IDC集群，带宽专享，光纤直连，全线高端刀片服务器。为您的游戏人生提供最安全最快速的保障。</p>
+<a href="http://uu.dl.126.net/gacc/installer/%E7%BD%91%E6%98%93UU.exe?from=xy3xz.exe" class="btn_download">官网下载</a>
+<p class="aside mt25">最新版本：2013版</p>
+<p class="aside">文件大小：6.32MB</p>
+
+<p class="mt25">软件特色功能：</p>
+<p>1.极速专网：顶级IDC集群，带宽专享，光纤直连，全线高端刀片服务器；</p>
+<p>2.超强内核：自主研发High-Speed“极速引擎”，为网游平均提速80%；</p>
+<p>3.高效转包：高速智能处理模块，实现0丢包损耗，节点中转效率行业领先；</p>
+<p>4.多节点部署：数量庞大的加速服务节点群，助您摆脱网络延时的束缚；</p>
+<p>5.轻巧敏捷：内存占用更低，仅为同类产品30%，与游戏服务器连接响应更快；</p>
+<p>6.全新视觉：全新透明风格，薄如纱翼，给您不一样的视觉感受</p>
+
+<p class="mt25">联系我们：</p>
+<p>如您有任何问题，欢迎通过以下渠道及时与我们联系：</p>
+<p>官方邮箱：uu_admin@188.com</p>
+</section>
+
+</section>
+
+<section class="fauxiliary">
+<a href="javascript:void(0);" target="_self"  class="ftop">返回顶部</a>
+<a href="javascript:void(0);" target="_self"  class="fcopy">复制网址</a>
+<div id="share"></div>
+<p class="hide" id="sharetxt">分享内容</p>
+</section>
+
+<article class="fart-bottom">
+<p>《新大话西游3》汇聚精英团队，架构全新云计算平台，独创云交易系统，打造网易首款双经济模式网游。游戏忠实原著《西游记》剧情蓝本，以3D建模技术，搭载新一代视觉界面升级引擎，向玩家呈现唯美国韵、恢弘动人的西游画卷。<br>
+全新种族巫族;破空出世，不周山上群雄集结，三界格局波诡云涌，PK战场新法则由你决定！<br></p>
+<section class="btn-group">
+<a href="http://x3.baike.163.com/ziliao/" target="_blank">游戏资料</a>
+<a href="http://x3.163.com/download/" target="_blank">下载专区</a>
+ <a href="http://weibo.com/dhxy3" target="_blank">新大话3微博</a>
+</section>
+</article>
+
+</section>
+
+</article>
+
+<aside>
+
+<section class="fsign fweibo">
+
+<a href="http://weibo.com/dhxy3" target="_blank">
+
+<div class="fbox1"><div class="people"></div></div>
+
+<div class="fbox2">
+
+<p class="p1">新大话西游3</p>
+
+<p class="p2">关注新大话3新浪微博</p>
+
+</div>
+
+</a>
+
+</section>
+
+
+
+<section class="fsign fweixin">
+
+<div class="fbox1"></div>
+
+<div class="fbox2">
+
+<p class="p1">扫描二维码</p>
+
+<p class="p2">最新资讯随手获得</p>
+
+</div>
+
+</section>
+
+
+
+<section class="fdownload">
+
+<figcaption><h3>注册下载，轻松领奖</h3></figcaption>
+
+<a href="http://x3.163.com/reg/" target="_blank" class="snav freg">1、8秒钟快速注册</a>
+
+<a href="http://x3.163.com/download/khd.html" target="_blank" class="snav fdown">2、8分钟技术下载</a>
+
+<a href="http://x3.163.com/news/2014/1/13/12659_418063.html" target="_blank" class="snav fgift">3、缤纷礼包等你领</a>
+
+<section class="ftwins">
+
+<a href="http://x3.163.com/guide" target="_blank" class="fguide">新手指南</a>
+
+<a href="http://ecard.163.com/script/index" target="_blank" class="fmoney">游戏充值</a>
+
+</section>
+
+        
+
+
+
+<a href="http://x3.163.com/zhujue/" target="_blank" class="fproject"><img src="http://img.nie.163.com/images/2013/10/22/2013-10-22_376111.jpg" alt="28大主角"/></a>
+
+
+
+
+
+<a href="http://x3.163.com/guide/index.html?go=yxts" target="_blank" class="fproject"><img src="http://img.nie.163.com/images/2013/10/22/2013-10-22_376109.jpg" alt="游戏特色"/></a>
+
+
+
+        
+
+</section>
+
+</aside>
+
+</div>
+
+<footer id="footer">
+<div id="NIE-copyRight"></div>
+</footer>
+
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	nie.use(["nie.util.share","util.clipBoard"],function(){
+		var txt=$("#sharetxt").text();
+		var share=nie.util.share({
+　			type:1,
+　			fat:".fauxiliary #share"
+		});
+		
+		$(".fcopy").click(function(){
+			$.clipBoard ("http://x3.163.com/download","点击复制到剪贴板")
+		});
+	});
+	$(".ftop").click(function(){
+		$("html, body").animate({ scrollTop: 0 }, 500);
+	})
+	
+	$(".fnav a").click(function(){
+		var index=$(".fnav a").index($(this));
+		$(".fnav a").removeClass("current").parent().removeClass("on");
+		$(".fnav a").eq(index).addClass("current").parent().addClass("on");
+		$(".ftab").removeClass("current").eq(index).addClass("current");
+	})
+	
+	$.getScript('http://x3.163.com/download/x3_client_ver.js',function(){
+		$("#mini-version").html(mini_client_info["version"])
+		$("#mini-update_date").html(mini_client_info["update_date"])
+		$("#mini-md5").html(mini_client_info["md5"])
+		$("#mini-size").html(mini_client_info["size"])
+		$("#mini-link").attr("href",mini_client_info["link"])
+		$("#version").html(full_client_info["version"])
+		$("#update_date").html(full_client_info["update_date"])
+		$("#md5").html(full_client_info["md5"])
+		$("#size").html(full_client_info["size"])
+		$("#link").attr("href",full_client_info["link"])
+	})
+});
+
+	//快速注册监测代码，ID 76：
+	//http://gad.netease.com/gad/point?point_id=76&s=ZIYhxOaw%2BWbCs6usNFlRXn2DdpU%3D
+	var username=function(paramName){
+		var pStr=window.location.search.toString(),
+			r=new RegExp("[\?&]*"+paramName+"=([^&]+)"),
+			m=pStr.match(r);
+		if(m) return m[1];
+		else return null;		
+	}("username");
+	function rand(num) {
+	   return Math.floor(Math.random()*num)+1;
+	}
+	username = username.replace(/[^0-9a-zA-Z@_\-\.]/g, '');
+	if(username){
+		document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=76&s=ZIYhxOaw%2BWbCs6usNFlRXn2DdpU%3D&cache="+rand(999999)+"&urs="+username+"\" width=\"0\" height=\"0\" frameborder=\"0\"><\/iframe>"); 
+		username=null;
+	}
+</script>
+
+<script type="text/javascript" src="http://union.netease.com/sys_js/pre_related.js"></script>
+</body>
+</html>

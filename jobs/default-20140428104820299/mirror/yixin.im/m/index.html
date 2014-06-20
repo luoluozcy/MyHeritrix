@@ -1,0 +1,166 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>易信</title>
+	<meta name="viewport" content="width=640,maximum-scale=1,target-densitydpi=320,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta http-equiv="pragram" content="no-cache">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" href="http://yixin.im/rsc/img/57x57.png?001" /> 
+	<link rel="apple-touch-icon" sizes="72x72" href="http://yixin.im/rsc/img/72x72.png?001" /> 
+	<link rel="apple-touch-icon" sizes="114x114" href="http://yixin.im/rsc/img/114x114.png?001" />
+	<link rel="stylesheet" href="css/index.css?v=001" type="text/css"/>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-45780825-1', 'yixin.im');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+<div class="g-doc" id="js-doc">
+	<div class="g-top">
+		<div class="m-logo">
+			<h1 class="logo">易信，让沟通更有趣</h1>
+		</div>
+		<div class="m-downld">
+			<a id="J-download" class="btn-dld" href="https://itunes.apple.com/cn/app/yi-xin-mian-fei-liao-tian/id683688634?mt=8" title="立即下载"></a>
+		</div>
+	</div>	
+	<div class="m-cnt cnt1">
+		<h2>易信是时下最新的免费手机通讯软件，特有高清语音，免费短信，电话留言等通讯功能</h2>
+		<img src="images/cnt1.jpg" alt="易信是时下最新的免费手机通讯软件" />
+	</div>
+	<div class="m-cntwrap">
+		<div class="m-cnt cnt2">
+			<h2>免费短信——可以发送免费短信，即使对方没有安装易信</h2>
+			<img src="images/cnt2.jpg" alt="免费短信" /></div>
+		<div class="m-cnt cnt3">
+			<h2>免费电话留言——你的语音消息通过电话传达给对方的手机或固话</h2>
+			<img src="images/cnt3.jpg" alt="免费电话留言" />
+		</div>
+		<div class="m-cnt cnt4">
+			<h2>国际漫游电话——出过游玩、办公或留学时，即可免费拨打国际漫游电话，与国内好友、家人联络。</h2>
+			<img src="images/cnt4.jpg" alt="国际漫游电话" />
+		</div>
+		<div class="m-cnt cnt5">
+			<h2>高清语音——独家降噪技术，语音消息更清晰</h2>
+			<img src="images/cnt5.jpg" alt="高清语音" />
+		</div>
+		<div class="m-cnt cnt6">
+			<h2>免费贴图——海量表情，全都免费</h2>
+			<img src="images/cnt6.jpg" alt="免费贴图" />
+		</div>
+	</div>
+	<div class="g-foot">
+		<div class="m-dlds">
+			<a id="iphone" class="btn btn-iphone" href="https://itunes.apple.com/cn/app/yi-xin-mian-fei-liao-tian/id683688634?mt=8" title="iPhone下载"></a>
+			<a id="android" class="btn btn-android" href="http://yixin.dl.126.net/update/installer/yixin.apk" title="Android下载"></a>
+		</div>
+		<div class="m-cprt">翼信公司©2013-2014 浙ICP备13025399号</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA1380269504854'],['_setLocalGifPath', '/UA1380269504854/__utm.gif'],['_setLocalServerMode']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = 'http://wr.da.netease.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+<script type="text/javascript">
+(function () {
+	var IPHONEURL = "https://itunes.apple.com/cn/app/yi-xin-mian-fei-liao-tian/id683688634?mt=8";
+	var ANDROIDURL = "http://yixin.dl.126.net/update/installer/yixin.apk";
+	var PCURL = 'http://yixin.dl.126.net/update/installer/yixinsetup.exe';
+	var DOWNLOADTIPURL = 'http://yixin.im/m/download-tip.html';
+	var CURRENTURL = '';
+	var isMobile = 0;
+	var platForm = '';
+	var page = {};
+	var UA = navigator.userAgent.toLowerCase();
+
+	var iOS5 = navigator.userAgent.match("OS 5_");
+	if (typeof ontouchstart != "undefined" && typeof ontouchend != "undefined") {
+		var touchStartOrClick = "touchstart",
+			touchEndOrClick = "touchend";
+	} else {
+		var touchStartOrClick = "click",
+			touchEndOrClick = "click";
+	}
+
+	page.init = function () {
+		page.initView();
+		page.initEvent();
+	};
+
+	page.initView = function() {
+		if (UA.indexOf('android') != -1) {
+			$('#iphone').hide();
+			CURRENTURL = ANDROIDURL;
+			isMobile = 1;
+			platForm = 'android';
+		} else if (UA.indexOf('iphone') != -1) {
+			$('#android').hide();
+			CURRENTURL = IPHONEURL;
+			isMobile = 2;
+			platForm = 'iphone';
+		} else {
+			$('#js-doc').addClass('pc');
+			CURRENTURL = PCURL;
+			isMobile = 0;
+			platForm = 'pc';
+		}
+		$('#J-download').attr('href', CURRENTURL);
+	};
+
+	page.initEvent = function () {
+		// if (page.isWinXin() && (isMobile==2)) {
+		// 	$("#J-download, #iphone").bind(touchStartOrClick, this.showDownloadTip);
+		// } else  
+		{
+			$("#J-download").bind(touchStartOrClick, this.downloadMobile.bind(this, isMobile ? '' : CURRENTURL));
+			// $('#android').bind(touchStartOrClick, this.downloadMobile.bind(this, ANDROIDURL));
+			// $('#iphone').bind(touchStartOrClick, this.downloadMobile.bind(this, IPHONEURL));
+		}
+	};
+
+	// page.isWinXin = function () {
+	// 	var _hash = location.hash;
+	// 	if (_hash.length > 0) {
+	// 		return false;
+	// 	} else {
+	// 		return UA.indexOf('micromessenger') != -1;
+	// 	}
+	// };
+
+	page.showDownloadTip = function (event) {
+		event.preventDefault();
+		window.location.href = DOWNLOADTIPURL;
+	};
+	
+	page.downloadMobile = function (url, event) {
+		event.preventDefault();
+		// if (page.isWinXin() && (isMobile==2)) {
+		// 	page.showDownloadTip();
+		// 	return false;
+		// }
+		_gaq.push(['_trackEvent', platForm+'官网', platForm+'下载', 'pc官网'+platForm+'下载']);
+		_gaq.push(function() {
+			setTimeout(function() {
+				window.location.href = url.length > 0 ? url : CURRENTURL;
+			}, 250);
+		});
+        ga('send', 'event', platForm+'Download', 'fromPhone', '/m/index', 1);
+        //统计打点请求
+        $.ajax({
+			url:'http://yixin.im/download/'+platForm+'?from=/m/index&tag=mobile',
+			type:'GET'
+		});
+    };
+
+	page.init();
+})();
+</script>
+</body>
+</html>

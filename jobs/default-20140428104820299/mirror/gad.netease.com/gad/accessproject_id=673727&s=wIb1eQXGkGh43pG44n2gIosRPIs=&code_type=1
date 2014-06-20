@@ -1,0 +1,41 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://gad.netease.com/Rookie.js?http://gad.netease.com/rookie.swf"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function chkFlash() {
+          var isIE = (navigator.appVersion.indexOf("MSIE") >= 0);
+          var hasFlash = true;
+
+          if(isIE) {
+            try{
+              var objFlash = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+            } catch(e) {
+              hasFlash = false;
+            }
+          } else {
+            if(!navigator.plugins["Shockwave Flash"]) {
+              hasFlash = false;
+            }
+          }
+          return hasFlash;
+        }
+
+        var flash_flag = chkFlash();
+        if(flash_flag) {
+            Rookie(function(){
+                this.write("gad_unique_player_id", "f65ba6ad756b55c7824005b4c9029440");
+                window.location.href="http://wh.163.com/hi/";
+            });
+        } else {
+            window.location.href="http://wh.163.com/hi/";
+        }
+
+    </script>
+</body>
+</html>
+

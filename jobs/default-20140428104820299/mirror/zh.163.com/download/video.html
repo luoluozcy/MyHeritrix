@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+
+<title>《斩魂》下载中心《斩魂》官方网站 - 网易3D.大型闯关格斗 颠覆你感官 - 9月13日不删档开放内测</title>
+<meta name="keywords" content="斩魂,斩魂官网,斩魂官方网站,横版游戏,网易游戏斩魂,闯关格斗" />
+<meta name="description" content="《斩魂》为网易耗时3年倾情开发的3D大型闯关格斗网游，以隋唐历史结合上古神话的幻想题材为背景。凭借国内首款3D格斗引擎，《斩魂》在横版领域实现了1080p高分辨率3D写实画面和全面升级的3D化格斗操作系统。独有的东方式原创格斗技能和帮战塔防等七类创新玩法，更为横版玩家带来颠覆性的游戏体验。9月13日，不删档开放内测。" />
+<meta name="robots" content="all" />
+<meta name="author" content="NetEase-CP" />
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<!-- 样式基础 -->
+<link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/comm/js/nie/util/urs/bigUrs.case1.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://res.zh.netease.com/gw/12v2/css/base.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://res.zh.netease.com/gw/12v2/css/download.css" media="all" />
+<!--[if IE 6]><script>try{document.execCommand("BackgroundImageCache", false, true);}catch(e){}</script><![endif]-->
+<!-- jquery mix NIE (最新版本）-->
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+<script charset="gb2312" type="text/javascript">
+$(function(){
+	inputTip("#search");
+	nie.use(['nie.util.bigUrs','util.share','util.swfobject',"nie.util.video"], function(){	
+	
+		var	bigUrs = nie.util.bigUrs.create();
+		bigUrs.init();
+		
+		var firstV=$(".vList").eq(0).find("a").eq(0).attr("href");
+		var firstmp4=$(".vList").eq(0).find("a").eq(0).attr("mp4href");
+		/*$(".video").flash({
+			  swf: 'http://res.nie.netease.com/comm/js/nie/util/player.swf',
+			  flashvars:"movieUrl="+firstV+"&videoWidth=650&videoHeight=334&volume=0.8&autoPlay=true&loopTimes=-1&&bufferTime=5",
+			  wmode:"transparent",
+			  allowScriptAccess:"always",
+			  width: 650,
+			  height:334
+		});*/
+		nie.util.video(".video",{
+			movieUrl:firstV,
+			mp4_movieUrl:firstmp4,
+			width:650,
+			height:334,
+			bufferTime:5,
+			loopTimes:-1,
+			wmode:"transparent",
+			volume:0.3,
+			autoPlay:true
+		});
+		
+		$(".vList a").click(function(){
+			$(".vList").find("a").removeClass("current");
+			$(this).addClass("current");
+			var thisV=$(this).attr("href");
+			var thismp4=$(this).attr("mp4href");
+			/*$(".video").empty().flash({
+				  swf: 'http://res.nie.netease.com/comm/js/nie/util/player.swf',
+				  flashvars:"movieUrl="+thisV+"&videoWidth=650&videoHeight=334&volume=0.8&autoPlay=true&loopTimes=-1&&bufferTime=5",
+				  wmode:"transparent",
+				  allowScriptAccess:"always",
+				  width: 650,
+				  height:334
+			});*/
+			nie.util.video(".video",{
+				movieUrl:thisV,
+				mp4_movieUrl:thismp4,
+				width:650,
+				height:334,
+				bufferTime:5,
+				loopTimes:-1,
+				wmode:"transparent",
+				volume:0.3,
+				autoPlay:true
+			});
+			return false;
+		});
+		
+		var list=$(".guanfang .vList");
+		var flag=Math.ceil((list.find("li").length)/8);
+		var h=$(".guanfang").innerHeight();
+		//if(flag<=1){$(".guanfang").height(h/2-2);}
+		$(".vPages a").click(function(){
+			var listMT=parseInt(list.css("margin-top"));
+			if($(this).hasClass("next")){
+				if(listMT<= -(flag-1)*h){return false;}
+				else{
+					//if(listMT<= -(flag-2)*h){$(".guanfang").height((h/2-2));}
+					list.css("margin-top",listMT-h);
+				}
+			}
+			if($(this).hasClass("prev")){
+				if(listMT>=0){return false;}
+				else{
+					//if(listMT<= -(flag-2)*208){$(".guanfang").height(206);}
+					list.css("margin-top",listMT+208);
+				}
+			}
+		});
+	
+	})
+})
+function inputTip(id){
+	var valueText=$(id).val();
+	$(id).focus(function(){
+		var thisValue=$(id).val();
+		if(thisValue==valueText){
+		$(id).val("");
+		}
+	});
+	$(id).blur(function(){
+		var thisValue=$(id).val();
+		if(thisValue==""){
+			$(id).val(valueText);
+		}
+	});
+}
+</script>
+</head>
+
+<body id="download">
+<div id="NIE-topBar"></div>
+<div id="top">
+<div class="dTop">
+<a href="/index.html" target="_blank" class="aBut aLogo"></a>
+<ul id="nav">
+<li><a href="/index.html" class="aBut aNav_0">首页</a></li>
+<li><a href="/news/" class="aBut aNav_1">新闻中心</a></li>
+<li><a href="/newbie/" class="aBut aNav_2">新手指南</a></li>
+<li><a href="/guide/" class="aBut aNav_3">游戏资料</a></li>
+<li><a href="/activity/" class="aBut aNav_4">特色专题</a></li>
+<li><a href="/download/" class="aBut aNav_5">下载中心</a></li>
+<li><a href="http://zh.gm.163.com/" target="_blank" class="aBut aNav_6">客户服务</a></li>
+<li><a href="http://zh.netease.com/" target="_blank" class="aBut aNav_7">玩家论坛</a></li>
+</ul>
+</div>
+</div>
+<div id="wrap">
+<div id="wrap-1">
+
+
+<div id="main">
+
+<div class="header">
+	<h1 class="hide">下载专区 精彩视频</h1>
+</div>
+
+<div class="content clr">
+	<div class="main">
+    	<div class="subHead"><h3><a href="index.html">客户端下载</a><a href="video.html" class="current">精彩视频</a><a href="http://zh.163.com/show/huamian.html" target="_blank">精美图片</a></h3></div>
+        <div class="subMain">
+        	<div class="video"></div>
+        </div>
+    	<div class="subHead subHead2"><h3>官方精彩视频</h3></div>
+        <div class="subMain">
+        	<div class="guanfang">
+            <ul class="vList clr">
+			<li><a class="current" href="http://v.zh.netease.com/gw/11v1/cg.f4v" mp4href="http://v.zh.netease.com/gw/11v1/cg.mp4"><img src="images/cg.jpg" width="144" height="70" /><span>斩魂全新震撼CG</span></a></li>
+			<li><a href="http://v.zh.netease.com/gw/11v1/featrue_750x422.f4v" mp4href="http://v.zh.netease.com/gw/11v1/featrue_750x422.2.mp4"><img src="images/featrue.jpg" width="144" height="70" /><span>颠覆你感官特色展示</span></a></li>
+                <li><a href="http://v.zh.netease.com/gw/12v1/0830/all role.f4v" mp4href="http://v.zh.netease.com/gw/11v1/all role.mp4"><img src="images/v1.jpg" width="144" height="70" /><span>全职业展示视频</span></a></li>
+                <li><a href="http://v.zh.netease.com/gw/12v1/0830/pvp.f4v" mp4href="http://v.zh.netease.com/gw/12v1/0830/pvp.mp4"><img src="images/v2.jpg" width="144" height="70" /><span>多层次格斗玩法展示</span></a></li>
+                <li><a href="http://v.zh.netease.com/gw/12v1/0830/pve.f4v" mp4href="http://v.zh.netease.com/gw/12v1/0830/pve.mp4"><img src="images/v3.jpg" width="144" height="70" /><span>七大类创新关卡解析</span></a></li>
+				<li><a href="http://v.zh.netease.com/gw/12v1/0830/dfjn.f4v" mp4href="http://v.zh.netease.com/gw/12v1/0830/dfjn.mp4"><img src="images/v4.jpg" width="144" height="70" /><span>揭秘《斩魂》东方原创技能</span></a></li>
+                <li><a href="http://v.zh.netease.com/gw/11v1/player7.f4v" mp4href="http://v.zh.netease.com/gw/11v1/player7.mp4"><img src="images/v5.jpg" width="144" height="70" /><span>女乐操作演示视频</span></a></li>
+                
+                <li><a href="http://v.zh.netease.com/11/role/ys.f4v" mp4href="http://v.zh.netease.com/11/role/ys.mp4"><img src="images/v6.jpg" width="144" height="70" /><span>药师操作演示视频</span></a></li>
+                <li><a href="http://v.zh.netease.com/11/role/cisha.f4v" mp4href="http://v.zh.netease.com/11/role/cisha.mp4"><img src="images/v7.jpg" width="144" height="70" /><span>刺杀操作演示视频</span></a></li>
+                <li><a href="http://v.zh.netease.com/11/role/md.flv" mp4href="http://v.zh.netease.com/11/role/md.mp4"><img src="images/v8.jpg" width="144" height="70" /><span>魔道操作演示视频</span></a></li>
+                <li><a href="http://v.zh.netease.com/11/role/yingzhan.f4v" mp4href="http://v.zh.netease.com/11/role/yingzhan.mp4"><img src="images/v9.jpg" width="144" height="70" /><span>影战操作演示视频</span></a></li>
+                <li><a href="http://v.zh.netease.com/gw/11v1/player9.f4v" mp4href="http://v.zh.netease.com/gw/11v1/player9.mp4"><img src="images/v10.jpg" width="144" height="70" /><span>神法操作演示视频</span></a></li>
+				<li><a href="http://v.zh.netease.com/gw/11v1/player8.f4v" mp4href="http://v.zh.netease.com/gw/11v1/player8.mp4"><img src="images/v11.jpg" width="144" height="70" /><span>剑侠操作演示视频</span></a></li>
+				<li><a href="http://v.zh.netease.com/11/role/kuangdao.f4v" mp4href="http://v.zh.netease.com/11/role/kuangdao.mp4"><img src="images/v12.jpg" width="144" height="70" /><span>狂刀操作演示视频</span></a></li>
+				<li><a href="http://v.zh.netease.com/11/role/jq.flv" mp4href="http://v.zh.netease.com/11/role/jq.mp4"><img src="images/v13.jpg" width="144" height="70" /><span>巨阙操作演示视频</span></a></li>
+            </ul>
+            </div>
+            <div class="vPages"><a href="javascript:;" class="prev">上一页</a><a href="javascript:;" class="next">下一页</a></div>
+        </div>
+		<!--
+    	<div class="subHead subHead2"><h3>媒体推荐视频</h3></div>
+        <div class="subMain">
+        	<ul class="vList clr">
+            	<li><a href="http://v.zh.netease.com/gw/12v1/zh_zy.f4v"><img src="images/p.jpg" width="144" height="70" /><span>啊啊啊啊啊啊啊</span></a></li>
+            	<li><a href="#"><img src="images/p.jpg" width="144" height="70" /><span>啊啊啊啊啊啊啊</span></a></li>
+            	<li><a href="#"><img src="images/p.jpg" width="144" height="70" /><span>啊啊啊啊啊啊啊</span></a></li>
+            	<li><a href="#"><img src="images/p.jpg" width="144" height="70" /><span>啊啊啊啊啊啊啊</span></a></li>
+            </ul>
+        </div>-->
+    </div>
+	<div class="aside">
+
+<!-- 注册&领取 Start-->
+    	<div class="libaoBox">
+        	<h3>1、注册游戏帐号</h3>
+            <div class="regarea">
+            
+            <div class="dReg">
+<!-- Start 大通行证.快速注册 -->
+<p class="NIE-quickReg-loading">注册网易通行证加载中,请稍后.</p>
+<form class="NIE-quickReg" method="post" onsubmit="return false;" style="display:none;" action="#">
+<p class="qrNoEmail"><a class="createEmailBtn" target="_blank">还没有邮箱？</a></p>
+<dl>
+<dt class="qr-username">邮件地址：</dt>
+<dd class="qr-username">
+<ul>
+<li class="qrCon">
+<input class="qrUserInp qrInpTxt" type="text" name="username" autocomplete="off" tabindex="1" />
+<!-- 邮箱地址.错误提示 -->
+<input rel="username" class="qrUserInp qrError qrHide" readonly="readonly" tabindex="1" />
+<div class="suggestDomain">
+<ul>
+<!--域名提示建议-->
+</ul>
+</div>
+</li>
+<li class="qrChk">
+<!-- 邮箱地址.提示 -->
+</li>
+</ul>
+</dd>
+<dt class="qr-password">设置密码：</dt>
+<dd class="qr-password">
+<ul>
+<li class="qrCon">
+<input class="qrPWInp qrInpTxt" type="password" name="password" tabindex="2" />
+<!-- 设置密码.错误提示 -->
+<input rel="password" class="qrPWInp qrError qrHide" readonly="readonly" tabindex="2" />
+</li>
+<li class="qrChk">
+<!-- 设置密码.提示 -->
+</li>
+</ul>
+</dd>
+<dt class="qr-repassword">确认密码：</dt>
+<dd class="qr-repassword">
+<ul>
+<li class="qrCon">
+<input class="qrRePWInp qrInpTxt" type="password" name="repassword" tabindex="3" />
+<!-- 确认密码.错误提示 -->
+<input rel="repassword" class="qrRePWInp qrError qrHide" readonly="readonly" tabindex="3" />
+</li>
+<li class="qrChk">
+<!-- 确认密码.提示 -->
+</li>
+</ul>
+</dd>
+<dt class="qr-captcha">验证码：</dt>
+<dd class="qr-captcha">
+<ul>
+<li class="qrCon">
+<input class="qrCaptchaInp qrInpTxt"  type="text" name="captcha" autocomplete="off" tabindex="4" />
+<!-- 验证码数.错误提示 -->
+<input rel="captcha" class="qrCaptchaInp qrError qrHide" readonly="readonly" tabindex="4" />
+<span class="captcha-wrap hideItem loading">
+<!--验证码数.图片-->
+</span> </li>
+<li class="qrChk">
+<!-- 验证码数.提示 -->
+</li>
+</ul>
+</dd>
+<dt class="qr-agree">
+<input id="qr-agreeInp" name="agree" type="checkbox" checked="checked" />
+</dt>
+<dd class="qr-agree">
+<input type="hidden" name="promark" value="95psxi1m" />
+<label for="qr-agreeInp"> 我同意
+"<a href="http://reg.163.com/agreement.shtml" target="_blank">服务条款</a>"和<br />
+"<a href="http://reg.163.com/agreement_game.shtml" target="_blank">隐私保护和个人信息利用政策</a>" </label>
+</dd>
+<dt class="qr-submit"></dt>
+<dd class="qr-submit">
+<input type="submit" tabindex="5" value="" onmouseout="this.className='arSubmitInp btn_reg'" onmouseover="this.className='arSubmitInp btn_reg hover'" class="arSubmitInp btn_reg">
+</dd>
+</dl>
+</form>
+<!-- End 大通行证.快速注册 -->
+</div>
+            
+            </div>
+            <div class="getarea">注册即得1888元新手礼包 <a href="#" class="lqlb">领取礼包</a>
+            </div>
+        	<h3>2、预约新服 享三大特权</h3>
+            <a href="http://zh.163.com/news/2012/8/30/9911_340753.html" target="_blank" class="aBut ljlq">立即预约</a>
+        </div>
+<!-- 注册&领取 End-->
+
+
+<!-- 内页ban Start-->
+<!-- 内页ban Start-->
+<div class="tuijianBox">
+
+ <a href="http://zh.163.com/news/news/2013/10/18/9911_399093.html" target="_blank"><img src="http://img.nie.163.com/images/2013/10/22/2013-10-22_376043.jpg"  width="250" height="100" /></a> 
+
+
+ <a href="http://zh.163.com/guoqing/2013/" target="_blank"><img src="http://img.nie.163.com/images/2013/9/26/2013-09-26_357691.jpg"  width="250" height="100" /></a> 
+
+ </div>
+<!-- 内页ban End-->
+<!-- 内页ban End-->
+
+
+<!-- 快捷入口 Start-->
+<!-- 快捷入口 Start-->
+			<div class="rukouBox">
+              <div class="rukouInner">
+                <h3>快捷入口</h3>
+
+<!--
+                <div class="searchBox">
+                  <form action="http://www.yodao.com/search?ue=utf8&" method="get" target="_blank">
+                    <div class="inputBg">
+                      <input type="text" value="请输入查找内容" class="inputText" id="search" name="q"/></div>
+		      
+			<input type="hidden" value="gbk" name="ue"/>
+			<input type="hidden" value="zh.163.com" name="keyfrom"/>
+			<input type="hidden" name="gn" value="dhxy2" />
+			<input type="hidden" name="gamesite" value="1" />
+                    
+                    <input type="submit" value="搜索" class="inputSubmit" />
+                  </form>
+                </div>
+-->
+
+
+
+                <div class="rukouLink">
+                  <p><a href="http://zh.163.com/reg/" target="_blank">注册帐号</a> | <a href="http://zh.163.com/download/" target="_blank">客户端下载</a> | <a href="http://zh.163.com/show/" target="_blank">游戏特色</a></p>
+                  <p><a href="http://zh.gm.163.com/user_help.html" target="_blank">帐号安全</a> | <a href="http://pay.163.com/index.jsp" target="_blank">快速充值</a>　 | <a href="http://zh.netease.com/" target="_blank">官方论坛</a></p>
+                  <p><a href="http://zh.netease.com" target="_blank">公会平台</a> | <a href="http://nb.163.com/tequan/zh_wdl.html" target="_blank">VIP网吧特权</a></p>
+                </div>
+              </div>
+            </div>
+
+ 
+<!-- 快捷入口 End-->
+<!-- 快捷入口 End-->
+
+    </div>
+</div>
+<div id="footer" class="clear">
+  <!-- NIE 底部版权 Start -->
+  <div id="NIE-copyRight"> </div>
+  <!-- NIE 底部版权 End -->
+</div>
+
+</div>
+</div>
+</div>
+</body>
+</html>

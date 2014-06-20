@@ -1,0 +1,694 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="GBK">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>nba</title>
+    <style type="text/css">
+        /*通用样式*/
+        html, body, div, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, object, iframe, form, blockquote, fieldset, input, textarea, code, address, caption, cite, code, em, i, ins {
+            margin: 0;
+            padding: 0;
+            font-style: normal;
+            font-size: 12px;
+            font-weight: normal;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        fieldset, img {
+            border: none;
+        }
+        caption, th {
+            text-align: left;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        body {
+            font-family: "simsun","宋体","Arial","Helvetica","sans-serif"; color:#252525;
+        }
+        a,a:visited{color:#252525; text-decoration: none}
+        a:hover{color:#ba2636; text-decoration: underline;}
+        /*排名区*/
+        #ranks {
+            padding-top: 0!important;
+        }
+            #ranks p {
+                text-align: center;
+            }
+        #westrank, #eastrank {
+            overflow-y: auto;
+            width: 240px;
+            height: 391px;
+        }
+            .rankhead p, #westrank span, #eastrank span {
+                width: 37px;
+                text-align: center;
+                float: right;
+            }
+        .rankhead {
+            height: 25px;
+            overflow: hidden;
+            width: 240px;
+        }
+        .pleft {
+            float: left!important;
+            width: 55px!important;
+        }
+        #newsrank {
+            overflow: hidden;
+            width: 240px;
+            height: 442px;
+        }
+        .newsrank {
+            margin-top: 1px;
+        }
+        /*季后赛*/
+        #playoff {
+            height: 221px;
+            overflow: hidden;
+            background: url(http://img5.cache.netease.com/sports/2013/4/18/201304181844306e8de.png) no-repeat;
+            margin: 5px 0;
+            position: relative;
+        }
+        #playoff p {
+            text-align: left!important;
+        }
+        #playoff a {
+            float: left;
+            height: 19px;
+        }
+        #playoff img {
+            border: 0!important;
+            padding: 0!important;
+        }
+        #playoff span {
+            float: left;
+            width: 8px;
+            text-align: center;
+            font-size: 10px;
+            font-family: arial;
+            line-height: 19px;
+        }
+        .west1 {
+            clear: both;
+            width: 32px;
+            position: absolute;
+            left: 2px;
+            top: 1px;
+        }
+        .east1 {
+    clear: both;
+    width: 32px;
+    position: absolute;
+    right: 2px;
+    top: 1px;
+        }
+            .west1 div, .east1 div {
+                height: 58px;
+                overflow: hidden;
+            }
+                .west1 div p a, .east1 div p a {
+                    margin-bottom: 7px;
+                }
+        .west2 {
+            clear: both;
+            width: 32px;
+            position: absolute;
+            left: 51px;
+            top: 14px;
+        }
+        .east2 {
+            clear: both;
+            width: 32px;
+            position: absolute;
+            right: 51px;
+            top: 14px;
+        }
+            .west2 div, .east2 div {
+                height: 116px;
+                overflow: hidden;
+            }
+                .west2 div p, .east2 div p {
+                    margin-bottom: 39px;
+                    height: 19px;
+                }
+        .west3 {
+            clear: both;
+            width: 32px;
+            position: absolute;
+            left: 71px;
+            top: 43px;
+        }
+        .east3 {
+            clear: both;
+            width: 32px;
+            position: absolute;
+            right: 71px;
+            top: 43px;
+        }
+            .west3 div p, .east3 div p {
+                margin-bottom: 97px;
+                height: 19px;
+            }
+        .final {
+            clear: both;
+            width: 118px;
+            position: absolute;
+            left: 91px;
+            top: 101px;
+            overflow: hidden;
+        }
+            .final p {
+                float: left;
+            }
+        .cham {
+            clear: both;
+            width: 33px;
+            position: absolute;
+            left: 133px;
+            top: 70px;
+            overflow: hidden;
+        }
+            .cham p {
+                text-align: center!important;
+            }
+        .playoffscore {
+            display: none;
+            clear: both;
+            height: 126px;
+            overflow: hidden;
+            border: 1px solid #EDEDED;
+            padding: 0 2px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        .poscoretop {
+            height: 60px;
+            border-bottom: 1px dotted #EDEDED;
+            overflow: hidden;
+            text-align: center;
+            color: #000000;
+            vertical-align: baseline;
+            padding-top: 5px;
+        }
+        .poslogo {
+            float: left;
+            width: 51px;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 1px;
+        }
+            .poslogo a {
+                display: block;
+                width: 51px;
+                padding-top: 40px;
+                text-align: center;
+            }
+        .postext {
+            float: left;
+            width: 192px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .postext1 {
+            text-align: center;
+            width: 30px;
+            font-family: arial;
+            font-size: 22px;
+            height: 30px;
+            line-height: 37px;
+            overflow: hidden;
+            float: left;
+        }
+        .postext2 {
+            text-align: center;
+            width: 128px;
+            height: 30px;
+            line-height: 37px;
+            overflow: hidden;
+            float: left;
+        }
+        .poscore {
+            line-height: 20px;
+        }
+            .poscore p {
+                float: left;
+                padding-left: 2px;
+                text-align: left!important;
+                width: 96px;
+            }
+        #partA li {
+            height: 25px;
+            overflow: hidden;
+        }
+        #partB li, #partC li, #partD li, #partE li {
+            height: 27px;
+            overflow: hidden;
+        }
+        .w300 {
+            width:300px;
+        }
+    </style>
+    <script type="text/javascript" src="http://img1.cache.netease.com/f2e/common/jquery.js"></script>
+</head>
+<body>
+    <div class="w300" id="ranks">
+  
+        <div style="display: block; position: relative;" id="playoff2011">
+          <div id="playoff">
+                <div class="west1">
+                    <div id="pos1" class="pos">
+      
+                         <p>
+                            <a href="http://nba.sports.163.com/team/24/" target="_blank">
+                             <img src=
+                            "http://img2.cache.netease.com/sports/2013/4/18/2013041810414195d9b.png" alt="步行者" title="步行者"></a><span>2</span>
+                      </p>
+                        <p>
+                            <a href="http://nba.sports.163.com/team/16/" target="_blank">
+                            <img src="http://img6.cache.netease.com/sports/2013/4/18/201304181042527f12c.png" alt="老鹰" title="老鹰"></a><span>2</span>
+                        </p>
+                    </div>
+                    <div id="pos2" class="pos">
+                        <p>
+                            <a href="http://nba.sports.163.com/team/23/" target="_blank"> <img src="http://img4.cache.netease.com/sports/2013/4/18/201304181040382c719.png" alt="公牛" title="公牛"></a><span>1</span>
+                  </p>
+                  <p>
+                      <a href="http://nba.sports.163.com/team/19/" target="_blank"><img src="http://img4.cache.netease.com/sports/2014/4/14/201404141010468e3ca.png" alt="奇才" title="奇才"></a><a href="http://nba.sports.163.com/team/26/" target="_blank"></a><span>3</span>
+                        </p>
+              </div>
+                    <div id="pos3" class="pos">
+                       <p>
+                            <a href="http://nba.sports.163.com/team/28/" target="_blank"><img src="http://img6.cache.netease.com/sports/2014/4/14/201404141004205c7d7.png" alt="猛龙" title="猛龙"></a><a href="http://nba.sports.163.com/team/24/" target="_blank"></a><span>2</span>
+                      </p>
+                        <p>
+                            <a href="http://nba.sports.163.com/team/30/" target="_blank">
+                                <img src="http://img6.cache.netease.com/sports/2013/4/18/20130418104010b4c2b.png" alt="篮网" title="篮网"></a><span>2</span>
+                        </p>
+              </div>
+              <div id="pos4" class="pos">
+                <p>
+                            <a href="http://nba.sports.163.com/team/18/" target="_blank">
+                        <img src="http://img2.cache.netease.com/sports/2013/4/18/20130418103432e7172.png" alt="热火" title="热火">   </a><a href="http://nba.sports.163.com/team/24/" target="_blank"> </a><span>3</span>
+                        </p>
+                        <p>
+                            <a href="http://nba.sports.163.com/team/20/" target="_blank">
+                           <img src="http://img5.cache.netease.com/sports/2014/4/14/2014041410135552de5.png" alt="山猫" title="山猫"></a><span>0</span>    
+                                      
+                  </p> 
+                        
+                        
+                        
+                      
+                      
+                    </div>
+                </div>
+                
+          
+            <div class="east1">
+              <div id="pos8" class="pos">
+                        
+                         <p><span>1</span><a href="http://nba.sports.163.com/team/3/" target="_blank"><img src="http://img2.cache.netease.com/sports/2013/4/18/201304181208091341b.png" alt="马刺" title="马刺"></a></p>
+                        <p><span>2</span><a href="http://nba.sports.163.com/team/1/" target="_blank"><img src="http://img2.cache.netease.com/sports/2014/4/14/20140414112535dbed1.png" alt="小牛" title="小牛"></a></p>
+                    </div>
+                    <div id="pos9" class="pos">
+                        <p><span>1</span><a href="http://nba.sports.163.com/team/2/" target="_blank">
+                        <img src="http://img6.cache.netease.com/sports/2013/4/18/201304181027093dea8.png" alt="火箭" title="火箭"></a></p>
+                        <p><span>3</span><a href="http://nba.sports.163.com/team/7/" target="_blank"><img src="http://img6.cache.netease.com/sports/2014/4/14/20140414112430be218.png" alt="开拓者" title="开拓者">
+                        
+                        </a></p>
+                    </div>
+                    <div id="pos10" class="pos">
+                      <p><span>2</span><a href="http://nba.sports.163.com/team/14/" target="_blank"><img src="http://img2.cache.netease.com/sports/2013/4/18/201304181207154ea40.png" alt="快船" title="快船"></a></p>
+                       <p><span>2</span><a href="http://nba.sports.163.com/team/15/" target="_blank"><img src="http://img2.cache.netease.com/sports/2013/4/18/2013041812090836ac7.png" alt="勇士" title="勇士"></a></p>  
+                    </div>
+                    <div id="pos11" class="pos">
+                        <p><span>2</span><a href="http://nba.sports.163.com/team/8/" target="_blank">
+                   <img src="http://img6.cache.netease.com/sports/2013/4/18/201304181023329ac35.png" alt="雷霆" title="雷霆">
+</a></p>
+                        <p><span>2</span><a href="http://nba.sports.163.com/team/5/" target="_blank"><img src="http://img5.cache.netease.com/sports/2013/4/18/20130418120741d0cda.png" alt="灰熊" title="灰熊">     
+                        
+                        </a></p> 
+                     
+                        
+                      
+                           
+                        
+                </div>
+            </div>
+              
+                
+          </div>
+              <!-- 西部比分-->
+            <div id="scorepos8" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box8">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/3/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418123923cecb7.png) no-repeat; background-position: 50% 0;">马刺</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">1</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">2</p>
+                        </div>
+                        西部第一轮
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/1/" target="_blank" style="background: url(http://img1.cache.netease.com/sports/2014/4/16/201404160819011f11a.png) no-repeat; background-position: 50% 0;">小牛</a></div>
+                </div>
+                
+                <div class="poscore">
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18549.html" target="_blank"> 第一场：90-85</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18559.html" target="_blank"> 第二场：92-113</a></p>
+                   <p><a href="http://nba.sports.163.com/2013/match/report/18568.html" target="_blank"> 第三场：108-109</a></p>
+                    <p>4-4月29日9:30</p>
+                    
+                </div>
+            </div>
+            <div id="scorepos9" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box9">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/2/" target="_blank" style="background: url(http://img3.cache.netease.com/sports/2013/4/18/20130418124057f9b99.png) no-repeat; background-position: 50% 0;">火箭</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">1</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">3</p>
+                        </div>
+                        西部第一轮
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/7/" target="_blank" style="background: url(http://img6.cache.netease.com/sports/2014/4/16/201404160816354d1b9.png) no-repeat; background-position: 50% 0;">开拓者</a></div>
+                </div>
+                <div class="poscore">
+                     <p><a href="http://nba.sports.163.com/2013/match/report/18552.html" target="_blank"> 第一场：120-122</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18560.html" target="_blank"> 第二场：105-112</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18566.html" target="_blank"> 第三场：121-116</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18574.html" target="_blank"> 第四场：120-123</a></p>                 
+                    <p>5-5月 1日09:30</p>
+                    
+                </div>
+            </div>
+            <div id="scorepos10" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box10">
+                   <div class="poslogo"><a href="http://nba.sports.163.com/team/14/" target="_blank" style="background: url(http://img1.cache.netease.com/sports/2013/4/18/201304181240344ef43.png) no-repeat; background-position: 50% 0;">快船</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">2</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">2</p>
+                        </div>
+                        西部第一轮
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/15/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/201304181238547a364.png) no-repeat; background-position: 50% 0;">勇士</a></div> 
+                </div>
+                <div class="poscore">
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18546.html" target="_blank">第一场：105-109</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18554.html" target="_blank">第二场：138-98</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18563.html" target="_blank">第三场：98-96</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18572.html" target="_blank">第四场：97-118</a></p>
+                    <p>5-4月30日10:30</p>
+                    
+                </div>
+            </div>
+            <div id="scorepos11" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box11">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/8/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418124125fc3b6.png) no-repeat; background-position: 50% 0;">雷霆</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">2</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">2</p>
+                        </div>
+                        西部第一轮
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/5/" target="_blank" style="background: url(http://img1.cache.netease.com/sports/2013/4/18/20130418124011d3d38.png) no-repeat; background-position: 50% 0;">灰熊</a></div>
+                </div>
+                <div class="poscore">
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18548.html" target="_blank"> 第一场：100-86</a></p>
+                   <p><a href="http://nba.sports.163.com/2013/match/report/18553.html" target="_blank"> 第二场：105-111</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18562.html" target="_blank"> 第三场：95-98</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18570.html" target="_blank"> 第四场：92-89</a></p>
+                     <p>5-4月30日9:00</p>
+                </div>
+            </div>
+            <div id="scorepos12" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box12">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/8/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418124125fc3b6.png) no-repeat; background-position: 50% 0;">雷霆</a></div>
+                    <div class="postext">
+                       <div>
+                            <p class="postext1">1</p>
+                            <p class="postext2">灰熊晋级西部决赛</p>
+                            <p class="postext1">4</p>
+                        </div>
+                       <!-- 西部半决赛-->
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/5/" target="_blank" style="background: url(http://img1.cache.netease.com/sports/2013/4/18/20130418124011d3d38.png) no-repeat; background-position: 50% 0;">灰熊</a></div>
+                </div>
+                <div class="poscore">
+                    <p>第一场: <a href="http://nba.sports.163.com/2012/match/report/17135.html" target="_blank">93-91</a></p>
+                    <p>第二场: <a href="http://nba.sports.163.com/2012/match/report/17140.html" target="_blank">93-99</a></p>
+                    <p>第三场: <a href="http://nba.sports.163.com/2012/match/report/17144.html" target="_blank">81-87</a></p>
+                    <p>第四场: <a href="http://nba.sports.163.com/2012/match/report/17148.html" target="_blank">97-103</a></p>
+                    <p>第五场: <a href="http://nba.sports.163.com/2012/match/report/17152.html" target="_blank">84-88</a></p>
+					</div>
+            </div>
+            <div id="scorepos13" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box13">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/3/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418123923cecb7.png) no-repeat; background-position: 50% 0;">马刺</a></div>
+                    <div class="postext">
+                     <div>
+                            <p class="postext1">4</p>
+                            <p class="postext2"> 马刺晋级西部决赛</p>
+                            <p class="postext1">2</p>
+                        </div>
+                        <!--西部半决赛-->
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/15/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/201304181238547a364.png) no-repeat; background-position: 50% 0;">勇士</a></div>
+                </div>
+                <div class="poscore">
+                    <p>第一场: <a href="http://nba.sports.163.com/2012/match/report/17162.html" target="_blank">129-127</a></p>
+                    <p>第二场: <a href="http://nba.sports.163.com/2012/match/report/17137.html" target="_blank">91-100</a></p>
+                    <p>第三场: <a href="http://nba.sports.163.com/2012/match/report/17142.html" target="_blank">102-92</a></p>
+                    <p>第四场: <a href="http://nba.sports.163.com/2012/match/report/17146.html" target="_blank">87-97</a></p>
+                    <p>第五场: <a href="http://nba.sports.163.com/2012/match/report/17150.html" target="_blank">109-91</a></p>
+					<p>第六场: <a href="http://nba.sports.163.com/2012/match/report/17153.html" target="_blank">94-82</a></p>
+				
+                    
+                </div>
+            </div>
+            <div id="scorepos14" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box14">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/5/" target="_blank" style="background: url(http://img1.cache.netease.com/sports/2013/4/18/20130418124011d3d38.png) no-repeat; background-position: 50% 0;">灰熊</a></div>
+                    <div class="postext">
+                       <div>
+                            <p class="postext1">0</p>
+                            <p class="postext2">马刺晋级总决赛</p>
+                            <p class="postext1">4</p>
+                        </div>
+                     <!--西部决赛-->
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/3/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418123923cecb7.png) no-repeat; background-position: 50% 0;">马刺</a></div>
+                </div>
+                <div class="poscore">
+                    <p>第一场: <a href="http://nba.sports.163.com/2012/match/report/17163.html" target="_blank">83-105</a></p>
+                    <p>第二场: <a href="http://nba.sports.163.com/2012/match/report/17164.html" target="_blank">89-93</a></p>
+                    <p>第三场: <a href="http://nba.sports.163.com/2012/match/report/17165.html" target="_blank">93-104</a></p>
+                    <p>第四场: <a href="http://nba.sports.163.com/2012/match/report/17166.html" target="_blank">93-104</a></p>
+                  
+                </div>
+            </div>
+            
+             <!-- 东部比分-->
+            <div id="scorepos1" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box1">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/24/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/2013041811271862162.png) no-repeat; background-position: 50% 0;">步行者</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">2</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">2</p>
+                        </div>
+                        东部第一轮
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/16/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/2013041811284082e42.png) no-repeat; background-position: 50% 0;">老鹰</a></div>
+                </div>
+                <div class="poscore">
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18547.html" target="_blank">第一场：93-101</a></p>
+                   <p><a href="http://nba.sports.163.com/2013/match/report/18555.html" target="_blank">第二场：101-85</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18561.html" target="_blank">第三场：85-98</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18567.html" target="_blank">第四场：91-88</a></p>
+                    <p>5-4月29日8:00</p>
+                </div>
+            </div>
+            <div id="scorepos2" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box2">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/23/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418110600d41af.png) no-repeat; background-position: 50% 0;">公牛</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">1</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">3</p>
+                        </div>
+                        东部第一轮
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/19/" target="_blank" style="background: url(http://img6.cache.netease.com/sports/2014/4/16/201404160858035e249.png) no-repeat; background-position: 50% 0;">奇才</a></div>
+                </div>
+                <div class="poscore">
+                     <p><a href="http://nba.sports.163.com/2013/match/report/18551.html" target="_blank">第一场：93-102</a></p>
+                   <p><a href="http://nba.sports.163.com/2013/match/report/18557.html" target="_blank">第二场：99-101</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18557.html" target="_blank">第三场：100-97</a></p>
+                     <p><a href="http://nba.sports.163.com/2013/match/report/18571.html" target="_blank">第四场：89-98</a></p>
+                    <p>5-4月30日8:00</p>
+                
+                   </div>
+            </div>
+            <div id="scorepos3" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box3">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/28/" target="_blank" style="background: url(http://img3.cache.netease.com/sports/2014/4/16/2014041609022489833.png) no-repeat; background-position: 50% 0;">猛龙</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">2</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">2</p>
+                        </div>
+                        东部第一轮
+                   </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/30/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/20130418110518b53da.png) no-repeat; background-position: 50% 0;">篮网</a></div>
+                </div>
+                <div class="poscore">
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18545.html" target="_blank">第一场：87-94</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18556.html" target="_blank">第二场：100-95</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18564.html" target="_blank">第三场：98-102</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18573.html" target="_blank">第四场：87-79</a></p>
+                
+                </div>
+            </div>
+            <div id="scorepos4" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box4">
+                     <div class="poslogo"><a href="http://nba.sports.163.com/team/18/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/20130418105839612a7.png) no-repeat; background-position: 50% 0;">热火</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">3</p>
+                            <p class="postext2"> </p>
+                            <p class="postext1">0</p>
+                        </div>
+                        东部第一轮
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/20/" target="_blank" style="background: url(http://img6.cache.netease.com/sports/2014/4/16/2014041608584229691.png) no-repeat; background-position: 50% 0;">山猫</a></div>                   
+                    
+                </div>
+                <div class="poscore">
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18550.html" target="_blank">第一场：99-88</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18558.html" target="_blank">第二场：101-97</a></p>
+                    <p><a href="http://nba.sports.163.com/2013/match/report/18569.html" target="_blank">第三场：98-85</a></p>
+                    <p>4-4月29日7:00</p>
+                   
+                </div>
+            </div>
+            <div id="scorepos5" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box5">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/18/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/20130418105839612a7.png) no-repeat; background-position: 50% 0;">热火</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">4</p>
+                            <p class="postext2">热火晋级东部决赛</p>
+                            <p class="postext1">1</p>
+                        </div>
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/23/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418110600d41af.png) no-repeat; background-position: 50% 0;">公牛</a></div>
+                </div>
+                <div class="poscore">
+                    <p>第一场:<a href="http://nba.sports.163.com/2012/match/report/17138.html" target="_blank">86-93</a></p>
+                    <p>第二场:<a href="http://nba.sports.163.com/2012/match/report/17141.html" target="_blank">115-78</a></p>
+                    <p>第三场:<a href="http://nba.sports.163.com/2012/match/report/17142.html" target="_blank">104-94</a></p>
+                    <p>第四场:<a href="http://nba.sports.163.com/2012/match/report/17147.html" target="_blank">88-65</a></p>
+					
+					
+                                 </div>
+            </div>
+            <div id="scorepos6" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box6">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/24/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/2013041811271862162.png) no-repeat; background-position: 50% 0;">步行者</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">4</p>
+                            <p class="postext2">步行者晋级东部决赛</p>
+                            <p class="postext1">2</p>
+                        </div>
+                       <!-- 东部半决赛-->
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/29/" target="_blank" style="background: url(http://img3.cache.netease.com/sports/2013/4/18/20130418130203e56de.png) no-repeat; background-position: 50% 0;">尼克斯</a></div>
+                </div>
+                <div class="poscore">
+                    <p>第一场: <a href="http://nba.sports.163.com/2012/match/report/17136.html" target="_blank">102-95</a></p>
+                    <p>第二场: <a href="http://nba.sports.163.com/2012/match/report/17139.html" target="_blank">79-105</a></p>
+                    <p>第三场: <a href="http://nba.sports.163.com/2012/match/report/17145.html" target="_blank">82-71</a></p>
+                    <p>第四场: <a href="http://nba.sports.163.com/2012/match/report/17149.html" target="_blank">93-82</a></p>
+					<p>第五场：<a href="http://nba.sports.163.com/2012/match/report/17154.html" target="_blank">75-85</a></p>
+					<p>第六场：<a href="http://nba.sports.163.com/2012/match/report/17157.html" target="_blank">106-99</a></p>
+                                   
+									</div>
+            </div>
+            <div id="scorepos7" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box7">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/18/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/20130418105839612a7.png) no-repeat; background-position: 50% 0;">热火</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">4</p>
+                            <p class="postext2">热火晋级总决赛</p>
+                            <p class="postext1">3</p>
+                        </div>
+                       <!-- 东部决赛-->
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/24/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/2013041811271862162.png) no-repeat; background-position: 50% 0;">步行者</a></div>
+                </div>
+                <div class="poscore">
+                    <p>第一场: <a href="http://nba.sports.163.com/2012/match/report/17170.html" target="_blank">103-102</a></p>
+                    <p>第二场: <a href="http://nba.sports.163.com/2012/match/report/17171.html" target="_blank">93-97</a></p>
+                    <p>第三场: <a href="http://nba.sports.163.com/2012/match/report/17172.html" target="_blank">114-96</a></p>
+                    <p>第四场: <a href="http://nba.sports.163.com/2012/match/report/17173.html" target="_blank">92-99</a></p>
+                    <p>第五场: <a href="http://nba.sports.163.com/2012/match/report/17174.html" target="_blank">90-79</a></p>
+                    <p>第六场: <a href="http://nba.sports.163.com/2012/match/report/17175.html" target="_blank">77-91</a></p>
+                    <p>第七场: <a href="http://nba.sports.163.com/2012/match/report/17176.html" target="_blank">99-76</a></p>
+                </div>
+            </div>
+            
+             <!-- 总决赛-->
+            
+            <div id="scorepos15" class="playoffscore" style="display: none;">
+                <div class="poscoretop" id="box15">
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/18/" target="_blank" style="background: url(http://img5.cache.netease.com/sports/2013/4/18/20130418105839612a7.png) no-repeat; background-position: 50% 0;">热火</a></div>
+                    <div class="postext">
+                        <div>
+                            <p class="postext1">4</p>
+                            <p class="postext2"></p>
+                            <p class="postext1">3</p>
+                        </div>
+热火加冕2013NBA总冠军
+                    </div>
+                    <div class="poslogo"><a href="http://nba.sports.163.com/team/3/" target="_blank" style="background: url(http://img2.cache.netease.com/sports/2013/4/18/20130418123923cecb7.png) no-repeat; background-position: 50% 0;">马刺</a></div>
+                </div>
+                <div class="poscore">
+                    <p>第一场: <a href="http://nba.sports.163.com/2012/match/report/17177.html" target="_blank">88-92</a></p>
+                    <p>第二场: <a href="http://nba.sports.163.com/2012/match/report/17178.html" target="_blank">103-84</a></p>
+                    <p>第三场: <a href="http://nba.sports.163.com/2012/match/report/17179.html" target="_blank">77-113</a></p>
+                    <p>第四场: <a href="http://nba.sports.163.com/2012/match/report/17180.html" target="_blank">109-93</a></p>
+                    <p>第五场: <a href="http://nba.sports.163.com/2012/match/report/17181.html" target="_blank">104-114</a></p>
+                    <p>第六场: <a href="http://nba.sports.163.com/2012/match/report/17182.html" target="_blank">103-100</a></p>
+                    <p>第七场: <a href="http://nba.sports.163.com/2012/match/report/17183.html" target="_blank">95-88</a></p>
+                </div>
+            </div>
+        </div>                
+    </div>
+    <script type="text/javascript">
+        jQuery('.pos').mouseover(function () { showplayoff(jQuery(this)) });
+        jQuery('.pos').eq(14 - 15).trigger("mouseover");
+        jQuery('#playoff').mouseenter(function () { jQuery('.note').hide(); });
+        //比分显示
+        function showplayoff(obj) {
+            var id = jQuery(obj).attr("id");
+            jQuery('.playoffscore').hide();
+            jQuery('#score' + id).show();
+        }
+    </script>
+</body>
+</html>

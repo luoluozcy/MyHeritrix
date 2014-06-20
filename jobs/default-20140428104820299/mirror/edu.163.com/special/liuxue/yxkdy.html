@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>网易教育全球院校库</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta content="all" name="robots" />
+<meta name="author" content="" />
+<meta name="Copyright" content="Netease" />
+<meta name="keywords" content="留学，海外院校，网易留学，网易教育" />
+<meta name="description" content="网易教育全球院校库" />
+<link href="http://img1.cache.netease.com/auto/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/edu/img/orgEn0914/orgen-1.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="http://school.nihaowang.com/JavaScript/jquery-1.6.min.js"></script>
+<base target="_blank" />
+</head>
+<body>
+<!--内容编辑区-->
+<div class="bg1">
+ 	 <div class="NTES_nav_ NTES_bg_">
+    <span class="NTES_logo"><a href="http://edu.163.com/"><img alt="教育专题" src="http://img1.cache.netease.com/subject/images/newlogo100628/edu.gif" /></a></span>
+	<span class="nav_link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://t.163.com/">微博</a></span>
+    <div class="top_search">
+	  <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="edu.163" name="keyfrom"/>
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/></label>
+		<noscript><select name="site" class="left">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript>
+        <div id="divSelect" class="left">
+        </div>
+<input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="in" name="in"/>
+</form>
+<a href="http://www.163.com/rss"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img1.cache.netease.com/cnews/img07/rss.gif" /></a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected.removeChild(selected.firstChild);
+                selected.appendChild(txt);
+                select_main.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName").value = title;
+                if (title == "网易") {
+				document.nisearch_top.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover () {
+                this.className = "active";
+            }
+            function a_mouseout () {
+                this.className = "";
+            }
+            $_G("divSelect").innerHTML = '<input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area = $_G("select_area"), selected = $_G("selected"), select_main = $_G("select_main"), select_list = select_main.getElementsByTagName("a"), len = select_list.length;
+            select_area.onclick = select_main.onmouseover = function(){
+                select_main.style.display = "block";
+            }
+            select_main.onmouseout = function(){
+                select_main.style.display = "none";
+            }
+            
+            for (var i = 0; i < len; i++) {
+                select_list[i].onclick = clickselect;
+                select_list[i].onmouseover = a_mouseover;
+                select_list[i].onmouseout = a_mouseout;
+            }
+        })();
+//]]>
+</script>
+    <script type="text/javascript">
+    //<![CDATA[
+            (function NTES_Nav(){
+                function $_G(id){
+                    return document.getElementById(id);
+                }
+                function clickselect(e){
+                    e = e || window.event;
+                    e.cancelBubble = true;
+                    var name = this.innerHTML;
+                    var txt = document.createTextNode(name);
+                    selected.removeChild(selected.firstChild);
+                    selected.appendChild(txt);
+                    select_main.style.display = "none";
+                    var title = this.getAttribute("title");
+                    $_G("siteName").value = title;
+                    if (title == "网易") {
+                    document.nisearch_top.action = "http://news.yodao.com/search";
+                    }
+                    else {document.nisearch_top.action = "http://www.yodao.com/search";
+                    }
+                }
+                function a_mouseover () {
+                    this.className = "active";
+                }
+                function a_mouseout () {
+                    this.className = "";
+                }
+                $_G("divSelect").innerHTML = '<input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+                var select_area = $_G("select_area"), selected = $_G("selected"), select_main = $_G("select_main"), select_list = select_main.getElementsByTagName("a"), len = select_list.length;
+                select_area.onclick = select_main.onmouseover = function(){
+                    select_main.style.display = "block";
+                }
+                select_main.onmouseout = function(){
+                    select_main.style.display = "none";
+                }
+                
+                for (var i = 0; i < len; i++) {
+                    select_list[i].onclick = clickselect;
+                    select_list[i].onmouseover = a_mouseover;
+                    select_list[i].onmouseout = a_mouseout;
+                }
+            })();
+    //]]>
+    </script>
+    <div class="orgArea">
+		<div class="orgTit">数据支持：你好网</div>
+        <div class="orgNav">
+        	<ul>
+            	<li><a href="http://edu.163.com/liuxue/">网易留学</a></li>
+                <li><a href="http://edu.163.rank.nihaowang.com/">全球院校排名库</a></li>
+                <li><a href="http://edu.163.com/special/tantest/">我谈我校</a></li>
+                <li><a href="http://edu.163.com/special/paixiao/">我拍我校</a></li>
+                <li><a href="http://edu.163.com/special/00294IL4/overseas.html">晒我的海外校园生活</a></li>
+                <li><a href="http://edu.163.com/special/liuxue/yxk.html">返回首页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+  
+  
+ <!-- 此处为内容区 --> 
+<div style="margin: 0px auto; overflow: hidden; width: 960px; padding: 10px 0;">
+<iframe id="frameResult" name="frameResult" width="960px" scrolling="no" frameborder="0" onload="this.height=1600;"></iframe>
+</div>
+<div style="clear: both;"></div>
+    <table border="0" align="center" cellpadding="0" cellspacing="0" style="border:1px solid #CCC; " class="sign cDGray">
+  <tr>
+    <td width="131"><a href="http://edu.163.com/special/"><img src="http://img1.cache.netease.com/edu/img/orgEn0914/edulogo.png" alt="网易教育专题" width="131" height="48" /></a></td>
+    <td>编辑：张爱群 &nbsp;&nbsp;时间：2012-09-20</td>
+    <td width="410" style="text-align:right; ">
+    <!!(ThePillsS)> <script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<link href="http://img1.cache.netease.com/utf8/microblog/plugin/css/wb2.0.5.css" charset="utf-8" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wb2.2.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wbshare1.0.3.js" charset="utf-8"></script><span>
+<span style="float:left\9;margin-right:-50px\9;position:relative;*top:-2px;right:-40px\9;">分享到：</span>
+<style type="text/css">
+.wb-article-newdialogLayer-table{background:none;}
+</style>
+<div class="wb-article-sharewraper wb-article-sharewraper-sm wb-article-share" id="wb-article-sharewraper-sm" style="top:1px;top:-4px\9;float:left\9;right:-30px\9;margin-right:-6px;_margin-right:0;">
+</div>
+<script language="javascript" type="text/javascript"   charset="utf-8">
+    (function() {
+        var options = {
+            sourceUrl: "edu.163.com",
+            source: encodeURIComponent("网易教育"),
+            title: encodeURIComponent(document.title),
+            link: encodeURIComponent(document.location.href + '#sns_163')
+        };
+        NTES.ready(
+        function() {
+            WbApp.initShareTipsSm(options,"wb-article-sharewraper-sm");
+        });
+    })();
+</script>
+<style>
+.ntshare-wrap {display:inline-block;*display:inline;_margin-right:5px;}
+.ntshare-wrap a {display:inline-block;cursor:pointer;height:16px;width:16px;vertical-align:text-bottom;margin-left:13px;background:url(http://img6.cache.netease.com/img09/icon/share-icon.png) no-repeat;}
+.ntshare-wrap .ntshare-sina {background-position:0 -40px;}
+.ntshare-wrap .ntshare-renren {background-position:0 -80px;}
+.ntshare-wrap .ntshare-qzone {background-position:0 0;}
+</style>
+<div class="ntshare-wrap"></div>
+<script type="text/javascript" src="http://img4.cache.netease.com/cnews/js/NeteaseShare_v1.2.js"></script>
+<script>
+(function(){
+    var _filterHtml = function(str){
+        var container = document.createElement('div'),
+            filteredStr;
+        container.innerHTML = str;
+        filteredStr = container.innerText || container.textContent;
+        container = null;
+        return filteredStr;
+    },_param = {
+        title: document.title,
+        appkey: '3453163099',
+        description: _filterHtml(''),
+        summary: _filterHtml(''),
+        placeholder: ''
+    },_domready = (function(a){function m(a){l=1;while(a=b.shift())a()}var b=[],c,d=!1,e=document,f=e.documentElement,g=f.doScroll,h="DOMContentLoaded",i="addEventListener",j="onreadystatechange",k="readyState",l=/^loade|c/.test(e[k]);return e[i]&&e[i](h,c=function(){e.removeEventListener(h,c,d),m()},d),g&&e.attachEvent(j,c=function(){/^c/.test(e[k])&&(e.detachEvent(j,c),m())}),a=g?function(c){self!=top?l?c():b.push(c):function(){try{f.doScroll("left")}catch(b){return setTimeout(function(){a(c)},50)}c()}()}:function(a){l?a():b.push(a)}})();
+    
+    _domready(function() {
+        if(window._ntshare){
+            !_ntshare.fn.isInit && _ntshare.fn.init(_param);
+        }
+    });
+})();
+</script></span><!!(ThePillsE)> | <span id="IEHtml"></span> <a href="http://edu.163.com/" class="subject_home">教育首页</a> | <a href="#" target="_self" class="subject_top">回到顶部</a>&nbsp;&nbsp;
+    </td>
+  </tr>
+</table>
+<script language="javascript" type="text/javascript" src="http://hezuo.nihaowang.com/schoolFor163/JS/searchCode.js"></script>
+<script language="javascript" type="text/javascript">
+    SetInfoFrameUrl("frameResult");
+</script>
+<script src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript" charset="gb2312"></script>
+<script language="JavaScript" type="text/javascript">
+ //<![CDATA[	
+            //点击复制
+            var EndPage = function(){
+            }
+            EndPage.copyUrl = function(){
+                var cbc = "";
+                cbc +=  document.URL;
+                window.clipboardData.setData("Text", cbc);
+                NTES("#IECopyUrl").innerHTML = "<span class=\"cDRed\">已复制</span>";
+            }
+		   //初始化 
+            if (NTES.browser.msie) {
+                NTES("#IEHtml").innerHTML = "<span><a class=\"subject_copy\" id=\"IECopyUrl\" title=\"点击复制链接\" style=\"cursor:pointer; text-decoration:none;\">复制网址</a></span> | ";
+                NTES("#IECopyUrl").addEvent("click", function(e){
+                    EndPage.copyUrl();
+                    e.preventDefault();
+                });
+            }
+//]]>
+</script>
+   <div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　<a href="http://post.news.163.com/msg/zhubian.jsp">客服电话:(010)82558163</a> </div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<script language="javascript" type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<!-- 代码 -->
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0515010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0515010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "edu"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>  
+<!--end-->
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+(function(){
+/*导航背景切换*/
+	var menubg = NTES(".orgNav");
+	//console.log(menubg);
+	 NTES(menubg).each(function(){
+	 	var t = NTES(this);
+		var menuli = $(t).$("li");
+		for(var i=0; i<menuli.length;i++){
+			$(menuli[i]).addEvent('mouseover',function(){
+            	this.addCss("on");
+			});
+			$(menuli[i]).addEvent('mouseout',function(){
+            	this.removeCss("on");
+			});
+		}
+	 });
+})()
+    //]]>
+</script>
+</body>
+</html>

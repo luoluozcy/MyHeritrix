@@ -1,0 +1,595 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base target="_blank" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>《魔兽世界：熊猫人之谜》专题 - 网易魔兽世界专区</title>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta name="keywords" content="魔兽世界，WOW，熊猫人之谜，MOP，熊猫人，武僧，潘达利亚，5.0" />
+<meta name="description" content="网易魔兽世界专区《熊猫人之谜》全资料专题。" />
+<link rel="stylesheet" type="text/css" media="all" href="http://img1.cache.netease.com/game/blizzard/wow/mop/css/wow-top-nav.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://img1.cache.netease.com/game/blizzard/wow/mop/css/mop-special.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://img1.cache.netease.com/game/blizzard/wow/mop/css/wow-common.css" />
+<link rel="stylesheet" type="text/css" href="http://img1.cache.netease.com/game/blizzard/wow/mop/css/wow-common-iPhone.css" media="(max-width:1024px)">
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" media="all" href="http://img1.cache.netease.com/game/blizzard/wow/mop/css/mop-special-ie6.css" />
+<![endif]-->
+<script type="text/javascript" src="http://img1.cache.netease.com/game/classes/js/jquery.js"></script>
+<script type="text/javascript">
+var $j = jQuery.noConflict();
+</script>
+</head>
+<body>
+<!--Begin Head-->
+<div style="height:35px; background:url(http://img1.cache.netease.com/cnews/img09/ntes_bg.jpg) repeat-x;"> 
+<div class="NTES_nav_ NTES_bg_">
+    <span class="NTES_logo"><a href="http://game.163.com/"><img alt="游戏专题" src="http://img1.cache.netease.com/subject/images/newlogo100628/game.gif" /></a></span>
+	<span class="nav_link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://t.163.com/">微博</a></span>
+    <div class="top_search">
+	  <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="game.163" name="keyfrom"/>
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/></label>
+		<noscript><select name="site" class="left">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript>
+        <div id="divSelect" class="left">
+        </div>
+<input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="in" name="in"/>
+</form>
+<a href="http://www.163.com/rss"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img1.cache.netease.com/cnews/img07/rss.gif" /></a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected.removeChild(selected.firstChild);
+                selected.appendChild(txt);
+                select_main.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName").value = title;
+                if (title == "网易") {
+				document.nisearch_top.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover () {
+                this.className = "active";
+            }
+            function a_mouseout () {
+                this.className = "";
+            }
+            $_G("divSelect").innerHTML = '<input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area = $_G("select_area"), selected = $_G("selected"), select_main = $_G("select_main"), select_list = select_main.getElementsByTagName("a"), len = select_list.length;
+            select_area.onclick = select_main.onmouseover = function(){
+                select_main.style.display = "block";
+            }
+            select_main.onmouseout = function(){
+                select_main.style.display = "none";
+            }
+            
+            for (var i = 0; i < len; i++) {
+                select_list[i].onclick = clickselect;
+                select_list[i].onmouseover = a_mouseover;
+                select_list[i].onmouseout = a_mouseout;
+            }
+        })();
+//]]>
+</script> 
+</div>
+<!-- End Head -->
+<div class="wow">
+<div class="wrapper">
+<div class="contents"> 
+<!-- Begin Content -->
+<div class="banner">
+<h1>《魔兽世界：熊猫人之谜》网易魔兽世界专区</h1>
+<ul class="wow-menu nav">
+<li><a href="http://w.163.com" class="index"><span class="hidden">首页</span></a></li>
+<li class="open-flymenu"><a class="specials"><span class="hidden">专题</span></a>
+<div class="flymenu">
+<div class="menubg-top"></div>
+<div class="menubg-bottom"></div>
+<ul>
+<li><a href="http://w.163.com/special/mop/">5.0：熊猫人之谜</a></li>
+<li><a href="http://w.163.com/special/explore-mop-2/">探索《熊猫人之谜》</a></li>
+<li><a href="http://w.163.com/special/hour_of_twilight/">4.3：暮光审判</a></li>
+<li><a href="http://w.163.com/special/firelands/">4.2：火焰的愤怒</a></li>
+<li><a href="http://w.163.com/special/Patch41/ctm_patch_41.html">4.1：赞达拉的崛起</a></li>
+<li><a href="http://w.163.com/special/ctm-cn/">4.0：大地的裂变</a></li>
+<li><a href="http://w.163.com/special/patch-335/">3.3：巫妖王之怒</a></li>
+<li><a href="http://w.163.com/special/x-files/">魔兽世界X档案</a></li>
+<li><a href="http://w.163.com/special/classes_warrior/">各职业综合攻略</a></li>
+<li><a href="http://w.163.com/special/npc/">2011年十大人物</a></li>
+<li><a href="http://w.163.com/special/wow-guess/">2011年十大猜想</a></li>
+<li><a href="http://w.163.com/special/battle_net/">艾泽拉斯推理教室</a></li>
+<li><a href="http://w.163.com/special/fraudteam/">网易打击团队欺诈</a></li>
+<li><a href="http://w.163.com/special/safe/">魔兽世界安全产品</a></li>
+</ul>
+</div>
+</li>
+<li class="open-flymenu"><a class="classes"><span class="hidden">职业</span></a>
+<div class="flymenu">
+<div class="menubg-top"></div>
+<div class="menubg-bottom"></div>
+<ul>
+<li class="color-zs"><a href="http://w.163.com/12/0828/04/89VI4LTJ00314PJG.html"><span class="class-zs"></span>战士</a></li>
+<li class="color-lr"><a href="http://w.163.com/12/0828/04/89VI2ULJ00314PJG.html"><span class="class-lr"></span>猎人</a></li>
+<li class="color-sm"><a href="http://w.163.com/12/0824/17/89MJ5GOL00314PJG.html"><span class="class-sm"></span>萨满祭司</a></li>
+<li class="color-qs"><a href="http://w.163.com/12/0828/04/89VH6CPC00314PJG.html"><span class="class-qs"></span>圣骑士</a></li>
+<li class="color-ms"><a href="http://w.163.com/12/0828/04/89VHSF1R00314PJG.html"><span class="class-ms"></span>牧师</a></li>
+<li class="color-ss"><a href="http://w.163.com/12/0822/19/89HLTV2Q00314C3U.html"><span class="class-ss"></span>术士</a></li>
+<li class="color-dz"><a href="http://w.163.com/12/0828/04/89VI0II700314PJG.html"><span class="class-dz"></span>潜行者</a></li>
+<li class="color-fs"><a href="http://w.163.com/12/0828/04/89VH4BCK00314PJG.html"><span class="class-fs"></span>法师</a></li>
+<li class="color-xd"><a href="http://w.163.com/12/0828/04/89VHJALD00314PJG.html"><span class="class-xd"></span>德鲁伊</a></li>
+<li class="color-dk"><a href="http://w.163.com/12/0828/04/89VH2F9100314PJG.html"><span class="class-dk"></span>死亡骑士</a></li>
+<li class="color-mk"><a href="http://w.163.com/12/0828/04/89VI6IAS00314PJG.html"><span class="class-mk"></span>武僧</a></li>
+</ul>
+</div>
+</li>
+<li class="open-flymenu"><a class="dungeons"><span class="hidden">副本</span></a>
+<div class="flymenu">
+<div class="menubg-top"></div>
+<div class="menubg-bottom"></div>
+<ul>
+<li class="menutext">五人副本</li>
+<li><a href="http://w.163.com/12/0813/09/88PE9D3800314PJD.html">围攻砮皂寺</a></li>
+<li><a href="http://w.163.com/12/0813/09/88PEGE8P00314PJD.html">影踪禅院</a></li>
+<li><a href="http://w.163.com/12/0813/09/88PFHOS500314PJD.html">残阳关</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PFPOS100314PJD.html">血色修道院</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PHSTBR00314PJD.html">血色大厅</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PIDAFS00314PJD.html">通灵学院</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PIOC5S00314PJD.html">青龙寺</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PJ2RKH00314PJD.html">风暴烈酒酿造厂</a></li>
+<li><a href="http://w.163.com/12/0813/11/88PJ7H2000314PJD.html">魔古山宫殿</a></li>
+<li class="menutext">团队副本</li>
+<li><a href="http://w.163.com/12/0907/00/8AOQF6LU00314PJD.html">恐惧之心</a></li>
+<li><a href="http://w.163.com/12/0921/23/8BVCKQA300314PJD.html">永春台</a></li>
+<li><a href="http://w.163.com/12/0924/16/8C6BTNC300314PJD.html">世界野外BOSS</a></li>
+<li><a href="http://w.163.com/12/0922/00/8BVDTP5A00314PJD.html">魔古山宝库</a></li>
+</ul>
+</div>
+</li>
+<li class="open-flymenu"><a class="reputations"><span class="hidden">声望</span></a>
+<div class="flymenu">
+<div class="menubg-top"></div>
+<div class="menubg-bottom"></div>
+<ul>
+<li><a href="http://w.163.com/12/0904/16/8AIPJ8EQ00314C3U.html">影踪派</a></li>
+<li><a href="http://w.163.com/12/0821/15/89EN4R4P00314PJF.html">阡陌客</a></li>
+<li><a href="http://w.163.com/12/0906/03/8AMHC7U500314PJF.html">金莲教</a></li>
+<li><a href="http://w.163.com/12/0906/03/8AMICKHB00314PJF.html">至尊天神</a></li>
+<li><a href="http://w.163.com/12/0906/03/8AMHSR6V00314PJF.html">卡拉克西</a></li>
+<li><a href="http://w.163.com/12/0906/03/8AMIQIRE00314PJF.html">游学者</a></li>
+<li><a href="http://w.163.com/12/0906/03/8AMJF98J00314PJF.html">垂钓翁</a></li>
+<li><a href="http://w.163.com/12/0924/18/8C6G5DBN00314PJF.html">云端翔龙骑士团</a></li>
+</ul>
+</div>
+</li>
+<li class="open-flymenu"><a class="skills"><span class="hidden">技能</span></a>
+<div class="flymenu">
+<div class="menubg-top"></div>
+<div class="menubg-bottom"></div>
+<ul>
+<li><a href="http://w.163.com/12/0924/00/8C4KB0K500314PJE.html"><span class="skill-bp"></span>剥皮</a></li>
+<li><a href="http://w.163.com/12/0906/17/8AO1V2AT00314PJE.html"><span class="skill-zp"></span>制皮</a></li>
+<li><a href="http://w.163.com/12/0920/12/8BRILOB700314PJE.html"><span class="skill-cf"></span>裁缝</a></li>
+<li><a href="http://w.163.com/12/0921/14/8BUDS59000314PJE.html"><span class="skill-ck"></span>采矿</a></li>
+<li><a href="http://w.163.com/12/0920/11/8BRHH7RQ00314PJE.html"><span class="skill-fm"></span>附魔</a></li>
+<li><a href="http://w.163.com/12/0906/11/8ANEGVTL00314PJE.html"><span class="skill-dz"></span>锻造</a></li>
+<li><a href="http://w.163.com/12/0920/20/8BSDFLK000314PJE.html"><span class="skill-gc"></span>工程</a></li>
+<li><a href="http://w.163.com/12/0920/20/8BSEVT4Q00314PJE.html"><span class="skill-zb"></span>珠宝</a></li>
+<li><a href="http://w.163.com/12/0921/15/8BUF04H000314PJE.html"><span class="skill-cy"></span>草药</a></li>
+<li><a href="http://w.163.com/12/0920/11/8BRFIKK200314PJE.html"><span class="skill-lj"></span>炼金</a></li>
+<li><a href="http://w.163.com/12/0920/21/8BSHH5P200314PJE.html"><span class="skill-mw"></span>铭文</a></li>
+<li><a href="http://w.163.com/12/0824/11/89M0140300314C3U.html"><span class="skill-dy"></span>钓鱼</a></li>
+<li><a href="http://w.163.com/12/0822/17/89HF8IDO00314PJE.html"><span class="skill-pr"></span>烹饪</a></li>
+<li><a href="http://w.163.com/12/0920/20/8BSFO2JM00314PJE.html"><span class="skill-jj"></span>急救</a></li>
+<li><a href="http://w.163.com/12/0419/11/7VF0DFIC00314C3U.html"><span class="skill-kg"></span>考古</a></li>
+</ul>
+</div>
+</li>
+<li class="open-flymenu"><a class="tools"><span class="hidden">工具</span></a>
+<div class="flymenu">
+<div class="menubg-top"></div>
+<div class="menubg-bottom"></div>
+<ul>
+<li><a href="http://w.163.com/special/mop-talent/">5.4：天赋模拟器</a></li>
+<li><a href="http://wowui.w.163.com/163ui/">网易有爱插件</a></li>
+<li><a href="http://w.163.com/special/wowsocial//">友团组队插件</a></li>
+<li><a href="http://app.game.163.com/zoo/wow/rankinglist">友团团长积分榜</a></li>
+</ul>
+</div>
+</li>
+<li><a href="http://bbs.game.163.com/forum.php?gid=300" class="bbs"><span class="hidden">论坛</span></a></li>
+</ul>
+<span class="clear"><!-- Clear --></span> 
+</div>
+<div class="about-mop">
+<div class="about-left">
+<h2 class="color5">揭开一块失落大陆的秘密</h2>
+<div class="about-text">
+<p>自一万年前的天崩地裂以来，古老的潘达利亚就一直被浓雾所环绕，不曾被世间的纷乱战火所扰。在这里，茂密的森林和云雾袅绕的山峰孕育了独特而多样化的物种。神奇的熊猫人世代生活在这片土地上，即使遭受到远古宿敌的围攻，他们仍然过着怡然自得的生活。</p>
+<p>经历了大地的裂变，联盟与部落即将掀起一场席卷整个艾泽拉斯世界的战争。就在此时，一块新大陆神秘地出现了。潘达利亚的迷雾是否将揭示这个世界的最终救赎？为了争夺这座美丽而富庶的岛屿，部落与联盟这两大阵营是否会掀起一场导向终极毁灭的战争？在潘达利亚神秘的海滩上，答案终将揭晓！</p>
+</div>
+<div class="new-play">
+<ul class="border1">
+<li><a href="http://w.163.com/12/0830/00/8A47NI8100314C3U_3.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-1.jpg" /><span>群体拾取系统</span></a></li>
+<li><a href="http://w.163.com/12/0830/00/8A47NI8100314C3U_6.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-2.jpg" /><span>账号共享系统</span></a></li>
+<li><a href="http://w.163.com/12/0506/22/80RTMO0F00314C3U.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-3.jpg" /><span>黑市拍卖介绍</span></a></li>
+<li><a href="http://w.163.com/12/0830/00/8A47NI8100314C3U.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-4.jpg" /><span>职业系统翻新</span></a></li>
+<li><a href="http://w.163.com/12/0613/11/83SIEKIP00314C3U.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-5.jpg" /><span>全民橙色武器</span></a></li>
+<li><a href="http://w.163.com/12/0830/00/8A47NI8100314C3U_5.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-6.jpg" /><span>点数转换机制</span></a></li>
+<li><a href="http://w.163.com/12/0830/00/8A47NI8100314C3U_8.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-7.jpg" /><span>跨服地图系统</span></a></li>
+<li><a href="http://w.163.com/12/0830/00/8A47NI8100314C3U_9.html"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-8.jpg" /><span>重要界面改动</span></a></li>
+</ul>
+</div>
+</div>
+<div class="about-right-map-list">
+<h2 class="map-title">新地图攻略</h2>
+<ul class="border1">
+<li><a href="http://w.163.com/12/0811/19/88LA399200314PKD.html" title="翡翠林">
+<img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/ss-zone-thumb_03.jpg" alt="翡翠林" /></a>
+</li>
+<li><a href="http://w.163.com/12/0811/19/88LA6H1B00314PKD.html" title="四风谷">
+<img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/ss-zone-thumb_05.jpg" alt="四风谷" /></a>
+</li>
+<li><a href="http://w.163.com/12/0811/19/88LAB6OQ00314PKD.html" title="卡桑琅荒林">
+<img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/ss-zone-thumb_07.jpg" alt="卡桑琅荒林" /></a>
+</li>
+<li><a href="http://w.163.com/12/0811/19/88LAELAM00314PKD.html" title="昆莱山">
+<img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/ss-zone-thumb_09.jpg" alt="昆莱山" /></a>
+</li>
+<li><a href="http://w.163.com/12/0811/19/88LAL02P00314PKD.html" title="螳螂高原">
+<img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/ss-zone-thumb_11.jpg" alt="螳螂高原" /></a>
+</li>
+<li><a href="http://w.163.com/12/0811/19/88LAQ3LN00314PKD.html" title="恐惧废土">
+<img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/ss-zone-thumb_15.jpg" alt="恐惧废土" /></a>
+</li>
+<li><a href="http://w.163.com/12/0811/19/88LANUNU00314PKD.html" title="锦绣谷">
+<img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/ss-zone-thumb_13.jpg" alt="锦绣谷" /></a>
+</li>
+</ul>
+</div>
+</div>
+<span class="clear"><!-- Clear --></span> 
+<div class="special-bg newpatch">
+<span class="special-title-icon"></span>
+<h2 class="special-titlestyle">全新特色</h2>
+<div class="newpatch-part patch-border-bottom">
+<div class="patch-img floatleft"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-img3.jpg" /></div>
+<div class="patch-text floatleft">
+<h2 class="patch-title">场景战役</h2>
+<h3 class="text-title">场景战役介绍</h3>
+<p>场景战役需要三人组队（未必需要治疗职业），你可以在场景战役中体验到《魔兽世界》中众多的精彩剧情。</p>
+<div class="patch-link">
+<a href="http://w.163.com/12/0703/16/85GID98P00314C3U.html">要点：场景战役的奖励为随机副本品质蓝装与勇气点数。</a>
+</div>
+<h3 class="text-title">八大场景介绍</h3>
+<div class="text-list">
+<a href="http://w.163.com/12/0925/03/8C7GH1BN00314PJP.html">塞拉摩的沦陷（联盟）</a>
+<a href="http://w.163.com/12/0925/03/8C7GQPVH00314PJP.html">塞拉摩的沦陷（部落）</a>
+<a href="http://w.163.com/12/0925/03/8C7FV1EA00314PJP.html">酿月祭</a>
+<a href="http://w.163.com/12/0728/10/87GB0UNT00314C3U.html">绿石村</a>
+<br />
+<a href="http://w.163.com/12/0728/10/87GBE4QG00314C3U.html">酿酒风暴</a>
+<a href="http://w.163.com/12/0919/23/8BQ7UR4500314C3U.html">盎迦猴岛</a>
+<a href="http://w.163.com/12/0920/11/8BRF95MR00314C3U.html">破军比武场</a>
+<a href="http://w.163.com/12/0925/03/8C7FJADU00314PJP.html">遗忘之王古墓</a>
+</div>
+</div>
+</div>
+<div class="newpatch-part patch-border-top patch-border-bottom">
+<div class="patch-text floatleft">
+<h2 class="patch-title">宠物对战</h2>
+<h3 class="text-title">宠物对战基础信息</h3>
+<p>你忠诚的小宠物已经陪伴着你经历过无数的冒险。它们既是你的旅伴，也是漫长旅程中的开心果。也许你身边只有那么几只真正喜爱的小宠物，又或许有着宠物收集癖的你觉得小宠物总是多多益善。</p>
+<div class="patch-link">
+<a href="http://w.163.com/12/0729/22/87K5KKIP00314C3U.html">教你玩转宠物对战</a>
+<a href="http://w.163.com/12/0720/12/86RVATNT00314C3U.html">非捕捉蓝色宠物一览</a>
+<a href="http://w.163.com/12/0723/10/873GKI5G00314C3U.html">野外可抓捕宠物大全</a>
+<a href="http://w.163.com/12/0924/15/8C66350800314PJQ.html">各类宠物技能</a>
+</div>
+<h3 class="text-title">更多信息</h3>
+<div class="text-list">
+<a href="http://w.163.com/12/0926/15/8CBAS9CC00314C3U.html">设计师详解宠物对战</a>
+<a href="http://w.163.com/12/0717/09/86JSIRVF00314C3U.html">宠物类型相克表</a>
+<a href="http://w.163.com/12/0820/18/89CF2SV700314C3U.html">天气对宠物的影响</a>
+<a href="http://w.163.com/12/0719/15/86PMM8L200314C3U.html">如何判断宠物强弱</a>
+</div>
+</div>
+<div class="patch-img floatleft"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-img1.jpg" /></div>
+</div>
+<div class="newpatch-part patch-border-top">
+<div class="patch-img floatleft"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/newpatch-img2.jpg" /></div>
+<div class="patch-text floatleft">
+<h2 class="patch-title">挑战模式</h2>
+<h3 class="text-title">背景介绍</h3>
+<p>时间正在一分一秒地流逝。你的队伍到目前为止都还干得不错，但你意识到，如果不加快速度并且团结一致，你们没可能追得上时间的脚步。你们来到了地下城最后的首领面前，你脸上的表情无比坚毅：我们这次一定会取得金牌，尽管放马过来吧。</p>
+<div class="patch-link">
+<a href="http://w.163.com/11/1110/18/7IH3EK4J00314O94.html">挑战模式简介</a>
+<a href="http://www.battlenet.com.cn/wow/zh/challenge/dungeon/gate-of-the-setting-sun/realm/%E9%98%BF%E6%AF%94%E8%BF%AA%E6%96%AF/?wowLocale=4">各服务器挑战模式成绩排行</a>
+</div>
+<h3 class="text-title">挑战模式套装预览</h3>
+<div class="text-list">
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_10.html">战士</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_7.html">猎人</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_8.html">萨满祭司</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_3.html">圣骑士</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_4.html">牧师</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U.html">术士</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_2.html">潜行者</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_11.html">法师</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_5.html">德鲁伊</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_6.html">死亡骑士</a>
+<a href="http://w.163.com/12/0530/17/82P6DVPI00314C3U_9.html">武僧</a>
+</div>
+</div>
+</div>
+</div>
+<span class="clear"></span>
+<!-- 副本 -->
+<div class="wow-dungeons special-bg"> 
+<span class="special-title-icon"></span>
+<h2 class="special-titlestyle">新副本与新战场</h2>
+<div class="dungeonsright">
+<h3 class="titlestyle3 titleicon4">新战场</h3>
+<p>潘达利亚是一片草木繁茂、富含宝藏和资源的土地……人们为争夺它们而战。在寺庙、洞穴、竞技场以及更多地方，您将为潘达利亚大陆的未来而战！ </p>
+<span class="border1"><a href="http://w.163.com/12/0827/11/89TM8IDI00314C3U.html" class="tzms"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/zc-1.jpg" /></a><cite>新战场：银屑矿脉</cite></span>
+<span class="border1"><a href="http://w.163.com/12/0827/10/89TKL5I400314C3U.html" class="tzms"><img src="http://img1.cache.netease.com/game/blizzard/wow/mop/images/special/zc-2.jpg" /></a><cite>新战场：寇魔古寺</cite></span>
+</div>
+<div class="dungeonslist">
+<div class="dglistleft floatleft">
+<h3 class="titlestyle3 titleicon4">地下城</h3>
+<p class="color3">在魔兽的世界里，从未知的角落到最显眼的地标，到处都充满了神秘，冒险还有最令人热血沸腾的对抗与冲突。城市里到处都是唯利是图的雇佣兵还有贪婪的政客，漆黑的洞室里封存着古老而可怕的秘密，战区当中时刻都有军队在进行着长年的战争。</p>
+<ul class="border1">
+<li><a href="http://w.163.com/12/0813/09/88PE9D3800314PJD.html" class="nz">围攻砮皂寺</a></li>
+<li><a href="http://w.163.com/12/0813/09/88PEGE8P00314PJD.html" class="yz">影踪禅院</a></li>
+<li><a href="http://w.163.com/12/0813/09/88PFHOS500314PJD.html" class="cy">残阳关</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PFPOS100314PJD.html" class="dy">血色修道院</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PHSTBR00314PJD.html" class="dt">血色大厅</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PIDAFS00314PJD.html" class="tl">通灵学院</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PIOC5S00314PJD.html" class="ql">青龙寺</a></li>
+<li><a href="http://w.163.com/12/0813/10/88PJ2RKH00314PJD.html" class="fb">风暴烈酒酿造厂</a></li>
+<li><a href="http://w.163.com/12/0813/11/88PJ7H2000314PJD.html" class="gd">魔古山宫殿</a></li>
+</ul>
+<span class="clear"><!-- Clear --></span> </div>
+<div class="dglistright floatleft">
+<h3 class="titlestyle3 titleicon4">团队副本</h3>
+<ul class="border1">
+<li><a href="http://w.163.com/12/0907/00/8AOQF6LU00314PJD.html" class="kj">恐惧之心</a></li>
+<li><a href="http://w.163.com/12/0921/23/8BVCKQA300314PJD.html" class="yc">永春台</a></li>
+<li><a href="http://w.163.com/12/0924/16/8C6BTNC300314PJD.html" class="pd">世界BOSS</a></li>
+<li><a href="http://w.163.com/12/0922/00/8BVDTP5A00314PJD.html" class="bk">魔古山宝库</a></li>
+</ul>
+</div>
+<span class="clear"><!-- Clear --></span> </div>
+</div>
+<!-- 专业 -->
+<div class="wow-skills">
+<div class="skillslist">
+<h2 class="color6">专业技能</h2>
+<ul class="border4">
+<li><a href="http://w.163.com/12/0924/00/8C4KB0K500314PJE.html" class="skillbp">剥皮</a></li>
+<li><a href="http://w.163.com/12/0906/17/8AO1V2AT00314PJE.html" class="skillzp">制皮</a></li>
+<li><a href="http://w.163.com/12/0920/12/8BRILOB700314PJE.html" class="skillcf">裁缝</a></li>
+<li><a href="http://w.163.com/12/0921/14/8BUDS59000314PJE.html" class="skillck">采矿</a></li>
+<li><a href="http://w.163.com/12/0920/11/8BRHH7RQ00314PJE.html" class="skillfm">附魔</a></li>
+<li><a href="http://w.163.com/12/0906/11/8ANEGVTL00314PJE.html" class="skilldz">锻造</a></li>
+<li><a href="http://w.163.com/12/0920/20/8BSDFLK000314PJE.html" class="skillgc">工程</a></li>
+<li><a href="http://w.163.com/12/0920/20/8BSEVT4Q00314PJE.html" class="skillzb">珠宝</a></li>
+<li><a href="http://w.163.com/12/0921/15/8BUF04H000314PJE.html" class="skillcy">草药</a></li>
+<li><a href="http://w.163.com/12/0920/11/8BRFIKK200314PJE.html" class="skilllj">炼金</a></li>
+<li><a href="http://w.163.com/12/0920/21/8BSHH5P200314PJE.html" class="skillmw">铭文</a></li>
+<li><a href="http://w.163.com/12/0824/11/89M0140300314C3U.html" class="skilldy">钓鱼</a></li>
+<li><a href="http://w.163.com/12/0822/17/89HF8IDO00314PJE.html" class="skillpr">烹饪</a></li>
+<li><a href="http://w.163.com/12/0920/20/8BSFO2JM00314PJE.html" class="skilljj">急救</a></li>
+<li><a href="http://w.163.com/12/0419/11/7VF0DFIC00314C3U.html" class="skillkg">考古</a></li>
+</ul>
+<span class="clear"><!-- Clear --></span> 
+</div>
+<div class="petcombat">
+<h2 class="titlestyle3 titleicon4">专业技能改动说明</h2>
+<ul>
+<li>《熊猫人之谜》中，铭文制造将担负起制作各职业肩膀附魔的任务。</li>
+<li>从今以后，每个考古点将可以挖掘6次，欢呼吧。</li>
+<li>祥和之灵将成为锻造、制皮,和裁缝等制造系技能重要的材料，一定要留意收集。</li>
+<li>《熊猫人之谜》中烹饪将分为六大系专精，分别为烧烤、烹炒、炖煮、蒸烧、烘焙、酿造。</li>
+<li>新版本的烹饪材料将和阡陌客声望的农场系统有很大关系，你可以把种出来的瓜果蔬菜拿来烹饪。</li>
+<li>你现在无需采集工具就可以进行采集了，将采集工具放进包里可以提升你的采集技能。</li>
+</ul>
+</div>
+</div>
+<!-- 职业 -->
+<div class="wow-classes special-bg"> 
+<span class="special-title-icon"></span>
+<h2 class="special-titlestyle">职业</h2>
+<div class="classnews">
+<h3 class="titleicon1 titlestyle4 color5">新职业：武僧</h3>
+<span class="border4 monkimg">
+<a href="http://w.163.com/12/0828/04/89VI6IAS00314PJG.html" class="mk">
+<span class="mk-icon classname color-mk">武僧</span><span class="classspecial">坦克，伤害输出，治疗</span>
+</a>
+</span>
+<ul class="news-list1 color2">
+<li>天赋：伤害输出，治疗，坦克</li>
+<li>护甲：布甲，皮甲</li>
+<li>武器：拳套, 单手斧, 单手锤, 单手剑, 长柄武器, 法杖</li>
+</ul>
+<p class="p1">武僧是空手搏斗的大师，只会在施展强大的终结技时使用武器。武僧治疗者擅长协调世间万物，能使用先祖和灵魂的力量来治疗最严重的伤势。另外，没人能低估武僧酒仙的武艺，他们特制的佳酿加上难以预测的招式能够化解敌人来势汹汹的攻击。</p>
+</div>
+<div class="classlist">
+<ul class="border4">
+<li>
+<a href="http://w.163.com/12/0828/04/89VHJALD00314PJG.html" class="xd">
+<span class="xd-icon classname color-xd">德鲁伊</span><span class="classspecial">坦克，伤害输出，治疗</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0828/04/89VH4BCK00314PJG.html" class="fs">
+<span class="fs-icon classname color-fs">法师</span><span class="classspecial">伤害输出</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0828/04/89VHSF1R00314PJG.html" class="ms">
+<span class="ms-icon classname color-ms">牧师</span><span class="classspecial">伤害输出，治疗</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0824/17/89MJ5GOL00314PJG.html" class="sm">
+<span class="sm-icon classname color-sm">萨满祭司</span><span class="classspecial">伤害输出，治疗</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0828/04/89VI4LTJ00314PJG.html" class="zs">
+<span class="zs-icon classname color-zs">战士</span><span class="classspecial">伤害输出，坦克</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0828/04/89VI2ULJ00314PJG.html" class="lr">
+<span class="lr-icon classname color-lr">猎人</span><span class="classspecial">伤害输出</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0828/04/89VH6CPC00314PJG.html" class="qs">
+<span class="qs-icon classname color-qs">圣骑士</span><span class="classspecial">坦克，伤害输出，治疗</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0828/04/89VI0II700314PJG.html" class="dz">
+<span class="dz-icon classname color-dz">潜行者</span><span class="classspecial">伤害输出</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0822/19/89HLTV2Q00314C3U.html" class="ss">
+<span class="ss-icon classname color-ss">术士</span><span class="classspecial">伤害输出</span>
+</a>
+</li>
+<li>
+<a href="http://w.163.com/12/0828/04/89VH2F9100314PJG.html" class="dk">
+<span class="dk-icon classname color-dk">死亡骑士</span><span class="classspecial">伤害输出，坦克</span>
+</a>
+</li>
+</ul>
+</div>
+<span class="clear"><!-- Clear --></span>
+</div>
+<!-- 声望 -->
+<div class="wow-reputation">
+<h2 class="titlestyle2">声望</h2>
+<ul>
+<li class="shadopan"> 
+<span class="reputationname color6">影踪派</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0904/16/8AIPJ8EQ00314C3U.html">军需官位置</a> <a href="http://w.163.com/12/0904/16/8AIPJ8EQ00314C3U.html">装备</a> <a href="http://w.163.com/12/0904/16/8AIPJ8EQ00314C3U.html">影踪虎坐骑</a> </span> 
+</li>
+<li class="the-tillers"> 
+<span class="reputationname color6">阡陌客</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0821/15/89EN4R4P00314PJF.html">军需官位置</a> <a href="http://w.163.com/12/0821/15/89EN4R4P00314PJF.html">农场系统</a> <a href="http://w.163.com/12/0821/15/89EN4R4P00314PJF.html">山羊坐骑</a> </span> 
+</li>
+<li class="golden-lotus"> 
+<span class="reputationname color6">金莲教</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0906/03/8AMHC7U500314PJF.html">军需官位置</a> <a href="http://w.163.com/12/0906/03/8AMHC7U500314PJF.html">装备</a> <a href="http://w.163.com/12/0906/03/8AMHC7U500314PJF.html">仙鹤坐骑</a> </span> 
+</li>
+<li class="the-august-celestials"> 
+<span class="reputationname color6">至尊天神</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0906/03/8AMICKHB00314PJF.html">军需官位置</a> <a href="http://w.163.com/12/0906/03/8AMICKHB00314PJF.html">装备及图纸</a> <a href="http://w.163.com/12/0906/03/8AMICKHB00314PJF.html">云端翔龙坐骑</a> </span> 
+</li>
+<li class="the-klaxxi"> 
+<span class="reputationname color6">卡拉克西</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0906/03/8AMHSR6V00314PJF.html">军需官位置</a> <a href="http://w.163.com/12/0906/03/8AMHSR6V00314PJF.html">装备及腿部附魔配方</a> <a href="http://w.163.com/12/0906/03/8AMHSR6V00314PJF.html">琥珀巨蝎坐骑</a> </span> 
+</li>
+<li class="the-lorewalkers"> 
+<span class="reputationname color6">游学者</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0906/03/8AMIQIRE00314PJF.html">军需官位置</a> <a href="http://w.163.com/12/0906/03/8AMIQIRE00314PJF.html">腿部附魔配方</a> <a href="http://w.163.com/12/0906/03/8AMIQIRE00314PJF.html">筋斗云坐骑</a> </span> 
+</li>
+<li class="the-anglers"> 
+<span class="reputationname color6">垂钓翁</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0906/03/8AMJF98J00314PJF.html">军需官位置</a> <a href="http://w.163.com/12/0906/03/8AMJF98J00314PJF.html">各种渔具</a> <a href="http://w.163.com/12/0906/03/8AMJF98J00314PJF.html">水黾坐骑</a> </span> 
+</li>
+<li class="order-of-the-cloud-serpent"> 
+<span class="reputationname color6">云端翔龙骑士团</span> 
+<span class="rtcontent"> <a href="http://w.163.com/12/0924/18/8C6G5DBN00314PJF.html">军需官位置</a> <a href="http://w.163.com/12/0924/18/8C6G5DBN00314PJF.html">声望物品</a> <a href="http://w.163.com/12/0924/18/8C6G5DBN00314PJF.html">云端翔龙骑术</a> </span> 
+</li>
+</ul>
+</div>
+<!-- End Content --> 
+</div>
+<!---Begin Footer-->
+<div class="footer"> 
+<div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script> 
+</div>
+<!--End Footer-->
+</div>
+</div>
+<script type="text/javascript">
+function wowMenu(topMenu) {
+    $j(topMenu).each(function() {
+        var flyMenu = $j(this);
+        var menuContent = flyMenu.find(".flymenu");
+        var flyMenuHeight = menuContent.height();
+        menuContent.css({
+            height: 0
+        });
+        flyMenu.hover(function() {
+            menuContent.stop().show(0).animate({
+                height: flyMenuHeight
+            },
+            400);
+        },
+        function() {
+            menuContent.stop().animate({
+                height: 0
+            },
+            400,
+            function() {
+                $j(this).css({
+                    display: "none"
+                });
+            });
+        });
+    });
+}
+$j(document).ready(function() {
+    wowMenu(".open-flymenu");
+});
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0516010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0516010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "game"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+</body>
+</html>

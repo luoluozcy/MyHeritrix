@@ -1,0 +1,6 @@
+
+document.getElementById("commentcount").innerHTML = '15';
+        
+       document.getElementById("hotcommentli").style.display = '';
+       document.getElementById("hotcomment").innerHTML = '<li><p><span class="nick">F.DaCheng</span><span class="mobile android"><a target="_blank" href="http://m.ithome.com/ithome/download/"> 摩托罗拉 ATRIX 2</a></span></p><p>阿里帝国来了！</p><span class="comm_reply"><a id="hotagree834202" href="javascript:hotCommentVote(834202,1)">支持(10)</a><span class=v>|</span><a id="hotagainst834202" href="javascript:hotCommentVote(834202,2)">反对(0)</a></span></li><li><p><span class="nick">Vamos</span><span class="mobile wap"><a target="_blank" href="http://wap.ithome.com">WAP版</a></span></p><p>阿里就是有钱啊！才收购高德，现在又是优酷！</p><span class="comm_reply"><a id="hotagree834289" href="javascript:hotCommentVote(834289,1)">支持(6)</a><span class=v>|</span><a id="hotagainst834289" href="javascript:hotCommentVote(834289,2)">反对(0)</a></span></li><li><p><span class="nick">匿名</span><span class="mobile wp"><a target="_blank" href="http://m.ithome.com/ithome/download/">HTC 8X</a></span></p><p>阿里无敌了</p><span class="comm_reply"><a id="hotagree834196" href="javascript:hotCommentVote(834196,1)">支持(6)</a><span class=v>|</span><a id="hotagainst834196" href="javascript:hotCommentVote(834196,2)">反对(0)</a></span></li>'
+       

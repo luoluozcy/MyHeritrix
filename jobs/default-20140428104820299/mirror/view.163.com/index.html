@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>评论频道_网易新闻</title>
+    <base target="_blank" />
+    <meta name="keywords" content="网易评论,专业控,评论,另一面,网易新闻,网易网,新闻,新闻中心,新闻频道,热点事件,时事报道,经济观察,社会热点,深度调查,热点对谈,专栏,人物专访,名刊精选" />
+    <meta name="description" content="网易评论频道是网易新闻中心一个包含有另一面,专业控,人物专访,热点追踪,深度分析,新闻评论,深度观察的重要频道。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <script >var _ntes_const={stime : new Date()};</script>
+    <link href="http://img1.cache.netease.com/cnews/css07/style.css" rel="stylesheet" type="text/css" />
+    <link href="http://img1.cache.netease.com/cnews/img12/review1205/review1205.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+     .nav_channel .nav .i_mobi {background: url("http://img1.cache.netease.com/cnews/newstest1204/i_mobi.gif") no-repeat scroll left 9px transparent;  margin-left: 135px;padding: 0 0 0 15px;}
+    </style>
+</head>
+<body>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+<style type="text/css">
+ /* 广告位 */
+.ggarea{width:958px; margin:0 auto; border:1px solid #dcdddd; clear:both; overflow:hidden; text-align:left;background:#fafafa;}
+.ggarea .ggtext{padding-left:12px; width:965px;}
+.ggarea .ggtext li{width:120px; float:left;margin-right:13px;}
+.ggarea .ggtext li a{color:#7b7c7d;}
+.ggarea .ggimg{padding-left:12px;}
+.ggarea .ggimg li{margin-right:12px; float:left;}
+.ggarea .ggimg li.gg125{width:130px;}
+.ggarea .ggimg li.gg650{width:650px;}
+.gg735 {width:735px; overflow:hidden; float:left;}
+.gg210 {width:210px; overflow:hidden; float:right;}
+.gg195_60{margin-left:8px;}
+.gg195_60 li{margin-bottom:10px;}
+</style>
+<!-- adText -->
+<div class="ggarea clearfix">
+	<span class="blank9"></span>
+    <ul class="ggtext">
+    	<li><a href="http://war.news.163.com/09/1126/20/5P2R66GP00011232.html">探秘美陆战队训练基地</a></li>
+        <li><a href="http://war.news.163.com/09/1125/19/5P05PSIG00011232.html">"戴高乐"号航母前传</a></li>
+        <li><a href="http://war.news.163.com/09/1124/21/5OTRE3EQ00011232.html">战后各国的坦克歼击车</a></li>
+        <li><a href="http://war.news.163.com/09/1123/20/5OR3QMR900011232.html">各国先进特种突击车</a></li>
+        <li><a href="http://war.news.163.com/09/1210/17/5Q6IH1GP00011232.html">HIMARS火箭炮减肥难题</a></li>
+        <li><a href="http://war.news.163.com/09/1209/17/5Q3V6Q7D00011232.html">高卢雄鹰：法国"阵风"</a></li>
+        <li><a href="http://war.news.163.com/09/1208/17/5Q1FDALK00011MTO.html">经久不衰的M61机炮</a></li>
+    </ul>
+    <span class="blank9"></span>
+    <ul class="ggimg">
+    	<li class="gg125"><iframe height="100" frameborder="no" width="130" scrolling="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=news&cat=review&type=logo130x100&location=1"></iframe></li>
+        <li class="gg650"><iframe height="100" frameborder="no" width="650" scrolling="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=news&cat=review&type=column650x100&location=1"></iframe></li>
+        <li class="gg125"><iframe height="100" frameborder="no" width="130" scrolling="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=news&cat=review&type=logo130x100&location=2"></iframe></li>
+    </ul>
+    <span class="blank9"></span>
+    <ul class="ggtext">
+    	<li><a href="http://war.news.163.com/09/1207/18/5PUTU4LB00011232.html">日本P-1反潜巡逻机</a></li>
+        <li><a href="http://war.news.163.com/09/1204/18/5PN75J4L00011232.html">城市战中的装甲车辆</a></li>
+        <li><a href="http://war.news.163.com/09/1203/18/5PKMPBP000011232.html">冷战美国潜水航母计划</a></li>
+        <li><a href="http://war.news.163.com/09/1202/18/5PI2IEC300011232.html">天空盾牌：火箭弹克星</a></li>
+        <li><a href="http://war.news.163.com/09/1201/18/5PFFFB1700011232.html">巴基斯坦战略导弹简史</a></li>
+        <li><a href="http://war.news.163.com/09/1130/18/5PCUK7JS00011232.html">引领潮流：英国机敏级</a></li>
+        <li><a href="http://war.news.163.com/09/1127/19/5P5AHPQ700011232.html">末代巨兽M103重型坦克</a></li>
+    </ul>    
+    <span class="blank9"></span>
+</div>
+ <span class="blank9"></span>
+<span class="blank12"></span>
+<div class="channel">
+    <h1><a href="http://news.163.com/" id="top"><img src="http://img1.cache.netease.com/cnews/img09/logo_107.gif" alt="网易新闻" width="107" height="24" /><br />网易新闻</a></h1>
+    <h2><a href="http://news.163.com/review/"><img src="http://img1.cache.netease.com/cnews/img/review10/logo_review.gif" width="54" height="25" alt="评论" /></a></h2>
+    <h3 class="cBlack"><a href="http://www.163.com/">网易首页</a> > <a href="http://news.163.com/">新闻中心</a> > <a href="http://news.163.com/review/">评论</a></h3>
+    <div class="top_search">
+        <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search">
+            <input type="hidden" value="news.163" name="keyfrom"/>
+            <input type="hidden" value="user163" name="suser"/>
+            <input type="hidden" value="gbk" name="ue"/>
+            <label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/></label>
+            <noscript><select name="site" class="left">
+                <option value="网易" selected="selected">新闻</option>
+                <option value="">网页</option>
+            </select></noscript>
+            <div id="divSelect" class="left">
+                <input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>
+            </div>
+            <input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="in" name="in"/>
+        </form>
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        (function NTES_Nav(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected.removeChild(selected.firstChild);
+                selected.appendChild(txt);
+                select_main.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName").value = title;
+                if (title == "网易") {
+                    document.nisearch_top.action = "http://news.yodao.com/search";
+                }
+                else {document.nisearch_top.action = "http://www.yodao.com/search";
+                }
+            }
+            function a_mouseover () {
+                this.className = "active";
+            }
+            function a_mouseout () {
+                this.className = "";
+            }
+            $_G("divSelect").innerHTML = '<input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area = $_G("select_area"), selected = $_G("selected"), select_main = $_G("select_main"), select_list = select_main.getElementsByTagName("a"), len = select_list.length;
+            select_area.onclick = select_main.onmouseover = function(){
+                select_main.style.display = "block";
+            }
+            select_main.onmouseout = function(){
+                select_main.style.display = "none";
+            }
+            for (var i = 0; i < len; i++) {
+                select_list[i].onclick = clickselect;
+                select_list[i].onmouseover = a_mouseover;
+                select_list[i].onmouseout = a_mouseout;
+            }
+        })();
+        //]]>
+    </script>
+</div>
+<div class="nav_channel">
+	<span class="nav">
+	<a href="http://www.163.com/">首页</a> <a href="http://news.163.com/latest/" class="nobg">最新</a> <a href="http://news.163.com/rank/">排行</a> <a href="http://news.163.com/photo/">图片</a><a href="http://news.163.com/domestic/">国内</a> <a href="http://news.163.com/world/">国际</a> <a href="http://news.163.com/shehui/">社会</a> <a href="http://news.163.com/review/"  class="current">评论</a> <a href="http://focus.news.163.com/">深度</a> <a href="http://war.163.com/">军事</a> <a href="http://data.163.com/special/datablog/">数读</a> <a href="http://discovery.163.com/">探索</a>  <a href="http://gov.163.com/">政务</a> <a href="http://blog.163.com/">博客</a> <a href="http://bbs.163.com/">论坛</a> <a href="http://v.163.com/focus/">视频</a> <a href="http://gongyi.163.com/">公益</a> <a href="http://media.163.com/">媒体</a><a href="http://help.3g.163.com/" class="i_mobi">手机版</a></span><span class="rightS"></span>
+</div>
+<span class="blank12"></span>
+<!--
+-->
+<!--头屏开始-->
+<span class="area colEnd"></span>
+<div class="area areabg1 clearfix">
+    <div class="col320">
+        <!--专业控-->
+                        <div class="content content-topbox">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://news.163.com/14/0417/14/9Q1RC2LP00014NQU.html">克里米亚历史：海水和战火</a></h2>
+            <h4 class="postInfo">储殷 2014-04-17</h4>
+            <p class="digest">俄罗斯人、乌克兰人或鞑靼人父辈都曾卷入战争的一方，他们不谈论战争，却仍有不经意的敌意与疏远。</p>
+        </div>
+                <span class="parting"></span>
+        <!--时评-->
+                        <div class="content content-topbox">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTPP1TQ00012Q9L.html">治污为何要等到民众“跪求”</a></h2>
+            <h4 class="postInfo">新京报 2014-04-28</h4>
+            <p class="digest">如果总是民众只能被迫依靠邀请官员下河游泳，或靠给官员下跪这样的悲情剧来引起重视，说明官员不称职。</p>
+        </div>
+            </div>
+    <div class="col640">
+        <div class="content" id="js_focusScrl">
+            <div class="focus-panel js_scrlBody">
+                <ul>
+                    <!--另一面第一条-->
+                                                            <li class="focus-normal focus-current clearfix">
+                        <div class="focus-left">
+                            <a href="http://view.163.com/special/reviews/purelanguage0428.html" title="他们为什么要强调“语言纯洁性”？"><img src="http://img5.cache.netease.com/cnews/2014/4/28/201404280318362901c.jpg" width="290" height="290" alt="他们为什么要强调“语言纯洁性”？" /></a>
+                        </div>
+                        <div class="focus-right">
+                            <h3 class="title-red"><a target="_blank" href="http://view.163.com/special/reviews/purelanguage0428.html?1398625536567">另一面 第1056期</a></h3>
+                            <h2 class="title-big"><a href="http://view.163.com/special/reviews/purelanguage0428.html">他们为什么要强调“语言纯洁性”？</a></h2>
+                            <p class="digest">不管是在力量上处于相对弱势的国家，还是文化强势国家，都曾发起过纯洁语言的运动。打着捍卫母语的旗号强调“语言纯洁性”，其实都是非语言的考量，纯洁语言只是达到其他目的的工具。</p>
+                        </div>
+                    </li>
+                                        <!--另一面二三条-->
+                                                            <li class="focus-normal focus-current clearfix">
+                        <div class="focus-left">
+                            <a href="http://view.163.com/special/reviews/commiedance0424.html" title="“大妈广场舞”源头考"><img src="http://img1.cache.netease.com/cnews/2014/4/24/20140424035626ce7f5.jpg" width="290" height="290" alt="“大妈广场舞”源头考" /></a>
+                        </div>
+                        <div class="focus-right">
+                            <h3 class="title-red"><a target="_blank" href="http://view.163.com/special/reviews/commiedance0424.html">另一面 第1054期</a></h3>
+                            <h2 class="title-big"><a href="http://view.163.com/special/reviews/commiedance0424.html">“大妈广场舞”源头考</a></h2>
+                            <p class="digest">中国特色“大妈广场舞”的各种源流折射了时代的变迁。新中国史上各种大型公开的集体舞蹈从来就不是、也不被认为是单纯的艺术活动。</p>
+                        </div>
+                    </li>
+                                        <li class="focus-normal focus-current clearfix">
+                        <div class="focus-left">
+                            <a href="http://view.163.com/special/reviews/falsedivorce0423.html" title="中国式假离婚是无奈抗争"><img src="http://img5.cache.netease.com/cnews/2014/4/23/20140423075057608fd.jpg" width="290" height="290" alt="中国式假离婚是无奈抗争" /></a>
+                        </div>
+                        <div class="focus-right">
+                            <h3 class="title-red"><a target="_blank" href="http://view.163.com/special/reviews/falsedivorce0423.html">另一面 第1053期</a></h3>
+                            <h2 class="title-big"><a href="http://view.163.com/special/reviews/falsedivorce0423.html">中国式假离婚是无奈抗争</a></h2>
+                            <p class="digest">中国文化里离婚并不是一件体面的事，但政府用行政手段将政策与婚姻捆绑，导致婚姻关系成为利益支配的工具。"离婚"成了更多人为了活的更体面不得已的选择。</p>
+                        </div>
+                    </li>
+                                    </ul>
+            </div>
+            <ul class="focus-trigger js_scrlCtrl"><li class="focus-current"></li><li></li><li></li></ul>
+        </div>
+    </div>
+</div>
+<span class="area colEnd"></span>
+<!--头屏结束-->
+<div class="area areabg2 clearfix">
+    <div class="col320">
+        <!--时评区左一-->
+                        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTQI6OA00012Q9L.html">水质情况从来就不该是“机密”</a></h2>
+            <h4 class="postInfo">马想斌 2014-04-28</h4>
+            <p class="digest">不能再以国家机密推卸环境监管的责任,这已经是社会的共识，水质情况从来就不该是“机密”。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTQI6OA00012Q9L.html">跟贴</a></div>
+        </div>
+                <!--时评区左二-->
+        <span class="parting"></span>
+                        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTPVJA700012Q9L.html">海外华人怎么看小孩当街尿尿</a></h2>
+            <h4 class="postInfo">子夜的昙 2014-04-28</h4>
+            <p class="digest">去新加坡旅游的中国人很多，但极少发生幼童大小便事件，因为人们都知道在新回坡会受到重罚，这说明不当街大小便并非做不到。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTPVJA700012Q9L.html">跟贴</a></div>
+        </div>
+                <!--时评区左栏-->
+                        <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTQCG7400012Q9L.html">逼人下跪表忠心，是官员还是黑老大</a></h2>
+            <h4 class="postInfo">宣华华 2014-04-28</h4>
+                        <p class="digest">假如不是看新闻内容，仅仅看这些关键词句，人们的第一反应多半会认为施暴者是一个“黑老大”，很难想到施暴者竟是一名副镇长。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTQCG7400012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTQ677500012Q9L.html">邳州虐童案警方调查是否草率</a></h2>
+            <h4 class="postInfo">王云帆 2014-04-28</h4>
+                        <p class="digest">对“警察介入家庭暴力”的敏感甚至反感都不让人感到意外。无论在执法理念，还是在立法理念上，我们都还缺乏“人权高于亲权”的清醒。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTQ677500012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTQ2KGR00012Q9L.html">公务员热降温为时尚早</a></h2>
+            <h4 class="postInfo">郑根岭 2014-04-28</h4>
+                        <p class="digest">在毕业生增多的情况下，报考公务员的人数反而下降，不正好说明就业渠道趋于多样化，其他方面的就业机会更多了吗？现在说公务员热降温了，还为时尚早。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTQ2KGR00012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTPSRNM00012Q9L.html">护士被打事件缘何走向“多输”</a></h2>
+            <h4 class="postInfo">刘子溪 2014-04-28</h4>
+                        <p class="digest">越是敏感有争议的群体事件，权威部门的消息越是要及时、客观，不可“输”掉公信。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTPSRNM00012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTPM2C100012Q9L.html">“中高收入”不能描述实际收入水平</a></h2>
+            <h4 class="postInfo">张天蔚 2014-04-28</h4>
+                        <p class="digest">世界银行按照人均GDP数据把中国归入中高收入国家，确实是一个客观陈述，但这个客观陈述并不能真实描述中国民众的实际收入水平，反而间接反映了中国社会两极分化的严重。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTPM2C100012Q9L.html">跟贴</a></div>
+        </div>
+            </div>
+    <div class="col320">
+        <!--时评区右一-->
+                        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://news.163.com/12/0614/14/83VF3QJI00012Q9L.html">征稿启事</a></h3>
+            <h2 class="title-big"><a href="http://news.163.com/12/0614/14/83VF3QJI00012Q9L.html">网易评论征稿启事</a></h2>
+            <h4 class="postInfo">网易评论 2012-06-14</h4>
+            <p class="digest">因为有你的参与，才有我们的进步，来稿来信请发至view163#vip.163.com (请将#改成@)。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/83VF3QJI00012Q9L.html">跟贴</a></div>
+        </div>
+                <!--时评区右二-->
+        <span class="parting"></span>
+                        <div class="content">
+            <h3 class="title-red">当事人</h3>
+            <h2 class="title-big"><a href="http://news.163.com/special/xuxing/">徐星：40多年鲜有人关注文革被迫害农民群体</a></h2>
+            <h4 class="postInfo"> 2014-04-24</h4>
+            <p class="digest">一个偶然的机会，徐星发现了文革时期的22张犯人登记表。经过三年多的寻找拍摄制作，由14个被迫害农民经历组成的纪录片《罪行摘要》完工。“他们说，40多年我是第一个出现在他们面前谈这段经历的人。”徐星说。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QK03A5600014S3V.html">跟贴</a></div>
+        </div>
+                <!--时评区右栏-->
+                        <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTPK04700012Q9L.html">从韩总理辞职看“东亚耻感文化”</a></h2>
+            <h4 class="postInfo">向肠河 2014-04-28</h4>
+                        <p class="digest">在西方，国家政治责任追究机制并未表现出东亚模式的血腥，更多地体现于个人尊严、问责政治文化和完善的法律规定。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTPK04700012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0428/11/9QTPID7M00012Q9L.html">引咎辞职是个人的政治伦理选择</a></h2>
+            <h4 class="postInfo">付小为 2014-04-28</h4>
+                        <p class="digest">即使一个国家在机制上构建了“引咎辞职”这样的退出机制，也不存在一种强制性规定，明确在什么情形下必须引咎辞职。因此，官员引咎辞职更多是个人选择，大的背景是一个国家或政党的政治伦理。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QTPID7M00012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0425/11/9QM1NSFP00012Q9L.html">官方何必急着“加力稳增长”</a></h2>
+            <h4 class="postInfo">郁慕湛 2014-04-25</h4>
+                        <p class="digest">目前经济结构还未得到大规模的调整，经济转型还未完成，大量的过剩产能依然存在，大规模刺激措施远不如“微刺激”措施那么精准，过多的流动性很可能仍然是流到过剩产能中去，仍然是在金融渠道中“空转”。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QM1NSFP00012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0425/11/9QM1LFE800012Q9L.html">司法部门不应玩弄法条轻纵刑讯</a></h2>
+            <h4 class="postInfo">王刚桥 2014-04-25</h4>
+                        <p class="digest">好不容易启动的对刑讯的究责，多数均选择在“刑讯逼供罪”里从轻，而极少被置放在“故意伤害罪”里“从重”。“刑讯逼供罪”仅针对那些尚未造成一定伤害后果的轻微暴力取证行为。司法不应如此轻纵刑讯。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QM1LFE800012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0425/10/9QM1H4G500012Q9L.html">盘活养老基金应该引入专业投资机构</a></h2>
+            <h4 class="postInfo">林江 2014-04-25</h4>
+                        <p class="digest">盘活养老基金，让其由死钱变成活钱，可考虑按照不同风险标准，通过投标的方式交由专业投资机构运营管理。再者是理顺养老基金管理部门、专业投资管理机构以及养老金受益人之间的关系。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QM1H4G500012Q9L.html">跟贴</a></div>
+        </div>
+                <span class="parting"></span>
+        <div class="content">
+            <h3 class="title-red"><a target="_blank" href="http://view.163.com/review/">时评</a></h3>
+            <h2 class="title-big"><a href="http://view.163.com/14/0425/10/9QM16J7500012Q9L.html">旧城改造的权利应该还给业主</a></h2>
+            <h4 class="postInfo">王则楚 2014-04-25</h4>
+                        <p class="digest">要走出困境，应考虑把改造的权利还给原业主。原业主拥有原有业权，这就是财富。他们可以利用这个财富去实现改造。业主会利用原有业权，通过合作开发、产权置换等多种市场方式找到办法。</p>
+                        <div class="postComment"><a href="http://comment.news.163.com/news3_bbs/9QM16J7500012Q9L.html">跟贴</a></div>
+        </div>
+            </div>
+    <div class="col320">
+        <div class="content">
+            <ul class="listEntry">
+                <li><a href="http://news.163.com/special/163theotherside/" title="另一面"><img src="http://img1.cache.netease.com/cnews/img12/review1205/otherside_new.png" width="289" height="93" alt="另一面" /></a></li>
+                <li><a href="http://news.163.com/special/theinsider/" title="专业控"><img src="http://img1.cache.netease.com/cnews/img12/review1205/spectator_new.png" width="289" height="93" alt="专业控" /></a></li>
+            </ul>
+        </div>
+        <span class="parting"></span>
+        <div class="content">
+            <div class="titleBar clearfix">
+                <h2 class="title-red">一周最热</h2>
+            </div>
+            <ul class="rank-list">
+                                                <li><span class="rank-num">1</span><a href="http://view.163.com/14/0422/10/9QE9PC3U00012Q9L.html">付小为：若无公正公义 何谈群体理性</a></li>
+                                <li><span class="rank-num">2</span><a href="http://view.163.com/14/0425/10/9QM1CGRS00012Q9L.html">张天蔚：不应轻率指责“壹基金”</a></li>
+                                <li><span class="rank-num">3</span><a href="http://view.163.com/14/0421/09/9QBK9V9T00012Q9L.html">新京报：苍南冲突事件追责不可再鸵鸟思维</a></li>
+                                <li><span class="rank-num">4</span><a href="http://view.163.com/14/0423/10/9QGS2TUR00012Q9L.html">高路：网警“吃香”反衬对舆论监督的恐惧</a></li>
+                                <li><span class="rank-num">5</span><a href="http://view.163.com/14/0424/10/9QJCNS0A00012Q9L.html">袁伊文：农民“私立政府”案不是笑话是警报</a></li>
+                                <li><span class="rank-num">6</span><a href="http://view.163.com/14/0422/10/9QE8GIOS00012Q9L.html">李鸿文：越南弃办亚运不只是“差钱”</a></li>
+                                <li><span class="rank-num">7</span><a href="http://view.163.com/14/0425/11/9QM1RAIO00012Q9L.html">陈然：“虚假出资”罪名早应撤销</a></li>
+                                <li><span class="rank-num">8</span><a href="http://view.163.com/14/0422/10/9QE94M8D00012Q9L.html">韦应成：4道大坝为何拦不住泥石流</a></li>
+                                <li><span class="rank-num">9</span><a href="http://view.163.com/14/0423/10/9QGRM26T00012Q9L.html">普嘉：公务员不能打 传销者就能打？</a></li>
+                                <li><span class="rank-num">10</span><a href="http://view.163.com/14/0424/09/9QJBE9A300012Q9L.html">新京报：谁来管城建官员“下海”去房企</a></li>
+                            </ul>
+        </div>
+        <span class="parting"></span>
+        <div class="content">
+            <div class="titleBar clearfix">
+                <h2 class="title-red">媒体推荐</h2>
+            </div>
+            <ul class="rank-list">
+                                                <li><span class="rank-num">1</span><a href="http://view.163.com/14/0408/14/9PALAI3D00012Q9L.html">惩治“伪基站”违法犯罪活动适逢其时</a></li>
+                                <li><span class="rank-num">2</span><a href="http://view.163.com/14/0404/13/9P07F8D500012Q9L.html">斩断“伪基站”背后的利益链条</a></li>
+                                <li><span class="rank-num">3</span><a href="http://news.163.com/13/1016/15/9BALSIIN00014NQG.html">锻造革命圣地的钢铁心脏</a></li>
+                                <li><span class="rank-num">4</span><a href="http://news.163.com/13/0617/18/91JENUPH00014NQG.html">“棱镜”照出了什么真相？</a></li>
+                                <li><span class="rank-num">5</span><a href="http://news.163.com/13/0617/18/91JEL13700014NQG.html">“棱镜”告诉我们：应反思互联网安全</a></li>
+                            </ul>
+        </div>
+        <span class="parting"></span>
+        <div class="content">
+            <div class="titleBar clearfix">
+                <h2 class="title-red"><a href="http://view.163.com/special/spectatorlist/">专栏作者</a></h2>
+            </div>
+            <span class="blank15"></span>
+                                                <div class="imgTxt">
+                <a href="http://view.163.com/special/author/xubenlist.html" title="徐贲"><img width="75" height="75" src="http://img5.cache.netease.com/cnews/2012/5/15/20120515193733ab726.jpg" alt="徐贲"></a>
+                <h3><a href="http://view.163.com/special/author/xubenlist.html">徐贲</a></h3>
+                <h4>专栏作家</h4>
+            </div>
+                                    <span class="dotline"></span>
+                        <div class="imgTxt">
+                <a href="http://view.163.com/special/author/shilvlist.html" title="史律"><img width="75" height="75" src="http://img6.cache.netease.com/cnews/2012/5/15/201205151923260abf5.jpg" alt="史律"></a>
+                <h3><a href="http://view.163.com/special/author/shilvlist.html">史律</a></h3>
+                <h4>旅美学者</h4>
+            </div>
+                                    <span class="dotline"></span>
+                        <div class="imgTxt">
+                <a href="http://view.163.com/special/author/tubingenmujianglist.html" title="图宾根木匠"><img width="75" height="75" src="http://img4.cache.netease.com/cnews/2012/5/15/20120515185044f7181.jpg" alt="图宾根木匠"></a>
+                <h3><a href="http://view.163.com/special/author/tubingenmujianglist.html">图宾根木匠</a></h3>
+                <h4>影评人</h4>
+            </div>
+                                    <span class="dotline"></span>
+                        <div class="imgTxt">
+                <a href="http://view.163.com/special/author/maoyushilist.html" title="茅于轼"><img width="75" height="75" src="http://img6.cache.netease.com/cnews/2012/4/25/2012042509393389caf.jpg" alt="茅于轼"></a>
+                <h3><a href="http://view.163.com/special/author/maoyushilist.html">茅于轼</a></h3>
+                <h4>经济学家</h4>
+            </div>
+                                    <span class="dotline"></span>
+                        <div class="imgTxt">
+                <a href="http://view.163.com/special/author/wuqianglist.html" title="吴强"><img width="75" height="75" src="http://img6.cache.netease.com/cnews/2012/4/20/2012042020523869630.png" alt="吴强"></a>
+                <h3><a href="http://view.163.com/special/author/wuqianglist.html">吴强</a></h3>
+                <h4>清华大学教师</h4>
+            </div>
+                    </div>
+        <span class="parting"></span>
+        <div class="content clearfix">
+            <div class="contactBox contactBox-left">
+                <h2 class="title-black">关注我们</h2>
+                <span class="blank15"></span>
+                <div>
+                    <a class="contactIcon icon-t163" href="http://t.163.com/theotherside" title="网易微博"></a>
+                    <a class="contactIcon icon-weibo" href="http://weibo.com/theotherside163" title="新浪微博"></a>
+                    <a class="contactIcon icon-rss" href="http://news.163.com/special/00011K6L/rss_newsattitude.xml" title="RSS订阅"></a>
+                </div>
+                <span class="blank6"></span>
+            </div>
+            <div class="contactBox">
+                <h2 class="title-black">欢迎来稿</h2>
+                <span class="blank15"></span>
+                <div>
+                    <a class="contactIcon icon-email" href="mailto:view163@vip.163.com" title="欢迎来稿"></a>
+                </div>
+                <span class="blank6"></span>
+            </div>
+        </div>
+        <span class="parting"></span>
+        <div class="content">
+            <h2 class="title-black">编辑</h2>
+            <div class="contactBox contactBox-left">
+                <span class="blank6"></span>
+                <p class="tLeft">林航 李熙 王蕾 罗雯 袁晓彬</p>
+                <span class="blank6"></span>
+            </div>
+            <div class="contactBox">
+                <span class="blank6"></span>
+                <p>(010)8255 8163</p>
+                <span class="blank6"></span>
+            </div>
+        </div>
+        <span class="blank12"></span>
+        <span class="parting"></span>
+    </div>
+</div>
+<span class="area colEnd"></span>
+<span class="blank9"></span>
+<div class="area clearfix">
+    <div class="title-square">
+        <h2>合作媒体</h2>
+    </div>
+    <div class="content cooperation">
+        <a href="http://www.xinhuanet.com/comments/">新华网</a> | <a href="http://opinion.people.com.cn/GB/index.html">人民网</a> | <a href="http://opinion.china.com.cn/">中国网观点中国</a> | <a href="http://www.cnr.cn/luntan/">中国广播网</a> | <a href="http://guancha.gmw.cn/">光明网</a> | <a href="http://gb.cri.cn/opinion/">国际在线</a> | <a href="http://www.ce.cn/"> 中国经济网</a> | <a href="http://pinglun.youth.cn/"> 中国青年网</a> | <a href="http://www.ben.com.cn/gdjc/">京报网</a> | <a href="http://zqb.cyol.com/">中国青年报</a> | <a href="http://www.inewsweek.cn/">中国新闻周刊</a> | <a href="http://paper.sinoins.com/">中国保险报</a> | <a href="http://www.china.com.cn/xxsb/node_5522337.htm">学习时报</a> | <a href="http://www.nanfangdaily.com.cn/southnews/spqy/">南方报业</a> | <a href="http://gzdaily.dayoo.com/">广州日报</a> | <a href="http://opinion.southcn.com/">南方网</a> | <a href="http://rednet.cn/">红网</a> | <a href="http://review.jschina.com.cn/">中国江苏网</a> | <a href="http://www.changjiangtimes.com/">长江商报</a> | <a href="http://wbnews.daynews.com.cn/news/pl/list.html">山西晚报</a> | <a href="http://ecqsb.huash.com/">重庆时报</a> | <a href="http://hsb.huash.com/node_2707.htm">华商报</a> | <a href="http://www.dfdaily.com/node2/node24/index.shtml">东方早报</a> | <a href="http://www.xxcb.com.cn/xjpl.asp?cate=1097">潇湘晨报</a> | <a href="http://www.jxnews.com.cn/jxcomment/">大江网</a> | <a href="http://comment.scol.com.cn/">四川在线</a> | <a href="http://www.nbd.com.cn/wenzhi/index.asp">每日经济新闻</a> | <a href="http://www.cnstock.com/paper_new/html/node.htm">上海证券报</a> | <a href="http://yzdsb.hebnews.cn/mqsd/index.htm">燕赵都市报</a> | <a href="http://jianghu.jxcn.cn/club/index.htm">中国江西网</a> | <a href="http://review.qianlong.com/">千龙网</a> | <a href="http://www.kuaibao.net/">现代快报</a> | <a href="http://news.bandao.cn/lagala/">半岛网</a> | <a href="http://focus.cnhubei.com/">荆楚网</a> | <a href="http://opinion.cnwest.com/">西部网</a> | <a href="http://www.dahe.cn/xwzx/txsy/">大河网</a> | <a href="http://sp.fjsen.com/">东南网</a> | <a href="http://zjc.zjol.com.cn/">浙江在线</a> | <a href="http://www.tianshannet.com/pn/">新疆天山网</a> | <a href="http://review.cnhan.com">长江日报</a> | <a href="http://www.zjwb.com.cn/zjwb/03.htm">珠江晚报</a> | <a href="http://views.ce.cn/">中国经济网</a> | <a href="http://wenhui.news365.com.cn/bh/default.htm">文汇报</a> | <a href="http://review.hebei.com.cn/">长城在线</a> | <a href="http://news.ifeng.com/opinion/">凤凰网</a> | <a href="http://news.cnfol.com/index.reviews.shtml">中金在线</a> | <a href="http://www.ycwb.com/sp/sp.htm">金羊网</a>
+        | <a href="http://www.dzwww.com/dzwpl/">大众网</a> | <a href="http://opinion.cn.yahoo.com/">雅虎评论</a> | <a href="http://bhc.hebei.com.cn/">渤海潮评论</a> | <a href="http://pinglun.iyaxin.com/index.htm/">亚心时评</a> | <a href="http://pinglun.iqilu.com/">齐鲁时评</a> | <a href="http://opinion.voc.com.cn/">华声在线</a><br />
+    </div>
+</div>
+<style type="text/css">
+.channel-end,.channelEnd-rightS,.channelEnd-link,.channelEnd-top {background:url(http://img3.cache.netease.com/cnews/img09/endnav_bg1001.jpg);}
+.channel-end {width:960px;height:37px;overflow:hidden;margin:10px auto 0;line-height:38px;background-position:left -67px;background-repeat:repeat;}
+.channelEnd-rightS {display:block;float:right;width:8px;height:37px;overflow:hidden;background-position:right -141px;background-repeat:no-repeat;}
+.channelEnd-link {float:left;height:37px;line-height:37px;overflow:hidden;color:#1E50A2;background-position:left -30px;background-repeat:no-repeat;}
+.channelEnd-link a {float:none;padding:0 5px;font-weight:normal;background:none;}
+.channelEnd-link .firstNode {margin-left:5px; background:none;}
+.channelEnd-top {display:block;float:right;width:70px;height:37px;overflow:hidden;line-height:37px;text-indent:10px;background-position:left -30px;background-repeat:no-repeat;}
+</style>
+<div class="channel-end">
+	<span class="channelEnd-link cBlue">
+    	<a class="firstNode" href="http://www.163.com/"  rel="nofollow">网易首页</a>-<a href="http://news.163.com/"  rel="nofollow">新闻</a>-<a href="http://sports.163.com/"  rel="nofollow">体育</a>-<a href="http://ent.163.com/"  rel="nofollow">娱乐</a>-<a href="http://money.163.com/"  rel="nofollow">财经</a>-<a href="http://auto.163.com/"  rel="nofollow">汽车</a>-<a href="http://tech.163.com"  rel="nofollow">科技</a>-<a href="http://digi.163.com/"  rel="nofollow">数码</a>-<a href="http://mobile.163.com/"  rel="nofollow">手机</a>-<a href="http://lady.163.com/"  rel="nofollow">女人</a>-<a href="http://house.163.com/"  rel="nofollow">房产</a>-<a href="http://game.163.com/"  rel="nofollow">游戏</a>-<a href="http://book.163.com/"  rel="nofollow">读书</a>-<a href="http://edu.163.com/"  rel="nofollow">教育</a>-<a href="http://travel.163.com/"  rel="nofollow">旅游</a>-<a href="http://bbs.163.com/"  rel="nofollow">论坛</a>-<a href="http://v.163.com/"  rel="nofollow">视频</a>-<a href="http://blog.163.com/blogs/"  rel="nofollow">博客</a>-<a href="http://t.163.com/"  rel="nofollow">微博</a>-<a href="http://jiu.163.com"  rel="nofollow">酒香</a>-<a href="http://help.3g.163.com/"  rel="nofollow">手机版</a>
+    </span>
+    <span class="channelEnd-rightS"></span>
+    <span class="channelEnd-top cBlue"><a href="#top" target="_self"  rel="nofollow">返回顶部&uarr;</a></span>
+</div><span class="blank12"></span>
+<div class="foot">
+<div class="text"><a href="http://www.bjjubao.org/index.htm">北京互联网违法不良信息举报</a>　<a href="http://t.163.com/zt/feedback">意见反馈</a>　<a href="http://news.163.com/sitemap.html">新闻地图</a>　<a href="http://news.163.com/special/i/000117JD/index_history.html">历史回顾</a></div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014</span>
+</div>
+<!-- 弹窗代码 -->
+<!-- 代码 -->
+
+<!-- 即时消息 -->
+<script>
+(function(){	
+	var version = window.navigator.appVersion;
+	var isIE6 = (version.indexOf("MSIE 6.0") != -1 || version.indexOf("MSIE 5.5") != -1)? true:false;
+	if(location.hostname.indexOf("news") == -1){   
+           showQR(460, "http://img2.cache.netease.com/news/2013/newapp5.jpg");
+	}
+	function showQR(top, imgUrl){
+		var QRbox= document.createElement("div");
+		var QRboxCSS ={
+			'width': "110px",
+			'height': "147px",
+			'position': "fixed",
+			'_position': "absolute",
+			'top': top + "px",
+			'right': "3px",
+			'display':"block",
+			'zIndex':100
+		};
+		for(var key in QRboxCSS){
+			QRbox.style[key] = QRboxCSS[key];
+		}
+	 	if(isIE6){
+	 		QRbox.style.position = "absolute";
+	 	}
+	 	
+		QRbox.innerHTML="<a href='http://3g.163.com/links/4102' target='_blank'></a>";
+		var link =QRbox.getElementsByTagName("a")[0];
+		var linkCSS = {
+			display:"block",
+			width: "100%",
+			height: "100%",
+			backgroundImage: "url("+imgUrl+")",
+			backgroundPosition: "0px 0px"
+		};
+		for(var key in linkCSS){
+			link.style[key] = linkCSS[key]
+		}
+		document.body.appendChild(QRbox);
+		var linkEventMap = {
+			"mouseover": function(){
+				link.style.backgroundPosition = "-110px 0px";
+			},
+			"mouseout": function(){
+				link.style.backgroundPosition = "0px 0px";
+			}
+		}
+		for(var evt in linkEventMap){
+			var func = linkEventMap[evt];
+			addEvent(evt, link, func);
+		}
+		addEvent("scroll", window, function(){
+			if(isIE6){
+				QRbox.style.top = getScrollTop() + top + "px";
+			}
+		})
+	}
+	function addEvent(evt, elem, callback){
+		if(elem.addEventListener){
+			elem.addEventListener(evt, callback, false)
+		} else {
+			elem.attachEvent && elem.attachEvent("on"+evt, callback);
+		} 
+	}
+	function getScrollTop(){
+	    if(typeof pageYOffset!= 'undefined'){
+	        //most browsers
+	        return pageYOffset;
+	    }
+	    else{
+	        var B= document.body; //IE 'quirks'
+	        var D= document.documentElement; //IE with doctype
+	        D= (D.clientHeight)? D: B;
+	        return D.scrollTop;
+	    }
+	}
+})();
+(function(){function e(e,n,r,i){var r=r||500,s=i||function(){},o,u=parseInt(t(e,"height"),10);e.toggled?o=e.originalHeight:(o=u,e.originalHeight=o);var a=Math.round(r/o);n=="show"&&(e.style.height="0"),e.style.display="block",e.toggled=!0;var f=o;for(var l=f;l>=0;l--)(function(t){var r=n=="show"?t*a:(f-t)*a;setTimeout(function(){(t==0&&n=="hide"||t==f&&n=="show")&&s(),e.style.height=t+"px";var r=t/f;e.style.opacity=r,e.style.filter="alpha(opacity="+r*100+")"},r)})(l)}function t(e,t){if(e.style[t])return e.style[t];if(e.currentStyle)return e.currentStyle[t];if(document.defaultView&&document.defaultView.getComputedStyle){t=t.replace(/([A-Z])/g,"-$1"),t=t.toLowerCase();var n=document.defaultView.getComputedStyle(e,"");return n&&n.getPropertyValue(t)}return null}function n(e,t,n){var r=function(e,t){try{return e.contains?e!=t&&e.contains(t):!!(e.compareDocumentPosition(t)&16)}catch(n){}},i=function(e){var t=e.currentTarget,i=e.relatedTarget;!r(t,i)&&t!=i&&n.call(e.currentTarget,e)};e.addEventListener?t=="mouseenter"?e.addEventListener("mouseover",i,!1):t=="mouseleave"?e.addEventListener("mouseout",i,!1):e.addEventListener(t,n,!1):e.attachEvent("on"+t,n)}function r(t){var r=this;r.cfg=t;var i=function(){n(r.cfg.closeBtn,"click",function(){r.close()}),n(r.cfg.wrap,"mouseenter",function(){r._timingClose("stop")}),n(r.cfg.wrap,"mouseleave",function(){r._timingClose("start",3)}),n(window,"focus",function(){r._pollStop=!1}),n(window,"blur",function(){r._pollStop=!0}),window[r.cfg.pollCallback]=r._push,window[r.cfg.contentCallback]=r._fillContent,r.start()},s=function(e,t){var n="popush_scriptloader";document.getElementById(n)!==null&&document.body.removeChild(document.getElementById(n));var i=document.createElement("script");i.id=n,i.type="text/javascript",i.async=!0,i.src=r.cfg.preventCache?e+"?"+Math.round(Math.random()*1e10):e,i.onload=t||function(){return!1},document.body.appendChild(i)},o=function(){var e=location.host.split(".").reverse()[2],t="?id="+r.cfg.id+"&cname="+e+"&rnd="+Math.round(Math.random()*1e10);(new Image).src=(r.cfg.countUrl||"count.php")+t};r._getDisplayState=function(){return!r._state||r._state=="hide"?"hide":"show"},r._display=function(t){if(r._getDisplayState()==t)return!1;e(r.cfg.contentWrap,t),r._state=t},r._timingClose=function(e,t){if(r._getDisplayState()=="hide")return!1;var t=t||r.cfg.hideAfter;e=="start"?r._closeTimer=setTimeout(function(){r._display("hide")},t*1e3):e=="stop"&&typeof r._closeTimer!="undefined"&&clearTimeout(r._closeTimer)},r.close=function(){if(!-[1,]&&!window.XMLHttpRequest){r.cfg.wrap.style.display="none";return !1;}r._getDisplayState()=="show"?r._display("hide"):r.cfg.wrap.style.display="none"},r._fillContent=function(e){r.contentCache=e,r.cfg.contentWrap.innerHTML=e,r._display("show"),r._timingClose("start")},r.manualShow=function(){if(r._getDisplayState()=="show")return!1;r.contentCache?r._fillContent(r.contentCache):s(r.cfg.contentUrl)},r._push=function(e){var t=Math.round((new Date).valueOf()/1e3),n=parseInt(e,10),i=t-n,u=NTES.cookie.get("PopPushData");if(u==n)return!1;if(r.cfg.oldTime&&i>r.cfg.oldTime)return!1;s(r.cfg.contentUrl),NTES.cookie.set("PopPushData",e,"30m",".163.com","/"),o()},r._poll=function(){r._pollStop||s(r.cfg.pollUrl)},r.start=function(){r._pollStop=!1,r._poll(),window.setInterval(r._poll,r.cfg.pollCycle*1e3)},i()}window.PopPush=r})()
+</script>
+<style type="text/css">
+#instant-news{width:300px;position:fixed;left:40px;bottom:0;z-index:100;
+_position: absolute;
+_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-172));
+}
+#instant-news-close{color:#B2b2b5;font-size:24px;font-weight:400;position:absolute;top:3px;right:4px;text-align:center;cursor:pointer;margin:0;padding:0;_display:none;}
+#instant-news-content{height:210px;padding:0;overflow:hidden;display:none;}
+</style>
+<div id="instant-news"><div id="instant-news-close">×</div><div id="instant-news-content"></div></div>
+<script>
+var wholeSiteNewsPushBgImgObj = new Image();wholeSiteNewsPushBgImgObj.src="http://img1.cache.netease.com/news/img14/wsw/bg-3.png";
+(function(N){
+    var t = N.cookie.get("PopPushData");
+    if(t && t != "") N.cookie.set("PopPushData", parseInt(t, 10), "30m", ".163.com", "/");
+})(window.NTES);
+var instant_news_push = new PopPush({
+    id: "instantnews",
+    wrap: document.getElementById('instant-news'),
+    contentWrap: document.getElementById('instant-news-content'),
+    closeBtn: document.getElementById('instant-news-close'),
+    pollUrl: "http://www.163.com/special/0077450P/hot_pop_js.js",
+    pollCallback: "latestInstantNews",
+    contentUrl: "http://temp.163.com/special/00804IKG/instant_news_content_cb.js",
+    contentCallback: "instantNewsContent",
+    pollCycle: 120,
+    hideAfter: 30,
+    oldTime: 7200,
+    countUrl: "http://temp.163.com/special/hot_pop_content/",
+    preventCache: false
+});
+</script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery11/ntes_ui_scroll.js" charset="gb2312"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    (function(){
+        var Scrl = function(elem){
+            var t = this, body = NTES.one("> div.js_scrlBody > ul", elem),
+                    bWidth = NTES.one("> li", body).offsetWidth * body.NTES("> li").length;
+            t._ctrls = NTES("> ul.js_scrlCtrl > li", elem),
+                    t._len = t._ctrls.length,
+                    t._step = bWidth / t._len,
+                    t.index = 0;
+            body.addCss({ width: bWidth + "px"});
+            NTES(body.parentNode).addCss({ width: t._step + "px"});
+            t._scrl = new NTES.ui.Scroll(body, 'x');
+            t._ctrls.each(function(i){
+                NTES(this).addEvent("click", t.show.bind(t, i), i);
+            });
+            t.show(0);
+        }
+        Scrl.prototype = {
+            show: function(i){
+                var t = this;
+                /*
+                 if (t._timmer){
+                 clearTimeout(t._timmer);
+                 }
+                 */
+                t.index = i < 0 ? t._len - 1 : i > t._len - 1 ? 0 : i;
+                t._scrl.onStart = function(){
+                    t._ctrls.removeCss("focus-current");
+                    t._ctrls.NTES(t.index).addCss("focus-current");
+                }
+                t._scrl.scrollTo(t._step * t.index);
+                /*
+                 t._timmer = setTimeout(function(){
+                 var next = 0;
+                 i + 1 > t._len - 1 ? next = 0 : next = i + 1;
+                 t.show(next);
+                 }, 10000);
+                 */
+            }
+        }
+        var focusScrl = new Scrl(NTES('#js_focusScrl'));
+    })();
+    //]]>
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0502010100";
+var wrUrl="http://163.wrating.com/";
+vjTrack();
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?c=860010-0502010100" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<!-- START NetEase Analytics 2006 -->
+    <script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "news"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- END NetEase Analytics 2006 -->
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+<!-- 浏览器升级 -->
+<script>!function(i){function t(){var t=this;this.proc={inca:function(e,a){var c=1;i("a",a).each(function(i,a){t.add(e+n(c++),a)})},subdiv:function(e,a,c){for(var r=1,f=c.level||1,s=[a],d=0;f>d;d++){var l=[];i.each(s,function(t,n){var e=0;/ntes-nav-select/.test(n.className)||i.each(n.children,function(i,t){o(t)&&(l.push(t),e++)}),e||l.push(n)}),s=l}i.each(s,function(i,a){t.add(e+n(r++),a)})},uniq:function(i,e,a){t.add(i+n(a.start||1),e)},form:function(n,e){var a=i(">form",e);a[0]&&a.addEvent("submit",function(){t.send.call(this,null,n+"1")})},tabgroup:function(e,a,c){var o=i(c.h,a),r=i(c.b,a),f=c.step||10,s=2;t.add(e+1,a),o.each(function(i,a){t.add(e+n(s+i*f),a)}),r.each(function(i,a){t.add(e+n(s+i*f+1),a)})},tabgroups:function(e,a,c){var r=c.union||"",f={};if(/^[\s\d,]+$/.test(r)){var s=0;i.each(r.split(/\s*,\s*/),function(i,t){if(t=parseInt(t))for(var n=0;t>n;n++)f[s++]=i})}var d=2;t.add(e+1,a);var l=parseInt(c.step)||10,u=i(c.h,a);i.each(u,function(i,a){t.add(e+n(i*l+d),a)});var m=i(c.b,a);i.each(m,function(a,c){var r=a*l+d+1,s=c.children;if(0==s.length)s=[c];else for(;1==s.length;)s=s[0].children;var u=0;i.each(s,function(i,a){o(a)&&("undefined"!=typeof f[i]&&(u=f[i]),t.add(e+n(r+u),a),u++)})})}}}function n(i){return 10>i?i.toString():i>62?"z":String.fromCharCode(i+(36>i?55:61))}function e(i,t){if(!t)return i;var e=i.length-1,a=i.charCodeAt(e);return 58>a?a-=48:91>a?a-=55:123>a&&(a-=61),i.substr(0,e)+n(a+t)}function a(){var i=_ntes_page_data.getRunTime()||0;return 0>i&&(i=0),i}function c(i){window.addEventListener?window.addEventListener("load",i,!1):window.attachEvent&&window.attachEvent("onload",i)}function o(i){var t=i.className,n=i.tagName.toLowerCase(),e={script:1,style:1,link:1,img:1,hr:1,br:1},a=!0;return e[n]?a=!1:/blank\d/.test(t)&&(a=!1),a}var r,f="_nacc=siteclick",s={cc:0};t.prototype={init:function(t){if(Math.random()<.1&&5==t.length){r=t,this.wl=[];var n=this;i("body").addEvent("click",function(i){i=i||window.event;for(var t=i.target||i.srcElement,e=0;"a"!=t.tagName.toLowerCase();){if(t=t.parentNode,!t.tagName||e>5)return;e++}for(var a=t.getAttribute("clkid"),c=t;!a&&(c=c.parentNode,c!=this&&c);)a=c.getAttribute("clkid");a&&n.send.call(t,null,a)}),i.ready(function(){n.onLoad()})}},onLoad:function(){function t(){s.unl||_ntes_sendInfo("un",_ntes_src_addr+"/ntes_u?"+n+"&_nct="+a()+"&_mcn="+s.cc+e),s.unl=1}var n=f+"&_npurl="+escape(document.URL)+"&_nch="+r,e="";if(window._ntes_sendInfo){i.each(this.wl,function(i){_ntes_sendInfo("cm",i)});var o="";if(window.NTES_logger_start_time){var d=NTES_logger_start_time.getTime();o="&_msl="+((new Date).getTime()-d),c(function(){e="&_msl="+((new Date).getTime()-d)})}_ntes_sendInfo("un",_ntes_src_addr+"/ntes_u?"+n+o),_ntes_bindEvent(window,"beforeunload",t);var l=window.navigator.userAgent.toLowerCase();!/compatible/.test(l)&&/firefox/.test(l)&&_ntes_bindEvent(window,"unload",t)}},send:function(i,t){if(t){var n="";"a"==this.tagName.toLowerCase()&&(n=this.getAttribute("href")||""),s.cc++;var e=_ntes_src_addr+"/ntes_p?"+f+"&_nct="+a()+"&_npurl="+escape(document.URL)+"&_nah="+escape(n)+"&_nat="+r+"_"+t;window._ntes_sendInfo?_ntes_sendInfo("cm",e):this.wl.push(e)}},area:function(t,n){for(var e in n){var a=e?/^#/.test(e)?i(e):i(e,t):[t];i.util.isArray(a)||(a=[a]);for(var c=n[e],o=0;o<c.length;o++)if(c[o]&&a[o])if(c[o].i)for(var r=c[o].s||1,f=0;r>f;f++)c[o].j=f,this.zone(a[o+f],c[o]);else this.area(a[o],c[o])}},zone:function(i,t){var n=e(t.i,t.j),a=t.f||"uniq",c=t.p||{};i&&this.proc[a]&&this.proc[a](n,i,c)},batch:function(i){r&&this.area(document.body,i)},add:function(i,t){t&&t.setAttribute("clkid",i)}},window._aCM=new t}(NTES),function(){_aCM.init("xwa07"),_aCM.batch({">.NTES-nav":[{">.nav-link":[{"":[{i:"111",f:"subdiv"}]}],">.NTES-nav-rss":[{"":[{i:"121"}]}],".NTES-link":[{"":[{i:"131",f:"inca"}]}]}],">.ggarea":[{li:[{"":[{i:"211"}]},{"":[{i:"221"}]},{"":[{i:"231"}]},{"":[{i:"241"}]},{"":[{i:"251"}]},{"":[{i:"261"}]},{"":[{i:"271"}]},0,0,0,{"":[{i:"281"}]},{"":[{i:"291"}]},{"":[{i:"2A1"}]},{"":[{i:"2B1"}]},{"":[{i:"2C1"}]},{"":[{i:"2D1"}]},{"":[{i:"2E1"}]}]}],">.channel":[{">h1":[{"":[{i:"311",f:"inca"}]}],">h2":[{"":[{i:"321"}]}],">.cBlack":[{"":[{i:"331",f:"inca"}]}],">.top_search":[{"":[{i:"341",f:"form"}]}]}],">.nav_channel":[{">.nav":[{"":[{i:"411",f:"inca"}]}]}],">.areabg1":[{".title-big":[{"":[{i:"511"}]},{"":[{i:"531"}]}],".title-red":[0,{"":[{i:"521",f:"inca"}]}],".focus-normal":[{">.focus-left":[{i:"541",f:"inca"}],".title-red":[{i:"542",f:"inca"}],".title-big":[{i:"543"}]},{">.focus-left":[{i:"551",f:"inca"}],".title-red":[{i:"552",f:"inca"}],".title-big":[{i:"553"}]},{">.focus-left":[{i:"561",f:"inca"}],".title-red":[{i:"562",f:"inca"}],".title-big":[{i:"563"}]}]}],">.areabg2":[{".content":[{">.title-red":[{i:"611",f:"inca"}],">.title-big":[{i:"612"}],">.postComment":[{i:"613",f:"inca"}]},{">.title-red":[{i:"621",f:"inca"}],">.title-big":[{i:"622"}],">.postComment":[{i:"623",f:"inca"}]},{">.title-red":[{i:"631",f:"inca"}],">.title-big":[{i:"632"}],">.postComment":[{i:"633",f:"inca"}]},{">.title-red":[{i:"641",f:"inca"}],">.title-big":[{i:"642"}],">.postComment":[{i:"643",f:"inca"}]},{">.title-red":[{i:"651",f:"inca"}],">.title-big":[{i:"652"}],">.digest":[{i:"653"}],">.postComment":[{i:"654",f:"inca"}]},{">.title-red":[{i:"661",f:"inca"}],">.title-big":[{i:"662"}],">.postComment":[{i:"663",f:"inca"}]},{">.title-red":[{i:"671",f:"inca"}],">.title-big":[{i:"672"}],">.postComment":[{i:"673",f:"inca"}]},{">.title-red":[{i:"681",f:"inca"}],">.title-big":[{i:"682"}],">.postComment":[{i:"683",f:"inca"}]},{">.title-big":[{i:"691"}],">.postComment":[{i:"692",f:"inca"}]},{">.title-red":[{i:"6A1",f:"inca"}],">.title-big":[{i:"6A2"}],">.postComment":[{i:"6A3",f:"inca"}]},{">.title-red":[{i:"6B1",f:"inca"}],">.title-big":[{i:"6B2"}],">.postComment":[{i:"6B3",f:"inca"}]},{">.title-red":[{i:"6C1",f:"inca"}],">.title-big":[{i:"6C2"}],">.digest":[{i:"6C3"}],">.postComment":[{i:"6C4",f:"inca"}]},{">.title-red":[{i:"6D1",f:"inca"}],">.title-big":[{i:"6D2"}],">.postComment":[{i:"6D3",f:"inca"}]},{">.title-red":[{i:"6E1",f:"inca"}],">.title-big":[{i:"6E2"}],">.postComment":[{i:"6E3",f:"inca"}]},{">.title-red":[{i:"6F1",f:"inca"}],">.title-big":[{i:"6F2"}],">.postComment":[{i:"6F3",f:"inca"}]},{li:[{i:"6G1",s:2}]},{li:[{i:"6H1",s:10}]},{li:[{i:"6I1",s:5}]},{">.titleBar":[{i:"6J1",f:"inca"}],">.imgTxt":[{i:"6J2",f:"inca"},{i:"6J3",f:"inca"},{i:"6J4",f:"inca"},{i:"6J5",f:"inca"},{i:"6J6",f:"inca"}]},{div:[0,{i:"6K1",f:"inca"},0,{i:"6K2",f:"inca"}]},{">.contactBox-left":[{i:"6L1"}],">.contactBox":[0,{i:"6L2"}]}]}],".cooperation":[{"":[{"":[{i:"711",f:"subdiv"}]}]}],">.channel-end":[{">.channelEnd-link":[{"":[{i:"811",f:"inca"}]}],">.channelEnd-top":[{"":[{i:"821",f:"inca"}]}]}],">.foot":[{"":[{"":[{i:"911",f:"inca"}]}]}],">div":[0,0,0,0,0,0,0,0,0,{"":[{"":[{i:"A11",f:"inca"}]}]}]})}(NTES);</script>
+<script type="text/javascript" src="http://img1.cache.netease.com/2012/ieupdate/update_funcs_v1_1.js" charset="gbk"></script><script type="text/javascript">
+//__ieUpdate();
+__f2e_monitor("news");
+</script>
+</body>
+</html>

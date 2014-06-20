@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+		<title>2013全国高校招生访谈——地图分布</title><base target="_blank" />
+		<link rel="stylesheet" href="http://img1.cache.netease.com/f2e/education/map/map.541182.css" />
+		<!--[if lte IE 6]>
+		<style type="text/css">
+		.ms_hd_icon{_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img1.cache.netease.com/f2e/education/map/images/til_icon.png',sizingMethod='scale')}
+		.edu_map_cnt .swf_cnt .bottom_tip .bt_text{_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img1.cache.netease.com/f2e/education/map/images/bottom_tip.png',sizingMethod='scale')}		
+		</style>			
+		<![endif]-->
+	</head>
+	<body>		
+		<div class="edu_map_cnt">
+			<div class="swf_cnt">
+				<div id="swf_effect"></div>
+				<div class="bottom_tip">
+					<div class="bt_text"></div>
+					<p>为了更好的满足高考生和家长的需求，网易教育特别专访了全国各省份知名大学招生办，<br />
+邀请招生办负责人就当年本校的招生计划、录取标准及学习就业发布独家、权威、及时的消息，助考生择校一臂之力！ </p>
+				</div>				
+			</div>
+			<div class="edu_map_wrap clearfix">
+				<div class="map_cnt">
+					<div class="map_data" id="edu_chinamap">					
+					</div>
+					<div class="nh_icon"></div>
+				</div>
+				<div class="map_search_mod" id="map_search_mod">
+					<div class="ms_box_shadow">
+						<div class="ms_hd">
+							<span class="ms_hd_icon"></span>
+							<h2><a href="#" title="北京">北京</a></h2>
+						</div>
+						<div class="ms_bd">
+						</div>					
+					</div>			
+					<div class="ms_ft">										
+					</div>
+				</div>						
+			</div>
+		</div>
+	<script id="tpl_result_pages" type="text/html">
+		<% 
+				var page_inc = 2;
+				var prev = cur_page - 1 < 1?1 : cur_page - 1;
+				var page_next = cur_page*1 + 1 > total_pages?total_pages : cur_page*1 + 1;
+				var prev_disable = cur_page==1?true:false;
+				var next_disable = cur_page==total_pages?true:false;
+				var start = cur_page - page_inc <1?1:cur_page - page_inc;
+				var end = start + page_inc*2 > total_pages?total_pages:start + page_inc*2 ;
+				if(end == total_pages){
+					start = end - page_inc*2<1?1:end - page_inc*2;
+				}
+				var split_flag = false;
+				if(end < total_pages){
+					split_flag = true;
+				}				
+		 %>		 
+		<%if(total_pages>0){if(prev_disable){%>
+			<span page_index="<%=prev%>" class="s_page_prev s_page_disble">上一页</span>
+		<%}else{%>
+			<a href="#" page_index="<%=prev%>" class="s_page_prev">上一页</a>
+		<%}}%>		
+		<% 
+				for(var i = start;i<=end;i++){
+					var cur_css="";
+					if(i==cur_page){
+						cur_css="s_page_current";
+					}
+		%>	
+			<a href="#" page_index="<%=i%>" target="_self" class="s_page <%=cur_css%>" end="<%=end%>" ><%=i%></a>
+		<% }
+			if(split_flag){
+		%>
+			<span class="split">...</span>
+		<%}%>	
+		<%if(total_pages>0){if(next_disable){%>
+			<span page_index="<%=page_next%>" class="s_page_next s_page_disble">下一页</span>
+		<%}else{%>
+			<a href="#" page_index="<%=page_next%>" class="s_page_next">下一页</a>
+		<%}}%>								
+	</script>
+	<script id="tpl_result_head" type="text/html">
+			<a href="<%=link%>" title="<%=name%>"><%=name%></a>
+	</script>
+	<script id="tpl_result_lst" type="text/html">
+		<ul class="ms_lst">
+			<%for(var i=0;i<datalist.length;i++){%>		
+			<li>
+				<div class="ms_pic">
+					<h2><a href="<%=datalist[i].link%>"><%=datalist[i].title%></a></h2>
+					<a href="<%=datalist[i].link%>"><img src="<%=datalist[i].pic%>" width="75" height="75" /></a>
+				</div>
+				<div class="ms_text">
+					<p><%=datalist[i].des%></p>
+					<div class="txt_btm"><a href="<%=datalist[i].link%>">详细</a></div>
+				</div>							
+			</li>
+			<%}%>												
+		</ul>	
+	</script>					
+	<script src='http://img1.cache.netease.com/f2e/lib/js/ne.js'></script>
+	<script type="text/javascript" src="http://img1.cache.netease.com/f2e/education/map/template.540793.min.js"></script>	
+	<script>var edu_map_city_data = [
+	    {
+	        code: 110000,
+	        name: "北京市",
+	        link: "http://edu.163.com/special/gaokao/bj.html"
+	    },
+	    {
+	        code: 120000,
+	        name: "天津市",
+	        link: "http://edu.163.com/special/gaokao/tj.html"
+	    },
+	    {
+	        code: 130000,
+	        name: "河北省",
+	        link: "http://edu.163.com/special/gaokao/heb.html"
+	    },
+	    {
+	        code: 140000,
+	        name: "山西省",
+	        link: "http://edu.163.com/special/gaokao/shanxi.html"
+	    },
+	    {
+	        code: 150000,
+	        name: "内蒙古自治区",
+	        link: "http://edu.163.com/special/gkdf_nmg/"
+	    },
+	    {
+	        code: 210000,
+	        name: "辽宁省",
+	        link: "http://edu.163.com/special/gaokao/ln.html"
+	    },
+	    {
+	        code: 220000,
+	        name: "吉林省",
+	        link: "http://edu.163.com/special/gaokao/jl.html"
+	    },
+	    {
+	        code: 230000,
+	        name: "黑龙江省",
+	        link: "http://edu.163.com/special/gkdf_hlj/"
+	    },
+	    {
+	        code: 310000,
+	        name: "上海市",
+	        link: "http://edu.163.com/special/gaokao/sh.html"
+	    },
+	    {
+	        code: 320000,
+	        name: "江苏省",
+	        link: "http://edu.163.com/special/gaokao/js.html"
+	    },
+	    {
+	        code: 330000,
+	        name: "浙江省",
+	        link: "http://edu.163.com/special/gaokao/zj.html"
+	    },
+	    {
+	        code: 340000,
+	        name: "安徽省",
+	        link: "http://edu.163.com/special/gaokao/ah.html"
+	    },
+	    {
+	        code: 350000,
+	        name: "福建省",
+	        link: "http://edu.163.com/special/gaokao/fj.html"
+	    },
+	    {
+	        code: 360000,
+	        name: "江西省",
+	        link: "http://edu.163.com/special/gaokao/jxi.html"
+	    },
+	    {
+	        code: 370000,
+	        name: "山东省",
+	        link: "http://edu.163.com/special/gaokao/sd.html"
+	    },
+	    {
+	        code: 410000,
+	        name: "河南省",
+	        link: "http://edu.163.com/special/gaokao/hen.html"
+	    },
+	    {
+	        code: 420000,
+	        name: "湖北省",
+	        link: "http://edu.163.com/special/gaokao/hb.html"
+	    },
+	    {
+	        code: 430000,
+	        name: "湖南省",
+	        link: "http://edu.163.com/special/gaokao/hun.html"
+	    },
+	    {
+	        code: 440000,
+	        name: "广东省",
+	        link: "http://edu.163.com/special/gaokao/gd.html"
+	    },
+	    {
+	        code: 450000,
+	        name: "广西壮族自治区",
+	        link: "http://edu.163.com/special/gaokao/gx.html"
+	    },
+	    {
+	        code: 460000,
+	        name: "海南省",
+	        link: "http://edu.163.com/special/gaokao/hain.html"
+	    },
+	    {
+	        code: 500000,
+	        name: "重庆市",
+	        link: "http://edu.163.com/special/gaokao/cq.html"
+	    },
+	    {
+	        code: 510000,
+	        name: "四川省",
+	        link: "http://edu.163.com/special/gaokao/sc.html"
+	    },
+	    {
+	        code: 520000,
+	        name: "贵州省",
+	        link: "http://edu.163.com/special/gkdf_gz/"
+	    },
+	    {
+	        code: 530000,
+	        name: "云南省",
+	        link: "http://edu.163.com/special/gaokao/yn.html"
+	    },
+	    {
+	        code: 540000,
+	        name: "西藏自治区",
+	        link: "http://edu.163.com/special/gkdf_xz/"
+	    },
+	    {
+	        code: 610000,
+	        name: "陕西省",
+	        link: "http://edu.163.com/special/gaokao/sx.html"
+	    },
+	    {
+	        code: 620000,
+	        name: "甘肃省",
+	        link: "http://edu.163.com/special/gaokao/gansu.html"
+	    },
+	    {
+	        code: 630000,
+	        name: "青海省",
+	        link: "http://edu.163.com/special/gaokao/qh.html"
+	    },
+	    {
+	        code: 640000,
+	        name: "宁夏回族自治区",
+	        link: "http://edu.163.com/special/gkdf_nx/"
+	    },
+	    {
+	        code: 650000,
+	        name: "新疆维吾尔自治区",
+	        link: "http://edu.163.com/special/gaokao/xj.html"
+	    },
+	    {
+	        code: 710000,
+	        name: "台湾省",
+	        link: "http://edu.163.com/special/gkdf_gat/"
+	    },
+	    {
+	        code: 810000,
+	        name: "香港特别行政区",
+	        link: "http://edu.163.com/special/gkdf_gat/"
+	    },
+	    {
+	        code: 910000,
+	        name: "澳门特别行政区",
+	        link: "http://edu.163.com/special/gkdf_gat/"
+	    }
+	];
+	</script>
+	<script type="text/javascript" src="http://img1.cache.netease.com/f2e/education/map/init.540793.min.js"></script>	
+	 <!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://163.wrating.com/a1.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0515010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0515010000"
+width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<!-- NetEase Analytics code 2009-07-22 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    _ntes_nacc = "edu"; //站点ID。
+    neteaseTracker();
+</script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>	
+	</body>
+</html>

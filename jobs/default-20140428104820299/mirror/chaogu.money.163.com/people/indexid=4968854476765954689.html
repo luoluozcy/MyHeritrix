@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网易模拟炒股大赛</title>
+<script type="text/javascript">
+    //<![CDATA[
+        var formhash = '704931266404e0f481185c6ac799f2d9';
+        var authhash = 'k5b2iegcopmsgcr44gnqvq37s5';
+        var me_id = 0;
+        var from_url = 'http://chaogu.money.163.com/people/?id=4968854476765954689';
+        var logout_url = 'http://chaogu.money.163.com/people/?id=4968854476765954689';
+                var new_stocks = 'sz000035,ZKJ,中科健,sz000090,TJJT,天健集团,sz000416,MSKG,民生控股,sz000505,ZJKG,珠江控股 ,sz000582,BBWG,北部湾港 ,sz000616,YCTZ,亿城投资,sz000617,SYJC,石油济柴,sz000779,STPS,*ST派神 ,sz000898,AGGF,鞍钢股份,sz000902,ZGFZ,中国服装 ,sz000958,DFRD,东方热电,sz002134,STPL,*ST普林 ,sz002164,STDL,*ST东力 ,sz002234,STMH,*ST民和,sz002265,XYGF,西仪股份,sz002373,STLX,*ST联信,sz300083,JSJM,劲胜精密 ,sz300144,SCYY,宋城演艺 ,sz300370,AKKJ,安控科技,sh600087,TSCY,退市长油,sh600234,SSWH,山水文化 ,sh600247,STCC,ST成城 ,sh600299,STXC,*ST新材 ,sh600301,STNH,ST南化,sh600306,STSC,*ST商城 ,sh600398,HLZJ,海澜之家,sh600634,ZJKG,中技控股 ,sh600689,STSM,*ST三毛 ,sh600769,XLDY,祥龙电业,sh600873,MHSW,梅花生物,sh601919,ZGYY,中国远洋';
+	//]]>
+    </script>
+    <link rel="stylesheet" type="text/css" href="/src/css/default.css?16188000.css" media="screen" />
+    <script type="text/javascript" src="/src/js/jquery-1.8.0.min.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/jquery.tools.min.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/jquery.cookies.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/base.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/basic.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163utils.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.form.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.dialog.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.stock.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.stock.utils.js?16188000.js" charset="utf-8"></script>
+
+</head>
+<body>
+<div class="alltop">
+<iframe id="top_iframe" name="top_iframe" src="http://money.163.com/special/ntesnav/" frameborder="no" scrolling="no" style="width: 100%;height:34px;border:0px;overflow:hidden;"></iframe>
+</div>
+<div class="TOPbanner">
+	<div class="wrap">
+		<div class="match-box">
+    		<div class="mc-banner">
+    			<span class="bannerLimg"></span>
+    			<span class="bannerRimg"></span>
+    			<a href="http://money.163.com/" title="主办：网易财经" target="_blank"><span class="link_163"></span></a>
+				<a href="http://www.7878.com/" title="技术支持：资本魔方" target="_blank"><span class="link_7878"></span></a>
+    		</div>
+    		<ul class="mc-nav">                                 
+    			<li ><a href="http://chaogu.money.163.com/">大赛首页</a></li>
+    			<li id="account_menu" ><a href="http://chaogu.money.163.com/account/">交易系统</a></li>
+    			<li id="people_menu" class="al"><a href="http://chaogu.money.163.com/people/">个人中心</a></li>
+    			<li id="track_feeds_menu" ><a href="http://chaogu.money.163.com/track/feeds">我的跟踪</a></li>
+    			<li ><a href="http://chaogu.money.163.com/toplist">排行榜</a></li>
+    			<li ><a href="http://chaogu.money.163.com/announcements">赛事公告</a></li>
+    			<li ><a href="http://chaogu.money.163.com/awards">赛事简介</a></li>
+    			<li ><a href="http://chaogu.money.163.com/rules">交易规则</a></li>
+    			<li><a href="http://bbs.money.163.com/list/chaogu.html" target="_blank">大赛交流区</a></li>
+    		</ul>
+    		
+    		<div class="contenMessage">
+	    		<!-- MESSAGES -->
+		        		        		        <!-- END MESSAGES -->
+	        </div>
+	        
+	        <!-- 自选股 -->
+	        
+    			<div class="contenBOX">
+		<div class="usercenterL">
+	<div class="usercenterLMain">
+	<div class="usercenterRH"><h3>简介</h3></div>
+    <div class="usercenterLBox">
+	    <div class="headBoxNew">
+	    		    	<div class="avatar_big"><img alt="32346437的头像" src="http://oimagea1.ydstatic.com/image?w=128&h=128&url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif" width="95" height="95"></div><p>32346437</p>
+	    </div>
+	    <div class="headBoxBut m-t-20">
+	    		    		    		    	<span class="button3"><a href="javascript:void(0)" class="add_track" rel="338373">跟踪TA</a></span> 
+	    		    		        <span class="button3"><a href="http://t.163.com/3887557571" target="_blank">进入微博</a></span>
+	        	    </div>
+	        </div>
+</div>	    <div class="usercenterLMain m-t-15">
+    	<div class="usercenterRH">
+    		<h3>TA的跟踪 <span class="f12"><a href="http://chaogu.money.163.com/track/users">共 1 人</a></span></h3>
+    		    		<span class="a-C999-line moerposent f12"><a href="http://chaogu.money.163.com/track/trackers?id=4968854476765954689">全部</a></span>
+    		    	</div>
+        <div class="usercenterLBox">
+        	<ul class="followList">
+        	                        	<li>
+                	<div class="head48"><a href="http://chaogu.money.163.com/people/?id=5655995665076921223"><img src="http://oimagea3.ydstatic.com/image?w=48&h=48&url=http%3A%2F%2F126.fm%2F1c5aXl" class="toux" width="44" height="44"></a></div>
+                    <div class="head48R">
+                    	<p class="m-b-10 a-C333">
+                    		<a href="http://chaogu.money.163.com/people/?id=5655995665076921223" title="lprain">lprain</a>
+                    		<span class="button6 moerposent2"><a href="javascript:void(0)" class="remove_track" rel="309467">退订</a></span>
+                    	</p>
+                    	<span class=" f-c666666">收益率：<span class="f-Cred ">+15.48%</span></span>
+                    </div>
+            	</li>
+                                    </ul>
+    	</div>
+	</div>
+    <div class="usercenterLMain m-t-15">
+    	<div class="usercenterRH">
+    		<h3>跟踪TA的人 <span class="f12"><a href="http://chaogu.money.163.com/track/users">共 107 人</a></span></h3>
+    		    		<span class="a-C999-line moerposent f12"><a href="http://chaogu.money.163.com/track/users?id=4968854476765954689">全部</a></span>
+    		    	</div>
+        <div class="usercenterLBox">
+        	<ul class="followList">
+        	                        	<li>
+                	<div class="head48"><a href="http://chaogu.money.163.com/people/?id=3987444278416138512"><img src="http://oimagec2.ydstatic.com/image?w=48&h=48&url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif" class="toux" width="44" height="44"></a></div>
+                    <div class="head48R">
+                    	<p class="m-b-10 a-C333"><a href="http://chaogu.money.163.com/people/?id=3987444278416138512" title="170155970">170155970</a></p>
+                    	<span class=" f-c666666">收益率：<span class="f-C333 ">0.00%</span></span>
+                    </div>
+            	</li>
+                        	<li>
+                	<div class="head48"><a href="http://chaogu.money.163.com/people/?id=-368238014401696966"><img src="http://oimagea7.ydstatic.com/image?w=48&h=48&url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif" class="toux" width="44" height="44"></a></div>
+                    <div class="head48R">
+                    	<p class="m-b-10 a-C333"><a href="http://chaogu.money.163.com/people/?id=-368238014401696966" title="sxmy">sxmy</a></p>
+                    	<span class=" f-c666666">收益率：<span class="f-C333 ">0.00%</span></span>
+                    </div>
+            	</li>
+                        	<li>
+                	<div class="head48"><a href="http://chaogu.money.163.com/people/?id=-7103013338495119842"><img src="http://oimagec5.ydstatic.com/image?w=48&h=48&url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif" class="toux" width="44" height="44"></a></div>
+                    <div class="head48R">
+                    	<p class="m-b-10 a-C333"><a href="http://chaogu.money.163.com/people/?id=-7103013338495119842" title="leiolasol">leiolasol</a></p>
+                    	<span class=" f-c666666">收益率：<span class="f-C333 ">0.00%</span></span>
+                    </div>
+            	</li>
+                        	<li>
+                	<div class="head48"><a href="http://chaogu.money.163.com/people/?id=-8490767812292218172"><img src="http://oimagec8.ydstatic.com/image?w=48&h=48&url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif" class="toux" width="44" height="44"></a></div>
+                    <div class="head48R">
+                    	<p class="m-b-10 a-C333"><a href="http://chaogu.money.163.com/people/?id=-8490767812292218172" title="小小圆方">小小圆方</a></p>
+                    	<span class=" f-c666666">收益率：<span class="f-Cgreen ">-2.94%</span></span>
+                    </div>
+            	</li>
+                        	<li>
+                	<div class="head48"><a href="http://chaogu.money.163.com/people/?id=5909275834883831947"><img src="http://oimageb5.ydstatic.com/image?w=48&h=48&url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif" class="toux" width="44" height="44"></a></div>
+                    <div class="head48R">
+                    	<p class="m-b-10 a-C333"><a href="http://chaogu.money.163.com/people/?id=5909275834883831947" title="xwc2003">xwc2003</a></p>
+                    	<span class=" f-c666666">收益率：<span class="f-C333 ">0.00%</span></span>
+                    </div>
+            	</li>
+                                    </ul>
+    	</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".add_track").click(function(){
+		m163.track.add(this,function(){
+			window.location.reload();
+		});
+	});
+	$(".remove_track").click(function(){
+		m163.track.remove(this);
+	})
+});
+</script>        <div class="usercenterR">
+        	<!-- 账户信息 -->
+        	        	<div class="usercenterLMain">
+            	<div class="usercenterRH"><h3>TA的账户信息</h3></div>
+            	<div class="usercenterLBox">
+                	<table class="playstockInfo a-Cccc" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    	<tbody>
+                    		<tr class="fontsize18px">
+                        		<td>总资产：<span class="f-Cred">
+                        			3,565,962.<strong>11</strong>                        		</span></td>
+                                <td>股票市值：<span class="f-C666">
+                                	3,561,756.<strong>00</strong>                                </span> </td>
+                                <td>可用金额：<span class="f-C666">
+                                	4,206.<strong>11</strong>                                </span>  </td>
+                            </tr>
+                            <tr>
+                            	<td>冻结金额：<span class="f-C666">
+                            		0.00                            	</span></td>
+                                <td>仓位：<span class="f-C666">
+                                	99.88%                                </span></td>
+                            	<td>&nbsp;</td>
+                            </tr>               
+                            <tr>
+                            	<td colspan="3">
+                                	<div class="line-Cccc2"></div>
+                                </td>
+                            </tr>               
+                            <tr>
+                        	  	<td>总收益率：<span class="f-Cred ">+256.60%</span> <a href="http://chaogu.money.163.com/toplist">第5名</a></td>
+                                <td>本周收益率：<span class="f-Cgreen ">-9.18%</span> <a href="http://chaogu.money.163.com/toplist">第49808名</a></td>
+                                <td>本月收益率：<span class="f-Cred ">+34.02%</span> <a href="http://chaogu.money.163.com/toplist">第26名</a></td>
+                            </tr>
+                            <tr>
+                            	<td>资金周转率：<span class="f-Cred ">+190.54%</span></td>
+                                <td>平均周收益率：--</td>
+                                <td>平均月收益率：--</td>
+                            </tr>
+                  		</tbody>
+               		</table>
+               		<script type="text/javascript">
+			            <!--
+			            function img_error() {
+			            	$('#map').attr('src', 'http://chaogu.money.163.com/img/charts/people_chart_error.gif');
+			            }
+			            //-->
+			        </script>
+                  	<img id="map" src="http://chart.7878.com/hz/338373_359.gif?140428.gif" onerror="img_error();"/>
+            	</div>
+			</div>
+						
+			<!-- 股票持仓 -->
+           	<div class="usercenterLMain m-t-15">
+            	<div class="usercenterRH"><h3>TA股票持仓</h3></div>
+            	<div class="usercenterLBox">
+                	<table class="viewEditTable2 holdstable" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<thead>
+						<tr style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
+							<td>股票名称(代码)</td>
+							<td>总股数</td>
+							<td>可卖股</td>
+							<td>成本价</td>
+							<td>当前价</td>
+							<td>当日涨跌</td>
+							<td>浮动盈亏</td>
+							<td>盈亏比例(%)</td>
+							<td>股票市值</td>
+						</tr>
+					</thead>
+					<tbody>
+            	    	            			            									<tr title="华资实业" id="600191">
+							<td class="mynote-td">
+    			            	<a href="http://quotes.money.163.com/0600191.html" class="focus_link" target="_blank">华资实业(600191)</a>
+                            </td>
+							<td>21600</td>
+							<td>21600</td>
+							<td >5.668<input id="stock_price_0" type="hidden" value="5.668"/></td>
+							<td >5.51</td>
+							<td>
+					        	<span class="f-Cgreen ">-3.16%</span>	
+                            </td>
+							<td ><span class="f-Cgreen">-3,412.80</span></td>
+							<td ><span class="f-Cgreen ">-2.79%</span></td>
+							<td >119016</td>
+						</tr>
+						            									<tr title="北斗星通" id="002151">
+							<td class="mynote-td">
+    			            	<a href="http://quotes.money.163.com/1002151.html" class="focus_link" target="_blank">北斗星通(002151)</a>
+                            </td>
+							<td>3700</td>
+							<td>3700</td>
+							<td >16.228<input id="stock_price_1" type="hidden" value="16.228"/></td>
+							<td >24.50</td>
+							<td>
+					        	<span class="f-Cgreen ">-6.09%</span>	
+                            </td>
+							<td ><span class="f-Cred">+30,606.40</span></td>
+							<td ><span class="f-Cred ">+50.97%</span></td>
+							<td >90650</td>
+						</tr>
+						            									<tr title="威华股份" id="002240">
+							<td class="mynote-td">
+    			            	<a href="http://quotes.money.163.com/1002240.html" class="focus_link" target="_blank">威华股份(002240)</a>
+                            </td>
+							<td>121700</td>
+							<td>121700</td>
+							<td >4.021<input id="stock_price_2" type="hidden" value="4.0206559182169"/></td>
+							<td >25.20</td>
+							<td>
+					        	<span class="f-Cgreen ">-10.00%</span>	
+                            </td>
+							<td ><span class="f-Cred">+2,577,526.17</span></td>
+							<td ><span class="f-Cred ">+526.76%</span></td>
+							<td >3066840</td>
+						</tr>
+						            									<tr title="晨光生物" id="300138">
+							<td class="mynote-td">
+    			            	<a href="http://quotes.money.163.com/1300138.html" class="focus_link" target="_blank">晨光生物(300138)</a>
+                            </td>
+							<td>35000</td>
+							<td>35000</td>
+							<td >9.593<input id="stock_price_3" type="hidden" value="9.593"/></td>
+							<td >8.15</td>
+							<td>
+					        	<span class="f-Cgreen ">-3.32%</span>	
+                            </td>
+							<td ><span class="f-Cgreen">-50,505.00</span></td>
+							<td ><span class="f-Cgreen ">-15.04%</span></td>
+							<td >285250</td>
+						</tr>
+											</tbody>
+					</table>
+             	</div>
+          	</div>
+           	<div class="usercenterLMain m-t-15">
+            	<div class="usercenterRH"><h3>TA成交记录</h3></div>
+            	<div class="usercenterLBox">
+                	<table class="viewEditTable2" style="border-left: none; border-right: none;" border="0" cellpadding="0" cellspacing="0" width="100%">
+					<thead>
+						<tr style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
+							<td colspan="7" style="padding: 8px 5px;">
+								<span class="f-12px">
+									<a href="http://chaogu.money.163.com/people/?id=4968854476765954689&order=created_at" style="color:red;border-bottom:2px solid red;margin-right:10px;"><strong class="sort2">按时间查看</strong></a>
+	                            	<a href="http://chaogu.money.163.com/people/?id=4968854476765954689&order=symbol" ><strong class="sort">按股票查看</strong></a>
+                            	</span>
+                    		</td>
+						</tr>
+						<tr>
+							<td>成交时间</td>
+							<td>交易类型</td>
+							<td>股票名称(代码)</td>
+							<td>数量</td>
+							<td class="decimal">成交价格</td>
+							<td class="decimal">单笔盈亏额</td>
+							<td class="decimal">单笔盈亏比</td>
+						</tr>
+					</thead>
+					<tbody>
+					                	                    	<tr>                          
+                        	<td>2012-12-07 14:19:33</td>
+                        	<td><span class="f-Cred">买入</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/0600191.html">华资实业(600191)</a></td>
+                        	<td>10800</td>
+                        	<td class="decimal">5.673</td>
+                        	<td class="decimal">--</td>
+                        	<td class="decimal">--</td>
+                   		</tr>
+                   	                   	                	                    	<tr>                          
+                        	<td>2012-12-07 14:18:58</td>
+                        	<td><span class="f-Cred">买入</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/0600191.html">华资实业(600191)</a></td>
+                        	<td>10800</td>
+                        	<td class="decimal">5.670</td>
+                        	<td class="decimal">--</td>
+                        	<td class="decimal">--</td>
+                   		</tr>
+                   	                   	                	                    	<tr>                          
+                        	<td>2012-12-07 14:17:48</td>
+                        	<td><span class="f-Cred">买入</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/1002151.html">北斗星通(002151)</a></td>
+                        	<td>3700</td>
+                        	<td class="decimal">16.261</td>
+                        	<td class="decimal">--</td>
+                        	<td class="decimal">--</td>
+                   		</tr>
+                   	                   	                	                    	<tr>                          
+                        	<td>2012-11-15 10:52:32</td>
+                        	<td><span class="f-Cred">买入</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/1002240.html">威华股份(002240)</a></td>
+                        	<td>121700</td>
+                        	<td class="decimal">4.017</td>
+                        	<td class="decimal">--</td>
+                        	<td class="decimal">--</td>
+                   		</tr>
+                   	                   	                	                   		<tr>                          
+                        	<td>2012-11-15 10:50:28</td>
+                        	<td><span class="f-Cgreen">卖出</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/1000711.html">天伦置业(000711)</a></td>
+                        	<td>5000</td>
+                        	<td class="decimal">6.920</td>
+                        	<td class="decimal"><span class="f-Cred">+1,328.63</span></td>
+                        	<td class="decimal"><span class="f-Cred ">+4.00%</span></td>
+                   		</tr>
+                   	                   	                	                   		<tr>                          
+                        	<td>2012-11-15 10:50:00</td>
+                        	<td><span class="f-Cgreen">卖出</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/0600406.html">国电南瑞(600406)</a></td>
+                        	<td>2000</td>
+                        	<td class="decimal">15.950</td>
+                        	<td class="decimal"><span class="f-Cred">+279.68</span></td>
+                        	<td class="decimal"><span class="f-Cred ">+0.89%</span></td>
+                   		</tr>
+                   	                   	                	                   		<tr>                          
+                        	<td>2012-11-12 14:04:38</td>
+                        	<td><span class="f-Cgreen">卖出</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/1000718.html">苏宁环球(000718)</a></td>
+                        	<td>20000</td>
+                        	<td class="decimal">6.241</td>
+                        	<td class="decimal"><span class="f-Cred">+1,376.37</span></td>
+                        	<td class="decimal"><span class="f-Cred ">+1.12%</span></td>
+                   		</tr>
+                   	                   	                	                   		<tr>                          
+                        	<td>2012-11-12 14:00:18</td>
+                        	<td><span class="f-Cgreen">卖出</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/1002151.html">北斗星通(002151)</a></td>
+                        	<td>2000</td>
+                        	<td class="decimal">17.552</td>
+                        	<td class="decimal"><span class="f-Cred">+1,065.86</span></td>
+                        	<td class="decimal"><span class="f-Cred ">+3.14%</span></td>
+                   		</tr>
+                   	                   	                	                   		<tr>                          
+                        	<td>2012-11-12 13:58:41</td>
+                        	<td><span class="f-Cgreen">卖出</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/0600463.html">空港股份(600463)</a></td>
+                        	<td>8000</td>
+                        	<td class="decimal">6.320</td>
+                        	<td class="decimal"><span class="f-Cred">+4,245.73</span></td>
+                        	<td class="decimal"><span class="f-Cred ">+9.19%</span></td>
+                   		</tr>
+                   	                   	                	                   		<tr>                          
+                        	<td>2012-11-12 10:11:09</td>
+                        	<td><span class="f-Cgreen">卖出</span></td>
+                        	<td><a target="_blank" href="http://quotes.money.163.com/1002348.html">高乐股份(002348)</a></td>
+                        	<td>2000</td>
+                        	<td class="decimal">8.970</td>
+                        	<td class="decimal"><span class="f-Cred">+649.68</span></td>
+                        	<td class="decimal"><span class="f-Cred ">+3.77%</span></td>
+                   		</tr>
+                   	                   						</tbody>
+					</table>
+					                   	<div style="margin:0px;" class="nextPageBar">
+						<div style="float:left; padding-top:14px!important;padding-top:15px;margin-left:92px!important;margin-left:40px;width:140px;">
+					每页显示	<select name="log_per_page" id="SetLogPageCount">
+								<option value="10" selected="selected">10条</option>
+								<option value="20" >20条</option>
+							</select>
+						</div>
+						<div style="float:left;">
+							<div class="pages">
+<span class="nextprev">上一页</span>
+<span class="current">1</span>
+<a href="http://chaogu.money.163.com/people/?id=4968854476765954689&page=2">2</a>
+<a href="http://chaogu.money.163.com/people/?id=4968854476765954689&page=3" class="end">3</a>
+<a class="nextprev" href="http://chaogu.money.163.com/people/?id=4968854476765954689&page=2">下一页</a>
+</div>
+						</div>
+						<div class="clear"></div>        
+					</div>
+					              	</div>
+          	</div>
+     	</div>
+        <div class="clear"></div>
+	</div>
+
+    <div class="contenBOX m-t-10">
+	<div class="foot m-b-20">
+	<iframe id="foot_iframe" name="foot_iframe" src="http://money.163.com/special/monichaogufoot/" frameborder="0" scrolling="no" style="width: 100%;overflow:hidden;"></iframe>
+	</div>
+</div>    
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var symbols = " 600191 002151 002240 300138";
+		stock_current = function (){
+			if(!symbols.slice(1).length) return false;
+		    m163.stock.get_stock_current(symbols.slice(1), formhash, function(data){
+		 		for(var i = 0;i < data.length;i++){
+		 	   		var price = parseFloat($("#stock_price_" + i).val());
+		 	 	   	var stock = data[i];
+		 	 	   	var $tr = $(".holdstable > tbody > tr").eq(i);
+				   	var volumn = parseInt($tr.find("td").eq(1).html());
+		 	 	   	var float_profit = m163.utils.round((stock.current - price) * volumn + profit);
+		 	 	   	stock.current = parseFloat(stock.current);
+		 	 	   	$tr.find("td").eq(4).html(m163.utils.round(stock.current));
+		 	 	   	var profit = (stock.current - price) * volumn;
+		 	 	  	var current_money = volumn * price;
+		 	 	   	$span = m163.stock.utils.priceSpan(profit, 0);
+		 	 	   	$tr.find("td").eq(6).html($span);
+		 	 	  	if (price > 0.00001 ) {
+			 	 	   float_yield = m163.stock.math.div_per(profit, current_money);
+			 	 	   $span = m163.stock.utils.priceSpanCreate(profit, 0, true).append(float_yield);
+			 	 	   $tr.find("td").eq(7).html($span);
+		 	 	   }
+		 	 		$tr.find("td").eq(8).html(m163.stock.utils.priceSpan(stock.current * volumn));
+		 	   }
+		 	   window.setTimeout(stock_current, 10000);
+		    });
+		}
+		stock_current();
+		$("#SetLogPageCount").change(function(){
+			var per_page = parseInt($(this).val());
+						var url = "http://chaogu.money.163.com/people/?id=4968854476765954689";
+			url+= "&per_page=" + per_page;
+			window.location.href = url;
+		});
+	});
+	</script>		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#account_menu, #people_menu, #track_feeds_menu").click(function(){
+		if( !m163.me.id )
+		{
+			var from = $(this).find("a").attr("href");
+			m163.dialog.load("/account/login/?from=" + from);
+			return false;
+		}
+		return true;
+	});
+})
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://163.wrating.com/a1.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0507010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0507010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<!-- START NetEase Devilfish 2006 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "stock";     //站点ID。
+neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+</body>
+</html>
+

@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>地产锐视点_网易哈尔滨房产地产锐视点</title>
+<base target="_blank" />
+<meta name="keywords" content="地产锐视点,哈尔滨地产锐视点,哈尔滨房产,哈尔滨房地产,网易哈尔滨,哈尔滨网易" />
+<meta name="description" content="地产锐视点,哈尔滨地产锐视点,哈尔滨房产,哈尔滨房地产,网易哈尔滨,哈尔滨网易" />
+<link href="http://img1.cache.netease.com/house/css09/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+<link href="http://img1.cache.netease.com/house/css09/list/list091222.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="nav_top" class="mod">
+	<span id="top"><!--为返回顶部所作--></span>
+	<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.3.css" />
+<script charset="gb2312" src="http://img3.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://hrb.house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"><font color="#FFFFFF">微博</font></a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0608.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+</div>
+<div class="ad960"><!--原先的广告条/special/021802LT/fsgg2.html改成下面的了-->
+<div><embed src="http://file.ws.126.net/house/hrb/flash/20121228zijing.swf" quality="high" bgcolor="#ffffff" width="960" height="70" wmode="transparent" name="homeSwf_1" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</div>
+</div>
+<span class="blank9"></span>
+<style type="text/css">
+.n12nav {width:960px; margin:0 auto; height:67px; background:url(http://img3.cache.netease.com/house/2012/3/22/2012032215303234980.png) no-repeat; position:relative;}
+.n12nav a:link {color:#262626;}
+.n12nav a:visited {color:#262626;}
+.n12nav .nnews {width:165px; height:50px; position:absolute; top:13px; left:60px; line-height:20px; text-align:left;}
+.n12nav .nnews a {margin-left:3px;}
+.n12nav .nbuyh {width:175px; height:50px; position:absolute; top:13px; left:292px; line-height:20px; text-align:left;}
+.n12nav .nbuyh a {margin-left:3px;}
+.n12nav .ndbh {width:110px; height:50px; position:absolute; top:13px; left:540px; line-height:20px; text-align:left;}
+.n12nav .ndbh a {margin-left:3px;}
+.n12nav .nbbs {width:110px; height:50px; position:absolute; top:13px; left:715px; line-height:20px; text-align:left;}
+.n12nav .nbbs a {margin-left:3px;}
+.n12nav .necdc {width:60px; height:50px; position:absolute; top:13px; left:892px; line-height:20px; text-align:left;}
+.n12nav .necdc a {margin-left:3px;}
+</style><div class="channel">
+	<span class="logo"><a href="http://hrb.house.163.com" title="网易哈尔滨房产"><img src="http://img3.cache.netease.com/photo/0218/2012-11-12/8G44ABL23QPF0218.gif" width="190" height="24" alt="哈尔滨房产" /></a></span>
+        <span class="clogo"><a href="http://heb.house.163.com/news/" title="锐视点"><img src="http://img1.cache.netease.com/house/img09/area1210/newlogo.gif" alt="锐视点" /></a></span>
+    <p class="position cGray"><a href="http://www.163.com">网易首页</a> &gt; <a href="http://hrb.house.163.com/">哈尔滨房产</a> &gt; <a href="http://heb.house.163.com/news/" title="锐视点">锐视点</a></p>
+        </div>
+<!--首页展开型导航-->
+<div class="n12nav">
+  <div class="nnews">
+  	<a href="http://heb.house.163.com/news">新闻</a> <a href="http://heb.house.163.com/special/021802LS/tpxw.html">原创</a> <a href="http://heb.house.163.com/special/021802LS/zt.html">专题</a> <a href="http://heb.house.163.com/special/021802LS/zh163sy.html">图片</a> <a href="http://heb.house.163.com/special/021802LS/broadcast.html">预告</a><br />
+<a href="http://heb.house.163.com/special/021802LS/lskd.html">活动</a> <a href="http://heb.house.163.com/special/0218037G/issue.html">周刊</a> <a href="http://heb.house.163.com/special/021802LS/zhcj.html">城建</a> <a href="http://heb.house.163.com/special/021802LS/hengqin.html">群力</a> <a href="http://heb.house.163.com/special/021802LS/tt.html">回顾</a>
+  </div>
+  <div class="nbuyh">
+  <a href="http://heb.house.163.com/xf">买房</a> <a href="http://heb.house.163.com/special/021802LS/lpkx.html">折扣</a> <a href="http://heb.house.163.com/special/021802LS/goldunit.html">户型</a> <a href="http://heb.house.163.com/special/0218037Q/glhaztc.html">直通车</a> <a href="http://heb.house.163.com/special/0218037G/house_pictures.html">图鉴</a><br /> 
+<a href="http://heb.house.163.com/special/021802LS/ceping.html">评测</a> <a href="http://heb.house.163.com/special/0218037J/buyhouse.html">攻略</a> <a href="http://heb.house.163.com/special/0218037J/housemarket.html">超市</a> <a href="http://heb.house.163.com/special/021802LS/lpkx.html">要置业</a> <a href="http://heb.house.163.com/special/021802LS/cp.html">谍报</a> 
+  </div>
+  <div class="ndbh">
+  	<a href="http://heb.house.163.com/special/021802LS/housedeal.html">网签</a> <a href="http://heb.house.163.com/special/0218037G/bhtool.html">月报告</a> <a href="http://heb.house.163.com/special/021802LS/zhfj.html">房价</a><br />
+<a href="http://heb.house.163.com/special/0218037H/2012hdfx.html">房贷</a> <a href="http://heb.house.163.com//special/021802LS/dctp.html">调查</a> <a href="http://heb.house.163.com/special/0218037G/bhtool.html">计算器</a>
+  </div>
+  <div class="nbbs">
+  <a href="http://bbs.gz.house.163.com/list/haerbin.html">业主</a> <a href="http://bbs.house.163.com/list/lovegz.html">宅人晒</a> <a href="http://bbs.house.163.com/list/housestory.html">故事</a><br />
+<a href="http://bbs.house.163.com/list/homeguide.html">置业</a> <a href="http://bbs.house.163.com/list/homegossip.html">明星</a> <a href="http://bbs.gz.house.163.com/list/zhuhai.html">曝光台</a>
+  </div>
+  <div class="necdc">
+  <a href="http://xf.house.163.com/heb/search/0-0-8-0-0-0-0-0-1.html">热门商铺</a><br />
+	<a href="http://heb.house.163.com/special/02180335/biz.html">投资资讯</a>
+  </div>
+</div>
+<!--首页展开型导航end--><span class="blank12"></span>
+<div class="area">
+		<div class="titleBar ui_s1"><h2>地产锐视点</h2></div>
+        <span class="blank3"></span>
+<!----1---->
+        	<div class="listPages">
+        		<span class="s1">上一页</span>
+                <a href="http://hrb.house.163.com/special/021802LS/tpxw.html" class="on" target="_self">1</a>
+                <a href="http://hrb.house.163.com/special/021802LS/tpxw_02.html" target="_self">2</a>
+                <a href="http://hrb.house.163.com/special/021802LS/tpxw_02.html" target="_self">下一页</a>
+            </div>
+			<span class="blank15"></span>
+            <div class="textListbg clearfix">
+            <ul class="textList">
+  
+ 
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0916/09/98SRAPHD0218rt.html">顾问国世平：赶紧卖掉房子 一套都不剩</a><span>09-16 09:42</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0701/10/92MMQA450218rt.html">任志强:中国不缺地 房价不降原因在农民</a><span>07-01 10:54</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0615/10/91DEVCL90218rt.html">易宪容：热钱撤出或刺破中国房地产泡沫</a><span>06-15 10:28</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0605/11/90JQ1PH90218rt.html">万达董事长王健林:房市至少稳升10年</a><span>06-05 11:21</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0529/09/901IRIFU0218rt.html">央视：外汇储备越来越多 未来房价还会再涨</a><span>05-29 09:29</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0523/10/8VI7P1P20218rt.html">楼市酷评:胸罩联合会斥任志强 丁字裤更暴利</a><span>05-23 10:27</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0507/09/8U8US4IQ0218rt.html">社科院:住房供求已失衡 房价面临全面失控</a><span>05-07 09:42</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0426/09/8TCL1U670218rt.html">叶檀：人口与资金逃离的城市房市已经崩溃</a><span>04-26 09:52</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0422/09/8T290HDI0218rt.html">十大经济学家解析房价:降价误读 稳价是目标</a><span>04-22 09:09</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0306/11/8P9HMHQK0218rt.html">对话地产界：专访星浩资本哈公司副总瞿吉辉</a><span>03-06 11:53</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0411/09/8S5ULBBQ0218rt.html">地产三巨头大论战:王石预言泡沫会破灭</a><span>04-11 09:10</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0409/09/8S0R8C380218rt.html">任志强：土地制度不改 今年房价仍涨</a><span>04-09 09:34</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0407/08/8RRJOINA0218rt.html">潘石屹:中国楼市泡沫可能在三五年内消化掉</a><span>04-07 08:47</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0403/10/8RHFC9110218rt.html">易宪容：房价理性回归关键在市场性质改变</a><span>04-03 10:18</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0401/13/8RCL5HH30218rt.html">多地细则未涉及20%个税 二三线城市从简</a><span>04-01 13:23</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0330/08/8R716C480218rt.html">秦虹分析楼市政策趋势：供给和需求要双向管理</a><span>03-30 08:57</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0327/12/8QVNOFBU0218rt.html">楼梯房加装电梯？理想很丰满现实很骨感</a><span>03-27 12:58</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0327/09/8QVAJ64A0218rt.html">林毅夫：房价高涨影响老百姓对未来信心</a><span>03-27 09:08</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0325/09/8QQ85H1O0218rt.html">吴敬琏：近年政府从造城运动赚土地差价30万亿</a><span>03-25 09:49</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0323/13/8QLH2QR10218rt.html">时评：在中国预测房价为何让很多人损失惨重</a><span>03-23 13:49</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0321/16/8QGKCE630218rt.html">房价预测的十年乱象：信专家 损失重</a><span>03-21 16:10</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0319/13/8QB4USPV0218rt.html">评论：距离国五条加码执行不远了</a><span>03-19 13:04</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0318/12/8Q8H3UCP0218rt.html">购房者纠结楼市新政：新盘和二手房哪个划算？</a><span>03-18 12:39</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0315/10/8Q0GS1CL0218rt.html">弃买改租 国五条出台拉升冰城租金上涨？</a><span>03-15 10:01</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0315/08/8Q0CP2KM0218rt.html">周小川：用调整首付比例等信贷政策控房价</a><span>03-15 08:49</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0313/14/8PRQLABU0218rt.html">王建立：未来房地产市场走势尚存变数</a><span>03-13 14:16</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0311/09/8PM565NT0218rt.html">国五条影响力分析：国五条未必捧高一手房价</a><span>03-11 09:24</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0311/13/8PMJO8D00218032K.html">贾康:"国五条"短期将推高房价 起一定抑制作用</a><span>03-11 13:39</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0311/13/8PMJBDM20218rt.html">全国政协委员吴志明：房地产价格要分类调控</a><span>03-11 13:32</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0309/10/8PH3GK910218rt.html">避国五条攻略分析：假离婚避税风险大于收益</a><span>03-09 10:19</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0309/16/8PHP97LA0218rt.html">潘石屹：开发商土地很多 百姓不用担心房价上涨</a><span>03-09 16:39</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0304/14/8P4L258K0218rt.html">评述：细则与两会 最严调控下的地产三月</a><span>03-04 14:16</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0302/09/8OUVF95G0218rt.html">业内解读卖房征20%个税:对二手房市场影响明显</a><span>03-02 09:22</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0228/12/8OQ6IICB0218rt.html">叶檀被指收好处费唱多房地产 回应称纯属谣言</a><span>02-28 12:50</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0225/11/8OIA3JIF0218rt.html">易宪容：国五条能遏制房地产投机 挤出泡沫</a><span>02-25 11:18</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0131/12/8MI2K6CO0218032K.html">牛刀：黎明前最黑暗 中国楼市投机客最后搏杀</a><span>01-31 12:36</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0223/09/8OD0K71O0218rt.html">新国五条打开政策窗口 哪些储备手段最可能出台</a><span>02-23 09:56</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0222/12/8OANUG0D0218rt.html">陈劲松:未来几十年中国主要城市房价不可能暴跌</a><span>02-22 12:46</span></li>
+			<li class="list-left"><a href="http://zh.house.163.com/special/022100O6/dcly_panshiyi.html">潘石屹十年楼市预测：不是很靠谱</a><span>02-19 12:44</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0204/10/8MS503QV0218032K.html">余丰慧：三项举措调控疯狂的房价</a><span>02-04 10:29</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0203/10/8MPIMA220218032K.html">房产税试点扩大或暂缓 楼市调控仍将收紧</a><span>02-03 10:31</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0130/14/8MFN1PKD0218rt.html">房价上涨挑战政策忍耐度：10%或是上限？</a><span>01-30 14:35</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0129/13/8MD08J440218rt.html">房字辈又添新成员 房姐房媳房祖宗齐齐现身</a><span>01-29 14:30</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0128/09/8M9VE7IM0218rt.html">王石：泡沫破灭论危言耸听 房价稍微有点偏高</a><span>01-28 09:06</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0125/10/8M2CM0G00218rt.html">观点时评：房产为什么会成为“烫手山芋”？</a><span>01-25 10:24</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0112/10/8L0VB8BT0218032G.html">张国栋:“凑份子”建房 仅有官方允许还不够</a><span>01-12 10:56</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0125/10/8M2DB9AJ0218rt.html">叶檀：三线城市空巢现象给城镇化敲响警钟</a><span>01-25 10:35</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0125/10/8M2D5FRK0218rt.html">朱大鸣：抛售豪宅是因为官场潜规则改变了？</a><span>01-25 10:32</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0121/13/8LOE8HK10218032K.html">陈淮：2013是市场与政策肩负重任的一年</a><span>01-21 13:39</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0121/13/8LODTBJ60218032K.html">杨国英：谨防“形紧实松”政策让房价再度失控</a><span>01-21 13:33</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0115/08/8L8F5MPD0218rt.html">潘石屹：拿地全是央企 国进民退感受很深</a><span>01-15 08:47</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0112/10/8L0VFIUJ0218032K.html">任志强：今年房价将稳中有升 调控不会大变</a><span>01-12 10:58</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0110/10/8KRPJ5G80218rt.html">郎咸平：房地产增值胜黄金 楼市最具投资价值</a><span>01-10 10:39</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0123/09/8LT3G14K0218rt.html">房地产杂音四起 信息不对称扰乱楼市预期</a><span>01-23 09:07</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0121/14/8LOFS6DC0218rt.html">若这样调控楼市 是敢想还是天真？</a><span>01-22 16:39</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0122/16/8LRA9FOF0218032K.html">王小广：要走“见房见人”的新型城镇化道路</a><span>01-22 16:27</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0119/13/8LJA80470218rt.html">三四线城市将尝房地产市场“大干快上”苦果</a><span>01-16 14:03</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0112/11/8L0VPHBH0218032K.html">孟晓苏：政府应当对全部城镇住房都征收房产税</a><span>01-12 11:03</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0121/13/8LOE6TAC0218032K.html">任志强:房价还会上涨 购房者更赚钱</a><span>01-21 13:38</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0121/13/8LOCHDS30218rt.html">万科总裁郁亮：房地产业进入“下半场”</a><span>01-21 13:15</span></li>
+			</ul>
+			<span class="blank6"></span>
+        	</div>
+			<span class="blank20"></span>
+            <div class="listPages">
+        		<span class="s1">上一页</span>
+                <a href="http://hrb.house.163.com/special/021802LS/tpxw.html" class="on" target="_self">1</a>
+                <a href="http://hrb.house.163.com/special/021802LS/tpxw_02.html" target="_self">2</a>
+                <a href="http://hrb.house.163.com/special/021802LS/tpxw_02.html" target="_self">下一页</a>
+			</div>
+</div>
+<span class="blank20"></span>
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 12px;
+	color: #535353;
+}
+a:link {
+	color: #535353;
+	text-decoration: none;
+}
+a:visited {
+	color: #535353;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #CC0000;
+}
+a:active {
+	text-decoration: none;
+	color: #CC0000;
+}
+-->
+</style><table width="960" height="38" border="0" bgcolor="" style="border:1px #D9D9D9 solid"> 
+<tr> 
+<td height="32" bgcolor="#F7F7F7">
+<div style="height:8px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+<table width="930" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><p align="left"><B>友情链接：</B><a href="http://beijing.chineseoffice.com.cn/" target="_blank">中国写字楼网</a>|<a href="http://www.wolai.com/" target="_blank">我来房产</a>|<a href="http://cq.house.163.com/" target="_blank">重庆房产</a>|<a href="http://sy.house.163.com/" target="_blank">沈阳房产</a>|<a href="http://dl.house.163.com/" target="_blank">大连房产</a>|<a href="http://wh.house.163.com/" target="_blank">武汉房产</a>|<a href="http://suzhou.house.163.com/" target="_blank">苏州房产</a>|<a href="http://wx.house.163.com/" target="_blank">无锡房产</a>|<a href="http://hz.house.163.com/" target="_blank">杭州房产</a>|<a href="http://fz.house.163.com/" target="_blank">福州房产</a>|<a href="http://xm.house.163.com/" target="_blank">厦门房产</a>|<a href="http://qz.house.163.com/" target="_blank">泉州房产</a>|<a href="http://nc.house.163.com/" target="_blank">南昌房产</a>|<a href="http://hrb.58.com/ershoufang/" target="_blank">哈尔滨二手房</a></td>
+    </tr>
+  </table><div style="height:5px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+  <table width="930" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><p align="left"><a href="http://cangzhou.cncn.com/" target="_blank">沧州旅游</a>|<a href="http://cc.house.163.com/" target="_blank">长春房产</a>|<a href="http://jn.house.163.com/" target="_blank">济南房产</a>|<a href="http://qd.house.163.com/" target="_blank">青岛房产</a>|<a href="http://nn.house.163.com/" target="_blank">南宁房产</a>|<a href="http://nj.house.163.com/" target="_blank">南京房产</a>|<a href="http://hf.house.163.com/" target="_blank">合肥房产</a>|<a href="http://km.house.163.com/" target="_blank">昆明房产</a>|<a href="http://sjz.house.163.com/" target="_blank">石家庄房产</a>|<a href="http://ts.house.163.com/" target="_blank">唐山房产</a>|<a href="http://qhd.house.163.com/" target="_blank">秦皇岛房产</a>|<a href="http://zz.house.163.com/" target="_blank">郑州房产</a>|<a href="http://ty.house.163.com/" target="_blank">
+太原房产</a>|<a href="http://xa.house.163.com/" target="_blank">西安房产</a>|<a href="http://www.hlj-rc.cn" target="_blank">黑龙江人才网</a></td>
+    </tr>
+  </table>
+  <div style="height:5px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+  <table width="930" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><p align="left"><a href="http://www.shzhidao.cn/" target="_blank">生活知道网</a>|<a href="http://cs.house.163.com/" 
+target="_blank">长沙房产</a>|<a href="http://heb.anjuke.com/" target="_blank">哈尔滨房产网</a>|<a href="http://weihai.house.163.com/" target="_blank">威海房产</a>|<a href="http://yt.house.163.com/" target="_blank">烟台房产</a>|<a href="  http://vip.cmbchina.com/" target="_blank">VIP尊享网</a>|<a href="http://www.csc86.com/" target="_blank">华南城网</a>|【友情链接QQ：93963129】</td>
+    </tr>
+  </table>
+  <div style="height:5px;overflow:hidden;background:#F7F7F7;width:900px;"></div></td>
+</tr> 
+</table>
+<style type="text/css">
+.nav_channel_end {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -67px repeat; height:37px; line-height:38px; overflow:hidden; width:960px; margin:0 auto;}
+.nav_channel_end .rightS {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) right -141px no-repeat; display:block; width:8px; height:37px; float:right; overflow:hidden;}
+.nav_channel_end .nav {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -30px no-repeat; height:37px; float:left; line-height:38px; color:#1E50A2; overflow:hidden;}
+.nav_channel_end .nav a {padding:0 5px; float:none; font-weight:normal; background:none;}
+.nav_channel_end .nav .firstNode {margin-left:8px; background:none;}
+.nav_channel_end .goHome {float:right; width:77px; height:18px; background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -178px no-repeat; overflow:hidden; margin:10px 5px 0 0; line-height:19px; text-align:left; text-indent:10px;}
+.nav_channel_end .nav a,.nav_channel_end .nav a:visited {color:#1E50A2;}
+.nav_channel_end .nav a:hover {color:#BA2636;}
+.nav_channel_end .search {float:right; display:inline; width:128px; height:20px; margin:8px 13px 0 0; overflow:hidden;}
+.nav_channel_end .search .textBox {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg.jpg) right -202px no-repeat; width:106px; height:20px; line-height:21px; text-indent:4px; padding:2px 0 0 0; border:none; line-height:18px; color:#727171; float:left;}
+.nav_channel_end .search .btn {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg.jpg) left -178px no-repeat; width:22px; height:20px; border:none; text-indent:-100em; cursor:pointer; float:left;}
+</style><br>
+<div class="nav_channel_end">
+	<span class="nav"><a href="http://www.163.com/" class="firstNode">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://travel.163.com/">旅游</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/blogs/">博客</a>-<a href="http://t.163.com/">微博</a>-<a href="http://help.3g.163.com/">手机版</a>
+    </span><span class="rightS"></span><span class="cBlue"><a target="_self" href="#top" class="goHome">返回顶部</a></span>
+</div>
+<span class="blank9"></span>
+<div class="foot">
+<div class="text">
+  <p><a href="http://post.news.163.com/msg/housemail.jsp">联系电话:0451-83076777</a>　<a href="mailto:house163_hrb@163.com">主编信箱</a></p>
+  
+</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+<span class="cRed">&copy;1997-2010</span>
+</div>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+    </script>
+</body>
+</html>

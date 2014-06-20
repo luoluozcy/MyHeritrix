@@ -1,0 +1,1538 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="zh-cn" />
+<title>西宁新楼盘_西宁房价_网易西宁房产</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<!--<meta name="keywords" content="网易房产,房产" />-->
+<meta name="keywords" content="西宁楼盘,西宁新楼盘,西宁楼价,网易西宁新楼盘库"/>
+
+<meta name="description" content="网易西宁房产-最详尽的西宁楼盘资料，专业的西宁新楼盘信息，每日更新的新楼盘优惠，提供最权威的西宁房价数据分析，为您找到最合适的西宁楼盘。" />
+<link href="http://img1.cache.netease.com/cnews/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/house/img13/kusearch1304/lpksearch.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://xf.house.163.com/product_other/js/jquery.js"></script>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.3.css" />
+<script charset="gb2312" src="http://img3.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+
+<script language=javascript src="/product_other/js/SuggestFramework.js"></script>
+<script language="javascript" src="/product_other/js/jquery.js"></script>
+<script type="text/javascript" src="/product_other/js/jquery.cookie.js"></script>
+<script language="javascript" src="/product_other/js/cookie.js"></script>
+<script language=javascript src="/product_other/js/chainSelect.js"></script>
+<script language=javascript src="/product_other/admin/js/JsonHelper.js"></script>
+<script language="javascript">var city = 'xn';</script>
+<script language=javascript src="/product_other/js/history.js"></script>
+<script language=javascript src="/xn/xn_advert.js"></script>
+<script language=javascript src="/product_other/js/_advert.js"></script>
+<script type="text/javascript">
+
+var list="";
+var list1="";
+list+=","+15503;
+list+=","+15504;
+list+=","+15505;
+list+=","+15506;
+list+=","+15508;
+list+=","+15507;
+list+=","+15509;
+list+=","+15510;
+list+=","+15511;
+list+=","+15512;
+
+function search(){
+	if(jQuery("#xf_keyword").val() == "输入中文/全拼/缩写"){
+    	jQuery("#xf_keyword").attr("value","");
+    }
+	var keyword = jQuery.trim(jQuery("#xf_keyword").val());
+	var url= getQueryUrl("keyword",keyword,null);
+    window.location.href=url;
+}
+
+function xfSearch(){
+  	if(jQuery("#xf_keyword").val() == "输入中文/全拼/缩写"){
+    	jQuery("#xf_keyword").attr("value","");
+    }
+    var keyword = jQuery.trim(jQuery("#xf_keyword").val());
+    var district = jQuery("#xf_district").val();
+    var plate = jQuery("#xf_plate").val();
+    var property = jQuery("#xf_property").val();
+    var price = jQuery("#xf_price").val();
+    var buystatus = jQuery("#buystatus").val();
+    if(district == "") district = "0";
+    if(plate == "") plate = "0";
+    if(property == "") property = "0";
+    if(price == "") price = "0";
+    if(buystatus == "") buystatus = "0";
+    
+	var metro = "0";
+	var base_lpts = "0";
+    if(district == "") district = "0";
+
+        	var buscycle = "0";
+        if(buscycle == "") buscycle = "0";
+
+
+        	var rentprice = "0";
+        if(rentprice == "") rentprice = "0";
+
+        	var mode="1";
+	
+    var buystatus="0";
+    var url = "/xn/search/"+district+"-"+plate+"-"+property+"-"+price+"-"+buystatus+"-"+metro+"-"+base_lpts+"-"+buscycle+'-'+rentprice+mode+"-1-1.html"
+    if(keyword != "") url += "?keyword=" + keyword;
+
+    document.location.href = url;
+  }
+  
+  
+	var paramObj={district:"0",plate:"0",property:"0",price:"0",buystatus:"0",metro:"0",base_lpts:"0",mode:"",firstchar:"",orderby:"0",p:"1"};
+
+	
+    function getQueryUrl(key,value,parent){
+      var url = "/xn/search/";
+      var query = "";
+      for(var prop in paramObj){
+        var param = paramObj[prop];
+        if(key == prop){
+             param = value;
+        }
+        if(key == "district" && prop == "plate") param = "0";    //点击的是区域，版块自动设0
+        if(key == "plate" && prop == "district") param = parent; //点击的是版块，区域自动设为它的父节点
+        if(key != "p" && prop == "p") param = "1";//点击的是非分页符,页数自动置1
+        if(param == "") param  = "0";
+        query += (query == "")?param:"-" + param;
+      }
+      url += query + ".html";
+      if(key == "keyword"){
+    	url += "?keyword="+value;
+      }
+      else if("" != ""){
+          url += "?keyword=";
+      }
+
+      //价格处理  
+      if(key == "price" && param!= "0"){
+          url = removePrice(url);
+      }else{
+      	url = addContionPrice(url);  
+      }
+      //价格处理end
+
+      url = encodeURI(url);
+      url = encodeURI(url);
+      
+      return url;
+    }
+
+
+    function getQueryUrlNoKey(key,value,parent){
+        var url = "/xn/search/";
+        var query = "";
+        for(var prop in paramObj){
+          var param = paramObj[prop];
+          if(key == prop){
+               param = value;
+          }
+          if(key == "district" && prop == "plate") param = "0";    //点击的是区域，版块自动设0
+          if(key == "plate" && prop == "district") param = parent; //点击的是版块，区域自动设为它的父节点
+          if(key != "p" && prop == "p") param = "1";//点击的是非分页符,页数自动置1
+          if(param == "") param  = "0";
+          query += (query == "")?param:"-" + param;
+        }
+        url += query + ".html";
+        if(key == "keyword"){
+      	url += "?keyword="+value;
+        }
+
+        url = encodeURI(url);
+        url = encodeURI(url);
+        
+        if(jQuery("#xf_keyword").val()!=""){
+	        url += "?keyword="+jQuery("#xf_keyword").val();
+	    }
+
+	    //价格处理  
+        if(key == "price" && param!= "0"){
+            url = removePrice(url);
+        }else{
+        	url = addContionPrice(url);  
+        }
+      	//价格处理end
+        
+        return url;
+      }
+
+	//点击灰色按钮去掉对应条件
+    function getQueryUrlRemoveCondition(key,value,parent){
+        var url = "/xn/search/";
+        var query = "";
+        for(var prop in paramObj){
+          var param = paramObj[prop];
+          if(key == prop){
+               param = 0;
+          }
+          if(key == "district" && prop == "plate") param = "0";    //点击的是区域，版块自动设0
+          if(key != "p" && prop == "p") param = "1";//点击的是非分页符,页数自动置1
+          if(param == "") param  = "0";
+          query += (query == "")?param:"-" + param;
+        }
+        url += query + ".html";
+        if(key == "keyword"){
+      	url += "?keyword="+value;
+        }
+
+        url = encodeURI(url);
+        url = encodeURI(url);
+        
+        if(jQuery("#xf_keyword").val()!=""){
+	        url += "?keyword="+jQuery("#xf_keyword").val();
+	      }
+
+      	//价格处理  
+        if(key == "price" && param!= "0"){
+            url = removePrice(url);
+        }else{
+        	url = addContionPrice(url);  
+        }
+        //价格处理end
+        
+        return url;
+      }
+
+	var id='';
+    function showTList(pid){
+      var ids =new Array();
+	  ids = id.split('@');
+	  for( var i=0;i<ids.length;i++){
+	    if( ids[i]!=''&& ids[i]!=pid ){
+	      document.getElementById(ids[i]).style.display='none';
+		}
+	  }
+	  document.getElementById("areaList").style.display='';
+	  document.getElementById("areaList1").style.display='none';
+	  document.getElementById(pid).style.display='';
+	  if(paramObj["plate"]==""){
+		jQuery('#li_'+paramObj["district"]).addClass("on");
+	  }
+	  id +='@'+pid;
+    }
+
+    function showTList1(pid){
+        var ids =new Array();
+  	  ids = id.split('@');
+  	  for( var i=0;i<ids.length;i++){
+  	    if( ids[i]!=''&& ids[i]!=pid ){
+  	      document.getElementById(ids[i]).style.display='none';
+  		}
+  	  }
+
+  	  document.getElementById("areaList").style.display='none';
+  	  document.getElementById("areaList1").style.display='';
+  	  
+  	  document.getElementById(pid).style.display='';
+  	  if(paramObj["plate"]==""){
+  		jQuery('#li_'+paramObj["district"]).addClass("on");
+  	  }
+  	  id +='@'+pid;
+      }
+
+
+
+    // 初始化新房搜索直达区域的区域和板块
+    function initXfZdPlates(){
+      var cs=new NSC_ChainSelect();
+      
+      if(paramObj["district"]=='' || paramObj["district"] == '0') {
+        cs.setSelect(jQuery('#xf_district').get(0),"不限",false);
+        showTList('allplate');
+        if (paramObj["plate"]!='' || paramObj["plate"] == '0') {                         
+          cs.setSelect(jQuery('#xf_plate').get(0),paramObj['plate'],false);
+        }
+      } else {      
+        cs.setSelect(jQuery('#xf_district').get(0),paramObj["district"],false);
+        showTList(paramObj["district"]);
+        if(paramObj["plate"]!='') {
+          cs.setSelect(jQuery('#xf_plate').get(0),paramObj['plate'],false);
+        }
+      }
+    }
+
+    jQuery(function(){
+      jQuery("#xf_keyword").attr("value","");
+        
+      jQuery("a[way]").each(function(){
+      	  var parent = "";
+      	  if(jQuery(this).attr('way') == "plate") parent = jQuery(this).parent().parent().attr('val');
+		  var url=getQueryUrlNoKey(jQuery(this).attr("way"),jQuery(this).attr("val"),parent);
+
+		    jQuery(this).attr('href',"http://xf.house.163.com"+url);
+    	  if(paramObj[jQuery(this).attr("way")]) {
+    		if(paramObj[jQuery(this).attr("way")]==jQuery(this).attr("val")&&(jQuery(this).attr("way")!="price"
+    	    		||(jQuery(this).attr("way")=="price"&&(""==""||""=="")))){
+		      jQuery(this).addClass("keyOn");
+    		}
+    	  }
+    	});
+
+
+      jQuery("a[way_remove]").each(function(){
+      	  var parent = "";
+      	  if(jQuery(this).attr('way_remove') == "plate") parent = jQuery(this).parent().parent().attr('val');
+		  var url=getQueryUrlRemoveCondition(jQuery(this).attr("way_remove"),jQuery(this).attr("val"),parent);
+
+		    jQuery(this).attr('href',"http://xf.house.163.com"+url);
+    	  if(paramObj[jQuery(this).attr("way_remove")]) {
+    		if(paramObj[jQuery(this).attr("way_remove")]==jQuery(this).attr("val")){
+		      jQuery(this).addClass("keyOn");
+    		}
+    	  }
+    	});
+    	
+    	jQuery(".hotTypeRow:last").addClass("noBg");	
+    	jQuery(".imgStyleRow:last").addClass("noBg");	
+    	jQuery(".txtStyleRow:last").addClass("noBg");	
+
+    	var flag=0;
+        if(paramObj["district"]!='' && paramObj["district"] != '0') {
+    		var str= list.split(',');
+    		for( var i=0;i<str.length;i++){
+    		    if( str[i]!=''&& str[i]==paramObj["district"] ){
+    		      flag=1;
+    			}
+    		  }
+
+        	if(flag==1){
+            	showTList(paramObj["district"]);
+        	}else{
+        		showTList1(paramObj["district"]);
+        	}
+          }
+
+    	//if(paramObj["district"]!='' && paramObj["district"] == '0'){
+            //showTList('allplate');
+    	//}
+        	
+    });
+
+
+    jQuery(document).ready(function(){
+  	  initializeSuggestFramework();
+	  setAdvert();
+  	});
+    
+    
+    function gop(){
+      var num = 0;
+      jQuery("input[name^=number]").each(function(){
+        var inputDom= jQuery(this);
+        var tmpnum = (typeof(inputDom.val())=='undefined')?0:parseInt(inputDom.val());
+        if(tmpnum>num){
+          num = tmpnum;
+        }
+      });
+      var totalPage = "6";
+      if (num>0 && totalPage != '' && num <= parseInt(totalPage)) {
+        var url = getQueryUrl("p",num,"");
+        window.location.href=url;
+      } else {
+        alert("请输入正确的数字");
+        return false;
+      }
+    }
+
+    function changePrice(){
+        if(jQuery("#price_min").val()==""){
+			alert("请填写最低价格");
+			return ;
+        }
+        if(jQuery("#price_max").val()==""){
+			alert("请填写最高价格");
+			return ;
+        }
+		if(!checkNumber(jQuery("#price_min").val())||!checkNumber(jQuery("#price_max").val())){
+			alert("请填写数字");
+			return;
+		}
+        
+    	var url = getQueryUrlRemoveCondition("price","","");
+    	url = removePrice(url);
+    	url = addPrice(url);
+    	window.location.href = url;
+    }
+
+    function checkNumber(numberStr) {
+    	  var regObj = /^[0-9]*$/g;
+    	  if (regObj.test(numberStr)) {
+    	    return true;
+    	  } else {
+    	    return false;
+    	  }
+    }
+
+    function addPrice(url){
+    	var reg = new RegExp("[\?]");
+    	if(reg.test(url)){
+    		url+="&price_min="+jQuery("#price_min").val()+"&price_max="+jQuery("#price_max").val();
+    	}else{
+    		url+="?price_min="+jQuery("#price_min").val()+"&price_max="+jQuery("#price_max").val();
+    	}
+    	return url;
+    }
+
+    function addContionPrice(url){
+    	var reg = new RegExp("[\?]");
+    	if("" != ""){
+    		if(reg.test(url)){
+        		url+="&price_min="+jQuery("#price_min").val();
+        	}else{
+        		url+="?price_min="+jQuery("#price_min").val();
+        	}
+        }
+
+    	if("" != ""){
+    		if(reg.test(url)){
+        		url+="&price_max="+jQuery("#price_max").val();
+        	}else{
+        		url+="?price_max="+jQuery("#price_max").val();
+        	}
+        }
+    	
+    	return url;
+    }
+
+    
+    
+    function removePrice(url){
+    	var reg=new RegExp("&price_min=(\\d+)","g");
+    	url = url.replace(reg,"");
+    	reg=new RegExp("[\?]price_min=(\\d+)&","g");
+    	url = url.replace(reg,"?");
+    	reg=new RegExp("[\?]price_min=(\\d+)$","g");
+    	url = url.replace(reg,"");
+
+    	reg=new RegExp("&price_max=(\\d+)","g");
+    	url = url.replace(reg,"");
+    	reg=new RegExp("[\?]price_max=(\\d+)&","g");
+    	url = url.replace(reg,"?");
+    	reg=new RegExp("[\?]price_max=(\\d+)$","g");
+    	url = url.replace(reg,"");
+
+    	return url;
+      }
+    
+	function changeOrderby(order){
+    	var url= getQueryUrl("orderby",order,null);
+        window.location.href=url;
+	}
+
+	function changeMode(mode){
+		var url= getQueryUrl("mode",mode,null);
+        window.location.href=url;
+	}
+
+	function displayButton(){
+		jQuery("#submitbutton").show();
+	}
+    
+</script>
+
+
+</head>
+<body>
+<div class="kuPAreaBg1 clearfix">
+<!-- end --><div class="NTES-nav">
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO || logstate=="1") {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0608.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+
+
+<a name="top" id="top"></a>
+<span class="blank6"></span>
+
+<div class="channel">
+<div class="gg960" id="show_pic7" style="display:none" ></div>
+<span class="blank6"></span>
+<div class="gg960" id="show_pic8" style="display:none" ></div>
+<span class="blank6"></span>
+<div class="gg960" id="show_pic9" style="display:none" ></div>
+<span class="blank6"></span>
+<span class="logo"><a href="http://house.163.com/" title="网易"><img src="http://img3.cache.netease.com/house/img09/channel1209/logo.jpg" width="107" height="24" alt="网易" /></a></span>
+<!--span class="logo2"><a href="#"><img src="/product_other/images/search/lpklogo.gif" width="79" height="27" alt="" /></a></span-->
+<p class="position cGray"><a href="http://www.163.com">网易首页</a> &gt; <a href="http://house.163.com">网易房产</a> &gt; <a href="http://xf.house.163.com/xn" title="西宁新楼盘库">西宁新楼盘库</a> &gt;
+<div class="top_search">
+	  <form target="_blank" id="formtopdigi" name="nisearch_top_digi" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="digi.163" name="keyfrom"/>  
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onFocus="this.value=''" id="searchInput_top_digi" name="q"/></label>
+<noscript><select name="site" class="left" style="display:none">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript> 
+        <div id="divSelectDigi" class="left">
+        </div> 
+        <input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="indigi" name="in"/>
+</form></div>
+<script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav_digi(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect_digi(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected_digi.removeChild(selected_digi.firstChild);
+                selected_digi.appendChild(txt);
+                select_main_digi.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName_digi").value = title;
+                if (title == "网易") {
+				document.nisearch_top_digi.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top_digi.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover_digi () {
+                this.className = "active";
+            }
+            function a_mouseout_digi () {
+                this.className = "";
+            }
+            $_G("divSelectDigi").innerHTML = '<input id="siteName_digi" type="hidden" value="网易" name="site" /><div id="select_area_digi" class="select_box"><span id="selected_digi" class="search_site">新闻</span><div id="select_main_digi" class="select_list" style="display:none"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area_digi = $_G("select_area_digi"), selected_digi = $_G("selected_digi"), select_main_digi = $_G("select_main_digi"), select_list_digi = select_main_digi.getElementsByTagName("a"), len_digi = select_list_digi.length;
+            select_area_digi.onclick = select_main_digi.onmouseover = function(){
+                select_main_digi.style.display = "block";
+            }
+            select_main_digi.onmouseout = function(){
+                select_main_digi.style.display = "none";
+            }
+            
+            for (var i = 0; i < len_digi; i++) {
+                select_list_digi[i].onclick = clickselect_digi;
+                select_list_digi[i].onmouseover = a_mouseover_digi;
+                select_list_digi[i].onmouseout = a_mouseout_digi;
+            }
+        })();
+//]]>
+
+</script>
+</div>
+<span class="blank9"></span>
+
+<div class="kuSChannel clearfix">
+<h2>搜索 &gt;&gt;</h2>
+<h3>直达楼盘：</h3>
+<div class="search"><div class="suggestFramework">
+<input type="text" name="xf_keyword" id="xf_keyword" class="searchInput01" value="输入中文/全拼/缩写" onfocus="this.value=''"  action="/xn/search!building.action" columns="1"/>
+</div> 
+<span><input name="" type="button" value="搜索" class="searchInput02" onclick="search();" /></span></div>
+<div class="sCity"><span class="k1">城市：</span><span class="k2">西宁</span><span class="k3"><a href="http://house.163.com/city/" title="点击进入选择城市"></a></span></div>
+</div>
+
+<div class="kuSearch clearfix">
+
+<div class="searchKey clearfix">
+        <div class="condition">
+        	<dl class="tab k1" id="areaMenu">
+            	<dt>区　　域：</dt>
+				<dd class="m1"><span><a href="#" way="district" val="0">不限</a></span></dd>
+																<dd><span><a href="#" way="district" val="15503">城东区</a></span></dd>
+																<dd><span><a href="#" way="district" val="15504">城中区</a></span></dd>
+																<dd><span><a href="#" way="district" val="15505">城西区</a></span></dd>
+																<dd><span><a href="#" way="district" val="15506">城北区</a></span></dd>
+																<dd><span><a href="#" way="district" val="15508">城南新区</a></span></dd>
+																<dd><span><a href="#" way="district" val="15507">西宁经济技术开发区</a></span></dd>
+																<dd><span><a href="#" way="district" val="15509">海湖新区</a></span></dd>
+																<dd><span><a href="#" way="district" val="15510">大通县</a></span></dd>
+																<dd><span><a href="#" way="district" val="15511">湟中县</a></span></dd>
+																<dd><span><a href="#" way="district" val="15512">湟源县</a></span></dd>
+											</dl>
+            <div class="key tab c2b" id="areaList" style="display:none">
+            	<ul  id="allplate" style="display:none" val="0">
+				<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+								  								  								  								  								  								  								  								  								  								  								</ul>		     
+				
+				 				             	  <ul  id="15503" style="display:none" val="15503">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15504" style="display:none" val="15504">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15505" style="display:none" val="15505">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15506" style="display:none" val="15506">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15508" style="display:none" val="15508">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15507" style="display:none" val="15507">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15509" style="display:none" val="15509">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15510" style="display:none" val="15510">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15511" style="display:none" val="15511">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												             	  <ul  id="15512" style="display:none" val="15512">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+									</ul>
+												<span class="clear"></span>
+            </div>
+            <span class="blank3"></span>
+			<!--          第二行  -->
+            <dl class="tab k1" id="areaMenu">
+																																																																																											</dl>
+            
+            
+            <div class="key tab c2b" id="areaList1" style="display:none">
+				 				 								 								 								 								 								 								 								 								 								 								<span class="clear"></span>
+            </div>
+            
+        </div>
+        <span class="blank15"></span>
+        <div class="condition c2b">
+        	<dl>
+            	<dt>售　　价：</dt>
+				  <dd><span><a href="#" way="price" val="0" title="不限售价" >不限售价</a></span></dd>
+				  				  				    <dd><span><a href="#" way="price" val="1" title="5000元以下">5000元以下</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="2" title="5000~10000元">5000~10000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="3" title="10000~15000元">10000~15000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="4" title="15000~20000元">15000~20000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="5" title="20000~30000元">20000~30000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="6" title="30000元以上">30000元以上</a></span></dd>
+          		            		  
+<dd class="k4 ">
+<span><input type="text" class="kInput01" value="" id="price_min" name="price_min" onFocus="displayButton();"/> - <input type="text" class="kInput01" value="" id="price_max" name="price_max" onFocus="displayButton();"/></span>
+<span class="k5" id="submitbutton" style="display: none"><input type="submit" value="确定" class="kInput02" onclick="changePrice();"/></span>
+</dd>
+            </dl>
+        </div>
+        <span class="blank15"></span>
+        <div class="condition c2b">
+        	<dl>
+            	<dt>物业类型：</dt>
+            	<dd><span><a href="#" way="property" val="0" title="全部物业">全部物业</a></span></dd>
+            	            	  <dd><span><a href="#" way="property" val="1" title="住宅">住宅</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="2" title="洋房">洋房</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="3" title="公寓">公寓</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="4" title="限价房">限价房</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="5" title="经适房">经适房</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="6" title="别墅">别墅</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="7" title="写字楼">写字楼</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="8" title="商铺">商铺</a></span></dd>
+          		            	  <dd><span><a href="#" way="property" val="9" title="城市综合体">城市综合体</a></span></dd>
+          		            </dl>
+        </div>
+			
+				        
+        <span class="blank15"></span>
+        
+        <div id="search_s_2a" style="display: none;">
+                
+        <span class="blank15"></span>
+        <div class="condition c2b">
+          <dl>
+            	<dt>销售状态：</dt>
+                <dd><span><a href="#" way="buystatus" val="0" title="不限">不限</a></span></dd>
+                                  <dd><span><a href="#" way="buystatus" val="1" title="待售">待售</a></span></dd>
+				                  <dd><span><a href="#" way="buystatus" val="2" title="在售">在售</a></span></dd>
+				                  <dd><span><a href="#" way="buystatus" val="3" title="售完">售完</a></span></dd>
+				                  <dd><span><a href="#" way="buystatus" val="4" title="在租">在租</a></span></dd>
+				         </dl>
+        </div>
+        
+        
+        <span class="blank15"></span>
+        <div class="condition c2b">
+          <dl>
+            <dt class="k3">楼盘特色：</dt>
+            <dd class="k3"><span><a href="#" way="base_lpts" val="0" title="不限特色">不限特色</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="1" title="地铁沿线"><img src="/product_other/images/dtyx.gif" width="24" height="24" /><br />地铁沿线</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="6" title="名校配套"><img src="/product_other/images/mxpt.gif" width="24" height="24" /><br />名校配套</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="5" title="大型社区"><img src="/product_other/images/dxsq.gif" width="24" height="24" /><br />大型社区</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="2" title="江景楼盘"><img src="/product_other/images/jjlp.gif" width="24" height="24" /><br />江景楼盘</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="3" title="豪华公寓"><img src="/product_other/images/hhgy.gif" width="24" height="24" /><br />豪华公寓</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="4" title="高档豪宅"><img src="/product_other/images/gdhz.gif" width="24" height="24" /><br />高档豪宅</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="8" title="投资地产"><img src="/product_other/images/tzdc.gif" width="24" height="24" /><br />投资地产</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="10" title="公园景观"><img src="/product_other/images/gyjg.gif" width="24" height="24" /><br />公园景观</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="11" title="生态宜居"><img src="/product_other/images/styj.gif" width="24" height="24" /><br />生态宜居</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="12" title="商业中心"><img src="/product_other/images/syzx.gif" width="24" height="24" /><br />商业中心</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="13" title="幸福婚房"><img src="/product_other/images/xfhf.gif" width="24" height="24" /><br />幸福婚房</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="14" title="品牌地产"><img src="/product_other/images/ppdc.gif" width="24" height="24" /><br />品牌地产</a></span></dd>
+          </dl>
+        </div>
+        
+        <div class="condition c2b">
+          <dl>
+            <dt class="k3">首字母：</dt>
+            <dd class="k3"><span><a href="#" way="firstchar" val="0">不限</a></span></dd>
+                              <dd class="k3"><span><a href="#" way="firstchar" val="1" title="A">A</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="2" title="B">B</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="3" title="C">C</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="4" title="D">D</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="5" title="E">E</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="6" title="F">F</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="7" title="G">G</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="8" title="H">H</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="9" title="I">I</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="10" title="J">J</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="11" title="K">K</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="12" title="L">L</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="13" title="M">M</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="14" title="N">N</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="15" title="O">O</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="16" title="P">P</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="17" title="Q">Q</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="18" title="R">R</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="19" title="S">S</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="20" title="T">T</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="21" title="U">U</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="22" title="V">V</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="23" title="W">W</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="24" title="X">X</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="25" title="Y">Y</a></span></dd>
+			                  <dd class="k3"><span><a href="#" way="firstchar" val="26" title="Z">Z</a></span></dd>
+			          </dl>
+        </div>
+        
+        
+        </div>
+        
+        <span class="blank15"></span>
+                <span class="blank9"></span>
+<!--<div class="c1"><h3><a href="#">使用多选搜索</a></h3></div>        -->
+</div>
+
+<div class="c1 clearfix"><h3 class="k1Bg1"" id="search_s_1b"><a target="_self" ></a></h3></div>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery(".k1Bg1").click(function(){
+		jQuery("#search_s_2a").slideToggle("slow");
+		jQuery(this).toggleClass("k1Bg2"); return false;
+	}); 
+});
+</script>
+
+</div>
+
+<span class="blank15"></span>
+
+<!--begin-->
+<div class="kuSearchList4 clearfix">
+<div class="c1 clearfix">
+<div class="c1L">排序：
+<span  class="k2 kDown" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('1');" >人气<span class="k3"></span></a></span>
+<span  class="k2 kUp" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('21');" >价格<span class="k3"></span></a></span> 
+<span  class="k2 kDown" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('3');" >团购人数<span class="k3"></span></a></span>
+<span  class="k2 kDown" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('4');" >更新时间<span class="k3"></span></a></span>
+
+</div>
+<div class="c1R">
+<span class="k5"><a style="cursor:pointer" onclick="javascript:changeMode('0')"><span class="k5_1"></span>切换到列表</a></span>
+
+<script type="text/javascript">
+//<![CDATA[
+function show_hCnt(show1) { 
+document.getElementById(show1).style.display="block";
+}
+function hide_hCnt(hide1) { 
+document.getElementById(hide1).style.display="none";
+}
+//]]>
+</script>
+</div>
+</div>
+<div class="c2 clearfix">
+<h2>共找到<span class="k1">89</span>个符合条件的楼盘</h2>
+</div>
+</div>
+<!--end-->
+<span class="blank9"></span>
+
+
+<script type="text/javascript">
+//<![CDATA[
+function showPf(show1,show2) { 
+document.getElementById(show1).style.display="block";
+document.getElementById(show2).style.border="1px solid #ccc";
+}
+function hidePf(hide1,hide2) { 
+document.getElementById(hide1).style.display="none";
+document.getElementById(hide2).style.border="1px solid #fff";
+}
+//]]>
+</script>
+<div class="kuSearchList2 clearfix">
+<ul>
+
+
+
+<li>
+<div class="c1" id="pingfenD1"><div class="c2"><div class="k1">
+<a href="/xn/0OWD.html" target="_blank">
+
+<img src="/product_other/images/noimg.jpg" width="300" height="225" alt="test5556_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0OWD.html" target="_blank">test5556</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 70 </span></div>
+<div class="k3">价格：
+<span class="m1">
+待定
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="">地址：</a>&nbsp;&nbsp;<a href="/xn/map/0OWD.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen1','pingfenD1')" onmouseout="hidePf('pingfen1','pingfenD1')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen1" onmouseover="showPf('pingfen1','pingfenD1')" onmouseout="hidePf('pingfen1','pingfenD1')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0OWD.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0OWD.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0OWD.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0OWD.html" target="_blank">图库(<span class="cDRed">1</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0OWD.html" target="_blank">团购(<span class="cDRed">0</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD2"><div class="c2"><div class="k1">
+<a href="/xn/0PPY.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-14/1352884902757.jpg" width="300" height="225" alt="新力景瑞新城_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PPY.html" target="_blank">新力景瑞新城</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 1687 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	4690 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="西宁（国家级）经济技术开发区西宁（国家级）经济技术开发区东川工业园区金桥路">地址：西宁（国家级）经济技术开发区西宁（国家级）经济技术开发区东川工业...</a>&nbsp;&nbsp;<a href="/xn/map/0PPY.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen2','pingfenD2')" onmouseout="hidePf('pingfen2','pingfenD2')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen2" onmouseover="showPf('pingfen2','pingfenD2')" onmouseout="hidePf('pingfen2','pingfenD2')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PPY.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PPY.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PPY.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PPY.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PPY.html" target="_blank">团购(<span class="cDRed">1</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD3"><div class="c2"><div class="k1">
+<a href="/xn/0PRL.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352956396592.jpg" width="300" height="225" alt="东方明珠_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRL.html" target="_blank">东方明珠</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 5705 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	5900 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="城中区西宁市城中区花园北街21号（军区招待所对面）">地址：城中区西宁市城中区花园北街21号（军区招待所对面）</a>&nbsp;&nbsp;<a href="/xn/map/0PRL.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen3','pingfenD3')" onmouseout="hidePf('pingfen3','pingfenD3')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen3" onmouseover="showPf('pingfen3','pingfenD3')" onmouseout="hidePf('pingfen3','pingfenD3')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRL.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRL.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRL.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRL.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRL.html" target="_blank">团购(<span class="cDRed">12</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD4"><div class="c2"><div class="k1">
+<a href="/xn/0PRN.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352957373470.jpg" width="300" height="225" alt="怡馨花园_网易房产" /></a>
+<span class="bq2Bg01">编辑推荐</span>
+</div><div class="k2"><h2><a href="/xn/0PRN.html" target="_blank">怡馨花园</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 4193 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	4450 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="城南新区西宁市南川东路53号（南川商场附近）">地址：城南新区西宁市南川东路53号（南川商场附近）</a>&nbsp;&nbsp;<a href="/xn/map/0PRN.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen4','pingfenD4')" onmouseout="hidePf('pingfen4','pingfenD4')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen4" onmouseover="showPf('pingfen4','pingfenD4')" onmouseout="hidePf('pingfen4','pingfenD4')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRN.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRN.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRN.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRN.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRN.html" target="_blank">团购(<span class="cDRed">7</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD5"><div class="c2"><div class="k1">
+<a href="/xn/0PRM.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352956982663.jpg" width="300" height="225" alt="力盟尚都_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRM.html" target="_blank">力盟尚都</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 4494 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	7200 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="城西区西宁市五四大街37号（原商业厅大院）">地址：城西区西宁市五四大街37号（原商业厅大院）</a>&nbsp;&nbsp;<a href="/xn/map/0PRM.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen5','pingfenD5')" onmouseout="hidePf('pingfen5','pingfenD5')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen5" onmouseover="showPf('pingfen5','pingfenD5')" onmouseout="hidePf('pingfen5','pingfenD5')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRM.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRM.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRM.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRM.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRM.html" target="_blank">团购(<span class="cDRed">6</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD6"><div class="c2"><div class="k1">
+<a href="/xn/0PRO.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352957804598.jpg" width="300" height="225" alt="聚和园_网易房产" /></a>
+<span class="bq2Bg01">热销</span>
+</div><div class="k2"><h2><a href="/xn/0PRO.html" target="_blank">聚和园</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 2954 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	4598 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="城北区西宁生物园区光明街（北出口茶园对面）">地址：城北区西宁生物园区光明街（北出口茶园对面）</a>&nbsp;&nbsp;<a href="/xn/map/0PRO.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen6','pingfenD6')" onmouseout="hidePf('pingfen6','pingfenD6')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen6" onmouseover="showPf('pingfen6','pingfenD6')" onmouseout="hidePf('pingfen6','pingfenD6')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRO.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRO.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRO.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRO.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRO.html" target="_blank">团购(<span class="cDRed">0</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD7"><div class="c2"><div class="k1">
+<a href="/xn/0PRQ.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352959135357.jpg" width="300" height="225" alt="三和翠雍天地三期_网易房产" /></a>
+<span class="bq2Bg01">热销</span>
+</div><div class="k2"><h2><a href="/xn/0PRQ.html" target="_blank">三和翠雍天地三期</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 6636 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	5300 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="西宁（国家级）经济技术开发区西宁市八一中路一号（民和路二号/青海民族大学以东）">地址：西宁（国家级）经济技术开发区西宁市八一中路一号（民和路二号/青海...</a>&nbsp;&nbsp;<a href="/xn/map/0PRQ.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen7','pingfenD7')" onmouseout="hidePf('pingfen7','pingfenD7')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen7" onmouseover="showPf('pingfen7','pingfenD7')" onmouseout="hidePf('pingfen7','pingfenD7')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRQ.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRQ.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRQ.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRQ.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRQ.html" target="_blank">团购(<span class="cDRed">7</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD8"><div class="c2"><div class="k1">
+<a href="/xn/0PRV.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352960463253.jpg" width="300" height="225" alt="盛达国际新城_网易房产" /></a>
+<span class="bq2Bg01">编辑推荐</span>
+</div><div class="k2"><h2><a href="/xn/0PRV.html" target="_blank">盛达国际新城</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 5117 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	5500 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="海湖新区海湖新区体育馆西侧">地址：海湖新区海湖新区体育馆西侧</a>&nbsp;&nbsp;<a href="/xn/map/0PRV.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen8','pingfenD8')" onmouseout="hidePf('pingfen8','pingfenD8')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen8" onmouseover="showPf('pingfen8','pingfenD8')" onmouseout="hidePf('pingfen8','pingfenD8')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRV.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRV.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRV.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRV.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRV.html" target="_blank">团购(<span class="cDRed">9</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD9"><div class="c2"><div class="k1">
+<a href="/xn/0PRU.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352960444541.jpg" width="300" height="225" alt="民贸新天地_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRU.html" target="_blank">民贸新天地</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 1078 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  3840 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="西宁市大通县人民路与建国西路交汇处 ">地址：西宁市大通县人民路与建国西路交汇处 </a>&nbsp;&nbsp;<a href="/xn/map/0PRU.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen9','pingfenD9')" onmouseout="hidePf('pingfen9','pingfenD9')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen9" onmouseover="showPf('pingfen9','pingfenD9')" onmouseout="hidePf('pingfen9','pingfenD9')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRU.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRU.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRU.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRU.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRU.html" target="_blank">团购(<span class="cDRed">0</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD10"><div class="c2"><div class="k1">
+<a href="/xn/0PRW.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352960872438.jpg" width="300" height="225" alt="黄河花园_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRW.html" target="_blank">黄河花园</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 13013 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	3700 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="城南新区城南新区新城大道与园丁园交汇处（仁济医院对面）">地址：城南新区城南新区新城大道与园丁园交汇处（仁济医院对面）</a>&nbsp;&nbsp;<a href="/xn/map/0PRW.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen10','pingfenD10')" onmouseout="hidePf('pingfen10','pingfenD10')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen10" onmouseover="showPf('pingfen10','pingfenD10')" onmouseout="hidePf('pingfen10','pingfenD10')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRW.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRW.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRW.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRW.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRW.html" target="_blank">团购(<span class="cDRed">5</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD11"><div class="c2"><div class="k1">
+<a href="/xn/0PRX.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352960897303.jpg" width="300" height="225" alt="恒昌卢浮公馆_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRX.html" target="_blank">恒昌卢浮公馆</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 3962 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	6800 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="海湖新区西宁市海湖新区 ">地址：海湖新区西宁市海湖新区 </a>&nbsp;&nbsp;<a href="/xn/map/0PRX.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen11','pingfenD11')" onmouseout="hidePf('pingfen11','pingfenD11')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen11" onmouseover="showPf('pingfen11','pingfenD11')" onmouseout="hidePf('pingfen11','pingfenD11')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRX.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRX.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRX.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRX.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRX.html" target="_blank">团购(<span class="cDRed">3</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD12"><div class="c2"><div class="k1">
+<a href="/xn/0PRY.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352961385379.jpg" width="300" height="225" alt="西城名邸_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRY.html" target="_blank">西城名邸</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 15281 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	4500 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="海湖新区西宁海湖新区C03地块">地址：海湖新区西宁海湖新区C03地块</a>&nbsp;&nbsp;<a href="/xn/map/0PRY.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen12','pingfenD12')" onmouseout="hidePf('pingfen12','pingfenD12')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen12" onmouseover="showPf('pingfen12','pingfenD12')" onmouseout="hidePf('pingfen12','pingfenD12')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRY.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRY.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRY.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRY.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRY.html" target="_blank">团购(<span class="cDRed">25</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD13"><div class="c2"><div class="k1">
+<a href="/xn/0PRR.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352959542244.gif" width="300" height="225" alt="盈吉时代大厦_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRR.html" target="_blank">盈吉时代大厦</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 2205 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	4700 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="城东区西宁市城东区金汇路与沪宁路交叉口">地址：城东区西宁市城东区金汇路与沪宁路交叉口</a>&nbsp;&nbsp;<a href="/xn/map/0PRR.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen13','pingfenD13')" onmouseout="hidePf('pingfen13','pingfenD13')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen13" onmouseover="showPf('pingfen13','pingfenD13')" onmouseout="hidePf('pingfen13','pingfenD13')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRR.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRR.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRR.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRR.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRR.html" target="_blank">团购(<span class="cDRed">2</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD14"><div class="c2"><div class="k1">
+<a href="/xn/0PRZ.html" target="_blank">
+
+<img src="/product_other/images/noimg.jpg" width="300" height="225" alt="瑞和佳苑_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRZ.html" target="_blank">瑞和佳苑</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 3647 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	4900 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="城南新区西宁南川东路135路（原青海省汽车改装厂）">地址：城南新区西宁南川东路135路（原青海省汽车改装厂）</a>&nbsp;&nbsp;<a href="/xn/map/0PRZ.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen14','pingfenD14')" onmouseout="hidePf('pingfen14','pingfenD14')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen14" onmouseover="showPf('pingfen14','pingfenD14')" onmouseout="hidePf('pingfen14','pingfenD14')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRZ.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRZ.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRZ.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRZ.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRZ.html" target="_blank">团购(<span class="cDRed">1</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD15"><div class="c2"><div class="k1">
+<a href="/xn/0PRT.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0246/2012-11-15/1352960072986.jpg" width="300" height="225" alt="盛锦华庭_网易房产" /></a>
+</div><div class="k2"><h2><a href="/xn/0PRT.html" target="_blank">盛锦华庭</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气： 1211 </span></div>
+<div class="k3">价格：
+<span class="m1">
+	3580 元/㎡
+
+</span>
+<br />电话：<br /><a style="text-decoration:none;color: #2B2B2B" title="大通县青海大通县解放南路106号">地址：大通县青海大通县解放南路106号</a>&nbsp;&nbsp;<a href="/xn/map/0PRT.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen15','pingfenD15')" onmouseout="hidePf('pingfen15','pingfenD15')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen15" onmouseover="showPf('pingfen15','pingfenD15')" onmouseout="hidePf('pingfen15','pingfenD15')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_other/images/radar.swf?url=/xn/base/score/0PRT.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_other/images/radar.swf?url=/xn/base/score/0PRT.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/xn/0PRT.html" target="_blank">详细</a> | <a href="/xn/photo/huxing/0PRT.html" target="_blank">图库(<span class="cDRed">0</span>张)</a> | <a href="http://bbs.gz.house.163.com/list/xining.html" target="_blank">论坛</a> | <a href="/xn/groupbuy/0PRT.html" target="_blank">团购(<span class="cDRed">0</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+</ul>
+</div>
+
+<div class="kuSTurnPage clearfix">
+<span class="now">1</span><a href='/xn/search/0-0-0-0-0-0-0-1-0-0-2.html'>2</a> <a href='/xn/search/0-0-0-0-0-0-0-1-0-0-3.html'>3</a> <a href='/xn/search/0-0-0-0-0-0-0-1-0-0-4.html'>4</a> <a href='/xn/search/0-0-0-0-0-0-0-1-0-0-5.html'>5</a> <span class="more">...</span><a href='/xn/search/0-0-0-0-0-0-0-1-0-0-6.html'>6</a> <a href='/xn/search/0-0-0-0-0-0-0-1-0-0-2.html'>下一页&raquo;</a> <span class="jump"><input type="hidden" id="urlparam" name="urlparam" value="0-0-0-0-0-0-0-1-0-0" /><input type="text" class="txt" id="number" name="number" size="4" />页<input type="button" class="bt" value="GO" onclick="gop()" /></span>
+</div>
+
+
+
+<span class="blank15"></span>
+<span class="kuPAreaBg1End"></span>
+
+</div>
+<span class="blank9"></span>
+<script>!function(i){function n(){}function t(){var i=Math.round((+new Date-D)/1e3);return 0>i?0:i}function e(i){var n=i.className,t=s(i),e={script:1,style:1,link:1,img:1,hr:1,br:1},a=!0;return e[t]?a=!1:/blank\d/.test(n)&&(a=!1),a}function a(n){C||(v&&window._ntes_sendInfo?(i.each(_,function(i,n){u(n)}),C=!0):_.push(n)),C&&u(n)}function f(i){return 10>i?i.toString():i>62?"z":String.fromCharCode(i+(36>i?55:61))}function r(i,n){if(!n)return i;var t=i.length-1,e=i.charCodeAt(t);return 58>e?e-=48:91>e?e-=55:123>e&&(e-=61),i.substr(0,t)+f(e+n)}function o(i,n,t){n&&n.setAttribute((t?"_":"")+"jcid",i)}function c(i){if(i){var n=this.getAttribute("href")||"";k++;var e="/ntes_p?"+g+"&_nct="+t()+"&_nah="+escape(n)+"&_nat={id}_"+i;a(e)}}function u(i){_ntes_sendInfo("jc",_ntes_src_addr+i.replace("{id}",v))}function h(i,n,t){for(var e=0,a={a:1,area:1};!a[s(i)]&&!(t=i.getAttribute("_jcid"));)if(i=i.parentNode,!i.tagName||e++>5)return;var f=i;if(!t)for(;i&&i!=n&&!(t=i.getAttribute("jcid"));)i=i.parentNode;f&&t&&c.call(f,t)}function s(i){return i.tagName.toLowerCase()}function d(n,t,e){if("iframe"!=s(n))t(n,e);else{var a,f=l(n),r=function(){if("function"==typeof a&&a.call(this),f=l(n)){var r=f.body;i(r).addEvent("click",function(i){var n=i.target;h(n,r)}),t(r,e)}};f&&/^http/.test(f.location.href)?r():n.attachEvent?n.attachEvent("onload",r):(a=n.onload,n.onload=r)}}function l(i){var n;try{n=i.contentDocument}catch(t){}if(!n&&i.contentWindow){try{var e=i.contentWindow.document;"object"==typeof e&&(n=e)}catch(t){}if(!n)return null}var a=1;try{n.location&&(a=0)}catch(t){}return a?null:n}var v,p,g="_nacc=siteclick&_npurl="+escape(document.URL),k=0,C=!1,_=[],E=document.body,m=i(window),b=window.performance,D=b&&b.timing?b.timing.connectStart:+new Date,w=[function(i,n,t){o(i+f(t.start||1),n,t.all)},function(n,t,e){var a=e.start||1;i("a",t).each(function(i,t){o(n+f(a++),t)})},function(n,t,a){for(var r=1,c=a.level||1,u=[t],h=0;c>h;h++){var d=[];i.each(u,function(n,t){var a=0;"a"==s(t)||/ntes-nav-select/.test(t.className)||i.each(t.children,function(i,n){e(n)&&(d.push(n),a++)}),a||d.push(t)}),u=d}i.each(u,function(i,t){o(n+f(r++),t)})},function(n,t){var e=i(">form",t);e[0]&&e.addEvent("submit",function(){c.call(this,n+"1")})},function(n,t,e){var a=i(e.h,t),r=i(e.b,t);if(a&&r){var c=e.step||10,u=2;o(n+"1",t),a.each(function(i,t){o(n+f(u+i*c),t)}),r.each(function(i,t){o(n+f(u+i*c+1),t)})}},function(n,t,a){var r=a.union||"",c={};if(/^[\s\d,]+$/.test(r)){var u=0;i.each(r.split(/\s*,\s*/),function(i,n){if(n=parseInt(n))for(var t=0;n>t;t++)c[u++]=i})}var h=2;o(n+"1",t);var s=parseInt(a.step)||10,d=i(a.h,t);if(d&&l){i.each(d,function(i,t){o(n+f(i*s+h),t)});var l=i(a.b,t);i.each(l,function(t,a){var r=t*s+h+1,u=a.children;if(0==u.length)u=[a];else for(;1==u.length;)u=u[0].children;var d=0;i.each(u,function(i,t){e(t)&&("undefined"!=typeof c[i]&&(d=c[i]),o(n+f(r+d),t),d++)})})}}];n.prototype={init:function(n,e){n&&5==n.length&&(v=n),p||(p=Math.random()<(e||.1),p&&(i("body").addEvent("click",function(i){h(i.target,E)}),i.ready(function(){function i(){n&&(a("/ntes_u?"+n+"&_nct="+t()+"&_mcn="+k+e),n=0)}var n=g+"&_nch={id}",e="",f="&_msl="+t();m.addEvent("load",function(){e="&_msl="+t()}),a("/ntes_u?"+n+f),m.addEvent("beforeunload",i);var r=navigator.userAgent.toLowerCase();!/compatible/.test(r)&&/firefox/.test(r)&&m.addEvent("unload",i)}),this.retain&&this.area(E,this.retain)))},area:function(n,t){var e=this,a=function(i,n){e.area(i,n)};for(var f in t){var r=t[f],o=0;/(.*?)\*$/.test(f)&&(f=RegExp.$1,o=1);var c=f?/^#/.test(f)?i(f):i(f,n):[n];i.util.isArray(c)||(c=[c]);for(var u=0;u<c.length;u++){var h=o?r[0]:r[u];if(h&&c[u])if(h.i)for(var s=h.s||1,l=0;s>l;l++)h.j=l,this.zone(c[u+l],h);else d(c[u],a,h)}}},zone:function(n,t){var e=r(t.i,t.j),a=w[t.f||0],f=t.p||{};n&&a&&(f.dyn?i(n).addEvent("mouseover",function(){for(var i,t=n.children[0];t&&(i=t.children[0]);)t=i;t&&!t.getAttribute("jdyn")&&(a(e,n,f),t.setAttribute("jdyn",1))}):d(n,function(i){a(e,i,f)}))},batch:function(i){p?this.area(E,i):this.retain=i}},window._aCM=new n}(NTES),function(){_aCM.init("fcp01"),setTimeout(function(){_aCM.batch({".nav-link":[{"":[{"":[{i:"111",f:1}]}]}],".rightCon":[{"":[{"":[{i:"211"}]}]}],".NTES-nav-rss":[{"":[{"":[{i:"311"}]}]}],".logo":[{"":[{"":[{i:"411"}]}]}],".logo2":[{"":[{"":[{i:"511"}]}]}],".position":[{"":[{"":[{i:"611",f:1}]}]}],".top_search":[{"":[{"":[{i:"711",f:3}]}]}],".kuSChannel>h2":[0,{"":[{"":[{i:"811"}]}]}],".searchKey":[{"*#areaMenu":[{">.m1":[{i:"911"}],">dd":[0,{i:"912"},{i:"913"},{i:"914"},{i:"915"},{i:"916"},{i:"917"},{i:"918"},{i:"919"},{i:"91A"},{i:"91B"},{i:"91C"},{i:"91D"},{i:"91E"},{i:"91F"}]}],"#areaList":[{"#allplate":[{i:"921",f:2}],"#239":[{i:"922",f:2}],"#150":[{i:"923",f:2}],"#269":[{i:"924",f:2}],"#180":[{i:"925",f:2}],"#140":[{i:"926",f:2}],"#305":[{i:"927",f:2}],"#214":[{i:"928",f:2}],"#201":[{i:"929",f:2}],"#165":[{i:"92A",f:2}],"#206":[{i:"92B",f:2}],"#294":[{i:"92C",f:2}],"#315":[{i:"92D",f:2}],"#299":[{i:"92E",f:2}],"#307":[{i:"92F",f:2}]}],dl:[0,0,{span:[{i:"931",s:6}]},{">dd":[{i:"941",s:9}]},{">dd":[{i:"951",s:16}]}],".condition":[0,0,0,0,{dd:[{i:"961",s:19}]},{span:[{i:"971",s:5}]},{".k3":[0,{i:"981"}],".k2":[{i:"982",s:12}]}]}],".c1":[{"#search_s_1b":[{"":[{i:"A11"}]}]},{".kDown":[{"":[{i:"B11"}]},{"":[{i:"B41"}]},{"":[{i:"B51"}]}],".kUp":[{"":[{i:"B21"}]}],".kDownOn":[{"":[{i:"B31"}]}],".k4":[{li:[{i:"B61",s:5}]},{li:[{i:"B71",s:5}]}],".k5":[{"":[{i:"B81"}]}]}],ul:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{".k1":[{"":[{i:"C11"}]},{"":[{i:"C51"}]},{"":[{i:"C91"}]}],".k2":[{">h2":[{i:"C21"}]},{">h2":[{i:"C61"}]},{">h2":[{i:"CA1"}]}],".k3":[{"":[{i:"C31",f:1}]},{"":[{i:"C71",f:1}]},{"":[{i:"CB1",f:1}]}],"#pingfen1":[{">h3":[{i:"C41"}]}],"#pingfen2":[{">h3":[{i:"C81"}]}],"#pingfen3":[{">h3":[{i:"CC1"}]}]},{".k1":[{"":[{i:"D11"}]},{"":[{i:"D51"}]},{"":[{i:"D91"}]}],".k2":[{">h2":[{i:"D21"}]},{">h2":[{i:"D61"}]},{">h2":[{i:"DA1"}]}],".k3":[{"":[{i:"D31",f:1}]},{"":[{i:"D71",f:1}]},{"":[{i:"DB1",f:1}]}],"#pingfen4":[{">h3":[{i:"D41"}]}],"#pingfen5":[{">h3":[{i:"D81"}]}],"#pingfen6":[{">h3":[{i:"DC1"}]}]},{".k1":[{"":[{i:"E11"}]},{"":[{i:"E51"}]},{"":[{i:"E91"}]}],".k2":[{">h2":[{i:"E21"}]},{">h2":[{i:"E61"}]},{">h2":[{i:"EA1"}]}],".k3":[{"":[{i:"E31",f:1}]},{"":[{i:"E71",f:1}]},{"":[{i:"EB1",f:1}]}],"#pingfen7":[{">h3":[{i:"E41"}]}],"#pingfen8":[{">h3":[{i:"E81"}]}],"#pingfen9":[{">h3":[{i:"EC1"}]}]},{".k1":[{"":[{i:"F11"}]},{"":[{i:"F51"}]},{"":[{i:"F91"}]}],".k2":[{">h2":[{i:"F21"}]},{">h2":[{i:"F61"}]},{">h2":[{i:"FA1"}]}],".k3":[{"":[{i:"F31",f:1}]},{"":[{i:"F71",f:1}]},{"":[{i:"FB1",f:1}]}],"#pingfen10":[{">h3":[{i:"F41"}]}],"#pingfen11":[{">h3":[{i:"F81"}]}],"#pingfen12":[{">h3":[{i:"FC1"}]}]},{".k1":[{"":[{i:"G11"}]},{"":[{i:"G51"}]},{"":[{i:"G91"}]}],".k2":[{">h2":[{i:"G21"}]},{">h2":[{i:"G61"}]},{">h2":[{i:"GA1"}]}],".k3":[{"":[{i:"G31",f:1}]},{"":[{i:"G71",f:1}]},{"":[{i:"GB1",f:1}]}],"#pingfen13":[{">h3":[{i:"G41"}]}],"#pingfen14":[{">h3":[{i:"G81"}]}],"#pingfen15":[{">h3":[{i:"GC1"}]}]}],".kuSTurnPage":[{"":[{"":[{i:"H11",f:1}]}]}],">.foot":[{"":[{"":[{i:"I11",f:1}]}]}]})},50)}();</script>
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.3.js"></script>
+
+<span class="blank9"></span>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://163.wrating.com/a1.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+    </script> 
+<div class="foot">
+<div class="text"><a href="http://post.news.163.com/msg/housemail.jsp" rel="nofollow">客服电话：020-83568090</a>　<a href="http://post.news.163.com/msg/housemail.jsp" rel="nofollow">主编信箱</a> <a href="http://t.163.com/zt/feedback" rel="nofollow">意见反馈</a></div>
+<a href="http://corp.163.com/" rel="nofollow">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html" rel="nofollow">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" rel="nofollow">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" rel="nofollow">招聘信息</a> - <a href="http://help.163.com/" rel="nofollow">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" rel="nofollow">隐私政策</a> - <a href="http://emarketing.biz.163.com/" rel="nofollow">网络营销</a> - <a href="http://sitemap.163.com/" rel="nofollow">网站地图</a><br />
+网易公司版权所有<br />
+<span class="cRed">&copy;1997-2013
+</span>
+</div>

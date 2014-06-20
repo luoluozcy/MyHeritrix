@@ -1,0 +1,137 @@
+/*
+Theme Name: I.youdao
+Theme URI: http://i.youdao.com/
+Author: youdao
+Author URI: http://www.youdao.com
+Version: 1
+*/
+html,body{margin:0;padding:0;height:100%;line-height:160%;font-size:12px;font-family:'微软雅黑','黑体',sans-serif;color:#2a2a2a}
+a{text-decoration:none;color:#666}
+a:hover{text-decoration:underline;color:#2a2a2a}
+input,textarea{outline:none}
+img{border:none}
+
+.wrp{width:960px;margin:0 auto}
+.clear-fix:after{content:'.';display:block;height:0;visibility:hidden;clear:both;overflow:hidden}
+.clear-fix{zoom:1}
+/* button style */
+.btn, #submit{display:inline-block;padding:7px 10px;font-weight:bold;text-align:center;text-decoration:none;font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文黑体",STHeiti,sans-serif;cursor:pointer;color:#3a3a3a;background:#fff;border:1px solid #d2d2d2;text-shadow:1px 1px 0 #fff;
+    transition:all .3s ease-in-out;border-radius:2px;box-shadow:1px 1px 0 #f5f5f5;
+    -webkit-transition:all .3s ease-in-out;background:-webkit-linear-gradient(top, #fff, #f5f5f5);
+    -moz-transition:all .3s ease-in-out;background:-moz-linear-gradient(top, #fff, #f5f5f5 100%);
+    -o-transition:all .3s ease-in-out;
+}
+.btn:hover, #submit:hover{color:#2a2a2a;border-color:#999;background:#f2f2f2;
+    box-shadow:1px 1px 2px #d5d5d5;
+    background:-webkit-linear-gradient(top, #fff, #f2f2f2);
+    background:-moz-linear-gradient(top, #fff, #f2f2f2 100%);
+}
+.btn:active,.btn[active],#submit:active{
+    background:-webkit-linear-gradient(top, #f2f2f2, #fff);
+    background:-moz-linear-gradient(top, #f2f2f2, #fff 100%);
+}
+.btn:active,#submit:active{
+	box-shadow:1px 1px 2px #d5d5d5 inset;
+}
+/* form style */
+.form .row:not(:last-child){margin-bottom:10px}
+.form .row-hd{float:left;width:2.5em;margin-right:.5em;font-weight:bold}
+.form .row-bd{margin-left:3em}
+.form .indent-row{margin-left:3em}
+.form .text{min-width:180px;height:20px;padding:3px;border:1px solid;border-color:#999 #d2d2d2 #d2d2d2 #999;background:#fafafa;
+    transition:all .3s ease-in-out;border-radius:2px;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+}
+.form .text:hover{border-color:#a2a2a2;background:#fff;
+    box-shadow:0 0 1px #d5d5d5;
+    background:-webkit-linear-gradient(top, #e8e8e8, #fff);
+    background:-moz-linear-gradient(top, #e8e8e8, #fff 10%);
+}
+.form .text:focus{border-color:#19a4e5;background:#fff;
+    box-shadow:0 0 3px #19a4e5;
+    background:-webkit-linear-gradient(top, #e5e5e5, #fff);
+    background:-moz-linear-gradient(top, #e5e5e5, #fff 10%);
+}
+.form textarea.text{height:auto;min-height:60px}
+
+.ico{display:inline-block;width:16px;height:16px;vertical-align:middle;background:url(images/icons.png) no-repeat}
+.ico-renren{background-position:-72px -8px}
+.ico-163{background-position:-104px -8px}
+.ico-kaixin001{background-position:-136px -8px}
+.ico-qq{background-position:-168px -8px}
+.ico-weibo{background-position:-200px -8px}
+.ico-read{background-position:-232px -8px}
+.ico-digg{background-position:-264px -8px}
+.ico-cmt{width:18px;background-position:-294px -8px}
+
+/* head */
+#hd{position:relative;height:35px;margin-bottom:-35px;line-height:35px;color:#fff;background:#000;background:rgba(0,0,0,.6);box-shadow:0 1px 0 rgba(0,0,0,.2)}
+#logo{float:left;font-size:20px}
+#logo a{color:#fff;text-decoration:none}
+#logo small{font-size:12px}
+#nav{float:right;margin:0}
+#nav li{float:left;display:inline;margin-left:10px}
+#nav a{color:#fff}
+
+/* banner */
+#banner{height:350px;background:#367abf url(images/banner.jpg) no-repeat center -30px}
+.single #banner,.search #banner,.archive #banner{display:none}
+#goHome{position:relative;top:120px;display:block;width:400px;height:100px;margin:0 auto}
+
+/* body */
+#bd{margin-top:35px}
+.single #bd,.search #bd,.archive #bd{margin-top:65px}
+/* main */
+#main{float:left;width:670px;overflow-x:hidden}
+.post{padding-bottom:30px;margin-bottom:50px;border-bottom:1px solid #dedede;box-shadow:0 1px 3px rgba(0, 0, 0, .1)}
+.post-hd{position:relative;zoom:1;min-height:67px;padding-left:80px;margin-bottom:20px}
+.post-hd .title{line-height:35px;padding-bottom:5px;margin:0 0 5px;font-size:22px;border-bottom:1px dotted #666}
+.post-hd .author-face{position:absolute;left:0;top:0;width:63px;height:63px;padding:1px;border:1px solid #888783;background:#fff}
+.page .page .post-hd{padding-left:0;min-height:0}
+.post-bd{font-size:14px;line-height:180%}
+.post-bd a{color:#148fd4}
+.post-bd img{max-width:670px}
+.post-ft{color:#666}
+.post-ft span{margin-right:10px}
+.post-ft .more{float:right;font-size:14px;color:#3a3a3a}
+.post-ft .ico{position:relative;top:-1px;margin-right:5px}
+
+/* aside */
+#aside{float:right;width:215px}
+
+.mod{margin-bottom:15px}
+.mod .hd{height:30px;border-bottom:2px solid #dedede}
+.mod .hd h2{position:relative;float:left;margin:0 0 -2px;line-height:30px;font-size:14px;border-bottom:2px solid #2a2a2a}
+.mod .bd{padding:5px 0}
+.list{padding:0;margin:0;list-style:none}
+.list li{padding-bottom:5px;margin-bottom:5px;border-bottom:1px solid #dedede}
+
+.search-form{position:relative;margin-bottom:10px;zoom:1}
+.search-form .query{width:183px;padding-right:27px}
+.search-form .submit{position:absolute;right:0;top:0;width:27px;min-width:0;height:28px;text-indent:-999em;border:none;background:transparent url(images/icons.png) no-repeat -34px -2px;opacity:.3;box-shadow:0 0 0}
+.search-form .query:hover+.submit{opacity:.7}
+.search-form .query:focus+.submit{opacity:1}
+.error404 .search-form{width:415px}
+.error404 .search-form .query{width:383px}
+
+.mod-follow .bd a{display:inline-block;width:47%;margin-bottom:10px}
+.mod-follow a:nth-child(2n){text-align:right}
+.mod-follow .ico{position:relative;top:-1px;margin-right:10px}
+
+/* comments */
+#comments{margin-top:50px}
+.comments-hd{height:40px;border-bottom:3px solid #dedede}
+.comments-hd h1{float:left;margin:0 0 -3px;line-height:40px;border-bottom:3px solid #2a2a2a}
+.comment{position:relative;min-height:80px;padding:0 0 20px 80px;margin:20px 0;border-bottom:1px dotted #dedede;zoom:1}
+.comment .photo{position:absolute;left:0;top:0;padding:1px;border:1px solid #888783}
+.comment .reply{position:absolute;left:0;top:75px;display:block;width:67px;text-align:center}
+.comment .date{position:absolute;right:0;top:0;color:#999}
+#respond{margin-top:20px}
+#reply-title{height:30px;border-bottom:2px solid #dedede}
+#reply-title span{position:relative;float:left;margin:0 0 -2px;line-height:30px;font-size:14px;border-bottom:2px solid #2a2a2a}
+#comment{width:660px;max-width:660px;height:100px}
+
+/* foot */
+#ft{padding:10px 0 30px;margin-top:30px;text-align:center}

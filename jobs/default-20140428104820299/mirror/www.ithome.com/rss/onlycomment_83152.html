@@ -1,0 +1,73 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	评论
+</title><meta name="viewport" content="width=device-width" /><link href="http://file.ithome.com/css/comment.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+setCookie = function (nm, val, y) { var exp = ''; if (y) { var dt = new Date(); dt.setTime(dt.getTime() + (y * 86400000)); exp = '; expires=' + dt.toGMTString(); } document.cookie = nm + '=' + escape(val) + exp + ';path=/;domain=ithome.com'; }
+getCookie = function (nm) { var m = ''; if (window.RegExp) { var re = new RegExp(';\\s*' + nm + '=([^;]*)', 'i'); m = re.exec(';' + document.cookie); } return (m ? unescape(m[1]) : ''); }
+var iosCss = function (cssName) {
+    setCookie('iosCss', cssName, 1);
+    SetIosCss();
+}
+var SetIosCss = function (){
+    if (getCookie('iosCss') == 'ipad_day')
+        document.getElementsByTagName('body').item(0).className = "ios_ipad";
+    else if (getCookie('iosCss') == 'ipad_night')
+        document.getElementsByTagName('body').item(0).className = "ios_ipad ipad_night";
+    else if (getCookie('iosCss') == 'iphone_day')
+        document.getElementsByTagName('body').item(0).className = "ios_iphone";
+    else if (getCookie('iosCss') == 'iphone_night')
+        document.getElementsByTagName('body').item(0).className = "ios_iphone iphone_night";
+	else if (getCookie('iosCss') == 'wp_day')
+        document.getElementsByTagName('body').item(0).className = "wp_phone";
+	else if (getCookie('iosCss') == 'wp_night')
+		document.getElementsByTagName('body').item(0).className = "wp_phone wp_night";
+	else if (getCookie('iosCss') == 'android')
+        document.getElementsByTagName('body').item(0).className = "android_phone";
+	else if (getCookie('iosCss') == 'android_night')
+        document.getElementsByTagName('body').item(0).className = "android_phone android_night";
+    else if (getCookie('iosCss') == 'new_ipad_day')
+        document.getElementsByTagName('body').item(0).className = "ios_ipad new_ios_ipad";
+    else if (getCookie('iosCss') == 'new_ipad_night')
+        document.getElementsByTagName('body').item(0).className = "ios_ipad new_ios_ipad ipad_night";
+    else if (getCookie('iosCss') == 'win8_metro')
+        document.getElementsByTagName('body').item(0).className = "win8_metro";
+}
+if (typeof jQuery == 'undefined'){
+    document.write("<script src='http://libs.baidu.com/jquery/1.9.1/jquery.min.js'><\/script>");
+}
+</script>
+</head>
+<body>
+<div class="post_comment" id="post_comm" >
+    <h3 id="post_comment">发表评论<span>愿您的每句评论，都能给大家的生活添色彩，带来共鸣，带来思索，带来快乐。</span></h3>
+    <div class="add_comm">
+        <textarea name="txtBody" id="commentContent" cols="60" rows="5" class="ipt-txt" onfocus="showValidate();if(this.value=='IT之家有您参与更精彩！')this.value='';" onblur="if(this.value=='')this.value='IT之家有您参与更精彩！';">IT之家有您参与更精彩！</textarea></p>
+        <input type="hidden" id="newsid" value="83152" /><input type="hidden" id="parentCommentID" value="0" />
+
+
+    	<div class="comm_login" id="commentLoginPanel">
+    		<span class="p1">软媒通行证</span>
+	        <input type="text" value="邮箱" class="inpt rm_name" id="entered_UsernameInput">
+	      <input type="password" id="entered_passwordInput" class="inpt rm_psw"  />
+            <input type="button" value="登录" class="rm_smt" id="btn_loginbtn" /><span id="returnMsg"></span>
+	        <span class="p2"><a href="http://i.ruanmei.com/reg.aspx" target="_blank">注册</a>&nbsp;&nbsp;<a href="javascript:;" id="displayAnonymous">匿名评论</a></span>
+           <label style="display: block;" id="entered_passwordLabel">密码</label>
+	    </div>
+        <div id="commentAnonymousPanel" style="display:none">
+         <div><div class="comm-con"><span>签名：匿名</span><a class="logout" href="javascript:;" id="displayLogin">登录</a></div>
+	    <input type="submit" name="btnComment" value="发表评论" id="btnComment" class="button"></div>
+        </div>
+
+        <span id="commentMessage"></span>
+
+    </div>
+    <div class="comm_list" id="commentlist"></div>
+</div>
+ <script type="text/javascript" src="http://www.ithome.com/ithome/CommentCount.aspx?newsid=83152&metro=1"></script>
+<script src="http://file.ithome.com/js/comment.js" type="text/javascript"></script>
+<script>SetIosCss();</script>
+</body>
+</html>

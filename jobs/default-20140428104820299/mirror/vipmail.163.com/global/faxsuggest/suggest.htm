@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta name="keywords" content="传真,电子传真,邮箱传真,网易传真,网易电子传真,VIP邮箱电子传真,VIP邮箱传真,环保传真,零成本传真" />
+<meta name="description" content="网易电子传真是网易VIP邮箱推出的一款环保低耗产品，无需购买传真机，无需油墨、纸张等耗材，只要能上网即可随时随地收发传真；传真文件接收隐私保密，手机同步提醒；发送时配有专业的模板，并可直接上传附件，发传真从此不再麻烦；目前已支持所有网易通行证帐号登录使用，让您摆脱传统传真机的束缚，随身携带隐形传真机，随时接收重要传真。" />
+<title网易电子传真-随时随地收发传真</title>
+<link rel="shortcut icon" href="http://vip.163.com/favicon.ico" />
+<link href="http://mimg.127.net/vip/fax/css/faxmail_2011.css" type="text/css" rel="stylesheet" media="all">
+<link href="http://mimg.127.net/vip/fax/css/outside.css" type="text/css" rel="stylesheet" media="all">
+<script src="http://survey2.163.com/html/fax_fankui/js/system.js"></script>
+<script src="http://survey2.163.com/html/fax_fankui/js/question.js"></script>
+<script src="http://survey2.163.com/html/fax_fankui/js/relation.js"></script>
+<script language="javascript">
+
+question = new Array();
+question[93698] = [];
+question[93704] = [];
+question[93700] = [];
+question[93701] = [];
+question[93702] = [];
+
+group = new Array();
+
+relation = new Array();
+
+hidden = [93704,93700];
+must =  [93698];
+textLengthLimit =  [93701,93702];
+textOnlyNumeric =  [];
+mulitLimitMust =  [];
+
+page = new Array();
+page[1] = [93698,93704,93700,93701,93702];
+pagecnt=1;
+
+survey_pageid = 0;
+
+function judgeTextLengths(){
+if(!judgeTextLength(93701,50)) return false;
+if(!judgeTextLength(93702,30)) return false;
+return true;
+}
+
+function judgeOnlyNumerics(){
+return true;
+}
+
+function judgeMultiLimitMusts(){
+return true;
+}
+
+//不为空的检测
+function fIsEmpty(id,sTxt){
+	if(!$(id).value.replace(/\s*/g,"")){
+		$("errTips").innerHTML = sTxt;
+		$("errTips").style.display = "block";
+		return false	
+	}
+	return true;
+}
+
+//输入框长度检测
+function fLengthCheck(id,len,sTxt){
+	if($(id).value.length > len){
+		$("errTips").innerHTML = sTxt;
+		$("errTips").style.display = "block";
+		return false;
+	}
+	return true;
+}
+
+function chkField()
+{
+	var pageid = getPageid();
+	//if (!checkPageQuestion(pageid)) return false;
+	if(!fIsEmpty("q_93698", "请填写建议内容后再进行提交")) return false;
+	if(!fLengthCheck("q_93701",50,",邮箱地址长度不能超过50个字符！")) return false;
+	if(!fLengthCheck("q_93702",20,"电话号码长度不能超过20个字符！")) return false;
+
+	var btnobj = $('submit1');
+	btnobj.disabled = true;
+	setTimeout("$('submit1').disabled=false",0);
+	surveyOver();
+	return true;
+}
+
+</script>
+</head>
+<body>
+<div class="fax_pic_rx o-headerBg">
+	<div class="o-header">
+        <div class="fl o-logo">
+            <a class="fl" href="http://vipmail.163.com" title="网易高端服务" target="_blank"><img src="http://mimg.127.net/vip/fax/img/vipLogo-fax.jpg" alt="网易高端服务Logo" /></a>
+            <h1 class="fl fax_pic o-title"><span class="hide">网易电子传真</span></h1>
+        </div> 
+	</div>
+    <div class="o-subNav">
+        <dl>
+            <dt class="fax_pic"></dt>
+	    <dd><a class="now" href="http://vipmail.163.com/global/faxsuggest/suggest.htm" title=""><b>建议中心</b></a></dd>
+            <dt class="fax_pic"></dt>            
+        </dl>
+    </div>    
+</div>
+
+<p id="intro" ></p>
+<form id="form1" method="post" action="http://survey2.163.com/answer.m" onsubmit="return chkField();">
+<input type="hidden" name="paperid" id="paperid" value="2995"/>
+<input type="hidden" id="surveyTime" name="timespan" value="0"/>
+<input type="hidden" id="q_93704" name="q93704" value="">
+<script language="javascript">if($('q_93704')) $('q_93704').value = getCookie("P_INFO");</script>
+<input type="hidden" id="q_93700" name="q93700" value="">
+<script language="javascript">getUrlPara("q_93700","site");</script>
+<div id="survey" class="con">
+    <div id="surveyContent" class="sugcon">
+        <h2 class="sug-til">若您对网易电子传真有任何的想法或建议，请告知我们，我们将不断努力为您提供更好的产品。</h2>
+		<div class="sug-in" id="dl_q_93698"><textarea id="q_93698" name="q93698"></textarea></div>
+        <div class="sug-in" id="dl_q_93701">您的联系邮箱：<input class="sugIpt" type="text" id="q_93701" name="q93701" maxlength="50" /></div>
+		<div class="sug-in" id="dl_q_93702">您的联系电话：<input class="sugIpt" type="text"  id="q_93702" name="q93702" maxlength="30"/></div>
+		<p class="errTips" id="errTips">请填写建议内容后再进行提交</p>
+	<button class="fax_pic eNumBtn eNumBtn-pay" type="submit" id="submit1">提 交</button>
+    </div>
+</div><!--con end-->
+</form>
+
+<!-- S footer -->    
+<div class="footer">
+	<a href="http://corp.163.com/" target="_blank">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" target="_blank">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" target="_blank">招聘信息</a> - <a href="http://gb.corp.163.com/gb/legal.html" target="_blank">隐私政策</a> - <a href="http://emarketing.biz.163.com/" target="_blank">网络营销</a><span> | </span>网易公司版权所有 &copy; 1997-<script language="javascript" src="http://mimg.127.net/copyright/year.js"></script> 
+</div>
+<!-- E footer -->
+
+<script language="javascript">
+setTimeout("$('submit1').disabled=false;",20000);
+</script>
+<!-- START NetEase Devilfish 2006 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "vip";
+neteaseTracker();
+</script>
+</body>
+</html>

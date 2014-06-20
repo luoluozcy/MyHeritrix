@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb" ng-app='elearn' id='ng-app'>
+<head>
+    <title>网易识字-让孩子快乐学习</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <link rel="icon" href="images/icon.png" type="image/x-icon" />
+    <meta  name="description" content="网易识字是一款专门为三至八岁学龄小朋友早期阅读和上小学准备的儿童识字软件。APP支持iPhone版和iPad版，通过听、说、读、写四种方式，让宝宝全方位地学习汉字。APP还运用了七天记忆法进行科学复习。日常学习与复习都有哪吒故事和游戏穿插其中。">
+    <meta name="keywords" content="识字软件,入学准备,幼儿识字,网易识字,识字游戏,哪吒,网易,学汉字,学前识字,快速识字,悟空识字,儿童读物,启蒙教育,学龄前,儿童,儿童故事,儿童教育">
+    <meta name="apple-itunes-app" content="app-id=521066266"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" rel="stylesheet" href="/webroot_resource/css/main.css"/>
+    <link href="/main/video-js/video-js.css" rel="stylesheet">
+    
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <noscript>请使用支持脚本的浏览器！</noscript>
+    <script>
+        var browser={    
+            versions:function(){            
+            var u = navigator.userAgent, app = navigator.appVersion;            
+                return {                              
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器                
+                    iPad: u.indexOf('iPad') > -1 //是否iPad                        
+                };
+            }()
+        } 
+            
+
+        //if ipad:
+        if(browser.versions.iPad){
+            if(confirm("检测到您正在使用ipad，是否直接前往AppStore下载？")){
+                location.href="https://itunes.apple.com/cn/app/wang-yi-shi-zi-han-zi-nei/id638623334?ls=1&mt=8";
+            }else{
+                
+            }
+        }else if(browser.versions.iPhone){
+            if(confirm("检测到您正在使用iphone，是否直接前往AppStore下载？")){
+                location.href="http://itunes.apple.com/cn/app/wang-yi-shi-ziiphone-ban/id598882210?mt=8";
+            }else{
+                
+            }
+        }
+
+    </script>
+
+
+
+    
+
+<link rel="stylesheet" href="./main/css/min/app.min.css">
+<script type="text/javascript" src="http://yuedu.bst2.126.net/js/jquery-1.6.1.min.js?2_20110623110208"></script>
+<link type="text/css" rel="stylesheet" href="./css/min/widgetlogin.min.css"/>
+<script type="text/javascript" src="./main/js/min/widgetlogin.min.js"></script>
+<script type="text/javascript" src="./main/js/min/email.min.js"></script>
+<script type="text/javascript" src="./main/js/cookie.js"></script>
+<style>
+.on_changes{width: 259px;
+list-style: none;
+background-color: #FFF;
+border: 1px solid #000;
+display: none;
+z-index: 1000;
+padding: 0px;
+float: left;
+position: relative;
+left: 10px;}
+.on_changes li{margin:8px;padding:4px;}
+.on_changes li.active{ background:#CEE7FF;}
+</style>
+    <div class="top-bar">
+        <div class="top-login-area">
+            <div class="div-btn-login">
+                <a href="javascript:void(0);" id="btn-login" class="top-login-btn">登录</a>
+            </div>
+        
+            <div class="div-label-login-sep">
+                <span class="label-separate">|</span>
+            </div>
+            <div class="div-btn-register">
+                <a href="http://reg.163.com/reg/reg.jsp?product=urs" target="_blank" id="btn-login" class="top-login-register">注册</a>
+            </div>
+        </div>
+
+        <div class="top-loggedin-area">
+            <div class="div-label-welcome">
+                <span class="label-welcome">欢迎您,</span> 
+            </div>
+            <div class="div-label-username-welcome">
+                <span class="label-username-welcome"></span> 
+            </div>
+            <div class="div-label-separate">
+                <span class="label-separate">|</span>
+            </div>
+            <div class="div-label-logout">
+                <a href="javascript:void(0);" class="label-logout" id="urs-logout">退出</a>
+            </div>
+            <input type="hidden" id="curr-username" value=""/>
+        </div>
+    </div>
+
+
+
+    <div class="g-hd">
+        <div class="m-login">
+            <div class="g-doc"></div>
+        </div>
+        <div class="m-header">
+            <div class="g-doc">
+                <a class="logo" href='/' title='回到首页'></a>
+                <!--m-nav-->
+                <div class="m-nav">
+                    <ul>
+                        <li  
+                            class='active'
+                        
+                        >
+                            <a href="/" >首页</a>
+                        </li>
+                       
+                        <li class="parent ">
+                             <a href="javascript:void(0);" id="parent-management">家长管理</a>
+                        </li>
+                        <li class="download 
+                         ">
+                            <a href="download" target="_self">下载</a>
+                            <ul>
+                                <li>
+                                    <a href="download#/iphone" ng-click='$switch("iphone")'>iPhone</a>
+                                </li>
+                                <li>
+                                    <a href="download#/ipad" ng-click='$switch("ipad")'>iPad</a>
+                                </li>
+                            </ul>
+                        </li>
+                      
+                        <li  class="sns">
+                            <ul>
+                                <!--li class="s1">
+                                    <iframe frameborder="0" width="80" height="24" src="http://api.t.163.com/friendships/follow_button?style=1&color=grey&user_id=5191304503437472688" scrolling="no"></iframe>
+                                </li-->
+                                <li class="s2">
+                                    <wb:follow-button uid="2718175383" type="red_1" width="63" height="24"></wb:follow-button>
+                                </li>
+                                <!--li class="s3">
+                                    <iframe src="http://follow.v.t.qq.com/index.php?c=follow&a=quick&name=wangyielearn&style=5&t=1342525436358&f=0" frameborder="0" scrolling="auto" width="125" height="24" marginwidth="0" marginheight="0" allowtransparency="true"></iframe>
+                                </li-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--m-nav-end-->
+                <div class="m-sns"></div>
+            </div>
+            <!--g-doc-end-->
+        </div>
+        <!--m-header-end-->
+    </div>
+    <!--g-hd-end-->
+
+    <div class="sz-login-win" id="sz-login-win">
+        <span class="err-message">请输入网易通行证/网易邮箱</span>
+        <a href="javascript:void(0);" id="sz-close-win" class="sz-close-win"></a>
+        <div class="username-area">
+            <!--span class="lable-username">帐号</span--><input type="text" id="username-input" class="username-input" placeholder="请输入帐号" value=""/>
+            <ul class="on_changes">
+                <li email="@163.com" class="li-email"></li>
+                <li email="@126.com" class="li-email"></li>
+                <li email="@163.com" class="li-email"></li>
+                <li email="@126.com" class="li-email"></li>
+                <li email="@yeah.net" class="li-email"></li>
+                <li email="@vip.163.com" class="li-email"></li>
+                <li email="@vip.126.com" class="li-email"></li>
+                <li email="@pop.163.com" class="li-email"></li>
+                <li email="@188.com" class="li-email"></li>
+                <li email="@vip.188.com" class="li-email"></li>
+                <li email="@qq.com" class="li-email"></li>
+                <li email="@yahoo.com" class="li-email"></li>
+                <li email="@sina.com" class="li-email"></li>
+                <li email="@sohu.com" class="li-email"></li>
+            </ul>
+        </div>
+
+        <div class="password-area">
+            <!--span class="lable-password">密码</span--><input type="password" id="password-input" class="password-input" placeholder="请输入密码" value=""/>
+        </div>
+        <div class="check-saved-area">
+            <a href="javascript:void(0);" class="unchecked" id="checklogin"></a>
+            <span class="label-auto-login">下次自动登录</span>
+            <a href="http://reg.163.com/getpasswd/RetakePassword.jsp" target="_blank"><span class="label-forget-password">忘记密码</span></a>
+        </div>
+        <div class="login-btn-area">
+            <a href="javascript:void(0);" class="login-btn-commit btn-long "><span class="login-btn-text">登   <span style="margin-left:10px;">录</span></span></a>
+        </div>
+        <div class="register-area">
+            <a href="http://reg.163.com/reg/reg.jsp?product=urs" target="_blank"><span class="label-register">没有帐号？免费注册</span></a>
+        </div>
+        <input type="hidden" value="" id="logintype"/>
+        <input type="hidden" value="0" id="logincheck"/>
+    </div>
+    <script>
+        $(document).ready(function(){ 
+            var wl = widgetlogin();
+            wl.checkLogin();    
+        });
+        $(function(){
+            var wl = widgetlogin();
+            wl.showSelectLogin();
+            wl.postURSLogin();
+            wl.logout();
+
+            $("#username-input").changeTips({
+                divTip:".on_changes"
+            }); 
+        });
+
+        $("#parent-management").click(function(){
+            var username = $("#curr-username").val();
+            if(username!=""){
+                location.href = "/management/parent/main"; 
+            }else{
+                $("#sz-login-win").css("display", "block");
+                $("#logintype").val("parent");
+                $("#username-input").focus();
+            }
+        });
+       
+    </script>
+
+
+<!--[if IE 6]>
+    <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+    
+    <!--body start-->
+    <div class="g-bd">
+        <div class="wrap_main">
+            <div class="spot">
+                <div class="spot_images" id="mainImage">
+                    <div id="spot_image1" class="spot_image3 mainshow" style="opacity: 1; filter: alpha(opacity=100) ">
+                        <div class="image">
+                            <div>
+                                <div class="m-con">
+                                    <a class="link05" target="_blank" href="http://itunes.apple.com/cn/app/wang-yi-shi-zi/id521066266?mt=8"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--div class="spot_static">
+            <div class="page">
+                <a id="main_image1" class="on" onclick="mainImg(1)"></a>
+        </div>
+        </div-->
+        </div>
+        <!--body end-->
+        <div class="m-table">
+        <div class="g-wide">
+        <div class="g-doc">
+            <div class="m-tv">
+                <a ng-click='popVideo()' id="btn-tv" ng-class='{"active": !show && !isHover}' ng-mouseenter='hover(true)' ng-mouseleave='hover(false)'>
+                    <img src="http://61.ph.126.net/resource/web/src/main/s02.gif" style="height:120px;"/>
+                </a>
+                <div class="title" style="font-family:'黑体'">产品介绍</div>
+            </div>
+        </div>
+        </div>  
+        </div>
+    </div>
+<div class="g-ft">
+<div class="top"></div>
+<div class="middle">
+<div class="g-doc g-doc-ft">
+    <div class="m-crt">
+        <div class="crti">
+            <div class="img">
+                <a href="http://163.com"></a>
+            </div>
+            <span>网易公司版权所有 &copy;1997-2014</span>
+        </div>
+        <div class="text">
+            <ul>
+                <li>
+                    <span>邮箱: <a href="mailto:elearn@188.com">elearn@188.com</a></span> 
+                </li>
+                <li>
+                    <span>商务合作请联系 电话: 0571-89852307</span>
+                </li>
+                <li>
+                    <span>QQ群: 243685954</span>
+                </li>
+                <li class='sameline'>
+                    <a href="http://fankui.163.com/ft/faqList.fb?pid=16001">反馈</a>
+                    <a href="http://wangyielearn.blog.163.com/" class='blog'>官方博客</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- angular -->
+
+<div class="m-layer" ng-controller='LayerCtrl' ng-class='{"z-show": show}'>
+<table>
+<tbody>
+    <tr>
+        <td>
+            <div class="lywrap">
+                <!-- <div class="lytt"> -->
+                    <span class="lyclose" ng-click='close()'>×</span>
+                <!-- </div> -->
+                <div class="lyct">
+                    <div class="m-video" id="video" ng-controller='VideoCtrl'></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<!-- /angular -->
+
+<!-- START NetEase Devilfish 2006 -->
+<script src="/main/components/json2/json2.js"></script>
+<script src="/main/components/angular/angular.js"></script>
+<script src="/main/video-js/video.js"></script>
+<script>videojs.options.flash.swf = "/main/video-js/video-js.swf"</script>
+<script src="/main/js/index.js"></script>
+<!-- @liyang script -->
+<script type="text/javascript" src='/webroot_resource/js/liyang.js'></script>
+
+<!-- analyse config -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA1373423037196'],['_setLocalGifPath', '/UA1373423037196/__utm.gif'],['_setLocalServerMode']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = 'http://wr.da.netease.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+$("#btn-tv").click(function(){
+    _gaq.push(['_trackEvent','Videos','Play','Play tv']);
+});
+
+})();
+
+$("#btn-tv").click(function(){
+        $.get("/",{from:"hometv"},function(){
+            
+        });
+});
+</script>
+
+
+
+
+<!-- END NetEase Devilfish 2006 -->
+</body>
+</html>
+
+<!--                 <div id="notice-div" class="notice">
+<a href="http://wangyielearn.blog.163.com/blog/static/20598705820130631943235/" target="_blank" style="">网易识字圣诞活动开奖啦，快来看看你获奖了没！>>></a>
+<span style=""></span>
+
+</div>
+-->

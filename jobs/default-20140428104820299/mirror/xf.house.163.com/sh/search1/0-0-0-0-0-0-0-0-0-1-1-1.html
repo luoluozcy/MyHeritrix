@@ -1,0 +1,1860 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="zh-cn" />
+<title>上海新楼盘_上海房价_网易上海房产</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<!--<meta name="keywords" content="网易房产,房产" />-->
+<meta name="keywords" content="上海楼盘,上海新楼盘,上海楼价,网易上海新楼盘库"/>
+
+<meta name="description" content="网易上海房产-最详尽的上海楼盘资料，专业的上海新楼盘信息，每日更新的新楼盘优惠，提供最权威的上海房价数据分析，为您找到最合适的上海楼盘。" />
+<link href="http://img1.cache.netease.com/cnews/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/house/img13/kusearch1304/lpksearch.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://xf.house.163.com/product_resource/js/jquery.js"></script>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.3.css" />
+<script charset="gb2312" src="http://img3.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+
+<script language=javascript src="/product_resource/js/SuggestFramework.js"></script>
+<script language="javascript" src="/product_resource/js/jquery.js"></script>
+<script type="text/javascript" src="/product_resource/js/jquery.cookie.js"></script>
+<script language="javascript" src="/product_resource/js/cookie.js"></script>
+<script language=javascript src="/product_resource/js/chainSelect.js"></script>
+<script language=javascript src="/product_resource/admin/js/JsonHelper.js"></script>
+<script language="javascript">var city = 'sh';</script>
+<script language=javascript src="/product_resource/js/history.js"></script>
+
+<script type="text/javascript">
+
+var list="";
+var list1="";
+list+=","+74;
+list+=","+61;
+list+=","+114;
+list+=","+41;
+list+=","+97;
+list+=","+1;
+list+=","+141;
+list+=","+132;
+list+=","+26;
+list+=","+122;
+list+=","+12;
+list+=","+33;
+list+=","+52;
+list+=","+20;
+list+=","+108;
+list1+=","+49;	
+list1+=","+47;	
+list1+=","+145;	
+
+function search(){
+	if(jQuery("#xf_keyword").val() == "输入中文/全拼/缩写"){
+    	jQuery("#xf_keyword").attr("value","");
+    }
+	var keyword = jQuery.trim(jQuery("#xf_keyword").val());
+	var url= getQueryUrl("keyword",keyword,null);
+    window.location.href=url;
+}
+
+function xfSearch(){
+  	if(jQuery("#xf_keyword").val() == "输入中文/全拼/缩写"){
+    	jQuery("#xf_keyword").attr("value","");
+    }
+    var keyword = jQuery.trim(jQuery("#xf_keyword").val());
+    var district = jQuery("#xf_district").val();
+    var plate = jQuery("#xf_plate").val();
+    var property = jQuery("#xf_property").val();
+    var price = jQuery("#xf_price").val();
+    var buystatus = jQuery("#buystatus").val();
+    if(district == "") district = "0";
+    if(plate == "") plate = "0";
+    if(property == "") property = "0";
+    if(price == "") price = "0";
+    if(buystatus == "") buystatus = "0";
+    
+	var metro = "0";
+	var base_lpts = "0";
+    if(district == "") district = "0";
+
+        	var buscycle = "0";
+        if(buscycle == "") buscycle = "0";
+
+
+        	var rentprice = "0";
+        if(rentprice == "") rentprice = "0";
+
+        	var mode="1";
+	
+    var buystatus="0";
+    var url = "/sh/search/"+district+"-"+plate+"-"+property+"-"+price+"-"+buystatus+"-"+metro+"-"+base_lpts+"-"+buscycle+'-'+rentprice+mode+"-1-1.html"
+    if(keyword != "") url += "?keyword=" + keyword;
+
+    document.location.href = url;
+  }
+  
+  
+	var paramObj={district:"0",plate:"0",property:"0",price:"0",buystatus:"0",metro:"0",base_lpts:"0",buscycle:"0",rentprice:"0",mode:"1",base_kpsj:"",base_rzsj:"",base_hxwz:"",price_min:"",price_max:"",orderby:"1",p:"1"};
+
+	
+    function getQueryUrl(key,value,parent){
+      var url = "/sh/search/";
+      var query = "";
+      for(var prop in paramObj){
+        var param = paramObj[prop];
+        if(key == prop){
+             param = value;
+        }
+        if(key == "district" && prop == "plate") param = "0";    //点击的是区域，版块自动设0
+        if(key == "plate" && prop == "district") param = parent; //点击的是版块，区域自动设为它的父节点
+        if(key != "p" && prop == "p") param = "1";//点击的是非分页符,页数自动置1
+
+        if(key == "pricem" && prop == "price_min") param = jQuery("#price_min").val();
+        if(key == "pricem" && prop == "price_max") param = jQuery("#price_max").val();
+        if(key == "pricem" && prop == "price") param = "0";
+        if(key == "price" && (prop == "price_min"||prop == "price_max")) param = "0";
+        
+        if(param == "") param  = "0";
+        query += (query == "")?param:"-" + param;
+      }
+      url += query + ".html";
+      if(key == "keyword"){
+    	url += "?keyword="+value;
+      }
+      else if("" != ""){
+          url += "?keyword=";
+      }
+
+      url = encodeURI(url);
+      url = encodeURI(url);
+      
+      return url;
+    }
+
+
+    function getQueryUrlNoKey(key,value,parent){
+        var url = "/sh/search/";
+        var query = "";
+        for(var prop in paramObj){
+          var param = paramObj[prop];
+          if(key == prop){
+               param = value;
+          }
+          if(key == "district" && prop == "plate") param = "0";    //点击的是区域，版块自动设0
+          if(key == "plate" && prop == "district") param = parent; //点击的是版块，区域自动设为它的父节点
+          if(key != "p" && prop == "p") param = "1";//点击的是非分页符,页数自动置1
+          
+          if(key == "pricem" && prop == "price_min") param = jQuery("#price_min").val();
+          if(key == "pricem" && prop == "price_max") param = jQuery("#price_max").val();
+          if(key == "pricem" && prop == "price") param = "0";
+          if(key == "price" && (prop == "price_min"||prop == "price_max")) param = "0";
+          
+          if(param == "") param  = "0";
+          query += (query == "")?param:"-" + param;
+        }
+        url += query + ".html";
+        if(key == "keyword"){
+      	url += "?keyword="+value;
+        }
+
+        url = encodeURI(url);
+        url = encodeURI(url);
+        
+        if(jQuery("#xf_keyword").val()!=""){
+	        url += "?keyword="+jQuery("#xf_keyword").val();
+	      }
+        
+        return url;
+      }
+
+	//点击灰色按钮去掉对应条件
+    function getQueryUrlRemoveCondition(key,value,parent){
+        var url = "/sh/search/";
+        var query = "";
+        for(var prop in paramObj){
+          var param = paramObj[prop];
+          if(key == prop){
+               param = 0;
+          }
+          if(key == "district" && prop == "plate") param = "0";    //点击的是区域，版块自动设0
+          if(key != "p" && prop == "p") param = "1";//点击的是非分页符,页数自动置1
+
+          if(key == "pricem" && prop == "price_min") param = jQuery("#price_min").val();
+          if(key == "pricem" && prop == "price_max") param = jQuery("#price_max").val();
+          if(key == "pricem" && prop == "price") param = "0";
+          if(key == "price" && (prop == "price_min"||prop == "price_max")) param = "0";
+          
+          if(param == "") param  = "0";
+          query += (query == "")?param:"-" + param;
+        }
+        url += query + ".html";
+        if(key == "keyword"){
+      	url += "?keyword="+value;
+        }
+
+        url = encodeURI(url);
+        url = encodeURI(url);
+        
+        if(jQuery("#xf_keyword").val()!=""){
+	        url += "?keyword="+jQuery("#xf_keyword").val();
+	      }
+        
+        return url;
+      }
+
+	var id='';
+    function showTList(pid){
+      var ids =new Array();
+	  ids = id.split('@');
+	  for( var i=0;i<ids.length;i++){
+	    if( ids[i]!=''&& ids[i]!=pid ){
+	      document.getElementById(ids[i]).style.display='none';
+		}
+	  }
+	  document.getElementById("areaList").style.display='';
+	  document.getElementById("areaList1").style.display='none';
+	  document.getElementById(pid).style.display='';
+	  if(paramObj["plate"]==""){
+		jQuery('#li_'+paramObj["district"]).addClass("on");
+	  }
+	  id +='@'+pid;
+    }
+
+    function showTList1(pid){
+        var ids =new Array();
+  	  ids = id.split('@');
+  	  for( var i=0;i<ids.length;i++){
+  	    if( ids[i]!=''&& ids[i]!=pid ){
+  	      document.getElementById(ids[i]).style.display='none';
+  		}
+  	  }
+
+  	  document.getElementById("areaList").style.display='none';
+  	  document.getElementById("areaList1").style.display='';
+  	  
+  	  document.getElementById(pid).style.display='';
+  	  if(paramObj["plate"]==""){
+  		jQuery('#li_'+paramObj["district"]).addClass("on");
+  	  }
+  	  id +='@'+pid;
+      }
+
+
+
+    // 初始化新房搜索直达区域的区域和板块
+    function initXfZdPlates(){
+      var cs=new NSC_ChainSelect();
+      
+      if(paramObj["district"]=='' || paramObj["district"] == '0') {
+        cs.setSelect(jQuery('#xf_district').get(0),"不限",false);
+        showTList('allplate');
+        if (paramObj["plate"]!='' || paramObj["plate"] == '0') {                         
+          cs.setSelect(jQuery('#xf_plate').get(0),paramObj['plate'],false);
+        }
+      } else {      
+        cs.setSelect(jQuery('#xf_district').get(0),paramObj["district"],false);
+        showTList(paramObj["district"]);
+        if(paramObj["plate"]!='') {
+          cs.setSelect(jQuery('#xf_plate').get(0),paramObj['plate'],false);
+        }
+      }
+    }
+
+    jQuery(function(){
+      jQuery("#xf_keyword").attr("value","");
+        
+      jQuery("a[way]").each(function(){
+      	  var parent = "";
+      	  if(jQuery(this).attr('way') == "plate") parent = jQuery(this).parent().parent().attr('val');
+		  var url=getQueryUrlNoKey(jQuery(this).attr("way"),jQuery(this).attr("val"),parent);
+
+		    jQuery(this).attr('href',"http://xf.house.163.com"+url);
+    	  if(paramObj[jQuery(this).attr("way")]) {
+    		if(paramObj[jQuery(this).attr("way")]==jQuery(this).attr("val")){
+		      jQuery(this).addClass("keyOn");
+    		}
+    	  }
+    	});
+
+
+      jQuery("a[way_remove]").each(function(){
+      	  var parent = "";
+      	  if(jQuery(this).attr('way_remove') == "plate") parent = jQuery(this).parent().parent().attr('val');
+		  var url=getQueryUrlRemoveCondition(jQuery(this).attr("way_remove"),jQuery(this).attr("val"),parent);
+
+		    jQuery(this).attr('href',"http://xf.house.163.com"+url);
+    	  if(paramObj[jQuery(this).attr("way_remove")]) {
+    		if(paramObj[jQuery(this).attr("way_remove")]==jQuery(this).attr("val")){
+		      jQuery(this).addClass("keyOn");
+    		}
+    	  }
+    	});
+    	
+    	jQuery(".hotTypeRow:last").addClass("noBg");	
+    	jQuery(".imgStyleRow:last").addClass("noBg");	
+    	jQuery(".txtStyleRow:last").addClass("noBg");	
+
+    	var flag=0;
+        if(paramObj["district"]!='' && paramObj["district"] != '0') {
+    		var str= list.split(',');
+    		for( var i=0;i<str.length;i++){
+    		    if( str[i]!=''&& str[i]==paramObj["district"] ){
+    		      flag=1;
+    			}
+    		  }
+
+        	if(flag==1){
+            	showTList(paramObj["district"]);
+        	}else{
+        		showTList1(paramObj["district"]);
+        	}
+          }
+
+    	//if(paramObj["district"]!='' && paramObj["district"] == '0'){
+            //showTList('allplate');
+    	//}
+        	
+    });
+
+
+    jQuery(document).ready(function(){
+  	  initializeSuggestFramework();
+  	});
+    
+    
+    function gop(){
+      var num = 0;
+      jQuery("input[name^=number]").each(function(){
+        var inputDom= jQuery(this);
+        var tmpnum = (typeof(inputDom.val())=='undefined')?0:parseInt(inputDom.val());
+        if(tmpnum>num){
+          num = tmpnum;
+        }
+      });
+      var totalPage = "454";
+      if (num>0 && totalPage != '' && num <= parseInt(totalPage)) {
+        var url = getQueryUrl("p",num,"");
+        window.location.href=url;
+      } else {
+        alert("请输入正确的数字");
+        return false;
+      }
+    }
+
+	function changeOrderby(order){
+    	var url= getQueryUrl("orderby",order,null);
+        window.location.href=url;
+	}
+
+	function changeMode(mode){
+		var url= getQueryUrl("mode",mode,null);
+        window.location.href=url;
+	}
+
+	function displayButton(){
+		jQuery("#submitbutton").show();
+	}
+
+	function changePrice(){
+        if(jQuery("#price_min").val()==""){
+			alert("请填写最低价格");
+			return ;
+        }
+        if(jQuery("#price_max").val()==""){
+			alert("请填写最高价格");
+			return ;
+        }
+		if(!checkNumber(jQuery("#price_min").val())||!checkNumber(jQuery("#price_max").val())){
+			alert("请填写数字");
+			return;
+		}
+
+		var url= getQueryUrl("pricem",jQuery("#price_max").val());
+        window.location.href=url;
+        
+    }
+
+	function checkNumber(numberStr) {
+  	  var regObj = /^[0-9]*$/g;
+  	  if (regObj.test(numberStr)) {
+  	    return true;
+  	  } else {
+  	    return false;
+  	  }
+  	}
+</script>
+
+
+</head>
+<body>
+<div class="kuPAreaBg1 clearfix">
+<!-- end --><div class="NTES-nav">
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO || logstate=="1") {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0608.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+
+
+<div class="ggArea3">
+	<iframe scrolling="no" height="70" frameborder="no" width="960" src="http://g.163.com/r?site=netease&amp;affiliate=edu&amp;cat=homepage&amp;type=column960x100&amp;location=1" border="0" marginwidth="0" marginheight="0"></iframe>
+</div>
+
+<a name="top" id="top"></a>
+<span class="blank6"></span>
+
+<div class="channel">
+<span class="logo"><a href="http://house.163.com/" title="网易"><img src="http://img3.cache.netease.com/house/img09/channel1209/logo.jpg" width="107" height="24" alt="网易" /></a></span>
+<span class="logo2"><a href="#"><img src="/product_resource/images/search/lpklogo.gif" width="79" height="27" alt="" /></a></span>
+<p class="position cGray"><a href="http://www.163.com">网易首页</a> &gt; <a href="http://house.163.com">网易房产</a> &gt; <a href="http://xf.house.163.com/sh" title="上海新楼盘库">上海新楼盘库</a> &gt;
+<div class="top_search">
+	  <form target="_blank" id="formtopdigi" name="nisearch_top_digi" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="digi.163" name="keyfrom"/>  
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onFocus="this.value=''" id="searchInput_top_digi" name="q"/></label>
+<noscript><select name="site" class="left" style="display:none">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript> 
+        <div id="divSelectDigi" class="left">
+        </div> 
+        <input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="indigi" name="in"/>
+</form></div>
+<script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav_digi(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect_digi(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected_digi.removeChild(selected_digi.firstChild);
+                selected_digi.appendChild(txt);
+                select_main_digi.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName_digi").value = title;
+                if (title == "网易") {
+				document.nisearch_top_digi.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top_digi.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover_digi () {
+                this.className = "active";
+            }
+            function a_mouseout_digi () {
+                this.className = "";
+            }
+            $_G("divSelectDigi").innerHTML = '<input id="siteName_digi" type="hidden" value="网易" name="site" /><div id="select_area_digi" class="select_box"><span id="selected_digi" class="search_site">新闻</span><div id="select_main_digi" class="select_list" style="display:none"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area_digi = $_G("select_area_digi"), selected_digi = $_G("selected_digi"), select_main_digi = $_G("select_main_digi"), select_list_digi = select_main_digi.getElementsByTagName("a"), len_digi = select_list_digi.length;
+            select_area_digi.onclick = select_main_digi.onmouseover = function(){
+                select_main_digi.style.display = "block";
+            }
+            select_main_digi.onmouseout = function(){
+                select_main_digi.style.display = "none";
+            }
+            
+            for (var i = 0; i < len_digi; i++) {
+                select_list_digi[i].onclick = clickselect_digi;
+                select_list_digi[i].onmouseover = a_mouseover_digi;
+                select_list_digi[i].onmouseout = a_mouseout_digi;
+            }
+        })();
+//]]>
+
+</script>
+</div>
+<span class="blank9"></span>
+
+<div class="kuSChannel clearfix">
+<h2>搜索 &gt;&gt;</h2>
+<h3>直达楼盘：</h3>
+<div class="search"><div class="suggestFramework">
+<input type="text" name="xf_keyword" id="xf_keyword" class="searchInput01" value="输入中文/全拼/缩写" onfocus="this.value=''"  action="/sh/search!building.action" columns="1"/>
+</div> 
+<span><input name="" type="button" value="搜索" class="searchInput02" onclick="search();" /></span></div>
+<h2><a href="/sh/multicondition.html" target="_blank"><font style="font-weight:normal;color:#fff">高级搜索</font></a></h2>
+</div>
+
+<div class="kuSearch clearfix">
+
+<div class="searchKey clearfix">
+        <div class="condition">
+        	<dl class="tab k1" id="areaMenu">
+            	<dt>区　　域：</dt>
+				<dd class="m1"><span><a href="#" way="district" val="0">不限</a></span></dd>
+																<dd><span><a href="#" way="district" val="74">浦东</a></span></dd>
+																<dd><span><a href="#" way="district" val="61">闵行</a></span></dd>
+																<dd><span><a href="#" way="district" val="114">松江</a></span></dd>
+																<dd><span><a href="#" way="district" val="41">嘉定</a></span></dd>
+																<dd><span><a href="#" way="district" val="97">普陀</a></span></dd>
+																<dd><span><a href="#" way="district" val="1">宝山</a></span></dd>
+																<dd><span><a href="#" way="district" val="141">闸北</a></span></dd>
+																<dd><span><a href="#" way="district" val="132">杨浦</a></span></dd>
+																<dd><span><a href="#" way="district" val="26">虹口</a></span></dd>
+																<dd><span><a href="#" way="district" val="122">徐汇</a></span></dd>
+																<dd><span><a href="#" way="district" val="12">长宁</a></span></dd>
+																<dd><span><a href="#" way="district" val="33">黄浦</a></span></dd>
+																<dd><span><a href="#" way="district" val="52">静安</a></span></dd>
+																<dd><span><a href="#" way="district" val="20">奉贤</a></span></dd>
+																<dd><span><a href="#" way="district" val="108">青浦</a></span></dd>
+																																			</dl>
+            <div class="key tab c2b" id="areaList" style="display:none">
+            	<ul  id="allplate" style="display:none" val="0">
+				<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+								                      <li><a href="#" way="plate" val="96">北蔡</a></li>
+			                          <li><a href="#" way="plate" val="95">高行</a></li>
+			                          <li><a href="#" way="plate" val="94">高桥</a></li>
+			                          <li><a href="#" way="plate" val="93">张江</a></li>
+			                          <li><a href="#" way="plate" val="92">周康</a></li>
+			                          <li><a href="#" way="plate" val="91">源深洋泾</a></li>
+			                          <li><a href="#" way="plate" val="90">新场</a></li>
+			                          <li><a href="#" way="plate" val="89">塘桥</a></li>
+			                          <li><a href="#" way="plate" val="88">唐镇</a></li>
+			                          <li><a href="#" way="plate" val="87">世纪公园</a></li>
+			                          <li><a href="#" way="plate" val="86">三林</a></li>
+			                          <li><a href="#" way="plate" val="85">浦东世博</a></li>
+			                          <li><a href="#" way="plate" val="84">陆家嘴</a></li>
+			                          <li><a href="#" way="plate" val="83">临港新城</a></li>
+			                          <li><a href="#" way="plate" val="82">联洋</a></li>
+			                          <li><a href="#" way="plate" val="81">金桥</a></li>
+			                          <li><a href="#" way="plate" val="80">惠南</a></li>
+			                          <li><a href="#" way="plate" val="79">花木北蔡</a></li>
+			                          <li><a href="#" way="plate" val="78">航头</a></li>
+			                          <li><a href="#" way="plate" val="77">川沙</a></li>
+			                          <li><a href="#" way="plate" val="76">曹路</a></li>
+			                          <li><a href="#" way="plate" val="75">碧云</a></li>
+			      								                      <li><a href="#" way="plate" val="73">颛桥</a></li>
+			                          <li><a href="#" way="plate" val="72">莘庄</a></li>
+			                          <li><a href="#" way="plate" val="71">吴泾</a></li>
+			                          <li><a href="#" way="plate" val="70">七宝</a></li>
+			                          <li><a href="#" way="plate" val="69">浦江镇</a></li>
+			                          <li><a href="#" way="plate" val="68">梅陇</a></li>
+			                          <li><a href="#" way="plate" val="67">马桥</a></li>
+			                          <li><a href="#" way="plate" val="66">金虹桥</a></li>
+			                          <li><a href="#" way="plate" val="65">江川</a></li>
+			                          <li><a href="#" way="plate" val="64">华漕</a></li>
+			                          <li><a href="#" way="plate" val="63">古美罗阳</a></li>
+			                          <li><a href="#" way="plate" val="62">春申</a></li>
+			      								                      <li><a href="#" way="plate" val="121">新桥</a></li>
+			                          <li><a href="#" way="plate" val="120">莘闵</a></li>
+			                          <li><a href="#" way="plate" val="119">松江新城</a></li>
+			                          <li><a href="#" way="plate" val="118">松江老城</a></li>
+			                          <li><a href="#" way="plate" val="117">泗泾</a></li>
+			                          <li><a href="#" way="plate" val="116">佘山</a></li>
+			                          <li><a href="#" way="plate" val="115">九亭</a></li>
+			      								                      <li><a href="#" way="plate" val="46">丰庄</a></li>
+			                          <li><a href="#" way="plate" val="45">南翔</a></li>
+			                          <li><a href="#" way="plate" val="44">江桥</a></li>
+			                          <li><a href="#" way="plate" val="43">嘉定城区</a></li>
+			                          <li><a href="#" way="plate" val="42">安亭</a></li>
+			      								                      <li><a href="#" way="plate" val="99">长风</a></li>
+			                          <li><a href="#" way="plate" val="98">曹杨路</a></li>
+			                          <li><a href="#" way="plate" val="107">真如</a></li>
+			                          <li><a href="#" way="plate" val="106">宜川</a></li>
+			                          <li><a href="#" way="plate" val="105">武宁</a></li>
+			                          <li><a href="#" way="plate" val="104">万里</a></li>
+			                          <li><a href="#" way="plate" val="103">桃浦</a></li>
+			                          <li><a href="#" way="plate" val="102">光新</a></li>
+			                          <li><a href="#" way="plate" val="101">长征</a></li>
+			                          <li><a href="#" way="plate" val="100">长寿</a></li>
+			      								                      <li><a href="#" way="plate" val="8">罗泾</a></li>
+			                          <li><a href="#" way="plate" val="9">月浦</a></li>
+			                          <li><a href="#" way="plate" val="7">罗店</a></li>
+			                          <li><a href="#" way="plate" val="6">杨行</a></li>
+			                          <li><a href="#" way="plate" val="5">顾村</a></li>
+			                          <li><a href="#" way="plate" val="4">共康</a></li>
+			                          <li><a href="#" way="plate" val="3">大华</a></li>
+			                          <li><a href="#" way="plate" val="2">上大</a></li>
+			                          <li><a href="#" way="plate" val="11">淞宝</a></li>
+			                          <li><a href="#" way="plate" val="10">淞南高境</a></li>
+			      								                      <li><a href="#" way="plate" val="144">彭浦</a></li>
+			                          <li><a href="#" way="plate" val="143">大宁</a></li>
+			                          <li><a href="#" way="plate" val="142">不夜城</a></li>
+			      								                      <li><a href="#" way="plate" val="140">中原</a></li>
+			                          <li><a href="#" way="plate" val="139">杨浦内环</a></li>
+			                          <li><a href="#" way="plate" val="138">新江湾城</a></li>
+			                          <li><a href="#" way="plate" val="137">五角场</a></li>
+			                          <li><a href="#" way="plate" val="136">控江路</a></li>
+			                          <li><a href="#" way="plate" val="135">黄兴公园</a></li>
+			                          <li><a href="#" way="plate" val="134">东外滩</a></li>
+			                          <li><a href="#" way="plate" val="133">鞍山</a></li>
+			      								                      <li><a href="#" way="plate" val="537">鲁迅公园</a></li>
+			                          <li><a href="#" way="plate" val="32">临平路</a></li>
+			                          <li><a href="#" way="plate" val="31">四川北路</a></li>
+			                          <li><a href="#" way="plate" val="30">曲阳</a></li>
+			                          <li><a href="#" way="plate" val="29">凉城</a></li>
+			                          <li><a href="#" way="plate" val="28">江湾镇</a></li>
+			                          <li><a href="#" way="plate" val="27">北外滩</a></li>
+			      								                      <li><a href="#" way="plate" val="131">植物园</a></li>
+			                          <li><a href="#" way="plate" val="130">徐家汇</a></li>
+			                          <li><a href="#" way="plate" val="129">田林</a></li>
+			                          <li><a href="#" way="plate" val="128">上海南站</a></li>
+			                          <li><a href="#" way="plate" val="127">龙华</a></li>
+			                          <li><a href="#" way="plate" val="126">华泾</a></li>
+			                          <li><a href="#" way="plate" val="125">衡山路</a></li>
+			                          <li><a href="#" way="plate" val="124">枫林</a></li>
+			                          <li><a href="#" way="plate" val="123">漕河泾</a></li>
+			      								                      <li><a href="#" way="plate" val="19">中山公园</a></li>
+			                          <li><a href="#" way="plate" val="18">天山</a></li>
+			                          <li><a href="#" way="plate" val="17">新华路</a></li>
+			                          <li><a href="#" way="plate" val="16">古北</a></li>
+			                          <li><a href="#" way="plate" val="15">虹桥</a></li>
+			                          <li><a href="#" way="plate" val="14">西郊</a></li>
+			                          <li><a href="#" way="plate" val="13">北新泾</a></li>
+			      								                      <li><a href="#" way="plate" val="60">新天地</a></li>
+			                          <li><a href="#" way="plate" val="59">淮海中路</a></li>
+			                          <li><a href="#" way="plate" val="58">打浦桥</a></li>
+			                          <li><a href="#" way="plate" val="40">蓬莱公园</a></li>
+			                          <li><a href="#" way="plate" val="39">豫园</a></li>
+			                          <li><a href="#" way="plate" val="38">外滩</a></li>
+			                          <li><a href="#" way="plate" val="37">人民广场</a></li>
+			                          <li><a href="#" way="plate" val="36">南京东路</a></li>
+			                          <li><a href="#" way="plate" val="35">老西门</a></li>
+			                          <li><a href="#" way="plate" val="34">董家渡</a></li>
+			      								                      <li><a href="#" way="plate" val="56">南京西路</a></li>
+			                          <li><a href="#" way="plate" val="55">静安寺</a></li>
+			                          <li><a href="#" way="plate" val="54">江宁路</a></li>
+			                          <li><a href="#" way="plate" val="53">曹家渡</a></li>
+			      								                      <li><a href="#" way="plate" val="25">柘林</a></li>
+			                          <li><a href="#" way="plate" val="24">南桥</a></li>
+			                          <li><a href="#" way="plate" val="23">金汇</a></li>
+			                          <li><a href="#" way="plate" val="22">海湾</a></li>
+			                          <li><a href="#" way="plate" val="21">奉城</a></li>
+			      								                      <li><a href="#" way="plate" val="731">华新</a></li>
+			                          <li><a href="#" way="plate" val="113">朱家角</a></li>
+			                          <li><a href="#" way="plate" val="112">重固镇</a></li>
+			                          <li><a href="#" way="plate" val="111">赵巷</a></li>
+			                          <li><a href="#" way="plate" val="110">徐泾</a></li>
+			                          <li><a href="#" way="plate" val="109">青浦新城</a></li>
+			      								                      <li><a href="#" way="plate" val="539">枫泾</a></li>
+			                          <li><a href="#" way="plate" val="540">石化</a></li>
+			                          <li><a href="#" way="plate" val="536">亭林</a></li>
+			                          <li><a href="#" way="plate" val="51">朱泾</a></li>
+			                          <li><a href="#" way="plate" val="50">金山新城</a></li>
+			      								                      <li><a href="#" way="plate" val="48">崇明</a></li>
+			      								                      <li><a href="#" way="plate" val="146">上海周边</a></li>
+			      								</ul>		     
+				
+				 				             	  <ul  id="74" style="display:none" val="74">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="96">北蔡</a></li>
+					                      <li><a href="#" way="plate" val="95">高行</a></li>
+					                      <li><a href="#" way="plate" val="94">高桥</a></li>
+					                      <li><a href="#" way="plate" val="93">张江</a></li>
+					                      <li><a href="#" way="plate" val="92">周康</a></li>
+					                      <li><a href="#" way="plate" val="91">源深洋泾</a></li>
+					                      <li><a href="#" way="plate" val="90">新场</a></li>
+					                      <li><a href="#" way="plate" val="89">塘桥</a></li>
+					                      <li><a href="#" way="plate" val="88">唐镇</a></li>
+					                      <li><a href="#" way="plate" val="87">世纪公园</a></li>
+					                      <li><a href="#" way="plate" val="86">三林</a></li>
+					                      <li><a href="#" way="plate" val="85">浦东世博</a></li>
+					                      <li><a href="#" way="plate" val="84">陆家嘴</a></li>
+					                      <li><a href="#" way="plate" val="83">临港新城</a></li>
+					                      <li><a href="#" way="plate" val="82">联洋</a></li>
+					                      <li><a href="#" way="plate" val="81">金桥</a></li>
+					                      <li><a href="#" way="plate" val="80">惠南</a></li>
+					                      <li><a href="#" way="plate" val="79">花木北蔡</a></li>
+					                      <li><a href="#" way="plate" val="78">航头</a></li>
+					                      <li><a href="#" way="plate" val="77">川沙</a></li>
+					                      <li><a href="#" way="plate" val="76">曹路</a></li>
+					                      <li><a href="#" way="plate" val="75">碧云</a></li>
+									</ul>
+												             	  <ul  id="61" style="display:none" val="61">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="73">颛桥</a></li>
+					                      <li><a href="#" way="plate" val="72">莘庄</a></li>
+					                      <li><a href="#" way="plate" val="71">吴泾</a></li>
+					                      <li><a href="#" way="plate" val="70">七宝</a></li>
+					                      <li><a href="#" way="plate" val="69">浦江镇</a></li>
+					                      <li><a href="#" way="plate" val="68">梅陇</a></li>
+					                      <li><a href="#" way="plate" val="67">马桥</a></li>
+					                      <li><a href="#" way="plate" val="66">金虹桥</a></li>
+					                      <li><a href="#" way="plate" val="65">江川</a></li>
+					                      <li><a href="#" way="plate" val="64">华漕</a></li>
+					                      <li><a href="#" way="plate" val="63">古美罗阳</a></li>
+					                      <li><a href="#" way="plate" val="62">春申</a></li>
+									</ul>
+												             	  <ul  id="114" style="display:none" val="114">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="121">新桥</a></li>
+					                      <li><a href="#" way="plate" val="120">莘闵</a></li>
+					                      <li><a href="#" way="plate" val="119">松江新城</a></li>
+					                      <li><a href="#" way="plate" val="118">松江老城</a></li>
+					                      <li><a href="#" way="plate" val="117">泗泾</a></li>
+					                      <li><a href="#" way="plate" val="116">佘山</a></li>
+					                      <li><a href="#" way="plate" val="115">九亭</a></li>
+									</ul>
+												             	  <ul  id="41" style="display:none" val="41">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="46">丰庄</a></li>
+					                      <li><a href="#" way="plate" val="45">南翔</a></li>
+					                      <li><a href="#" way="plate" val="44">江桥</a></li>
+					                      <li><a href="#" way="plate" val="43">嘉定城区</a></li>
+					                      <li><a href="#" way="plate" val="42">安亭</a></li>
+									</ul>
+												             	  <ul  id="97" style="display:none" val="97">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="99">长风</a></li>
+					                      <li><a href="#" way="plate" val="98">曹杨路</a></li>
+					                      <li><a href="#" way="plate" val="107">真如</a></li>
+					                      <li><a href="#" way="plate" val="106">宜川</a></li>
+					                      <li><a href="#" way="plate" val="105">武宁</a></li>
+					                      <li><a href="#" way="plate" val="104">万里</a></li>
+					                      <li><a href="#" way="plate" val="103">桃浦</a></li>
+					                      <li><a href="#" way="plate" val="102">光新</a></li>
+					                      <li><a href="#" way="plate" val="101">长征</a></li>
+					                      <li><a href="#" way="plate" val="100">长寿</a></li>
+									</ul>
+												             	  <ul  id="1" style="display:none" val="1">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="8">罗泾</a></li>
+					                      <li><a href="#" way="plate" val="9">月浦</a></li>
+					                      <li><a href="#" way="plate" val="7">罗店</a></li>
+					                      <li><a href="#" way="plate" val="6">杨行</a></li>
+					                      <li><a href="#" way="plate" val="5">顾村</a></li>
+					                      <li><a href="#" way="plate" val="4">共康</a></li>
+					                      <li><a href="#" way="plate" val="3">大华</a></li>
+					                      <li><a href="#" way="plate" val="2">上大</a></li>
+					                      <li><a href="#" way="plate" val="11">淞宝</a></li>
+					                      <li><a href="#" way="plate" val="10">淞南高境</a></li>
+									</ul>
+												             	  <ul  id="141" style="display:none" val="141">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="144">彭浦</a></li>
+					                      <li><a href="#" way="plate" val="143">大宁</a></li>
+					                      <li><a href="#" way="plate" val="142">不夜城</a></li>
+									</ul>
+												             	  <ul  id="132" style="display:none" val="132">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="140">中原</a></li>
+					                      <li><a href="#" way="plate" val="139">杨浦内环</a></li>
+					                      <li><a href="#" way="plate" val="138">新江湾城</a></li>
+					                      <li><a href="#" way="plate" val="137">五角场</a></li>
+					                      <li><a href="#" way="plate" val="136">控江路</a></li>
+					                      <li><a href="#" way="plate" val="135">黄兴公园</a></li>
+					                      <li><a href="#" way="plate" val="134">东外滩</a></li>
+					                      <li><a href="#" way="plate" val="133">鞍山</a></li>
+									</ul>
+												             	  <ul  id="26" style="display:none" val="26">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="537">鲁迅公园</a></li>
+					                      <li><a href="#" way="plate" val="32">临平路</a></li>
+					                      <li><a href="#" way="plate" val="31">四川北路</a></li>
+					                      <li><a href="#" way="plate" val="30">曲阳</a></li>
+					                      <li><a href="#" way="plate" val="29">凉城</a></li>
+					                      <li><a href="#" way="plate" val="28">江湾镇</a></li>
+					                      <li><a href="#" way="plate" val="27">北外滩</a></li>
+									</ul>
+												             	  <ul  id="122" style="display:none" val="122">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="131">植物园</a></li>
+					                      <li><a href="#" way="plate" val="130">徐家汇</a></li>
+					                      <li><a href="#" way="plate" val="129">田林</a></li>
+					                      <li><a href="#" way="plate" val="128">上海南站</a></li>
+					                      <li><a href="#" way="plate" val="127">龙华</a></li>
+					                      <li><a href="#" way="plate" val="126">华泾</a></li>
+					                      <li><a href="#" way="plate" val="125">衡山路</a></li>
+					                      <li><a href="#" way="plate" val="124">枫林</a></li>
+					                      <li><a href="#" way="plate" val="123">漕河泾</a></li>
+									</ul>
+												             	  <ul  id="12" style="display:none" val="12">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="19">中山公园</a></li>
+					                      <li><a href="#" way="plate" val="18">天山</a></li>
+					                      <li><a href="#" way="plate" val="17">新华路</a></li>
+					                      <li><a href="#" way="plate" val="16">古北</a></li>
+					                      <li><a href="#" way="plate" val="15">虹桥</a></li>
+					                      <li><a href="#" way="plate" val="14">西郊</a></li>
+					                      <li><a href="#" way="plate" val="13">北新泾</a></li>
+									</ul>
+												             	  <ul  id="33" style="display:none" val="33">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="60">新天地</a></li>
+					                      <li><a href="#" way="plate" val="59">淮海中路</a></li>
+					                      <li><a href="#" way="plate" val="58">打浦桥</a></li>
+					                      <li><a href="#" way="plate" val="40">蓬莱公园</a></li>
+					                      <li><a href="#" way="plate" val="39">豫园</a></li>
+					                      <li><a href="#" way="plate" val="38">外滩</a></li>
+					                      <li><a href="#" way="plate" val="37">人民广场</a></li>
+					                      <li><a href="#" way="plate" val="36">南京东路</a></li>
+					                      <li><a href="#" way="plate" val="35">老西门</a></li>
+					                      <li><a href="#" way="plate" val="34">董家渡</a></li>
+									</ul>
+												             	  <ul  id="52" style="display:none" val="52">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="56">南京西路</a></li>
+					                      <li><a href="#" way="plate" val="55">静安寺</a></li>
+					                      <li><a href="#" way="plate" val="54">江宁路</a></li>
+					                      <li><a href="#" way="plate" val="53">曹家渡</a></li>
+									</ul>
+												             	  <ul  id="20" style="display:none" val="20">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="25">柘林</a></li>
+					                      <li><a href="#" way="plate" val="24">南桥</a></li>
+					                      <li><a href="#" way="plate" val="23">金汇</a></li>
+					                      <li><a href="#" way="plate" val="22">海湾</a></li>
+					                      <li><a href="#" way="plate" val="21">奉城</a></li>
+									</ul>
+												             	  <ul  id="108" style="display:none" val="108">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="731">华新</a></li>
+					                      <li><a href="#" way="plate" val="113">朱家角</a></li>
+					                      <li><a href="#" way="plate" val="112">重固镇</a></li>
+					                      <li><a href="#" way="plate" val="111">赵巷</a></li>
+					                      <li><a href="#" way="plate" val="110">徐泾</a></li>
+					                      <li><a href="#" way="plate" val="109">青浦新城</a></li>
+									</ul>
+												 								 								 								<span class="clear"></span>
+            </div>
+            <span class="blank3"></span>
+			<!--          第二行  -->
+            <dl class="tab k1" id="areaMenu">
+																																																																																																																																								<dd><span><a href="#" way="district" val="49">金山</a></span></dd>
+																<dd><span><a href="#" way="district" val="47">崇明</a></span></dd>
+																<dd><span><a href="#" way="district" val="145">周边</a></span></dd>
+											</dl>
+            
+            
+            <div class="key tab c2b" id="areaList1" style="display:none">
+				 				 								 								 								 								 								 								 								 								 								 								 								 								 								 								 								             	  <ul  id="49" style="display:none" val="49">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="539">枫泾</a></li>
+					                      <li><a href="#" way="plate" val="540">石化</a></li>
+					                      <li><a href="#" way="plate" val="536">亭林</a></li>
+					                      <li><a href="#" way="plate" val="51">朱泾</a></li>
+					                      <li><a href="#" way="plate" val="50">金山新城</a></li>
+									</ul>
+												             	  <ul  id="47" style="display:none" val="47">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="48">崇明</a></li>
+									</ul>
+												             	  <ul  id="145" style="display:none" val="145">
+					<li id="li_0"><a href="#" way="plate" val="0">全部</a></li>
+					                      <li><a href="#" way="plate" val="146">上海周边</a></li>
+									</ul>
+												<span class="clear"></span>
+            </div>
+            
+        </div>
+        <span class="blank15"></span>
+        <div class="condition c2b">
+        	<dl>
+            	<dt>售　　价：</dt>
+				  <dd><span><a href="#" way="price" val="0" title="不限售价" >不限售价</a></span></dd>
+				  				  				    <dd><span><a href="#" way="price" val="1" title="10000元以下">10000元以下</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="2" title="10000~20000元">10000~20000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="3" title="20000~30000元">20000~30000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="4" title="30000~40000元">30000~40000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="5" title="40000~60000元">40000~60000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="6" title="60000~80000元">60000~80000元</a></span></dd>
+          		  				    <dd><span><a href="#" way="price" val="7" title="80000元以上">80000元以上</a></span></dd>
+          		            		  <dd><span>(元/㎡)</span></dd>
+          		  
+<dd class="k4 ">
+<span><input type="text" class="kInput01" value="" id="price_min" name="price_min" onFocus="displayButton();"/> - <input type="text" class="kInput01" value="" id="price_max" name="price_max" onFocus="displayButton();"/></span>
+<span class="k5" id="submitbutton" style="display: none"><input type="submit" value="确定" class="kInput02" onclick="changePrice();"/></span>
+</dd>
+            </dl>
+        </div>
+        <span class="blank15"></span>
+        <div class="condition c2b">
+        	<dl>
+            	<dt>物业类型：</dt>
+            	<dd><span><a href="#" way="property" val="0" title="全部物业">全部物业</a></span></dd>
+            					<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="1" title="公寓">公寓</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="2" title="洋房">洋房</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="3" title="商住房">商住房</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="4" title="大平层">大平层</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="5" title="别墅">别墅</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="6" title="写字楼">写字楼</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="7" title="商铺">商铺</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="8" title="酒店式公寓">酒店式公寓</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="9" title="限价房">限价房</a></span></dd>
+          		          						<!--北京先屏蔽商住和LOFT-->
+<!-->
+<!-->
+<!-->
+<!-->
+            	            	  <dd><span><a href="#" way="property" val="10" title="经适房">经适房</a></span></dd>
+          		          		            </dl>
+        </div>
+			
+        <span class="blank15"></span>
+        <div class="condition c2b">
+        	<dl>
+            	<dt>地铁沿线：</dt>
+                <dd><span><a href="#" way="metro" val="0" title="不限沿线">不限沿线</a></span></dd>
+                				                  <dd><span><a href="#" way="metro" val="147" title="1号线">1号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="176" title="2号线">2号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="206" title="3号线">3号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="236" title="4号线">4号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="264" title="5号线">5号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="276" title="6号线">6号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="306" title="7号线">7号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="341" title="8号线">8号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="371" title="9号线">9号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="397" title="10号线">10号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="432" title="11号线">11号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="472" title="12号线">12号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="504" title="13号线">13号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="541" title="14号线">14号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="542" title="15号线">15号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="543" title="16号线">16号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="544" title="17号线">17号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="545" title="18号线">18号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="546" title="19号线">19号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="547" title="20号线">20号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="548" title="21号线">21号线</a></span></dd>
+				                  <dd><span><a href="#" way="metro" val="549" title="22号线">22号线</a></span></dd>
+							</dl>
+        </div>
+        
+        <span class="blank15"></span>
+        
+        <div id="search_s_2a" style="display: none;">
+                
+        <span class="blank15"></span>
+        <div class="condition c2b">
+          <dl>
+            	<dt>销售状态：</dt>
+                <dd><span><a href="#" way="buystatus" val="0" title="不限">不限</a></span></dd>
+                                  <dd><span><a href="#" way="buystatus" val="1" title="待售">待售</a></span></dd>
+				                  <dd><span><a href="#" way="buystatus" val="2" title="在售">在售</a></span></dd>
+				                  <dd><span><a href="#" way="buystatus" val="3" title="售完">售完</a></span></dd>
+				                  <dd><span><a href="#" way="buystatus" val="4" title="在租">在租</a></span></dd>
+				         </dl>
+        </div>
+        
+        
+        <span class="blank15"></span>
+        <div class="condition c2b">
+          <dl>
+            <dt class="k3">楼盘特色：</dt>
+            <dd class="k3"><span><a href="#" way="base_lpts" val="0" title="不限特色">不限特色</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="1" title="地铁沿线"><img src="/product_resource/images/dtyx.gif" width="24" height="24" /><br />地铁沿线</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="6" title="名校配套"><img src="/product_resource/images/mxpt.gif" width="24" height="24" /><br />名校配套</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="5" title="大型社区"><img src="/product_resource/images/dxsq.gif" width="24" height="24" /><br />大型社区</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="2" title="江景楼盘"><img src="/product_resource/images/jjlp.gif" width="24" height="24" /><br />江景楼盘</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="3" title="豪华公寓"><img src="/product_resource/images/hhgy.gif" width="24" height="24" /><br />豪华公寓</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="4" title="高档豪宅"><img src="/product_resource/images/gdhz.gif" width="24" height="24" /><br />高档豪宅</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="8" title="投资地产"><img src="/product_resource/images/tzdc.gif" width="24" height="24" /><br />投资地产</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="10" title="公园景观"><img src="/product_resource/images/gyjg.gif" width="24" height="24" /><br />公园景观</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="11" title="生态宜居"><img src="/product_resource/images/styj.gif" width="24" height="24" /><br />生态宜居</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="12" title="商业中心"><img src="/product_resource/images/syzx.gif" width="24" height="24" /><br />商业中心</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="13" title="幸福婚房"><img src="/product_resource/images/xfhf.gif" width="24" height="24" /><br />幸福婚房</a></span></dd>
+            <dd class="k2"><span><a href="#" way="base_lpts" val="14" title="品牌地产"><img src="/product_resource/images/ppdc.gif" width="24" height="24" /><br />品牌地产</a></span></dd>
+          </dl>
+        </div>
+        
+                <div class="condition c2b">
+          <dl>
+            	<dt>环线位置：</dt>
+                <dd><span><a href="#" way="base_hxwz" val="0" title="不限">不限</a></span></dd>
+                                  <dd><span><a href="#" way="base_hxwz" val="1" title="内环以内">内环以内</a></span></dd>
+				                  <dd><span><a href="#" way="base_hxwz" val="2" title="内中环间">内中环间</a></span></dd>
+				                  <dd><span><a href="#" way="base_hxwz" val="3" title="中外环间">中外环间</a></span></dd>
+				                  <dd><span><a href="#" way="base_hxwz" val="4" title="外郊环间">外郊环间</a></span></dd>
+				                  <dd><span><a href="#" way="base_hxwz" val="5" title="郊环以外">郊环以外</a></span></dd>
+				         </dl>
+        </div>
+                
+        </div>
+        
+        <span class="blank15"></span>
+                <span class="blank9"></span>
+<!--<div class="c1"><h3><a href="#">使用多选搜索</a></h3></div>        -->
+</div>
+
+<div class="c1 clearfix"><h3 class="k1Bg1"" id="search_s_1b"><a target="_self" ></a></h3></div>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery(".k1Bg1").click(function(){
+		jQuery("#search_s_2a").slideToggle("slow");
+		jQuery(this).toggleClass("k1Bg2"); return false;
+	}); 
+});
+</script>
+
+</div>
+
+<span class="blank15"></span>
+
+<!--begin-->
+<div class="kuSearchList4 clearfix">
+<div class="c1 clearfix">
+<div class="c1L">排序：
+<span  class="k2 kDown" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('4');" >人气<span class="k3"></span></a></span>
+<span  class="k2 kUp" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('31');" >价格<span class="k3"></span></a></span> 
+<span  class="k2 kDownOn" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('11');" >成交量<span class="k3"></span></a></span>
+<span  class="k2 kDown" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('5');" >团购人数<span class="k3"></span></a></span>
+<span  class="k2 kDown" >
+<a style="cursor:pointer"  onclick="javascript:changeOrderby('2');" >更新时间<span class="k3"></span></a></span>
+
+</div>
+<div class="c1R">
+<span class="k4"><span class="k4_1" onclick="show_hCnt('kpsj')" onmouseout="hide_hCnt('kpsj')">
+开盘时间
+</span>
+<ul id="kpsj" onmouseover="show_hCnt('kpsj')" onmouseout="hide_hCnt('kpsj')">
+<li><a href="#" way="base_kpsj" val="0">不限</a></li>
+<li><a href="#" way="base_kpsj" val="1">本月开盘</a></li>
+<li><a href="#" way="base_kpsj" val="2">本季度开盘</a></li>
+<li><a href="#" way="base_kpsj" val="3">近半年开盘</a></li>
+<li><a href="#" way="base_kpsj" val="4">本年度开盘</a></li>
+</ul>
+</span>
+<span class="k4" onmouseout="hide_hCnt('rzsj')"><span class="k4_1" onclick="show_hCnt('rzsj')">
+入住时间
+</span>
+<ul id="rzsj" onmouseover="show_hCnt('rzsj')" onmouseout="hide_hCnt('rzsj')">
+<li><a href="#" way="base_rzsj" val="0">不限</a></li>
+<li><a href="#" way="base_rzsj" val="1">本月入住</a></li>
+<li><a href="#" way="base_rzsj" val="2">本季度入住</a></li>
+<li><a href="#" way="base_rzsj" val="3">近半年入住</a></li>
+<li><a href="#" way="base_rzsj" val="4">本年度入住</a></li>
+</ul>
+</span>
+
+<span class="k5"><a style="cursor:pointer" onclick="javascript:changeMode('0')"><span class="k5_1"></span>切换到列表</a></span>
+
+<script type="text/javascript">
+//<![CDATA[
+function show_hCnt(show1) { 
+document.getElementById(show1).style.display="block";
+}
+function hide_hCnt(hide1) { 
+document.getElementById(hide1).style.display="none";
+}
+//]]>
+</script>
+</div>
+</div>
+<div class="c2 clearfix">
+<h2>共找到<span class="k1">6809</span>个符合条件的楼盘</h2>
+</div>
+</div>
+<!--end-->
+<span class="blank9"></span>
+
+
+<script type="text/javascript">
+//<![CDATA[
+function showPf(show1,show2) { 
+document.getElementById(show1).style.display="block";
+document.getElementById(show2).style.border="1px solid #ccc";
+}
+function hidePf(hide1,hide2) { 
+document.getElementById(hide1).style.display="none";
+document.getElementById(hide2).style.border="1px solid #fff";
+}
+//]]>
+</script>
+<div class="kuSearchList2 clearfix">
+<ul>
+
+
+
+<li>
+<div class="c1" id="pingfenD1"><div class="c2"><div class="k1">
+<a href="/sh/0RKP.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2013-06-26/1372240496596.jpg" width="300" height="225" alt="万科城VCITY_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0RKP.html" target="_blank">万科城VCITY</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：428652</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  242 万元/套
+
+</span>
+<br />电话：4008-163-163 转 15282<br /><a style="text-decoration:none;color: #2B2B2B" title="闵行区银春路2200弄（华宁路与银春路交汇处）">地址：闵行区银春路2200弄（华宁路与银春路交汇处）</a>&nbsp;&nbsp;<a href="/sh/map/0RKP.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen1','pingfenD1')" onmouseout="hidePf('pingfen1','pingfenD1')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen1" onmouseover="showPf('pingfen1','pingfenD1')" onmouseout="hidePf('pingfen1','pingfenD1')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0RKP.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0RKP.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0RKP.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0RKP.html" target="_blank">图库(<span class="cDRed">127</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0rkp.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0RKP.html" target="_blank">团购(<span class="cDRed">419</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD2"><div class="c2"><div class="k1">
+<a href="/sh/0SNc.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2014-01-22/1390358835280.jpg" width="300" height="225" alt="信达蓝爵_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0SNc.html" target="_blank">信达蓝爵</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：18347</span></div>
+<div class="k3">价格：
+<span class="m1">
+	20000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15531<br /><a style="text-decoration:none;color: #2B2B2B" title="松江国际生态商务区光星路1688号(松江万达广场旁)">地址：松江国际生态商务区光星路1688号(松江万达广场旁)</a>&nbsp;&nbsp;<a href="/sh/map/0SNc.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen2','pingfenD2')" onmouseout="hidePf('pingfen2','pingfenD2')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen2" onmouseover="showPf('pingfen2','pingfenD2')" onmouseout="hidePf('pingfen2','pingfenD2')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0SNc.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0SNc.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0SNc.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0SNc.html" target="_blank">图库(<span class="cDRed">44</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0sn3.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0SNc.html" target="_blank">团购(<span class="cDRed">22</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD3"><div class="c2"><div class="k1">
+<a href="/sh/0EGH.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2009-11-27/1259299101553.jpg" width="300" height="225" alt="中信泰富朱家角新城_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0EGH.html" target="_blank">中信泰富朱家角新城</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：151326</span></div>
+<div class="k3">价格：
+<span class="m1">
+	15000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15429<br /><a style="text-decoration:none;color: #2B2B2B" title="上海市青浦区朱家角镇珠湖路511号">地址：上海市青浦区朱家角镇珠湖路511号</a>&nbsp;&nbsp;<a href="/sh/map/0EGH.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen3','pingfenD3')" onmouseout="hidePf('pingfen3','pingfenD3')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen3" onmouseover="showPf('pingfen3','pingfenD3')" onmouseout="hidePf('pingfen3','pingfenD3')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0EGH.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0EGH.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0EGH.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0EGH.html" target="_blank">图库(<span class="cDRed">180</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0egh.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0EGH.html" target="_blank">团购(<span class="cDRed">66</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD4"><div class="c2"><div class="k1">
+<a href="/sh/0DLT.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2014-01-16/1389841166188.jpg" width="300" height="225" alt="万科金色城市_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0DLT.html" target="_blank">万科金色城市</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：232190</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  37000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15312<br /><a style="text-decoration:none;color: #2B2B2B" title="浦东区御桥路1751号(近沪南路)">地址：浦东区御桥路1751号(近沪南路)</a>&nbsp;&nbsp;<a href="/sh/map/0DLT.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen4','pingfenD4')" onmouseout="hidePf('pingfen4','pingfenD4')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen4" onmouseover="showPf('pingfen4','pingfenD4')" onmouseout="hidePf('pingfen4','pingfenD4')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0DLT.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0DLT.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0DLT.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0DLT.html" target="_blank">图库(<span class="cDRed">106</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0dlt.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0DLT.html" target="_blank">团购(<span class="cDRed">69</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD5"><div class="c2"><div class="k1">
+<a href="/sh/0RTG.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2013-05-24/1369391314407.jpg" width="300" height="225" alt="万科梦想派_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0RTG.html" target="_blank">万科梦想派</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：108486</span></div>
+<div class="k3">价格：
+<span class="m1">
+	21500 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15525<br /><a style="text-decoration:none;color: #2B2B2B" title="松江国际生态商务区淡家浜街188号（松江万达广场北100米）">地址：松江国际生态商务区淡家浜街188号（松江万达广场北100米）</a>&nbsp;&nbsp;<a href="/sh/map/0RTG.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen5','pingfenD5')" onmouseout="hidePf('pingfen5','pingfenD5')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen5" onmouseover="showPf('pingfen5','pingfenD5')" onmouseout="hidePf('pingfen5','pingfenD5')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0RTG.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0RTG.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0RTG.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0RTG.html" target="_blank">图库(<span class="cDRed">117</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0rtg.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0RTG.html" target="_blank">团购(<span class="cDRed">137</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD6"><div class="c2"><div class="k1">
+<a href="/sh/0QSF.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2011-10-08/1318057419196.jpg" width="300" height="225" alt="旭辉·澜悦湾_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0QSF.html" target="_blank">旭辉·澜悦湾</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：242907</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  13500 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15026<br /><a style="text-decoration:none;color: #2B2B2B" title="宝山区潘泾路宝钱公路口">地址：宝山区潘泾路宝钱公路口</a>&nbsp;&nbsp;<a href="/sh/map/0QSF.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen6','pingfenD6')" onmouseout="hidePf('pingfen6','pingfenD6')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen6" onmouseover="showPf('pingfen6','pingfenD6')" onmouseout="hidePf('pingfen6','pingfenD6')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0QSF.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0QSF.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0QSF.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0QSF.html" target="_blank">图库(<span class="cDRed">94</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0qsf.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0QSF.html" target="_blank">团购(<span class="cDRed">94</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD7"><div class="c2"><div class="k1">
+<a href="/sh/0SEC.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2013-09-26/1380164963927.jpg" width="300" height="225" alt="中建公元壹号_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0SEC.html" target="_blank">中建公元壹号</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：23618</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  11000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15092<br /><a style="text-decoration:none;color: #2B2B2B" title="奉贤区奉城镇兰博路1801号（奉城镇政府对面）">地址：奉贤区奉城镇兰博路1801号（奉城镇政府对面）</a>&nbsp;&nbsp;<a href="/sh/map/0SEC.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen7','pingfenD7')" onmouseout="hidePf('pingfen7','pingfenD7')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen7" onmouseover="showPf('pingfen7','pingfenD7')" onmouseout="hidePf('pingfen7','pingfenD7')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0SEC.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0SEC.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0SEC.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0SEC.html" target="_blank">图库(<span class="cDRed">144</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0sec.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0SEC.html" target="_blank">团购(<span class="cDRed">19</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD8"><div class="c2"><div class="k1">
+<a href="/sh/0SDf.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2013-09-25/1380098323528.jpg" width="300" height="225" alt="新城昱翠湾_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0SDf.html" target="_blank">新城昱翠湾</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：55300</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  15000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15041<br /><a style="text-decoration:none;color: #2B2B2B" title="宝山月富路55弄">地址：宝山月富路55弄</a>&nbsp;&nbsp;<a href="/sh/map/0SDf.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen8','pingfenD8')" onmouseout="hidePf('pingfen8','pingfenD8')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen8" onmouseover="showPf('pingfen8','pingfenD8')" onmouseout="hidePf('pingfen8','pingfenD8')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0SDf.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0SDf.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0SDf.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0SDf.html" target="_blank">图库(<span class="cDRed">126</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0sd6.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0SDf.html" target="_blank">团购(<span class="cDRed">20</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD9"><div class="c2"><div class="k1">
+<a href="/sh/0KOG.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2013-08-02/1375419751161.jpg" width="300" height="225" alt="长泰东郊御园_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0KOG.html" target="_blank">长泰东郊御园</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：166719</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  27000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15339<br /><a style="text-decoration:none;color: #2B2B2B" title="浦东航鹤路78弄">地址：浦东航鹤路78弄</a>&nbsp;&nbsp;<a href="/sh/map/0KOG.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen9','pingfenD9')" onmouseout="hidePf('pingfen9','pingfenD9')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen9" onmouseover="showPf('pingfen9','pingfenD9')" onmouseout="hidePf('pingfen9','pingfenD9')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0KOG.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0KOG.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0KOG.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0KOG.html" target="_blank">图库(<span class="cDRed">119</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0kog.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0KOG.html" target="_blank">团购(<span class="cDRed">13</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD10"><div class="c2"><div class="k1">
+<a href="/sh/0QVT.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2013-06-18/1371522752175.jpg" width="300" height="225" alt="御沁园_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0QVT.html" target="_blank">御沁园</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：291067</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  33000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15357<br /><a style="text-decoration:none;color: #2B2B2B" title="浦东新区周康路869弄">地址：浦东新区周康路869弄</a>&nbsp;&nbsp;<a href="/sh/map/0QVT.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen10','pingfenD10')" onmouseout="hidePf('pingfen10','pingfenD10')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen10" onmouseover="showPf('pingfen10','pingfenD10')" onmouseout="hidePf('pingfen10','pingfenD10')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0QVT.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0QVT.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0QVT.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0QVT.html" target="_blank">图库(<span class="cDRed">309</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0qvt.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0QVT.html" target="_blank">团购(<span class="cDRed">60</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD11"><div class="c2"><div class="k1">
+<a href="/sh/0RDM.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2012-10-31/1351648737068.jpg" width="300" height="225" alt="中建溪岸澜庭_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0RDM.html" target="_blank">中建溪岸澜庭</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：78596</span></div>
+<div class="k3">价格：
+<span class="m1">
+	23000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15170<br /><a style="text-decoration:none;color: #2B2B2B" title="嘉定德园路1259弄（近沪宜公路）">地址：嘉定德园路1259弄（近沪宜公路）</a>&nbsp;&nbsp;<a href="/sh/map/0RDM.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen11','pingfenD11')" onmouseout="hidePf('pingfen11','pingfenD11')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen11" onmouseover="showPf('pingfen11','pingfenD11')" onmouseout="hidePf('pingfen11','pingfenD11')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0RDM.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0RDM.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0RDM.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0RDM.html" target="_blank">图库(<span class="cDRed">59</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0rdm.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0RDM.html" target="_blank">团购(<span class="cDRed">17</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD12"><div class="c2"><div class="k1">
+<a href="/sh/0QAW.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2011-07-27/1311733535884.jpg" width="300" height="225" alt="丝庐雅苑_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0QAW.html" target="_blank">丝庐雅苑</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：127925</span></div>
+<div class="k3">价格：
+<span class="m1">
+	16300 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15348<br /><a style="text-decoration:none;color: #2B2B2B" title="浦东申江南路7777弄">地址：浦东申江南路7777弄</a>&nbsp;&nbsp;<a href="/sh/map/0QAW.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen12','pingfenD12')" onmouseout="hidePf('pingfen12','pingfenD12')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen12" onmouseover="showPf('pingfen12','pingfenD12')" onmouseout="hidePf('pingfen12','pingfenD12')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0QAW.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0QAW.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0QAW.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0QAW.html" target="_blank">图库(<span class="cDRed">225</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0qaw.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0QAW.html" target="_blank">团购(<span class="cDRed">53</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<div class="c1" id="pingfenD13"><div class="c2"><div class="k1">
+<a href="/sh/0QZb.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2012-03-30/1333073581038.jpg" width="300" height="225" alt="保利星海屿_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0QZb.html" target="_blank">保利星海屿</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：90244</span></div>
+<div class="k3">价格：
+<span class="m1">
+	22000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15163<br /><a style="text-decoration:none;color: #2B2B2B" title="高台路533弄1-10、16、18、20号">地址：高台路533弄1-10、16、18、20号</a>&nbsp;&nbsp;<a href="/sh/map/0QZb.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen13','pingfenD13')" onmouseout="hidePf('pingfen13','pingfenD13')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen13" onmouseover="showPf('pingfen13','pingfenD13')" onmouseout="hidePf('pingfen13','pingfenD13')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0QZb.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0QZb.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0QZb.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0QZb.html" target="_blank">图库(<span class="cDRed">101</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0qz2.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0QZb.html" target="_blank">团购(<span class="cDRed">22</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD14"><div class="c2"><div class="k1">
+<a href="/sh/0EPL.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2013-05-27/1369644263927.jpg" width="300" height="225" alt="金地自在城_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0EPL.html" target="_blank">金地自在城</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：188643</span></div>
+<div class="k3">价格：
+<span class="m1">
+	22000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15494<br /><a style="text-decoration:none;color: #2B2B2B" title="松江区泗陈公路1888弄">地址：松江区泗陈公路1888弄</a>&nbsp;&nbsp;<a href="/sh/map/0EPL.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen14','pingfenD14')" onmouseout="hidePf('pingfen14','pingfenD14')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen14" onmouseover="showPf('pingfen14','pingfenD14')" onmouseout="hidePf('pingfen14','pingfenD14')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0EPL.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0EPL.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0EPL.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0EPL.html" target="_blank">图库(<span class="cDRed">128</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0epl.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0EPL.html" target="_blank">团购(<span class="cDRed">74</span>人)</a></h3>
+</div>
+</div>
+</li>
+<li>
+<div class="c1" id="pingfenD15"><div class="c2"><div class="k1">
+<a href="/sh/0RDN.html" target="_blank">
+
+<img src="http://img2.cache.netease.com/photo/0007/2012-10-31/1351649601099.jpg" width="300" height="225" alt="象屿品城_网易房产" /></a>
+</div><div class="k2"><h2><a href="/sh/0RDN.html" target="_blank">象屿品城</a></h2>
+<span class="m1">
+在售
+</span>
+<span class="m2">人气：151333</span></div>
+<div class="k3">价格：
+<span class="m1">
+	最低价  23000 元/㎡
+
+</span>
+<br />电话：4008-163-163 转 15521<br /><a style="text-decoration:none;color: #2B2B2B" title="松江雪家桥路1弄">地址：松江雪家桥路1弄</a>&nbsp;&nbsp;<a href="/sh/map/0RDN.html" target="_blank"><span class="cDRed">查看地图&gt;&gt;</span></a>
+</div>
+<div class="k4">
+<span class="k4_1" onmouseover="showPf('pingfen15','pingfenD15')" onmouseout="hidePf('pingfen15','pingfenD15')">
+查看网友评分&gt;&gt;
+</span></div>
+</div>
+<div class="k5Bg">
+<div class="k5" id="pingfen15" onmouseover="showPf('pingfen15','pingfenD15')" onmouseout="hidePf('pingfen15','pingfenD15')">
+					<h2>
+					<div sytle="width:176px;height:172px">
+                                            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="170" height="150" id="yukun_nianling" align="middle">
+                        <param name="wmode" value="opaque" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                        <param name="allowFullScreen" value="false" />
+                        <param name="movie" value="/product_resource/images/radar.swf?url=/sh/base/score/0RDN.xml" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <embed src="/product_resource/images/radar.swf?url=/sh/base/score/0RDN.xml" wmode="opaque" quality="high" bgcolor="#ffffff" width="176" height="172" name="yukun_nianling" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                      </object>
+                    </div>
+                    </h2>
+<h3><a href="/sh/0RDN.html" target="_blank">详细</a> | <a href="/sh/photo/huxing/0RDN.html" target="_blank">图库(<span class="cDRed">79</span>张)</a> | <a href="http://bbs.sh.house.163.com/list/house_0rdn.html" target="_blank">论坛</a> | <a href="/sh/groupbuy/0RDN.html" target="_blank">团购(<span class="cDRed">45</span>人)</a></h3>
+</div>
+</div>
+</li>
+</ul>
+<ul>
+</ul>
+</div>
+
+<div class="kuSTurnPage clearfix">
+<span class="now">1</span><a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-2.html'>2</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-3.html'>3</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-4.html'>4</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-5.html'>5</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-6.html'>6</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-7.html'>7</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-8.html'>8</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-9.html'>9</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-10.html'>10</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-11.html'>11</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-12.html'>12</a> <span class="more">...</span><a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-13.html'>13</a> <a href='/sh/search/0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1-2.html'>下一页&raquo;</a> <span class="jump"><input type="hidden" id="urlparam" name="urlparam" value="0-0-0-0-0-0-0-0-0-1-0-0-0-0-0-1" /><input type="text" class="txt" id="number" name="number" size="4" />页<input type="button" class="bt" value="GO" onclick="gop()" /></span>
+</div>
+
+
+
+<span class="blank15"></span>
+<span class="kuPAreaBg1End"></span>
+
+</div>
+<span class="blank9"></span>
+
+<span class="blank9"></span>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://163.wrating.com/a1.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+    </script>
+    
+
+ <div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback" rel="nofollow">意见反馈</a>　<a href="mailto:shdichan@corp.netease.com" rel="nofollow">联系电话:021-61947163-7301</a>　<a href="mailto:shdichan@corp.netease.com" rel="nofollow">主编信箱</a>　<a href="http://bj.house.163.com/sitemap.html">频道站点地图<!--<a href="http://bj.house.163.com/sitemap.xml">(XML)</a>--></a></div>
+<a href="http://corp.163.com/" rel="nofollow">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html" rel="nofollow">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" rel="nofollow">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" rel="nofollow">招聘信息</a> - <a href="http://help.163.com/" rel="nofollow">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" rel="nofollow">隐私政策</a> - <a href="http://emarketing.biz.163.com/" rel="nofollow">网络营销</a> - <a href="http://sitemap.163.com/" rel="nofollow">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>

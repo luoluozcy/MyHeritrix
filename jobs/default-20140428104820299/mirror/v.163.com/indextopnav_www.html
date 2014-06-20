@@ -1,0 +1,2140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>网易视频</title>
+<meta name="keywords" content="网易,视频,视频频道,新闻,娱乐,综艺,网视,网络视频,原创,自拍,时尚,生活,纪实,纪录片,访谈,会客厅,VIDEO" />
+<meta name="description" content="网易视频频道是集新闻、娱乐、网络视频、原创自拍、时尚生活、纪录片、访谈等内容于一体的综合性视频资讯门户站点。主要产品包括：视频点播、视频直播、嘉宾访谈、易周刊、精彩电视节目、广电媒体联盟、首映剧场等" />
+<meta property="wb:webmaster" content="09328ddd750b062e" />
+<meta name="baidu-site-verification" content="tEeVE4sdzCuiCi2Y" />
+<base target="_blank" />
+<link rel="alternate" type="application/rss+xml" href="http://v.163.com/special/008544NC/vheadline.xml" title="RSS 2.0" />
+<link rel="stylesheet" href="http://img1.cache.netease.com/cnews/css07/style.css" />
+<link rel="stylesheet" href="http://img2.cache.netease.com/video/img13/zhuzhan/movie_v3.19.css">
+<style>
+.v-title h2 { background:url(http://img3.cache.netease.com/video/img12/v201211/index-title.png) no-repeat; }
+.v-title-skin1 h2 { background-position 6px 0px; }
+.v-title-skin1 h2 a { width:109px; }/*今日热点*/
+.v-title-skin2 h2 { background-position:6px -27px; }
+.v-title-skin2 h2 a { width:130px; }/*娱乐*/
+.v-title-skin3 h2 { background-position: 6px -54px; }
+.v-title-skin3 h2 a { width:90px; }/*综艺*/
+.v-title-skin4 h2 { background-position:6px -77px; }
+.v-title-skin4 h2 a { width:74px; }/*MV*/
+.v-title-skin5 h2 { background-position: 6px -108px; }
+.v-title-skin5 h2 a { width:148px; }/*纪录片*/
+.v-title-skin6 h2 { background-position: 6px -135px; }
+.v-title-skin6 h2 a { width:102px; }/*公开课*/
+.v-title-skin7 h2 { background-position: 6px -162px; }
+.v-title-skin7 h2 a { width:101px; }/*拍客*/
+.v-leftl { width:282px; padding-left:6px; float:left; overflow:hidden; }
+.v-leftr { width:314px; padding-right:5px; float:right; overflow:hidden; }
+/*焦点图*/
+.v-focusimg { background:#1d1d1d; }
+.v-focusimg-panels { width:440px; height:250px; overflow:hidden; position:relative; }
+.v-focusimg-panels li { position:absolute; }
+.v-focusimg-panels a { display:block; width:440px; height:250px; background:url(http://img1.cache.netease.com/video/img12/v201211/focusimgbg3.png) no-repeat -1000px -1000px;}
+.v-focusimg-panels a:hover { text-decoration:none; }
+.v-focusimg-panels a:hover .v-focusimg-panels-digest{background:url(http://img1.cache.netease.com/video/img12/v201211/focusimgbg3.png); _background: none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://img1.cache.netease.com/video/img12/v201211/focusimgbg3.png");}
+.v-focusimg-panels-digest { position:absolute; bottom:0px; left:0px; width:348px; height:43px; background:url(http://img1.cache.netease.com/video/img12/v201211/focusimgbg2.png); cursor:pointer; _background: none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://img1.cache.netease.com/video/img12/v201211/focusimgbg2.png");
+line-height:1.6; color:#bbb9b7; padding:7px 82px 0px 10px; }
+.v-focusimg-panels img { border:none; }
+.v-focusimg-triggers { height:250px; overflow:hidden; }
+.v-focusimg-triggers li { color:#bdbdbd; width:200px; height:49px; overflow:hidden; border-bottom:1px solid #303030; text-align:center; line-height:49px; cursor:default; line-height:51px\9; font-size:14px; }
+.v-focusimg-triggers .yui3-tabs-trigger-selected { width:195px; border-left:5px solid #c61a14; background:#303030; color:#fff; font-weight:bold; }
+/*资讯头条*/
+.v-headline h3 { background-position:-85px -179px; padding-left:25px; margin-bottom:5px; }
+.v-headline p { line-height:1.8; }
+/*资讯文字列表*/
+.v-tlist { line-height:1.7; }
+/*小图列表*/
+.v-plist { line-height:1.8; }
+.v-plist ul { width:120%; }
+.v-plist li { width:142px; padding:0px 31px 0px 0px; float:left; }
+.v-plist h3 { padding-bottom:1px; }
+.v-plist .v-playimg{margin-bottom:2px;}
+/*猜你喜欢*/
+.v-rank{padding:6px 15px 9px 15px;}
+.v-rank li{border-top:1px dotted #d5d6d6;}
+.v-rank h3{height:29px; line-height:29px; width:268px; overflow:hidden; }
+.v-rank-detail{display:none; padding-bottom:11px;}
+.v-rank-data{color:#9a9a9a ; line-height:13px;}
+.v-rank .v-rank-data{margin-top:5px;}
+.v-rank-data .play { background-position: 0px -0px; width:52px; float:left; padding-left:16px; height:14px; }
+.v-rank-data .comment { background-position:0px -14px; width:36px; float:left; padding-left:18px;height:14px; }
+.v-rank .on h3{border:none;}
+.v-rank .on .v-rank-detail{display:block;}
+.v-red,.v-red:visited,.v-red a{color:#c61a14;}
+/*轮播按钮*/
+.v-loop { text-align:center; color:#9a9a9a }
+.v-loop a { display:inline-block; width:19px; height:19px; vertical-align:middle; margin:-2px 7px 0px 7px; overflow:hidden; }
+.v-loop .v-loop-left:hover { background-position:-41px -114px; text-decoration:none; }
+.v-loop .v-loop-right:hover { background-position:-15px -169px; text-decoration:none; }
+.v-loop-skin1 .v-loop-left { background-position:-15px -129px; }
+.v-loop-skin1 .v-loop-right { background-position:-15px -149px; }
+.v-loop-skin2 .v-loop-left { background-position:-61px -114px; }
+.v-loop-skin2 .v-loop-right { background-position:-81px -114px; }
+.v-loop .crt { color:#333; }
+/*图文列表1*/
+.v-plist1 { width:960px; overflow:hidden; line-height:1.6; }
+.v-plist1 ul { width:120%; }
+.v-plist1 li { width:159px; background:#f4f4f4; margin-right:1px; padding:14px 16px 22px 16px; float:left; }
+.v-plist1 h3 { font-family:微软雅黑; font-size:15px; margin-bottom:5px; color:#606060; }
+.v-plist1 span { padding-right:10px; background-position:right -27px; }
+.v-plist1 h4 {margin-top:5px; }
+.v-plist1 img { border:none; }
+/*大图*/
+.v-plist2 { line-height:1.8; }
+.v-plist2 .v-playimg{ margin-bottom:5px;}
+.v-plist2 dl { color:#727171; }
+.v-plist2 dt { float:left; }
+.v-plist2 dd { height:22px; overflow:hidden; }
+.v-plist2 dd a { white-space:nowrap; }
+/*大图下文字链*/
+.v-tlist1 { line-height:1.9; }
+.v-tlist1 h3 { margin:5px 0px 1px 0px; }
+.v-tlist1 h4 { width:200px; overflow:hidden; height:23px; }
+.v-tlist1-point { color:#b6b6b6; padding-right:3px; }
+/*热门歌手，热门播主*/
+.v-plist4 { text-align:center; }
+.v-plist4 ul { width:120%; }
+.v-plist4 li { float:left; width:72px; margin-right:27px; }
+.v-plist4 img { margin-bottom:7px; }
+/*话题人物*/
+.v-plist5 ul { width:120%; }
+.v-plist5 li { float:left; width:122px; margin-right:24px; line-height:1.8; }
+.v-plist5 img { margin-bottom:3px; }
+/*公开课翻译进度*/
+.v-tlist2 { line-height:1.8; padding:0px 14px; }
+.v-tlist2 li { padding:6px 0px 4px 10px; position:relative; border-top:1px dotted #D5D6D6; }
+.v-tlist2-point { color:#b6b6b6; position:absolute; left:-4px; top:6px; _left:-14px; }
+/*滚动*/
+.v-slider-box { width:298px; overflow:hidden; position:relative; }
+.v-slider-body { position:absolute;left:0px; }
+.v-slider-item { width:298px; float: left; overflow:hidden; }
+/*播放图标浮层*/
+.v-playimg{display:block; position:relative;width:142px;height:92px;}
+.v-playimg-icon{ display:none; position:absolute; width:24px; height:24px; background:url(http://img3.cache.netease.com/video/img12/v201211/playicon3.png); _background: none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://img1.cache.netease.com/video/img12/v201211/playicon3.png"); right:10px; bottom:10px;cursor:pointer;}
+.v-playimg-on .v-playimg-icon{display:block;}
+</style>
+</head>
+<body>
+<a name="top"></a>
+<div class="v-top">
+    <div class="v-area">
+        <div class="left border"><a href="http://www.163.com" title="网易首页" class="home" target="_self">网易首页</a></div>
+        <a class="right v-top-rss" href="http://v.163.com/special/008544NC/vheadline.xml"></a>
+        <div class="border right">
+            <div class="hidden" id="loginAfter">
+                <div class="right">&nbsp;<a id="logout" href="#" title="安全退出" target="_self">安全退出</a></div>
+                <div class="right" id="loginAfterSelect">
+                    <div class="v-top-user"> <strong class="v-top-user-name cDGray" id="loginAfterUsername">alicewonder@yeah.net</strong> </div>
+                    <div class="v-top-links" id="loginAfterLinks"> <span class="user-entry"> <a href="http://reg.163.com/Main.jsp?username=pInfo" target="_blank">进入通行证</a></span> </div>
+                </div>
+                <div class="right">欢迎来到网易视频！</div>
+            </div>
+            <div class="right" id="loginBefore"> <a href="#" title="请登录" class="v-top-login">通行证登录</a>&nbsp;<a href="http://reg.email.163.com/mailregAll/reg0.jsp" title="免费注册" target="_blank">注册</a></div>
+        </div>
+    </div>
+</div><div class="v-searchbox">
+  <div class="v-area clearfix">
+<a href="http://v.163.com" title="网易视频" class="left v-searchbox-link" hidefocus="true" target="_self"><img src="http://img1.cache.netease.com/video/img11/movie/logo.png" width="196" height="77" /></a>
+    <div class="v-searchbox-search left">
+              <form method="post" action="http://so.v.163.com/search/000-0-0000-1-1-0-文章出轨姚笛/">
+        <input type="text"  placeholder="文章出轨姚笛"  name="search" class="v-searchbox-input js_SearchInput" id="searchInput" autocomplete="off">
+        <input type="submit" value="搜索" class="v-searchbox-button" />
+      </form>
+          <ul class="v-searchbox-hot">
+                    <li> <a href="http://v.163.com/special/yulesubject/jiachang.html" title="明星假唱现场" class="cDGray">明星假唱现场</a> </li>
+              <li> <a href="http://v.163.com/special/zongyisubject/rebangvol.29.html" title="综艺热榜" class="cDGray">综艺热榜</a> </li>
+              <li> <a href="http://v.163.com/special/yulesubject/zhaocha.html" title="找茬大赛" class="cDGray">找茬大赛</a> </li>
+              <li> <a href="http://v.163.com/special/yulesubject/qingrenjie.html" title="明星的情人劫" class="cDGray">明星的情人劫</a> </li>
+            </ul>
+    </div>
+        <a href="http://v.163.com/usercenter/myvideo/" title="个人中心" class="v-searchbox-myvideo"  hidefocus="true" target="_self" id="myVideoBtn">个人中心</a><a href="http://v.163.com/upload/" title="上传" class="v-searchbox-upload" hidefocus="true">上传</a>
+  </div>
+</div>
+<div class="v-nav">
+    <div class="v-area clearfix" id="overlayBox">
+        <ul class="left v-nav-left">
+            <li class="v-nav-on"><a href="http://v.163.com" title="首页" target="_self">首页</a></li>
+            <li><a href="http://v.163.com/focus/" title="资讯" target="_self">资讯</a></li>
+            <li><a href="http://v.163.com/yule/" title="娱乐" target="_self">娱乐</a></li>
+            <li><a href="http://bobo.163.com/?f=vTab" style="color:#ed6d00;" title="美女直播" target="_self">美女直播</a></li>
+            <li><a href="http://v.163.com/variety/" title="综艺" target="_self">综艺</a></li>
+            <li><a href="http://v.163.com/paike/" title="拍客" target="_self">拍客</a></li>
+            <li><a href="http://v.163.com/doc/" title="纪录片" target="_self">纪录片</a></li>
+            <li><a href="http://v.163.com/mv/" title="MV" target="_self" style="font-family:Arial">MV</a></li>
+            <li><a href="http://v.auto.163.com/" title="汽车" target="_self">汽车</a></li>
+            <li><a href="http://open.163.com/" title="网易公开课" target="_self">网易公开课</a></li>
+            <li><a href="http://v.163.com/special/" title="专题" target="_self">专题</a></li>
+           <!--<li><a href="http://analytics.163.com/ntes_clck?urlid=764&sign=7b177cb9cff49c6cca993d79885b62c9&url=http%3A%2F%2Fv.baidu.com%2Fsquare%2F%3Ffr%3D163" title="视频广场" target="_blank">视频广场</a><span class="v-nav-new"></span></li>-->
+        </ul>
+        <ul class="right v-nav-right">
+            <li><a href="http://v.163.com/special/rank_all/" title="排行榜">排行榜</a></li>
+            <!--<li class="v-nav-history" id="history">最近观看</li>-->
+        </ul>
+    </div>
+</div>
+<div class="v-area"> <span class="blank15"></span>
+    <div class="clearfix">
+        <div class="v-left">
+            <div class="v-focusimg clearfix" id="focusImage">
+                <ul class="v-focusimg-panels left">
+                                                            <li class=" yui3-tabs-panel-selected "><a href="http://v.163.com/zixun/V5HPAAOQG/V9PU76RMK.html#from=vindex_focus" title="丹麦女王参观大屠杀纪念馆"><img src="http://img3.cache.netease.com/cnews/2014/4/28/20140428095014a3f35.png" width="440" height="250" alt="丹麦女王参观大屠杀纪念馆">
+                        <div class="v-focusimg-panels-digest">4月27日，侵华日军南京大屠杀遇难同胞纪念馆迎来了一位非同寻常的凭吊者——丹麦女王玛格丽特二世陛下。</div>
+                        </a></li>
+                                        <li class=" yui3-tabs-panel "><a href="http://v.163.com/yule/V8GIAB8I2/V9PVPLVT5.html#from=vindex_focus" title="水均益发新书爱女助阵"><img src="http://img4.cache.netease.com/cnews/2014/4/28/20140428103549fb6ac.jpg" width="440" height="250" alt="水均益发新书爱女助阵">
+                        <div class="v-focusimg-panels-digest">央视名嘴水均益发新书，除白岩松、朱军等圈内好友助阵，21岁的爱女水亦诗也大方上台发言互动。</div>
+                        </a></li>
+                                        <li class=" yui3-tabs-panel "><a href="http://v.163.com/zongyi/V6K4EUH19/V9PSCLAS3.html#from=vindex_focus" title="邓紫棋曝因压力剃掉头发"><img src="http://img4.cache.netease.com/cnews/2014/4/28/20140428143535185a4.jpg" width="440" height="250" alt="邓紫棋曝因压力剃掉头发">
+                        <div class="v-focusimg-panels-digest">《非常静距离》邓紫棋现场大秀卖萌神功，再现“金鱼嘴”！</div>
+                        </a></li>
+                                        <li class=" yui3-tabs-panel "><a href="http://v.163.com/jishi/V9CHS4CP0/V9PA2IV8F.html#from=vindex_focus" title="千万家产却被迫流落街头"><img src="http://img3.cache.netease.com/cnews/2014/4/28/20140428110241f6630.jpg" width="440" height="250" alt="千万家产却被迫流落街头">
+                        <div class="v-focusimg-panels-digest">无家可归的女强人：她是千万身价的女子，却面临着有家不能回，有房不能住，前夫和儿子却在想法谋算她，这是为何？</div>
+                        </a></li>
+                                        <li class=" yui3-tabs-panel "><a href="http://v.163.com/special/openclass/weekend05.html#from=vindex_focus" title="一周精选，好课不错过"><img src="http://img5.cache.netease.com/cnews/2014/4/25/20140425171533f8cdf.jpg" width="440" height="250" alt="一周精选，好课不错过">
+                        <div class="v-focusimg-panels-digest">男女有何不同？全球网络调查为你揭秘男女大脑语言差异。回顾往昔，品味历史给我们带来的那些珍贵！</div>
+                        </a></li>
+                                    </ul>
+                <ul class="v-focusimg-triggers right">
+                                                            <li class="yui3-tabs-trigger-selected">丹麦女王参观大屠杀纪念馆</li>
+                                        <li >水均益发新书爱女助阵</li>
+                                        <li >邓紫棋曝因压力剃掉头发</li>
+                                        <li >千万家产却被迫流落街头</li>
+                                        <li >一周精选，好课不错过</li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span>
+            <div class="v-title v-title-skin1 clearfix">
+                <h2 class="jrrd"><a href="http://v.163.com/focus/" title="今日热点">今日热点</a></h2>
+            </div>
+            <span class="blank15"></span>
+            <div class="clearfix">
+                <div class="v-leftl">                                         <div class="v-headline">
+                        <h3 class="f14px fB v-playbtn"><a href="http://v.163.com/zixun/V8KGPRMCV/V9PVI0JQU.html#from=vindex_hot" title="韩国总理向国民致歉宣布辞职">韩国总理向国民致歉宣布辞职</a></h3>
+                        <p><span class="cDGray">韩国总理郑烘原4月27日召开发布会，表示对“岁月”号沉船事故负责，宣布引咎辞职。</span><a href="http://v.163.com/zixun/V8KGPRMCV/V9PVI0JQU.html#from=vindex_hot" class="cDRed">[详细]</a></p>
+                    </div>
+                    <span class="blank15"></span><span class="blank15"></span>                     <div class="v-headline">
+                        <h3 class="f14px fB v-playbtn"><a href="http://v.163.com/paike/V8PV2IST0/V9PM4GF6H.html#from=vindex_hot" title="全球冠军单曲TOP50大盘点">全球冠军单曲TOP50大盘点</a></h3>
+                        <p><span class="cDGray">冠军单曲无需做过多的解释，TOP 50你听过几首？全程高能，全程动感热情！</span><a href="http://v.163.com/paike/V8PV2IST0/V9PM4GF6H.html#from=vindex_hot" class="cDRed">[详细]</a></p>
+                    </div>
+                    <span class="blank15"></span><span class="blank15"></span>                     <ul class="v-tlist f14px">
+                                                                        <li><span class="cDRed">[资讯] </span><a href="http://v.163.com/special/zixunsubject/zhongguoren365.html#from=vindex_hot">中国梦</a> | <a target="_blank" href="http://v.163.com/zixun/V8GAM8VMO/V9PTVH7B6.html">日军反人类罪证据确凿</a></li>
+                                                <li><span class="cDRed">[娱乐] </span><a href="http://v.163.com/yule/V8GIAB8I2/V9PVKG4B9.html#from=vindex_hot">32对TVB情侣群像</a> | <a target="_blank" href="http://v.163.com/yule/V8GIAB8I2/V9PU2P5MB.html">范冰冰美白怪癖</a></li>
+                                                <li><span class="cDRed">[综艺] </span><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PO2RQCE.html#from=vindex_hot">吴尊女儿洗澡遭播出</a> | <a target="_blank" href="http://v.163.com/zongyi/V7TFMDFS0/V9PLHSNS1.html">曝孟非辞职</a></li>
+                                                <li><span class="cDRed">[纪实] </span><a href="http://v.163.com/jishi/V5P6UPFN4/V9PK6HRA6.html#from=vindex_hot">平民皇后美智子</a> | <a target="_blank" href="http://v.163.com/jishi/V5R8VCP1E/V9PFC3BEA.html"> 靖国神社里的恶魔</a></li>
+                                            </ul>
+                </div>
+                <div class="v-plist v-leftr">
+                    <ul class="clearfix" id="getCounts">
+                                                                        <li style="height:150px;"><a href="http://v.163.com/zixun/V8GAMA366/V9PVIM9D5.html#from=vindex_hot" title="巡警遭外星人攻击气化" class="v-playimg"><img width="140" height="90" alt="巡警遭外星人攻击气化" src="http://img6.cache.netease.com/cnews/2014/4/28/20140428100948b4f02.png"><span class="v-playimg-icon"></span></a>
+                            <h3><a href="http://v.163.com/zixun/V8GAMA366/V9PVIM9D5.html#from=vindex_hot" title="巡警遭外星人攻击气化">巡警遭外星人攻击气化</a></h3>
+                            <div class="v-rank-data clearfix">
+                                <div class="play" title="播放次数">0</div>
+                                <div class="comment" title="跟帖数">0</div>
+                            </div>
+                        </li>
+                                                <li style="height:150px;"><a href="http://v.163.com/paike/V8PV2GDG7/V9PVJAHET.html#from=vindex_hot" title="《宫锁连城》穿帮镜头" class="v-playimg"><img width="140" height="90" alt="《宫锁连城》穿帮镜头" src="http://img6.cache.netease.com/cnews/2014/4/28/2014042807504456f81.jpg"><span class="v-playimg-icon"></span></a>
+                            <h3><a href="http://v.163.com/paike/V8PV2GDG7/V9PVJAHET.html#from=vindex_hot" title="《宫锁连城》穿帮镜头">《宫锁连城》穿帮镜头</a></h3>
+                            <div class="v-rank-data clearfix">
+                                <div class="play" title="播放次数">0</div>
+                                <div class="comment" title="跟帖数">0</div>
+                            </div>
+                        </li>
+                                                <li style="height:150px;"><a href="http://v.163.com/yule/V8GIAB8I2/V9PVQRV4M.html#from=vindex_hot" title="谢娜怒呛张丹丹不讲理" class="v-playimg"><img width="140" height="90" alt="谢娜怒呛张丹丹不讲理" src="http://img3.cache.netease.com/cnews/2014/4/28/20140428104044bef3a.jpg"><span class="v-playimg-icon"></span></a>
+                            <h3><a href="http://v.163.com/yule/V8GIAB8I2/V9PVQRV4M.html#from=vindex_hot" title="谢娜怒呛张丹丹不讲理">谢娜怒呛张丹丹不讲理</a></h3>
+                            <div class="v-rank-data clearfix">
+                                <div class="play" title="播放次数">0</div>
+                                <div class="comment" title="跟帖数">0</div>
+                            </div>
+                        </li>
+                                                <li style="height:150px;"><a href="http://v.163.com/yule/V8GIAB8I2/V9PVSPRJ4.html#from=vindex_hot" title="费翔揭娱乐圈黑帮派" class="v-playimg"><img width="140" height="90" alt="费翔揭娱乐圈黑帮派" src="http://img2.cache.netease.com/cnews/2014/4/28/201404281045242b314.jpg"><span class="v-playimg-icon"></span></a>
+                            <h3><a href="http://v.163.com/yule/V8GIAB8I2/V9PVSPRJ4.html#from=vindex_hot" title="费翔揭娱乐圈黑帮派">费翔揭娱乐圈黑帮派</a></h3>
+                            <div class="v-rank-data clearfix">
+                                <div class="play" title="播放次数">0</div>
+                                <div class="comment" title="跟帖数">0</div>
+                            </div>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <div class="v-right">
+            <div class="v-border">
+                <div class="v-title1 clearfix">
+                    <h2 class="left fB f14px">猜你喜欢</h2>
+                </div>
+                <ul class="v-rank rank" id="recommended" style="height:372px;">
+                                                            <li class="on rankItem" style="border:none;">
+                        <h3><a href="http://v.163.com/zixun/V8GAM8VMO/V9PTSBPLT.html#from=vindex_backup_recommendation" title="温州城管打人事件监控视频曝光">温州城管打人事件监控视频曝光</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAM8VMO/V9PTSBPLT.html#from=vindex_backup_recommendation" title="温州城管打人事件监控视频曝光" class="left"><img src="http://vimg3.ws.126.net/image/snapshot/2014/4/L/U/V9PTSBPLU_120~90.jpg" width="80" height="60" alt="温州城管打人事件监控视频曝光"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAM8VMO/V9PTSBPLT.html#from=vindex_backup_recommendation" title="温州城管打人事件监控视频曝光" class="cDGray">温州城管打人事件监控视频曝光</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V8GAM7JAP/V9PKB41GS.html#from=vindex_backup_recommendation" title="实拍：网曝深圳砍人事件现场 众人奔跑逃散">实拍：网曝深圳砍人事件现场 众人奔跑逃散</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAM7JAP/V9PKB41GS.html#from=vindex_backup_recommendation" title="实拍：网曝深圳砍人事件现场 众人奔跑逃散" class="left"><img src="http://vimg1.ws.126.net/image/snapshot/2014/4/G/T/V9PKB41GT_120~90.jpg" width="80" height="60" alt="实拍：网曝深圳砍人事件现场 众人奔跑逃散"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAM7JAP/V9PKB41GS.html#from=vindex_backup_recommendation" title="实拍：网曝深圳砍人事件现场 众人奔跑逃散" class="cDGray">实拍：网曝深圳砍人事件现场 众人奔跑逃散</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V8GAM9FF2/V9PT8L8ST.html#from=vindex_backup_recommendation" title="实拍：奥巴马正式归还朝鲜王朝国玺">实拍：奥巴马正式归还朝鲜王朝国玺</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAM9FF2/V9PT8L8ST.html#from=vindex_backup_recommendation" title="实拍：奥巴马正式归还朝鲜王朝国玺" class="left"><img src="http://vimg1.ws.126.net/image/snapshot/2014/4/S/U/V9PT8L8SU_120~90.jpg" width="80" height="60" alt="实拍：奥巴马正式归还朝鲜王朝国玺"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAM9FF2/V9PT8L8ST.html#from=vindex_backup_recommendation" title="实拍：奥巴马正式归还朝鲜王朝国玺" class="cDGray">实拍：奥巴马正式归还朝鲜王朝国玺</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V5HPAEV5H/V9PT1FS04.html#from=vindex_backup_recommendation" title="官员给情人写保证书：每周亲热4次 不碰老婆">官员给情人写保证书：每周亲热4次 不碰老婆</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V5HPAEV5H/V9PT1FS04.html#from=vindex_backup_recommendation" title="官员给情人写保证书：每周亲热4次 不碰老婆" class="left"><img src="http://vimg3.ws.126.net/image/snapshot/2014/4/C/D/V9PT1FRCD_120~90.jpg" width="80" height="60" alt="官员给情人写保证书：每周亲热4次 不碰老婆"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V5HPAEV5H/V9PT1FS04.html#from=vindex_backup_recommendation" title="官员给情人写保证书：每周亲热4次 不碰老婆" class="cDGray">官员给情人写保证书：每周亲热4次 不碰老婆</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V8GAM8VMO/V9PT8OTQ2.html#from=vindex_backup_recommendation" title="幼儿园因5岁女童字写歪了当众罚脱裤子">幼儿园因5岁女童字写歪了当众罚脱裤子</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAM8VMO/V9PT8OTQ2.html#from=vindex_backup_recommendation" title="幼儿园因5岁女童字写歪了当众罚脱裤子" class="left"><img src="http://vimg1.ws.126.net/image/snapshot/2014/4/Q/3/V9PT8OTQ3_120~90.jpg" width="80" height="60" alt="幼儿园因5岁女童字写歪了当众罚脱裤子"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAM8VMO/V9PT8OTQ2.html#from=vindex_backup_recommendation" title="幼儿园因5岁女童字写歪了当众罚脱裤子" class="cDGray">幼儿园因5岁女童字写歪了当众罚脱裤子</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V8GAM7JAP/V9PT6EV1O.html#from=vindex_backup_recommendation" title="日军强征慰安妇约40万 有人10天接待178人">日军强征慰安妇约40万 有人10天接待178人</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAM7JAP/V9PT6EV1O.html#from=vindex_backup_recommendation" title="日军强征慰安妇约40万 有人10天接待178人" class="left"><img src="http://vimg3.ws.126.net/image/snapshot/2014/4/1/P/V9PT6EV1P_120~90.jpg" width="80" height="60" alt="日军强征慰安妇约40万 有人10天接待178人"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAM7JAP/V9PT6EV1O.html#from=vindex_backup_recommendation" title="日军强征慰安妇约40万 有人10天接待178人" class="cDGray">日军强征慰安妇约40万 有人10天接待178人</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V8GAM9FF2/V9PR5I2AN.html#from=vindex_backup_recommendation" title="奥巴马：普京溺水我绝对会救他">奥巴马：普京溺水我绝对会救他</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAM9FF2/V9PR5I2AN.html#from=vindex_backup_recommendation" title="奥巴马：普京溺水我绝对会救他" class="left"><img src="http://vimg3.ws.126.net/image/snapshot/2014/4/A/O/V9PR5I2AO_120~90.jpg" width="80" height="60" alt="奥巴马：普京溺水我绝对会救他"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAM9FF2/V9PR5I2AN.html#from=vindex_backup_recommendation" title="奥巴马：普京溺水我绝对会救他" class="cDGray">奥巴马：普京溺水我绝对会救他</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V8GAM7JAP/V9PT7GFH0.html#from=vindex_backup_recommendation" title="韩总理因沉船事故辞职 承认救援存在问题">韩总理因沉船事故辞职 承认救援存在问题</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAM7JAP/V9PT7GFH0.html#from=vindex_backup_recommendation" title="韩总理因沉船事故辞职 承认救援存在问题" class="left"><img src="http://vimg2.ws.126.net/image/snapshot/2014/4/H/1/V9PT7GFH1_120~90.jpg" width="80" height="60" alt="韩总理因沉船事故辞职 承认救援存在问题"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAM7JAP/V9PT7GFH0.html#from=vindex_backup_recommendation" title="韩总理因沉船事故辞职 承认救援存在问题" class="cDGray">韩总理因沉船事故辞职 承认救援存在问题</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V8GAMA366/V9PVIM9D5.html#from=vindex_backup_recommendation" title="实拍：巡警疑似遭外星人攻击瞬间气体化">实拍：巡警疑似遭外星人攻击瞬间气体化</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V8GAMA366/V9PVIM9D5.html#from=vindex_backup_recommendation" title="实拍：巡警疑似遭外星人攻击瞬间气体化" class="left"><img src="http://vimg3.ws.126.net/image/snapshot/2014/4/D/6/V9PVIM9D6_120~90.jpg" width="80" height="60" alt="实拍：巡警疑似遭外星人攻击瞬间气体化"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V8GAMA366/V9PVIM9D5.html#from=vindex_backup_recommendation" title="实拍：巡警疑似遭外星人攻击瞬间气体化" class="cDGray">实拍：巡警疑似遭外星人攻击瞬间气体化</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                        <li  class="rankItem">
+                        <h3><a href="http://v.163.com/zixun/V5HPAEV5H/V9PT1BU9K.html#from=vindex_backup_recommendation" title="监拍：劫匪抢劫运钞车开枪射击押运员">监拍：劫匪抢劫运钞车开枪射击押运员</a></h3>
+                        <div class="v-rank-detail">
+                            <div class="v-plist3 clearfix"> <a href="http://v.163.com/zixun/V5HPAEV5H/V9PT1BU9K.html#from=vindex_backup_recommendation" title="监拍：劫匪抢劫运钞车开枪射击押运员" class="left"><img src="http://vimg2.ws.126.net/image/snapshot/2014/4/8/7/V9PT1BT87_120~90.jpg" width="80" height="60" alt="监拍：劫匪抢劫运钞车开枪射击押运员"></a>
+                                <div class="right">
+                                    <div><a href="http://v.163.com/zixun/V5HPAEV5H/V9PT1BU9K.html#from=vindex_backup_recommendation" title="监拍：劫匪抢劫运钞车开枪射击押运员" class="cDGray">监拍：劫匪抢劫运钞车开枪射击押运员</a></div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span>
+<div class="v-border">
+                <div class="v-title1 clearfix">
+                    <h2 class="left fB f14px">历史上的今天</h2>
+                    <span class="right cDGray v-title1-date"><span class="num">04</span>月<span class="num">28</span>日</span> </div>
+                <div class="v-slider">
+                    <div class="v-slider-box" style="height:92px;">
+                        <ul class="v-slider-body">
+                                                                                    <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:16px 15px;"> <a class="left" title="萨达姆诞生" href="http://v.163.com/special/jishisubject/historyoftoday352.html"><img width="80" height="60" src="http://img2.cache.netease.com/cnews/2014/4/28/20140428172038c6d40.jpg" alt="萨达姆诞生"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/jishisubject/historyoftoday352.html" title="萨达姆诞生">萨达姆诞生</a></h3>
+                                        <div class="cDGray">萨达姆在位期间先后发生两伊战争、海湾战争、伊拉克战争</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:16px 15px;"> <a class="left" title="朝鲜人民军建军节" href="http://v.163.com/special/jishisubject/historyoftoday349.html"><img width="80" height="60" src="http://img4.cache.netease.com/cnews/2014/4/25/2014042514303842b69.jpg" alt="朝鲜人民军建军节"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/jishisubject/historyoftoday349.html" title="朝鲜人民军建军节">朝鲜人民军建军节</a></h3>
+                                        <div class="cDGray">金日成主席于1932年4月25日创建了朝鲜人民革命军</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:16px 15px;"> <a class="left" title="“东方红一号”发射" href="http://v.163.com/special/jishisubject/historyoftoday348.html"><img width="80" height="60" src="http://img3.cache.netease.com/cnews/2014/4/24/201404241129565b107.jpg" alt="“东方红一号”发射"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/jishisubject/historyoftoday348.html" title="“东方红一号”发射">“东方红一号”发射</a></h3>
+                                        <div class="cDGray">中国第一颗人造地球卫星在酒泉卫星发射中心成功发射</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                    </ul>
+                    </div>
+                    <div style="text-align:center; padding:8px 0px 10px 0px;"> <span class="v-loop v-loop-skin1"><a href="#" target="_self" class="v-loop-left">&nbsp;</a><span class="crt">1</span>/<span class="total">0</span><a href="#" target="_self" class="v-loop-right">&nbsp;</a></span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="v-plist1">
+        <ul class="clearfix">
+                                    <li>
+                <h3><span class="v-arrows">视频精选</span></h3>
+                <a href="http://v.163.com/special/zixunsubject/jingxuan027.html" title="暴徒砍人众人奔跑逃散"><img src="http://img4.cache.netease.com/cnews/2014/4/25/201404251442544897c.jpg" width="160" height="90" alt="暴徒砍人众人奔跑逃散"></a>
+                <h4 class="f14px"><a href="http://v.163.com/special/zixunsubject/jingxuan027.html" title="暴徒砍人众人奔跑逃散">暴徒砍人众人奔跑逃散</a></h4>
+            </li>
+                        <li>
+                <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/yule/V8GIANUHL/V9P3JQAJ5.html">娱乐快报</a></span></h3>
+                <a href="http://v.163.com/yule/V8GIAB8I2/V9PO24R67.html" title="张曼玉哭诉惨遭母毒打"><img src="http://img2.cache.netease.com/cnews/2014/4/25/201404251412467398a.jpg" width="160" height="90" alt="张曼玉哭诉惨遭母毒打"></a>
+                <h4 class="f14px"><a href="http://v.163.com/yule/V8GIAB8I2/V9PO24R67.html" title="张曼玉哭诉惨遭母毒打">张曼玉哭诉惨遭母毒打</a></h4>
+            </li>
+                        <li>
+                <h3><span class="v-arrows">这个历史挺靠谱</span></h3>
+                <a href="http://v.163.com/imedia/V9EV6OV3E/V9K1JC78F.html" title="袁腾飞：清朝怎么灭亡的"><img src="http://img4.cache.netease.com/cnews/2014/2/17/20140217111714e0bdc.png" width="160" height="90" alt="袁腾飞：清朝怎么灭亡的"></a>
+                <h4 class="f14px"><a href="http://v.163.com/imedia/V9EV6OV3E/V9K1JC78F.html" title="袁腾飞：清朝怎么灭亡的">袁腾飞：清朝怎么灭亡的</a></h4>
+            </li>
+                        <li>
+                <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/paike/V92BF60AF/V9P9BQJ0E.html">精品微电影</a></span></h3>
+                <a href="http://v.163.com/paike/V92BF60AF/V9P9BQJ0E.html" title="《床上关系2》"><img src="http://img4.cache.netease.com/cnews/2014/4/24/2014042411364510e30.jpg" width="160" height="90" alt="《床上关系2》"></a>
+                <h4 class="f14px"><a href="http://v.163.com/paike/V92BF60AF/V9P9BQJ0E.html" title="《床上关系2》">《床上关系2》</a></h4>
+            </li>
+                        <li>
+                <h3><span class="v-arrows"><a target="_blank" href="http://sports.163.com/special/footballtalk/total.html">超级颜论第2季</a></span></h3>
+                <a href="http://sports.163.com/special/footballtalk/s02e35.html" title="探秘中国球王梦工厂"><img src="http://img1.cache.netease.com/cnews/2014/4/28/20140428135713a9d75.jpg" width="160" height="90" alt="探秘中国球王梦工厂"></a>
+                <h4 class="f14px"><a href="http://sports.163.com/special/footballtalk/s02e35.html" title="探秘中国球王梦工厂">探秘中国球王梦工厂</a></h4>
+            </li>
+                    </ul>
+    </div>
+    <span class="blank20"></span>
+<!-- <div class="area clearfix">
+<iframe src='http://g.163.com/r?site=netease&affiliate=video&cat=homepage&type=column960x100&location=1' width='960' height='100' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>
+ </div><span class="blank20"></span> -->
+    <div class="clearfix">
+        <div class="v-left">
+            <div class="v-title v-title-skin2 clearfix">
+                <h2 style="width:180px;"><a title="娱乐" href="http://v.163.com/yule/">娱乐</a></h2>
+                <ul class="v-title-right clearfix cDGray">
+                                                            <li><a title="腐女办公室2" href="http://v.163.com/special/yulesubject/funvbangongshi2.html">腐女办公室2</a></li>
+                                        <li><a title="2014北京车展" href="http://v.163.com/special/yulesubject/2014chezhan.html">2014北京车展</a></li>
+                                        <li><a title="文章出轨" href="http://v.163.com/special/yulesubject/wenzhangyaodi.html">文章出轨</a></li>
+                                        <li><a title="明星假唱现场" href="http://v.163.com/special/yulesubject/jiachang2.html">明星假唱现场</a></li>
+                                        <li><a title="更多" href="http://v.163.com/yule/">更多</a></li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span> <span class="blank9"></span>
+            <div class="clearfix ">
+                <div class="v-leftl">                                         <div class="v-plist2 v-dot"> <a title="郑钧李亚鹏酒吧台上互飙歌" href="http://v.163.com/yule/V8GIAB8I2/V9PVQHUVU.html" class="v-playimg" style="width:282px;height:182px;"><img id="img11" imgheight="180" imgwidth="280" alt="郑钧李亚鹏酒吧台上互飙歌" srcurl="http://img3.cache.netease.com/cnews/2014/4/28/20140428104839aca05.jpg" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="280" height="180" ><span class="v-playimg-icon"></span></a>
+                        <h3 class="f14px fB"><a title="郑钧李亚鹏酒吧台上互飙歌" href="http://v.163.com/yule/V8GIAB8I2/V9PVQHUVU.html">郑钧李亚鹏酒吧台上互飙歌</a></h3>
+                        <div><span class="cDGray">在云南某酒吧郑钧、李亚鹏先后走上台，郑钧自弹自唱了一首朴树的《那时花开》，李亚鹏在吉他手的伴奏下也深情演唱了一首歌曲。</span><a href="http://v.163.com/yule/V8GIAB8I2/V9PVQHUVU.html" class=" cDRed">[详细]</a></div>
+                        <span class="blank15"> </span><span class="blank9"></span> </div>
+                     <span class="blank3"> </span>
+                    <div class="v-tlist1">
+                        <h3 class="fB">热门推荐</h3>
+                        <ul>
+                                                                                    <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/yule/V8GIAB8I2/V9PVSV87O.html">刘涛救夫之路</a> | <a target="_blank" href="http://v.163.com/yule/V8GIAB8I2/V9PVS68QD.html">姚明打高尔夫</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/yule/V8GIAB8I2/V9PVR5DBB.html">文章马伊琍疑离婚</a> | <a target="_blank" href="http://v.163.com/yule/V8GIAB8I2/V9PVPC7P1.html">大S宫缩疼痛</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/yule/V8GIAB8I2/V9PVMKULR.html">朱丹同男友亲密</a> | <a target="_blank" href="http://v.163.com/yule/V8GIAB8I2/V9PVKDUSS.html">李亚鹏义卖</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/yule/V8GIAB8I2/V9PU2ML3F.html">吴莫愁纹身曝光</a> | <a target="_blank" href="http://v.163.com/yule/V8GIAB8I2/V9PR2Q7JV.html">李小冉否婚</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/yule/V8GIAB8I2/V9PR18MCA.html">马羚遭扇脸</a> | <a target="_blank" href="http://v.163.com/yule/V8GIAB8I2/V9PTEINDH.html">杨丽萍披龙袍</a></h4>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="v-leftr">
+                    <div class="v-plist">
+                        <ul class="clearfix">
+                                                                                    <li style="height:154px"><a title="angelababy站台 保安冲上台引发冲突" href="http://v.163.com/yule/V8GIAB8I2/V9PVRCEEP.html" class="v-playimg"><img id="img21" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="angelababy站台 保安冲上台引发冲突" srcurl="http://img6.cache.netease.com/cnews/2014/4/28/20140428105122971ec.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="angelababy站台 保安冲上台引发冲突" href="http://v.163.com/yule/V8GIAB8I2/V9PVRCEEP.html">angelababy站台 保安冲上台引发冲突</a></h3>
+                            </li>
+                                                        <li style="height:154px"><a title="杨臣刚晒女儿照 还好女儿不像爸" href="http://v.163.com/yule/V8GIAB8I2/V9PVSBUIS.html" class="v-playimg"><img id="img22" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="杨臣刚晒女儿照 还好女儿不像爸" srcurl="http://img6.cache.netease.com/cnews/2014/4/28/20140428105311115f7.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="杨臣刚晒女儿照 还好女儿不像爸" href="http://v.163.com/yule/V8GIAB8I2/V9PVSBUIS.html">杨臣刚晒女儿照 还好女儿不像爸</a></h3>
+                            </li>
+                                                        <li style="height:154px"><a title="吴宗宪90后长女私照曝光 俏皮搞怪" href="http://v.163.com/yule/V8GIAB8I2/V9PVR2SGA.html" class="v-playimg"><img id="img23" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="吴宗宪90后长女私照曝光 俏皮搞怪" srcurl="http://img2.cache.netease.com/cnews/2014/4/28/20140428105852b3ac5.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="吴宗宪90后长女私照曝光 俏皮搞怪" href="http://v.163.com/yule/V8GIAB8I2/V9PVR2SGA.html">吴宗宪90后长女私照曝光 俏皮搞怪</a></h3>
+                            </li>
+                                                        <li style="height:154px"><a title="女星肥照：范冰冰虎背熊腰圆润美" href="http://v.163.com/yule/V8GIAB8I2/V9PVRSPHD.html" class="v-playimg"><img id="img24" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="女星肥照：范冰冰虎背熊腰圆润美" srcurl="http://img2.cache.netease.com/cnews/2014/4/28/201404281100038cf2a.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="女星肥照：范冰冰虎背熊腰圆润美" href="http://v.163.com/yule/V8GIAB8I2/V9PVRSPHD.html">女星肥照：范冰冰虎背熊腰圆润美</a></h3>
+                            </li>
+                                                        <li style="height:154px"><a title="凤凰传奇主唱玲花自曝怀孕28周" href="http://v.163.com/yule/V8GIAB8I2/V9PVUC3PK.html" class="v-playimg"><img id="img25" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="凤凰传奇主唱玲花自曝怀孕28周" srcurl="http://img6.cache.netease.com/cnews/2014/4/28/20140428110948df754.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="凤凰传奇主唱玲花自曝怀孕28周" href="http://v.163.com/yule/V8GIAB8I2/V9PVUC3PK.html">凤凰传奇主唱玲花自曝怀孕28周</a></h3>
+                            </li>
+                                                        <li style="height:154px"><a title="吴奇隆谈文章出轨：艺人应接受被偷拍" href="http://v.163.com/yule/V8GIAB8I2/V9PVR0RA9.html" class="v-playimg"><img id="img26" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="吴奇隆谈文章出轨：艺人应接受被偷拍" srcurl="http://img4.cache.netease.com/cnews/2014/4/28/201404281057224f945.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="吴奇隆谈文章出轨：艺人应接受被偷拍" href="http://v.163.com/yule/V8GIAB8I2/V9PVR0RA9.html">吴奇隆谈文章出轨：艺人应接受被偷拍</a></h3>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="v-right">
+            <div class="v-border">
+                <div class="rankTab">
+                    <div class="v-title1 clearfix">
+                        <h2 class="left fB">本周热播</h2>
+                    </div>
+                    <div class="v-rank1 v-rank1-skin1">
+                        <ul class="rank1 rankTabPanel yui3-tabs-panel-selected clearfix">
+                                                                                    <li class="on" style="border:none;">
+                                <div class="v-rank1-order v-rank1-top" >1</div>
+                                                                <div class="v-rank1-detail">
+                                    <div class="v-plist3 clearfix"> <a class="left" href="http://v.163.com/yule/V8GIAB8I2/V9PLIGQTP.html#from=rank" title="宋祖德爆料刘亦菲是变性人 称已拍到证据"><img src="http://vimg3.ws.126.net/image/snapshot/2014/4/T/Q/V9PLIGQTQ_120~90.jpg" width="80" height="60" alt="宋祖德爆料刘亦菲是变性人 称已拍到证据"></a>
+                                        <div class="right" style="width:151px;">
+                                            <h3><a href="http://v.163.com/yule/V8GIAB8I2/V9PLIGQTP.html#from=rank" title="宋祖德爆料刘亦菲是变性人 称已拍到证据" class="cDGray">宋祖德爆料刘亦菲是变性人 称已拍到证据</a></h3>
+                                            <!--<div class="v-red"><span class="fB">606642</span>次播放</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >2</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V8GIAB8I2/V9PLIGMAM.html#from=rank" title="网曝李双江近照：能吃和笑能合影" class="cDGray">网曝李双江近照：能吃和笑能合影</a></h3>
+                                    <!--<div class="right v-red">249335</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >3</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V8GIAB8I2/V9PIT5T4D.html#from=rank" title="娱乐快报0423： 盘点娱乐圈男星的土豪太太" class="cDGray">娱乐快报0423： 盘点娱乐圈男星的土豪太太</a></h3>
+                                    <!--<div class="right v-red">141133</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >4</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V8GIAB8I2/V9PLI09QT.html#from=rank" title="同事曝料赴美产子董卿非孤例 仍可落户北京" class="cDGray">同事曝料赴美产子董卿非孤例 仍可落户北京</a></h3>
+                                    <!--<div class="right v-red">128376</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >5</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V8GIAB8I2/V9PJ7E6UA.html#from=rank" title="娱乐快报0423：盘点从小三扶正的女星" class="cDGray">娱乐快报0423：盘点从小三扶正的女星</a></h3>
+                                    <!--<div class="right v-red">116951</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >6</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V9PDO0SG3/V9PDU3OCQ.html#from=rank" title="贝克汉姆亮相车展：孩子是我最大成就" class="cDGray">贝克汉姆亮相车展：孩子是我最大成就</a></h3>
+                                    <!--<div class="right v-red">67138</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >7</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V94U3CV6T/V9PHLO7BD.html#from=rank" title="羽泉闹不和？  大鹏整你没商量" class="cDGray">羽泉闹不和？  大鹏整你没商量</a></h3>
+                                    <!--<div class="right v-red">55900</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >8</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V8GIAB8I2/V9PJ36K9F.html#from=rank" title="小沈阳正式加盟《歌狂》 现场向巫启贤“下跪”" class="cDGray">小沈阳正式加盟《歌狂》 现场向巫启贤“下跪”</a></h3>
+                                    <!--<div class="right v-red">52961</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >9</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V8GIAB8I2/V9PGB028F.html#from=rank" title="娱乐快报0422：揭矮挫丑男星的神秘娇妻" class="cDGray">娱乐快报0422：揭矮挫丑男星的神秘娇妻</a></h3>
+                                    <!--<div class="right v-red">41755</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >10</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/yule/V8GIAB8I2/V9PIR1RHT.html#from=rank" title="马伊琍复出获网友力挺" class="cDGray">马伊琍复出获网友力挺</a></h3>
+                                    <!--<div class="right v-red">41159</div>-->
+                                </div>
+                                                            </li>
+                                                    </ul><span class="blank20"></span><span class="blank9"></span>
+                    </div>
+                </div>
+                <div class="v-slider">
+                    <div class="v-title1 clearfix" style="height:27px; line-height:27px;">
+                        <h2 class="left fB">明星事件</h2>
+                        <span class="v-loop v-loop-skin2 right" style="_padding-top:5px;"><a href="#" target="_self" class="v-loop-left">&nbsp;</a><span class="crt">1</span>/<span class="total">0</span><a href="#" target="_self" class="v-loop-right">&nbsp;</a></span> </div>
+                    <div class="v-slider-box" style="height:92px;">
+                        <ul class="v-slider-body">
+                                                                                    <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="2014北京国际车展" href="http://v.163.com/special/yulesubject/2014chezhan.html"><img src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="80" height="60" imgwidth="80" imgheight="60" srcurl="http://img4.cache.netease.com/cnews/2014/4/21/2014042111175523ee1.jpg" alt="2014北京国际车展" class="lazy-load" id="img51"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/yulesubject/2014chezhan.html" title="2014北京国际车展">2014北京国际车展</a></h3>
+                                        <div class="cDGray">2014车展长腿偶吧来袭，嫩模有所收敛。</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="文章承认出轨恋姚笛" href="http://v.163.com/special/yulesubject/wenzhangyaodi.html"><img src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="80" height="60" imgwidth="80" imgheight="60" srcurl="http://img6.cache.netease.com/cnews/2014/4/21/2014042111193477f4a.jpg" alt="文章承认出轨恋姚笛" class="lazy-load" id="img52"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/yulesubject/wenzhangyaodi.html" title="文章承认出轨恋姚笛">文章承认出轨恋姚笛</a></h3>
+                                        <div class="cDGray">文章姚笛亲密贴面同游的照片被曝，文章最终承认恋姚笛。</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="娱乐圈的＂情人劫＂" href="http://v.163.com/special/yulesubject/qingrenjie.html"><img src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="80" height="60" imgwidth="80" imgheight="60" srcurl="http://img5.cache.netease.com/cnews/2014/4/21/2014042111171358b71.jpg" alt="娱乐圈的＂情人劫＂" class="lazy-load" id="img53"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/yulesubject/qingrenjie.html" title="娱乐圈的＂情人劫＂">娱乐圈的"情人劫"</a></h3>
+                                        <div class="cDGray">盘点娱乐圈感情的“困难户”们。</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <span class="blank12"></span> </div>
+        </div>
+    </div>
+    <span class="blank9"></span>
+    <div class="clearfix">
+        <div class="v-left">
+            <div class="v-title v-title-skin3 clearfix">
+                <h2><a title="综艺" href="http://v.163.com/variety/">综艺</a></h2>
+                <ul class="v-title-right clearfix cDGray">
+                                                            <li><a title="开讲啦" href="http://v.163.com/special/zongyisubject/kaijianglas2.html">开讲啦</a></li>
+                                        <li><a title="吃货俱乐部" href="http://v.163.com/special/zongyisubject/chihuojulebu.html">吃货俱乐部</a></li>
+                                        <li><a title="味觉大战" href="http://v.163.com/special/zongyisubject/weijuedazhan.html">味觉大战</a></li>
+                                        <li><a title="综艺热榜" href="http://v.163.com/special/zongyisubject/2013annual.html">综艺热榜</a></li>
+                                        <li><a title="更多" href="http://v.163.com/zongyi/">更多</a></li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span> <span class="blank9"></span>
+            <div class="clearfix ">
+                <div class="v-leftl">                                         <div class="v-plist2 v-dot"> <a title="周立波梁家辉对唱情歌跑调" href="http://v.163.com/zongyi/V7TFMDFS0/V9PU5U4PS.html" class="v-playimg" style="width:282px;height:182px;"><img id="img31" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="280" height="180" imgheight="180" imgwidth="280" alt="周立波梁家辉对唱情歌跑调" srcurl="http://img4.cache.netease.com/cnews/2014/4/28/20140428175529f1da3.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                        <h3 class="f14px fB"><a title="周立波梁家辉对唱情歌跑调" href="http://v.163.com/zongyi/V7TFMDFS0/V9PU5U4PS.html">周立波梁家辉对唱情歌跑调</a></h3>
+                        <div><span class="cDGray">《中国梦想秀》周立波与梁家辉情歌对唱频频跑调，两人相拥欢笑。</span><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PU5U4PS.html" class=" cDRed">[详细]</a></div>
+                        <span class="blank15"> </span><span class="blank9"></span> </div>
+                     <span class="blank3"> </span>
+                    <div class="v-tlist1">
+                        <h3 class="fB">热门推荐</h3>
+                        <ul>
+                                                                                    <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PLI6B51.html">于谦热跳烫头舞</a> | <a target="_blank" href="http://v.163.com/special/zongyisubject/hqqw.html">全球猎奇趣闻</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/zongyi/V8RLKMTT6/V9MVKG793.html">李湘曝代言费</a> | <a target="_blank" href="http://v.163.com/zongyi/V9LQN4184/V9MUOUK00.html">李咏鲁豫拍写真</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/zongyi/V932L8VS5/V9N5LKJUU.html">田朴珺王石领证</a> | <a target="_blank" href="http://v.163.com/zongyi/V75LOC0DJ/V9N23D44Q.html">都教授被盗版</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/zongyi/V7TFMDFS0/V9N3M68EQ.html">王杰被下毒</a> | <a target="_blank" href="http://v.163.com/zongyi/V932L8VS5/V9N5LKJOD.html">李晨张馨予疑复合</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://v.163.com/zongyi/V932L8VS5/V9MTUIA7H.html">成龙秘密入院</a> | <a target="_blank" href="http://v.163.com/zongyi/V92AUMU63/V9MQ8UKHR.html">赵普进央视内幕</a></h4>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="v-leftr">
+                    <div class="v-plist">
+                        <ul class="clearfix">
+                                                                                    <li style="height:154px"><a title="袁珊珊自黑＂滚出娱乐圈＂" href="http://v.163.com/zongyi/V8RLKMTT6/V9PPMTOMR.html" class="v-playimg"><img id="img41" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="袁珊珊自黑＂滚出娱乐圈＂" srcurl="http://img2.cache.netease.com/cnews/2014/4/28/2014042816405030391.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="袁珊珊自黑＂滚出娱乐圈＂" href="http://v.163.com/zongyi/V8RLKMTT6/V9PPMTOMR.html">袁珊珊自黑"滚出娱乐圈"</a></h3>
+<div class="digest cDGray">栏目：<a href="http://v.163.com/zongyi/V8RLKMTT6/V9PPMTOMR.html" class="cDGray">男左女右</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="邓紫棋因失恋创作＂泡沫＂" href="http://v.163.com/zongyi/V6K4EUH19/V9PSCLAS3.html" class="v-playimg"><img id="img42" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="邓紫棋因失恋创作＂泡沫＂" srcurl="http://img6.cache.netease.com/cnews/2014/4/28/2014042814410230c62.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="邓紫棋因失恋创作＂泡沫＂" href="http://v.163.com/zongyi/V6K4EUH19/V9PSCLAS3.html">邓紫棋因失恋创作"泡沫"</a></h3>
+<div class="digest cDGray">栏目：<a href="http://v.163.com/zongyi/V6K4EUH19/V9PSCLAS3.html" class="cDGray">非常静距离</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="瞬间秒变韩系美女" href="http://v.163.com/zongyi/V8LCLERKB/V9Q0ERN00.html" class="v-playimg"><img id="img43" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="瞬间秒变韩系美女" srcurl="http://img5.cache.netease.com/cnews/2014/4/28/2014042817241428aa2.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="瞬间秒变韩系美女" href="http://v.163.com/zongyi/V8LCLERKB/V9Q0ERN00.html">瞬间秒变韩系美女</a></h3>
+<div class="digest cDGray">栏目：<a href="http://v.163.com/zongyi/V8LCLERKB/V9Q0ERN00.html" class="cDGray">媲美网</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="吴尊女儿洗澡遭播出" href="http://v.163.com/zongyi/V7TFMDFS0/V9PO2RQCE.html" class="v-playimg"><img id="img44" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="吴尊女儿洗澡遭播出" srcurl="http://img5.cache.netease.com/cnews/2014/4/25/20140425152329aa21d.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="吴尊女儿洗澡遭播出" href="http://v.163.com/zongyi/V7TFMDFS0/V9PO2RQCE.html">吴尊女儿洗澡遭播出</a></h3>
+<div class="digest cDGray">栏目：<a href="http://v.163.com/zongyi/V7TFMDFS0/V9PO2RQCE.html" class="cDGray">爸爸回来了</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="林志颖自曝kimi出生过程" href="http://v.163.com/zongyi/V948JFUQE/V9PM0NSRG.html" class="v-playimg"><img id="img45" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="林志颖自曝kimi出生过程" srcurl="http://img4.cache.netease.com/cnews/2014/4/25/2014042515212885c5f.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="林志颖自曝kimi出生过程" href="http://v.163.com/zongyi/V948JFUQE/V9PM0NSRG.html">林志颖自曝kimi出生过程</a></h3>
+<div class="digest cDGray">栏目：<a href="http://v.163.com/zongyi/V948JFUQE/V9PM0NSRG.html" class="cDGray">超级演说家</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="马伊琍早年表演视频曝光" href="http://v.163.com/zongyi/V7TFMDFS0/V9PO4I42V.html" class="v-playimg"><img id="img46" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="马伊琍早年表演视频曝光" srcurl="http://img2.cache.netease.com/cnews/2014/4/25/201404251519560b0c0.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="马伊琍早年表演视频曝光" href="http://v.163.com/zongyi/V7TFMDFS0/V9PO4I42V.html">马伊琍早年表演视频曝光</a></h3>
+<div class="digest cDGray">栏目：<a href="http://v.163.com/zongyi/V7TFMDFS0/V9PO4I42V.html" class="cDGray">说出你的故事</a></div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="v-right">
+            <div class="v-border">
+                <div class="rankTab">
+                    <div class="v-title1 clearfix">
+                        <h2 class="left fB">本周热播</h2>
+                    </div>
+                    <div class="v-rank1 v-rank1-skin2">
+                        <ul class="rank1 rankTabPanel rank yui3-tabs-panel-selected clearfix">
+                                                                                    <li class="on" style="border:none;">
+                                <div class="v-rank1-order v-rank1-top" >1</div>
+                                                                <div class="v-rank1-detail">
+                                    <div class="v-plist3 clearfix"> <a class="left" href="http://v.163.com/zongyi/V885TR03B/V9PGOMPR2.html#from=rank" title="oneplus视频mv"><img src="http://vimg1.ws.126.net/image/snapshot/2014/4/R/3/V9PGOMPR3_120~90.jpg" width="80" height="60" alt="oneplus视频mv"></a>
+                                        <div class="right" style="width:151px;">
+                                            <h3><a href="http://v.163.com/zongyi/V885TR03B/V9PGOMPR2.html#from=rank" title="oneplus视频mv" class="cDGray">oneplus视频mv</a></h3>
+                                            <!--<div class="v-red"><span class="fB">186516</span>次播放</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >2</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PO2RQCE.html#from=rank" title="粗心吴尊忘放热水竟给女儿洗凉水澡" class="cDGray">粗心吴尊忘放热水竟给女儿洗凉水澡</a></h3>
+                                    <!--<div class="right v-red">42075</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >3</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V8ADUK9E9.html#from=rank" title="刘亦菲与干爹亲密外出" class="cDGray">刘亦菲与干爹亲密外出</a></h3>
+                                    <!--<div class="right v-red">38272</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >4</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PLHSNS1.html#from=rank" title="孟非被曝携《非诚》集体辞职 江苏卫视：不可能" class="cDGray">孟非被曝携《非诚》集体辞职 江苏卫视：不可能</a></h3>
+                                    <!--<div class="right v-red">24431</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >5</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PDS1U4J.html#from=rank" title="李连杰看美女钢管舞吊环狂飙汗" class="cDGray">李连杰看美女钢管舞吊环狂飙汗</a></h3>
+                                    <!--<div class="right v-red">19082</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >6</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PLUC2E0.html#from=rank" title="闾丘露薇隐瞒事实 网友：滚出新闻界" class="cDGray">闾丘露薇隐瞒事实 网友：滚出新闻界</a></h3>
+                                    <!--<div class="right v-red">18191</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >7</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V9PGDP997.html#from=rank" title="文章因出轨形象差错失《爸爸2》" class="cDGray">文章因出轨形象差错失《爸爸2》</a></h3>
+                                    <!--<div class="right v-red">17850</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >8</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V8G7E61NR.html#from=rank" title="金喜善因女儿被指丑崩溃 称无法在韩国生活" class="cDGray">金喜善因女儿被指丑崩溃 称无法在韩国生活</a></h3>
+                                    <!--<div class="right v-red">16587</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >9</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V948JFUQE/V9PM0NSRG.html#from=rank" title="林志颖自曝kimi生产过程：出生时像外星人" class="cDGray">林志颖自曝kimi生产过程：出生时像外星人</a></h3>
+                                    <!--<div class="right v-red">12170</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >10</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/zongyi/V7TFMDFS0/V9H7MSHTD.html#from=rank" title="富少骂亲爸是猪  没妈娃捉蜈蚣为爸挣药钱" class="cDGray">富少骂亲爸是猪  没妈娃捉蜈蚣为爸挣药钱</a></h3>
+                                    <!--<div class="right v-red">12137</div>-->
+                                </div>
+                                                            </li>
+                                                    </ul>
+<span class="blank20"></span><span class="blank9"></span>
+                    </div>
+                </div>
+                <div class="v-slider">
+                    <div class="v-title1 clearfix" style="height:27px; line-height:27px;">
+                        <h2 class="left fB">话题人物</h2>
+                        <span class="v-loop v-loop-skin2 right" style="_padding-top:5px;"><a href="#" target="_self" class="v-loop-left">&nbsp;</a><span class="crt">1</span>/<span class="total">0</span><a href="#" target="_self" class="v-loop-right">&nbsp;</a></span> </div>
+                    <div class="v-slider-box" style="height:92px;">
+                        <ul class="v-slider-body">
+                                                                                    <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="中国梦之声 我就是偶像" href="http://v.163.com/special/zongyisubject/zgmzs.html"><img imgwidth="80" imgheight="60" srcurl="http://img2.cache.netease.com/cnews/2013/5/27/20130527134715b93b9.jpg" alt="中国梦之声 我就是偶像" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="80" height="60" id="img201"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/zongyisubject/zgmzs.html" title="中国梦之声 我就是偶像">中国梦之声 我就是偶像</a></h3>
+                                        <div class="cDGray">节目主打零门槛参与，不限年龄不限性别，只要坚持梦想。</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="跳水特辑明星跳水又见炒作" href="http://v.163.com/zongyi/V8RBENF2M/V8RBGPVK3.html"><img imgwidth="80" imgheight="60" srcurl="http://img6.cache.netease.com/cnews/2013/5/27/2013052713405213bcf.jpg" alt="跳水特辑明星跳水又见炒作" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="80" height="60" id="img202"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/zongyi/V8RBENF2M/V8RBGPVK3.html" title="跳水特辑明星跳水又见炒作">跳水特辑明星跳水又见炒作</a></h3>
+                                        <div class="cDGray">明星跳水节目：星跳水立方，中国星跳跃对决综艺秀。</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="v-slider-item">
+                                <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="我为歌狂 生者为王" href="http://v.163.com/special/zongyisubject/wwgk.html"><img imgwidth="80" imgheight="60" srcurl="http://img4.cache.netease.com/cnews/2013/5/27/201305271349489edcd.jpg" alt="我为歌狂 生者为王" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="80" height="60" id="img203"></a>
+                                    <div class="right">
+                                        <h3><a href="http://v.163.com/special/zongyisubject/wwgk.html" title="我为歌狂 生者为王">我为歌狂 生者为王</a></h3>
+                                        <div class="cDGray">华语唱将音乐队战类节目，明星音乐竞演类真人秀。</div>
+                                    </div>
+                                </div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <span class="blank12"></span> </div>
+        </div>
+    </div>
+    <span class="blank9"></span>
+<!--bobo开始-->
+    <style>
+                .v-bobo .zb,.v-bobo .usercount i,.v-bobo .level,.v-bobo .bobo-mask{background: url(http://img6.cache.netease.com/www/v2013/img/icon_bobo_140227-2.png) no-repeat;}
+                .v-bobo ul{width: 972px;}
+                .v-bobo li{float: left; margin-right: 12px;width:150px;}
+                .v-bobo .link,.v-bobo .link:visited,.v-bobo .link:hover{ display: block; width: 150px; height: 105px; position: relative; color: #fff; text-decoration: none;}
+                .v-bobo img{border:none;}
+                .v-bobo .zb{width:33px;height:20px;position:absolute;top:0;right:0;background-color:#F44103;background-position:0 -705px;}
+                .v-bobo .filter{ width: 150px; height: 21px; background: #000; opacity:0.7; filter:alpha(opacity=70); position: absolute; left: 0; bottom: 0; _bottom: -1px;}
+                .v-bobo .usercount{width: 150px; height: 21px;position: absolute; left: 0; bottom: 0; _bottom: -1px; line-height: 21px; text-align: center; cursor: pointer;}
+                .v-bobo .usercount span{display:block;float:right;margin-right:8px;_margin-right:4px;}
+                .v-bobo .usercount i{display:block;_display:none;float:right;margin:4px 4px 0 0;width:12px;height:12px;background-position:-5px -687px;}
+                .v-bobo h3{position: relative; height: 22px; line-height: 24px; margin-top: 4px; overflow: hidden; }
+.v-bobo .title{width:150px; height:22px;overflow:hidden;}
+                .v-bobo .level{ width: 22px; height: 22px; position: absolute; right: 0; top: 0;}
+                .v-bobo .bobo-mask {display:none;width:100%;height:100%;position:absolute;top:0;left:0;background-color:#FFF;background-color:rgba(255,255,255,.5);_filter:alpha(opacity=50);background-position:center -770px;}
+                .v-bobo .link:hover .bobo-mask{display:block;}
+                </style>
+    <span class="blank20"></span>
+    <div class="v-bobo">
+        <ul id="js-v-bobo" class="clearfix">
+                        <li>
+                            <a href="http://bobo.163.com/?from=?f=163.vHome"><img src="http://img6.cache.netease.com/video/img14/zhuzhan/logo2.png" width="150" height="105"></a>
+                <h3>
+                    <div><a href="http://bobo.163.com/?from=?f=163.vHome">更多美女主播，<span style="color:#f44103;">快来BoBo！</span></a></div>
+                </h3>                            
+                        </li>        
+            <li>
+                <a class="link" href="http://bobo.163.com/room/800678?from=?f=163.vHome">
+                    <img src="http://img1.ph.126.net/5uWH-1_P6X1e3zHDY69O6g==/1612570141676137990.jpg" width="150" height="105">
+                    <div class="zb"></div>                    <div class="bobo-mask"></div>
+                    <div class="filter"></div>
+                    <div class="usercount">
+                        <span>363</span> <i></i>
+                    </div>
+                </a>
+                <h3>
+                    <div class="title"><a href="http://bobo.163.com/room/800678?from=?f=163.vHome">甜美小主皮肤真娇嫩</a></div>
+                </h3>
+            </li>
+                        <li>
+                <a class="link" href="http://bobo.163.com/room/600508?from=?f=163.vHome">
+                    <img src="http://img2.ph.126.net/miLSOVeDJGNrK-_a4qY2ug==/6599320466959135310.jpg" width="150" height="105">
+                    <div class="zb"></div>                    <div class="bobo-mask"></div>
+                    <div class="filter"></div>
+                    <div class="usercount">
+                        <span>182</span> <i></i>
+                    </div>
+                </a>
+                <h3>
+                    <div class="title"><a href="http://bobo.163.com/room/600508?from=?f=163.vHome">火辣美女撩人热舞视频</a></div>
+                </h3>
+            </li>
+                        <li>
+                <a class="link" href="http://bobo.163.com/room/600321?from=?f=163.vHome">
+                    <img src="http://img1.ph.126.net/PBs-EiLlZOcp_cQROH3AhQ==/4903012619423122612.jpg" width="150" height="105">
+                    <div class="zb"></div>                    <div class="bobo-mask"></div>
+                    <div class="filter"></div>
+                    <div class="usercount">
+                        <span>198</span> <i></i>
+                    </div>
+                </a>
+                <h3>
+                    <div class="title"><a href="http://bobo.163.com/room/600321?from=?f=163.vHome">笑眼萌妹子笑颜超甜的</a></div>
+                </h3>
+            </li>
+                        <li>
+                <a class="link" href="http://bobo.163.com/room/800225?from=?f=163.vHome">
+                    <img src="http://img2.ph.126.net/J2y42DCosufkrp-ZNt_-kg==/866942928369013184.jpg" width="150" height="105">
+                    <div class="zb"></div>                    <div class="bobo-mask"></div>
+                    <div class="filter"></div>
+                    <div class="usercount">
+                        <span>46</span> <i></i>
+                    </div>
+                </a>
+                <h3>
+                    <div class="title"><a href="http://bobo.163.com/room/800225?from=?f=163.vHome">美眉清纯完爆奶茶妹妹</a></div>
+                </h3>
+            </li>
+                        <li>
+                <a class="link" href="http://bobo.163.com/room/601998?from=?f=163.vHome">
+                    <img src="http://img2.ph.126.net/lV8fCBLhV_a-GvPIbwmOHQ==/1494632126433962711.jpg" width="150" height="105">
+                    <div class="zb"></div>                    <div class="bobo-mask"></div>
+                    <div class="filter"></div>
+                    <div class="usercount">
+                        <span>106</span> <i></i>
+                    </div>
+                </a>
+                <h3>
+                    <div class="title"><a href="http://bobo.163.com/room/601998?from=?f=163.vHome">主播女王范十足</a></div>
+                </h3>
+            </li>
+                    </ul>
+    </div>
+    <span class="blank20"></span>
+    <span class="blank20"></span>
+<script type="text/javascript">
+(function(){
+var loadJs = function(url, callback, charset) {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.charset = charset || "utf-8";
+    s.onload = function(){
+        callback && callback();
+        try {
+            document.body.removeChild(s);
+        } catch (e) {}
+    };
+    s.src = url;
+    document.body.appendChild(s);
+}
+var bobo_url = "http://bobo.163.com/a/p/other/6/boboData/",
+    bobo_num = Math.floor(Math.random() * 100);
+window.boboData = function(data){
+        var newData = data.hotLive;
+        if(newData && newData.length == 6) {
+            var html = [],
+                len_max = 5,
+                re = /\'|\"/gi,
+                code = "?f=163.vHome",
+                alttitle,
+                item_url,
+                anchorLevel_px,
+                live_snip_html;
+            html.push('<li><a href="http://bobo.163.com/?from=?f=163.vHome"><img src="http://img6.cache.netease.com/video/img14/zhuzhan/logo2.png" width="150" height="105"></a><h3><div><a href="http://bobo.163.com/?from=?f=163.vHome">更多美女主播，<span style="color:#f44103;">快来BoBo！</span></a></div></h3></li>');
+            for (var i = 0; i < len_max; i++){
+                alttitle = newData[i].anchorExtendTitle.replace(re, "&quot;");
+                item_url = (newData[i].live == 1) ? newData[i].liveUrl : "http://bobo.163.com/";
+                live_snip_html = (newData[i].live == 1) ? '<div class="zb"></div>' : "";
+                html.push('<li><a class="link" href="' + item_url + code + '"><img src="' + newData[i].liveCoverUrl + '" width="150" height="105" alt="' + alttitle + '" />' + live_snip_html + '<div class="bobo-mask"></div><div class="filter"></div><div class="usercount"><span>' + newData[i].onlineUserCount + '</span><i></i></div></a><h3><div class="title"><a href="' + item_url + code + '">' + newData[i].anchorExtendTitle + '</a></div></h3></li>');
+            };
+            document.getElementById('js-v-bobo').innerHTML = html.join('');
+        }
+}
+loadJs(bobo_url + bobo_num + '.js', function(){}, 'utf-8');
+})();
+</script>
+    <!--bobo结束-->
+    <div class="clearfix">
+        <div class="v-left">
+            <div class="v-title v-title-skin7 clearfix">
+                <h2><a title="拍客" href="http://v.163.com/paike/">拍客</a></h2>
+                <ul class="v-title-right clearfix cDGray">
+                                                            <li><a title="V电影" href="http://www.vmovier.com/">V电影</a></li>
+                                        <li><a title="更多" href="http://v.163.com/paike/">更多</a></li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span> <span class="blank9"></span>
+            <div class="clearfix ">
+                <div class="v-leftl">                                         <div class="v-plist2"> <a title="《天朝国家地理》之公共空间" href="http://v.163.com/paike/V8H1BIE6U/V9PJLO1A5.html" class="v-playimg" style="width:282px;height:182px;"><img id="img161" imgheight="180" imgwidth="280" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="280" height="180" alt="《天朝国家地理》之公共空间" srcurl="http://img5.cache.netease.com/cnews/2014/4/24/2014042411334542d39.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                        <h3 class="f14px fB"><a title="《天朝国家地理》之公共空间" href="http://v.163.com/paike/V8H1BIE6U/V9PJLO1A5.html">《天朝国家地理》之公共空间</a></h3>
+                        <div><span class="cDGray">这里又不是你家关你什么事，又不是我家管我屁事。这里就是公共空间。</span><a href="http://v.163.com/paike/V8H1BIE6U/V9PJLO1A5.html" class=" cDRed">[详细]</a></div>
+                        <span class="blank15"> </span><span class="blank9"></span> </div>
+                     </div>
+                <div class="v-leftr">
+                    <div class="v-plist">
+                        <ul class="clearfix">
+                                                                                    <li style="height:154px"><a title="美女喂羊遭驴子妒忌" href="http://v.163.com/paike/V97I6B4US/V9Q0GLAT7.html" class="v-playimg"><img id="img171" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="美女喂羊遭驴子妒忌" srcurl="http://img3.cache.netease.com/cnews/2014/4/28/20140428161239658ee.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="美女喂羊遭驴子妒忌" href="http://v.163.com/paike/V97I6B4US/V9Q0GLAT7.html">美女喂羊遭驴子妒忌</a></h3>
+<div class="digest cDGray">拍客：havi</div>
+                            </li>
+                                                        <li style="height:154px"><a title="宝宝被爸爸笑声吓哭" href="http://v.163.com/paike/V8PV2GDG7/V9PVU5ORN.html" class="v-playimg"><img id="img172" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="宝宝被爸爸笑声吓哭" srcurl="http://img6.cache.netease.com/cnews/2014/4/28/201404281047276f9ab.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="宝宝被爸爸笑声吓哭" href="http://v.163.com/paike/V8PV2GDG7/V9PVU5ORN.html">宝宝被爸爸笑声吓哭</a></h3>
+<div class="digest cDGray">拍客：havi</div>
+                            </li>
+                                                        <li style="height:154px"><a title="巴西愤怒羊乱攻击路人" href="http://v.163.com/paike/V97I6B4US/V9PEF4RTQ.html" class="v-playimg"><img id="img173" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="巴西愤怒羊乱攻击路人" srcurl="http://img6.cache.netease.com/cnews/2014/4/21/20140421161116b15a7.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="巴西愤怒羊乱攻击路人" href="http://v.163.com/paike/V97I6B4US/V9PEF4RTQ.html">巴西愤怒羊乱攻击路人</a></h3>
+<div class="digest cDGray">拍客：havi</div>
+                            </li>
+                                                        <li style="height:154px"><a title="骚年尝试跨越飞车受重伤" href="http://v.163.com/paike/V97I6B4US/V9Q007E5A.html" class="v-playimg"><img id="img174" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="骚年尝试跨越飞车受重伤" srcurl="http://img4.cache.netease.com/cnews/2014/4/28/2014042816423436baf.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="骚年尝试跨越飞车受重伤" href="http://v.163.com/paike/V97I6B4US/V9Q007E5A.html">骚年尝试跨越飞车受重伤</a></h3>
+<div class="digest cDGray">拍客：瑞士莲</div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="v-plist1">
+                    <ul class="clearfix">
+                                                                        <li style="height:169px;overflow:hidden; padding-left:26px;padding-right:26px;">
+                            <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/paike/">铤而走险</a></span></h3>
+                            <a title="美“飞侠”南非跳伞撞山" href="http://v.163.com/paike/V97I69DQ6/V9Q0C8L14.html"><img imgwidth="160" imgheight="90" srcurl="http://img2.cache.netease.com/cnews/2014/4/28/20140428150547c9784.jpg" id="img181" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="160" height="90" alt="美“飞侠”南非跳伞撞山"></a>
+                            <h4 class="f14px"><a title="美“飞侠”南非跳伞撞山" href="http://v.163.com/paike/V97I69DQ6/V9Q0C8L14.html">美“飞侠”南非跳伞撞山</a></h4>
+                            <div class="cDGray">跳伞运动员科利双腿骨折</div>
+                        </li>
+                                                <li style="height:169px;overflow:hidden; padding-left:26px;padding-right:26px;">
+                            <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/paike/">同性系列</a></span></h3>
+                            <a title="辨别男友是GAY否的秘籍" href="http://v.163.com/paike/V8H1BIE6U/V9PF9C9MR.html"><img imgwidth="160" imgheight="90" srcurl="http://img6.cache.netease.com/cnews/2014/4/22/20140422173407a732d.jpg" id="img182" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="160" height="90" alt="辨别男友是GAY否的秘籍"></a>
+                            <h4 class="f14px"><a title="辨别男友是GAY否的秘籍" href="http://v.163.com/paike/V8H1BIE6U/V9PF9C9MR.html">辨别男友是GAY否的秘籍</a></h4>
+                            <div class="cDGray">一些GAY的小细节告诉大家</div>
+                        </li>
+                                                <li style="height:169px;overflow:hidden; padding-left:26px;padding-right:26px;">
+                            <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/paike/">趣味盎然</a></span></h3>
+                            <a title="牛人骑迷你自行车旅行" href="http://v.163.com/paike/V97I6B4US/V9P6LR6OH.html"><img imgwidth="160" imgheight="90" srcurl="http://img6.cache.netease.com/cnews/2014/4/21/201404211034512325b.jpg" id="img183" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="160" height="90" alt="牛人骑迷你自行车旅行"></a>
+                            <h4 class="f14px"><a title="牛人骑迷你自行车旅行" href="http://v.163.com/paike/V97I6B4US/V9P6LR6OH.html">牛人骑迷你自行车旅行</a></h4>
+                            <div class="cDGray">俄罗斯人骑迷你脚踏自行车</div>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <div class="v-right">
+            <div class="v-border">
+<div class="rankTab">
+                    <div class="v-title1 clearfix">
+                        <h2 class="left fB">本周热播</h2>
+                    </div>
+                    <div class="v-rank1 v-rank1-skin5">
+                        <ul class="rank1 rankTabPanel yui3-tabs-panel-selected clearfix">
+                                                                                    <li class="on" style="border:none;">
+                                <div class="v-rank1-order v-rank1-top" >1</div>
+                                                                <div class="v-rank1-detail">
+                                    <div class="v-plist3 clearfix"> <a class="left" href="http://v.163.com/paike/V9P1L47QV/V9PIO1RQP.html#from=rank" title="飞碟一分钟：一分钟教你掩饰口臭"><img src="http://vimg1.ws.126.net/image/snapshot/2014/4/R/5/V9PIO1RR5_120~90.jpg" width="80" height="60" alt="飞碟一分钟：一分钟教你掩饰口臭"></a>
+                                        <div class="right" style="width:151px;">
+                                            <h3><a href="http://v.163.com/paike/V9P1L47QV/V9PIO1RQP.html#from=rank" title="飞碟一分钟：一分钟教你掩饰口臭" class="cDGray">飞碟一分钟：一分钟教你掩饰口臭</a></h3>
+                                            <!--<div class="v-red"><span class="fB">51087</span>次播放</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >2</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V9P1L47QV/V9PO1PSBL.html#from=rank" title="飞碟一分钟：一分钟教你减少撸管次数" class="cDGray">飞碟一分钟：一分钟教你减少撸管次数</a></h3>
+                                    <!--<div class="right v-red">44124</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >3</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V9P1L47QV/V9PG6L2Q7.html#from=rank" title="飞碟一分钟：一分钟教你应对强奸" class="cDGray">飞碟一分钟：一分钟教你应对强奸</a></h3>
+                                    <!--<div class="right v-red">36075</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >4</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V8H1BI1A5/V9PKHFI0B.html#from=rank" title="【拍客】云南两孕妇下体藏毒590克 乘机运毒被抓" class="cDGray">【拍客】云南两孕妇下体藏毒590克 乘机运毒被抓</a></h3>
+                                    <!--<div class="right v-red">32010</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >5</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V8PV2GDG7/V9PG73M3U.html#from=rank" title="实拍母狮遭雄性水牛攻击皮开肉绽" class="cDGray">实拍母狮遭雄性水牛攻击皮开肉绽</a></h3>
+                                    <!--<div class="right v-red">27974</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >6</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V8PV2GDG7/V8PVDEG0L.html#from=rank" title="奶茶主持辩论赛：“性别不一样怎么在一起”" class="cDGray">奶茶主持辩论赛：“性别不一样怎么在一起”</a></h3>
+                                    <!--<div class="right v-red">24041</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >7</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V9B1G2S4F/V9KHJIO1C.html#from=rank" title="从前有个公主，她拒绝了王子的求婚，然后，过上了幸福的生活" class="cDGray">从前有个公主，她拒绝了王子的求婚，然后，过上了幸福的生活</a></h3>
+                                    <!--<div class="right v-red">21615</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >8</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V8PV2GDG7/V9PO2UMQ5.html#from=rank" title="网传某中学欺凌视频 男生被同学轮番殴打" class="cDGray">网传某中学欺凌视频 男生被同学轮番殴打</a></h3>
+                                    <!--<div class="right v-red">18492</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >9</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V8PV2GDG7/V9PO2GBT7.html#from=rank" title="美国保镖海选爆笑现场 人民安全靠你们了！" class="cDGray">美国保镖海选爆笑现场 人民安全靠你们了！</a></h3>
+                                    <!--<div class="right v-red">18485</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >10</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/paike/V9P1L47QV/V9PDHLBIV.html#from=rank" title="飞碟一分钟：一分钟教你了解24节气" class="cDGray">飞碟一分钟：一分钟教你了解24节气</a></h3>
+                                    <!--<div class="right v-red">18117</div>-->
+                                </div>
+                                                            </li>
+                                                    </ul>
+<span class="blank20"></span><span class="blank9"></span>
+                    </div>
+                </div>
+                <div class="v-slider">
+                    <div class="v-title1 clearfix" style="height:27px; line-height:27px;">
+                        <h2 class="left fB">热门播主</h2>
+                        <span class="v-loop v-loop-skin2 right" style="_padding-top:5px;"><a href="#" target="_self" class="v-loop-left">&nbsp;</a><span class="crt">1</span>/<span class="total">0</span><a href="#" target="_self" class="v-loop-right">&nbsp;</a></span> </div>
+                    <div class="v-slider-box" style="height:166px;">
+                        <ul class="v-slider-body">
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 19px 15px" class="v-plist4 clearfix">
+                                    <ul>
+                                                                                                                            <li> <a class="left" title="速度季" href="http://v.163.com/paike/V8H1BJ28G/V8ILGHCR3.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img1.cache.netease.com/cnews/2012/12/27/2012122710512976e6e.jpg" id="img191" class="lazy-load" alt="速度季"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BJ28G/V8ILGHCR3.html" title="速度季" class="cDGray">速度季</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="GTV电子竞技" href="http://v.163.com/paike/V8H1BJHKV/V8INVIDJJ.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img2.cache.netease.com/cnews/2012/12/27/201212271048037a670.jpg" id="img192" class="lazy-load" alt="GTV电子竞技"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BJHKV/V8INVIDJJ.html" title="GTV电子竞技" class="cDGray">GTV电子竞技</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="Atom" href="http://v.163.com/paike/V8H1BKD9N/V8INC8JUB.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img3.cache.netease.com/cnews/2012/12/27/20121227102812ad39d.png" id="img193" class="lazy-load" alt="Atom"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BKD9N/V8INC8JUB.html" title="Atom" class="cDGray">Atom</a></h3>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </li>
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 19px 15px" class="v-plist4 clearfix">
+                                    <ul>
+                                                                                <li> <a class="left" title="牛人库" href="http://v.163.com/paike/V8H1BH8P3/V8I06BCQ3.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img4.cache.netease.com/cnews/2012/12/27/20121227104340c861e.jpg" id="img194" class="lazy-load" alt="牛人库"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BH8P3/V8I06BCQ3.html" title="牛人库" class="cDGray">牛人库</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="馒头音乐" href="http://v.163.com/paike/V8H1BIE6U/V8I7SSFQS.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img5.cache.netease.com/cnews/2012/12/27/201212271031007b9ad.png" id="img195" class="lazy-load" alt="馒头音乐"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BIE6U/V8I7SSFQS.html" title="馒头音乐" class="cDGray">馒头音乐</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="Zan" href="http://v.163.com/paike/V8H1BGVC4/V8II8F4BT.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img2.cache.netease.com/cnews/2012/12/27/20121227103217e87e2.jpg" id="img196" class="lazy-load" alt="Zan"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BGVC4/V8II8F4BT.html" title="Zan" class="cDGray">Zan</a></h3>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </li>
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 19px 15px" class="v-plist4 clearfix">
+                                    <ul>
+                                                                                <li> <a class="left" title="jingfang99" href="http://v.163.com/paike/V8H1BI1A5/V8I5EKNU4.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img5.cache.netease.com/cnews/2012/12/27/2012122716280576a20.jpg" id="img197" class="lazy-load" alt="jingfang99"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BI1A5/V8I5EKNU4.html" title="jingfang99" class="cDGray">jingfang99</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="优乐美" href="http://v.163.com/paike/V8H1BKD9N/V8I5EEPPQ.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img1.cache.netease.com/cnews/2012/12/27/20121227103624f9017.jpg" id="img198" class="lazy-load" alt="优乐美"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BKD9N/V8I5EEPPQ.html" title="优乐美" class="cDGray">优乐美</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="V电影" href="http://v.163.com/paike/V8H1BJOHR/V8H1MVO74.html"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img6.cache.netease.com/cnews/2012/12/27/20121227103839044ac.jpg" id="img199" class="lazy-load" alt="V电影"></a>
+                                            <h3><a href="http://v.163.com/paike/V8H1BJOHR/V8H1MVO74.html" title="V电影" class="cDGray">V电影</a></h3>
+                                        </li>
+                                                                        </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="blank20"></span>
+<!-- <div class="area clearfix">
+<iframe src='http://g.163.com/r?site=netease&affiliate=video&cat=homepage&type=column960x100&location=2' width='960' height='100' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>
+</div><span class="blank20"></span>-->
+    <div class="clearfix">
+        <div class="v-left">
+            <div class="v-title v-title-skin5 clearfix">
+                <h2><a title="纪录片" href="http://v.163.com/doc/">纪录片</a></h2>
+                <ul class="v-title-right clearfix cDGray">
+                                                            <li><a title="人文发现" href="http://v.163.com/jishi/V5GKVIRK7/index.html">人文发现</a></li>
+                                        <li><a title="经典传奇" href="http://v.163.com/jishi/V6FMS3ID2/index.html">经典传奇</a></li>
+                                        <li><a title="眼界" href="http://v.163.com/jishi/V78G5AP85/index.html">眼界</a></li>
+                                        <li><a title="探索" href="http://v.163.com/jishi/V5P6V6COK/index.html">探索</a></li>
+                                        <li><a title="档案" href="http://v.163.com/jishi/V5P6UPFN4/index.html">档案</a></li>
+                                        <li><a title="更多" href="http://v.163.com/doc/">更多</a></li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span> <span class="blank9"></span>
+            <div class="clearfix ">
+                <div class="v-leftl">                                         <div class="v-plist2"> <a title="日皇室秘闻：平民皇后美智子" href="http://v.163.com/jishi/V5P6UPFN4/V9PK6HRA6.html" class="v-playimg" style="width:282px;height:182px;"><img id="img101" imgheight="180" imgwidth="280" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="280" height="180" alt="日皇室秘闻：平民皇后美智子" srcurl="http://img2.cache.netease.com/cnews/2014/4/28/20140428173614355fb.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                        <h3 class="f14px fB"><a title="日皇室秘闻：平民皇后美智子" href="http://v.163.com/jishi/V5P6UPFN4/V9PK6HRA6.html">日皇室秘闻：平民皇后美智子</a></h3>
+                        <div><span class="cDGray">刚毕业的她参加当地举行的网球比赛。不曾料想，她的对手是当时的日本皇太子明仁。球艺高超的明仁竟然成为她的手下败将，这个日本皇位的继承人就此对她一见钟情，而她的人生也从此改变。</span><a href="http://v.163.com/jishi/V5P6UPFN4/V9PK6HRA6.html" class=" cDRed">[详细]</a></div>
+                        <span class="blank15"> </span><span class="blank9"></span> </div>
+                     </div>
+                <div class="v-leftr">
+                    <div class="v-plist">
+                        <ul class="clearfix">
+                                                                                    <li style="height:154px"><a title=" 郭富城：下一站天王" href="http://v.163.com/jishi/V6FMS3ID2/V9P6DLRDR.html" class="v-playimg"><img id="img111" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt=" 郭富城：下一站天王" srcurl="http://img5.cache.netease.com/cnews/2014/4/28/20140428174642595d0.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title=" 郭富城：下一站天王" href="http://v.163.com/jishi/V6FMS3ID2/V9P6DLRDR.html"> 郭富城：下一站天王</a></h3>
+<div class="digest cDGray">走近郭富城的杀手锏</div>
+                            </li>
+                                                        <li style="height:154px"><a title="“走廊医生”兰越峰事件" href="http://v.163.com/jishi/V9CHS4CP0/V9PF8IIKT.html" class="v-playimg"><img id="img112" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="“走廊医生”兰越峰事件" srcurl="http://img2.cache.netease.com/cnews/2014/4/28/201404281744347b467.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="“走廊医生”兰越峰事件" href="http://v.163.com/jishi/V9CHS4CP0/V9PF8IIKT.html">“走廊医生”兰越峰事件</a></h3>
+<div class="digest cDGray">谁是风波里的患者？</div>
+                            </li>
+                                                        <li style="height:154px"><a title="恶魔土肥原贤二" href="http://v.163.com/jishi/V5R8VCP1E/V9PFC3BEA.html" class="v-playimg"><img id="img113" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="恶魔土肥原贤二" srcurl="http://img4.cache.netease.com/cnews/2014/4/28/2014042817414600d87.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="恶魔土肥原贤二" href="http://v.163.com/jishi/V5R8VCP1E/V9PFC3BEA.html">恶魔土肥原贤二</a></h3>
+<div class="digest cDGray">靖国神社里的恶魔</div>
+                            </li>
+                                                        <li style="height:154px"><a title="男子体藏十几根钢针" href="http://v.163.com/jishi/V78G5AP85/V9NU2EF9V.html" class="v-playimg"><img id="img114" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgheight="90" imgwidth="140" alt="男子体藏十几根钢针" srcurl="http://img2.cache.netease.com/cnews/2014/4/24/20140424114138e88bc.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="男子体藏十几根钢针" href="http://v.163.com/jishi/V78G5AP85/V9NU2EF9V.html">男子体藏十几根钢针</a></h3>
+<div class="digest cDGray">摄像头拍到背后的秘密</div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="v-plist1">
+                    <ul class="clearfix">
+                                                                        <li style="height:169px;overflow:hidden; padding-left:26px;padding-right:26px;">
+                            <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/jishi/V8DLTRECM/index.html">微记录</a></span></h3>
+                            <a title="我们所不知道的宗教学" href="http://v.163.com/jishi/V8NAL3SDV/V9BH51PKJ.html"><img imgwidth="160" imgheight="90" srcurl="http://img4.cache.netease.com/cnews/2013/10/30/20131030171948b5c9d.jpg" id="img121" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="160" height="90" alt="我们所不知道的宗教学"></a>
+                            <h4 class="f14px"><a title="我们所不知道的宗教学" href="http://v.163.com/jishi/V8NAL3SDV/V9BH51PKJ.html">我们所不知道的宗教学</a></h4>
+                            <div class="cDGray">宗教是什么？为什么大多数神明都是男性形象？</div>
+                        </li>
+                                                <li style="height:169px;overflow:hidden; padding-left:26px;padding-right:26px;">
+                            <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/special/jishisubject/jkws.html">健康卫视专区</a></span></h3>
+                            <a title="了解最前沿的健康资讯" href="http://v.163.com/special/jishisubject/jkws.html"><img imgwidth="160" imgheight="90" srcurl="http://img1.cache.netease.com/cnews/2014/4/21/2014042110232745bcd.jpg" id="img122" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="160" height="90" alt="了解最前沿的健康资讯"></a>
+                            <h4 class="f14px"><a title="了解最前沿的健康资讯" href="http://v.163.com/special/jishisubject/jkws.html">了解最前沿的健康资讯</a></h4>
+                            <div class="cDGray">传播权威专业的健康信息，关注健康问题。</div>
+                        </li>
+                                                <li style="height:169px;overflow:hidden; padding-left:26px;padding-right:26px;">
+                            <h3><span class="v-arrows"><a target="_blank" href="http://v.163.com/special/jishisubject/documatch.html">纪录片大赛作品</a></span></h3>
+                            <a title="纪录片：尘肺之殇" href="http://v.163.com/special/jishisubject/chenfeizhishang.html"><img imgwidth="160" imgheight="90" srcurl="http://img6.cache.netease.com/cnews/2014/2/7/201402071038599739b.jpg" id="img123" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="160" height="90" alt="纪录片：尘肺之殇"></a>
+                            <h4 class="f14px"><a title="纪录片：尘肺之殇" href="http://v.163.com/special/jishisubject/chenfeizhishang.html">纪录片：尘肺之殇</a></h4>
+                            <div class="cDGray">不完全统计，在中国，有近600万的尘肺病患者</div>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <div class="v-right">
+            <div class="v-border">
+<div class="rankTab">
+                    <div class="v-title1 clearfix">
+                        <h2 class="left fB">本月热播</h2>
+                    </div>
+                    <div class="v-rank1 v-rank1-skin4">
+                        <ul class="rank1 rankTabPanel yui3-tabs-panel-selected clearfix">
+                                                                                    <li class="on" style="border:none;">
+                                <div class="v-rank1-order v-rank1-top" >1</div>
+                                                                <div class="v-rank1-detail">
+                                    <div class="v-plist3 clearfix"> <a class="left" href="http://v.163.com/jishi/V78G5AP85/V7H46GM2A.html#from=rank" title="不容践踏的生命：花季女孩的陨落"><img src="http://vimg3.ws.126.net/image/snapshot/2011/11/J/L/V7H46GJJL_120~90.jpg" width="80" height="60" alt="不容践踏的生命：花季女孩的陨落"></a>
+                                        <div class="right" style="width:151px;">
+                                            <h3><a href="http://v.163.com/jishi/V78G5AP85/V7H46GM2A.html#from=rank" title="不容践踏的生命：花季女孩的陨落" class="cDGray">不容践踏的生命：花季女孩的陨落</a></h3>
+                                            <!--<div class="v-red"><span class="fB">4570050</span>次播放</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >2</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V8KJ3RQKH/V8KJ5UE9L.html#from=rank" title="四胞胎母亲在家中惨遭杀害" class="cDGray">四胞胎母亲在家中惨遭杀害</a></h3>
+                                    <!--<div class="right v-red">4285623</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >3</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V5R8VCP1E/V7OTDQLHP.html#from=rank" title="毛岸英死亡真相：祸起蛋炒饭？" class="cDGray">毛岸英死亡真相：祸起蛋炒饭？</a></h3>
+                                    <!--<div class="right v-red">2438900</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >4</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V7HIQFQDL/V7J1G9JFD.html#from=rank" title="UFO存在真相 美基地中的铁证" class="cDGray">UFO存在真相 美基地中的铁证</a></h3>
+                                    <!--<div class="right v-red">1857838</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >5</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V5P6UVHTJ/V6FHM83QB.html#from=rank" title="毛主席去世：全军进入一级战备" class="cDGray">毛主席去世：全军进入一级战备</a></h3>
+                                    <!--<div class="right v-red">1838972</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >6</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V7HIQFQDL/V8D17R5KE.html#from=rank" title="黑色1976:毛泽东逝世真实录像" class="cDGray">黑色1976:毛泽东逝世真实录像</a></h3>
+                                    <!--<div class="right v-red">1744804</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >7</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V7MIUGGFJ/V8A5CQJ7A.html#from=rank" title="走近毛泽东：禁忌影像全公开 1" class="cDGray">走近毛泽东：禁忌影像全公开 1</a></h3>
+                                    <!--<div class="right v-red">1736711</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >8</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V5P6V6COK/V5TM7SUOM.html#from=rank" title="玛雅预言2012地球毁灭是否为真？" class="cDGray">玛雅预言2012地球毁灭是否为真？</a></h3>
+                                    <!--<div class="right v-red">1626553</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >9</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V5P6UVHTJ/V89J0O6C7.html#from=rank" title="毛泽东弟弟竟是金融大亨&#040;上&#041;" class="cDGray">毛泽东弟弟竟是金融大亨&#040;上&#041;</a></h3>
+                                    <!--<div class="right v-red">1481799</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >10</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/jishi/V5P6V1HH7/V6A2BC3J8.html#from=rank" title="爱妃惨死：朱棣活剐三千宫女" class="cDGray">爱妃惨死：朱棣活剐三千宫女</a></h3>
+                                    <!--<div class="right v-red">1335221</div>-->
+                                </div>
+                                                            </li>
+                                                    </ul>
+                        <span class="blank20"></span><span class="blank9"></span>
+                    </div>
+                </div>
+                <div class="v-slider">
+                    <div class="v-title1 clearfix" style="height:27px; line-height:27px;">
+                        <h2 class="left fB">CNEX专区</h2>
+                        <span class="v-loop v-loop-skin2 right" style="_padding-top:5px;"><a href="#" target="_self" class="v-loop-left">&nbsp;</a><span class="crt">1</span>/<span class="total">0</span><a href="#" target="_self" class="v-loop-right">&nbsp;</a></span> </div>
+                    <div class="v-slider-box" style="height:168px;">
+                        <ul class="v-slider-body">
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 26px 15px" class="v-plist5 clearfix">
+                                    <ul>
+                                                                                                                                                                <li> <a class="left" title="《阿拉民工》：80后农民工的乐观" href="http://v.163.com/jishi/V7SBTU3SS/V7SCC5LSD.html"><img imgwidth="120" imgheight="80" srcurl="http://img3.cache.netease.com/cnews/2013/1/4/201301041657243802a.jpg" alt="《阿拉民工》：80后农民工的乐观" id="img131" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="120" height="80" ></a>
+                                            <h3><a href="http://v.163.com/jishi/V7SBTU3SS/V7SCC5LSD.html" title="《阿拉民工》：80后农民工的乐观" class="cDGray">《阿拉民工》：80后农民工的乐观</a></h3>
+                                        </li>                                                                                <li> <a class="left" title="《中国门》：新闻联播中看不到的高考" href="http://v.163.com/jishi/V7SBTU3SS/V82IF1T34.html"><img imgwidth="120" imgheight="80" srcurl="http://img1.cache.netease.com/cnews/2013/1/4/20130104165745fd723.jpg" alt="《中国门》：新闻联播中看不到的高考" id="img132" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="120" height="80" ></a>
+                                            <h3><a href="http://v.163.com/jishi/V7SBTU3SS/V82IF1T34.html" title="《中国门》：新闻联播中看不到的高考" class="cDGray">《中国门》：新闻联播中看不到的高考</a></h3>
+                                        </li>                                                                                                                   </ul>
+                                </div>
+                            </li>
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 26px 15px" class="v-plist5 clearfix">
+                                    <ul>
+                                         <li> <a class="left" title="《卡到啦》：信用卡的利与恶" href="http://v.163.com/jishi/V7SBTU3SS/V7SC1LPLL.html"><img imgwidth="120" imgheight="80" srcurl="http://img2.cache.netease.com/cnews/2013/1/4/201301041701478f6c9.jpg" alt="《卡到啦》：信用卡的利与恶" id="img133" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="120" height="80" ></a>
+                                            <h3><a href="http://v.163.com/jishi/V7SBTU3SS/V7SC1LPLL.html" title="《卡到啦》：信用卡的利与恶" class="cDGray">《卡到啦》：信用卡的利与恶</a></h3>
+                                        </li>                                                                                <li> <a class="left" title="《浮萍》：都市人的归属是何方" href="http://v.163.com/jishi/V7SBTU3SS/V7SC4MENU.html"><img imgwidth="120" imgheight="80" srcurl="http://img2.cache.netease.com/cnews/2013/1/4/2013010417013427f61.jpg" alt="《浮萍》：都市人的归属是何方" id="img134" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="120" height="80" ></a>
+                                            <h3><a href="http://v.163.com/jishi/V7SBTU3SS/V7SC4MENU.html" title="《浮萍》：都市人的归属是何方" class="cDGray">《浮萍》：都市人的归属是何方</a></h3>
+                                        </li>                                                                                                                   </ul>
+                                </div>
+                            </li>
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 26px 15px" class="v-plist5 clearfix">
+                                    <ul>
+                                         <li> <a class="left" title="《父亲》：儿子毕业就失业" href="http://v.163.com/special/jishisubject/fathersday.html"><img imgwidth="120" imgheight="80" srcurl="http://img5.cache.netease.com/cnews/2013/1/4/20130104165831a6492.jpg" alt="《父亲》：儿子毕业就失业" id="img135" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="120" height="80" ></a>
+                                            <h3><a href="http://v.163.com/special/jishisubject/fathersday.html" title="《父亲》：儿子毕业就失业" class="cDGray">《父亲》：儿子毕业就失业</a></h3>
+                                        </li>                                                                                <li> <a class="left" title="《小人国》：孩子用行动表达想法" href="http://v.163.com/jishi/V7SBTU3SS/V81VQHFUJ.html"><img imgwidth="120" imgheight="80" srcurl="http://img2.cache.netease.com/cnews/2013/1/4/20130104165705c5865.jpg" alt="《小人国》：孩子用行动表达想法" id="img136" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="120" height="80" ></a>
+                                            <h3><a href="http://v.163.com/jishi/V7SBTU3SS/V81VQHFUJ.html" title="《小人国》：孩子用行动表达想法" class="cDGray">《小人国》：孩子用行动表达想法</a></h3>
+                                        </li>                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="blank20"></span>
+    <div class="clearfix">
+        <div class="v-left">
+            <div class="v-title v-title-skin6 clearfix">
+                <h2><a title="公开课" href="http://open.163.com/">公开课</a></h2>
+                <ul class="v-title-right clearfix cDGray">
+                                                            <li><a title="国外" href="http://open.163.com/ocw/">国外</a></li>
+                                        <li><a title="国内" href="http://open.163.com/cuvocw/">国内</a></li>
+                                        <li><a title="TED" href="http://open.163.com/ted/">TED</a></li>
+                                        <li><a title="可汗" href="http://open.163.com/khan/">可汗</a></li>
+                                        <li><a title="赏课" href="http://open.163.com/appreciation">赏课</a></li>
+                                        <li><a title="专题" href="http://v.163.com/special/ocwhuizong/">专题</a></li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span> <span class="blank9"></span>
+            <div class="clearfix ">
+                <div class="v-leftl">                                         <div class="v-plist2 v-dot"> <a title="【Coursera】中国人文经典导读" href="http://c.open.163.com/coursera/courseIntro.htm?cid=369#/courseIntro" class="v-playimg" style="width:282px;height:182px;"><img id="img141" imgheight="180" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="280" height="180" imgwidth="280" alt="【Coursera】中国人文经典导读" srcurl="http://img4.cache.netease.com/cnews/2014/4/24/201404241425156cf34.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                        <h3 class="f14px fB"><a title="【Coursera】中国人文经典导读" href="http://c.open.163.com/coursera/courseIntro.htm?cid=369#/courseIntro">【Coursera】中国人文经典导读</a></h3>
+                        <div><span class="cDGray">本课汇文史哲艺术于一炉，今日正式开讲，那些还没有学习经历的同学，可以从本课开始，这会是你不错的启蒙课选择~千万不要错过！</span><a href="http://c.open.163.com/coursera/courseIntro.htm?cid=369#/courseIntro" class=" cDRed">[详细]</a></div>
+                        <span class="blank15"> </span><span class="blank9"></span> </div>
+                     <span class="blank3"> </span>
+                    <div class="v-tlist1">
+                        <h3 class="fB">热门推荐</h3>
+                        <ul>
+                                                                                    <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://open.163.com/special/cuvocw/sumiao.html">中国美术学院公开课</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://open.163.com/movie/2014/4/9/U/M9NQT45VF_M9NT25S9U.html">肮脏城市</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://open.163.com/movie/2014/3/M/5/M9NBIO5QN_M9NBLT0M5.html">你所见之我所见</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://open.163.com/movie/2014/3/F/3/M9OHVJHA3_M9OHVNJF3.html">还原钓鱼岛历史真相</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://open.163.com/special/cuvocw/minjianwu.html">北京舞蹈学院公开课</a></h4>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="v-leftr">
+                    <div class="v-plist">
+                        <ul class="clearfix">
+                                                                                    <li style="height:154px"><a title="精神病学病例研讨" href="http://v.163.com/special/opencourse/psychiatry.html" class="v-playimg"><img id="img151" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="精神病学病例研讨" srcurl="http://img1.cache.netease.com/cnews/2014/4/23/201404231426267e569.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="精神病学病例研讨" href="http://v.163.com/special/opencourse/psychiatry.html">精神病学病例研讨</a></h3>
+<div class="digest cDGray"><a href="http://c.open.163.com/search/search.htm?query=%E4%BA%9A%E5%88%A9%E6%A1%91%E9%82%A3%E5%A4%A7%E5%AD%A6&enc=%E2%84%A2#/search/all" class="cDGray">亚利桑那大学</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="计算机科学" href="http://v.163.com/special/Khan/computer.html" class="v-playimg"><img id="img152" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="计算机科学" srcurl="http://img5.cache.netease.com/cnews/2014/4/23/2014042314330167951.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="计算机科学" href="http://v.163.com/special/Khan/computer.html">计算机科学</a></h3>
+<div class="digest cDGray"><a href="http://open.163.com/khan" class="cDGray">可汗学院</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="中国传统音乐揽胜" href="http://v.163.com/special/cuvocw/chuantongyinyue.html" class="v-playimg"><img id="img153" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="中国传统音乐揽胜" srcurl="http://img2.cache.netease.com/cnews/2014/4/23/201404231436187e0b9.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="中国传统音乐揽胜" href="http://v.163.com/special/cuvocw/chuantongyinyue.html">中国传统音乐揽胜</a></h3>
+<div class="digest cDGray"><a href="http://c.open.163.com/search/search.htm?query=%E6%9D%AD%E5%B7%9E%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6&enc=%E2%84%A2#/search/all" class="cDGray">杭州师范大学</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="一起学创业" href="http://v.163.com/special/cuvocw/yiqixuechuangye.html" class="v-playimg"><img id="img154" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="一起学创业" srcurl="http://img3.cache.netease.com/cnews/2014/4/23/2014042314384022936.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="一起学创业" href="http://v.163.com/special/cuvocw/yiqixuechuangye.html">一起学创业</a></h3>
+<div class="digest cDGray"><a href="http://c.open.163.com/search/search.htm?query=%E4%B8%AD%E5%9B%BD%E9%9D%92%E5%B9%B4%E6%94%BF%E6%B2%BB%E5%AD%A6%E9%99%A2&enc=%E2%84%A2#/search/all" class="cDGray">中国青年政治学院</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="万能麻醉器" href="http://v.163.com/movie/2014/4/F/B/M9MPGIUOF_M9MPGQMFB.html" class="v-playimg"><img id="img155" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="万能麻醉器" srcurl="http://img2.cache.netease.com/cnews/2014/4/23/201404231439557286b.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="万能麻醉器" href="http://v.163.com/movie/2014/4/F/B/M9MPGIUOF_M9MPGQMFB.html">万能麻醉器</a></h3>
+<div class="digest cDGray"><a href="http://open.163.com/ted" class="cDGray">TED视频集</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="如何停止刑讯逼供" href="http://v.163.com/movie/2014/4/0/H/M9MS67D2J_M9N8VPB0H.html" class="v-playimg"><img id="img156" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="如何停止刑讯逼供" srcurl="http://img5.cache.netease.com/cnews/2014/4/23/2014042314421606629.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="如何停止刑讯逼供" href="http://v.163.com/movie/2014/4/0/H/M9MS67D2J_M9N8VPB0H.html">如何停止刑讯逼供</a></h3>
+<div class="digest cDGray"><a href="http://open.163.com/ted" class="cDGray">TED视频集</a></div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="v-right">
+    <div class="v-border">
+        <div class="yui3-widget yui3-tabs" style=""><div class="rankTab yui3-tabs-content">
+            <div class="v-title1 clearfix">
+                <h2 class="left fB">本月热播</h2>
+            </div>
+            <div class="v-rank1 v-rank1-skin3">
+                <ul class="rank1 rankTabPanel rank yui3-tabs-panel-selected clearfix yui3-tabs-panel" id="j-openrank">
+                </ul>
+                <span class="blank3"></span>
+            </div>
+        </div></div>
+        <div class="v-slider">
+            <div class="v-title1 clearfix" style="height:27px; line-height:27px;">
+                <h2 class="left fB">专题·活动</h2>
+                <span class="v-loop v-loop-skin2 right" style="_padding-top:5px;"><a href="#" target="_self" class="v-loop-left">&nbsp;</a><span class="crt">1</span>/<span class="total">3</span><a href="#" target="_self" class="v-loop-right">&nbsp;</a></span> </div>
+            <div class="v-slider-box" style="height:145px;">
+                <ul class="v-slider-body">
+                                                            <li class="v-slider-item" style="height:145px;">
+                        <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="公开课视角第20期：“安全”面面观" href="http://v.163.com/special/openclass/speed020.html"><img srcurl="http://img2.cache.netease.com/cnews/2013/11/19/201311191148537a370.jpg" alt="公开课视角第20期：“安全”面面观" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="260px" height="100px" id="img61"></a>
+<span class="blank6"></span>                            
+<div class="" style="text-align: center">
+                                <h3><a href="http://v.163.com/special/openclass/speed020.html" title="公开课视角第20期：“安全”面面观" class="cDGray">公开课视角第20期：“安全”面面观</a></h3>
+                            </div>
+                        </div>
+                    </li>
+                                        <li class="v-slider-item" style="height:145px;">
+                        <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="Coursera 官方中文学习社区" href="http://c.open.163.com/coursera/home.htm#/courseraHome"><img srcurl="http://img1.cache.netease.com/cnews/2013/10/10/201310101518542a21d.jpg" alt="Coursera 官方中文学习社区" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="260px" height="100px" id="img62"></a>
+<span class="blank6"></span>                            
+<div class="" style="text-align: center">
+                                <h3><a href="http://c.open.163.com/coursera/home.htm#/courseraHome" title="Coursera 官方中文学习社区" class="cDGray">Coursera 官方中文学习社区</a></h3>
+                            </div>
+                        </div>
+                    </li>
+                                        <li class="v-slider-item" style="height:145px;">
+                        <div class="v-plist3 clearfix" style="padding:15px;"> <a class="left" title="清华大学在线教育学习平台 —— 学堂在线" href="http://v.163.com/special/openclass/xuetangx.html"><img srcurl="http://img5.cache.netease.com/cnews/2013/11/12/20131112145733db720.jpg" alt="清华大学在线教育学习平台 —— 学堂在线" class="lazy-load" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="260px" height="100px" id="img63"></a>
+<span class="blank6"></span>                            
+<div class="" style="text-align: center">
+                                <h3><a href="http://v.163.com/special/openclass/xuetangx.html" title="清华大学在线教育学习平台 —— 学堂在线" class="cDGray">清华大学在线教育学习平台 —— 学堂在线</a></h3>
+                            </div>
+                        </div>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div style="height:1px;width:1px;overflow:hidden;"><iframe src="http://so.open.163.com/rank/tophot.do" frameborder="0"></iframe></div>
+  <style>
+  .v-rank1-skin3 .v-rank1-hot{background-color: #23784c;}
+  </style>
+  <script>
+    (function(){
+      var _d = document,
+      _g = window,
+      _box = _d.getElementById('j-openrank');
+      _d.domain = "163.com";
+      _g.returnRank = function(_data){
+        var i=0,
+        _tmp = _data[0].topMonthList,
+        _len = _tmp.length,
+        _tpl = '';
+        for(;i<_len;i++){
+          var _clazz = i>2?'':'v-rank1-hot',
+          _title = _tmp[i].movie.title;
+          if(i == 0){
+            _tpl += '<li class="on" style="border:none;">\
+                      <div class="v-rank1-order v-rank1-hot">1</div>\
+                        <div class="v-rank1-detail">\
+                          <div class="v-plist3 clearfix">\
+                            <a class="left" href="'+_tmp[i].movie.pageurl+'" title="'+_title+'">\
+                              <img src="http://vimg1.ws.126.net'+_tmp[i].movie.imgpath+'.jpg" width="80" height="60" alt="'+_title+'">\
+                            </a>\
+                            <div class="right" style="width:151px;">\
+                                <h3><a href="'+_tmp[i].movie.pageurl+'" title="'+_title+'" class="cDGray">'+_title+'</a></h3>\
+                            </div>\
+                          </div>\
+                        </div>\
+                      </li>';
+          }else{
+            _tpl += '<li>\
+                      <div class="v-rank1-order '+_clazz+'">'+(i+1)+'</div>\
+                          <div class="v-rank1-simple">\
+                          <h3 class="left"><a href="'+_tmp[i].movie.pageurl+'" title="'+_title+'" class="cDGray">'+_title+'</a></h3>\
+                      </div>\
+                    </li>';
+          }
+        }
+        _box.innerHTML = _tpl;
+      }
+    })();
+  </script>
+    </div>
+    <span class="blank12"></span>
+    <div class="clearfix">
+        <div class="v-left">
+            <div class="v-title v-title-skin4 clearfix">
+                <h2><a title="MV" href="http://v.163.com/mv/">MV</a></h2>
+                <ul class="v-title-right clearfix cDGray">
+                                                            <li><a title="听鉴" href="http://v.163.com/special/mvsubject/classicvideo.html">听鉴</a></li>
+                                        <li><a title="中韩歌会" href="http://v.163.com/mv/V8DL5MB5H/V8GKS9CDI.html">中韩歌会</a></li>
+                                        <li><a title="绝世名伶演唱会" href="http://v.163.com/mv/V8DL5MB5H/V8GKTPUCJ.html">绝世名伶演唱会</a></li>
+                                        <li><a title="东方风云榜" href="http://v.163.com/mv/V8DL5MB5H/V8GKSL44A.html">东方风云榜</a></li>
+                                        <li><a title="更多" href="http://v.163.com/mv/">更多</a></li>
+                                    </ul>
+            </div>
+            <span class="blank15"></span> <span class="blank9"></span>
+            <div class="clearfix ">
+                <div class="v-leftl">                                         <div class="v-plist2 v-dot"> <a title="2014全英奖(BRIT Awards 2014)全场高清" href="http://music.163.com/#/mv?id=232221" class="v-playimg" style="width:282px;height:182px;"><img id="img71" imgheight="180" imgwidth="280" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="280" height="180" alt="2014全英奖(BRIT Awards 2014)全场高清" srcurl="http://img1.cache.netease.com/cnews/2014/3/4/20140304155832b8c71.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                        <h3 class="f14px fB"><a title="2014全英奖(BRIT Awards 2014)全场高清" href="http://music.163.com/#/mv?id=232221">2014全英奖(BRIT Awards 2014)全场高清</a></h3>
+                        <div><span class="cDGray">2014年度的全英音乐奖颁奖典礼于当地时间2月19日在英国伦敦的O2体育馆举行。全英的表演向来精致好看，英美大牌混杂，一起来感受当晚的视听盛宴吧！</span><a href="http://music.163.com/#/mv?id=232221" class=" cDRed">[详细]</a></div>
+                        <span class="blank15"> </span><span class="blank9"></span> </div>
+                     <span class="blank3"> </span>
+                    <div class="v-tlist1">
+                        <h3 class="fB">热门推荐</h3>
+                        <ul>
+                                                                                    <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://music.163.com/#/mv?id=232005">第56届格莱美颁奖晚会全场版</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://music.163.com/#/mv?id=221020">日本人气女优限制级MV</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://music.163.com/#/mv?id=232007">格莱美致敬披头士音乐会</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://music.163.com/#/mv?id=233012">Stellar19禁MV《Marionette》舞蹈版</a></h4>
+                            </li>
+                                                        <li>
+                                <h4><span class="v-tlist1-point">·</span><a href="http://music.163.com/#/mv?id=215101">2014年FOX跨年晚会全场</a></h4>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="v-leftr">
+                    <div class="v-plist">
+                        <ul class="clearfix">
+                                                                                    <li style="height:154px"><a title="セブンスコード" href="http://music.163.com/#/mv?id=235158" class="v-playimg"><img id="img81" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="セブンスコード" srcurl="http://img4.cache.netease.com/cnews/2014/3/4/20140304170208cae26.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="セブンスコード" href="http://music.163.com/#/mv?id=235158">セブンスコード</a></h3>
+<div class="digest cDGray">歌手：<a href="http://music.163.com/#/artist?id=17231" class="cDGray">前田敦子</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="酷" href="http://music.163.com/#/mv?id=243179" class="v-playimg"><img id="img82" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="酷" srcurl="http://img4.cache.netease.com/cnews/2014/4/28/20140428141324f1cf2.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="酷" href="http://music.163.com/#/mv?id=243179">酷</a></h3>
+<div class="digest cDGray">歌手：<a href="http://music.163.com/#/artist?id=8327" class="cDGray">李宇春</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="Vida " href="http://music.163.com/#/mv?id=244033" class="v-playimg"><img id="img83" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="Vida " srcurl="http://img6.cache.netease.com/cnews/2014/4/28/2014042814534228e41.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="Vida " href="http://music.163.com/#/mv?id=244033">Vida </a></h3>
+<div class="digest cDGray">歌手：<a href="http://music.163.com/#/artist?id=41946" class="cDGray">Ricky Martin</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="陪你走到底" href="http://music.163.com/#/mv?id=243015" class="v-playimg"><img id="img84" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="陪你走到底" srcurl="http://img3.cache.netease.com/cnews/2014/4/28/201404281416441d0b4.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="陪你走到底" href="http://music.163.com/#/mv?id=243015">陪你走到底</a></h3>
+<div class="digest cDGray">歌手：<a href="http://music.163.com/#/artist?id=10561" class="cDGray">张靓颖</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="Midnight" href="http://music.163.com/#/mv?id=235039" class="v-playimg"><img id="img85" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="Midnight" srcurl="http://img3.cache.netease.com/cnews/2014/3/4/2014030416584754d60.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="Midnight" href="http://music.163.com/#/mv?id=235039">Midnight</a></h3>
+<div class="digest cDGray">歌手：<a href="http://music.163.com/#/artist?id=89365" class="cDGray">Coldplay</a></div>
+                            </li>
+                                                        <li style="height:154px"><a title="Fxxk U" href="http://music.163.com/#/mv?id=231019" class="v-playimg"><img id="img86" imgheight="90" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="140" height="90" imgwidth="140" alt="Fxxk U" srcurl="http://img6.cache.netease.com/cnews/2014/3/4/201403041707257f7f8.jpg" class="lazy-load"><span class="v-playimg-icon"></span></a>
+                                <h3><a title="Fxxk U" href="http://music.163.com/#/mv?id=231019">Fxxk U</a></h3>
+<div class="digest cDGray">歌手：<a href="http://music.163.com/#/artist?id=125504" class="cDGray">佳仁</a></div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="v-right">
+            <div class="v-border">
+                <div class="rankTab">
+                    <div class="v-title1 clearfix">
+                        <h2 class="left fB">本周热播</h2>
+                    </div>
+                    <div class="v-rank1 v-rank1-skin3">
+                        <ul class="rank1 rankTabPanel rank yui3-tabs-panel-selected clearfix">
+                                                                                    <li class="on" style="border:none;">
+                                <div class="v-rank1-order v-rank1-top" >1</div>
+                                                                <div class="v-rank1-detail">
+                                    <div class="v-plist3 clearfix"> <a class="left" href="http://v.163.com/mv/V8DL5KQA8/V8QUOB5UN.html#from=rank" title="少女时代日单《BEEP BEEP》官方版"><img src="http://vimg2.ws.126.net/image/snapshot/2013/4/U/O/V8QUOB5UO_120~90.jpg" width="80" height="60" alt="少女时代日单《BEEP BEEP》官方版"></a>
+                                        <div class="right" style="width:151px;">
+                                            <h3><a href="http://v.163.com/mv/V8DL5KQA8/V8QUOB5UN.html#from=rank" title="少女时代日单《BEEP BEEP》官方版" class="cDGray">少女时代日单《BEEP BEEP》官方版</a></h3>
+                                            <!--<div class="v-red"><span class="fB">4298</span>次播放</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >2</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5JVCH/V8FH2FTTU.html#from=rank" title="吴克群《胡闹》" class="cDGray">吴克群《胡闹》</a></h3>
+                                    <!--<div class="right v-red">2535</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order v-rank1-top" >3</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5LJ4R/V8FEHBURG.html#from=rank" title="M.iam.i &amp; Flo Rida 《Avalanche》" class="cDGray">M.iam.i &amp; Flo Rida 《Avalanche》</a></h3>
+                                    <!--<div class="right v-red">1955</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >4</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5MB5H/V8GKS9CDI.html#from=rank" title="2012中韩歌会高清完整版" class="cDGray">2012中韩歌会高清完整版</a></h3>
+                                    <!--<div class="right v-red">1705</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >5</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5KQA8/V8IB8UECN.html#from=rank" title="少女时代《Dancing Queen》" class="cDGray">少女时代《Dancing Queen》</a></h3>
+                                    <!--<div class="right v-red">583</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >6</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5LJ4R/V8FECS77D.html#from=rank" title="Mumford &amp; Sons《The Cave》" class="cDGray">Mumford &amp; Sons《The Cave》</a></h3>
+                                    <!--<div class="right v-red">456</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >7</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5MB5H/V8GKTPUCJ.html#from=rank" title="范晓萱绝世名伶演唱会" class="cDGray">范晓萱绝世名伶演唱会</a></h3>
+                                    <!--<div class="right v-red">432</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >8</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5LJ4R/V8FEDFDBI.html#from=rank" title="BOLERO《RAVEL》" class="cDGray">BOLERO《RAVEL》</a></h3>
+                                    <!--<div class="right v-red">409</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >9</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5MB5H/V8GKSL44A.html#from=rank" title="第十九届东方风云榜颁奖盛典" class="cDGray">第十九届东方风云榜颁奖盛典</a></h3>
+                                    <!--<div class="right v-red">405</div>-->
+                                </div>
+                                                            </li>
+                                                        <li >
+                                <div class="v-rank1-order " >10</div>
+                                                                <div class="v-rank1-simple">
+                                    <h3 class="left"><a href="http://v.163.com/mv/V8DL5MB5H/V8GKSNMIH.html#from=rank" title="SHE爱而为一she演唱会" class="cDGray">SHE爱而为一she演唱会</a></h3>
+                                    <!--<div class="right v-red">234</div>-->
+                                </div>
+                                                            </li>
+                                                    </ul><span class="blank20"></span><span class="blank9"></span>
+                    </div>
+                </div>
+                <div class="v-slider">
+                    <div class="v-title1 clearfix" style="height:27px; line-height:27px;">
+                        <h2 class="left fB">热门歌手</h2>
+                        <span class="v-loop v-loop-skin2 right" style="_padding-top:5px;"><a href="#" target="_self" class="v-loop-left">&nbsp;</a><span class="crt">1</span>/<span class="total">0</span><a href="#" target="_self" class="v-loop-right">&nbsp;</a></span> </div>
+                    <div class="v-slider-box" style="height:127px;">
+                        <ul class="v-slider-body">
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 19px 15px" class="v-plist4 clearfix">
+                                    <ul>
+                                                                                                                            <li> <a class="left" title="G.E.M.邓紫棋" href="http://music.163.com/#/artist/mv?id=7763"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img1.cache.netease.com/cnews/2014/3/4/20140304180330c3e46.jpg" id="img91" class="lazy-load" alt="G.E.M.邓紫棋"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=7763" title="G.E.M.邓紫棋" class="cDGray">G.E.M.邓紫棋</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="陈奕迅" href="http://music.163.com/#/artist/mv?id=2116"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img4.cache.netease.com/cnews/2014/3/4/20140304180507d4eab.jpg" id="img92" class="lazy-load" alt="陈奕迅"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=2116" title="陈奕迅" class="cDGray">陈奕迅</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="孙燕姿" href="http://music.163.com/#/artist/mv?id=9272"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img6.cache.netease.com/cnews/2014/3/4/20140304180618f08a4.jpg" id="img93" class="lazy-load" alt="孙燕姿"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=9272" title="孙燕姿" class="cDGray">孙燕姿</a></h3>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </li>
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 19px 15px" class="v-plist4 clearfix">
+                                    <ul>
+                                                                                <li> <a class="left" title="EXO" href="http://music.163.com/#/artist/mv?id=759509"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img3.cache.netease.com/cnews/2014/3/4/20140304180808f4c74.jpg" id="img94" class="lazy-load" alt="EXO"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=759509" title="EXO" class="cDGray">EXO</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="少女时代" href="http://music.163.com/#/artist/mv?id=126793"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img5.cache.netease.com/cnews/2014/3/4/20140304180911366ee.jpg" id="img95" class="lazy-load" alt="少女时代"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=126793" title="少女时代" class="cDGray">少女时代</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="2NE1" href="http://music.163.com/#/artist/mv?id=128177"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img2.cache.netease.com/cnews/2014/3/4/201403041810411b4b2.jpg" id="img96" class="lazy-load" alt="2NE1"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=128177" title="2NE1" class="cDGray">2NE1</a></h3>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </li>
+                            <li class="v-slider-item">
+                                <div style="padding:15px 15px 19px 15px" class="v-plist4 clearfix">
+                                    <ul>
+                                                                                <li> <a class="left" title="Katy Perry" href="http://music.163.com/#/artist/mv?id=62888"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img3.cache.netease.com/cnews/2014/3/4/2014030418122602566.jpg" id="img97" class="lazy-load" alt="Katy Perry"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=62888" title="Katy Perry" class="cDGray">Katy Perry</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="Rihanna" href="http://music.163.com/#/artist/mv?id=72724"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img4.cache.netease.com/cnews/2014/3/4/2014030418131378097.jpg" id="img98" class="lazy-load" alt="Rihanna"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=72724" title="Rihanna" class="cDGray">Rihanna</a></h3>
+                                        </li>
+                                                                                <li> <a class="left" title="Bruno Mars" href="http://music.163.com/#/artist/mv?id=178059"><img imgwidth="70" imgheight="70" src="http://img1.cache.netease.com/video/img11/movie/loaderdefault.png" width="70" height="70" srcurl="http://img3.cache.netease.com/cnews/2014/3/4/20140304182932ff09b.jpg" id="img99" class="lazy-load" alt="Bruno Mars"></a>
+                                            <h3><a href="http://music.163.com/#/artist/mv?id=178059" title="Bruno Mars" class="cDGray">Bruno Mars</a></h3>
+                                        </li>
+                                                                        </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<span class="blank20"></span>
+<!-- <div class="area clearfix">
+<iframe src='http://g.163.com/r?site=netease&affiliate=video&cat=homepage&type=column960x130&location=1' width='960' height='130' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no'></iframe>
+</div><span class="blank20"></span> -->
+</div>
+<a id="backtoTop" target="_self" class="v-back v-back-hack hidden" title="返回顶部" href="#top">&nbsp;</a> 
+<style>
+.v-nav1-column{height:235px;padding:25px 18px 50px 18px;}
+</style>
+<div class="v-nav1" id=bottomNav>
+    <div class="v-area clearfix">
+        <ul>
+            <li class="v-nav1-column">
+                <h2><a href="http://v.163.com/zixun/" title="资讯">资讯</a></h2>
+                <ul>
+                                                            <li><a href="http://v.163.com/zixun/" title="国际视野">国际视野</a></li>
+                                        <li><a href="http://v.163.com/zixun/" title="奇人奇事">奇人奇事</a></li>
+                                        <li><a href="http://v.163.com/zixun/" title="精品栏目">精品栏目</a></li>
+                                        <li><a href="http://v.163.com/zixun/" title="新闻资讯">新闻资讯</a></li>
+                                        <li><a href="http://v.163.com/zixun/" title="现场有料">现场有料</a></li>
+                                        <li><a href="http://v.163.com/zixun/" title="国际新闻">国际新闻</a></li>
+                                    </ul>
+            </li>
+            <li class="v-nav1-column">
+                <h2><a href="http://v.163.com/yule/" title="娱乐">娱乐</a></h2>
+                <ul>
+                                                            <li><a href="http://v.163.com/special/zongyisubject/yulekuaibao.html" title="娱乐快报">娱乐快报</a></li>
+                                        <li><a href="http://v.163.com/special/yulesubject/yizhouyingxun1.html" title="一周影讯">一周影讯</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/guangzhouchezhan.html" title="车展嫩模">车展嫩模</a></li>
+                                        <li><a href="http://v.163.com/special/yulesubject/yulebaomihua1.html" title="娱乐爆米花">娱乐爆米花</a></li>
+                                        <li><a href="http://v.163.com/special/yulesubject/budamaleyuan.html" title="布嗒马乐园">布嗒马乐园</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/49thjinmajiang.html" title="台湾金马奖">台湾金马奖</a></li>
+                                    </ul>
+            </li>
+            <li class="v-nav1-column">
+                <h2><a href="http://v.163.com/zongyi/" title="综艺">综艺</a></h2>
+                <ul>
+                                                            <li><a href="http://v.163.com/special/zongyisubject/zhongguomengxiangxiu.html" title="中国梦想秀">中国梦想秀</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/ribenzongyi.html" title="日本BT综艺集锦">日本BT综艺集锦</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/1000waystodie.html" title="1000种死法">1000种死法</a></li>
+                                        <li><a href="http://v.163.com/special/zhongkouweis1/" title="综艺重口味">综艺重口味</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/topgear.html" title="疯狂汽车秀">疯狂汽车秀</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/zhongguoliren.html" title="中国丽人">中国丽人</a></li>
+                                    </ul>
+            </li>
+            <li class="v-nav1-column">
+                <h2><a href="http://v.163.com/paike/" title="拍客">拍客</a></h2>
+                <ul>
+                                                            <li><a href="http://v.163.com/paike/" title="搞笑猎奇">搞笑猎奇</a></li>
+                                        <li><a href="http://v.163.com/paike/" title="微电影">微电影</a></li>
+                                        <li><a href="http://v.163.com/paike/" title="科技时尚">科技时尚</a></li>
+                                        <li><a href="http://v.163.com/paike/" title="游戏动漫">游戏动漫</a></li>
+                                        <li><a href="http://v.163.com/paike/" title="原创音乐">原创音乐</a></li>
+                                        <li><a href="http://v.163.com/paike/" title="体育汽车">体育汽车</a></li>
+                                    </ul>
+            </li>
+            <li class="v-nav1-column">
+                <h2><a href="http://v.163.com/jishi/" title="纪录片">纪录片</a></h2>
+                <ul>
+                                                            <li><a href="http://v.163.com/special/jishisubject/documentary-director.html" title="纪录·影人">纪录·影人</a></li>
+                                        <li><a href="http://v.163.com/jishi/V8GFL6VUJ/index.html" title="社会·焦点 ">社会·焦点 </a></li>
+                                        <li><a href="http://v.163.com/jishi/V8GFLS9PT/index.html" title="文化·生活">文化·生活</a></li>
+                                        <li><a href="http://v.163.com/jishi/V8GFLR46N/index.html" title="军事·科技">军事·科技</a></li>
+                                        <li><a href="http://v.163.com/jishi/V8GFLF351/index.html" title="自然·探险">自然·探险</a></li>
+                                        <li><a href="http://v.163.com/jishi/V8GFLA267/index.html" title="人物·历史">人物·历史</a></li>
+                                    </ul>
+            </li>
+            <li class="v-nav1-column">
+                <h2><a href="http://v.163.com/mv/" title="MV">MV</a></h2>
+                <ul>
+                                                            <li><a href="http://v.163.com/special/mvsubject/classicvideo.html" title="听鉴系列">听鉴系列</a></li>
+                                        <li><a href="http://v.163.com/special/mvsubject/fanchangtuijian.html" title="翻唱精选">翻唱精选</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/jinbomvheji.html" title="禁播歌曲集合">禁播歌曲集合</a></li>
+                                        <li><a href="http://v.163.com/special/zongyisubject/guanggunjiemv2012.html" title="一人一首单身情歌">一人一首单身情歌</a></li>
+                                        <li><a href="http://v.163.com/mv/V8DL5MB5H/V8I3E6C82.html" title="美国乡村音乐奖">美国乡村音乐奖</a></li>
+                                        <li><a href="http://v.163.com/mv/" title="流行金曲">流行金曲</a></li>
+                                    </ul>
+            </li>
+            <li class="v-nav1-column" style="width:303px;overflow:hidden;">
+                <h2>合作媒体</h2>
+<span class="blank6"></span>
+                <ul class="v-nav1-icon clearfix">
+                                                            <li><img src="http://img1.cache.netease.com/cnews/2012/11/26/20121126183605f4a1c.jpg" height="20"><a href="http://www.tjtv.com.cn/" title="天津卫视">天津卫视</a></li>
+                                        <li><img src="http://img3.cache.netease.com/cnews/2012/11/27/20121127145003fa638.jpg" height="20"><a href="http://www.ahtv.cn/" title="安徽卫视">安徽卫视</a></li>
+                                        <li><img src="http://img6.cache.netease.com/cnews/2012/11/27/2012112714502173a7c.jpg" height="20"><a href="http://www.dragontv.cn/" title="东方卫视">东方卫视</a></li>
+                                        <li><img src="http://img2.cache.netease.com/cnews/2012/11/27/20121127145045b0233.jpg" height="20"><a href="http://www.cjxtv.com/" title="江西卫视">江西卫视</a></li>
+                                        <li><img src="http://img2.cache.netease.com/cnews/2012/11/27/201211271451022f20c.jpg" height="20"><a href="http://www.hbtv.com.cn/" title="湖北卫视">湖北卫视</a></li>
+                                        <li><img src="http://img6.cache.netease.com/cnews/2012/11/27/20121127145128cfaa6.jpg" height="20"><a href="http://www.zjstv.com/" title="浙江卫视">浙江卫视</a></li>
+                                        <li><img src="http://img3.cache.netease.com/cnews/2012/11/27/20121127151357343cd.jpg" height="20"><a href="http://www.btv.org/" title="北京卫视">北京卫视</a></li>
+                                        <li><img src="http://img5.cache.netease.com/video/2013/4/23/201304231345195ef8b.jpg" height="20"><a href="http://www.jkwshk.tv/" title="健康卫视">健康卫视</a></li>
+                                        <li><img src="http://img2.cache.netease.com/cnews/2013/2/22/20130222113207ba251.jpg" height="20"><a href="http://www.docochina.com/" title="DOCO热纪录">DOCO热纪录</a></li>
+                                        <li><img src="http://img5.cache.netease.com/cnews/2013/2/22/20130222113100285fc.jpg" height="20"><a href="http://www.cnex.org.cn/" title="CNEX">CNEX</a></li>
+                                    </ul>
+<div class="v-nav1-media clearfix" style="width:318px;">
+                                                            <a href="http://v.iqilu.com/" title="山东网络台">山东网络台</a>
+                                        <a href="http://news.youku.com/" title="优酷资讯">优酷资讯</a>
+                                        <a href="http://www.pimei.com/" title="媲美网">媲美网</a>
+                                        <a href="http://www.aipai.com/" title="爱拍原创">爱拍原创</a>
+                                        <a href="http://www.vmovier.com/" title="V电影">V电影</a>
+                                        <a href="http://www.onlylady.com/" title="女人志">女人志</a>
+                                        <a href="http://www.gamefy.cn/" title="游戏风云">游戏风云</a>
+                                        <a href="http://www.neonan.com/" title="牛男网">牛男网</a>
+                                        <a href="http://www.cztv.com/" title="新蓝网 ">新蓝网 </a>
+                                        <a href="http://v.china.com.cn/" title="视频中国">视频中国</a>
+                                        <a href="http://v.huanqiu.com/" title="环球视频">环球视频</a>
+                                        <a href="http://www.v1.cn/" title="第一视频">第一视频</a>
+                                        <a href="http://www.ku6.com/" title="酷6网">酷6网</a>
+                                        <a href="http://v.ifeng.com/documentary/" title="凤凰纪录片">凤凰纪录片</a>
+                                        <a href="http://jishi.cntv.cn/index.shtml" title="cntv纪录片台">cntv纪录片台</a>
+                                        <a href="http://www.docuchina.tv/" title="上海文广纪实">上海文广纪实</a>
+                                        <a href="http://www.damai.cn/" title="大麦网">大麦网</a>
+                    </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="N-nav-bottom">
+    <div class="N-nav-bottom-main">
+        <span class="N-nav-bottom-copyright"><span class="N-nav-bottom-copyright-icon">&copy;</span> 1997-2014 网易公司版权所有</span> <a href="http://corp.163.com/">About NetEase</a> | <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> | <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> | <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> | <a href="http://help.163.com/ ">客户服务</a> | <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> | <a href="http://emarketing.biz.163.com/">广告服务</a> | <a href="http://sitemap.163.com/">网站地图</a> | <a href="http://t.163.com/zt/feedback">意见反馈</a> | <a href="http://www.bjjubao.org/index.htm">不良信息举报</a>
+    </div>
+</div> 
+<script src="http://img4.cache.netease.com/service/combo?3.4.0/build/yui/yui-min.js&3.4.0/build/loader/loader-min.js " charset="utf-8"></script> 
+<script src="http://img3.cache.netease.com/video/img13/zhuzhan/movie_v2.8_min.js" charset="gb2312"></script> 
+<script>
+YUI({
+	combine : true,
+	comboBase : 'http://img4.cache.netease.com/service/combo?',
+	groups : [{
+			base : 'http://img4.cache.netease.com/video/js/build/',
+			modules : {
+				'unicorn-tabs' : {
+					requires : ['widget', 'arraylist', 'plugin', 'transition']
+					
+				}
+			}
+		}
+	]
+}).use('unicorn-tabs', 'imageloader', 'anim-base', 'async-queue', 'jsonp', 'json-parse', 'event',function (Y) {
+	var focusImageTab = new Y.Tabs({
+			srcNode : '#focusImage',
+			triggers : '.v-focusimg-triggers li',
+			panels : '.v-focusimg-panels li',
+			triggerEvent : 'mouseover'
+		}), //头图切换
+	timer, //延时
+	recommendUrl= 'http://api.pr.163.com/cf/getRecommendList.do?callback={callback}', //推荐地址
+recommended=Y.one('#recommended'),//推荐box
+recommendSuccess=false,
+	foldGroup = new Y.ImgLoadGroup({
+			foldDistance : 25
+		}); //imageloader
+	//排行榜显示详信息
+	function rankMouseover() {
+		var t = this;
+		if (timer) {
+			timer.cancel();
+			timer = undefined;
+		} else {
+			timer = Y.later(100, t, function () {
+					this.ancestor('.rank').all('.rankItem').some(function (node) {
+						if (node.hasClass('on')) {
+							node.removeClass('on');
+						}
+					});
+					this.addClass('on');
+					timer = undefined;
+				});
+		}
+	}
+	//排行榜mouseout(重置定时器)
+	function rankMouseout() {
+		if (timer) {
+			timer.cancel();
+			timer = undefined;
+		}
+	}
+	//滚动组件
+	function Slider(node, flip, padding, countShowed, indexNum, totalNum) {
+		var count = node.all('>li').size();
+		this.sliderAnim = new Y.Anim({
+				node : node,
+				duration : 0.3,
+				to : {
+					left : 0
+				}
+			});
+		this.currIndex = 0;
+		this.amount = count - countShowed;
+		this.flip = flip;
+		this.padding = padding;
+		this.countShowed = countShowed;
+		this.indexNum = indexNum;
+		node.setStyle('width', count * this.flip);
+		totalNum.setContent(count);
+	};
+	Slider.prototype.scrollLeft = function (node, number) {
+		var t = this;
+		node.on('click', function (e) {
+			e.preventDefault();
+			if (t.amount > 1) {
+				t.currIndex -= -number;
+				if (t.currIndex > 0) {
+					if (t.currIndex < number) {
+						t.currIndex = 0;
+					} else {
+						t.currIndex = 1 - t.amount;
+					}
+				};
+				var l = t.flip * t.currIndex;
+				t.sliderAnim.set('to', {
+					left : l + t.padding
+				}).run();
+				t.indexNum.setContent(-1 * t.currIndex + 1);
+			}
+		});
+	};
+	Slider.prototype.scrollRight = function (node, number) {
+		var t = this;
+		node.on('click', function (e) {
+			e.preventDefault()
+			if (t.amount > 1) {
+				if (t.currIndex % number != 0) {
+					t.currIndex = 0;
+				} else {
+					t.currIndex -= number;
+					if (t.currIndex < 1 - t.amount) {
+						if ((t.amount - 1) % (t.countShowed + 1) != 0) {
+							t.currIndex = t.currIndex + number - (t.amount - 1) % (t.countShowed + 1);
+						} else {
+							t.currIndex = 0;
+						}
+					}
+				};
+				var l = t.flip * t.currIndex;
+				t.sliderAnim.set('to', {
+					left : l + t.padding
+				}).run();
+				t.indexNum.setContent(-1 * t.currIndex + 1);
+			}
+		});
+	};
+	focusImageTab.plug(Y.Plugin.TabsPlayer);
+	focusImageTab.plug(Y.Plugin.TabsTransition);
+	focusImageTab.render();
+	Y.all('.lazy-load').each(function (node) {
+		foldGroup.registerImage({
+			domId : node.get('id'),
+			srcUrl : node.getAttribute('srcurl'),
+			width : node.getAttribute('imgwidth'),
+			height : node.getAttribute('imgheight')
+		});
+	});
+	//猜你喜欢
+	Y.jsonp(recommendUrl, function (data) {
+		if (data.success) {
+			var datas = data.data,
+			i,
+			htmlArray = [],
+			firstClass;
+			for (i = 0; i < 10; i++) {
+				var item = datas[i];
+				if (i == 0) {
+					firstClass = 'class="on rankItem" style="border:none;"';
+				}else{
+firstClass = 'class="rankItem"';
+}
+				htmlArray[i] = '<li ' + firstClass + '><h3><a href="' + item.url + '" title="' + item.title + '">'+item.title+'</a></h3><div class="v-rank-detail"><div class="v-plist3 clearfix"> <a href="' + item.url + '" title="' + item.title + '" class="left"><img src="' + item.imgpath +'" width="80" height="60" alt="' + item.title + '"></a><div class="right"><div style="_height:41px;max-height:41px;overflow:hidden;"><a class="cDGray" href="' + item.url + '" title="' + item.description+ '">' + item.description + '</a></div><div class="v-rank-data clearfix"><div class="play" title="播放次数">' + item.hits + '</div><div class="comment" title="跟帖数">' + item.prcount + '</div></div></div></div><div></div></div></li>';
+			};
+			recommended.setContent(htmlArray.join(''));
+	Y.on('mouseover', rankMouseover, '.rank .rankItem');
+	Y.on('mouseout', rankMouseout, '.rank .rankItem');
+recommendSuccess=true;
+		}
+	});
+Y.on('domready',function(){
+	//新闻播放数和跟帖数
+	var commentArray = [],
+	commentQueue = new Y.AsyncQueue(),
+	commentList = Y.all('#getCounts .comment');
+	Y.all('#getCounts li').each(function (node) {
+		var href = node.one('a').get('href'),
+		vid = href.substr(href.lastIndexOf('/') + 1, 9),
+		vid8 = vid.substr(1, 8),
+		vidSuffix = vid.substr(7, 2),
+		vidSuffix1 = vid.substr(7, 1),
+		vidSuffix2 = vid.substr(8, 1),
+		chanel,
+		commentUrl,
+		playUrl = 'http://live.ws.126.net/video/js/hits/0085/' + vidSuffix1 + '/' + vidSuffix2 + '/' + vid + '.js',
+		play = node.one('.play');
+		commentUrl = 'http://v.163.com/comment/0085/video_bbs/' + vidSuffix + '/' + vid8 + '008535RB.js';
+if(href.indexOf('paike')>0){
+		playUrl = 'http://live.ws.126.net/video/js/hits/1000/' + vidSuffix1 + '/' + vidSuffix2 + '/' + vid + '.js';
+}else if(href.indexOf('zixun')>0){
+		commentUrl = 'http://v.163.com/comment/0085/videonews_bbs/' + vidSuffix + '/' + vid8 + '008535RB.js';
+}
+		commentArray.push(commentUrl);
+		new Y.Get.script(playUrl, {
+			onSuccess : function () {
+				var count = window['hits_' + vid];
+				play.setContent(count);
+			}
+		});
+	});
+	commentList.each(function (node) {
+		var url = commentArray[commentList.indexOf(node)];
+		commentQueue.add(function () {
+			commentQueue.pause();
+			Y.Get.script(url, {
+				onSuccess : function () {
+					node.setContent(commentData.tcount);
+					commentQueue.run();
+				}
+			});
+		});
+	});
+	commentQueue.run();
+});
+/*	Y.all('.rankTab').each(function (node) {
+		new Y.Tabs({
+			srcNode : node,
+			triggers : '.v-title1-trigger li',
+			panels : '.rankTabPanel',
+			triggerEvent : 'mouse',
+			render : true
+		});
+	});
+*/	Y.all('.v-slider').each(function (node) {
+		var slideBody = node.one('.v-slider-body'),
+		leftBtn = node.one('.v-loop-left'),
+		rightBtn = node.one('.v-loop-right'),
+		indexNum = node.one('.crt'),
+		totalNum = node.one('.total');
+		slider = new Slider(slideBody, 298, 0, 0, indexNum, totalNum);
+		slider.scrollLeft(leftBtn, 1);
+		slider.scrollRight(rightBtn, 1);
+	});
+if(!recommendSuccess){
+	Y.on('mouseover', rankMouseover, '.rank .rankItem');
+	Y.on('mouseout', rankMouseout, '.rank .rankItem');
+}
+Y.on('hover',function(){
+			this.addClass('v-playimg-on');
+		}, function () {
+			this.removeClass('v-playimg-on');
+},'.v-playimg');
+});
+</script>
+<!-- 视频底部广告 -->
+<img src='http://adgeo.163.com/ad_cookies' border=0 width=0 height=0>
+<SCRIPT LANGUAGE="JavaScript1.1" SRC="http://g.163.com/jr?site=netease&affiliate=video&cat=homepage&type=popwin&location=1"></SCRIPT>
+<script src="http://img2.cache.netease.com/f2e/libs/ntes.noconflict.js"></script><script>!function(i){function t(){}function n(){var i=Math.round((+new Date-_)/1e3);return 0>i?0:i}function e(i){var t=i.className,n=s(i),e={script:1,style:1,link:1,img:1,hr:1,br:1},a=!0;return e[n]?a=!1:/blank\d/.test(t)&&(a=!1),a}function a(t){g||(u&&window._ntes_sendInfo?(i.each(B,function(i,t){v(t)}),g=!0):B.push(t)),g&&v(t)}function f(i){return 10>i?i.toString():i>=62?"z":String.fromCharCode(i+(36>i?55:61))}function r(i,t){if(!t)return i;var n=i.length-1,e=i.charCodeAt(n);return 58>e?e-=48:91>e?e-=55:123>e&&(e-=61),i.substr(0,n)+f(e+t)}function o(i,t,n){t&&t.setAttribute((n?"_":"")+"jcid",i)}function l(i){if(i){var t=this.getAttribute("href")||"";A++;var e="/ntes_p?"+C+"&_nct="+n()+"&_nah="+escape(t)+"&_nat={id}_"+i;a(e)}}function v(i){_ntes_sendInfo("jc",_ntes_src_addr+i.replace("{id}",u))}function c(i,t,n){for(var e={a:1,area:1};!e[s(i)]&&!(n=i.getAttribute("_jcid"));)if(i=i.parentNode,!i.tagName||i==m)return;var a=i;if(!n)for(;i&&i!=t&&!(n=i.getAttribute("jcid"));)i=i.parentNode;a&&n&&l.call(a,n)}function s(i){return i.tagName.toLowerCase()}function d(t,n,e){if("iframe"!=s(t))n(t,e);else{var a,f=h(t),r=function(){if("function"==typeof a&&a.call(this),f=h(t)){var r=f.body;i(r).addEvent("click",function(i){var t=i.target;c(t,r)}),n(r,e)}};f&&/^http/.test(f.location.href)?r():t.attachEvent?t.attachEvent("onload",r):(a=t.onload,t.onload=r)}}function h(i){var t;try{t=i.contentDocument}catch(n){}if(!t&&i.contentWindow){try{var e=i.contentWindow.document;"object"==typeof e&&(t=e)}catch(n){}if(!t)return null}var a=1;try{t.location&&(a=0)}catch(n){}return a?null:t}var u,p,C="_nacc=siteclick&_npurl="+escape(document.URL),A=0,g=!1,B=[],m=document.body,b=i(window),y=window.performance,_=y&&y.timing?y.timing.connectStart:+new Date,D=[function(i,t,n){o(i+f(n.start||1),t,n.all)},function(t,n,e){var a=e.start||1;i("a",n).each(function(i,n){o(t+f(a++),n)})},function(t,n,a){for(var r=1,l=a.level||1,v=[n],c=0;l>c;c++){var d=[];i.each(v,function(t,n){var a=0;"a"==s(n)||/ntes-nav-select/.test(n.className)||i.each(n.children,function(i,t){e(t)&&(d.push(t),a++)}),a||d.push(n)}),v=d}i.each(v,function(i,n){o(t+f(r++),n,a.all)})},function(t,n){var e=i(">form",n);e[0]&&e.addEvent("submit",function(){l.call(this,t+"1")})},function(t,n,e){var a=i(e.h,n),r=i(e.b,n);if(a&&r){var l=e.step||10,v=2;o(t+"1",n),a.each(function(i,n){o(t+f(v+i*l),n)}),r.each(function(i,n){o(t+f(v+i*l+1),n)})}},function(t,n,a){var r=a.union||"",l={};if(/^[\s\d,]+$/.test(r)){var v=0;i.each(r.split(/\s*,\s*/),function(i,t){if(t=parseInt(t))for(var n=0;t>n;n++)l[v++]=i})}var c=2;o(t+"1",n);var s=parseInt(a.step)||10,d=i(a.h,n);if(d&&h){i.each(d,function(i,n){o(t+f(i*s+c),n)});var h=i(a.b,n);i.each(h,function(n,a){var r=n*s+c+1,v=a.children;if(0==v.length)v=[a];else for(;1==v.length;)v=v[0].children;var d=0;i.each(v,function(i,n){e(n)&&("undefined"!=typeof l[i]&&(d=l[i]),o(t+f(r+d),n),d++)})})}}];t.prototype={init:function(t,e){t&&5==t.length&&(u=t),p||(p=Math.random()<(e||.1),p&&(i("body").addEvent("click",function(i){c(i.target,m)}),i.ready(function(){function i(){t&&(a("/ntes_u?"+t+"&_nct="+n()+"&_mcn="+A+e),t=0)}var t=C+"&_nch={id}",e="",f="&_msl="+n();b.addEvent("load",function(){e="&_msl="+n()}),a("/ntes_u?"+t+f),b.addEvent("beforeunload",i);var r=navigator.userAgent.toLowerCase();!/compatible/.test(r)&&/firefox/.test(r)&&b.addEvent("unload",i)}),this.retain&&this.area(m,this.retain)))},area:function(i,t){for(var n in t){var e=0,a=t[n];/(.*?)=$/.test(n)&&(n=RegExp.$1,e=1e3),this.procA(i,n,a,e)}},procA:function(t,n,e,a){var f=this;if(a)return setTimeout(function(){f.procA(t,n,e)},a),void 0;var r=function(i,t){f.area(i,t)},o=0,l=0;/(.*?)!$/.test(n)&&(n=RegExp.$1,l=1),/(.*?)\*$/.test(n)&&(n=RegExp.$1,o=1);var v=n?/^#/.test(n)?i(n):i(n,t):[t];i.util.isArray(v)||(v=[v]);var c,s=0;for(c=0;c<v.length;c++){var h=v[c];if(!l||!h.id){var u=o?e[0]:e[s];if(u&&h)if(u.i)for(var p=u.s||1,C=0;p>C;C++)u.j=C,this.zone(v[c+C],u);else d(h,r,u);s++}}},zone:function(t,n){var e=r(n.i,n.j),a=D[n.f||0],f=n.p||{};if(t&&a)if(f.dyn){var o,l;i(t).addEvent("mouseover",function(){for(var i,n=t.children[0];n&&(i=n.children[0]);)n=i;var r=t.innerHTML.replace(/<.*?>/g,"").length;!n||n==o&&r==l||(a(e,t,f),o=n,l=r)})}else d(t,function(i){a(e,i,f)})},batch:function(i){p?this.area(m,i):this.retain=i}},window._aCM=new t}(NTES),function(){_aCM.init("spa01"),setTimeout(function(){_aCM.batch({".v-area":[{">.left":[{"":[{i:"111"}]}],".right":[0,0,{"":[{i:"121"}]}],".user-entry":[{"":[{i:"131"}]}],"#loginBefore":[{"":[{i:"141",f:1}]}]},{"":[{"":[{i:"211",f:1}]}]},0,0,{".v-nav1-column":[{">h2":[{i:"D11"}],li:[{i:"D12",s:6}]},{">h2":[{i:"D21"}],li:[{i:"D22",s:6}]},{">h2":[{i:"D31"}],li:[{i:"D32",s:6}]},{">h2":[{i:"D41"}],li:[{i:"D42",s:6}]},{">h2":[{i:"D51"}],li:[{i:"D52",s:6}]},{">h2":[{i:"D61"}],li:[{i:"D62",s:6}]},{">.v-nav1-icon":[{i:"D71"}],">.v-nav1-media":[{i:"D72"}]}]}],"#overlayBox":[{".v-nav-on":[{"":[{i:"311"}]}],li:[0,{"":[{i:"321"}]},{"":[{i:"331"}]},{"":[{i:"341"}]},{"":[{i:"351"}]},{"":[{i:"361"}]},{"":[{i:"371"}]},{"":[{i:"381"}]},{"":[{i:"391"}]},{"":[{i:"3A1"}]},{"":[{i:"3B1"}]},{"":[{i:"3C1"}]}]}],">.v-area>div!":[{".v-focusimg-panels":[{">.yui3-tabs-panel":[{i:"411"},0,{i:"413"},{i:"414"},{i:"415"}],">.yui3-tabs-panel-selected":[{i:"412"}]}],".v-focusimg-triggers":[{"":[{i:"421"}]}],".jrrd":[{"":[{i:"431"}]}],".v-headline":[{">.f14px":[{i:"441"}],">p":[{i:"442"}]},{">.f14px":[{i:"451"}],">p":[{i:"452"}]}],".v-tlist":[{">li":[{i:"461",s:4}]}],".v-plist":[{".v-playimg":[{i:"471"},{i:"473"},{i:"475"},{i:"477"}],h3:[{i:"472"},{i:"474"},{i:"476"},{i:"478"}]}],".rankItem":[{">h3":[{i:"481"}],".left":[{i:"482"}],div:[0,0,0,{i:"483"}]},{">h3":[{i:"491"}],".left":[{i:"492"}],div:[0,0,0,{i:"493"}]},{">h3":[{i:"4A1"}],".left":[{i:"4A2"}],div:[0,0,0,{i:"4A3"}]},{">h3":[{i:"4B1"}],".left":[{i:"4B2"}],div:[0,0,0,{i:"4B3"}]},{">h3":[{i:"4C1"}],".left":[{i:"4C2"}],div:[0,0,0,{i:"4C3"}]},{">h3":[{i:"4D1"}],".left":[{i:"4D2"}],div:[0,0,0,{i:"4D3"}]},{">h3":[{i:"4E1"}],".left":[{i:"4E2"}],div:[0,0,0,{i:"4E3"}]},{">h3":[{i:"4F1"}],".left":[{i:"4F2"}],div:[0,0,0,{i:"4F3"}]},{">h3":[{i:"4G1"}],".left":[{i:"4G2"}],div:[0,0,0,{i:"4G3"}]},{">h3":[{i:"4H1"}],".left":[{i:"4H2"}],div:[0,0,0,{i:"4H3"}]}],".v-slider-box":[{".left":[{i:"4I1"},{i:"4I3"},{i:"4I5"}],h3:[{i:"4I2"},{i:"4I4"},{i:"4I6"}]}],".v-slider>div!":[0,{">.v-loop":[{i:"4J1",f:1}]}]},0,{h2:[{"":[{i:"611"}]}],li:[{"":[{i:"621"}]},{"":[{i:"631"}]},{"":[{i:"641"}]},{"":[{i:"651"}]},{"":[{i:"661"}]}],".v-plist2":[{">.v-playimg":[{i:"671"}],">.f14px":[{i:"672"}],">div!":[{i:"673"}]}],".v-tlist1":[{h4:[{i:"681",f:1,s:5}]}],".v-plist":[{li:[{i:"691",f:1,s:6}]}],".rankTab":[{"":[{i:"6A1",f:1}]}],".v-title1":[0,{">.v-loop":[{i:"6B1",f:1}]}],".v-slider-box":[{".left":[{i:"6C1"},{i:"6C3"},{i:"6C5"}],h3:[{i:"6C2"},{i:"6C4"},{i:"6C6"}]}]},{h2:[{"":[{i:"711"}]}],li:[{"":[{i:"721"}]},{"":[{i:"731"}]},{"":[{i:"741"}]},{"":[{i:"751"}]},{"":[{i:"761"}]}],".v-plist2":[{">.v-playimg":[{i:"771"}],">.f14px":[{i:"772"}],">div!":[{i:"773"}]}],".v-tlist1":[{h4:[{i:"781",f:1,s:5}]}],".v-plist":[{".v-playimg":[{i:"791"},{i:"794"},{i:"797"},{i:"79A"},{i:"79D"},{i:"79G"}],h3:[{i:"792"},{i:"795"},{i:"798"},{i:"79B"},{i:"79E"},{i:"79H"}],".digest":[{i:"793"},{i:"796"},{i:"799"},{i:"79C"},{i:"79F"},{i:"79I"}]}],".rankTab":[{"":[{i:"7A1",f:1}]}],".v-title1":[0,{">.v-loop":[{i:"7B1",f:1}]}],".v-slider-box":[{".left":[{i:"7C1"},{i:"7C3"},{i:"7C5"}],h3:[{i:"7C2"},{i:"7C4"},{i:"7C6"}]}]},0,{h2:[{"":[{i:"911"}]}],".v-title-right":[{">li":[{i:"921",s:2}]}],".v-plist2":[{">.v-playimg":[{i:"931"}],">.f14px":[{i:"932"}],">div!":[{i:"933"}]}],".v-plist":[{".v-playimg":[{i:"941"},{i:"943"},{i:"945"},{i:"947"}],h3:[{i:"942"},{i:"944"},{i:"946"},{i:"948"}]}],".v-plist1":[{h3:[{i:"951"},{i:"954"},{i:"957"}],a:[0,{i:"952"},0,0,{i:"955"},0,0,{i:"958"}],".f14px":[{i:"953"},{i:"956"},{i:"959"}]}],".rankTab":[{"":[{i:"961",f:1}]}],".v-slider":[{".v-loop":[{i:"971",f:1}],li:[0,{i:"972",f:1},{i:"973",f:1},{i:"974",f:1},0,{i:"975",f:1},{i:"976",f:1},{i:"977",f:1},0,{i:"978",f:1},{i:"979",f:1},{i:"97A",f:1}]}]},{h2:[{"":[{i:"A11"}]}],".v-title-right":[{">li":[{i:"A21",s:6}]}],".v-plist2":[{">.v-playimg":[{i:"A31"}],">.f14px":[{i:"A32"}],">div!":[{i:"A33"}]}],".v-plist":[{".v-playimg":[{i:"A41"},{i:"A43"},{i:"A45"},{i:"A47"}],h3:[{i:"A42"},{i:"A44"},{i:"A46"},{i:"A48"}]}],".v-plist1":[{h3:[{i:"A51"},{i:"A54"},{i:"A57"}],a:[0,{i:"A52"},0,0,{i:"A55"},0,0,{i:"A58"}],".f14px":[{i:"A53"},{i:"A56"},{i:"A59"}]}],".rankTab":[{"":[{i:"A61",f:1}]}],".v-slider":[{".v-loop":[{i:"A71",f:1}],li:[0,{i:"A72",f:1},{i:"A73",f:1},0,{i:"A74",f:1},{i:"A75",f:1},0,{i:"A76",f:1},{i:"A77",f:1}]}]},{h2:[{"":[{i:"B11"}]}],".v-title-right":[{">li":[{i:"B21",s:6}]}],".v-leftl":[{".v-playimg":[{i:"B31"}],".f14px":[{i:"B32"}],div:[0,{i:"B33"}],li:[{i:"B34",s:5}]}],".v-plist":[{".v-playimg":[{i:"B41"},{i:"B44"},{i:"B47"},{i:"B4A"},{i:"B4D"},{i:"B4G"}],h3:[{i:"B42"},{i:"B45"},{i:"B48"},{i:"B4B"},{i:"B4E"},{i:"B4H"}],".digest":[{i:"B43"},{i:"B46"},{i:"B49"},{i:"B4C"},{i:"B4F"},{i:"B4I"}]}],".rankTab":[{"":[{i:"B51"}]}],".v-slider":[{".v-loop":[{i:"B61",f:1}],".left":[0,{i:"B62"},{i:"B64"},{i:"B66"}],div:[0,0,0,{i:"B63"},0,{i:"B65"},0,{i:"B67"}]}],">div!":[0,0,{"":[{i:"B71"}]}]},{h2:[{"":[{i:"C11"}]}],".v-title-right>li":[{"":[{i:"C21"}]},{"":[{i:"C31"}]},{"":[{i:"C41"}]},{"":[{i:"C51"}]},{"":[{i:"C61"}]}],".v-plist2":[{">.v-playimg":[{i:"C71"}],">.f14px":[{i:"C72"}],">div!":[{i:"C73"}]}],".v-tlist1":[{h4:[{i:"C81",f:1,s:5}]}],".v-plist":[{".v-playimg":[{i:"C91"},{i:"C94"},{i:"C97"},{i:"C9A"},{i:"C9D"},{i:"C9G"}],h3:[{i:"C92"},{i:"C95"},{i:"C98"},{i:"C9B"},{i:"C9E"},{i:"C9H"}],".digest":[{i:"C93"},{i:"C96"},{i:"C99"},{i:"C9C"},{i:"C9F"},{i:"C9I"}]}],".rankTab":[{"":[{i:"CA1",f:1}]}],".v-title1":[0,{">.v-loop":[{i:"CB1",f:1}]}],".v-slider-box":[{li:[0,{i:"CC1",f:1},{i:"CC2",f:1},{i:"CC3",f:1},0,{i:"CC4",f:1},{i:"CC5",f:1},{i:"CC6",f:1},0,{i:"CC7",f:1},{i:"CC8",f:1},{i:"CC9",f:1}]}]}],".v-plist1":[{li:[{"":[{i:"511",f:1}]},{"":[{i:"521",f:1}]},{"":[{i:"531",f:1}]},{"":[{i:"541",f:1}]},{"":[{i:"551",f:1}]}]}],".v-bobo":[{li:[{"":[{i:"811"}]},{"":[{i:"821"}]},{"":[{i:"831"}]},{"":[{i:"841"}]},{"":[{i:"851"}]},{"":[{i:"861"}]}]}],".N-nav-bottom-main":[{"":[{"":[{i:"E11",f:1}]}]}],".v-login":[{div:[0,0,0,{"":[{i:"F11"}]},{"":[{i:"F21"}]}]}]})},50)}();</script>
+<!-- START WRating v1.0 --> 
+<script src="http://img6.cache.netease.com/common/script/wrating.js"></script> 
+<script>
+var vjAcc="860010-0502010100";
+var wrUrl="http://163.wrating.com/";
+vjTrack();
+</script>
+<noscript>
+<img src="http://163.wrating.com/a.gif?c=860010-0502010100" width="1" height="1"/>
+</noscript>
+<!-- END WRating v1.0 --> 
+<script src="http://analytics.ws.126.net/log.js"></script> 
+<!-- START NetEase Analytics 2006 --> 
+<script src="http://analytics.163.com/ntes.js"></script> 
+<script>
+    _ntes_nacc = "163v"; //站点ID。
+    neteaseTracker();
+    neteaseClickStat();
+    </script> 
+<!-- END NetEase Analytics 2006 -->
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+</body>
+</html>

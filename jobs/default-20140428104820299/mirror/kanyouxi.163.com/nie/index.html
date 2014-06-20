@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>网易看游戏-最大的移动端游戏媒体</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+    <meta name="keywords" content="看游戏，网易，游戏资讯，游戏攻略，游戏视频，新游" />
+    <meta name="description" content="《网易看游戏》是最大的移动端游戏媒体，致力于成为你全天候的游戏伴侣，内容囊括游戏资讯、评测、礼包、攻略、数据库、活动等，已覆盖多款热门游戏。这里拥有移动端最大的游戏社区，已有多位美女主播、赛事解说、游戏主创入驻。" />
+    <meta name="author" content="网易，NetEase Inc." />
+    <meta name="copyright" content="网易，NetEase Inc." />
+    <meta name="front-end technicist" content="govo" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <link rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v1_nie/css/base.css"/>
+    <!--<link rel="stylesheet" href="css/base.css"/>-->
+
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v1_nie/css/ie6.css"/>
+    <![endif]-->
+    <!--[if (gt IE 6)&(lt IE 9)]>
+    <link rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v1_nie/css/ie78.css"/>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script charset="gb2312" src="http://res.nie.netease.com/comm/html5/createEle.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div id="wraper" class="wraper wraper-0">
+    <div class="scenehead">
+        <div class="main">
+            <div class="head"><h1><a href="http://kanyouxi.163.com/" title="网易看游戏-首个支持个性订阅的游戏新媒体">网易看游戏-首个支持个性订阅的游戏新媒体</a></h1></div>
+        </div>
+    </div>
+    <div class="scene scene1" minheight="560" offset="102" maxheight="1076">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main" maxpaddingtop="102">
+                        <div class="content" height="400">
+                            <div id="screen1_title">
+                                <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/title_text_front.png" width="301" height="61" alt=""/>
+                            </div>
+                            <h2 class="title">网易看游戏</h2>
+                            <p class="subtitle">首个支持个性订阅的游戏新媒体</p>
+                            <p class="about">《网易看游戏》是网易2013最新移动应用，由行业顶尖编辑倾力打造，拥有100  多个精品游戏资讯源，让玩家随心订阅。同时，玩家还可以自由参与热门话题讨论、分享心得、结交好友。</p>
+                        </div>
+                        <div class="iphone">
+                            <div class="iphone-child iphone-front"><div class="iphone-content"></div></div>
+                            <div class="iphone-child iphone-back"><div class="iphone-content"></div></div>
+                        </div>
+                        <div class="dload">
+                            <a href="http://analytics.163.com/ntes_clck?urlid=768&sign=1212d654936b920d8b083622b2f533eb&url=https%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fid656134031%3Fmt%3D8" target="_blank" class="dload-iphone">iPhone版下载</a>
+                            <a href="http://kanyouxi.163.com/android/?t=head" target="_blank" class="dload-android">预约Android版上线短信提醒</a>
+                            <div class="dload-send">
+                                <p class="dload-qr">
+                                    <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/dload_qr.png" alt="扫描二维码下载"/>
+                                </p>
+                                <p class="dload-send-tips">扫描二维码下载 或</p>
+                                <p class="dload-send-active"><a href="#send" class="sendphone-link">发送下载地址到手机</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene2-nobg" maxheight="916">
+        <div class="main">
+            <div class="content">
+                <h2 class="title">游戏齐备</h2>
+                <p class="subtitle">丰富资讯一站式畅享</p>
+                <ul class="about">
+                    <li>游戏齐备-热门游戏囊括其中，覆盖游戏最全的手机应用媒体</li>
+                    <li>资讯多样-新闻、攻略、活动、解说、?图、趣闻、八卦等游戏内容应有尽有</li>
+                    <li>更新及时-24小时不断更新，每日新增1000余篇游戏资讯，新鲜内容尽收眼底</li>
+                    <li>团队专业-多位资深编辑，美女主播，赛事解说等为你带来最全方位的游戏报道</li>
+                </ul>
+            </div>
+            <div id="animation_screen2" class="iphone">
+                <div class="iphone-child" ><div class="iphone-content"></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene3-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">个性订阅</h2>
+                            <p class="subtitle">只看想看的游戏资讯</p>
+                            <ul class="about">
+                                <li>上百个资讯源-100多个精品资讯源，自由订阅，所有关注内容轻松锁定追踪</li>
+                                <li>6大内容板块-热门游戏包含6大内容板块（新闻、攻略、活动、图片、视频、八卦），随心挑选</li>
+                            </ul>
+                        </div>
+                        <div class="iphone">
+                            <div class="iphone-content"></div>
+                            <div class="screen3-pop1"></div>
+                            <div class="screen3-pop2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene4-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">视听兼备</h2>
+                            <p class="subtitle">随时随地感受游戏魅力</p>
+                            <ul class="about">
+                                <li>游戏齐备-早安游戏圈、游戏怪谈、贵圈真乱、越玩越开心等多档语音栏目，随时随地收听</li>
+                                <li>更新及时-YY语音、CC语音、QT语音、唱吧等明星主播定期主持，新鲜不断</li>
+                            </ul>
+                        </div>
+                        <div class="iphone" id="animation_screen4">
+                            <div class="iphone-child"><div class="iphone-content"></div></div>
+                            <div class="screen4-pop1">
+                                <span class="recoard-popo"><img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/screen_4_pop1_clean.png" alt=""/></span>
+                                <span class="recoard-wraper"><img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/recoard.png" class="recoard" alt=""/></span>
+                                <span class="recoard-player"></span>
+                            </div>
+                            <div class="screen4-pop2"><img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/screen_4_pop2.png" alt=""/></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene5-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">360°互动</h2>
+                            <p class="subtitle">一个游戏圈的精彩等你发现</p>
+                            <ul class="about">
+                                <li>一键互动-赞/评论/转发，轻松发布你的游戏态度</li>
+                                <li>自由言论-自由发表评论，分享你的恩怨情仇</li>
+                                <li>消息提醒-即时消息提醒，交流一刻都不耽搁</li>
+                                <li>名人验证-游戏主创、Coser、主播、赛事解说纷纷入驻，与名人面对面切磋</li>
+                            </ul>
+                        </div>
+                        <div class="iphone" id="animation_screen5">
+                            <div class="screen5-pop2"></div>
+                            <div class="iphone-child">
+                                <div class="iphone-content">
+                                    <div class="canvas-screen5-popostage" style="display: none;">
+                                        <div class="screen5-circle screen5-circle-blue" id="screen5_circle1">
+                                            <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/popo_blue.png" alt=""/>
+                                            <div class="screen5-circle-text">
+                                                 <p>好友动态<br/><br/>95</p>
+                                            </div>
+                                        </div>
+                                        <div class="screen5-circle" id="screen5_circle2">
+                                            <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/popo.png" alt=""/>
+                                            <div class="screen5-circle-text">
+                                                <p>通知<br/><br/>0</p>
+                                            </div>
+                                        </div>
+                                        <div class="screen5-circle" id="screen5_circle3">
+                                            <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/popo.png" alt=""/>
+                                            <div class="screen5-circle-text">
+                                                <p>私信<br/><br/>0</p>
+                                            </div>
+                                        </div>
+                                        <div class="screen5-circle" id="screen5_circle4">
+                                            <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/popo.png" alt=""/>
+                                            <div class="screen5-circle-text">
+                                                <p>赞我<br/><br/>0</p>
+                                            </div>
+                                        </div>
+                                        <div class="screen5-circle" id="screen5_circle5">
+                                            <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/popo.png" alt=""/>
+                                            <div class="screen5-circle-text">
+                                                <p>评论我<br/><br/>0</p>
+                                            </div>
+                                        </div>
+                                        <div class="screen5-circle" id="screen5_circle6">
+                                            <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/popo.png" alt=""/>
+                                            <div class="screen5-circle-text">
+                                                <p>@我<br/><br/>0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="canvas_screen5_popo" width="224" height="318"></canvas>
+                                </div>
+                            </div>
+                            <div class="screen5-pop1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene6-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">界面干净</h2>
+                            <p class="subtitle">零广告干扰畅爽阅读</p>
+                            <ul class="about">
+                                <li>无广告无软文-资讯回归游戏本身，阅读零干扰</li>
+                                <li>易阅读的界面-沉静的界面风格，多彩的游戏资讯，赏于心悦于目</li>
+                            </ul>
+                        </div>
+                        <div class="iphone"><div class="iphone-content"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene7-nobg">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="main">
+                    <div class="backtop"><a href="#backtop">返回顶部</a></div>
+
+                    <div class="weixin-qr" id="weixin_qr" style="display:none;">
+                        <div class="weixin-qr-content">
+                            <p class="weixin-qr-tips">扫描二维码<br />关注网易看游戏</p>
+                            <!--<img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/qr_weixin.png" alt="微信扫描二维码关注我"/>-->
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-bg"></div>
+                        <a class="contact-icon contact-message" href="#leavemessage">留言</a>
+                        <a class="contact-icon contact-weibo" id="contact_weibo" href="http://weibo.com/163kanyouxi" target="_blank">微博</a>
+                        <a class="contact-icon contact-weixin" href="#weixin">微信</a>
+                        <a class="contact-icon contact-yixin" href="#yixin">易信</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene-foot scene8">
+        <div class="w-1">
+            <div class="w-2">
+                 <div class="main">
+                     <div class="dload-btm">
+                         <a class="dload-btm-iphone" href="http://analytics.163.com/ntes_clck?urlid=771&sign=54b799b65a9cc9515629176b66b8c81a&url=https%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fid656134031%3Fmt%3D8" target="_blank">iPhone版下载</a>
+                         <a class="dload-btm-android" href="http://kanyouxi.163.com/android/?t=bottom" target="_blank">预约Android版上线短信提醒</a>
+                     </div>
+                     <div class="dload-qr-btm">
+                        <div class="dload-qr-btm-img">
+                            <img src="http://res.nie.netease.com/kyx/gw/13v1_nie/images/dload_qr_btm.png" alt="扫描二维码下载"/>
+                        </div>
+                        <div class="dload-send">
+                            <p class="dload-send-tips">扫描二维码下载 或</p>
+                            <p class="dload-send-active"><a href="#sendbtm" class="sendphone-link">发送下载地址到手机</a></p>
+                        </div>
+
+                     </div>
+                 </div>
+
+                <div class="foot">
+                    <div class="copyright">
+                        <p>
+                            <span id="ncp-l1"><a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a> - <a href="http://help.163.com/" target="_blank">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" target="_blank">相关法律</a></span>
+                        </p>
+                        <p><span id="ncp-l2">网易公司版权所有 <span style="font-family: 'Microsoft YaHei'">&copy;</span>1997-2013</span> 粤B2-20090191</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--wraper--></div>
+<div class="rightnav">
+    <a class="rn-1 rn-1-on" href="#rn1">官网首页</a>
+    <a class="rn-2" href="#rn2">游戏齐备</a>
+    <a class="rn-3" href="#rn3">个性订阅</a>
+    <a class="rn-4" href="#rn4">视听兼备</a>
+    <a class="rn-5" href="#rn5">360°互动</a>
+    <a class="rn-6" href="#rn6">界面干净</a>
+    <a class="rn-7" href="#rn7">界面干净</a>
+</div>
+
+<div class="pop-box" id="leavemessage" style="display:none;">
+    <div class="pop-box-head"><h3>发信给我们</h3></div>
+    <form action="http://cgi.mmog.163.com:8088/v4a/do_vote/664/">
+    <div class="pop-box-content" id="leavemessage_ifm">
+
+    </div>
+    </form>
+    <div class="pop-box-btm"></div>
+    <div class="pop-box-close"></div>
+</div>
+
+<div class="topnav">
+    <div class="topnav-ct">
+        <div class="logo-small"></div>
+        <div class="dload-small">
+            <a class="dload-small-iphone" href="http://analytics.163.com/ntes_clck?urlid=770&sign=1faee7c48c5781cd0d1172ad8668e509&url=https%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fid656134031%3Fmt%3D8" target="_blank">iPhone版下载</a>
+            <a class="dload-small-android" href="http://kanyouxi.163.com/android/?t=top" target="_blank">预约Android版上线短信提醒</a>
+        </div>
+    </div>
+    <div class="topnav-border"></div>
+</div>
+
+<div class="pop-box" id="im_follow" style="display:none;">
+    <div class="pop-box-head"><h3>在<span class="im-name">易信</span>关注网易看游戏</h3></div>
+    <div class="pop-box-content" style="padding-left: 0;">
+        <p style="text-align: center;padding: 10px 0;margin-top: -1em;color: #000;" id="im_follow_tips">请打开<span class="im-name">易信</span>，扫描此二维码，即可关注：</p>
+        <p style="text-align: center;padding-bottom: 1em;" id="im_follow_qr"></p>
+    </div>
+    <div class="pop-box-btm"></div>
+    <div class="pop-box-close"></div>
+</div>
+<!-- jquery mix NIE (最新版本）-->
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+<script type="text/javascript">
+
+    nie.config.stats.clickStats=true;
+    nie.config.stats.id="kanyouxi";
+
+    var DEBUG = false;
+    var ieVersion = $.browser.msie ? $.browser.version : 0;
+    var isIE6 = $.browser.msie && $.browser.version==6;
+    var isIE7 = $.browser.msie && $.browser.version==7;
+    var isIE8 = $.browser.msie && $.browser.version==8;
+    var isIE9 = $.browser.msie && $.browser.version==9;
+
+    function addClickTracker(keyval,name){
+        if(typeof (nie)=="undefined"){
+            return;
+        }
+        nie.config.stats.url.add("kanyouxi/trace_0717.html?"+keyval,name);
+    }
+</script>
+
+<script type="text/javascript">
+    POPBOX_KEY = "nie";
+//    POPBOX_QR_IMAGE = "http://kanyouxi.163.com/y3/qr_large_y3.png";
+</script>
+<script type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/js/sendphone.js" charset="utf-8"></script>
+<script type="text/javascript">
+    if(!ieVersion || ieVersion>8){
+        document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v1_nie/lib/easeljs-0.6.1.min.js"></scr'+'ipt>');
+        document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v1_nie/lib/tweenjs-0.4.1.min.js"></scr'+'ipt>');
+    }
+</script>
+<!--<script type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v1_nie/lib/easeljs-0.6.1.min.js"></script>-->
+<!--<script type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v1_nie/lib/tweenjs-0.4.1.min.js"></script>-->
+<script type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v1_nie/js/html-animation.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v1_nie/lib/jquery.nicescroll.min.js"></script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v1_nie/js/ie_lte8.js"></script>
+<![endif]-->
+
+<script>
+//SCROLL VIEW
+    (function($){
+
+        var platform = navigator.platform.toLocaleLowerCase();
+        var ua = navigator.userAgent.toLowerCase();
+        var niceScrollerWidth = 5;
+        if(!(/ipad|iphone|Android/i).test(ua)){
+            niceScrollerWidth = 8;
+        }
+
+        var NICE_SCROLL = $('html').niceScroll({cursoropacitymax:0.6,enablekeyboard:DEBUG,enablemousewheel:DEBUG,cursorcolor :"#333",cursorwidth :niceScrollerWidth,cursorborderradius:0,cursorborder:"1px solid #eee",zindex:99999});
+
+        //UI
+        $(".topnav-border").css('opacity',0.35);
+        $('.content:gt(0)').hide();
+        $('.iphone:gt(0)').hide();
+
+
+        $(".dload-android , .dload-small-android , .dload-btm-android").click(function(e){
+            var that = $(this);
+            var clickidx = null;
+            var clickname = null;
+            if(that.hasClass("dload-android")){
+                clickidx = "dload-android";
+                clickname = "安卓下载按钮:首屏";
+            }else if(that.hasClass("dload-btm-android")){
+                clickidx = "dload-btm-android";
+                clickname = "安卓下载按钮:底屏";
+            }else if(that.hasClass("dload-small-android")){
+                clickidx = "dload-small-android";
+                clickname = "安卓下载按钮:顶条";
+            }
+            addClickTracker("dbutton="+clickidx,clickname);
+        });
+
+        function centerPosition(elm,l,t){
+            var _active=$(elm);
+            var _w=$(window);
+            var css = {};
+            if(l) css.left=(_w.width()-_active.outerWidth())/2;
+            if(t){
+                css.top = (_w.height()-_active.outerHeight())/2+_w.scrollTop();
+                css.top=Math.max(css.top,0);
+            }
+            return _active.css(css);
+        }
+
+        $('a[class~="contact-weixin"],a[class~="contact-yixin"]').bind("click",function(event){
+            var that = $(this),imname=null,img=null,
+                    baseImageUrl = "http://res.nie.netease.com/kyx/gw/13v2/images/";
+
+            if(that.hasClass("contact-weixin")){
+                imname="微信";
+                img = baseImageUrl+"qr_weixin.png";
+                $('#im_follow').css('min-height',559);
+            }else if(that.hasClass("contact-yixin")){
+                imname="易信";
+                img = baseImageUrl+"qr_yixin.png";
+                $('#im_follow').css('min-height',529);
+            }
+            $("#im_follow .im-name").html(imname);
+            $("#im_follow_qr").html('<img src="'+img+'" alt="'+$("#im_follow_tips").text()+'"/>');
+            SEND_PHONE.hideAllPopBox('#im_follow');
+            popUpBox('#im_follow');
+            return false;
+        });
+
+        function getCenterPosition(elm,l,t){
+            var _active=$(elm);
+            var _w=$(window);
+            var css = {};
+            if(l) css.left=(_w.width()-_active.outerWidth())/2;
+            if(t){
+                css.top = (_w.height()-_active.outerHeight())/2+_w.scrollTop();
+                css.top=Math.max(css.top,0);
+            }
+            return css;
+        }
+        function popUpBox(elm,callback){
+            SEND_PHONE.popUpBox(elm,callback);
+            return;
+            elm =$(elm);
+            var centercss = getCenterPosition(elm,true,true);
+            var readycss = {'left':centercss.left};
+            var elmPos = elm.position();
+            var currenttop = elmPos.top;
+            var currentbtm = currenttop+elm.outerHeight();
+            var _w = $(window);
+            var isInWindow = false;
+            var wTop = _w.scrollTop();
+            var wBtm = _w.scrollTop()+_w.height();
+            if(currenttop>wTop && currenttop<wBtm && currentbtm>wTop && currentbtm<wBtm) isInWindow = true;
+            if(!isInWindow){
+                readycss.top = centercss.top+_w.height();
+            }
+            elm.css(readycss).show().animate({'top':centercss.top},300,function(){
+                if(typeof(callback)=="function") callback();
+            });
+        }
+        function hideAllPopBox(expect){
+            SEND_PHONE.hideAllPopBox(expect);
+        }
+        $('#leavemessage').css('min-height',462);
+        $('a[class~="contact-message"]').bind("click",function(event){
+            addClickTracker("contact=leavemessage","留言给我们");
+            hideAllPopBox('#leavemessage');
+            popUpBox('#leavemessage');
+            $("#leavemessage_ifm").html('<iframe src="http://cgi.mmog.163.com:8088/v4a/show_vote/664/" scrolling="no" allowtransparency="true" frameborder="0"></iframe>');
+            return false;
+        });
+
+        $("#contact_weibo").click(function(e){
+            addClickTracker("contact=weibo","微博按钮");
+        });
+
+        var blowTop = function(top, settings) {
+            if (!settings || settings.container === undefined || settings.container === window) {
+                if(!settings) settings = {};
+                var fold = $(window).height() + $(window).scrollTop();
+            } else {
+                var fold = $(settings.container).offset().top + $(settings.container).height();
+            }
+            return fold <= top - (settings.threshold || 0);
+        };
+        var underTop=function(top,settings){
+            if (!settings || settings.container === undefined || settings.container === window) {
+                if(!settings) settings = {};
+                var fold =$(window).scrollTop();
+            } else {
+                var fold = $(settings.container).offset().top;
+            }
+            return fold <= top - (settings.threshold || 0);
+        };
+
+        var scenceList=[
+            0,
+            1076,
+            1995,
+            2905,
+            3822,
+            4737,
+            5652
+        ];
+        var showTopHeight = 850;
+        var isTopNavShow = false;
+        var topNavOuterHeight = $('.topnav').outerHeight();
+        var topNavHeight = topNavOuterHeight-5;
+        var topNav = $('.topnav');
+
+        var rightnav = $('.rightnav a');
+        rightnav.click(function(event){
+            var self = $(this);
+            var index = rightnav.index(this);
+            var scTo = scenceList[index];
+            if(scTo>showTopHeight) scTo-=topNavHeight;
+            var idx = rightnav.index(this);
+            addClickTracker("rightnav="+idx,"右侧导航:"+idx);
+            $("html, body").stop().animate({scrollTop:scTo},500);
+            return false;
+        });
+        var lastRightNavIndex = 0;
+        function rightNavAutoHeightlight(event){
+            var _w = $(window);
+            var sctop = _w.scrollTop();
+            var current = 0;
+            for(var i= 0, l = scenceList.length;i<l;i++){
+                var min = 0,max=0;
+                if(i<(l-1)){
+                    min = scenceList[i]+(isTopNavShow?-topNavHeight:0);
+                    max = scenceList[i+1]+(isTopNavShow?-topNavHeight:0);
+                    if(min<=sctop && sctop<max){
+                        current = i;
+                        break;
+                    }else if(sctop>=max){
+                        current = 6;
+                    }
+                }else{
+                }
+            }
+            if(lastRightNavIndex==current) return;
+            lastRightNavIndex = current;
+            rightnav.each(function(i){
+                var itx = i+1;
+                if(i==current){
+                    $(this).addClass('rn-'+itx+'-on');
+                }else{
+                    $(this).removeClass('rn-'+itx+'-on');
+                }
+            });
+        }
+        rightNavAutoHeightlight();
+        $('.backtop , .logo-small').click(function(event){
+            $("html, body").stop().animate({scrollTop:0},1200);
+            return false;
+        });
+        var topnavAnimateType = 0;
+
+        var scrollTopArray = [];
+        var scrollTopBooleans = [];
+        var scrollContentTopArray = [];
+        var scrollContentTopBooleans = [];
+
+        function scrollToLoadResource(){
+            var ncount = 1;
+            for(var i in scrollTopArray){
+                ncount++;
+                var targetTop = scrollTopArray[i];
+                var isTopShow = scrollTopBooleans[i];
+                if(typeof (isTopShow)=="undefined") scrollTopBooleans[i] = false;
+                if(!isTopShow && !blowTop(targetTop)){
+                    scrolltoLoadResourceFor(ncount);
+                    scrollTopBooleans[i]=true;
+                }
+            }
+        }
+        function scrolltoLoadResourceFor(i){
+            var scene=".scene"+i;
+            $(scene+"-nobg").addClass(scene.substr(1));
+        }
+
+        var lastScrollTop = 0;
+        function windowInAreaIndex(list,offset){
+            var _w = $(window);
+            offset = offset || 0;
+            var scrolltop = _w.scrollTop();
+            var sctop=scrolltop+_w.height()/2+(scrolltop>lastScrollTop?offset:-offset);
+
+            var current = 0;
+            for(var i= 0, l = list.length;i<l;i++){
+                var min = 0,max=0;
+                if(i<(l-1)){
+                    min = list[i]+(isTopNavShow?-topNavHeight:0);
+                    max = list[i+1]+(isTopNavShow?-topNavHeight:0);
+                    if(min<=sctop && sctop<max){
+                        current = i;
+                        break;
+                    }else if(sctop>=max){
+                        current = 6;
+                    }
+                }
+            }
+            return current;
+        }
+        function scrollToShowContent(toffset){
+            var wtop = $(window).scrollTop();
+            var mainHeight = 0;
+            var mains=$(".scene .main");
+            for(var i in scrollContentTopArray){
+                var isTopShow = scrollContentTopBooleans[i];
+                if(typeof (isTopShow)=="undefined") scrollContentTopBooleans[i] = false;
+                mainHeight = mains.eq(i).outerHeight();
+                var offset = typeof (toffset)=="undefined"?180:toffset;
+                var inWindowIndex = windowInAreaIndex(([].concat([0],scrollContentTopArray)),offset);
+                if(!isTopShow && (inWindowIndex)==i){
+                    scrolltoLoadContentFor(i);
+                    scrollContentTopBooleans[i]=true;
+                }
+            }
+            lastScrollTop = wtop;
+
+        }
+        //滚动到对应屏幕显示内容
+        function scrolltoLoadContentFor(i){
+
+            var target = parseInt(i);//+1;
+            var scene = $('.scene').eq(target);
+            var uiIp = scene.find(".iphone");
+            if(uiIp.size()==0) return;
+
+
+            var uiCt = scene.find(".content");
+            var uiMain = scene.find(".main").css("overflow","hidden");
+
+            if(target==0){
+                if(typeof(canvas_screen1)=="function")
+                    canvas_screen1(target,uiMain);
+                return;
+            }
+
+            var ipTargetTop = parseInt(uiIp.attr('targettop'))||0;
+            var ctTargetTop = parseInt(uiCt.attr('targettop'))||0;
+            var ipHegiht=uiIp.outerHeight();
+            var ctHeight = parseInt(uiCt.attr("height")) || uiCt.outerHeight();
+            var mainHeight = uiMain.outerHeight();
+
+
+            var canvasBeforesShowFunc = window["canvas_beforeshow_screen"+(target+1)];
+            if(typeof(canvasBeforesShowFunc)=="function") canvasBeforesShowFunc(target,uiMain);
+
+            uiIp.css({"top":-ipHegiht}).show().stop().animate({"top":ipTargetTop},700,function(){
+                var ttop = (uiMain.outerHeight()-ipHegiht)/2;
+                uiIp.css('top',ttop).attr('targettop',ttop);
+                uiMain.css("overflow","visible");
+                var canvasFunc = window["canvas_screen"+(target+1)];
+                if(typeof(canvasFunc)=="function") canvasFunc(target,uiMain);
+
+            });
+            uiCt.css({"top":mainHeight}).show().stop().animate({"top":ctTargetTop},700,function(){
+                var ttop = (uiMain.outerHeight()-ctHeight)/2;
+                uiCt.css('top',ttop).attr('targettop',ttop);
+            });
+        }
+
+        var scrollWaitTime = null;
+        function winOnScrollHandler(e){
+
+            scrollToLoadResource();
+
+            if(scrollWaitTime){
+                window.clearTimeout(scrollWaitTime);
+            }
+            scrollWaitTime = window.setTimeout(function(){
+                scrollToShowContent();
+            },100);
+
+            if(!underTop(showTopHeight)){
+                if(isIE6){
+                    topNav.show();
+                }else{
+                    if(topnavAnimateType!==1){
+                        topnavAnimateType =1;
+                        topNav.stop().animate({top:0},400,function(){topnavAnimateType=0;});
+                    }
+                }
+                isTopNavShow = true;
+            }else{
+                if(isIE6){
+                    topNav.hide();
+                }else{
+                    if(!topnavAnimateType!==-1){
+                        topnavAnimateType = -1;
+                        topNav.stop().animate({top:-topNavOuterHeight},400,function(){topnavAnimateType=0;});
+                    }
+                }
+                isTopNavShow = false;
+            }
+            rightNavAutoHeightlight();
+            if(isIE6){
+                var _w = $(window);
+                var _sl = _w.scrollLeft();
+                var _width = Math.max(960,_w.width()+_sl);
+                $('.wraper , .topnav').width(_width);
+            }
+
+        }
+        function centerRightNav(elm){
+            if(isIE6) return;
+            var _active=$(elm);
+            var _w=$(window);
+            var css = {};
+            css.top = (_w.height()-_active.outerHeight())/2;
+            css.top=Math.max(css.top,0);
+            return _active.css(css);
+        }
+//        winOnScrollHandler();
+        window.setTimeout(function(){
+            winOnScrollHandler();
+        },250);
+        centerRightNav('.rightnav');
+        $(window).bind("scroll.lazyload, resize.lazyload",winOnScrollHandler).bind("resize",function(){
+            centerRightNav('.rightnav');
+        }).load(function(){
+                    var count = 1;
+                    var autoloadInterval = window.setInterval(function(){
+                        if(count>8) window.clearInterval(autoloadInterval);
+                        count++;
+                        var ncount = 1;
+                        for(var i in scrollTopArray){
+                            ncount++;
+                            if(count!=ncount) continue;
+                            var isTopShow = scrollTopBooleans[i];
+                            if(typeof (isTopShow)=="undefined") scrollTopBooleans[i] = true;
+                            scrolltoLoadResourceFor(count);
+                        }
+                    },5000);//product=1000
+                });
+
+
+        function prepareSceneHeight(){
+            $(".scene").each(function(i,elm){
+                var that = $(elm);
+                var uiContent = that.find('.content');
+                var uiIphone = that.find('.iphone');
+                var uiMain = that.find('.main');
+                if(uiContent.size()==0 || uiIphone.size()==0) return true;
+                var offset = parseInt(that.attr("offset")) || 0;
+                var contentHeight = uiContent.outerHeight();
+                var iphoneHeight = uiIphone.outerHeight();
+                var elementHeight = Math.max(contentHeight,iphoneHeight);
+                var minHeight = parseInt(that.attr("minheight")) || (elementHeight+20);
+                var _w = $(window);
+                var _wHeight = _w.height()-topNavHeight - offset;
+                var sceneHeihght = Math.max(minHeight,_wHeight);
+                that.height(sceneHeihght);
+
+                var paddingTop =Math.max( (sceneHeihght-elementHeight)/2 - 10 , 10 );
+                var maxpaddingTop = parseInt(uiMain.attr('maxpaddingtop')) || paddingTop;
+                paddingTop = Math.min(maxpaddingTop,paddingTop);
+                lastScrollTop = _w.scrollTop();
+                if(i==0){
+                    scenceList[i+1] = scrollTopArray[0] = scrollContentTopArray[0] = sceneHeihght+187;
+                    showTopHeight = sceneHeihght+offset;
+                    uiMain.css('paddingTop',paddingTop).height(sceneHeihght-paddingTop);
+                }else{
+                    uiMain.css('paddingTop',0).height(sceneHeihght);
+                    scenceList[(i+1)] = scrollTopArray[i] = scrollContentTopArray[i] = sceneHeihght*i+scenceList[1];
+                    var ipTargetTop = (sceneHeihght-iphoneHeight)/2;
+                    var ctTargetTop = (sceneHeihght-contentHeight)/2;
+                    uiIphone.css({"top":ipTargetTop}).attr('targettop',ipTargetTop);
+                    uiContent.css({"top":ctTargetTop}).attr('targettop',ctTargetTop);
+                }
+
+                if(i>=5){
+                    scrollTopArray[6] = scrollContentTopArray[6] = sceneHeihght*7+scenceList[1];
+                }
+            });
+        }
+        prepareSceneHeight();
+        $(window).bind('resize.scene',function(){
+            prepareSceneHeight();
+//            $("html").getNiceScroll().resize();
+        });
+        var scrollWheelTimer = null;
+        var scrollWheelCounter = 0;
+        var isScreenForWheelScroling = false;
+        var lastScrollWheelIndex = 0;
+
+        function scrollWheel(){
+            function scrollWhellHandler(e){
+                if(DEBUG) return;
+                var evt = window.event || e;
+                var delta=evt.detail? evt.detail*(-120) : evt.wheelDelta //check for detail first so Opera uses that instead of wheelDelta
+
+                var rightnavLength = rightnav.size();
+                if(isScreenForWheelScroling){
+                    return false;
+                }
+                function scrollWheelScrollerFunc(tscroll){
+                    scrollWheelCounter++;
+                    if(scrollWheelTimer!=null) return false;
+                    scrollWheelTimer = window.setTimeout(function(){
+                        if(tscroll===true && scrollWheelCounter>0){
+                            myScrollToShowContent(e);
+                        }else{
+                            var _w = $(window);
+                            $("html , body").stop().animate({"scrollTop":_w.scrollTop()+(delta>0?-100:100)*scrollWheelCounter},200);
+                        }
+                        scrollWheelTimer = null;
+                        scrollWheelCounter =0;
+                    },250);
+                }
+                scrollWheelScrollerFunc(true);
+
+                function myScrollToShowContent(){
+
+                    var wtop = $(window).scrollTop();
+                    var wholeArray = [].concat([0],scrollContentTopArray);
+
+                    var mainHeight = 0;
+                    var mains=$(".scene .main");
+                    for(var i in scrollContentTopArray){
+                        var isTopShow = scrollContentTopBooleans[i];
+                        mainHeight = mains.eq(i).outerHeight();
+                        var inWindowIndex = windowInAreaIndex(wholeArray,0);
+                        if((inWindowIndex)==i){
+
+                            lastScrollWheelIndex = parseInt(i);
+                            if(delta>0){
+                                if(lastScrollWheelIndex>0){
+                                    var scTo = scenceList[lastScrollWheelIndex-1];
+                                    if(scTo>showTopHeight) scTo-=topNavHeight;
+                                    isScreenForWheelScroling = true;
+
+                                    $("html,body").stop().animate({"scrollTop":scTo},500,function(){
+                                        window.setTimeout(function(){
+                                            isScreenForWheelScroling= false;
+                                        },250);
+                                    });
+                                }else{
+                                    var _w = $(window);
+                                    $("html , body").stop().animate({"scrollTop":_w.scrollTop()+(delta>0?-100:100)*scrollWheelCounter},200);
+                                }
+                            }else if(delta<0){
+                                if(lastScrollWheelIndex<rightnavLength-1){
+                                    var scTo = scenceList[lastScrollWheelIndex+1];
+                                    if(scTo>showTopHeight) scTo-=topNavHeight;
+                                    isScreenForWheelScroling = true;
+                                    $("html,body").stop().animate({"scrollTop":scTo},500,function(){
+                                        window.setTimeout(function(){
+                                            isScreenForWheelScroling= false;
+                                        },250);
+                                    });
+                                }else{
+                                    var _w = $(window);
+                                    $("html , body").stop().animate({"scrollTop":_w.scrollTop()+(delta>0?-100:100)*scrollWheelCounter},200);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+
+            if (document.attachEvent) //if IE (and Opera depending on user setting)
+                document.attachEvent("on"+mousewheelevt, scrollWhellHandler);
+            else if (document.addEventListener) //WC3 browsers
+                document.addEventListener(mousewheelevt, scrollWhellHandler, false);
+
+        }
+        scrollWheel();
+        $("html,body").bind("keydown",function(event){
+            var lastNav = lastRightNavIndex;
+            var rightnavLength = rightnav.size();
+            switch (event.keyCode){
+                case 38:{
+                    var _w = $(window);
+                    var sctop = _w.scrollTop();
+                    if(sctop>scrollTopArray[5]){
+                        $("html , body").stop().animate({"scrollTop":_w.scrollTop()-100},200);
+                    }else if(lastNav>0){
+                        var tnav = lastNav-1;
+                        rightnav.eq(tnav).trigger("click");
+                    }
+                    break;
+                }
+                case 32:
+                case 40:{
+                    if(lastNav<rightnavLength-1){
+                        rightnav.eq(lastNav+1).trigger("click");
+                    }else{
+                        var _w = $(window);
+                        $("html , body").stop().animate({"scrollTop":_w.scrollTop()+100},200);
+                    }
+                    break;
+                }
+
+            }
+        });
+
+    })(jQuery);
+
+</script>
+</body>
+</html>

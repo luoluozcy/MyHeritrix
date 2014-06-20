@@ -1,0 +1,547 @@
+<html>
+	<head>
+		<META HTTP-EQUIV="Cache-Control" CONTENT="max-age:86400">
+		<script type="text/javascript">
+			var spell = null;
+			var code = null;
+			if (document.cookie)
+			{
+				var cookieStr = document.cookie;
+				var cookieArr = cookieStr.split(";");
+				for(var i = 0; i < cookieArr.length; i++)
+				{
+					var arr = cookieArr[i].split("=");
+					if("CITY_COOKIE" == arr[0].replace(/\s/g, ''))
+					{
+						code = arr[1];
+						break;
+					}
+				}				
+				if (code)
+				{
+					switch (code)
+					{
+					case '330100':	
+						spell = 'hangzhou';
+						break;
+					case '330500':
+						spell = 'huzhou';
+						break;
+					case '320200':
+						spell = 'wuxi';
+						break;
+					case '230100':
+						spell = 'haerbin';
+						break;
+					case '230800':
+						spell = 'jiamusi';
+						break;
+					case '532500':
+						spell = 'honghe';
+						break;
+					case '370800':
+						spell = 'jining';
+						break;
+					case '532300':
+						spell = 'chuxiong';
+						break;
+					case '410100':
+						spell = 'zhengzhou';
+						break;
+					case '532900':
+						spell = 'dali';
+						break;
+					case '360400':
+						spell = 'jiujiang';
+						break;
+					case '210200':
+						spell = 'dalian';
+						break;
+					case '331000':
+						spell = 'taizhou';
+						break;
+					case '620100':
+						spell = 'lanzhou';
+						break;
+					case '440800':
+						spell = 'zhanjiang';
+						break;
+					case '310000':
+						spell = 'shanghai';
+						break;
+					case '350100':
+						spell = 'fuzhou';
+						break;
+					case '440100':
+						spell = 'guangzhou';
+						break;
+					case '330400':
+						spell = 'jiaxing';
+						break;
+					case '330800':
+						spell = 'quzhou';
+						break;
+					case '110000':
+						spell = 'beijing';
+						break;
+					case '500000':
+						spell = 'chongqing';
+						break;
+					case '420100':
+						spell = 'wuhan';
+						break;
+					case '330700':
+						spell = 'jinhua';
+						break;
+					case '120000':
+						spell = 'tianjin';
+						break;
+					case '440600':
+						spell = 'foshan';
+						break;
+					case '320600':
+						spell = 'nantong';
+						break;
+					case '220403':
+						spell = 'xian';
+						break;
+					case '210100':
+						spell = 'shenyang';
+						break;
+					case '440300':
+						spell = 'shenzhen';
+						break;
+					case '130100':
+						spell = 'shijiazhuang';
+						break;						
+					case '320500':
+						spell = 'suzhou';
+						break;
+					case '140100':
+						spell = 'taiyuan';
+						break;
+					case '130200':
+						spell = 'tangshan';
+						break;
+					case '320300':
+						spell = 'xuzhou';
+						break;
+					case '370600':
+						spell = 'yantai';
+						break;
+					case '330600':
+						spell = 'shaoxing';
+						break;						
+					case '350200':
+						spell = 'xiamen';
+						break;
+					case '321081':
+						spell = 'yizheng';
+						break;
+					case '411600':
+						spell = 'zhoukou';
+						break;
+					case '330200':
+						spell = 'ningbo';
+						break;
+					case '610300':
+						spell = 'baoji';
+						break;						
+					case '510100':
+						spell = 'chengdu';
+						break;
+					case '441900':
+						spell = 'dongguan';
+						break;
+					case '450100':
+						spell = 'nanning';
+						break;
+					case '450400':
+						spell = 'wuzhou';
+						break;
+					case '330282':
+						spell = 'cixi';
+						break;
+					case '330183':
+						spell = 'fuyang';
+						break;
+					case '530100':
+						spell = 'kunming';
+						break;						
+					case '320100':
+						spell = 'nanjing';
+						break;
+					case '450300':
+						spell = 'guilin';
+						break;
+					case '320583':
+						spell = 'kunshan';
+						break;
+					case '340500':
+						spell = 'maanshan';
+						break;
+					case '210400':
+						spell = 'fushun';
+						break;
+					case '150100':
+						spell = 'huhehaote';
+						break;
+					case '441300':
+						spell = 'huizhou';
+						break;
+					case '330182':
+						spell = 'jiande';
+						break;
+					case '370200':
+						spell = 'qingdao';
+						break;
+					case '321282':
+						spell = 'jingjiang';
+						break;
+					case '441800':
+						spell = 'qingyuan';
+						break;
+					case '340100':
+						spell = 'hefei';
+						break;
+					case '431300':
+						spell = 'loudi';
+						break;
+					case '442000':
+						spell = 'zhongshan';
+						break;						
+					case '350500':
+						spell = 'quanzhou';
+						break;
+					case '321100':
+						spell = 'zhenjiang';
+						break;
+					case '150200':
+						spell = 'baotou';
+						break;
+					case '441200':
+						spell = 'zhaoqing';
+						break;
+					case '430100':
+						spell = 'changsha';
+						break;		
+					case '441700':
+						spell = 'yangjiang';
+						break;
+					case '350300':
+						spell = 'putian';
+						break;
+					case '210300':
+						spell = 'anshan';
+						break;
+					case '130300':
+						spell = 'qinhuangdao';
+						break;
+					case '130500':
+						spell = 'xingtai';
+						break;	
+					case '220100':
+						spell = 'changchun';
+						break;
+					case '321000':
+						spell = 'yangzhou';
+						break;
+					case '520100':
+						spell = 'guiyang';
+						break;
+					case '370100':
+						spell = 'jinan';
+						break;
+					case '320400':
+						spell = 'changzhou';
+						break;		
+					case '371000':
+						spell = 'weihai';
+						break;
+					case '370700':
+						spell = 'weifang';
+						break;	
+					case '321200':
+						spell = 'taizhou2';
+						break;	
+					case '131000':
+						spell = 'langfang';
+						break;																																																		
+					}
+				}
+			}	
+		</script>
+	<script type="text/javascript" src="http://ip.ws.126.net/ipquery"></script>
+		<script type="text/javascript">						
+			if (!spell)
+			{
+				if (lc)
+				{
+					switch (lc)
+					{
+					case '杭州市':
+						spell = 'hangzhou';
+						break;
+					case '福州市':
+						spell = 'fuzhou';
+						break;
+					case '广州市':
+						spell = 'guangzhou';
+						break;
+					case '嘉兴市':
+						spell = 'jiaxing';
+						break;
+					case '衢州市':
+						spell = 'quzhou';
+						break;
+					case '武汉市':
+						spell = 'wuhan';
+						break;
+					case '金华市':
+						spell = 'jinhua';
+						break;
+					case '佛山市':
+						spell = 'foshan';
+						break;
+					case '南通市':
+						spell = 'nantong';
+						break;
+					case '西安市':
+						spell = 'xian';
+						break;
+					case '沈阳市':
+						spell = 'shenyang';
+						break;
+					case '深圳市':
+						spell = 'shenzhen';
+						break;
+					case '石家庄市':
+						spell = 'shijiazhuang';
+						break;
+					case '苏州市':
+						spell = 'suzhou';
+						break;
+					case '太原市':
+						spell = 'taiyuan';
+						break;
+					case '唐山市':
+						spell = 'tangshan';
+						break;
+					case '徐州市':
+						spell = 'xuzhou';
+						break;
+					case '烟台市':
+						spell = 'yantai';
+						break;
+					case '绍兴市':
+						spell = 'shaoxing';
+						break;
+					case '厦门市':
+						spell = 'xiamen';
+						break;
+					//case '扬州市':
+						//spell = 'yizheng';//仪征市
+						//break;
+					case '周口市':
+						spell = 'zhoukou';
+						break;
+					case '宁波市':
+						spell = 'ningbo';
+						break;
+					case '宝鸡市':
+						spell = 'baoji';
+						break;
+					case '成都市':
+						spell = 'chengdu';
+						break;
+					case '东莞市':
+						spell = 'dongguan';
+						break;
+					case '南宁市':
+						spell = 'nanning';
+						break;
+					case '梧州市':
+						spell = 'wuzhou';
+						break;
+					case '慈溪市':
+						spell = 'cixi';//宁波市
+						break;
+					case '富阳市':
+						spell = 'fuyang';//杭州市
+						break;
+					case '昆明市':
+						spell = 'kunming';
+						break;
+					case '南京市':
+						spell = 'nanjing';
+						break;
+					case '桂林市':
+						spell = 'guilin';
+						break;
+					case '昆山市':
+						spell = 'kunshan';//苏州市
+						break;
+					case '马鞍山市':
+						spell = 'maanshan';
+						break;
+					case '抚顺市':
+						spell = 'fushun';
+						break;
+					case '呼和浩特市':
+						spell = 'huhehaote';
+						break;
+					case '惠州市':
+						spell = 'huizhou';
+						break;
+					case '建德市':
+						spell = 'jiande';
+						break;
+					case '青岛市':
+						spell = 'qingdao';
+						break;
+					case '泰州市':
+						spell = 'jingjiang';//靖江市
+						break;
+					case '清远市':
+						spell = 'qingyuan';
+						break;
+					case '湛江市':
+						spell = 'zhanjiang';
+						break;
+					case '兰州市':
+						spell = 'lanzhou';
+						break;
+					case '台州市':
+						spell = 'taizhou';
+						break;
+					case '大连市':
+						spell = 'dalian';
+						break;
+					case '九江市':
+						spell = 'jiujiang';
+						break;
+					case '大理市':
+						spell = 'dali';
+						break;
+					case '郑州市':
+						spell = 'zhengzhou';
+						break;
+					case '楚雄市':
+						spell = 'chuxiong';
+						break;
+					case '济宁市':
+						spell = 'jining';
+						break;
+					case '红河州':
+						spell = 'honghe';
+						break;
+					case '佳木斯市':
+						spell = 'jiamusi';
+						break;
+					case '哈尔滨市':
+						spell = 'haerbin';
+						break;
+					case '无锡市':
+						spell = 'wuxi';
+						break;
+					case '湖州市':
+						spell = 'huzhou';
+						break;
+					case '合肥市':
+						spell = 'hefei';
+						break;
+					case '娄底市':
+						spell = 'loudi';
+						break;
+					case '中山市':
+						spell = 'zhongshan';
+						break;
+					case '泉州市':
+						spell = 'quanzhou';
+						break;
+					case '镇江市':
+						spell = 'zhenjiang';
+						break;
+					case '包头市':
+						spell = 'baotou';
+						break;	
+					case '肇庆市':
+						spell = 'zhaoqing';
+						break;
+					case '长沙市':
+						spell = 'changsha';
+						break;
+					case '阳江市':
+						spell = 'yangjiang';
+						break;
+					case '莆田市':
+						spell = 'putian';
+						break;
+					case '鞍山市':
+						spell = 'anshan';
+						break;
+					case '秦皇岛市':
+						spell = 'qinhuangdao';
+						break;
+					case '邢台市':
+						spell = 'xingtai';
+						break;
+					case '长春市':
+						spell = 'changchun';
+						break;
+					case '扬州市':
+						spell = 'yangzhou';
+						break;		
+					case '贵阳市':
+						spell = 'guiyang';
+						break;
+					case '济南市':
+						spell = 'jinan';
+						break;
+					case '常州市':
+						spell = 'changzhou';
+						break;
+					case '威海市':
+						spell = 'weihai';
+						break;
+					case '潍坊市':
+						spell = 'weifang';
+						break;	
+					case '泰州市':
+						spell = 'taizhou2';
+						break;	
+					case '廊坊市':
+						spell = 'langfang';
+						break;																																																		
+					}
+				}
+				else
+				{
+					switch (lo)
+					{
+					case '北京市':
+						spell = 'beijing';
+						break;
+					case '上海市':
+						spell = 'shanghai';
+						break;
+					case '重庆市':
+						spell = 'chongqing';
+						break;
+					case '天津市':
+						spell = 'tianjin';
+						break;
+					}
+				}
+			}
+			if (!spell)
+			{
+				spell = 'beijing';
+			}
+			window.location.href = 'http://piao.163.com/' + spell + '/promoter/movie.html';
+		</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+	</body>
+</html>

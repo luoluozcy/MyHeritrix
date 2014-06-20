@@ -1,0 +1,1525 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>发号预订列表</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=emulateie7" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta name="author" content="" />
+<meta name="Copyright" content="Netease" />
+<meta name="keywords" content="新手卡,激活码,网易新手卡,网易激活码,激活码预订,新手卡预订,网易抢号,网易发号,网易发卡中心,预订,道具卡,新游戏,游戏" />
+<meta name="description" content="网易发卡中心，免费提供最新最全的网络游戏新手卡、激活码、道具卡，热门游戏激活码、新手卡的预订服务。" />
+<link type="text/css" rel="stylesheet" href="http://img1.cache.netease.com/cnews/css07/style.css" />
+<link type="text/css" rel="stylesheet" href="http://img5.cache.netease.com/game/projects/faka/css/common_v1.0.4.css" />
+<link type="text/css" rel="stylesheet" href="http://img1.cache.netease.com/game/projects/faka/css/list_v1.0.0.css"></head>
+<body>
+<div id="window" class="wrap-window">
+    <div id="game" class="wrap-page">
+        <div id="hd">
+            <!-- Begin: top navigation -->
+            <div id="nav_top" class="mod">
+    <span id="top"><!--为返回顶部所作--></span>
+    <link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+    <div class="NTES_nav_ NTES_bg_"> 
+        <span class="NTES_logo"><a href="http://game.163.com/"><img alt="游戏专题" src="http://img1.cache.netease.com/subject/images/newlogo100628/game.gif" /></a></span> 
+        <span class="nav_link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://t.163.com/">微博</a></span> 
+        <div class="top_search"> 
+            <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search"> 
+                <input type="hidden" value="game.163" name="keyfrom"/> 
+                <input type="hidden" value="user163" name="suser"/> 
+                <input type="hidden" value="gbk" name="ue"/> 
+                <label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/></label> 
+                <noscript>
+                    <select name="site" class="left">
+                        <option value="网易" selected="selected">新闻</option>
+                        <option value="">网页</option>
+                    </select>
+                </noscript> 
+                <div id="divSelect" class="left"></div> 
+                <input type="submit" class="btn" value="搜索" name="Submit" />
+                <input type="hidden" value="page" id="in" name="in" /> 
+            </form> 
+            <a href="http://www.163.com/rss"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img1.cache.netease.com/cnews/img07/rss.gif" /></a>
+        </div> 
+    </div>  
+</div>
+<!-- End: top navigation -->
+
+<!-- Begin: banner部分 -->    
+<div id="banner" class="mod">
+    <h1 class="logo"><a href="http://ka.game.163.com" title="网易发卡中心">网易发卡中心</a></h1>
+    <div class="login-location">
+        <div class="login">
+            <a class="login open" href="https://reg.163.com/logins.jsp">[登录]</a>
+            <a class="reg" href="http://reg.163.com/reg/reg0_new.jsp?product=urs">注册通行证</a> |
+            <a class="psd" href="http://reg.163.com/getpasswd/RetakePassword.jsp">忘记密码</a>
+        </div>
+        <div class="logout" style="display:none;"></div>  
+    </div>
+    <form class="search" action="/service/card/search"> 
+        <input class="textbox" type="text" name="keyword" value="请输入游戏名称..." > 
+        <input class="btn" type="submit" value="搜索" >
+    </form>         
+</div>
+<!-- End:  banner部分 --> 
+
+<!-- Begin: main navigation -->
+<div id="nav_main" class="mod">
+    <ul class="clearfix nav">
+        <li ><a href="/">首页</a></li>
+        <li ><a href="/service/card/xinshouka">新手卡</a></li>
+        <li ><a href="/service/card/ceshihao">激活码</a></li>
+        <li class="current"><a href="/service/card/yuding">我要预订</a></li>
+        <li ><a id="js_CardBox" href="/service/cardbox/lingqu">存卡箱</a></li>
+        <li ><a target="_blank" href="http://product.game.163.com/test_list/ ">新游测试表</a></li>
+        <li ><a href="/faq.html">新手指南</a></li>
+        <li><a href="http://game.163.com/xin">新游频道</a></li>
+    </ul>
+
+    <div class="clearfix downmenu">
+        <a class="site" href="http://game.163.com" target="_blank">网易游戏频道</a>
+        <ul>
+            <li class="first"><a href="http://bbs.game.163.com/" target="_blank">论坛</a></li>
+            <li><a href="http://xyx.game.163.com/" target="_blank">小游戏</a></li>
+            <li><a href="http://wowui.w.163.com/163ui/" target="_blank">有爱插件</a></li>
+            <li><a href="http://db.d.163.com/" target="_blank">暗黑3数据库</a></li>
+            <li ><a href="http://product.game.163.com/" target="_blank">网游资料库</a></li>
+        </ul>
+    </div>          
+</div>
+
+<span class="blank12"></span>
+	
+	    <div class="ka-posWrap">
+                <div class="ka-posWrap-inner">
+                    当前位置：<a href="/" title="网易发卡中心" >网易发卡中心</a> &gt; <a href="/service/card/yuding" title="预定列表" >预定列表</a>
+                </div>
+                <div class="m-news">
+        <h5 class="f14px scrolling" id="m-newss">
+            <span class="fB">热点公告：</span>
+            <div class="scrolling">
+                <div>
+                    <ul>
+                        <li>
+                            <a href="http://game.163.com/special/xin/faka_freefootball.html" title="《自由足球》有奖发号" class="" target="_black">《自由足球》有奖发号</a>
+                        </li>
+                        <li>
+                            <a href="http://game.163.com/special/xin/faka_qn.html" title="《倩女幽魂》有奖发号" class="" target="_black">《倩女幽魂》有奖发号</a>
+                        </li>
+                        <li>
+                            <a href="http://game.163.com/special/xin/faka_finalfire.html" title="《最后一炮》陆战首测" class="" target="_black">《最后一炮》陆战首测</a>
+                        </li>
+                        <li>
+                            <a href="http://game.163.com/special/xin/faka_zjsj425.html" title="《战机世界》有奖发号" class="" target="_black">《战机世界》有奖发号</a>
+                        </li>
+                        <li>
+                            <a href="http://game.163.com/special/xin/faka_fifaol3429.html" title="《FIFA OL 3》有奖发号" class="" target="_black">《FIFA OL 3》有奖发号</a>
+                        </li>
+                        <li>
+                            <a href="http://game.163.com/special/xin/faka_ty.html" title="《天谕》谕见首测活动" class="" target="_black">《天谕》谕见首测活动</a>
+                        </li>
+                        <li>
+                            <a href="http://game.163.com/special/xin/faka_popkart.html" title="《跑跑卡丁车》有奖涂鸦" class="" target="_black">《跑跑卡丁车》有奖涂鸦</a>
+                        </li>
+                    </ul></div>
+            </div>
+        </h5>
+    </div>  
+	    </div>
+                      
+            <!-- End: main navigation -->
+        </div>
+
+        <div id="bd">
+            <div class="area area_top">
+<div class="col-lm">
+    <!-- Begin: 发卡列表 -->
+    <div id="fakalist" class="mod mod-first">
+        <div class="hd"><h3><span>预订列表</span></h3></div>
+        
+        <div class="bd">
+             <div class="head">
+                <dl id="gtype" class="clearfix first">
+                    <dt>分类：</dt>
+                    <dd><a href="#" data-val="0">全部</a></dd>
+                    <dd><a href="#" data-val="1">FPS</a></dd>
+                    <dd><a href="#" data-val="2">RTS</a></dd>
+                    <dd><a href="#" data-val="3">moba</a></dd>
+                    <dd><a href="#" data-val="4">策略战棋</a></dd>
+                    <dd><a href="#" data-val="5">动作游戏</a></dd>
+                    <dd><a href="#" data-val="6">动作竞技</a></dd>
+                    <dd><a href="#" data-val="7">飞行射击</a></dd>
+                    <dd><a href="#" data-val="8">横版格斗</a></dd>
+                    <dd><a href="#" data-val="9">回合战斗</a></dd>
+                    <dd><a href="#" data-val="10">即时战略</a></dd>
+                    <dd><a href="#" data-val="11">江湖PK</a></dd>
+                    <dd><a href="#" data-val="12">角色扮演</a></dd>
+                    <dd><a href="#" data-val="13">竞技对战</a></dd>
+                    <dd><a href="#" data-val="14">冒险游戏</a></dd>
+                    <dd><a href="#" data-val="15">模拟飞行</a></dd>
+                    <dd><a href="#" data-val="16">模拟经营</a></dd>
+                    <dd><a href="#" data-val="17">其他</a></dd>
+                    <dd><a href="#" data-val="18">赛车游戏</a></dd>
+                    <dd><a href="#" data-val="19">射击游戏</a></dd>
+                    <dd><a href="#" data-val="22">西方幻想</a></dd>
+                    <dd><a href="#" data-val="23">休闲竞技</a></dd>
+                    <dd><a href="#" data-val="24">养成游戏</a></dd>
+                    <dd><a href="#" data-val="25">益智游戏</a></dd>
+                    <dd><a href="#" data-val="26">音乐游戏</a></dd>
+                    <dd><a href="#" data-val="27">运动/休闲</a></dd>
+                    <dd><a href="#" data-val="28">战争策略</a></dd>
+                    <dd><a href="#" data-val="29">桌面棋类</a></dd>
+                </dl>
+                <dl id="gplat" class="clearfix index">
+                    <dt>平台：</dt>
+                    <dd><a href="#" data-val="0">全部</a></dd>
+                    <dd><a href="#" data-val="1">网络游戏</a></dd>
+                    <dd><a href="#" data-val="2">网页游戏</a></dd>
+                    <dd><a href="#" data-val="3">手机游戏</a></dd>
+                </dl>
+
+                <dl id="ctype" class="clearfix">
+                    <dt>种类：</dt>
+                    <dd><a href="#" data-val="0">全部</a></dd>
+                    <dd><a href="#" data-val="1">新手卡</a></dd>
+                    <dd><a href="#" data-val="2">激活码</a></dd>
+                    <dd><a href="#" data-val="3">特权卡</a></dd>
+                </dl>
+
+                <dl id="sort" class="clearfix sort">
+                    <dt>排序：</dt>
+                    <dd><a href="#" data-val="0">最新预订</a></dd>
+                    <dd><a href="#" data-val="1">预订数量</a></dd>
+                </dl>
+            </div>
+            <div class="content2">
+                <ul class="clearfix">
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11939.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/2jXQIqA6E9f" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11939.html">《锁链战记》</a>
+                        <p class="desc">国服首测激活码</p>
+                        <p class="count"><strong>204</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1542881" data-card="11939" href="http://ka.game.163.com/card/11939.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11931.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/FXfiA2IiXUk" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11931.html">《跑跑卡丁车》</a>
+                        <p class="desc">动物珍贵礼包</p>
+                        <p class="count"><strong>256</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464147" data-card="11931" href="http://ka.game.163.com/card/11931.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11919.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/43WrJKXohIG" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11919.html">《刀锋铁骑》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>238</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1463909" data-card="11919" href="http://ka.game.163.com/card/11919.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11877.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/Ca5XRt0I8J6" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11877.html">《灵魂回响》</a>
+                        <p class="desc">神谕首测激活码</p>
+                        <p class="count"><strong>1263</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464121" data-card="11877" href="http://ka.game.163.com/card/11877.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11649.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/8aWt96K7591" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11649.html">《塔防骑士团》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>483</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1542813" data-card="11649" href="http://ka.game.163.com/card/11649.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11571.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/BgLOj00TGb5" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11571.html">《枪神纪》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>471</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464592" data-card="11571" href="http://ka.game.163.com/card/11571.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11536.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/4buKE9eGues" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11536.html">《ASTA》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>6372</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464639" data-card="11536" href="http://ka.game.163.com/card/11536.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11535.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/EfZqS826j6Z" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11535.html">《炽焰帝国2》</a>
+                        <p class="desc">炽焰帝国2</p>
+                        <p class="count"><strong>434</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1462547" data-card="11535" href="http://ka.game.163.com/card/11535.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11534.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/B4XYL5ZlbG6" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11534.html">《上古卷轴OL》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>1412</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464530" data-card="11534" href="http://ka.game.163.com/card/11534.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11533.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/3dUjdxVpBwM" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11533.html">《黑羊计划》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>285</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464383" data-card="11533" href="http://ka.game.163.com/card/11533.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11532.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/3fhZfxBZDkr" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11532.html">《无尽任务NEXT》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>305</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464443" data-card="11532" href="http://ka.game.163.com/card/11532.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11530.html"><img src="http://c.cotton.netease.com/buckets/1S1WRg/files/8NScsiA3i9i" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11530.html">《神佑》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>1850</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464054" data-card="11530" href="http://ka.game.163.com/card/11530.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11443.html"><img src="http://img2.cache.netease.com/photo/0031/2013-12-11/1386755133578.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11443.html">《逆战》</a>
+                        <p class="desc">僵尸2.0限量礼包</p>
+                        <p class="count"><strong>930</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464316" data-card="11443" href="http://ka.game.163.com/card/11443.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11347.html"><img src="http://img2.cache.netease.com/photo/0031/2013-11-14/1384417711110.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11347.html">《风暴英雄》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>21936</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464119" data-card="11347" href="http://ka.game.163.com/card/11347.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11200.html"><img src="http://img2.cache.netease.com/photo/0031/2013-10-12/1381566491763.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11200.html">《使命召唤OL》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>6246</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464532" data-card="11200" href="http://ka.game.163.com/card/11200.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11178.html"><img src="http://img2.cache.netease.com/photo/0031/2013-10-09/1381284793204.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11178.html">《神之浩劫》</a>
+                        <p class="desc">国服激活码</p>
+                        <p class="count"><strong>15510</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464480" data-card="11178" href="http://ka.game.163.com/card/11178.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/11089.html"><img src="http://img2.cache.netease.com/photo/0031/2013-09-12/1378950749312.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/11089.html">《最终幻想14》</a>
+                        <p class="desc">首测激活码</p>
+                        <p class="count"><strong>22397</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1463977" data-card="11089" href="http://ka.game.163.com/card/11089.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/10472.html"><img src="http://img2.cache.netease.com/photo/0031/2013-05-24/1369389582947.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/10472.html">《怪物猎人OL》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>60449</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464326" data-card="10472" href="http://ka.game.163.com/card/10472.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/9897.html"><img src="http://img2.cache.netease.com/photo/0031/2013-03-28/1364454360383.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/9897.html">《天涯明月刀》</a>
+                        <p class="desc">三测激活码</p>
+                        <p class="count"><strong>67817</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1464488" data-card="9897" href="http://ka.game.163.com/card/9897.html">我要预订</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://ka.game.163.com/card/5240.html"><img src="http://img2.cache.netease.com/photo/0031/2012-03-13/1331627868680.jpg" height="120" width="90"></a>
+                        <a class="title" href="http://ka.game.163.com/card/5240.html">《上古世纪》</a>
+                        <p class="desc">激活码</p>
+                        <p class="count"><strong>59168</strong> 人预订</p>
+                        <a class="btn btn-yd" data-game="1463874" data-card="5240" href="http://ka.game.163.com/card/5240.html">我要预订</a>
+                    </li>
+                    
+                </ul>       
+            </div>  
+        </div>
+        
+        <div class="ft"> 
+            <ul class="clearfix lst-pages">
+                <li class="page_up" disable="true"><span>上一页</span></li>
+                <li class="current" disable="true" isclick="true">1</li>
+                <li class="page_down" disable="true"><span>下一页</span></li>
+            </ul>   
+        </div>  
+    </div>  
+    <!-- End: 发卡列表 -->
+</div>
+<div class="col-r">
+
+    <!-- Begin：广告1 -->
+    <div id="ssid1"></div>
+<style>
+#ad1 .fkad1{ display:none}
+#ad1 .active{ display:block}
+#adsw {display:none}
+.fkad1 {position:relative;}
+.fkad1 .adv_frame{width:238px; height:238px;z-index:1;display:block;position:absolute; left:0px; top:0;background:transparent url(http://img3.cache.netease.com/game/diablo3/bbs/sign/trans.png) no-repeat;}
+</style>
+<div id="ad1" class="ad ad-first">
+<div class="fkad1"><embed src="http://img1.126.net/channel14/016529_240240_0424_.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="238" height="238" wmode=opaque></embed></div>
+<div class="fkad1 active"><object width="238" height="238" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="flashVote" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+<param value="http://img1.126.net/channel14/016529_240240_0424_.swf" name="movie">
+<param value="high" name="quality">
+<param value="#ffffff" name="bgcolor">
+<param name="WMode" value="Transparent">
+<param value="sameDomain" name="allowScriptAccess">
+<embed width="238" height="238" align="middle" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="sameDomain" wmode="transparent" quality="high" loop="true" play="true" name="flashVote" bgcolor="#ffffff" src="http://img1.126.net/channel14/016529_240240_0424_.swf">
+</object>
+<a href="http://g.163.com/a?CID=27764&Values=3869192376&Redirect=http://go.163.com/2014/0423/tl/" target="_blank">
+<div class="adv_frame"></div>
+</a>
+</div>
+<ul id="adsw"><li></li><li></li></ul>
+</div>
+<script type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" ></script>
+<script type="text/javascript">
+var adcnt = $("#ad1 > div")
+var adtab = $("#adsw > li")
+if(adcnt.length == adtab.length){
+	new NTES.ui.Slide($("#adsw > li"), $("#ad1 > div"), "active", "mouseover",10000);
+}
+</script>                    
+    <!-- End: 广告1 -->           
+            
+    <!-- Begin: 实时领取播报 -->
+    <!-- Begin: 实时领取播报 -->
+<div id="sslqbb" class="mod">
+    <div class="hd">
+        <h5>实时领取播报</h5>
+    </div>
+    <div class="bd">
+        <div class="scrolling">
+            <div>
+                <ul>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:58:13</span>
+                            <span class="name">QQ用户:J**y</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/10600.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/10600.html">《桃花源记》网易特权礼包</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:58:12</span>
+                            <span class="name">QQ用户:　******°</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/10282.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/10282.html">《街机三国》通服天下礼包</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:58:06</span>
+                            <span class="name">k******1@163.com</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11698.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11698.html">《零纪元》天天畅玩卡</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:58:05</span>
+                            <span class="name">p******0@163.com</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11886.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11886.html">《我叫MT》方砖的面包激活码</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:58:04</span>
+                            <span class="name">s******3@163.com</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/10600.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/10600.html">《桃花源记》网易特权礼包</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:57:57</span>
+                            <span class="name">QQ用户:墨****** </span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11945.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11945.html">《诺亚传说》决战未来礼包</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:57:56</span>
+                            <span class="name">QQ用户:涐******柔</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11809.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11809.html">《反恐行动》钻石特权礼包</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:57:54</span>
+                            <span class="name">6******7@qq.com</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/10600.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/10600.html">《桃花源记》网易特权礼包</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:57:49</span>
+                            <span class="name">QQ用户:7***0</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11008.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11008.html">《圣堂》网易特权</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:57:41</span>
+                            <span class="name">a******6@163.com</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11756.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11756.html">《新大话西游3》网易游戏特权号</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:57:41</span>
+                            <span class="name">z******1@163.com</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11631.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11631.html">《神武》新春贺岁版新手卡</a>
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            <span class="time">18:57:41</span>
+                            <span class="name">k******1@163.com</span>
+                        </p>
+                        <p>
+                            <a class="btn" href="http://ka.game.163.com/card/11699.html">领号</a>
+                            <a class="title" href="http://ka.game.163.com/card/11699.html">《零纪元》网易公测特权金卡</a>
+                        </p>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End: 实时领取播报 -->                    
+    <!-- End: 实时领取播报 -->
+    
+    <!-- Begin: 正在测试的游戏 -->
+    <div id="zzcsdyxzh" class="mod">
+    <div class="hd"><h5>正在测试的游戏发卡</h5></div>
+    <div class="bd">
+        <table width="100%">
+            <colgroup>
+                <col class="col1" /><col class="col2" /><col class="col3" />
+            </colgroup>
+            <tr>
+                <th>时间</th>
+                <th>游戏名称</th>
+                <th>发卡</th>
+            </tr>
+
+            
+            <tr>
+                <td class="td1">04-28</td>
+                <td class="td2"><a href="http://product.game.163.com/bumie/" target="_blank">不灭OL</a></td>
+                
+                <td class="td3">暂无</td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-28</td>
+                <td class="td2"><a href="http://product.game.163.com/eos/" target="_blank">灵魂回响</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11877.html" target="_blank">可预订</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-27</td>
+                <td class="td2"><a href="http://product.game.163.com/moyu/" target="_blank">魔域</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11865.html" target="_blank">可淘号</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-26</td>
+                <td class="td2"><a href="http://product.game.163.com/bmy/" target="_blank">兵马俑</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11936.html" target="_blank">可领号</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-25</td>
+                <td class="td2"><a href="http://product.game.163.com/tscq/" target="_blank">吞噬苍穹</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11925.html" target="_blank">可淘号</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-25</td>
+                <td class="td2"><a href="http://product.game.163.com/mhzx/" target="_blank">梦幻诛仙2</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11937.html" target="_blank">可领号</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-25</td>
+                <td class="td2"><a href="http://product.game.163.com/bhjy/" target="_blank">冰火纪元</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11929.html" target="_blank">可领号</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-25</td>
+                <td class="td2"><a href="http://product.game.163.com/pl/" target="_blank">盘龙OL</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11913.html" target="_blank">可领号</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-25</td>
+                <td class="td2"><a href="http://product.game.163.com/FF/" target="_blank">最后一炮</a></td>
+                
+                <td class="td3">
+                    <span class="cDRed">
+                        <a href="http://ka.game.163.com/card/11857.html" target="_blank">可淘号</a>
+                    </span>
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td class="td1">04-25</td>
+                <td class="td2"><a href="http://product.game.163.com/xtl/" target="_blank">新天龙八部</a></td>
+                
+                <td class="td3">暂无</td>
+                
+            </tr>
+            
+        </table>
+    </div>
+</div>                    
+    <!-- End: 正在测试的游戏 -->
+    
+    <!-- Begin: 上一小时发号排行 -->
+    <div id="ph-syxsfh" class="mod mod-rank">
+    <div class="hd"><h5>上一小时发卡排行</h5></div>
+    <div class="bd">
+        <ul class="clearfix tab">
+            <li class="current">全部<i class="tri"></i><s class="tri"></s></li>
+            <li>新手卡<i class="tri"></i><s class="tri"></s></li>
+            <li>激活码<i class="tri"></i><s class="tri"></s></li>
+        </ul>
+        <ul class="lst-num current">
+            
+            
+            <li class="first">
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10600.html">领</a>
+                <span class="num top">1.</span>
+                <a class="title" href="http://ka.game.163.com/card/10600.html" >《桃花源记》网易特权礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11030.html">领</a>
+                <span class="num top">2.</span>
+                <a class="title" href="http://ka.game.163.com/card/11030.html" >《FIFAOL3》狂热不删档激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11691.html">领</a>
+                <span class="num top">3.</span>
+                <a class="title" href="http://ka.game.163.com/card/11691.html" >《敦煌》首次技术测试激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11864.html">领</a>
+                <span class="num top">4.</span>
+                <a class="title" href="http://ka.game.163.com/card/11864.html" >《极乐空间》技术首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11886.html">领</a>
+                <span class="num top">5.</span>
+                <a class="title" href="http://ka.game.163.com/card/11886.html" >《我叫MT》方砖的面包激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11631.html">领</a>
+                <span class="num top">6.</span>
+                <a class="title" href="http://ka.game.163.com/card/11631.html" >《神武》新春贺岁版新手卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11920.html">领</a>
+                <span class="num top">7.</span>
+                <a class="title" href="http://ka.game.163.com/card/11920.html" >《反恐行动》网易枪约专属包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11809.html">领</a>
+                <span class="num top">8.</span>
+                <a class="title" href="http://ka.game.163.com/card/11809.html" >《反恐行动》钻石特权礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11843.html">领</a>
+                <span class="num top">9.</span>
+                <a class="title" href="http://ka.game.163.com/card/11843.html" >《300英雄》网易圣杯礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11950.html">领</a>
+                <span class="num top">10.</span>
+                <a class="title" href="http://ka.game.163.com/card/11950.html" >《不灭OL》删档封测激活码</a>
+            </li>
+            
+        </ul>
+
+        <ul class="lst-num">
+            
+            
+            <li class="first">
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10600.html">领</a>
+                <span class="num top">1.</span>
+                <a class="title" href="http://ka.game.163.com/card/10600.html" >《桃花源记》网易特权礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11691.html">领</a>
+                <span class="num top">2.</span>
+                <a class="title" href="http://ka.game.163.com/card/11691.html" >《敦煌》首次技术测试激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11886.html">领</a>
+                <span class="num top">3.</span>
+                <a class="title" href="http://ka.game.163.com/card/11886.html" >《我叫MT》方砖的面包激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11631.html">领</a>
+                <span class="num top">4.</span>
+                <a class="title" href="http://ka.game.163.com/card/11631.html" >《神武》新春贺岁版新手卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11920.html">领</a>
+                <span class="num top">5.</span>
+                <a class="title" href="http://ka.game.163.com/card/11920.html" >《反恐行动》网易枪约专属包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11809.html">领</a>
+                <span class="num top">6.</span>
+                <a class="title" href="http://ka.game.163.com/card/11809.html" >《反恐行动》钻石特权礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11843.html">领</a>
+                <span class="num top">7.</span>
+                <a class="title" href="http://ka.game.163.com/card/11843.html" >《300英雄》网易圣杯礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11950.html">领</a>
+                <span class="num top">8.</span>
+                <a class="title" href="http://ka.game.163.com/card/11950.html" >《不灭OL》删档封测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11565.html">领</a>
+                <span class="num top">9.</span>
+                <a class="title" href="http://ka.game.163.com/card/11565.html" >《300英雄》网易新年专属礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11824.html">领</a>
+                <span class="num top">10.</span>
+                <a class="title" href="http://ka.game.163.com/card/11824.html" >《九阴真经》武林大会礼包</a>
+            </li>
+            
+        </ul>
+
+        <ul class="lst-num">
+            
+            
+            <li class="first">
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11030.html">领</a>
+                <span class="num top">1.</span>
+                <a class="title" href="http://ka.game.163.com/card/11030.html" >《FIFAOL3》狂热不删档激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11864.html">领</a>
+                <span class="num top">2.</span>
+                <a class="title" href="http://ka.game.163.com/card/11864.html" >《极乐空间》技术首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11874.html">领</a>
+                <span class="num top">3.</span>
+                <a class="title" href="http://ka.game.163.com/card/11874.html" >《藏地传奇》扩大内测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11508.html">领</a>
+                <span class="num top">4.</span>
+                <a class="title" href="http://ka.game.163.com/card/11508.html" >《神仙与妖怪》首测激活码</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>                    
+    <!-- End: 上一小时发号排行 -->              
+    
+    <!-- Begin: 即将发完的号 -->
+    <div id="jjwcdh" class="mod mod-rank">
+    <div class="hd"><h5>即将发完的卡</h5></div>
+    <div class="bd">
+        <ul class="clearfix tab">
+            <li class="current">全部<i class="tri"></i><s class="tri"></s></li>
+            <li>新手卡<i class="tri"></i><s class="tri"></s></li>
+            <li>激活码<i class="tri"></i><s class="tri"></s></li>
+        </ul>
+        <ul class="lst-num current">
+            
+            
+            <li class="first">
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11766.html">领</a>
+                <span class="num top">1.</span>
+                <a class="title" href="http://ka.game.163.com/card/11766.html" >《英雄三国》网易独家特权礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10237.html">领</a>
+                <span class="num top">2.</span>
+                <a class="title" href="http://ka.game.163.com/card/10237.html" >《诺亚传说》星战礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10790.html">领</a>
+                <span class="num top">3.</span>
+                <a class="title" href="http://ka.game.163.com/card/10790.html" >《鹿鼎记》大小通吃卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10878.html">领</a>
+                <span class="num top">4.</span>
+                <a class="title" href="http://ka.game.163.com/card/10878.html" >《封天》新手卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10634.html">领</a>
+                <span class="num top">5.</span>
+                <a class="title" href="http://ka.game.163.com/card/10634.html" >《横扫天下》不删档奇缘礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11195.html">领</a>
+                <span class="num top">6.</span>
+                <a class="title" href="http://ka.game.163.com/card/11195.html" >《烈焰》通服VIP媒体卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11286.html">领</a>
+                <span class="num top">7.</span>
+                <a class="title" href="http://ka.game.163.com/card/11286.html" >《神鬼世界》网易凛冬暴风卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10545.html">领</a>
+                <span class="num top">8.</span>
+                <a class="title" href="http://ka.game.163.com/card/10545.html" >《凡人修真》黄金新手卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11134.html">领</a>
+                <span class="num top">9.</span>
+                <a class="title" href="http://ka.game.163.com/card/11134.html" >《喵将传》网易独家礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10282.html">领</a>
+                <span class="num top">10.</span>
+                <a class="title" href="http://ka.game.163.com/card/10282.html" >《街机三国》通服天下礼包</a>
+            </li>
+            
+        </ul>
+
+        <ul class="lst-num">
+            
+            
+            <li class="first">
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11766.html">领</a>
+                <span class="num top">1.</span>
+                <a class="title" href="http://ka.game.163.com/card/11766.html" >《英雄三国》网易独家特权礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10237.html">领</a>
+                <span class="num top">2.</span>
+                <a class="title" href="http://ka.game.163.com/card/10237.html" >《诺亚传说》星战礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10790.html">领</a>
+                <span class="num top">3.</span>
+                <a class="title" href="http://ka.game.163.com/card/10790.html" >《鹿鼎记》大小通吃卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10878.html">领</a>
+                <span class="num top">4.</span>
+                <a class="title" href="http://ka.game.163.com/card/10878.html" >《封天》新手卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10634.html">领</a>
+                <span class="num top">5.</span>
+                <a class="title" href="http://ka.game.163.com/card/10634.html" >《横扫天下》不删档奇缘礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11195.html">领</a>
+                <span class="num top">6.</span>
+                <a class="title" href="http://ka.game.163.com/card/11195.html" >《烈焰》通服VIP媒体卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11286.html">领</a>
+                <span class="num top">7.</span>
+                <a class="title" href="http://ka.game.163.com/card/11286.html" >《神鬼世界》网易凛冬暴风卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10545.html">领</a>
+                <span class="num top">8.</span>
+                <a class="title" href="http://ka.game.163.com/card/10545.html" >《凡人修真》黄金新手卡</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/11134.html">领</a>
+                <span class="num top">9.</span>
+                <a class="title" href="http://ka.game.163.com/card/11134.html" >《喵将传》网易独家礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a class="btn ling" href="http://ka.game.163.com/card/10282.html">领</a>
+                <span class="num top">10.</span>
+                <a class="title" href="http://ka.game.163.com/card/10282.html" >《街机三国》通服天下礼包</a>
+            </li>
+            
+        </ul>
+
+        <ul class="lst-num">
+            
+        </ul>                   
+    </div>
+</div>                    
+    <!-- End: 即将发完的号 -->    
+    
+    <!-- Begin: 发号预订排行榜 -->
+    <!-- Begin: 发卡预订排行榜 -->
+<div id="ph-fhyd" class="mod mod-rank">
+    <div class="hd"><h5>发卡预订排行榜</h5></div>
+    <div class="bd">
+        <ul class="clearfix tab">
+            <li class="current">周<i class="tri"></i><s class="tri"></s></li>
+            <li>月<i class="tri"></i><s class="tri"></s></li>
+            <li>总<i class="tri"></i><s class="tri"></s></li>
+        </ul>
+        <ul class="lst-num current">
+            
+            
+            <li class="first">
+            
+                <a href="http://ka.game.163.com/card/11347.html" data-game="1464119" data-card="11347" class="btn btn-yd">订</a>
+                <span class="num top">1.</span>
+                <a title="《风暴英雄》激活码" href="http://ka.game.163.com/card/11347.html" class="title">《风暴英雄》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11089.html" data-game="1463977" data-card="11089" class="btn btn-yd">订</a>
+                <span class="num top">2.</span>
+                <a title="《最终幻想14》首测激活码" href="http://ka.game.163.com/card/11089.html" class="title">《最终幻想14》首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11877.html" data-game="1464121" data-card="11877" class="btn btn-yd">订</a>
+                <span class="num top">3.</span>
+                <a title="《灵魂回响》神谕首测激活码" href="http://ka.game.163.com/card/11877.html" class="title">《灵魂回响》神谕首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/10472.html" data-game="1464326" data-card="10472" class="btn btn-yd">订</a>
+                <span class="num top">4.</span>
+                <a title="《怪物猎人OL》激活码" href="http://ka.game.163.com/card/10472.html" class="title">《怪物猎人OL》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/5240.html" data-game="1463874" data-card="5240" class="btn btn-yd">订</a>
+                <span class="num top">5.</span>
+                <a title="《上古世纪》激活码" href="http://ka.game.163.com/card/5240.html" class="title">《上古世纪》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/9897.html" data-game="1464488" data-card="9897" class="btn btn-yd">订</a>
+                <span class="num top">6.</span>
+                <a title="《天涯明月刀》三测激活码" href="http://ka.game.163.com/card/9897.html" class="title">《天涯明月刀》三测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11931.html" data-game="1464147" data-card="11931" class="btn btn-yd">订</a>
+                <span class="num top">7.</span>
+                <a title="《跑跑卡丁车》动物珍贵礼包" href="http://ka.game.163.com/card/11931.html" class="title">《跑跑卡丁车》动物珍贵礼包</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11939.html" data-game="1542881" data-card="11939" class="btn btn-yd">订</a>
+                <span class="num top">8.</span>
+                <a title="《锁链战记》国服首测激活码" href="http://ka.game.163.com/card/11939.html" class="title">《锁链战记》国服首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11530.html" data-game="1464054" data-card="11530" class="btn btn-yd">订</a>
+                <span class="num top">9.</span>
+                <a title="《神佑》激活码" href="http://ka.game.163.com/card/11530.html" class="title">《神佑》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11178.html" data-game="1464480" data-card="11178" class="btn btn-yd">订</a>
+                <span class="num top">10.</span>
+                <a title="《神之浩劫》国服激活码" href="http://ka.game.163.com/card/11178.html" class="title">《神之浩劫》国服激活码</a>
+            </li>
+            
+        </ul>
+        
+        <ul class="lst-num">
+            
+            
+            <li class="first">
+            
+                <a href="http://ka.game.163.com/card/11536.html" data-game="1464639" data-card="11536" class="btn btn-yd">订</a>
+                <span class="num top">1.</span>
+                <a title="《ASTA》激活码" href="http://ka.game.163.com/card/11536.html" class="title">《ASTA》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11347.html" data-game="1464119" data-card="11347" class="btn btn-yd">订</a>
+                <span class="num top">2.</span>
+                <a title="《风暴英雄》激活码" href="http://ka.game.163.com/card/11347.html" class="title">《风暴英雄》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11089.html" data-game="1463977" data-card="11089" class="btn btn-yd">订</a>
+                <span class="num top">3.</span>
+                <a title="《最终幻想14》首测激活码" href="http://ka.game.163.com/card/11089.html" class="title">《最终幻想14》首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/10472.html" data-game="1464326" data-card="10472" class="btn btn-yd">订</a>
+                <span class="num top">4.</span>
+                <a title="《怪物猎人OL》激活码" href="http://ka.game.163.com/card/10472.html" class="title">《怪物猎人OL》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11877.html" data-game="1464121" data-card="11877" class="btn btn-yd">订</a>
+                <span class="num top">5.</span>
+                <a title="《灵魂回响》神谕首测激活码" href="http://ka.game.163.com/card/11877.html" class="title">《灵魂回响》神谕首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/5240.html" data-game="1463874" data-card="5240" class="btn btn-yd">订</a>
+                <span class="num top">6.</span>
+                <a title="《上古世纪》激活码" href="http://ka.game.163.com/card/5240.html" class="title">《上古世纪》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/9897.html" data-game="1464488" data-card="9897" class="btn btn-yd">订</a>
+                <span class="num top">7.</span>
+                <a title="《天涯明月刀》三测激活码" href="http://ka.game.163.com/card/9897.html" class="title">《天涯明月刀》三测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11178.html" data-game="1464480" data-card="11178" class="btn btn-yd">订</a>
+                <span class="num top">8.</span>
+                <a title="《神之浩劫》国服激活码" href="http://ka.game.163.com/card/11178.html" class="title">《神之浩劫》国服激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11530.html" data-game="1464054" data-card="11530" class="btn btn-yd">订</a>
+                <span class="num top">9.</span>
+                <a title="《神佑》激活码" href="http://ka.game.163.com/card/11530.html" class="title">《神佑》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11534.html" data-game="1464530" data-card="11534" class="btn btn-yd">订</a>
+                <span class="num top">10.</span>
+                <a title="《上古卷轴OL》激活码" href="http://ka.game.163.com/card/11534.html" class="title">《上古卷轴OL》激活码</a>
+            </li>
+            
+        </ul>
+        
+        <ul class="lst-num">
+            
+            
+            <li class="first">
+            
+                <a href="http://ka.game.163.com/card/9897.html" data-game="1464488" data-card="9897" class="btn btn-yd">订</a>
+                <span class="num top">1.</span>
+                <a title="《天涯明月刀》三测激活码" href="http://ka.game.163.com/card/9897.html" class="title">《天涯明月刀》三测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/10472.html" data-game="1464326" data-card="10472" class="btn btn-yd">订</a>
+                <span class="num top">2.</span>
+                <a title="《怪物猎人OL》激活码" href="http://ka.game.163.com/card/10472.html" class="title">《怪物猎人OL》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/5240.html" data-game="1463874" data-card="5240" class="btn btn-yd">订</a>
+                <span class="num top">3.</span>
+                <a title="《上古世纪》激活码" href="http://ka.game.163.com/card/5240.html" class="title">《上古世纪》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11089.html" data-game="1463977" data-card="11089" class="btn btn-yd">订</a>
+                <span class="num top">4.</span>
+                <a title="《最终幻想14》首测激活码" href="http://ka.game.163.com/card/11089.html" class="title">《最终幻想14》首测激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11347.html" data-game="1464119" data-card="11347" class="btn btn-yd">订</a>
+                <span class="num top">5.</span>
+                <a title="《风暴英雄》激活码" href="http://ka.game.163.com/card/11347.html" class="title">《风暴英雄》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11178.html" data-game="1464480" data-card="11178" class="btn btn-yd">订</a>
+                <span class="num top">6.</span>
+                <a title="《神之浩劫》国服激活码" href="http://ka.game.163.com/card/11178.html" class="title">《神之浩劫》国服激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11536.html" data-game="1464639" data-card="11536" class="btn btn-yd">订</a>
+                <span class="num top">7.</span>
+                <a title="《ASTA》激活码" href="http://ka.game.163.com/card/11536.html" class="title">《ASTA》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11200.html" data-game="1464532" data-card="11200" class="btn btn-yd">订</a>
+                <span class="num top">8.</span>
+                <a title="《使命召唤OL》激活码" href="http://ka.game.163.com/card/11200.html" class="title">《使命召唤OL》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11530.html" data-game="1464054" data-card="11530" class="btn btn-yd">订</a>
+                <span class="num top">9.</span>
+                <a title="《神佑》激活码" href="http://ka.game.163.com/card/11530.html" class="title">《神佑》激活码</a>
+            </li>
+            
+            
+            <li>
+            
+                <a href="http://ka.game.163.com/card/11534.html" data-game="1464530" data-card="11534" class="btn btn-yd">订</a>
+                <span class="num top">10.</span>
+                <a title="《上古卷轴OL》激活码" href="http://ka.game.163.com/card/11534.html" class="title">《上古卷轴OL》激活码</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<!-- End: 发卡预订排行榜 -->                    
+    <!-- End: 发号预订排行榜 -->   
+    
+    
+</div>
+</div> 
+        </div>  
+        
+        <div class="fixleft"><img src="http://img3.cache.netease.com/game/projects/faka/css/fixleft.jpg"></div>
+<div id="ft">
+    <!-- Begin: friendlink -->
+    <div id="friendlink" class="mod">
+        <p>
+            友情链接：
+            <a target="_blank" href="http://product.game.163.com/">网易新游资料库</a> |
+            <a target="_blank" href="http://w.163.com">网易魔兽世界专区</a> |
+            <a target="_blank" href="http://game.163.com/dnf">网易DNF专区</a> |
+            <a target="_blank" href="http://game.163.com/lol">瓦洛兰大陆</a> |
+            <a target="_blank" href="http://h.163.com">水手之家</a> |
+            <a target="_blank" href="http://s.163.com">查尔星港</a> |
+            <a target="_blank" href="http://d.163.com">凯恩之角</a> |
+            <a target="_blank" href="http://a.163.com">风暴英雄</a> |
+            <a target="_blank" href="http://game.163.com/esports/">易竞技</a> |
+            <a target="_blank" href="http://love.163.com/">花田</a> |
+            <a target="_blank" href="http://uu.163.com/">免费网游加速器</a> |
+            <a target="_blank" href="http://www.kaifu.com/">开服网</a> |
+            <a target="_blank" href="http://www.gameway.cn">游略网</a> |
+            <a target="_blank" href="http://evildc.yesky.com/plugin.php?id=yulegame_gamekey">天极游戏发号中心</a> |
+            <a target="_blank" href="http://ka.18183.com/">18183手游发号</a> |
+            <a target="_blank" href="http://card.yzz.cn/">叶子猪发号中心</a> |
+            <a target="_blank" href="http://dou.tgbus.com/">巴豆论坛</a> |
+            <a target="_blank" href="http://game.9724.com/">9724游戏网</a> |
+            <a target="_blank" href="http://fahao.40407.com/">40407发号中心</a> |
+            <a target="_blank" href="http://www.woyouhao.com/">我有号游戏网</a> |            
+            <a target="_blank" href="http://www.xskhome.com/">新手卡之家</a> |
+            <a target="_blank" href="http://ka.gamedog.cn/">游戏狗游戏礼包</a> 
+ 
+        </p>
+        <p>
+            更多合作：
+            <a href="http://game.163.com/special/00313NAL/guide.html" class="cDRed" target="_blank">[厂商媒介指引]</a> |
+            <a href="http://game.163.com/11/0909/17/7DHC6ARH00314LBP.html?23" class="cDRed" target="_blank">[网易发卡与百度合作简介]</a>
+        </p>
+    </div>
+    <!-- End: friendlink -->
+    
+    <!-- Begin: footer -->
+    <div id="footer" class="mod">
+        <script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+        <div class="foot">
+            <div class="text">
+                <a href="http://t.163.com/zt/feedback">意见反馈</a>　
+                <a href="http://auto.163.com/09/1116/19/5O91RJ6H000816IP.html">版面功能介绍</a>　
+                <a href="http://auto.163.com/special/00081792/viewhistory.html">历史回顾</a>
+            </div>
+            <a href="http://corp.163.com/">About NetEase</a> -
+            <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> -
+            <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> -
+            <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> -
+            <a href="http://help.163.com/">客户服务</a> -
+            <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> -
+            <a href="http://emarketing.biz.163.com/">网络营销</a> -
+            <a href="http://sitemap.163.com/" title="网站地图" >网站地图</a>
+            <br />
+            网易公司版权所有
+            <br />
+            <span class="cRed">&copy;1997-2014</span>
+        </div>
+    </div>
+    <!-- End: footer -->
+</div>  
+    </div>
+</div>
+
+<!-- Shadow-->
+<div id="shadow"><iframe> </iframe><div> </div></div>
+
+<!-- Hidden Iframe -->
+<iframe name="hidden_iframe" frameborder="0" scrolling="no" style="display:none;"> </iframe> 
+
+<!-- layers-->
+<div id="layers">
+    <span class="sheight"></span>
+    <div class="scontent">
+        <!-- Begin: 登陆框 -->
+<div id="loginbox" class="mod layer">
+    <div class="hd"><h2>登录网易发卡中心</h2><span class="close">关闭</span></div>
+    <div class="bd">
+        <form action="https://reg.163.com/logins.jsp" method="post" target="_self">
+            <input type="hidden" value="" name="url">
+            <ul>
+                <li class="t1">
+                    <label for="username">用户名：</label>
+                    <input class="textbox" type="text" name="username" value="请使用网易通行证" defaultvalue="请使用网易通行证" />
+                </li>   
+                
+                <li class="t2">
+                    <label for="password">密　码：</label>
+                    <input class="psw" type="password" name="password" value="" />
+                    <a class="f" href="http://reg.163.com/RecoverPassword.shtml">忘记密码</a>
+                </li>
+                <li class="fenxiang">
+                    <p class="pl100">
+                        <span>使用合作伙伴帐号登录：</span>
+                        <a href="/service/openid/qq/login" class="qq intro">QQ</a>
+                    </p>
+                </li>
+                <li class="t3">
+                    <input class="sbt" type="submit" value="登录" />
+                    <label><input class="r" type="checkbox" name="savelogin" value="1" checked="true" /><em>记住我</em></label>
+                </li>
+
+                <li class="t4">
+                    没有网易通行证？<a class="reg" href="http://reg.163.com/reg/reg.jsp">免费注册</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>  
+<!-- End: 登陆框 -->
+
+        
+        <!-- Begin: 跳转链接弹窗 -->
+        <div id="jumpbox" class="mod layer">
+            <div class="hd">
+                <h4>网易发卡中心</h4>
+            </div>
+            <div class="bd">
+                <h3>你正在离开网易发卡中心，跳转至<span></span></h3>
+                <em class="loading"></em>
+                <p>如果没有自动跳转，<a class="jumplink" href="">请点击这里</a></p>
+                <p class="btm">网易发卡中心提醒您谨慎判断各游戏厂商提供的服务</p>
+            </div>
+        </div>
+        <!-- End: 跳转链接弹窗 -->
+        <!-- Begin: 预定成功显示层 -->
+        <div id="msg_yuding" class="mod layer">
+            <p>您已预订成功<p>
+        </div>
+        <!-- End: 预定成功显示层 -->
+    </div>  
+</div>
+<script type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" ></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" ></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/game/projects/faka/js/nui.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/game/widget/usernamelist/username-list-min.js"></script>
+<script type="text/javascript" src="http://img2.cache.netease.com/game/projects/faka/js/common_v1.0.3.js"></script>
+
+<script type="text/javascript" src="http://img1.cache.netease.com/common/libs/jquery/1.8.3/jquery.noconflict.min.js"></script>
+<script type="text/javascript" src="/js/cardlist-0.1.0.js"></script>
+
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0516010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0516010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    _ntes_nacc = "game"; //站点ID。
+    neteaseTracker();
+</script>
+
+</body>
+</html>

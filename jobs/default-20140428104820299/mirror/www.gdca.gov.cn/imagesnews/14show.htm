@@ -1,0 +1,105 @@
+<HTML><HEAD><TITLE>active</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE type=text/css>
+BODY {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 0px; BACKGROUND-COLOR: #FFFFFF
+}
+</STYLE>
+
+<SCRIPT language=Javascript>
+   var bannerAD=new Array();
+   var bannerADlink=new Array();
+   var bannerADtarget=new Array();
+   var adNum=0;
+
+   bannerAD[0]="images/140305/01.jpg";
+   bannerADlink[0]="/news/2014/11.asp";
+   bannerADtarget[0]="gdca";
+
+   bannerAD[1]="images/140305/02.jpg";
+   bannerADlink[1]="/news/2014/11.asp";
+   bannerADtarget[1]="gdca";
+
+   bannerAD[2]="images/140305/03.jpg";
+   bannerADlink[2]="/news/2014/11.asp";
+   bannerADtarget[2]="gdca";
+
+   bannerAD[3]="images/140214/01.jpg";
+   bannerADlink[3]="/news/2014/10.asp";
+   bannerADtarget[3]="gdca";
+
+   bannerAD[4]="images/140214/02.jpg";
+   bannerADlink[4]="/news/2014/10.asp";
+   bannerADtarget[4]="gdca";
+
+   bannerAD[5]="images/140214/03.jpg";
+   bannerADlink[5]="/news/2014/10.asp";
+   bannerADtarget[5]="gdca";
+
+   bannerAD[6]="/news/images/141401.jpg";
+   bannerADlink[6]="/news/2014/14.asp";
+   bannerADtarget[6]="gdca";
+
+   bannerAD[7]="/news/images/141402.jpg";
+   bannerADlink[7]="/news/2014/14.asp";
+   bannerADtarget[7]="gdca";
+
+   bannerAD[8]="/news/images/141403.jpg";
+   bannerADlink[8]="/news/2014/14.asp";
+   bannerADtarget[8]="gdca";
+
+   bannerAD[9]="/news/images/141601.jpg";
+   bannerADlink[9]="/news/2014/16.asp";
+   bannerADtarget[9]="gdca";
+
+   bannerAD[10]="/news/images/141602.jpg";
+   bannerADlink[10]="/news/2014/16.asp";
+   bannerADtarget[10]="gdca";
+   
+   var preloadedimages=new Array();
+   for (i=1;i<5;i++){
+preloadedimages[i]=new Image();
+      preloadedimages[i].src=bannerAD[i];
+   }
+
+function setTransition(){
+   if (document.all){
+      bannerADrotator.filters.revealTrans.Transition=Math.floor(Math.random()*23);
+      bannerADrotator.filters.revealTrans.apply();
+   }
+}
+
+function playTransition(){
+   if (document.all)
+      bannerADrotator.filters.revealTrans.play()
+}
+
+function nextAd(){
+   if(adNum<bannerAD.length-1)adNum++ ;
+      else adNum=0;
+   setTransition();
+   document.images.bannerADrotator.src=bannerAD[adNum];
+   playTransition();
+   theTimer=setTimeout("nextAd()", 4000);
+}
+
+function jump2url(){
+   jumpUrl=bannerADlink[adNum];
+   jumpTarget='_blank';
+   if (jumpUrl != ''){
+      if (jumpTarget != '')window.open(jumpUrl,jumpTarget);
+      else location.href=jumpUrl;
+   }
+}
+function displayStatusMsg() {
+   status=bannerADlink[adNum];
+   document.returnValue = true;
+}
+</SCRIPT>
+
+
+</HEAD>
+<BODY>
+<a onMouseOver="displayStatusMsg();return document.returnValue" href="javascript:jump2url()" onFocus="if(this.blur)this.blur()"><img style="FILTER:revealTrans(duration=1,transition=12)" src="images/140305/01.jpg" width="454" height="290" border="0" name=bannerADrotator></a>                  <script language=JavaScript>nextAd()</script>
+</BODY></HTML>
+

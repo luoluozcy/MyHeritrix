@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<head>
+  
+
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <title>《大话外传新篇》游戏客户端下载-《大话外传新篇》官方网站--网易第二代无商城网游</title>
+  <meta name="keywords" content="战歌,新大外公测,大话西游之战歌,大话西游之战歌官网,战歌官网,新大外官网,大话外传新篇,新大外好玩,无商城,免费网游" />
+  <meta name="description" content="《大话外传新篇》是网易首款免费无商城网游，继承了大话系列正统2D回合血脉，于2013年8月开放测试。新大外结合四大全新特色，推出“零负担裸游”理念，提倡脱身游戏负担，实现无压游戏愿景！" />
+  <meta name="robots" content="all" />
+  <meta name="author" content="网易，NetEase Inc." />
+  <meta name="copyright" content="网易，NetEase Inc." />
+  <meta name="pmid" content="273048" />
+  <meta name="editor" content="Willson" />
+  <meta name="designer" content="tangzhenkai" />
+  <meta name="front-end technicist" content="lam,eyfan" />
+  
+  <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/xdw/qt/13/0909_download/css/bass.css" media="all" />
+  <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/xdw/qt/13/0909_download/css/index.css" media="all" />
+  
+  <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/xdw/qt/13/0909_download/css/download.css" media="all" />
+  
+  <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/comm/js/nie/util/qUrs/base.css" media="all" />
+  <!--[if lte IE 8]>
+  <script charset="gb2312" src="http://res.nie.netease.com/xdw/qt/13/0909_download/js/html5.js"></script>
+  <![endif]-->
+  <!-- jquery mix NIE (最新版本）-->
+  <script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>    
+  <script charset="gb2312" src="http://res.nie.netease.com/xdw/qt/13/0909_download/js/index.js"></script> 
+<script language="javascript" type="text/javascript" src="http://xdw.163.com/update_list_xyw.js"></script>
+  <script type="text/javascript">
+  nie.config.copyRight.setNormal();
+$(function(){
+	nie.use(["nie.util.qUrs"],function(){
+		$(function(){
+			var qUrs=new nie.util.qUrs({
+				holder:"#f1",//容器选择器，默认为"div.NIE-quickReg"
+				"type":1//类别 1:邮箱注册需要验证码;2:邮箱注册不需要验证码;			
+				//"msgType":1//提交后信息类别 1:弹框(默认);2:切换层(iframe专用)
+			});
+			var qUrs2=new nie.util.qUrs({holder:"#f2",type:2,msgType:2});
+		});
+	});
+	$.getScript('http://xdw.163.com/download/xyw_client_ver.js',function(){
+		$("#mini-version").html(mini_client_info["version"])
+		$("#mini-update_date").html(mini_client_info["update_date"])
+		$("#mini-md5").html(mini_client_info["md5"])
+		$("#mini-size").html(mini_client_info["size"])
+		$("#mini-link").attr("href",mini_client_info["link"])
+		$("#version").html(full_client_info["version"])
+		$("#update_date").html(full_client_info["update_date"])
+		$("#md5").html(full_client_info["md5"])
+		$("#size").html(full_client_info["size"])
+		$("#link").attr("href",full_client_info["link"])
+		$(".regWdDownload").attr("href",mini_client_info["link"])
+		$(".regWzDownload").attr("href",full_client_info["link"])
+	})
+})
+
+  </script>
+	<style>
+	ul.qr-tab li{background:#f7f7f7;color:#e96d2e;width:131px}
+	ul.qr-tab li:hover{color:#e96d2e}
+	ul.qr-tab li.qr-tab-current{color:#fff}
+	ul.qr-tab li.qr-tab-current {background:#e96d2e}
+	.NIE-quickReg ul.qr-tab{border-bottom: 1px #e96d2e solid;width:262px}
+	.NIE-quickReg form{margin-left:25px;_margin-left:12px}
+	.NIE-quickReg dd.qr-submit input{margin-top:10px}
+	.qr-noEmail a:hover{color:#e96d2e}
+	</style>
+</head>
+<body>
+<div id="NIE-topBar"></div>
+
+<div id="wrap">
+<div id="wrap-bg1">
+<div id="wrap-bg2">
+<article id="main">
+
+<header class="fbanner">
+<h1 class="hidden">新大话外传 网易免费无商城回合</h1>
+
+<nav>
+<ul class="flink">
+<li class="flink_1"><a href="http://xdw.163.com/index.html">首页</a></li>
+<li class="flink_2"><a href="http://xdw.163.com/news/xw.html">新闻中心</a></li>
+<li class="flink_3"><a href="http://xdw.163.com/feature/">游戏特色</a></li>
+<li class="flink_4"><a href="http://xdw.163.com/newbie/">新手指南</a></li>
+<li class="flink_5"><a href="http://xdw.baike.163.com/ziliao/" target="_blank">大话百科</a></li>
+<li class="flink_6"><a href="http://xdw.163.com/download/">下载专区</a></li>
+<li class="flink_7"><a href="http://xdw.gm.163.com/" target="_blank">客户服务</a></li>
+<li class="flink_8"><a href="http://xdw.netease.com/" target="_blank">论坛</a></li>
+</ul>
+</nav>
+
+<a href="http://xdw.163.com/" class="fBtn fBtn_logo">新大话外传 网易免费无商城回合</a>
+
+<!--<a href="" class="fBtn fBtn_detail">点击查看详情</a>-->
+</header>
+<section class="fLeft">
+<header class="hidden">下载中心</header>
+<div class="leftNav">
+<h3 class="hidden">下载中心</h3>
+<div class="title"></div>
+<ul id="subNav">
+<li class="select"><a href="javascript:">游戏下载</a></li>
+<li><a href="javascript:">补丁下载</a></li>
+<li><a href="http://cc.gdl.netease.com/CC_Setup.exe">CC语音下载</a></li>
+</ul>
+</div>
+<div class="listBox" id="game">
+	<!--div class="wdBox">
+		<h2 class="veria">微端下载</h2>
+		
+		<p><span class="red bold">5秒下载3M微端</span>，可以帮您快速进入大话外传新篇的游戏世界，进入游戏后可以立刻体验游戏内容，其资源即玩即下载。智能技术会自动选择您当前所需的缺失资源来进行下载。初次体验这部分内容时，您只会看到显示上的略微延迟。</p>
+		<div class="Box clr">
+			<a class="wdDownload" href="http://xyw.gdl.netease.com/DHWZOnline-4.0.243.Mini.exe" target="_blank"></a>
+			<div class="info">
+				<span class="version">客户端版本：4.0.243</span>
+				<span class="size">大小：3.29 MB</span><br/>
+				<span class="MD5">MD5：0105a96095959a338f1b419132ee9a68</span><br/>
+				<a class="whatsMD5">什么是 MD5？</a>
+				<a href="http://xdw.163.com/download/HashCalc.exe" target="_blank">下载MD5校验软件</a>
+				<span class="MD5info">这是一个用来估算MD5校验码的软件，使用的方法很简单，只需把《大话西游外传》客户端拖放到本软件的窗口中，就可以得到相应的MD5校验码。</span>
+			</div>
+		</div>
+	</div>
+	<div class="wzBox">
+		<h2 class="veria">完整版客户端下载</h2>
+		<div class="Box clr">
+			<a class="wzDownload" href="http://xyw.gdl.netease.com/DHWZOnline-4.0.243-Ins.exe" target="_blank"></a>
+			<div class="info">
+				<span class="version">客户端版本：4.0.243</span>
+				<span class="size">大小：2.52 GB</span><br/>
+				<span class="MD5">MD5：6047c241ca6542de350f2f1f9b6f2226</span><br/>
+				<a class="whatsMD5">什么是 MD5？</a>
+				<a href="http://xdw.163.com/download/HashCalc.exe" target="_blank">下载MD5校验软件</a>
+				<span class="MD5info">这是一个用来估算MD5校验码的软件，使用的方法很简单，只需把《大话西游外传》客户端拖放到本软件的窗口中，就可以得到相应的MD5校验码。</span>
+			</div>
+		</div>
+	</div-->
+    <div class="wdBox">
+		<h2 class="veria">微端下载</h2>
+		
+		<p><span class="red bold">5秒下载3M微端</span>，可以帮您快速进入大话外传新篇的游戏世界，进入游戏后可以立刻体验游戏内容，其资源即玩即下载。智能技术会自动选择您当前所需的缺失资源来进行下载。初次体验这部分内容时，您只会看到显示上的略微延迟。</p>
+		<div class="Box clr">
+			<a class="wdDownload" id="mini-link" target="_blank"></a>
+			<div class="info">
+				<span class="version">客户端版本：<em id="mini-version"></em></span>
+				<span class="size">大小：<em id="mini-size"></em></span><br/>
+				<span class="MD5">MD5：<em id="mini-md5"></em></span><br/>
+				<a class="whatsMD5">什么是 MD5？</a>
+				<a href="http://xdw.163.com/download/HashCalc.exe" target="_blank">下载MD5校验软件</a>
+				<span class="MD5info">这是一个用来估算MD5校验码的软件，使用的方法很简单，只需把《大话西游外传》客户端拖放到本软件的窗口中，就可以得到相应的MD5校验码。</span>
+			</div>
+		</div>
+	</div>
+	<div class="wzBox">
+		<h2 class="veria">完整版客户端下载</h2>
+		<div class="Box clr">
+			<a class="wzDownload" id="link" target="_blank"></a>
+			<div class="info">
+				<span class="version">客户端版本：<em id="version"></em></span>
+				<span class="size">大小：<em id="size"></em></span><br/>
+				<span class="MD5">MD5：<em id="md5"></em></span><br/>
+				<a class="whatsMD5">什么是 MD5？</a>
+				<a href="http://xdw.163.com/download/HashCalc.exe" target="_blank">下载MD5校验软件</a>
+				<span class="MD5info">这是一个用来估算MD5校验码的软件，使用的方法很简单，只需把《大话西游外传》客户端拖放到本软件的窗口中，就可以得到相应的MD5校验码。</span>
+			</div>
+		</div>
+	</div>
+	<div class="gxBox clr">
+		<h2 class="veria">如果更新遇到问题</h2>
+		<p><span class="red bold">无法生成更新程序？</span><br/>
+		无法生成更新程序，请下载apatch2.exe文件到游戏安装目录（默认为：C:\Program Files\大话西游之大话外传新篇）覆盖原文件即可自动更新。</p>
+		<div class="Box clr">
+			<a class="gxDownload" href="http://xyw.gdl.netease.com/apatch2.exe" target="_blank"></a>
+			<div class="gxinfo">
+				<span class="MD5">MD5：2b5d2061fbe97789433d6e3b200039cd</span><br/>
+			</div>
+		</div>
+	</div>
+	<div class="clr">
+		<p><span class="red bold">不能正常更新客户端？</span><br/>
+		自动及手动下载补丁后仍未能正常更新客户端的，请下载以下两个文件到游戏安装目录（默认为：C:\Program Files\大话西游之大话外传新篇），覆盖原文件。</p>
+		<div class="Box clr">
+			<a class="zgDownload" href="http://xyw.gdl.netease.com/bin_script.wdf" target="_blank"></a>
+			<div class="gxinfo">
+				<span class="MD5">MD5：6a90d947d9ff47aeb0654217f020b622</span><br/>
+			</div>
+		</div>
+		<div class="Box clr">
+			<a class="zgpDownload" href="http://xyw.gdl.netease.com/zgmain.bin" target="_blank"></a>
+			<div class="gxinfo">
+				<span class="MD5">MD5：cee1c167395f35924a2daafd41f07121</span><br/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="listBox" id="patchs">
+	<div class="wdBox clr">
+		<h2 class="veria">补丁下载说明</h2>
+		<ol>
+			<li>以下下载内容仅提供给在游戏升级补丁时无法自动更新的部分玩家使用，如果您的更新无问题则无须使用以下补丁。</li>
+			<li>请手动下载所需补丁，并存放于游戏目录（默认为：C:\Program Files\大话外传新篇）下的patch文件夹中，重新启动游戏后即可自动更新。</li>
+		</ol>
+	</div>
+	<div class="wzBox clr">
+		<h2 class="veria">补丁下载</h2>
+			<script language="javascript" type="text/javascript">
+                        <!--
+                            gen_html();
+                        //-->
+                        </script>
+		<a target="_blank" id="seeAllPatchs">查看所有历史补丁>></a>
+	</div>
+	<div class="gxBox clr">
+		<h2 class="veria">如果更新遇到问题</h2>
+		<p><span class="red bold">无法生成更新程序？</span><br/>
+		无法生成更新程序，请下载apatch2.exe文件到游戏安装目录（默认为：C:\Program Files\大话西游之大话外传新篇）覆盖原文件即可自动更新。</p>
+		<div class="Box clr">
+			<a class="gxDownload" href="http://xyw.gdl.netease.com/apatch2.exe" target="_blank"></a>
+			<div class="gxinfo">
+				<span class="MD5">MD5：2b5d2061fbe97789433d6e3b200039cd</span><br/>
+			</div>
+		</div>
+	</div>
+	<div class="gxBox clr">
+		<p><span class="red bold">不能正常更新客户端？</span><br/>
+		自动及手动下载补丁后仍未能正常更新客户端的，请下载以下两个文件到游戏安装目录（默认为：C:\Program Files\大话西游之大话外传新篇），覆盖原文件。</p>
+		<div class="Box clr">
+			<a class="zgDownload" href="http://xyw.gdl.netease.com/bin_script.wdf" target="_blank"></a>
+			<div class="gxinfo">
+				<span class="MD5">MD5：6a90d947d9ff47aeb0654217f020b622</span><br/>
+			</div>
+		</div>
+		<div class="Box clr">
+			<a class="zgpDownload" href="http://xyw.gdl.netease.com/zgmain.bin" target="_blank"></a>
+			<div class="gxinfo">
+				<span class="MD5">MD5：cee1c167395f35924a2daafd41f07121</span><br/>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+<section class="fRight">
+<div class="fBox fBox1">
+<form class="fsearch" action="http://www.yodao.com/search" method="get" target="_blank">
+<input type="hidden" value="gbk" name="ue">
+<input type="hidden" value="sdw.163.com" name="keyfrom">
+<input type="hidden" value="sdw.163.com" name="site">
+<input id="q" name="q" type="text" class="search_key" value="请输入关键字" onClick="if(this.value == '请输入关键字')this.value = ''">
+<input class="submit" type="submit" value="">
+</form>
+</div>
+<aside class="fBox2">
+<a href="http://xdw.163.com/newbie/" target="_blank" class="fBtn fBtn_Sign">新手指南</a>
+<a href="http://xdw.163.com/libao/" target="_blank" class="fBtn fBtn_Gift">礼包</a>
+<a href="http://pay.163.com/index" target="_blank" class="fBtn fBtn_Charge">充值</a>
+</aside>
+<div class="fBox3">
+      
+<a href="http://pk.163.com/news/2014/4/24/8444_435293.html" target="_blank">
+<img src="http://img.nie.163.com/images/2014/4/24/2014-04-24_440673.jpg" width="200" height="75" title="跨服家族赛冠军宝座虚位以待！">
+</a>
+      
+      
+<a href="http://xdw.netease.com/viewthread.php?tid=599802" target="_blank">
+<img src="http://img.nie.163.com/images/2014/4/22/2014-04-22_439489.jpg" width="200" height="75" title="家族真人秀活动开启">
+</a>
+      
+
+</div>
+<div class="fBox4">
+      
+<div class="fLeft">
+<a href="http://pk.163.com/show/2014/4/22/8472_434813.html" title="【家族真人秀】战无不胜:小塵埃" target="_blank">
+<img src="http://img.nie.163.com/images/2014/4/22/2014-04-22_439785.jpg" alt="" width="100" height="150" />
+</a>
+<p><a href="http://pk.163.com/show/2014/4/22/8472_434813.html" target="_blank">【家族真人秀】战无不胜:小塵埃</a></p>
+<p>【家族真人秀】战无不胜:小塵埃</p>
+</div>
+      
+      
+<div class="fLeft">
+<a href="http://pk.163.com/show/2014/4/22/8472_434805.html" title="【家族真人秀】普天同乐:似火年华" target="_blank">
+<img src="http://img.nie.163.com/images/2014/4/22/2014-04-22_439787.gif" alt="" width="100" height="150" />
+</a>
+<p><a href="http://pk.163.com/show/2014/4/22/8472_434805.html" target="_blank">【家族真人秀】普天同乐:似火年华</a></p>
+<p>【家族真人秀】普天同乐:似火年华</p>
+</div>
+      
+</div>
+</section>
+</article>
+
+<footer id="footer">
+<div id="NIE-copyRight"></div>
+</footer>
+
+</div>
+</div>
+</div>
+<!-- 飘窗开始 -->
+<div id="reg1"></div>
+<div id="reg2">
+	<a class="close"></a>
+	<a class="regWdDownload" href="http://xyw.gdl.netease.com/DHWZOnline-4.0.243.Mini.exe" target="_blank"></a>
+	<a class="regWzDownload" href="http://xyw.gdl.netease.com/DHWZOnline-4.0.243-Ins.exe" target="_blank"></a>
+	<a class="regLq" target="_blank"></a>
+	<!-- Start 大通行证.快速注册 -->
+<div id="f1" class="NIE-quickReg">
+<p class="NIE-quickReg-loading">注册网易通行证加载中,请稍候.</p>
+<input type="hidden" name="promark" value='xh10y9dc'>
+</div>
+<!-- End 大通行证.快速注册 -->
+		
+</div>
+<!-- 飘窗结束 -->
+<!-- 弹层开始 -->
+<div class="pop">
+<a class="close"></a>
+<iframe id="getCodeiFrame" src="" frameborder="0" allowtransparency="allowtransparency" scrolling="no" class="iIframe" width="250" height="115"></iframe>
+<p>进入游戏，ALT+E打开物品栏，在最后一栏找到聚宝盆，右键点击“聚宝盆”在“输入激活码序列号”处选择“大话外传新篇大礼包”,输入正确的序列号即可得到礼包！</p>
+</div>
+<div id="shade"></div>
+<!-- 弹层结束 -->
+<script type="text/javascript">
+	$('#seeAllPatchs').click(function(){$('.listBox table').css('height','auto');$(this).hide()});
+</script>
+<!-- 底部代码 Start -->
+
+<div id="botCode">
+
+<iframe id="download" name="download" width="0" height="0"></iframe>
+
+  <!-- 专有(如专题) 统计 Start -->
+
+<script type="text/javascript" src="http://res.nie.netease.com/pk/gw/11v1/ny/js/ny_public_v2.js"></script>
+
+<script type="text/javascript">
+
+$('#showMoreDownload').click(function(){$('#down-more').fadeIn();$(this).hide()})
+
+$('.whatsMD5').hover(function(){
+
+	$(this).siblings('.Md5info').fadeIn();
+
+},function(){
+
+	$(this).siblings('.Md5info').fadeOut();
+
+});
+
+</script>
+
+
+
+
+    <!-- AdForward I-Point:大外_下载页面 Begin --> 
+
+    <script language="JavaScript"> 
+
+	document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=68&s=KekD3ULhjjqk%2BY5c%2BaoTg%2Fcxpus%3D\" width=\"0\" height=\"0\" frameborder=\"0\"><\/iframe>"); 
+
+    </script> 
+
+    <!-- AdForward I-Point:大外_下载页面 End -->
+
+
+
+
+    <!-- AdForward I-Point:大外_快速注册 Begin --> 
+
+    <script language="JavaScript">
+function rand(num) {
+   return Math.floor(Math.random()*num)+1;
+}
+(function(point){
+	var username=function(paramName){
+		var pStr=window.location.search.toString(),
+		    r=new RegExp("[\?&]*"+paramName+"=([^&]+)"),
+		    m=pStr.match(r);
+		if(m) return m[1];
+		else return null;		
+	}("username");
+	if(username){
+		var iframe=document.createElement("iframe"),
+			s=document.getElementsByTagName("script")[0],
+			attrs={
+				src:"http://gad.netease.com/gad/point?point_id="+point+"&s=E8thQWMTbJhrYfcENGzi%2FvqbiU0%3D&cache="+rand(9999999)+"&urs="+username,
+				width:0,
+				height:0,
+				frameborder:0
+			};
+		for(var i in attrs){
+			iframe.setAttribute(i,attrs[i]);
+		}
+		s.parentNode.insertBefore(iframe, s);
+		iframe=s=attrs=null;
+	}
+	username=null;
+})(79);//好耶point值
+
+
+    </script> 
+
+    <!-- AdForward I-Point:大外_快速注册 End -->
+
+
+
+
+
+    <!-- AdForward I-Point:大外_下载按钮 Begin --> 
+
+    <script language="JavaScript"> 
+
+	document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=69&s=GDBu0Ujr1hQij1XvtBNtusW3vRM%3D\" width=\"0\" height=\"0\" frameborder=\"0\"><\/iframe>"); 
+
+
+    </script> 
+
+    <!-- AdForward I-Point:大外_下载按钮 End -->
+  <!-- 专有(如专题) 统计 End -->   
+
+<!-- 网盟监测代码 START -->
+<script type="text/javascript" src="http://union.netease.com/sys_js/pre_related.js"></script>
+<!-- 网盟监测代码 End -->
+</div>
+
+<!-- 底部代码 End -->
+</body>
+</html>

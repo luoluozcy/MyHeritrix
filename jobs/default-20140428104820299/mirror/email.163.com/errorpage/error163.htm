@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>网易免费邮箱 - 登录出错</title>
+</head>
+<body class="error">
+<script type="text/javascript">
+(function(){
+	var sDomain = 'http://mail.163.com';
+	var sErrKey = 'errorType';
+	var sUrl = window.location.href;
+	var sErrorCode = fGetQuery(sErrKey);
+	var sUsernameCheck = fGetQuery('errorUsername');
+
+	if(sErrorCode == '412'){ //412出错跳转单独处理
+		if(sUsernameCheck == null){
+			sUsernameCheck = '@163.com';
+		}
+		var sEntryUrl = "http://entry.mail.163.com/coremail/fcg/ntesdoor2?df=webmail163&from=web&style=-1&product=mail163&uid=" + sUsernameCheck;
+		top.location.href = "http://reg.163.com/clearlimit/check.jsp?username=" + sUsernameCheck + "&url=" + encodeURIComponent(sEntryUrl);
+	}else{
+		if (self != top) {  
+			window.top.indexLogin.showError(sErrorCode);
+		}else{
+			window.location.href = sDomain + '?' + sErrKey + '=' + sErrorCode + '&errorUsername=' + sUsernameCheck;
+		}
+	}
+
+	function fGetQuery(name, bNotEscape){
+		var sUrl = window.location.search.substr(1);
+		var r = sUrl.match(new RegExp("(^|&)" + name + "=([^&]*)(&|$)"));
+		if(bNotEscape){
+			return (r == null ? null : r[2]);
+		}else{
+			return (r == null ? null : unescape(r[2]));
+		}
+	}
+})();
+</script>
+    
+</body>
+</html>

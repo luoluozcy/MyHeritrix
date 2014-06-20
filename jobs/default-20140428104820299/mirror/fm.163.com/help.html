@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+<head>
+<title>网易闪电邮使用帮助—如何创建帐户、如何进行POP3服务器设置</title>
+<meta http-equiv="content-type" content="text/html;charset=gbk"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta http-equiv="content-script-type" content="text/javascript"/>
+<meta http-equiv="x-ua-compatible" content="ie=emulateie7"/>
+<meta name="author" content="netease"/>
+<meta name="version" content="1.0"/>
+<meta name="keywords" content="POP3服务器,收发邮件的软件,免费,邮件安全,电子邮箱设置,邮件服务软件,电子邮件客户端,网易邮箱客户端,企业邮箱,创建帐户,邮件同步,右键邮"/>
+<meta name="description" content="一款收发邮件的软件，提供各类邮件服务的免费邮件程序。如何绑定邮箱，如何进行电子邮箱设置，怎么导入通讯录，查看邮件丢了怎么办，邮箱积分查找。"/>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<script>
+	/**
+	* 全局变量
+	*/
+	var flag = true;//true代表可以走hashMonitor，在ulclick,liclick的时候设置为false
+	var lclsIndex = "zero"//记录下上一次ulclick元素的标识：比如first
+	var U = {};
+	U._$isIE = navigator.userAgent.indexOf("MSIE")>0;
+	U._$parseHash = function(_hash){
+		if(!_hash||!_hash.length) return;
+		if(_hash.indexOf('#')!=-1) _hash = _hash.slice(1, _hash.length);
+		var _arr = _hash.split('&'), _res = {};
+		for(var i=0,_a,_idx;_a=_arr[i];i++){
+		_idx = _a.indexOf('=');
+		if(_idx != -1) _res[_a.slice(0,_idx)] = _a.slice(_idx+1);
+		}
+		return _res;
+		};
+		var HashMonitor = function(_onhashchange){
+		this.__cbChange = _onhashchange;
+		that = this;
+		window.setInterval(function(){
+		that.__monitor();
+		}, 50);
+	};
+	HashMonitor.prototype.__monitor = function(){
+		var _hash = location.hash;
+		if(!flag){//这里判断是否是点击了页面元素而不是后退或回车
+		this.__hash=_hash;//如果是点击了页面元素就把hash设置成一样(忽略了hash的改变)，不走hashmonitor
+		window.setTimeout(function(){//100毫秒后再把flag设置回来，到时候可以走hashmonitor，只要别点击页面元素
+			flag = true;
+		},100)
+		}
+		if(this.__hash!=_hash&&flag){//根据flag和hash的情况判断走不走hashmonitor
+			this.__hash = _hash;
+			this.__cbChange(this.__hash);
+			}
+		};
+		var _hashMonitor = new HashMonitor(onHashChange);
+		function onHashChange(_hash){
+		if(!_hash)
+			return;
+		var _hashObj = U._$parseHash(_hash);
+		selectClass(_hashObj.cls,parseInt(_hashObj.act));
+	}
+	/**
+	* fucntion 根据hash更换显示状态
+	* @param {String} _clsIndex hash的第一个值代表第一层目录
+	* @param {String} _actIndex hash的第二个值代表第一层目录子目录的序号
+	* @return {Void} undifiend
+	*/
+	function selectClass(_clsIndex,_actIndex){
+		var _clsElement = document.getElementById(_clsIndex);
+		var _actElements = _clsElement.getElementsByTagName('li');
+		if(_clsIndex!=lclsIndex){//如果ul层没变相应的ul点击也不触发
+		lclsIndex = _clsIndex;//把新的ul样式赋值给全局变量记住
+		if(U._$isIE){
+			_clsElement.children[0].fireEvent("onclick");
+		}else{
+			var _clickevent=document.createEvent("MouseEvents");
+			_clickevent.initEvent('click', false, true);
+			_clsElement.children[0].dispatchEvent(_clickevent);
+		}
+		}
+		if(U._$isIE){
+			_actElements[_actIndex].fireEvent("onclick");
+		}else{
+			var _clickevent=document.createEvent("MouseEvents");
+			_clickevent.initEvent('click', false, true);
+			_actElements[_actIndex].dispatchEvent(_clickevent);
+		}
+	}
+	/**
+	* fucntion 初始化方法，给节点绑定onclick事件
+	* aclick方法就是调用_ulClick方法，绑定的对象不同
+	*/
+	function init(){
+		var _arr1 = document.getElementById('mainUl').getElementsByTagName('a');
+		for(var index=0;index<_arr1.length;index++){
+			if(U._$isIE){
+				_arr1[index].attachEvent('onclick',_ulClick);
+			}else{
+				_arr1[index].addEventListener('click',_ulClick,false);
+			}
+		}
+		var _arr2 = document.getElementById('mainUl').getElementsByTagName('ul');
+		for(var i=0;i<_arr2.length;i++){
+		var _indexArr = _arr2[i].getElementsByTagName('li');
+		var _length = _indexArr.length;
+		for(var j=0;j<_length;j++){
+		if(U._$isIE)
+		_indexArr[j].attachEvent('onclick',_liClick);
+		else
+		_indexArr[j].addEventListener('click',_liClick,false);
+		}
+		}
+		if(U._$isIE){
+			_arr1[0].fireEvent("onclick");
+		}else{
+			var _clickevent=document.createEvent("MouseEvents");
+			_clickevent.initEvent('click', false, true);
+			_arr1[0].dispatchEvent(_clickevent);
+		}
+	}
+	/**
+	* fucntion 点击ul元素（第一层目录）的方法
+	* @return {Void} undifiend
+	*/
+	function _ulClick(){
+		var event = window.event||arguments[0], element = event.target||event.srcElement;
+		if(element.className == ""){
+			if(U._$isIE){
+				element.parentNode.fireEvent("onclick");
+			}else{
+				var _clickevent=document.createEvent("MouseEvents");
+				_clickevent.initEvent('click', false, true);
+				element.parentNode.dispatchEvent(_clickevent);
+			}
+			return;
+		}
+		var _arr = document.getElementById('mainUl').getElementsByTagName('ul');
+		var _arr4 = document.getElementById('mainUl').getElementsByTagName('a');
+		for(var j =0 ; j<_arr.length; j++)
+			_arr[j].className = "sub-lst f-dn";
+		for(var hh=0;hh<_arr4.length;hh++)
+			_arr4[hh].className = 'sprite';
+		element.className = "sprite js-crt";
+		var locationElm = document.getElementById('location');
+		locationElm.innerHTML = element.innerHTML;
+		if(element.parentNode.id == 'first'){			
+			var sublocation = document.getElementById('sublocation');
+			sublocation.innerHTML = '';
+			var _allDiv = document.getElementById('allDiv').getElementsByTagName('div');
+			for(var j=0;j<_allDiv.length;j++){
+				_allDiv[j].className="f-dn";
+			}
+			document.getElementById('first0').className="show";
+		} 
+		else {
+			locationElm.innerHTML +=' >';			
+			var _ul = element.parentNode.getElementsByTagName("ul")[0];
+			_ul.className = "sub-lst";
+			var _li = _ul.getElementsByTagName("li")[0]
+			if(U._$isIE){
+				_li.fireEvent("onclick");
+			}else{
+				var _clickevent=document.createEvent("MouseEvents");
+				_clickevent.initEvent('click', false, true);
+				_li.dispatchEvent(_clickevent);
+			}
+			flag = false;
+		}
+	}
+	/**
+	* fucntion 点击li元素（第二层目录）的方法
+	* @return {Void} undifiend
+	*/
+	function _liClick(){
+		var event = window.event||arguments[0], element = event.target||event.srcElement;
+		if(U._$isIE)
+			var _arr = element.parentElement.getElementsByTagName('li');
+		else
+			var _arr = element.parentNode.getElementsByTagName('li');
+		var _allDiv = document.getElementById('allDiv').getElementsByTagName('div');
+		for(var j=0;j<_allDiv.length;j++){
+			_allDiv[j].className="f-dn";
+		}
+		if(U._$isIE)
+			var _indexClassName = element.parentElement.parentElement.id;
+		else
+			var _indexClassName = element.parentNode.parentNode.id;
+		var index = 0;
+		for(var i=0;i<_arr.length;i++){
+			_arr[i].className="hander vh";
+			if(element==_arr[i]){
+				index = i;
+				document.getElementById(_indexClassName+i).className="show";
+			}
+		}
+		element.className="fc1 bold hander vv crt";
+		var sublocation = document.getElementById('sublocation');
+		sublocation.innerHTML = element.innerHTML;
+		location.href="#cls="+_indexClassName+"&act="+index;
+		flag = false;
+	}
+	/**
+	* function 点击a元素调用点击ul的方法
+	*/
+	function _aClick(){
+		var event = window.event||arguments[0], element = event.target||event.srcElement;
+		if(U._$isIE){
+			element.parentNode.children[1].fireEvent("onclick");
+		}else{
+			var _clickevent=document.createEvent("MouseEvents");
+			_clickevent.initEvent('click', false, true);
+			element.parentNode.children[1].dispatchEvent(_clickevent);
+		}
+	} 
+</script>
+</head>
+<body id="help" onload="init()">
+<noscript>请使用支持脚本的浏览器！</noscript>
+<div class="g-doc log">
+      <a name="top"></a> 
+	<div class="g-hd">  
+		<div class="m-top clearfix">
+	    	<div class="m-logo"><a href="index.html"><em>网易闪电邮——fm.163.com</em></a></div>  
+	        <ul class="m-link">
+	      <li><a href="http://email.163.com/" target="_blank">免费邮</a>|</li>
+	      <li><a href="http://vipmail.163.com/" target="_blank">VIP邮箱</a>|</li>
+              <li><a href="http://qiye.163.com/" target="_blank">企业邮</a>|</li>
+	   <li><a href="http://fm.163.com/client.htm" target="_blank">客户端</a></li>
+	        </ul> 
+
+	        <div class="m-nav">
+	        	<ul>
+	            	<li class="fst crt"><a href="index.html"><em>首页</em></a></li>
+	                <li><a href="help.html"><em>使用帮助</em></a></li>
+	                <li><a href="log.html"><em>更新日记</em></a></li>
+	                <li><a href="http://fm.163.com/bbs/" target="_blank"><em>官方论坛</em></a></li>
+	            </ul>
+	        </div> 
+        </div>        
+		<div class="tlt-bar"><div ><span id="location">快速入门</span> <span id="sublocation"></span></div></div>
+    </div> 
+	<div class="g-bd clearfix"> 
+        <div class="g-mn">
+        	<div class="g-mnc">
+            	     <div id="allDiv">
+						<div id="first0">
+							<img src="images/fastin.png" />
+                                                        <p class="topbtn"><a href="#top" class="w-totop sprite">返回顶部</a></p>
+						</div>
+                        <div class="show" id="second0">
+						    <span class="f-dn">会议邀请</span>   	
+						    <p class="help-p1">入口：1.菜单栏-文件-新建会议邀请 2.工具栏-写信下拉菜单-新建会议邀请 3.日程管理-新建会议。</p>
+						    <p class="help-p1">发送和接收会议邀请邮件，会自动添加会议到日程，并且完全兼容outlook等客户端的会议格式。</p>
+							<p class="help-p1"><img src="http://fm.163.com/images/help/hyyq.jpg"></p>
+						</div>
+						<div class="show" id="second1">
+							<span class="f-dn">标签邮件</span>																				
+							<p class="help-p1">可将邮件设置为默认的重要邮件，也可以新建标签，每种不同的分类对应一种颜色。可在左侧标签邮件夹里查看标签邮件，或者通过标签排序。</p>
+							<p class="help-p1"><img src="http://fm.163.com/images/help/bq.jpg"></p>
+						</div>
+						<div class="show" id="second2">
+							<span class="f-dn">复制/移动/删除邮件</span>							
+							<p class="help-p1">选中邮件夹中的一个或多个邮件，单击邮件菜单下的“复制”“移动”“删除”或者通过选中邮件鼠标右键“复制”“移动”“删除”，即可以将邮件复制、移动到各邮件夹，也可以执行删除、彻底删除等操作。</p>
+                            <p class="help-p1">您还可以直接拖曳邮件到其他邮件夹。</p>
+						</div>
+						<div class="show" id="second3">
+							<span class="f-dn">备份/导入邮件</span>							
+							<p class="help-p1">闪电邮提供了快捷方便的邮件备份与导入功能，所生成的备份文件将至少比原邮件大小缩小50%，为您节省更多的磁盘空间。</p>
+							<p class="help-p1"><strong>备份邮件：</strong><br>您可以在主菜单内的邮箱子菜单中找到“备份”选项。</p>
+							<p class="help-p1"><img src="http://fm.163.com/images/help/youjianbeifen1.jpg"></p>
+							<p class="help-p1">在此，您可以选择您需要备份的文件夹。选定后，点击下一步进入备份时段选择。</p>
+						    <p class="help-p1"><img src="http://fm.163.com/images/help/youjianbeifen2.jpg"></p>
+						    <p class="help-p1">在此选项卡内，您可以根据自己的需求，选择需要备份邮件的时间段。闪电邮默认将邮件备份保存在非系统盘。</p>
+							<p class="help-p1">注：当您备份后的邮件备份文件大小超过2G后将形成***_Part1. fmbu和***_Part2.fmbu 文件，请不要更改此文件后缀(_Part1. Fmbu)。否则将不能完成导入操作。</p>
+						    <p class="help-p1"><strong>导入邮件备份：</strong><br>您可以在主菜单内的“邮箱”子菜单中找到“导入”--“闪电邮邮件备份”。</p>
+						    <p class="help-p1"><img src="http://fm.163.com/images/help/youjianbeifen3.jpg"></p>
+					        <p class="help-p1">注：如果您备份后的邮件备份文件大小超过2G后将形成***_Part1. fmbu和***_Part2.fmbu 文件，导入时只需要选择 “***_Part1. Fmbu”一个文件即可将全部数据导入 。</p>
+   					    </div>
+						<div class="show" id="second4">
+							<span class="f-dn">邮件排序</span>							
+							<p class="help-p1">单击主窗口邮件列表框顶部的列标题栏，可对邮件列表进行重排序。您可以根据自己的需要，按照已读/未读、邮件标记、收件人、主题、日期、邮件大小等不同方式进行排序。</p>
+						</div>
+						<div class="show" id="second5">
+							<span class="f-dn">邮件分类</span>							
+							<p class="help-p1">在主界面菜单栏的“邮箱”或帐号右键菜单中选择“过滤器设置”，根据需要设置对邮件的过滤规则，即可对邮件进行分类。注意：IMAP协议帐号不支持在闪电邮中设置过滤规则，请登录网页邮箱进行设置。</p>
+							<p class="help-p1"><img src="http://fm.163.com/images/help/youjianfenlei.jpg"></p>
+						</div>
+						<div class="show" id="second6">
+							<span class="f-dn">信纸与签名</span>
+	                        <p class="help-p1">闪电邮为您提供了个性化的信纸功能，写信时，您可以根据自己的情感选择各种各样精致的信纸。</p>
+	                        <p class="help-p1">闪电邮支持普通文本及Html形式的签名，写信时，您可以根据自己的喜好插入图文并茂的签名。</p>
+							<p class="help-p1">邮箱设置中的信纸与签名设置，可以为某个邮箱设置这个邮箱默认的信纸和默认的签名，这样，写信的时候，默认信纸和默认签名将被自动插入。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/xinzhiyuqianming.jpg"></p>
+						</div>
+						
+						 
+						<div id="third0" class="show">
+							<span class="f-dn">创建帐户</span>							
+							<p class="help-p1">　　闪电邮安装完毕后，第一次运行时，系统会自动启动向导程序，引导用户创建第一个邮箱帐户。您可以输入您的任一<strong>网易邮箱</strong>或<strong>其他诸如QQ邮箱、GMAIL、SINA邮箱</strong>等等支持POP3协议或IMAP4协议的邮箱，进行帐户创建。 <br>　　登入闪电邮主界面后，您可以在【邮箱】菜单下的【新建邮箱帐户】建立您其他多个邮箱帐户。</p>
+							<p class="help-p2"><strong>第一步:</strong><br>输入邮箱地址和密码，点击下一步。</p>
+							<p class="help-t2">系统将自动判断您是网易邮箱还是其他邮箱，网易邮箱进入创建绿色通道（通过网易闪电邮自主开发的专有协议进行创建），其他邮箱进入一般创建通道。</p>
+							<p class="help-p1"><img src="http://fm.163.com/images/help/2.1.1chuangjian.jpg"></p>
+							<p class="help-p2"><strong>第二步:</strong><br>如果是网易邮箱（包括163、126、yeah.net免费邮和vip、188收费邮箱），您将进入创建模式选择界面，选择后点击【创建】即完成。</p>
+							<p class="help-t2">如果是其他邮箱，诸如QQ邮箱、GMAIL、SINA邮箱、各种企业邮箱等等，您将自动进入邮箱帐户的接收服务器和发送服务器设置界面，填写完成即完成创建。</p>
+							<p class="help-t2">注：</p>
+							<p class="help-t2">（1）进入该页面时，闪电邮将自动搜索适合您的邮箱设置。</p>
+							<p class="help-t2">（2）当您的邮箱既可以用IMAP4协议创建又可以用POP3协议创建时，我们将优先提示您使用POP3协议，您可以根据自身对使用的邮箱的了解和需求，选择您需要使用的协议进行创建。</p>
+							<p class="help-t2">（3）某些特殊邮箱可能无法搜索到设置，或者搜索到的设置出现偏差而无法正常收发信，您可以查阅“各类邮箱创建流程”或者邮件至<a href="mailto:MailClient@188.com">MailClient@188.com</a>询问详细配置。</p>
+						</div>
+						<div class="show" id="third1">
+							<span class="f-dn">帐户设置</span>
+			    			<p class="help-p1">点击“邮箱菜单&mdash;邮箱设置”或右键“邮箱帐户选择邮箱设置”，可对邮箱帐户进行各项帐户相关的设置。</p>
+                            <p class="help-p1">邮箱帐户属性设置是针对各个帐户的，如果有不止一个邮箱帐户，请分别设置。</p>
+                            <p class="help-p1"><strong>帐户设置&mdash;&mdash;POP3邮箱帐户设置</strong></p>
+                            <p class="help-p1">创建帐户时使用POP3协议进行创建的帐户，可以设置邮箱帐户名、邮箱地址、密码、回复邮件地址、邮件收发服务器。</p>
+                            <p class="help-p1">注意：<br>（1）POP3邮箱的服务器等信息在创建帐户过程中，闪电邮会帮助自动搜索，如果某些邮箱搜索无结果或者设置好以后收发信有问题（可能是搜索结果存在误差），您可以网上搜索您使用邮箱的服务器或者来信查询。
+                            <br>（2）填写了回复邮件地址后，本邮箱帐户所发送的邮件，对方回复时都会回复到这里设置的回复邮件地址中。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/zhanghushezhi1.jpg"></p>
+                            <p class="help-p1"><strong>帐户设置&mdash;&mdash;IMAP邮箱帐户设置</strong></p>
+                            <p class="help-p1">创建帐户时使用IMAP4协议进行创建的帐户，可以设置邮箱帐户名、邮箱地址、密码、回复邮件地址、邮件收发服务器。</p>
+                            <p class="help-p1">注意：<br>服务器自动搜索匹配同POP3协议帐户，我们尽量为您查找对应的服务器。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/zhanghushezhi2.jpg"></p>
+                            <p class="help-p1"><strong>帐户设置&mdash;&mdash;网易邮箱专有协议帐户设置</strong></p>
+                            <p class="help-p1">网易邮箱专有协议创建的帐户的“邮箱设置”下的“帐户设置”， 已为您确认好收发邮件服务器。只需设置帐户名、邮箱地址、密码和回复邮件地址。</p>
+                            <p class="help-p1">另外，网易邮箱专有协议帐户有一系列与网页邮箱同步的功能，在此界面可以设置信件处理时的同步功能。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/zhanghushezhi3.jpg"></p>
+						</div>						
+						<div class="show" id="third2">
+							<span class="f-dn">帐户访问模式</span>
+						    <p class="help-p1"><strong>网易邮箱帐户访问模式</strong></p>
+                            <p class="help-p1">网易邮箱除了一般客户端模式的访问外，为一些特殊场景使用闪电邮的用户增加了一种网页访问模式（非网易邮箱目前还不具备），可以在创建帐户过程中进行选择使用。</p>
+                            <p class="help-p1">建立成网页访问模式的网易邮箱帐户，在主界面帐户列表中显示时前面带有“易”字以作区别，选中后，右侧是一个内嵌在闪电邮的网页，写信等操作在网页中完成，保持有闪电邮自动检测新邮件和新邮件提醒的功能。</p>
+			   				<p class="help-p1"><img src="http://fm.163.com/images/help/zhanghufangwenmoshi1.jpg"></p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/zhanghufangwenmoshi2.jpg"></p>
+                        </div>
+						<div class="show" id="third3">
+							<span class="f-dn">各类邮箱创建流程查阅</span>
+							<p class="help-p1">　　在您创建帐户过程中，<strong>闪电邮系统将为您自动搜索和匹配POP3/IMAP4/SMTP服务器</strong>，但由于某些邮箱设置特殊或者未有涵盖，搜索结果仅供参考。</p>
+                            <p class="help-p1">　　<strong>您可以按照闪电邮搜索结果进行设置，如设置后不能顺利收发邮件，请查找以下《部分特殊设置邮箱列表》。</strong>如仍未能查找到，欢迎您以《如何设置我的邮箱》为主题，邮件至我们的反馈邮箱<a href="mailto:MailClient@188.com">MailClient@188.com</a>询问。</p>
+                            <p class="help-p1"><strong>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</strong></p>
+                            <p class="help-p1"><strong>1、如何在闪电邮设置“网易企业邮邮箱”？</strong></p>
+                            <p class="help-p1"><a target="_blank" href="http://fm.163.com/bbs/viewthread.php?tid=206&amp;extra=page%3D1">http://fm.163.com/bbs/viewthread.php?tid=206&amp;extra=page%3D1</a></p>
+                            <p class="help-p1"><strong>2、如何在闪电邮设置“网易域名邮箱”？</strong></p>
+                            <p class="help-p1">第一步：输入邮箱地址和密码，点击“下一步”进入服务器设置界面</p>
+                            <p class="help-p1">第二步：（1）输入POP3帐户&mdash;&mdash;此处请填写您完整的邮箱地址<br>　　　　（2）POP3服务器请输入pop.ym.163.com，默认端口110；SMTP服务器请输入smtp.ym.163.com，默认端口25；点击“完成”。</p>
+                            <p class="help-p1"><strong>3、如何在闪电邮设置“尚易企业邮箱”？</strong></p>
+                            <p class="help-p1">第一步：输入邮箱地址和密码，点击“下一步”进入服务器设置界面</p>
+                            <p class="help-p1">第二步：（1）输入POP3帐户&mdash;&mdash;此处请填写您完整的邮箱地址<br>　　　　（2）POP3服务器请输入pop.corpease.net；SMTP服务器请输入smtp.corpease.net；端口不变，点击“完成”。</p>
+                            <p class="help-p1"><strong>4、如何在闪电邮设置“QQ邮箱”和“SINA邮箱”？</strong></p>
+                            <p class="help-p1"><a target="_blank" href="http://fm.163.com/bbs/viewthread.php?tid=210&amp;extra=page%3D1">http://fm.163.com/bbs/viewthread.php?tid=210&amp;extra=page%3D1</a></p>
+                            <p class="help-p1"><strong>5、如何在闪电邮设置“yahoo.cn”和“yahoo.com.cn”邮箱？</strong></p>
+                            <p class="help-p1"><a target="_blank" href="http://fm.163.com/bbs/viewthread.php?tid=820&amp;extra=page%3D1">http://fm.163.com/bbs/viewthread.php?tid=820&amp;extra=page%3D1</a></p>
+                            <p class="help-p1"><strong>6、如何在闪电邮设置“gmail”和“hotmail”？</strong></p>
+                            <p class="help-p1">第一步：输入邮箱地址和密码，点击“下一步”进入服务器设置界面</p>
+                            <p class="help-p1">第二步：按照闪电邮系统给定的搜索结果直接点击“完成”即可。（gmail的POP3帐户只有邮箱地址前面部分，hotmail的是完整的邮箱地址，闪电邮已为您自动设定，请勿进行改动）</p>
+                            <p class="help-p1"><strong>7、如何在闪电邮设置“outlook邮箱”？</strong></p>
+                            <p class="help-p1">第一步：输入邮箱地址和密码，点击“下一步”进入服务器设置界面</p>
+                            <p class="help-p1">第二步：（1）输入POP3帐户&mdash;&mdash;此处请填写您完整的邮箱地址<br>　　　　（2）POP3服务器请输入pop3.live.com；勾选上使用安全链接（SSL），端口为995；SMTP服务器请输入smtp.live.com；点击“完成”。</p>
+							
+							<p class="help-p1"><strong>8、如何在闪电邮设置“新浪企业邮箱”？</strong></p>
+                            <p class="help-p1">第一步：输入邮箱地址和密码，点击“下一步”进入服务器设置界面</p>
+                            <p class="help-p1">第二步：（1）输入POP3帐户&mdash;&mdash;此处请填写您完整的邮箱地址<br>　　　　（2）POP3服务器请输入pop3.sina.net；SMTP服务器请输入smtp.sina.net；点击“完成”。</p>
+                            <p class="help-p1"><strong>9、如何在闪电邮设置“21cn”免费邮、企业邮？</strong></p>
+                            <p class="help-p1">A、免费邮（21cn.com）：请输入邮箱地址、密码，按照闪电邮系统搜索结果点击“完成”即可。</p>
+                            <p class="help-p1">B、企业邮：（1）输入邮箱地址和密码，点击“下一步”进入服务器设置界面<br>&nbsp;&nbsp; 　　　　　（2）输入POP3帐户&mdash;&mdash;您完整的邮箱地址；POP3服务器&mdash;&mdash;pop-ent.21cn.com；SMTP服务器&mdash;&mdash;smtp-ent.21cn.com；点击完成。</p>
+                            <p class="help-p1"><strong>10、如何在闪电邮设置google企业邮箱？</strong></p>
+                            <p class="help-p1">第一步：输入邮箱地址和密码，点击“下一步”进入服务器设置界面</p>
+                            <p class="help-p1">第二步：（1）输入POP3帐户&mdash;&mdash;此处请填写您完整的邮箱地址<br>　　　　（2）POP3服务器请输入pop.gmail.com；SMTP服务器请输入smtp.gmail.com。如果你的邮件收发需要采用SSL加密，那就勾选上使用安全链接（SSL），请注意POP3端口995，SMTP端口465。</p>
+                            <p class="help-p1"><strong>11、如何在闪电邮设置X64mail@35反垃圾邮件系统？</strong></p>
+                            <p class="help-p1">第一步：输入邮箱地址和密码，点击“下一步”进入服务器设置界面</p>
+                            <p class="help-p1">第二步：（1）输入POP3帐户&mdash;&mdash;此处请填写您完整的邮箱地址<br>　　　　（2）POP3服务器请输入mail.acpamail.com；SMTP服务器请输入mail.acpamail.com。如果你的邮件收发需要采用SSL加密，那就勾选上使用安全链接（SSL）。</p>
+						</div>
+						
+						<div class="show" id="third4">
+                           	<span class="f-dn">归档</span>                            
+                            <p class="help-p1">为了避免您的邮件累计过多，影响正常使用，我们为您提供了邮件归档功能。</p>
+                            <p class="help-t2">通过邮件夹的右键菜单，您可以设置某个时间前或某个时间段的归档，归档后，您的历史邮件将会转移到新建的归档文件夹中。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/guidang.jpg"></p>
+                        </div>
+                        <div class="show" id="third5">
+							<span class="f-dn">白名单与黑名单</span>
+							<p class="help-p2">如果您不信任一个地址或一个域，您希望完全不提示您就拒收来自这个地址或域的邮件，那么，您可以选择将它添加到黑名单。</p>
+                            <p class="help-p2">同样，如果您信任一个地址或一个域，您可以选择将它添加到白名单。</p>
+						    <p class="help-p1"><img width="470" src="http://fm.163.com/images/help/2.4.2baimingdan.jpg"></p>
+						</div>
+                        <div class="show" id="forth0">
+							<span class="f-dn">常规设置</span>
+							<p class="help-p1"><strong>闪电邮启动</strong><br>可设置系统启动后是否自动启动闪电邮，可设置启动闪电邮后是否自动接收所有邮箱的邮件；可设置闪电邮为默认邮件客户端等。</p>
+                            <p class="help-p1"><strong>闪电邮退出</strong><br>可设置在退出闪电邮时是否出现提示框，可设置退出时检测未发送邮件和清空垃圾邮件箱等。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/changguishezhi.jpg"></p>
+                        </div>
+                        <div class="show" id="forth1">
+							<span class="f-dn">操作习惯</span>
+						    <p class="help-p1"><strong>写信操作习惯设置</strong><br>可设置写信时的默认字体和大小，回复、转发邮件的标题格式等。</p>
+                            <p class="help-p1"><strong>收信操作习惯设置</strong><br>可设置邮件到达时的提示方式，邮件中联系人的显示是否和自己设置的通讯录名称相匹配等。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/caozuoxiguan.jpg"></p>
+						</div>
+						<div class="no-show" id="forth2">
+							<span class="f-dn">网络设置</span>
+					 		<p class="help-p1"><strong>网络设置</strong><br>可以在网络设置中设置您所需使用的代理，网络环境等。</p>
+                        </div>
+                        <div class="no-show" id="forth3">
+							<span class="f-dn">加密设置</span>
+							<p class="help-p1"><strong>加密设置</strong><br>在加密设置界面可以设定和更改加密的口令，口令设定后点击主界面工具栏的【锁定按钮】上锁。 <br>您也可以在还没设置口令前，直接点击主界面工具栏的【锁定按钮】，在弹出框内直接输入设定口令进行锁定，届时口令将同时保存至加密设置界面。<br>加密设置界面可以把口令清空，则点击锁定按钮不会进行锁定，而是弹出锁定设置框。</p>
+                        	<p class="help-p1"><strong>如何取回锁定密码？</strong><br>请您找到闪电邮的安装目录（可以通过选中快捷方式&mdash;右键属性&mdash;查找目标，找到安装目录），将闪电邮安装目录下的“NxMail.cfg”文件作为邮件附件，发送到我们的客服邮箱<a target="_blank" href="mailto:mailclient@188.com">mailclient@188.com</a>，并且附上您闪电邮中的一个邮箱帐户地址信息，如果没有NxMail.cfg文件，请提供global.cfg文件我们收到后，将及时为您解锁。</p>
+                        </div>
+                        <div class="no-show" id="forth4">
+							<span class="f-dn">热键设置</span>
+ 							<p class="help-p1"><strong>热键设置</strong><br>可设置提取主窗口的快捷键。</p>
+                       	</div>
+                        <div class="no-show" id="forth5">
+							<span class="f-dn">皮肤和截图</span>
+ 							<p class="help-p1"><strong>皮肤和截图</strong><br>可单击选择喜欢的皮肤进行更换，可设置截图时是否隐藏当前窗口。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/pifuhejietu.jpg"></p>
+						</div>
+                       
+                        <div class="show" id="fifth0">
+							<span class="f-dn">导入、导出、同步联系人</span>
+							<p class="help-p2"><strong>导入、导出联系人</strong></p>
+							<p class="help-p1">闪电邮可以快速获取批量的外部地址，也可以输出或者转移闪电邮的联系人通讯录。<br>目前我们支持多类主流客户端软件联系人地址的导入，和WAB、CSV文件的导入；也支持WAB、CSV文件的导出。</p>
+							<p class="help-p1"><img width="470" src="http://fm.163.com/images/help/2.5.1daorulianxiren1.jpg"></p>
+                            <p class="help-p2"><strong>网易邮箱同步web邮箱联系人</strong></p>
+                            <p class="help-p1">网易邮箱可以通过同步web邮箱联系人把网页邮箱中的联系人和分组导入到本地。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/daorudaochu.jpg"></p>
+						</div>
+                        <div class="show" id="fifth1">
+							<span class="f-dn">编辑联系人</span>
+							<p class="help-p1">通讯录中的信息是以联系人卡片形式存在的，在卡片中记录了联系人姓名、手机、邮件地址等一些与联系人相关的信息。</p>
+							<p class="help-t1">选中“基本”选项页，在这里输入联系人的姓名、邮件地址等信息。</p>
+							<p class="help-t1">选中其他标签页，您可以为联系人添加更为详细的备注信息。</p>
+						    <p class="help-p1"><img src="http://fm.163.com/images/help/2.5.2bianjilianxiren.jpg"></p>
+						</div>
+                        <div class="show" id="fifth2">
+							<span class="f-dn">新建联系人组</span>							
+							<p class="help-p1">联系人组分为公用联系人组和私有联系人组。</p>
+							<p class="help-p1"><strong>公用联系人组</strong><br>在公用通讯录下的分组。这个类型的联系人分组，在每个邮箱帐户下都可见，您可以新建公用联系人组，把相应需要各个帐户都看到的联系人移动到这里。</p>
+							<p class="help-p1"><strong>私有联系人组</strong><br>在私有通讯录下的分组。私有联系人组是指每个邮箱帐户单独拥有的名下的通讯录分组，只有当您选中某个邮箱帐户才会显示这个邮箱帐户下对应的私有通讯录和私有联系人分组。私有联系人组中有一个【默认】分组，您在该帐户收信时的发件人和发信时的收件人都将自动被添加到该【默认】分组中。</p>
+                            <p class="help-p1"><img src="http://fm.163.com/images/help/xinjianlianxirenfenzu.jpg"></p>
+                        </div>
+						
+                        <div class="show" id="fifth3">
+							<span class="f-dn">复制、移动、删除邮件</span>							
+							<p class="help-p1">选中一个或多个联系人，可以通过右键菜单“复制到”“移动到”或者直接拖动形式将联系人复制、移动到各联系人分组，也可以删除联系人。</p>
+                            
+						</div>
+                        <div class="show" id="fifth4">
+							<span class="f-dn">联系人快捷栏</span>							
+							<p class="help-p1">写信窗口右侧提供了带有“联系人搜索功能”的联系人快捷栏，可以快速添加联系人到收件人、抄送人等。</p>
+						</div>
+                        <div class="show" id="sixth0">
+							<span class="f-dn">日历月视图</span>
+							<p class="help-p1"><strong>新建日程</strong></p>
+							<p class="help-p1">闪电邮为用户提供了多种新建日程的方法</p>
+	
+						    <p class="help-p1">（1）点击日期窗格右上角的绿色“+”号。</p>
+							<p class="help-p1"><img src="images/help/richeng1.1.jpg"></p>
+				            <p class="help-p1">（2）双击日期窗格的任意位置</p>   							
+					        <p class="help-p1">（3）在日期窗格的任意位置点击右键
+							<p class="help-p1"><img src="images/help/richeng1.2.jpg"></p>
+							<p class="help-p1">（4）在工具栏处选择“新建日程”</p>
+							<p class="help-p1">在此处可选择新建公历日程或农历日程</p>
+							<p class="help-p1"><img src="images/help/richeng1.3.jpg"></p>
+							<p class="help-p1">在日程列表底端点击“新建”按钮。</p>
+							<p class="help-p1"><img src="images/help/richeng1.5.jpg"></p>
+							<p class="help-p2"><strong>新建归类</strong></p>
+							<p class="help-p1">点击“日程归类”右侧的“+”即可新建归类。</p>
+							<p class="help-p1"><img src="images/help/richeng1.6.jpg"></p>
+							<p class="help-p1">在归类列表空白处点击右键，选择“新建归类”。</p>
+							<p class="help-p1"><img src="images/help/richeng1.7.jpg"></p>
+						</div> 
+                        <div class="show" id="sixth1">
+							<span class="f-dn">日历列表视图</span>							
+						    <p class="help-p1"><strong>新建日程</strong></p>
+							<p class="help-p1">（1）在日程列表底端点击“新建”按钮。</p>
+							<p class="help-p1"><img src="images/help/richeng1.4.jpg"></p>
+							<p class="help-p1">（2）在工具栏处选择“新建日程”</p>
+							<p class="help-p1">在此处可选择新建公历日程或农历日程</p>
+							<p class="help-p1"><img src="images/help/richeng1.3.jpg"></p>
+				            <p class="help-p1"><strong>查看日程</strong></p>
+							<p class="help-p1">您可以点击列表视图上方的日期显示区域选择您想要查看的日程范围</p>
+							<p class="help-p1"><img src="images/help/richeng1.5.jpg"></p>
+						</div> 
+						<div class="show" id="sixth2">
+							<span class="f-dn">日程分类</span>							
+						    <p class="help-p1"><strong>新建分类</strong></p>
+							<p class="help-p1">点击“日程归类”右侧的“+”即可新建归类</p>
+							<p class="help-p1"><img src="images/help/richeng1.6.jpg"></p>
+							<p class="help-p1"><strong>显示/隐藏分类</strong></p>
+							<p class="help-p1">您可以根据您的需要选择是否隐藏日程分类</p>
+							<p class="help-p1">具体方法是点击日程归类文字前的颜色方格，当方格颜色变为白色时。此归类将隐藏显示</p>
+							<p class="help-p1"><img src="images/help/richeng1.7.jpg"></p>
+				            
+						</div> 
+                        <div class="show" id="seventh0">
+							<span class="f-dn">错误查询</span>
+							<p class="help-p1">错误码　错误码所指错误</p>
+							<p class="help-p1">201　　URS验证成功，发生异常未进行Coremail登录操作。</p>
+							<p class="help-p1">211　　Coremail登录成功，处理返回信息时出现异常。</p>
+							<p class="help-p1">321　　加密串解密超时。</p>
+							<p class="help-p1">400　　URS验证参数缺失，具体参看返回信息。</p>
+							<p class="help-p1">401　　URS验证参数格式错误，具体参看返回信息。</p>
+							<p class="help-p1">404　　URS验证，连接URS验证服务器失败。</p>
+							<p class="help-p1">409　　URS验证，其他错误。</p>
+							<p class="help-p1">410　　Coremail登录，参数缺失。</p>
+							<p class="help-p1">413　　Coremail登录，session超时，可能为NTES_SESS或是type参数。</p>
+							<p class="help-p1">414　　Coremail登录，连接Coremail登录服务器失败。</p>
+							<p class="help-p1">417　　Coremail登录，用户状态错误。</p>
+							<p class="help-p1">419　　Coremail登录，其他错误。</p>
+							<p class="help-p1">500　　尚未支持的域名</p>
+							<p class="help-p1">503　　服务器异常</p>
+							<p class="help-p1">510　　网络异常(http请求的响应码不是OK或者Accepted)</p>
+						</div> 
+                         <div class="show" id="seventh1">
+							<span class="f-dn">问题反馈</span>							
+							<p class="help-p1"><strong>问题自助查询</strong><br>“自助查询反馈平台”列有闪电邮常见问题的解决方式，以便您第一时间查找解决您的问题。如果在常见问题列表中没有提供解决方式，请您采用“反馈邮箱”渠道向我们反馈或咨询。<a href="http://fankui.163.com/ft/faqList.fb?pid=7001" target="_blank">点击进入自助查询>></a></p>
+							<p class="help-p1"><strong>反馈邮箱</strong><br>您可以在闪电邮客户端点击“帮助”菜单下的“邮件反馈”联系我们，也可以直接写邮件到网易用户反馈邮箱：<a href="mailto:mailclient@188.com" target="_blank">mailclient@188.com</a>欢迎以“闪电邮使用反馈”为邮件主题，提供反馈！</p>
+							<p class="help-p1"><strong>用户反馈论坛</strong><br>您也可以使用闪电邮用户反馈论坛来联系我们，<a href="http://fm.163.com/bbs/" target="_blank">点击进入</a></p>
+                            <h4 class="fdbk-tt">——————</h4>
+                            <p class="help-p1"><strong>附：关于“找回锁定密码”相关反馈的说明！</strong><br></p>
+                            <p class="help-p1">1、主帐户密码为加密口令</p>
+                            <p class="help-p1">如果在解锁界面提示您“您已设置以下主帐号密码为锁定口令，闪电邮主帐号xxxxxx”，则说明您在加密设置时，勾选了“使用默认主帐户密码作为口令”。</p>
+                            <p class="help-p1">这时候，只需输入解锁界面上告诉你的帐号的登录密码即可解锁。</p>
+                            <p class="help-p1">2、自行输入的加密口令</p>
+                            <p class="help-p1">如果您的解锁界面非（1）所述，则您的加密口令为自行输入。请您找到闪电邮的安装目录（可以通过选中快捷方式—右键属性—查找目标，找到安装目录），将闪电邮安装目录下的“NxMail.cfg”文件作为邮件附件，发送到我们的客服邮箱<a href="mailto:mailclient@188.com" target="_blank">mailclient@188.com</a>，并且附上您闪电邮中的一个邮箱帐户地址信息，我们收到后，将及时为您解锁。</p>
+                            <p class="help-p1">闪电邮默认安装路径：C:\Program Files\Netease\网易闪电邮</p>
+						</div> 
+					</div>       
+            </div>
+        </div> 
+        <div class="g-sd">
+       		<div class="outer">
+	        	<div class="inner">
+	        		 <ul class="m-menu" id="mainUl">	        		 
+	        		 	<li id="first"> 
+	        		 		<a href="javascript:void(0)" class="sprite">快速入门</a> 
+	        		 	</li>
+	        		 	<li id="second"> 
+	        		 		<a href="javascript:void(0)" class="sprite js-crt">常用功能</a>
+	        		 		<ul class="sub-lst f-dn">
+	        		 			<li>会议邀请</li>
+	        		 			<li>标签邮件</li>
+	        		 			<li>复制/移动/删除邮件</li>
+                                <li>备份/导入邮件</li>
+	        		 			<li>邮件排序</li>
+								<li>邮件分类</li>
+	        		 			<li>信纸与签名</li>
+	        		 			 
+	        		 		</ul>
+	        		 	</li>
+	        		 	<li id="third"> 
+	        		 		<a href="javascript:void(0)" class="sprite">邮箱帐户管理</a>
+	        		 		<ul class="sub-lst f-dn">
+	        		 			<li>创建帐户</li>
+	        		 			<li>帐户设置</li>     		 			
+	        		 			<li>帐户访问模式</li>
+	        		 			<li>各类邮箱创建流程</li>
+	        		 			
+	        		 			<li>邮件归档</li>
+	        		 			<li>白名单与黑名单</li> 
+	        		 		</ul>
+	        		 	</li>
+	        		 	<li id="forth"> 
+	        		 		<a href="javascript:void(0)" class="sprite">系统设置</a>
+	        		 		<ul class="sub-lst f-dn">
+	        		 			<li>常规设置</li>
+	        		 			<li>操作习惯</li>
+	        		 			<li>网络设置</li>
+	        		 			<li>加密设置</li>
+	        		 			<li>热键设置</li>
+	        		 			<li>皮肤和截图</li> 
+	        		 		</ul>
+	        		 	</li>
+	        		 	<li id="fifth"> 
+	        		 		<a href="javascript:void(0)" class="sprite">通讯录</a>
+	        		 		<ul class="sub-lst f-dn"> 
+	        		 			<li>导入/导出/同步联系人</li>
+	        		 			<li>编辑联系人</li>
+	        		 			<li>联系人分组</li>
+	        		 			<li>复制/移动/删除联系人</li>
+	        		 			<li>快速查找联系人</li> 
+	        		 		</ul>
+	        		 	</li>
+	        		 	<li id="sixth"> 
+	        		 		<a href="javascript:void(0)" class="sprite">日程管理</a>
+	        		 		<ul class="sub-lst f-dn"> 
+	        		 			<li>日历月视图</li> 
+                             	<li>日历列表视图</li>
+								<li>日程分类</li>
+							
+	        		 		</ul>
+	        		 	</li>  
+						<li id="seventh"> 
+	        		 		<a href="javascript:void(0)" class="sprite">其他问题</a>
+	        		 		<ul class="sub-lst f-dn"> 
+	        		 			<li>错误查询</li> 
+                             	<li>问题反馈</li>
+	        		 		</ul>
+	        		 	</li>  
+
+	        		 </ul>
+	        	</div>
+	        </div>	        	
+        </div> 
+    </div> 
+</div>
+<div class="g-ft"> 
+  	<div class="m-nts">
+      		<a href="http://www.163.com/" title="网易" target="_blank" class="f-fl nts-logo sprite"></a>
+      	<div class="f-fl">
+      		<a href="http://gb.corp.163.com/gb/home.shtml" target="_blank">关于网易</a>
+      		<a href="http://t.163.com/flashmail" target="_blank">产品官方微博</a>
+      		<a href="http://help.163.com/" target="_blank">客户服务</a>       		
+      		<a href="http://gb.corp.163.com/gb/legal.html" target="_blank">隐私政策</a>|<span> 网易公司版权所有 &copy;1997-<script src="http://mimg.127.net/copyright/year.js"></script></span>
+      	</div>
+    </div>  
+</div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-16915954-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+</html>

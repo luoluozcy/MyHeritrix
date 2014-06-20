@@ -1,0 +1,491 @@
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 3.1.1
+build: 47
+*/
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html{
+    color:#000;
+    background:#FFF;
+}
+/*
+    TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+    TODO test putting a class on HEAD.
+        - Fails on FF. 
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin:0;
+    padding:0;
+}
+body, input{background:#FFF;}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,
+img {
+    border:0;
+}
+/*
+    TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style:normal;
+    font-weight:normal;
+}
+/*
+    TODO Figure out where this list-style rule is best set. Hedger has a request to investigate.
+*/
+li {
+    list-style:none;
+}
+
+caption,
+th {
+    text-align:left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+q:before,
+q:after {
+    content:'';
+}
+abbr,
+acronym {
+    border:0;
+    font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+    vertical-align:text-top;
+}
+sub {
+    vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+}
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+    *font-size:100%;
+}
+/*because legend doesn't inherit in IE */
+legend {
+    color:#000;
+}
+
+a{
+    cursor: pointer;
+}html, body {
+    width: 100%;
+    font-size: 12px;
+    font-family: Arial, Verdana;
+}
+
+
+#tp {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #dedede;
+}
+
+#tp .iwc {
+    overflow: hidden;
+    zoom: 1;
+    line-height: 60px;
+}
+
+/* Inner Width, and Center */
+.iwc {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    content: '.';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clear {
+    clear: both;
+}
+
+.dialog {
+    display: none;
+    position: absolute;
+    z-index: 6;
+    font-size: 12px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .5) !important;
+    background: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.dialog li {
+    list-style: inherit;
+    display: list-item;
+}
+
+.dialog-inner {
+    background: #fff;
+    border: 1px solid #000 ;
+}
+
+.dialog-hd {
+    position: relative;
+    height: 35px;
+    padding: 0 15px;
+    line-height: 35px;
+    border-bottom: 1px solid #009ae2;
+    background: #fff;
+    box-shadow: 0 1px 0 #e5f5fc;
+    *width: 600px;
+    background: -webkit-linear-gradient(top, #fff, #f5f5f5);
+    background: -moz-linear-gradient(top, #fff, #f5f5f5 100%);
+}
+
+.dialog-bd h4{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.dialog-title {
+    font-weight: bold
+}
+
+.dialog .icon-dialog-close{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 12px;
+    height: 0;
+    padding-top: 12px;
+    overflow: hidden;
+    opacity: .5;
+    background-position: -118px 0;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.dialog .dialog-close:hover {
+    opacity: 1
+}
+
+.dialog-bd {
+    padding: 15px 15px 15px 30px;
+    border-top: 1px solid #e5f5fc;
+    font-weight: bold;
+}
+
+.dialog-bd p {
+    margin: 10px 0;
+    line-height: 160%;
+    font-weight: normal;
+    color: #666;
+}
+
+.dialog .strong {
+color: #D93041;
+font-weight: bold;
+margin: 0 5px;
+}
+
+.icon-dialog-btns{
+    text-align: center;
+}
+
+.icon-dialog-btns .download-other {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 30px 0;
+    font-weight: normal;
+    line-height: 40px;
+    font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文黑体", STHeiti, sans-serif;
+    cursor: pointer;
+    color: #2A2A2A;
+    background: #FFF;
+    border: 1px solid #D2D2D2;
+    text-shadow: 1px 1px 0 #FFF;
+    transition: all .3s ease-in-out;
+    border-radius: 2px;
+    box-shadow: 1px 1px 0 #F5F5F5;
+    -webkit-transition: all .3s ease-in-out;
+    background: -webkit-linear-gradient(top, #FFF, #F5F5F5);
+    -moz-transition: all .3s ease-in-out;
+    background: -moz-linear-gradient(top, #fff, #f5f5f5 100%);
+    -o-transition: all .3s ease-in-out;
+}
+
+.icon-dialog-btns .download-other: hover{
+    color: #2A2A2A;
+    border-color: #999;
+    background: #F2F2F2;
+    box-shadow: 1px 1px 2px #D5D5D5;
+    background: -webkit-linear-gradient(top, #FFF, #F2F2F2);
+    background: -moz-linear-gradient(top, #fff, #f2f2f2 100%);
+}
+
+/*遮罩层*/
+.light-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    filter: Alpha(opacity = 50);
+    display: none;
+    z-index: 5;
+    background:-webkit-radial-gradient(50% 50%, rgba(0, 0, 0, .5), #000 80%);
+    background:-moz-radial-gradient(50% 50%, rgba(0,0,0,.5), #000 80%);
+}
+
+.app-center{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 232px;
+    border: 1px solid #ebebeb; /* stroke */
+    background-color: #f7f7f7;
+    color: #5b5b5b; /* text color */
+    font-size: 13px;
+}
+
+.app-center li {
+    width:143px;
+    border-bottom: 1px solid #E8F2FB;
+}
+
+.app-center li a{
+    display: inline-block;
+    width: 100%;
+    height: 37px;
+    padding-top: 10px;
+    text-decoration: none;
+    color: #5B5B5B;
+}
+
+.app-center .CurrentApp{
+    background: #fff;
+    cursor: pointer;
+}
+
+.app-center .icon-app {
+    display: inline-block;
+    width: 27px;
+    height: 30px;
+    line-height: 47px;
+    vertical-align: middle;
+    margin: 0 7px;
+}
+
+.app-center .i-360{
+   background-position: -272px -354px;
+}
+
+.app-center .i-wdj{
+    background-position: -272px -287px;
+}
+
+.app-center .i-netease{
+    background-position: -272px -257px;
+}
+
+.app-center .i-google{
+    background-position: -272px -317px;
+}
+
+.app-center .i-local{
+   background-position: -272px -460px;
+}
+
+.app-center .icon-sub-tip{
+    position: absolute;
+    top: 113px;
+    width: 8px;
+    left: -8px;
+    height: 11px;
+    background-position: -272px -384px;
+}
+
+.android-app-center .CurrentApp .icon-sub-tip{
+    background-position: -280px -384px;
+}/*icon*/
+.icon-logo {
+    background: url("../images/layout.png") no-repeat 0 0;
+}
+
+.icon-dialog-close{
+    background: url("../images/layout.png") no-repeat 0 0;
+}
+
+.icon-pre,
+.icon-next,
+.icon-nav-bar,
+.icon-nav-current,
+.icon-down,
+.icon-index-feature-1,
+.icon-index-feature-2,
+.icon-index-feature-3,
+.icon-index-feature-4,
+.icon-introduce-video,
+.icon-netease,
+.icon-sina,
+.icon-tencent,
+.icon-renren,
+.icon-close,
+.icon-aw-1,
+.icon-aw-2,
+.icon-aw-3,
+.icon-aw-4,
+.icon-collapse-open,
+.icon-collapse-close,
+.icon-history5-4-dl{
+  background: url("../images/index-sprites.png") no-repeat 0 0;
+}
+
+/**
+  ----------------------------------------
+  |         mobileModules styles         |
+  ----------------------------------------
+*/
+.icon-dl-iphone ,
+.icon-dl-android,
+.icon-app,
+.icon-mf {
+  background: url("../images/page.png") no-repeat 0 0;
+}
+
+/**
+  ----------------------------------------
+  |         padModules styles         |
+  ----------------------------------------
+*/
+.icon-pad,
+.icon-pad-dl {
+  background: url("../images/index-pad-sprites.png") no-repeat 0 0;
+}
+
+/**
+  ----------------------------------------
+  |         macModules styles         |
+  ----------------------------------------
+*/
+.icon-mac-dl,
+.icon-iTunes-dl,
+.icon-mac {
+  background: url("../images/index-mac-sprites.png") no-repeat 0 0;
+}
+
+/**
+  ----------------------------------------
+  |         multiModules styles         |
+  ----------------------------------------
+*/
+.icon-alldl-h64,
+.icon-alldl-h48,
+.icon-sub-tip{
+  background: url("../images/page.png") no-repeat 0 0;
+}
+
+/**
+  ----------------------------------------
+  |         featureModules styles         |
+  ----------------------------------------
+*/
+.icon-allfeature{
+  background: url("../images/page.png") no-repeat 0 0;
+}
+
+/**
+  ----------------------------------------
+  |         featureModules styles         |
+  ----------------------------------------
+*/
+
+#share .renren,
+#share .sina,
+#share .netease,
+#share .kaixin,
+#share .tencent,
+#goTopBtn{
+  background: url("../images/page.png") no-repeat 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

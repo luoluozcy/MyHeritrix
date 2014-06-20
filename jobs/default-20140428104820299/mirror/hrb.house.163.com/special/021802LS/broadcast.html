@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>楼盘活动预告_网易哈尔滨房产楼盘活动预告</title>
+<base target="_blank" />
+<meta name="keywords" content="楼盘活动预告,哈尔滨楼盘活动预告,哈尔滨房产,哈尔滨房地产,网易哈尔滨,哈尔滨网易" />
+<meta name="description" content="楼盘活动预告,哈尔滨楼盘活动预告,哈尔滨房产,哈尔滨房地产,网易哈尔滨,哈尔滨网易" />
+<link href="http://img1.cache.netease.com/house/css09/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+<link href="http://img1.cache.netease.com/house/css09/list/list091222.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="nav_top" class="mod">
+	<span id="top"><!--为返回顶部所作--></span>
+	<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.3.css" />
+<script charset="gb2312" src="http://img3.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://hrb.house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"><font color="#FFFFFF">微博</font></a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0608.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+</div>
+<div class="ad960"><!--原先的广告条/special/021802LT/fsgg2.html改成下面的了-->
+<div><embed src="http://file.ws.126.net/house/hrb/flash/20121228zijing.swf" quality="high" bgcolor="#ffffff" width="960" height="70" wmode="transparent" name="homeSwf_1" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</div>
+</div>
+<span class="blank9"></span>
+<style type="text/css">
+.n12nav {width:960px; margin:0 auto; height:67px; background:url(http://img3.cache.netease.com/house/2012/3/22/2012032215303234980.png) no-repeat; position:relative;}
+.n12nav a:link {color:#262626;}
+.n12nav a:visited {color:#262626;}
+.n12nav .nnews {width:165px; height:50px; position:absolute; top:13px; left:60px; line-height:20px; text-align:left;}
+.n12nav .nnews a {margin-left:3px;}
+.n12nav .nbuyh {width:175px; height:50px; position:absolute; top:13px; left:292px; line-height:20px; text-align:left;}
+.n12nav .nbuyh a {margin-left:3px;}
+.n12nav .ndbh {width:110px; height:50px; position:absolute; top:13px; left:540px; line-height:20px; text-align:left;}
+.n12nav .ndbh a {margin-left:3px;}
+.n12nav .nbbs {width:110px; height:50px; position:absolute; top:13px; left:715px; line-height:20px; text-align:left;}
+.n12nav .nbbs a {margin-left:3px;}
+.n12nav .necdc {width:60px; height:50px; position:absolute; top:13px; left:892px; line-height:20px; text-align:left;}
+.n12nav .necdc a {margin-left:3px;}
+</style><div class="channel">
+	<span class="logo"><a href="http://hrb.house.163.com" title="网易哈尔滨房产"><img src="http://img3.cache.netease.com/photo/0218/2012-11-12/8G44ABL23QPF0218.gif" width="190" height="24" alt="哈尔滨房产" /></a></span>
+        <span class="clogo"><a href="http://heb.house.163.com/news/" title="楼盘活动预告"><img src="http://img1.cache.netease.com/house/img09/area1210/newlogo.gif" alt="楼盘活动预告" /></a></span>
+    <p class="position cGray"><a href="http://www.163.com">网易首页</a> &gt; <a href="http://hrb.house.163.com/">哈尔滨房产</a> &gt; <a href="http://heb.house.163.com/news/" title="楼盘活动预告">楼盘活动预告</a></p>
+        </div>
+<!--首页展开型导航-->
+<div class="n12nav">
+  <div class="nnews">
+  	<a href="http://heb.house.163.com/news">新闻</a> <a href="http://heb.house.163.com/special/021802LS/tpxw.html">原创</a> <a href="http://heb.house.163.com/special/021802LS/zt.html">专题</a> <a href="http://heb.house.163.com/special/021802LS/zh163sy.html">图片</a> <a href="http://heb.house.163.com/special/021802LS/broadcast.html">预告</a><br />
+<a href="http://heb.house.163.com/special/021802LS/lskd.html">活动</a> <a href="http://heb.house.163.com/special/0218037G/issue.html">周刊</a> <a href="http://heb.house.163.com/special/021802LS/zhcj.html">城建</a> <a href="http://heb.house.163.com/special/021802LS/hengqin.html">群力</a> <a href="http://heb.house.163.com/special/021802LS/tt.html">回顾</a>
+  </div>
+  <div class="nbuyh">
+  <a href="http://heb.house.163.com/xf">买房</a> <a href="http://heb.house.163.com/special/021802LS/lpkx.html">折扣</a> <a href="http://heb.house.163.com/special/021802LS/goldunit.html">户型</a> <a href="http://heb.house.163.com/special/0218037Q/glhaztc.html">直通车</a> <a href="http://heb.house.163.com/special/0218037G/house_pictures.html">图鉴</a><br /> 
+<a href="http://heb.house.163.com/special/021802LS/ceping.html">评测</a> <a href="http://heb.house.163.com/special/0218037J/buyhouse.html">攻略</a> <a href="http://heb.house.163.com/special/0218037J/housemarket.html">超市</a> <a href="http://heb.house.163.com/special/021802LS/lpkx.html">要置业</a> <a href="http://heb.house.163.com/special/021802LS/cp.html">谍报</a> 
+  </div>
+  <div class="ndbh">
+  	<a href="http://heb.house.163.com/special/021802LS/housedeal.html">网签</a> <a href="http://heb.house.163.com/special/0218037G/bhtool.html">月报告</a> <a href="http://heb.house.163.com/special/021802LS/zhfj.html">房价</a><br />
+<a href="http://heb.house.163.com/special/0218037H/2012hdfx.html">房贷</a> <a href="http://heb.house.163.com//special/021802LS/dctp.html">调查</a> <a href="http://heb.house.163.com/special/0218037G/bhtool.html">计算器</a>
+  </div>
+  <div class="nbbs">
+  <a href="http://bbs.gz.house.163.com/list/haerbin.html">业主</a> <a href="http://bbs.house.163.com/list/lovegz.html">宅人晒</a> <a href="http://bbs.house.163.com/list/housestory.html">故事</a><br />
+<a href="http://bbs.house.163.com/list/homeguide.html">置业</a> <a href="http://bbs.house.163.com/list/homegossip.html">明星</a> <a href="http://bbs.gz.house.163.com/list/zhuhai.html">曝光台</a>
+  </div>
+  <div class="necdc">
+  <a href="http://xf.house.163.com/heb/search/0-0-8-0-0-0-0-0-1.html">热门商铺</a><br />
+	<a href="http://heb.house.163.com/special/02180335/biz.html">投资资讯</a>
+  </div>
+</div>
+<!--首页展开型导航end--><span class="blank12"></span>
+<div class="area">
+		<div class="titleBar ui_s1"><h2>楼盘活动预告</h2></div>
+        <span class="blank3"></span>
+<!-----1---->
+            <div class="textListbg clearfix">
+            <ul class="textList">
+  
+ 
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0916/09/98SRIMEN0218rt.html">专访：兴城海上钓鱼台销售经理张晓建女士</a><span>09-16 09:47</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0913/09/98L3JDA00218rt.html">恒大新品【纯水岸】开盘倒计时</a><span>09-13 09:33</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0909/11/98AUVTN60218rt.html">华南城香港皮草城盛大招商中</a><span>09-09 11:00</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0906/17/983SFMMK0218rt.html">深蓝杰座收官力作重磅登场</a><span>09-06 17:01</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0902/14/97PARGJQ0218rt.html">海富·锦园携手龙广团购啦</a><span>09-02 14:41</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0911/11/98G57PTN0218rt.html">郁金台4号楼王开盘狂销1亿</a><span>09-02 14:34</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0830/10/97H4OG3T0218rt.html">繁华所依 通达天下——龙鸿怡家</a><span>08-30 10:21</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0829/14/97F28Q8U0218rt.html">龙视带你来星光耀抢购有豪礼</a><span>08-29 14:59</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0827/15/979UFD1B0218rt.html">招商地产上市20周年活动全国启动</a><span>08-27 15:16</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0827/15/979U10SS0218rt.html">星光耀广场二期精装火爆开盘</a><span>08-27 15:08</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0824/17/972EAHDT0218rt.html">宝融卡罗国际接待中心已开放</a><span>08-24 17:19</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0822/14/96T1G1LN0218rt.html">领域佳境样板间8月25日璀璨绽放！</a><span>08-22 14:59</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0817/14/96G53OFC0218rt.html">万达城电子飞镖竞技赛欢乐开启</a><span>08-17 14:52</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0817/14/96G4V1E20218rt.html">“万达城业主明星季”郑钧与您相约</a><span>08-17 14:49</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0816/13/96DFJP600218rt.html">星光耀广场七夕后穿越时空之旅</a><span>08-16 13:58</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0815/13/96AREABA0218rt.html">领域佳境Ⅱ期营销体验中心、景观示范区8月17日开放</a><span>08-15 13:27</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0813/17/9662U7P00218rt.html">银泰城旺铺，买家豪掷一亿投资</a><span>08-13 17:01</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0812/16/963F52EV0218rt.html">号外！道里惊现观江现房仅6599元/㎡起</a><span>08-12 16:37</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0802/13/959AVM9F0218rt.html">舌尖上的星光耀 美食之旅"泰"诱惑</a><span>08-02 13:04</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0810/17/95UC1BC00218rt.html">义乌小商品城东北市场产品推介会</a><span>08-10 17:06</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0808/09/95ODSRLB0218rt.html">银泰城二批签约会 8月11日盛大举行</a><span>08-08 09:43</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0803/11/95BNA5990218rt.html">巴黎第五区8月4日接待中心样板间开放</a><span>08-03 11:18</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0802/11/9595G5NS0218rt.html">金域蓝城三期深蓝杰座8月火爆登记</a><span>08-02 11:28</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0801/10/956G1C710218rt.html">巴黎第五区售楼处8月4日正式对外开放</a><span>08-01 10:35</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0731/10/953T7U2H0218rt.html">哈尔滨永泰城 名嘴坐镇“你买房我推荐”</a><span>07-31 10:28</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0726/15/94NH2NU40218rt.html">国足连平日韩证米卢名言 恒大八条致足协</a><span>07-26 15:04</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0726/14/94NGHPP10218rt.html">哈尔滨恒大地产--绿色人居的守望者</a><span>07-26 14:55</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0726/11/94N3HTRO0218rt.html">活动预告：哈尔滨万达城时尚展示活动</a><span>07-26 11:08</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0719/10/9451PUN60218rt.html">恒大足校再出新举措 振兴足球打出“双响炮”</a><span>07-19 10:51</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0718/09/942AC76R0218rt.html">法兰之香携手哈市10大媒体 共同鉴证比房行动</a><span>07-18 09:23</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0717/09/93VOAQGM0218rt.html">招商&#8226;诺丁山7月开盘期火爆开场</a><span>07-17 09:29</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0716/11/93TBAJLC0218rt.html">7月7日银川永泰城品牌发布会隆重举行</a><span>07-16 11:03</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0715/15/93R9ANPO0218rt.html">招商·诺丁山一期交房全城倒计时100天</a><span>07-15 15:50</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0715/09/93QJJ8EM0218rt.html">星光耀广场顶级商业中心正在崛起</a><span>07-15 09:30</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0712/09/93ITHEPJ0218rt.html">涧桥西畔团购单日2亿成交额震撼冰城</a><span>07-12 09:50</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0711/16/93H2VIBE0218rt.html">《金都好声音》海选首场在恒大城落幕</a><span>07-11 16:47</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0710/16/93EGQ6HT0218rt.html">恒大名都年中业主答谢会完美落幕</a><span>07-10 16:51</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0709/13/93BKJ8TS0218rt.html">华南城五金建材区10-14日成交享98折</a><span>07-09 13:59</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0708/09/938I20MQ0218rt.html">永泰15年 5盘齐发 5重豪礼 礼献冰城</a><span>07-08 09:17</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0701/14/92N4R9G60218rt.html">招商诺丁山亲子运动会，宝贝乐翻天</a><span>07-01 14:59</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0701/09/92MIQHTB0218rt.html">天悦国际每平米立减550元 额外尊享98折</a><span>07-01 09:44</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0629/15/92I13SO10218rt.html">看房直通车锦绣华城电商专线顺利返航</a><span>06-29 15:18</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0629/13/92HSF8DP0218rt.html">悦城二期G9、H12公开认筹两万抵三万</a><span>06-29 13:56</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0628/09/92EPT38I0218rt.html">哈南新城居住核心 玖郡打造3分钟生活圈</a><span>06-28 09:14</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0627/17/92D28LNP0218rt.html">30-500㎡黄金旺铺低门槛 做银泰房东</a><span>06-27 17:01</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0626/17/92AHKHTU0218rt.html">星光耀广场6月25日90分钟劲销2.4亿305套</a><span>06-26 17:32</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0625/09/9274OU3R0218rt.html">6月25日星光耀广场97-245㎡精装府邸盛大开盘</a><span>06-25 09:50</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0624/16/9259GM0K0218rt.html">哈尔滨银泰城&#8226;投资财富大讲堂成功举行</a><span>06-24 16:34</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0621/16/91TJ73TO0218rt.html">投钱不如投商铺 租金地价双收入</a><span>06-21 16:50</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0621/12/91T5KJOA0218rt.html">招商·诺丁山第二届龙江宝宝春季运动会圆满落幕</a><span>06-21 12:53</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0618/17/91LUO9RE0218rt.html">海富锦园6月份开始销售均价6500元</a><span>06-18 17:38</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0615/23/91ES43I10218rt.html">招商诺丁山"父爱萦绕身边"感恩活动</a><span>06-15 23:37</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0614/09/91AP84490218rt.html">大正&#8226;莅江II期醇熟面世  营销中心开放</a><span>06-14 09:30</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0614/09/91AOIM9C0218rt.html">哈尔滨华南城产权商铺荣耀招商</a><span>06-14 09:18</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0613/16/918TO9DU0218rt.html">青年城邦6月16日商业旺铺耀世开盘</a><span>06-13 16:10</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0610/16/911853PD0218rt.html">网易联手月星家居 端午节送三门冰箱大奖</a><span>06-10 16:38</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0522/10/8VFLOCSF0218rt.html">5月26日华南城城市级招商中心华美绽放</a><span>05-22 10:33</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0520/16/8VB6OOJ50218rt.html">格兰云天东南板块家装建材会全面启幕</a><span>05-20 16:55</span></li>
+			<li class="list-left"><a href="http://hrb.house.163.com/13/0520/16/8VB601JE0218rt.html">盛世万达光耀鸡西-万达广场奠基典礼隆重举行</a><span>05-20 16:41</span></li>
+			<li class="list-right"><a href="http://hrb.house.163.com/13/0518/15/8V5TQJAV0218rt.html">城市之星“美容一夏”业主答谢回馈活动</a><span>05-18 15:42</span></li>
+			</ul>
+			<span class="blank6"></span>
+        	</div>
+			<span class="blank20"></span>
+</div>
+<span class="blank20"></span>
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 12px;
+	color: #535353;
+}
+a:link {
+	color: #535353;
+	text-decoration: none;
+}
+a:visited {
+	color: #535353;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #CC0000;
+}
+a:active {
+	text-decoration: none;
+	color: #CC0000;
+}
+-->
+</style><table width="960" height="38" border="0" bgcolor="" style="border:1px #D9D9D9 solid"> 
+<tr> 
+<td height="32" bgcolor="#F7F7F7">
+<div style="height:8px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+<table width="930" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><p align="left"><B>友情链接：</B><a href="http://beijing.chineseoffice.com.cn/" target="_blank">中国写字楼网</a>|<a href="http://www.wolai.com/" target="_blank">我来房产</a>|<a href="http://cq.house.163.com/" target="_blank">重庆房产</a>|<a href="http://sy.house.163.com/" target="_blank">沈阳房产</a>|<a href="http://dl.house.163.com/" target="_blank">大连房产</a>|<a href="http://wh.house.163.com/" target="_blank">武汉房产</a>|<a href="http://suzhou.house.163.com/" target="_blank">苏州房产</a>|<a href="http://wx.house.163.com/" target="_blank">无锡房产</a>|<a href="http://hz.house.163.com/" target="_blank">杭州房产</a>|<a href="http://fz.house.163.com/" target="_blank">福州房产</a>|<a href="http://xm.house.163.com/" target="_blank">厦门房产</a>|<a href="http://qz.house.163.com/" target="_blank">泉州房产</a>|<a href="http://nc.house.163.com/" target="_blank">南昌房产</a>|<a href="http://hrb.58.com/ershoufang/" target="_blank">哈尔滨二手房</a></td>
+    </tr>
+  </table><div style="height:5px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+  <table width="930" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><p align="left"><a href="http://cangzhou.cncn.com/" target="_blank">沧州旅游</a>|<a href="http://cc.house.163.com/" target="_blank">长春房产</a>|<a href="http://jn.house.163.com/" target="_blank">济南房产</a>|<a href="http://qd.house.163.com/" target="_blank">青岛房产</a>|<a href="http://nn.house.163.com/" target="_blank">南宁房产</a>|<a href="http://nj.house.163.com/" target="_blank">南京房产</a>|<a href="http://hf.house.163.com/" target="_blank">合肥房产</a>|<a href="http://km.house.163.com/" target="_blank">昆明房产</a>|<a href="http://sjz.house.163.com/" target="_blank">石家庄房产</a>|<a href="http://ts.house.163.com/" target="_blank">唐山房产</a>|<a href="http://qhd.house.163.com/" target="_blank">秦皇岛房产</a>|<a href="http://zz.house.163.com/" target="_blank">郑州房产</a>|<a href="http://ty.house.163.com/" target="_blank">
+太原房产</a>|<a href="http://xa.house.163.com/" target="_blank">西安房产</a>|<a href="http://www.hlj-rc.cn" target="_blank">黑龙江人才网</a></td>
+    </tr>
+  </table>
+  <div style="height:5px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+  <table width="930" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><p align="left"><a href="http://www.shzhidao.cn/" target="_blank">生活知道网</a>|<a href="http://cs.house.163.com/" 
+target="_blank">长沙房产</a>|<a href="http://heb.anjuke.com/" target="_blank">哈尔滨房产网</a>|<a href="http://weihai.house.163.com/" target="_blank">威海房产</a>|<a href="http://yt.house.163.com/" target="_blank">烟台房产</a>|<a href="  http://vip.cmbchina.com/" target="_blank">VIP尊享网</a>|<a href="http://www.csc86.com/" target="_blank">华南城网</a>|【友情链接QQ：93963129】</td>
+    </tr>
+  </table>
+  <div style="height:5px;overflow:hidden;background:#F7F7F7;width:900px;"></div></td>
+</tr> 
+</table>
+<style type="text/css">
+.nav_channel_end {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -67px repeat; height:37px; line-height:38px; overflow:hidden; width:960px; margin:0 auto;}
+.nav_channel_end .rightS {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) right -141px no-repeat; display:block; width:8px; height:37px; float:right; overflow:hidden;}
+.nav_channel_end .nav {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -30px no-repeat; height:37px; float:left; line-height:38px; color:#1E50A2; overflow:hidden;}
+.nav_channel_end .nav a {padding:0 5px; float:none; font-weight:normal; background:none;}
+.nav_channel_end .nav .firstNode {margin-left:8px; background:none;}
+.nav_channel_end .goHome {float:right; width:77px; height:18px; background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -178px no-repeat; overflow:hidden; margin:10px 5px 0 0; line-height:19px; text-align:left; text-indent:10px;}
+.nav_channel_end .nav a,.nav_channel_end .nav a:visited {color:#1E50A2;}
+.nav_channel_end .nav a:hover {color:#BA2636;}
+.nav_channel_end .search {float:right; display:inline; width:128px; height:20px; margin:8px 13px 0 0; overflow:hidden;}
+.nav_channel_end .search .textBox {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg.jpg) right -202px no-repeat; width:106px; height:20px; line-height:21px; text-indent:4px; padding:2px 0 0 0; border:none; line-height:18px; color:#727171; float:left;}
+.nav_channel_end .search .btn {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg.jpg) left -178px no-repeat; width:22px; height:20px; border:none; text-indent:-100em; cursor:pointer; float:left;}
+</style><br>
+<div class="nav_channel_end">
+	<span class="nav"><a href="http://www.163.com/" class="firstNode">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://travel.163.com/">旅游</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/blogs/">博客</a>-<a href="http://t.163.com/">微博</a>-<a href="http://help.3g.163.com/">手机版</a>
+    </span><span class="rightS"></span><span class="cBlue"><a target="_self" href="#top" class="goHome">返回顶部</a></span>
+</div>
+<span class="blank9"></span>
+<div class="foot">
+<div class="text">
+  <p><a href="http://post.news.163.com/msg/housemail.jsp">联系电话:0451-83076777</a>　<a href="mailto:house163_hrb@163.com">主编信箱</a></p>
+  
+</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+<span class="cRed">&copy;1997-2010</span>
+</div>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+    </script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>网络营销中心</title>
+<style type=text/css>
+<!--
+html{-webkit-text-size-adjust:none;}
+td,select,input,.p1{color:#7e7e7e;font-size:12px;line-height:160%;}
+.bold{color:#7e7e7e;font-size:12px;line-height:160%;font-weight: bold;}
+.red{color:#b30305;font-size:12px;line-height:160%;}
+a.a1:link, a.a1:visited, a.a1:active {
+	font-size: 12px;
+	color: #ffffff;
+	text-decoration: none;
+}
+a.a1:hover {
+	font-size: 12px;
+	color: #c5080c;
+	text-decoration: none;
+}
+.red2{color:#b30305;font-size:12px;line-height:160%;font-weight: bold;}
+.redbold14{color:#b30305;font-size:14px;line-height:160%;font-weight: bold;font-family: Arial, Helvetica, sans-serif}
+.gray{color:#a8a8a8;font-size:12px;line-height:120%;}
+.graybold{color:#a8a8a8;font-size:14px;line-height:160%;font-weight: bold;}
+
+.writebold{color:#FFFFFF;font-size:12px;line-height:120%;font-weight: bold;}
+.black{color:#000000;font-size:12px;line-height:120%;}
+.p_black{color:#000000;font-size:14px;line-height:140%;font-weight: bold;}
+.img_boder{ border:1px solid #cdcdcd; } 
+
+
+a:link,a:visited{color:#7e7e7e;line-height:160%; text-decoration:none}
+a:hover{color:#c5080c;}
+a.redlink:link,a.redlink:visited{color:#b30305;font-size:12px;line-height:160%;}
+a.redlink:hover{color:#ae0000;}
+a.garylink2:link,a.graylink2:visited{color:#7e7e7e;font-size:12px;line-height:160%; text-decoration:none}
+a.graylink2:hover{color:#000000;}
+body { margin:0; padding:0; font-size:12px; color:#000;font-family:  宋体, serif , Arial; background-color:#FFFFFF; }
+
+}
+.margin {margin-top:10px}
+.zi1 {	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #9b0000;
+	line-height: 25px;
+}
+.zi2 {	font-family: "宋体";
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-indent: 24px;
+	line-height: 22px;
+}
+.zi3 {	font-family: "宋体";
+	font-size: 12px;
+	color: #9b0000;
+	line-height: 24px;
+}
+a.a2:link, a.a2:visited, a.a2:active {
+	font-size: 12px;
+	color: #7e7e7e;
+	text-decoration: none;
+}
+a.a2:hover {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.top_title{
+	font-size:16px;
+	color:#000;
+	border-bottom:dotted 1px;
+}
+.topsj{
+	width:5px;
+	border-bottom:dotted 1px;
+}
+-->
+</style>
+<script language="JavaScript">
+<!--
+	var pp=1;
+	var nowgo = 1;
+	function toDC(){
+		document.getElementById('toLY').innerHTML="<textarea name='lycontent' id='lycontent' rows='2' cols='65'></textarea> <!-- 发送>> --><input type='submit' value='发送'>";
+	}
+	
+	var top_pic = new Array();
+	var top_p1 = new Array();
+	var top_p2 = new Array();
+	var top_link_all = new Array();
+	//728x269 
+	top_pic[1]="images/lhnewada.jpg";
+	top_pic[2]="images/jd2.jpg";
+	top_pic[3]="images/jd1.jpg";
+	top_pic[4]="images/jd.jpg";
+	
+	top_p1[1]="images/jdnlh.jpg";
+	top_p1[2]="images/jdn2b.jpg";
+	top_p1[3]="images/jdn3c.jpg";
+	top_p1[4]="images/jdn4d.jpg";
+
+	top_p2[1]="images/jdnlha.jpg";
+	top_p2[2]="images/jdn2.jpg";
+	top_p2[3]="images/jdn3.jpg";
+	top_p2[4]="images/jdn4.jpg";
+	
+	top_link_all[1] = "http://emarketing.biz.163.com/download.html";
+	top_link_all[2] = "http://eratecard.163.com/";//"http://e-newsletter.blog.163.com/";
+	top_link_all[3] = "163today/163today_online.php";
+	top_link_all[4] = "net/wangluoxianzhuang_5.html";
+	
+	
+
+	function top_mouse_move(str,n){
+		for(var i=1;i<5;i++){
+			document.getElementById("topT"+i).src=top_p1[i];
+		}
+		if(document.all){
+			document.getElementById('show_top_pic').filters.item(0).Stop();
+			document.getElementById('show_top_pic').filters.item(0).transition = 23;
+			document.getElementById('show_top_pic').filters.item(0).Apply();
+		}
+		document.getElementById('show_top_pic').src=top_pic[n];
+		if(document.all){
+			document.getElementById('show_top_pic').filters.item(0).Play();
+		}
+		document.getElementById('show_link').href=top_link_all[n];
+		document.getElementById(str).src=top_p2[n];
+		pp=n;
+	}
+	function top_mouse_out(str){
+		for(var i=1;i<5;i++){
+			document.getElementById("topT"+i).src=top_p1[i];
+		}
+		nowgo = 1;
+	}
+	function top_auto(){
+		if(nowgo){
+			top_mouse_out("topT"+pp);
+			top_mouse_move("topT"+pp,pp);
+		
+			pp++;
+			if(pp>4){pp=1;}
+		}
+	}
+//-->
+</script>
+</head>
+
+<body>
+<!--顶部-->
+<script language="JavaScript">
+<!--
+	var defb = 0;
+//-->
+</script>
+<script language="JavaScript" src="top.js"></script>
+<!--顶部END-->
+<!--焦点图-->
+<table width="940" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td width="747"><a href="http://emarketing.biz.163.com/download.html" id="show_link" target="_blank"><img src="images/lhnewada.jpg" width="747" height="268" id="show_top_pic" border="0" style="filter:revealTrans(Duration=2, Transition=23)"></a></td>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><a href="#" id="top_link1" target="_blank"><img src="images/jdn1a.jpg" width="193" height="67" id="topT1" onMouseOver="top_mouse_move('topT1',1)" onMouseOut="top_mouse_out('topT1')" border="0"></a></td>
+        <!-- <td><img src="images/jdn10.jpg" width="7" height="67"></td> -->
+      </tr>
+      <tr>
+        <td><a href="#" id="top_link2" target="_blank"><img src="images/jdn2b.jpg" width="193" height="67" id="topT2" onMouseOver="top_mouse_move('topT2',2)" onMouseOut="top_mouse_out('topT2')" border="0"></a></td>
+       <!--  <td><img src="images/jdn20.jpg" width="7" height="67"></td> -->
+      </tr>
+      <tr>
+        <td><a href="#" id="top_link3" target="_blank"><img src="images/jdn3c.jpg" width="193" height="67" id="topT3" onMouseOver="top_mouse_move('topT3',3)" onMouseOut="top_mouse_out('topT3')" border="0"></a></td>
+        <!-- <td><img src="images/jdn20.jpg" width="7" height="67"></td> -->
+      </tr>
+      <tr>
+        <td><a href="#" id="top_link4" target="_blank"><img src="images/jdn4d.jpg" width="193" height="67" id="topT4" onMouseOver="top_mouse_move('topT4',4)" onMouseOut="top_mouse_out('topT4')" border="0"></a></td>
+        <!-- <td><img src="images/jdn40.jpg" width="7" height="67"></td> -->
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<!--焦点图end-->
+<br>
+<!--二级焦点图-->
+<table width="940" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td align="left"><a href="net/wangluoxianzhuang_1.html" target="_blank" width="235"><img src="images/a_1.jpg" width="226" height="118" border=0></a></td>
+    <td align="center"><a href="ziyuan/yingxiaoziyuan_1.html" target="_blank" width="235"><img src="images/b_1.jpg" width="226" height="118" border=0></a></td>
+    <td align="center"><a href="about_163/about_163_1.html" target="_blank" width="235"><img src="images/c_4.jpg" width="226" height="118" border=0></a></td>
+    <td align="right"><a href="anli/anli_4.html" target="_blank" width="235"><img src="images/d_1.jpg" width="226" height="118" border=0></a></td>
+  </tr>
+</table>
+<!--二级焦点图end-->
+<br>
+<!--内容标注-->
+<table width="940" border="0" cellspacing="0" cellpadding="9" align="center">
+  <tr>
+    <td height="37" background="images/line_1.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<!--内容标注end-->
+<br>
+<br>
+<!--网易TODAY-->
+<table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="460" align="center" height="160" valign="top"><table width="95%" border="0" align="center" cellpadding="4" cellspacing="0">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_1.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="827" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">网易Today</span><br>
+                  <span class="gray">了解网易最新动态，精粹内容汇总</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="45%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="163today.php" class="garylink2">最新消息发布</a> </td>
+                    <td width="55%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="163today.php#a" class="garylink2">网易today在线订阅</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="163today/163today_online.php" class="garylink2">网易today在线阅读</a></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+				<br>
+              </td>
+            </tr>
+            <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="163today.php" target="_blank" class="garylink2">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+    <td width="460" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_2.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="820" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">网络现状</span><br>
+                  <span class="gray">从行业角度大局观切入，提供用户行业中的基本数据，权威发现</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="36%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="net/wangluoxianzhuang_1.html" class="garylink2">互联网现状</a> </td>
+                    <td width="64%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="net/wangluoxianzhuang_2.html" class="garylink2">网络营销行业整体数据</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="net/wangluoxianzhuang_3.html" class="garylink2">营销行业细分数据</a></td>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="net/wangluoxianzhuang_4.html" class="garylink2">用户互联网行为</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="net/wangluoxianzhuang_5.html" class="garylink2">网络广告常识</a></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+				<br>
+              </td>
+            </tr>
+            <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="wangluoxianzhuang.html" target="_blank" class="garylink2">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<table width="940" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><img src="images/line_2.jpg" width="940" height="5" border=0></td>
+  </tr>
+</table>
+<br>
+<!--关于网易-->
+<table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="460" height="160" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_3.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="820" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">关于网易</span><br>
+                  <span class="gray">通过这个栏目了解网易，网易品牌，整体优势及服务</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="45%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="about_163/about_163_1.html" target="_blank" class="garylink2">网易品牌</a> </td>
+                    <td width="69%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="about_163/about_163_2.html" target="_blank">网易优势</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="about_163/about_163_3.html" target="_blank">网易频道介绍</a></td>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="about_163/about_163_4.html" target="_blank">网易产品介绍</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="about_163/about_163_5.html" target="_blank">网易大事记</a></td>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="about_163/about_163_6.html" target="_blank">客户赠言</a></td>
+                  </tr>
+                </table>
+                  <br>
+				  <br>
+              </td>
+            </tr>
+            <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="about_163.html" target="_blank">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+    <td height="160" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_4.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="820" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">营销资源</span><br>
+                  <span class="gray">介绍广告主可以和网易合作的推广形式，提供广告主丰富的合作选择机会</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="31%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="ziyuan/yingxiaoziyuan_1.html" target="_blank">广告资源</a> </td>
+                    <td width="69%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="ziyuan/yingxiaoziyuan_2_1.html" target="_blank">特色资源</a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+                  <br>
+              </td>
+            </tr>
+            <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="yingxiaoziyuan.html" target="_blank">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<table width="940" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><img src="images/line_2.jpg" width="940" height="5" border=0></td>
+  </tr>
+</table>
+<br>
+<!--成功案例-->
+<table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="460" height="160" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_5.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="820"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">成功案例</span><br>
+                  <span class="gray">描述各个行业成功案例，通过实际执行案例，可观反应网易的策划，执行和服务能力</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="45%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_4.html" target="_blank">汽车行业</a> </td>
+                    <td width="69%"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_3.html" target="_blank">金融行业</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_1.html" target="_blank">食品行业</a></td>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_2.html" target="_blank">日化行业</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_5.html" target="_blank">电子行业</a></td>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_6.html" target="_blank">烟酒行业</a></td>
+                  </tr>
+				  <tr>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_7.html" target="_blank">服装行业</a></td>
+                    <td><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="anli/anli_8.html" target="_blank">医药行业</a></td>
+                  </tr>
+                </table>
+                  <br>   
+              </td>
+            </tr>
+            <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="chenggonganli.html" target="_blank">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+    <td width="460" height="160" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_6.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="820"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">友情链接</span><br>
+                  <span class="gray">提供与网络营销相关链接，与E-marketing相关网络资源入口</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="150"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="link.html#a" target="_blank">历届网易主题论坛链接</a></td>
+                    <td width="175">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+                  <br>
+              </td>
+            </tr>
+            <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="link.html" target="_blank">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<table width="940" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><img src="images/line_2.jpg" width="940" height="5" border=0></td>
+  </tr>
+</table>
+<br>
+<!--在线互动-->
+<table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="460" height="160" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_8.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="820"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">在线互动</span><br>
+                  <span class="gray">提供广告主及用户可以提问互动的平台，并可参与网易组织的调研</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="240"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="#liuyan">在线留言</a></td>
+                    <td width="536"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="http://www.maad.com.cn/oqss/Survey/UserData/U20/S225.aspx">2008中国广告业生态调查</a></td><!-- diaocha.html 参与调查-->
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+                  <br>
+              </td>
+            </tr>
+            <!-- <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="diaocha.html">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr> -->
+        </table></td>
+      </tr>
+    </table></td>
+    <td width="460" height="160" valign="top"><table width="95%" border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+        <td width="124" align="center" valign="top"><table width="64" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="64"><img src="images/pic_7.jpg" width="94" height="130" border=0></td>
+            </tr>
+        </table></td>
+        <td width="820"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+            <tr>
+              <td><span class="redbold14">相关下载</span><br>
+                  <span class="gray">提供广告主网易可公开的介绍，ratecard等资源下载更新</span><br></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="380"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="download.html" target="_blank">网易发布权威报告数据</a></td>
+                    <td width="536">&nbsp;</td>
+                  </tr>
+				  <tr>
+                    <!--<td width="380"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="download/RateCard.rar?20120229" target="dlpic">2012年网易刊例</a> </td>-->
+					 <!--<td width="380"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="download/RateCard2013.rar?20121220" target="dlpic">2013年网易刊例</a> </td>-->
+					 <td width="380"><img src="images/gary_a.jpg" width="5" height="7" border=0> <a href="download/RateCard2014.rar?20121220" target="dlpic">2014年网易刊例</a> </td>
+                    <td width="536">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+                  <br>
+              </td>
+            </tr>
+            <tr>
+              <td><table width="100" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/gary_b.jpg" width="10" height="11" border=0></td>
+                    <td><a href="download.html" target="_blank">查看详细</a></td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<br>
+<!--成功案例-->
+<tr>
+    <td>&nbsp;</td>
+</tr>
+</table><!--友情链接--><br>
+<table width="940" border="0" cellspacing="0" cellpadding="9" align="center">
+<tr>
+<td height="37" background="images/line_3_new.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr style="color:#000">
+<td style="width:36px">&nbsp;</td><td style="width:272px;color:#000; font-size:12px; font-family:Arial">(+8610)-82558694</td><td style="width:36px">&nbsp;</td><td style="width:272px;color:#000; font-size:12px; font-family:Arial">(+8620)-85105468</td><td style="width:38px">&nbsp;</td><td style="color:#000; font-size:12px; font-family:Arial">(+8621)-61947163-7232</td>
+</tr>
+</table></td>
+</tr>
+</table>
+<br>
+<a name="liuyan"></a>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="57" bgcolor="#C5080C"><table width="898" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="112"><img src="images/zxhd1.jpg" width="112" height="57" /></td>
+        <td width="100"><img src="images/zxhd2.jpg" width="100" height="57" /></td>
+        <td width="549" background="images/zxhd5.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+		 <form method="post" name="form7" id="form7" action=""><input type="hidden" name="tolyhidd" value="1">
+          <tr>
+            <td id="toLY"><span class="gray" onClick="toDC();">针对广告合作及其他营销层面的留言，直接发送服务邮箱中针对广告合作及其他营销层面的留言</span></td>
+          </tr>
+		  </form>
+        </table></td>
+        <td width="37"><img src="images/zxhd3.jpg" width="37" height="57" /></td>
+        <td width="101"><img src="images/zxhd4.jpg" width="101" height="57" /></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<script language="JavaScript">
+<!--
+	document.getElementById('top_link1').href=top_link_all[1];
+	document.getElementById('top_link2').href=top_link_all[2];
+	document.getElementById('top_link3').href=top_link_all[3];
+	document.getElementById('top_link4').href=top_link_all[4];
+	var speed = 6000; //速度
+	var auto_gogogo=setInterval(top_auto,speed);
+//-->
+</script>
+<iframe name="dlpic" width=1 height=1 style="display:none;"></iframe>
+</body>
+</html>

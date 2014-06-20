@@ -1,0 +1,901 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>装修论坛_室内设计论坛_网易家居论坛</title>
+<base target="_blank" />
+<meta name="keywords" content="装修论坛，室内设计论坛，家装论坛，装修日记" />
+<meta name="description" content="网易家居装修论坛是为网友提供装修设计、户型分析、施工交流、团购优惠等服务的平台。在装修论坛发帖可赚取装修基金，赢取免费家居用品。" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="http://img1.cache.netease.com/house/css09/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/home/img/hbbs1012/homebbs3.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.loginForm .input010{ line-height:22px;}
+.f14bla li{ height:25px; overflow:hidden;}
+</style>
+</head>
+<body>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script><!-- 通栏广告 -->
+<div class="ad960">
+<div class="left">
+<a href="http://home.163.com/special/fengshuisheji/"><img src="http://img2.cache.netease.com/home/2014/4/8/2014040817260878d8b.jpg" width="735" height="100" alt="风水公益设计第1期" /></a>
+</div>
+<div class="right">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="210" height="100">
+    <param name="movie" value="http://img1.126.net/channel14/016561_210100_0421.swf" />
+    <param name="quality" value="high" />   
+    <embed src="http://img1.126.net/channel14/016561_210100_0421.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="210" height="100"></embed>
+</object>
+</div>
+</div>
+<!-- 通栏广告结束 -->
+<span class="blank9"></span>
+<link href="http://img1.cache.netease.com/house/img12/tuji1205/homesnav.css" rel="stylesheet" type="text/css"/>
+<div class="homeNavTop">
+<span class="logo1"><a href="http://home.163.com/"><img src="http://img1.cache.netease.com/house/img09/home0107/logo.gif" width="108" height="25" /></a></span>
+<span class="logo2"><a href="http://bbs.home.163.com/"><img src="http://img1.cache.netease.com/house/img10/homebbs/bbslogo.gif" alt="家居论坛_网易家居" /></a></span>
+<span class="text"><a href="http://www.163.com/">网易首页</a> &gt; <a href="http://home.163.com/">网易家居</a> &gt; <a href="http://bbs.home.163.com/">家居论坛_网易家居</a></span>
+<div class="top_search">
+<form target="_blank" id="formtop_house" name="nisearch_top_house" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="auto.163" name="keyfrom" />  
+<input type="hidden" value="user163" name="suser" />
+<input type="hidden" value="gbk" name="ue" />
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top_house" name="q" /></label>
+<noscript><select name="site" class="left">
+<option value="网易" selected="selected">新闻</option>
+<option value="">网页</option>
+</select></noscript> 
+<div id="divSelectAuto" class="left">
+</div> 
+<input type="submit" class="btn" value="搜索" name="Submit" /><input type="hidden" value="page" id="inauto" name="in" />
+</form></div>
+<script type="text/javascript">
+//<![CDATA[
+(function NTES_Nav_house(){
+	function $_G(id){
+		return document.getElementById(id);
+	}
+	function clickselect_house(e){
+		e = e || window.event;
+		e.cancelBubble = true;
+		var name = this.innerHTML;
+		var txt = document.createTextNode(name);
+		selected_house.removeChild(selected_house.firstChild);
+		selected_house.appendChild(txt);
+		select_main_house.style.display = "none";
+		var title = this.getAttribute("title");
+		$_G("siteName_house").value = title;
+		if (title == "网易") {
+		document.nisearch_top_house.action = "http://news.yodao.com/search";
+		}
+		else {document.nisearch_top_house.action = "http://www.yodao.com/search";
+		}
+	}
+	function a_mouseover_house () {
+		this.className = "active";
+	}
+	function a_mouseout_house () {
+		this.className = "";
+	}
+	$_G("divSelectAuto").innerHTML = '<input id="siteName_house" type="hidden" value="网易" name="site" /><div id="select_area_house" class="select_box"><span id="selected_house" class="search_site">新闻</span><div id="select_main_house" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+	var select_area_house = $_G("select_area_house"), selected_house = $_G("selected_house"), select_main_house = $_G("select_main_house"), select_list_house = select_main_house.getElementsByTagName("a"), len_house = select_list_house.length;
+	select_area_house.onclick = select_main_house.onmouseover = function(){
+		select_main_house.style.display = "block";
+	}
+	select_main_house.onmouseout = function(){
+		select_main_house.style.display = "none";
+	}
+	
+	for (var i = 0; i < len_house; i++) {
+		select_list_house[i].onclick = clickselect_house;
+		select_list_house[i].onmouseover = a_mouseover_house;
+		select_list_house[i].onmouseout = a_mouseout_house;
+	}
+})();
+//]]>
+</script>
+</div>
+<div class="homeNavMid">
+<div class="menu">
+<h2 class="main">
+<span class="on marL4"><a href="http://home.163.com/">首页</a></span>
+<strong class="sp">行业</strong>
+ <a href="http://home.163.com/special/latest/" title="最新">最新</a><a href="http://home.163.com/fangtan/" title="访谈">访谈</a><a href="http://home.163.com/special/wangyiguandian/" title="独家报道">独家报道</a><a href="http://home.163.com/special/jingxuanlanmu/" title="专题">专题</a>
+<strong class="sp"><a href="http://home.163.com/design/" title="设计">设计</a></strong>
+ <a href="http://home.163.com/special/chaoliubobao/" title="潮流">潮流</a><a href="http://home.163.com/anli/" title="案例">案例</a><a href="http://home.163.com/photo/" title="图库">图库</a><a href="http://home.163.com/shejishi/" title="设计师">设计师</a>
+<strong class="sp"> 家装</strong>
+<a href="http://home.163.com/special/jiazhuang/" title="资讯">资讯</a><a href="http://home.163.com/special/jzgonglue/" title="攻略">攻略</a><a href="http://home.163.com/v/" title="视频">视频</a><a href="http://home.163.com/maichang/" title="卖场">卖场</a>
+<strong class="sp"><a href="http://bbs.home.163.com/" title="论坛">论坛</a></strong>
+ <a href="http://bbs.home.163.com/list/homeshow.html" title="晒家">晒家</a><a href="http://bbs.home.163.com/list/riji.html" title="日记">日记</a><a href="http://bbs.home.163.com/list/sheji.html" title="设计">设计</a><a href="http://bbs.home.163.com/list/jjfs.html" title="风水">风水</a></h2>
+<div class="exp"><a href="http://house.163.com/" title="房产首页" class="">房产首页</a></div>
+</div>
+</div>
+<div class="homeNavBom2">
+<ul>
+<li class="noBg">
+<span class="k1">产品</span> <span class="k2">家居馆:</span> <a href="http://home.163.com/jiaju/">家具</a> | <a href="http://home.163.com/chugui/">橱柜厨电</a> | <a href="http://home.163.com/special/jiajuyigui/">衣柜</a></li>
+<li><span class="k2">建材馆:</span> <a href="http://home.163.com/weiyu/">瓷砖卫浴</a> | <a href="http://home.163.com/diban/">地板</a> | <a href="http://home.163.com/tuliao/">涂料</a> | <a href="http://home.163.com/menchuang/">门窗</a> | <a href="http://home.163.com/special/bizhi/">壁纸</a> | <a href="http://home.163.com/special/zhaoming/">照明</a></li>
+<li><span class="k2">生活馆:</span> <a href="http://home.163.com/jiafang/">家纺</a> | <a href="http://home.163.com/jiashi/">饰品</a></li>
+</ul>
+<span class="w1"><span class="w1"></span></span>
+</div><span class="blank9"></span>
+<div class="area areabg1 clearfix">
+  <div class="colL">
+    <div class="focusImg">
+      <ul class="focnt clearfix" id="focnt">
+                        <li class="fc on"> <a href="http://popme.163.com/link/015996_0422_5127.html" title="法恩莎 5.1时尚惠"><img src="http://img1.126.net/channel14/015996_310355_0422.jpg" alt="头图_家居论坛_网易家居" width="310" height="355" /><cite>法恩莎 5.1时尚惠</cite></a> </li>
+        <li>         <li class="fc "> <a href="http://bbs.home.163.com/bbs/sheji/401874333.html" title="不容忽视之最全卫浴防水攻略"><img src="http://img4.cache.netease.com/home/2014/4/24/20140424100649e47b9.jpg" alt="头图_家居论坛_网易家居" width="310" height="355" /><cite>不容忽视之最全卫浴防水攻略</cite></a> </li>
+        <li>         <li class="fc "> <a href="http://bbs.home.163.com/photoalbum/sheji/401315853.html" title="DIY包包,让你摆脱撞款烦恼"><img src="http://img6.cache.netease.com/home/2014/4/23/20140423101749cfa72.jpg" alt="头图_家居论坛_网易家居" width="310" height="355" /><cite>DIY包包,让你摆脱撞款烦恼</cite></a> </li>
+        <li>         <li class="fc "> <a href="http://bbs.home.163.com/bbs/homebbs/401034569.html" title="必学夏季装修十大宝典"><img src="http://img5.cache.netease.com/home/2014/4/22/20140422101403bfd94.jpg" alt="头图_家居论坛_网易家居" width="310" height="355" /><cite>必学夏季装修十大宝典</cite></a> </li>
+        <li>  </li>
+      </ul>
+      <ul class="finav" id="fonav">
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+              </ul>
+    </div>
+    <span class="blank9"></span>
+    <div class="bbsNotice">
+      <div class="titBar tit4 clearfix">
+        <h3 class="cBlack">活动公告</h3>
+      </div>
+                  <div class="content">
+        <div class="bbsShow clearfix"> <a href="http://home.163.com/14/0421/10/9QBLC5LM00104JK2.html"><img src="http://img4.cache.netease.com/home/2014/4/24/2014042416042895325.jpg"  lt="活动公告_家居论坛_网易家居" width="120" height="90" /></a>
+            <h3><a href="http://home.163.com/14/0421/10/9QBLC5LM00104JK2.html">TOTO 心动五月天 智享新生活</a></h3>
+          <p>TOTO心动五月天为挑选卫浴产品的您送上福利。<span class="cDRed"><a href="http://home.163.com/14/0421/10/9QBLC5LM00104JK2.html">[详细]</a></span></p>
+        </div>
+        <span class="clear"></span> </div>
+       </div>
+  </div>
+  <div class="colM">
+    <div class="content">             <h2 class="cBlack htitle"><a href="http://home.163.com/special/gongyisheji70/">巧改格局　享受133平西式生活</a></h2>
+      <p class="hdigest">如何最大限度的合理利用空间，又不丢失简约美式的现代之美。且看看张亚楠设计师如何妙手设计。<span class="cDRed"><a href="http://home.163.com/special/gongyisheji70/">[详细]</a></span> </p>
+            <h2 class="cBlack htitle"><a href="http://fund.home.163.com/">19样大礼来袭!2014第1季装修基金兑换</a></h2>
+      <p class="hdigest">网易家居2014年第一季装修基金兑换活动已经开始，19样大礼任你选！<span class="cDRed"><a href="http://fund.home.163.com/">[详细]</a></span> </p>
+            <h2 class="cBlack htitle"><a href="http://home.163.com/special/gongyisheji69/">大型公益设计：玩转180平5居室改造</a></h2>
+      <p class="hdigest">业主户型南面阳台和西面阳台较窄，不知如何利用。且看设计师史磊妙手。大改格局，玄关背景墙、通透客厅、儿童房等等都是本次改造<span class="cDRed"><a href="http://home.163.com/special/gongyisheji69/">[详细]</a></span> </p>
+       <span class="blank6"></span>
+        <div class="titBar tit1">
+          <h3 class="cBlack"><span>策划 网友精选</span></h3>
+            <span class="more"><a href="http://home.163.com/special/jingbianhz/">更多</a></span>
+        </div>
+      <span class="blank12"></span>
+        <ul class="f14bla cGray">
+                              <li><span class="f12px ncolor right">傻呼呼</span><a title="14年财位布局大公开 屌丝瞬间蜕变土豪" href="http://bbs.home.163.com/bbs/drbj/399260463.html">14年财位布局大公开 屌丝瞬间蜕变土豪</a></li>
+                    <li><span class="f12px ncolor right">龙行万里</span><a title="达人教你节省墙纸用量 动手DIY旧衣新穿" href="http://bbs.home.163.com/bbs/homebbs/399220069.html">达人教你节省墙纸用量</a> <a target="_blank" href="http://bbs.home.163.com/photoalbum/sheji/399052189.html">动手DIY旧衣新穿</a></li>
+                    <li><span class="f12px ncolor right">dfwuyanxiao</span><a title="隔断解决超别扭的户型 超薄可侧排的地漏？" href="http://bbs.home.163.com/bbs/sheji/398729276.html">隔断解决超别扭的户型</a> <a target="_blank" href="http://bbs.home.163.com/bbs/taoci/399141337.html">超薄可侧排的地漏？</a></li>
+                    <li><span class="f12px ncolor right">就i玩怎么的</span><a title="11万装110平 地中海混搭风演绎温馨浪漫" href="http://bbs.home.163.com/bbs/sheji/398919539.html">11万装110平 地中海混搭风演绎温馨浪漫</a></li>
+                    <li><span class="f12px ncolor right">刘同学</span><a title="夏季新家要入手空调?看了这帖子再决定" href="http://bbs.home.163.com/bbs/riji/397319333.html">夏季新家要入手空调?看了这帖子再决定</a></li>
+                    <li><span class="f12px ncolor right">熊猫之王kb</span><a title="浴霸还能如此妙用 DIY相册也可以无下限" href="http://bbs.home.163.com/bbs/riji/397364326.html">浴霸还能如此妙用</a> <a target="_blank" href="http://bbs.home.163.com/photoalbum/sheji/396753541.html">DIY相册也可以无下限</a></li>
+                    <li><span class="f12px ncolor right">媚儿姐</span><a title="如何安置双开门冰柜 L型厕所求干湿分区" href="http://bbs.home.163.com/bbs/chugui/397394858.html">如何安置双开门冰柜</a> <a target="_blank" href="http://bbs.home.163.com/bbs/weiyu/397395316.html">L型厕所求干湿分区</a></li>
+                    <li><span class="f12px ncolor right">媚儿姐</span><a title="橱柜配件挑选莫贪便宜 神速解决下水管漏水" href="http://bbs.home.163.com/bbs/chugui/393164708.htm">橱柜配件挑选莫贪便宜</a> <a target="_blank" href="http://bbs.home.163.com/bbs/riji/393244508.html">神速解决下水管漏水</a></li>
+                    <li><span class="f12px ncolor right">肋抹骨茶</span><a title="入户花园改衣帽间 2改3房洗手间如何安排" href="http://bbs.home.163.com/bbs/sheji/393013704.html">入户花园改衣帽间</a> <a target="_blank" href="http://bbs.home.163.com/bbs/sheji/393031223.html">2改3房洗手间如何安排</a></li>
+                    <li><span class="f12px ncolor right">刘同学</span><a title="77三房阳台装修大改造 装修用玻璃如何增色" href="http://bbs.home.163.com/bbs/riji/393156100,1.html">77三房阳台装修大改造</a> <a target="_blank" href="http://bbs.home.163.com/bbs/riji/393201776.html">装修用玻璃如何增色</a></li>
+                    <li><span class="f12px ncolor right">soul烟味</span><a title="春季装修注八大问题 看网友们梅雨天装修经" href="http://bbs.home.163.com/bbs/homebbs/391298235.html">春季装修注八大问题</a> <a target="_blank" href="http://bbs.home.163.com/bbs/sheji/391250179.html">看网友们梅雨天装修经</a></li>
+                    <li><span class="f12px ncolor right">花儿五朵</span><a title="客厅铺木阳台铺砖如何过渡 三居现代简约风" href="http://bbs.home.163.com/bbs/taoci/391088402.html">客厅铺木阳台铺砖如何过渡</a> <a target="_blank" href="http://bbs.home.163.com/bbs/riji/390966873.htm">三居现代简约风</a></li>
+                  </ul>
+    </div>
+  </div>
+  <div class="colR">
+    <div class="loginForm" id="login_false">
+      <script type="text/javascript" src="http://bbs.163.com/bbs/all.js"></script>
+      <h3 class="cWhite"><span class="fB">论坛登录</span><span class="f12px">（网易通行证）</span></h3>
+      <ul>
+        <form action="https://reg.163.com/login.jsp" method="post" name="frmlogin" target="_self">
+          <input type="hidden" name="type" value="1" />
+          <input type="hidden" name="url" value="http://bbs.home.163.com/" />
+          <input type="hidden" name="product" value="bbs" />
+          <li class="cGray">用户名
+            <input id="bbsusername" name="username" type="text" class="input010" />
+          </li>
+          <li class="cGray">密　码
+            <input name="password" type="password" class="input010" />
+          </li>
+          <li>
+            <input name="Submit2" type="submit" value="登录" class="input011" />
+            <input name="input" type="button" class="input012" value="注册" onclick="window.open('http://reg.163.com/Service.shtml')" />
+            <input name="input" type="button" class="input012" value="参观" onclick="window.open('http://home.163.com/special/homebbs/')" />
+          </li>
+        </form>
+      </ul>
+    </div>
+    <div class="loginForm none" id="login_true">
+      <h3 class="cWhite"><span class="fB">论坛登录</span><span class="f12px">（网易通行证）</span></h3>
+      <ul class="f14px">
+        <li>今天是2014年04月28日 星期一</li>
+        <li>尊敬的用户<span id="nicknameLink" class="cBlue"></span></li>
+        <li class="fB cBlue"><span>欢迎您来到网易家居论坛</span> <a href="http://bbs.163.com/bbs/user/logout.jsp" target="_self">退出</a> <br /><br />
+<a href="http://fund.home.163.com/" target="_blank">装修基金商城全新上线</a> </li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+var username = BbsCookie.getPassport();
+var form = document.forms["frmlogin"];
+form.username.value = username;
+form.url.value = this.location.href;
+var islogined = BbsCookie.isLogined();
+BbsUtil.showLoginInfo = function() {
+	document.getElementById("nicknameLink").innerHTML = '<a href="http://bbs.163.com/' + username + '" class="fB">' + Userinfo.getNickname() + '</a>';
+}
+if (islogined) {
+	Bbs.loadJs("http://bbs.news.163.com/bbs/dialog/userinfo.jsp?username="+username);
+	document.getElementById("login_true").style.display = "block";
+	document.getElementById("login_false").style.display = "none";
+}
+else {
+	document.getElementById("login_true").style.display = "none";
+	document.getElementById("login_false").style.display = "block";
+}
+</script>
+    <span class="blank12 blankW"></span>
+    <div class="titBar tit2">
+      <h3 class="cBlack">最新活动</h3>
+                  <span class="more"><a href="http://home.163.com/special/huodonghz/" target="_blank">更多</a></span>
+    </div>
+    <div class="content">
+      <ul class="f12bla cBlack">
+                        <li class="firstNd clearfix"> <a title="淘家帮09：设计1万元衣柜" href="http://home.163.com/special/taojiabang09/"><img width="70" height="70" alt="淘家帮09：设计1万元衣柜" src="http://img4.cache.netease.com/home/2014/4/22/20140422151516fbb00.jpg" /></a>
+            <h4><a href="http://home.163.com/special/taojiabang09/">淘家帮09：设计1万元衣柜</a></h4>
+          <p>箭牌衣柜全程赞助此次活动。<span class="cDRed"><a href="http://home.163.com/special/taojiabang09/">[详细]</a></span></p>
+          <span class="blank6"></span> </li>
+                        <li><a href="http://bbs.home.163.com/bbs/sheji/398999003.html">根本停不下来！百变设计2in1第三期</a></li>
+                <li><a href="http://bbs.home.163.com/bbs/sheji/387341238,1.html">春季大型公益设计服务月火热报名中</a></li>
+                <li><a href="http://bbs.home.163.com/bbs/jjfs/385313729.html">马上设计!家居风水公益设计第1期</a></li>
+                <li><a href="http://bbs.home.163.com/bbs/jiaju/387110984.html">淘家帮：将春带回家 2万设计客厅餐</a></li>
+              </ul>
+      <span class="blank12"></span> </div>
+  <div class="gg250X210">
+      <a href="http://bbs.home.163.com/bbs/sheji/398999003.html"><img src="http://img3.cache.netease.com/home/2014/4/19/201404190936008d4de.jpg" width="240" height="210" alt="百变设计" /></a>
+    </div>
+  </div>
+</div>
+<span class="blank15"></span>
+<div class="area areabg2">
+    <div class="titBar tit3">
+        <h2 class="titbg1"><a href="http://bbs.home.163.com/list/homebbs.html" target="_blank">装修俱乐部</a></h2>
+        <div class="titlist">
+            <span>精品栏目</span>
+            <a href="http://home.163.com/special/zxj0912/" target="_blank">装修经</a><a href="http://home.163.com/special/bjdiy0912/" target="_blank">扮家diy</a><a href="http://home.163.com/special/mxj/" target="_blank">梦享家</a><a href="http://home.163.com/special/tjb0912/" target="_blank">淘家帮</a>
+        </div>
+    </div>
+    <span class="blank12 blankW"></span>
+    <span class="bgline"></span>
+    <div class="colL">
+   		<div class="titBar tit4 clearfix">
+        	<h3 class="cBlack"><a href="http://home.163.com/special/zhuangxiutujian/" target="_blank">装修图鉴</a></h3>
+            <span class="more"><a href="http://home.163.com/special/zhuangxiutujian/" target="_blank">更多</a></span>
+        </div>
+        <div class="content">
+<span class="blank6"></span>
+      <div class="picList1 clearfix">
+            	<div class="imgShow cGreen">
+                	<a href="http://www.fotile.com/"><img src="http://img6.cache.netease.com/home/2014/3/20/201403201332319c622.jpg" alt="装修图鉴_家居论坛_网易家居" width="120" height="90" /></a>
+                	
+                </div>
+                <ul class="pictext">
+                <h3><a href="http://www.fotile.com/"><span class="fB">方太将推出划时代产品</span></a></h3>
+                </br>
+                	 <p><span class="pgray">方太新产品，打出划时代口号，快一睹芳彩！</span><span class="cDRed"><a href="http://www.fotile.com/">[详细]</a></span></p>
+                </ul>
+            </div>
+        </div>
+    	<span class="bgline"></span>
+   <div class="titBar tit4 clearfix" style="width:100%;">
+        	<h3 class="cBlack"><a href="http://bbs.home.163.com/list/jiancai.html">建材家具 促销信息</a></h3>
+            <span class="more"><a href="http://bbs.home.163.com/list/jiancai.html">更多</a></span>
+        </div>
+        <div class="content">
+            <ul class="f12bla_1">
+                     <li><a title="【2014上海“无保”厨柜公益活动】免费维修你厨房里的橱柜&#39;孤儿&#39;！" href="http://bbs.home.163.com/bbs/chugui/401331901.html">【2014上海“无保”厨柜公益活动】免费...</a></li>
+                    <li><a title="地板保养不再烦 除湿宝典传授你" href="http://bbs.home.163.com/bbs/diban/393540084.html">地板保养不再烦 除湿宝典传授你...</a></li>
+                    <li><a title="【淘家帮】第8期 打造温馨浪漫的厨房客厅环境" href="http://bbs.home.163.com/bbs/jiaju/390226207.html">【淘家帮】第8期 打造温馨浪漫的厨房客厅...</a></li>
+                    <li><a title="【淘家帮】第8期+孤独不孤独" href="http://bbs.home.163.com/bbs/jiaju/389762168.html">【淘家帮】第8期+孤独不孤独...</a></li>
+                    <li><a title="关于砖砌洗手台的大讨论--in or out" href="http://bbs.home.163.com/bbs/weiyu/386584760.html">关于砖砌洗手台的大讨论--in or o...</a></li>
+                    <li><a title="橱柜已经安装好了，但是纠结这个到底是包起来好看还是不包呢？" href="http://bbs.home.163.com/bbs/chugui/386583600.html">橱柜已经安装好了，但是纠结这个到底是包起...</a></li>
+                    <li><a title="[全友回家过年活动]过年是心声的愿意" href="http://bbs.home.163.com/bbs/jiaju/385556307.html">[全友回家过年活动]过年是心声的愿意...</a></li>
+                    <li><a title="【新品情报站】卫浴经典抢先报" href="http://bbs.home.163.com/bbs/weiyu/381924838.html">【新品情报站】卫浴经典抢先报...</a></li>
+                    <li><a title="【新品情报部站】2014年的橱柜新品--中意的厨柜" href="http://bbs.home.163.com/bbs/chugui/381847739.html">【新品情报部站】2014年的橱柜新品--...</a></li>
+                    <li><a title="【最衣柜】最老的衣柜" href="http://bbs.home.163.com/bbs/yigui/372278321.html">【最衣柜】最老的衣柜...</a></li>
+             </ul>
+         </div>
+    </div>
+    <div class="colM">
+    	<span class="blank3"></span>
+    	<div class="content">
+            <div class="titBar tit1">
+                <h3 class="cBlack"><span><a href="http://home.163.com/special/2013zhuangxiurijidasai/">2014装修日记大赛</a></span></h3>
+                <span class="more"><a href="http://home.163.com/special/2013zhuangxiurijidasai/">更多</a></span>
+            </div>
+            <span class="blank9"></span>
+            <ul class="f14bla cGray">
+				<li><span class="f12px ncolor right">afreet78</span><a title="坑爹物管滥收保证金,业主吐槽伤不 " href="http://bbs.home.163.com/bbs/riji/400403559.html">坑爹物管滥收保证金,业主吐槽伤不 </a></li>
+				<li><span class="f12px ncolor right">悠悠竹风</span><a title="空调清洁误区!" href="http://bbs.home.163.com/bbs/homebbs/401793674.html">空调清洁误区!</a></li>
+				<li><span class="f12px ncolor right">风筝梦</span><a title="定制家具惹人爱,三大安装步骤需注 " href="http://bbs.home.163.com/bbs/homebbs/401329178.html">定制家具惹人爱,三大安装步骤需注 </a></li>
+				<li><span class="f12px ncolor right">风筝梦</span><a title="马桶安装小细节" href="http://bbs.home.163.com/bbs/riji/401330241.html">马桶安装小细节</a></li>
+				<li><span class="f12px ncolor right">idouniwan</span><a title="屋主纳闷衣柜俯卧,木工师傅一言＂惊" href="http://bbs.home.163.com/bbs/riji/400699711.html">屋主纳闷衣柜俯卧,木工师傅一言"惊</a></li>
+				<li><span class="f12px ncolor right">风筝梦</span><a title="夏季装修宝典!" href="http://bbs.home.163.com/bbs/homebbs/401034569.html">夏季装修宝典!</a></li>
+				<li><span class="f12px ncolor right">soul烟味</span><a title="家装验收经验:细数验收木地板三大 " href="http://bbs.home.163.com/bbs/homebbs/400354195.html">家装验收经验:细数验收木地板三大 </a></li>
+				<li><span class="f12px ncolor right">梧桐雨滴</span><a title="卫浴防水妙招！" href="http://bbs.home.163.com/bbs/homebbs/400356805.html">卫浴防水妙招！</a></li>
+				<li><span class="f12px ncolor right">一脸迷惘</span><a title="瓷砖报价陷阱,啥时下套让你浑然不 " href="http://bbs.home.163.com/bbs/riji/399503844.html">瓷砖报价陷阱,啥时下套让你浑然不 </a></li>
+				<li><span class="f12px ncolor right">悠悠竹风</span><a title="地板找平三要点" href="http://bbs.home.163.com/bbs/homebbs/400085317.html">地板找平三要点</a></li>
+			</ul>
+            <span class="blank12"></span>
+            <div class="titBar tit1">
+                <h3 class="cBlack"><span><a href="http://bbs.home.163.com/list/gonglue.html" target="_blank">施工交流</a><a href="http://bbs.home.163.com/list/toushu.html" target="_blank"> 维权投诉</a></span></h3>
+                <span class="more"><a href="http://bbs.home.163.com/list/gonglue.html" target="_blank">更多</a></span>
+            </div>
+            <span class="blank9"></span>
+          <ul class="f14bla cGray">
+ 				<li><span class="f12px ncolor right">2910466909</span><a href="http://bbs.home.163.com/bbs/gonglue/337721225.html" title="夏季装修注意事项">夏季装修注意事项...</a></li>
+				<li><span class="f12px ncolor right">745941367</span><a href="http://bbs.home.163.com/bbs/gonglue/337538117.html" title="不同的空间适合另类吊顶">不同的空间适合另类吊顶...</a></li>
+				<li><span class="f12px ncolor right">962291224</span><a href="http://bbs.home.163.com/bbs/gonglue/337528668.html" title="不同部位选用适用的防水涂料">不同部位选用适用的防水涂料...</a></li>
+				<li><span class="f12px ncolor right">1977596028</span><a href="http://bbs.home.163.com/bbs/gonglue/337435498.html" title="阳台设计容易忽视哪些问题">阳台设计容易忽视哪些问题...</a></li>
+				<li><span class="f12px ncolor right">745941367</span><a href="http://bbs.home.163.com/bbs/gonglue/337112368.html" title="小窝变豪宅，装修需注意">小窝变豪宅，装修需注意...</a></li>
+				<li><span class="f12px ncolor right">abccba163</span><a href="http://bbs.home.163.com/bbs/gonglue/336817707.html" title="装修后房间有害气体的解决办法">装修后房间有害气体的解决办法...</a></li>
+			</ul>
+        </div>
+    </div>
+    <div class="colR">
+    	<div class="titBar tit2">
+        	<h3 class="cBlack"><a href="http://bbs.home.163.com/list/jzjj.html" target="_blank">装修基金</a></h3> 
+   
+            <span class="more"><a href="http://bbs.home.163.com/list/jzjj.html" target="_blank">更多</a></span>
+        </div>
+        <div class="content">
+        	<span class="blank3"></span>
+        	<div class="picList2">
+            	<h3 class="cBlack f14px"><a href="http://fund.home.163.com/p/1397352241093.html" title="6888基金兑换懒人椅">6888基金兑换懒人椅</a></h3>
+                <div class="pimg"><a href="http://fund.home.163.com/p/1397352241093.html"><img src="http://img6.cache.netease.com/home/2014/4/25/201404251052278bfd7.jpg" width="70" height="70" title="6888基金兑换懒人椅" /></a></div>
+                <ul class="ptext">
+                	<li><span class="pgray">兑换积分：</span>6888</li>
+                    <li><span class="pgray">兑换时间：</span>2014-06-20</li>
+                    <li><span class="pgray">剩余数量：</span>1</li>
+                    <li><span class="cDRed"><a href="http://fund.home.163.com/p/1397352241093.html">点击兑换</a></span></li>
+                </ul>
+            </div>
+            <span class="clear"></span>
+        	<div class="picList2">
+            	<h3 class="cBlack f14px"><a href="http://fund.home.163.com/p/1397312467182.html" title="6399基金换豪华烤箱">6399基金换豪华烤箱</a></h3>
+                <div class="pimg"><a href="http://fund.home.163.com/p/1397312467182.html"><img src="http://img4.cache.netease.com/home/2014/4/25/201404251050473f319.jpg" width="70" height="70" title="6399基金换豪华烤箱" /></a></div>
+                <ul class="ptext">
+                	<li><span class="pgray">兑换积分：</span>6399</li>
+                    <li><span class="pgray">兑换时间：</span>2014-06-20</li>
+                    <li><span class="pgray">剩余数量：</span>2</li>
+                    <li><span class="cDRed"><a href="http://fund.home.163.com/p/1397312467182.html">点击兑换</a></span></li>
+                </ul>
+            </div>
+            <span class="clear"></span>
+            <span class="blank9"></span>
+            <div class="titBar tit2">
+        		<h3 class="cBlack">装修红人榜</h3>
+             <span class="more"><a href="http://home.163.com/special/zxdaren/">更多</a></span>	
+        	</div>
+            <span class="blank3"></span>
+<div class="picList2 clearfix">
+                <div class="pimg"><a href="http://home.163.com/14/0424/18/9QK9JKOR00104JHL.html" title="五一钜惠 一年抢一次"><img src="http://img3.cache.netease.com/home/2014/4/25/20140425100040f301a.jpg" width="70" height="70" title="五一钜惠 一年抢一次" alt="五一钜惠 一年抢一次" /></a></div>
+                <h3 class="cBlack"><a href="http://home.163.com/14/0424/18/9QK9JKOR00104JHL.html" title="五一钜惠 一年抢一次">五一钜惠 一年抢一次</a></h3>
+                <p>天盛装饰年中恵馈2万元，快来抢吧。 <span class="cDRed">[详细]</span></p>
+            </div>
+     
+              <!--<div class="counter">
+            	<h3>家装计算器</h3>
+                <ul class="cDGray clearfix">
+                	<li><a href="#" target="_blank">装修总预算计算器</a></li>
+                    <li><a href="#" target="_blank">墙砖，壁纸计算器</a></li>
+                    <li><a href="#" target="_blank">地砖，地板计算器</a></li>
+                    <li><a href="#" target="_blank">涂料计算器</a></li>
+                    <li><a href="#" target="_blank">填缝剂计算器</a></li>
+                    <li class="nobg"><a href="#" target="_blank">窗帘计算器</a></li>
+                </ul>
+            </div>-->
+      
+        </div>
+ <span class="blank9"></span>
+              <a href="http://fund.home.163.com/"><img src="http://img6.cache.netease.com/home/2013/7/5/20130705170613df2d9.jpg " width="250" height="100" alt="网易装修基金商城" /></a>  
+    </div>
+    <span class="bgline"></span>
+    <span class="clear"></span>
+</div>
+<span class="blank9"></span>
+<div class="area">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="960" height="100">
+    <param name="movie" value="http://img1.126.net/channel14/016137_960100_0415lt.swf" />
+    <param name="quality" value="high" />   
+    <embed src="http://img1.126.net/channel14/016137_960100_0415lt.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="960" height="100"></embed>
+</object>
+</div>
+<span class="blank12"></span>
+<div class="area areabg2">
+    <div class="titBar tit3">
+        <h2 class="titbg2"><a href="http://bbs.home.163.com/list/sheji.html" target="_blank">设计空间</a></h2>
+        <div class="titlist">
+            <a href="http://home.163.com/special/gysj0912/" target="_blank">公益设计</a><a href="http://designer.home.163.com/" target="_blank">设计师库</a>
+        </div>
+    </div>
+    <span class="blank12 blankW"></span>
+    <span class="bgline"></span>
+    <div class="colL">
+    	<div class="titBar tit4 clearfix">
+        	<h3 class="cBlack"><a href="http://home.163.com/special/gysj0912/" target="_blank">公益户型设计</a></h3>
+            <span class="more"><a href="http://home.163.com/special/gysj0912/" target="_blank">更多</a></span>
+        </div>
+        <div class="content">
+            <ul class="f12bla_1">
+              <li><a href="http://home.163.com/special/fengshuisheji2/">风水公益户型设计第2期</a></li>
+              <li><a href="http://home.163.com/special/fengshuisheji/">公益风水设计第1期:门对门巧改运</a></li>
+              <li><a href="http://home.163.com/special/hxfx036/">常规月NO.36：客厅外露管道如何"遮丑"</a></li>
+              <li><a href="http://home.163.com/special/hxfx035/">常规月NO.36:玩转空白户型图空间创意</a></li>
+              <li><a href="http://home.163.com/special/2013gongyisheji/">2013马可波罗瓷砖公益设计合集</a></li>
+              <li><a href="http://home.163.com/special/gongyisheji68/">服务月No.68：贴心细节打造情趣婚房</a></li>
+              <li><a href="http://home.163.com/special/gongyisheji67/">服务月No.67：枪型房过道多巧改困局 </a></li>
+              <li><a href="http://home.163.com/special/gongyisheji66/">服务月No.66：为悲催户型增加私密性</a></li>
+              <li><a href="http://home.163.com/special/gongyisheji65/">服务月No.65:弧形阳台户型告别窘境</a></li>
+              <li><a href="http://home.163.com/special/gongyisheji64/">服务月No.64：告别黑厨小厕所无收纳房</a></li>
+              <li><a href="http://home.163.com/special/gongyisheji63/">服务月No.63:阳台变厨房 分区增空间</a></li>
+             </ul>
+         </div>
+    </div>
+    <div class="colM">
+    	<span class="blank3"></span>
+    	<div class="content">
+            <div class="titBar tit1">
+                <h3 class="cBlack"><span><a href="http://bbs.home.163.com/list/sheji.html" target="_blank">设计求助</a></span></h3>
+                <span class="more"><a href="http://bbs.home.163.com/list/sheji.html" target="_blank">更多</a></span>
+            </div>
+            <span class="blank9"></span>
+         <ul class="f14bla cGray">
+				<li><span class="f12px ncolor right">sswnnae</span><a title="装修费有限 婚房求帮忙改3房" href="http://bbs.home.163.com/bbs/sheji/388570601.html">装修费有限 婚房求帮忙改3房</a></li>
+				<li><span class="f12px ncolor right">paddysong</span><a title="大房子费脑 电视墙6.5米如何设计 " href="http://bbs.home.163.com/bbs/sheji/388891799.html">大房子费脑 电视墙6.5米如何设计 </a></li>
+				<li><span class="f12px ncolor right">zxj841010</span><a title="求助啦 高手出招2房改3房" href="http://bbs.home.163.com/bbs/sheji/386934350.html">求助啦 高手出招2房改3房</a></li>
+				<li><span class="f12px ncolor right">7002win</span><a title="单身公寓想隔成实用1房1厅 咋弄" href="http://bbs.home.163.com/bbs/sheji/387112520.html">单身公寓想隔成实用1房1厅 咋弄</a></li>
+				<li><span class="f12px ncolor right">xhj7427</span><a title="没餐厅 求优化设计113平" href="http://bbs.home.163.com/bbs/sheji/387062460.html">没餐厅 求优化设计113平</a></li>
+				<li><span class="f12px ncolor right">caobotao0524</span><a title="98平2居升级成3居室有难度不 求高 " href="http://bbs.home.163.com/bbs/sheji/385792045.html">98平2居升级成3居室有难度不 求高 </a></li>
+				<li><span class="f12px ncolor right">小二宝子</span><a title="6万打造80平米两居室现代简约美家" href="http://bbs.home.163.com/bbs/sheji/385605296.html">6万打造80平米两居室现代简约美家</a></li>
+				<li><span class="f12px ncolor right">safety_ruika</span><a title="不改结构下 如何让客厅更通透些" href="http://bbs.home.163.com/bbs/sheji/385525374.html">不改结构下 如何让客厅更通透些</a></li>
+				<li><span class="f12px ncolor right">zyhhhsz</span><a title="客厅整出两个卧室门很别扭？求设计" href="http://bbs.home.163.com/bbs/sheji/385203854.html">客厅整出两个卧室门很别扭？求设计</a></li>
+				<li><span class="f12px ncolor right">sudeqiang</span><a title="小户型求增容 变身2个卧室" href="http://bbs.home.163.com/bbs/sheji/385077107.html">小户型求增容 变身2个卧室</a></li>
+				<li><span class="f12px ncolor right">网易家居</span><a title="马上设计！家居风水公益设计第1期" href="http://bbs.home.163.com/bbs/jjfs/385313729.html">马上设计！家居风水公益设计第1期</a></li>
+			</ul>
+            <span class="blank12"></span>
+        </div>
+    </div>
+    <div class="colR">
+    	<div class="titBar tit2">
+        	<h3 class="cBlack"><a href="http://designer.home.163.com/" target="_blank">设计师档案</a></h3>
+            <span class="more"><a href="http://designer.home.163.com/" target="_blank">更多</a></span>
+        </div>
+        <div class="content">
+<div class="picList2 clearfix">
+                <div class="pimg"><a href="http://home.163.com/special/huxingfenxilist/" target="_blank"><img width="70" height="70" src="http://img6.cache.netease.com/home/2014/1/24/20140124162858eb91f.jpg" alt="设计师档案_家居论坛_网易家居" title="黄宝华"></a></div>
+                <h3 class="cBlack"><a title="黄宝华" href="http://home.163.com/special/gongyisheji47/">黄宝华</a></h3>
+                <p>壹玖柒玖高端工作室 工作室设计总监<span class="cDRed"><a href="http://home.163.com/special/gongyisheji47/">[详细]</a></span></p>
+            </div>
+            <span class="clear"></span>
+<div class="picList2 clearfix">
+                <div class="pimg"><a href="http://home.163.com/special/huxingfenxilist/" target="_blank"><img width="70" height="70" src="http://img5.cache.netease.com/home/2014/1/24/2014012416264192c24.jpg" alt="设计师档案_家居论坛_网易家居" title="蒋克勤"></a></div>
+                <h3 class="cBlack"><a title="蒋克勤" href="http://home.163.com/special/gongyisheji49/">蒋克勤</a></h3>
+                <p>合肥某设计公司 主任设计师<span class="cDRed"><a href="http://home.163.com/special/gongyisheji49/">[详细]</a></span></p>
+            </div>
+            <span class="clear"></span>
+<div class="picList2 clearfix">
+                <div class="pimg"><a href="http://home.163.com/special/huxingfenxilist/" target="_blank"><img width="70" height="70" src="http://img1.cache.netease.com/home/2014/1/24/201401241623504644d.jpg" alt="设计师档案_家居论坛_网易家居" title="屈冲"></a></div>
+                <h3 class="cBlack"><a title="屈冲" href="http://home.163.com/special/gongyisheji64/">屈冲</a></h3>
+                <p>一墨空间 首席设计师。从业6年时间<span class="cDRed"><a href="http://home.163.com/special/gongyisheji64/">[详细]</a></span></p>
+            </div>
+            <span class="clear"></span>
+            <span class="blank9"></span>
+        </div>
+    </div>
+    <span class="bgline"></span>
+    <span class="clear"></span>
+</div>
+<span class="blank9"></span>
+<div class="area clearfix">
+	<div class="picArea">
+	  <div class="titBar tit5 clearfix">
+        <h3 class="cBlack"><a href="http://home.163.com/special/gongyishejishianlilist/" target="_blank">设计师案例</a></h3>
+	    <span class="more"><a href="http://home.163.com/special/gongyishejishianlilist/" target="_blank">更多</a></span> </div>
+	  <span class="clear"></span>   <div class="picL">
+        	<a href="http://bbs.home.163.com/bbs/sheji/402523625.html" title="图解新亚洲设计风格"><img src="http://img2.cache.netease.com/home/2014/4/25/20140425100715057cc.jpg" width="300" height="230" alt="图解新亚洲设计风格" /></a>
+            <h3 class="cBlack"><a href="http://bbs.home.163.com/bbs/sheji/402523625.html">图解新亚洲设计风格</a></h3>
+        </div>
+        <div class="picR">
+        	<ul class="picList3 cBlack">
+            <li><a href="http://bbs.home.163.com/bbs/sheji/381953110.html" title="打动人的小资住宅"><img src="http://img1.cache.netease.com/home/2014/1/23/201401230953307753e.jpg" width="120" height="90" alt="打动人的小资住宅" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/sheji/381953110.html" title="打动人的小资住宅">打动人的小资住宅</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/sheji/380465699.html" title="低调家装精美有内涵"><img src="http://img4.cache.netease.com/home/2014/1/14/2014011409524915d3f.jpg" width="120" height="90" alt="低调家装精美有内涵" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/sheji/380465699.html" title="低调家装精美有内涵">低调家装精美有内涵</a></h3></li>
+            <li><a href="http://bbs.home.163.com/photoalbum/sheji/380235259.html" title="小小叶片构筑浪漫家"><img src="http://img2.cache.netease.com/home/2014/1/13/2014011309540105928.jpg" width="120" height="90" alt="小小叶片构筑浪漫家" /></a>
+            <h3><a href="http://bbs.home.163.com/photoalbum/sheji/380235259.html" title="小小叶片构筑浪漫家">小小叶片构筑浪漫家</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/sheji/379997101.html" title="明星住过的总统套房"><img src="http://img6.cache.netease.com/home/2014/1/10/2014011009455678e32.jpg" width="120" height="90" alt="明星住过的总统套房" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/sheji/379997101.html" title="明星住过的总统套房">明星住过的总统套房</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/sheji/379773509.html" title="老洋房翻新演绎原木风"><img src="http://img1.cache.netease.com/home/2014/1/9/2014010909591954990.jpg" width="120" height="90" alt="老洋房翻新演绎原木风" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/sheji/379773509.html" title="老洋房翻新演绎原木风">老洋房翻新演绎原木风</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/sheji/379605951.html" title="不是白色调都叫简约"><img src="http://img3.cache.netease.com/home/2014/1/7/201401070957144a120.jpg" width="120" height="90" alt="不是白色调都叫简约" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/sheji/379605951.html" title="不是白色调都叫简约">不是白色调都叫简约</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/sheji/378712707.html" title="奢华家居也活泼可爱"><img src="http://img5.cache.netease.com/home/2014/1/3/20140103095331c8090.jpg" width="120" height="90" alt="奢华家居也活泼可爱" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/sheji/378712707.html" title="奢华家居也活泼可爱">奢华家居也活泼可爱</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/sheji/378470200.html" title="高大上酒店野心设计"><img src="http://img3.cache.netease.com/home/2014/1/2/20140102093849902d8.jpg" width="120" height="90" alt="高大上酒店野心设计" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/sheji/378470200.html" title="高大上酒店野心设计">高大上酒店野心设计</a></h3></li>
+            </ul>
+        </div>
+        <span class="clear"></span>
+        <span class="blank12"></span>
+    </div>
+</div>
+<span class="blank3"></span>
+<span class="blank9"></span>
+<div class="area">
+<a href="http://home.163.com/special/daren08/"><img src="http://img1.cache.netease.com/home/2014/4/10/201404101430188d922.jpg" width="960" height="100" alt="2014春季爱家达人" /></a>
+</div>
+<span class="blank12"></span>
+<div class="area areabg2">
+    <div class="titBar tit3">
+        <h2 class="titbg3"><a href="http://bbs.home.163.com/list/homeshow.html" target="_blank">我爱我家</a></h2>
+        <div class="titlist">
+            <a href="http://bbs.home.163.com/list/drbj.html" target="_blank">达人扮家</a><a href="http://bbs.home.163.com/list/jjfs.html" target="_blank">家居风水</a><a href="http://bbs.home.163.com/list/hcyy.html">花草园艺</a><a href="http://bbs.home.163.com/list/chuishui.html" target="_blank">家长里短</a><a href="http://bbs.home.163.com/list/children.html"target="_blank">家有儿女</a>
+        </div>
+    </div>
+    <span class="blank12 blankW"></span>
+    <span class="bgline"></span>
+    <div class="colL">
+    	<div class="titBar tit4 clearfix">
+        	<h3 class="cBlack">版主推荐</h3>
+           </span>
+        </div>
+        <div class="content">
+            <ul class="f12bla_1">
+               <li><a href="http://bbs.home.163.com/bbs/hcyy/403781847.html" title="[花草词典]雍容华贵真牡丹">[花草词典]雍容华贵真牡丹...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/homeshow/403698902.html" title="【我爱厨房】水果鱼片">【我爱厨房】水果鱼片...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/hcyy/403685117.html" title="【四月的窗】无名花辈也争春（原创）">【四月的窗】无名花辈也争春（原创）...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/jjfs/402636521.html" title="导致财运不佳的住宅风水">导致财运不佳的住宅风水...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/homeshow/402539967.html" title="【皮妈周末厨房】鱼香肉丝">【皮妈周末厨房】鱼香肉丝...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/hcyy/401040682.html" title="～～ 【四月的窗】冰心玉壶［原创］ ～～">～～ 【四月的窗】冰心玉壶［原创］ ～～...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/jjfs/401019955.html" title="最常见的家居风水问题是什么？">最常见的家居风水问题是什么？...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/hcyy/400709736.html" title="【四月的窗】野花之魅">【四月的窗】野花之魅...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/hcyy/399363401.html" title="【花草故事会】七、惊跑猫头鹰的白狐晕倒了">【花草故事会】七、惊跑猫头鹰的白狐晕倒了...</a></li>
+              <li><a href="http://bbs.home.163.com/bbs/hcyy/399217841.html" title="小花小草也美丽">小花小草也美丽...</a></li>
+             </ul>
+         </div>
+    </div>
+    <div class="colM">
+    	<span class="blank3"></span>
+    	<div class="content">
+            <div class="titBar tit1">
+                <h3 class="cBlack"><span>网友精华帖</span></h3> </span>
+            </div>
+            <span class="blank9"></span>
+            <ul class="f14bla cGray">
+ 				<li><span class="f12px ncolor right">那抹幽蓝</span><a href="http://bbs.home.163.com/bbs/hcyy/403797403.html" title="【四月的窗】路口的三角梅">【四月的窗】路口的三角梅...</a></li>
+				<li><span class="f12px ncolor right">那抹幽蓝</span><a href="http://bbs.home.163.com/bbs/hcyy/403793723.html" title="【四月的窗】阳台上的杜鹃花">【四月的窗】阳台上的杜鹃花...</a></li>
+				<li><span class="f12px ncolor right">qffz清风夫子</span><a href="http://bbs.home.163.com/bbs/hcyy/403778273.html" title="～～ 【四月的窗】我的家乡［原创］ ～～">～～ 【四月的窗】我的家乡［原创］ ...</a></li>
+				<li><span class="f12px ncolor right">一笑而过☆。</span><a href="http://bbs.home.163.com/bbs/hcyy/403746853.html" title="黑天鹅的风姿">黑天鹅的风姿...</a></li>
+				<li><span class="f12px ncolor right">风随乐动</span><a href="http://bbs.home.163.com/bbs/homeshow/403734446.html" title="【我爱厨房】红烧豆皮肉卷">【我爱厨房】红烧豆皮肉卷...</a></li>
+				<li><span class="f12px ncolor right">风随乐动</span><a href="http://bbs.home.163.com/bbs/homeshow/403702351.html" title="【我爱厨房】小炒牛肉">【我爱厨房】小炒牛肉...</a></li>
+				<li><span class="f12px ncolor right">最近de地方</span><a href="http://bbs.home.163.com/bbs/hcyy/403624905.html" title="汉牡丹的风采">汉牡丹的风采...</a></li>
+				<li><span class="f12px ncolor right">鸟瞰</span><a href="http://bbs.home.163.com/bbs/hcyy/403519205.html" title="【四月的窗】荷兰水仙花儿开">【四月的窗】荷兰水仙花儿开...</a></li>
+				<li><span class="f12px ncolor right">风随乐动</span><a href="http://bbs.home.163.com/bbs/hcyy/403379551.html" title="【四月的窗】踏青好时节">【四月的窗】踏青好时节...</a></li>
+				<li><span class="f12px ncolor right">一笑而过☆。</span><a href="http://bbs.home.163.com/bbs/hcyy/403353247.html" title="【四月的窗】随手拍的花儿">【四月的窗】随手拍的花儿...</a></li>
+			</ul>
+            <span class="blank12"></span>
+        </div>
+    </div>
+    <div class="colR">
+    	<div class="titBar tit2">
+        	<h3 class="cBlack"><a href="http://home.163.com/special/homeshow/" target="_blank">爱家达人</a></h3>
+        </div>
+        <div class="content">
+<div class="picList2 clearfix">
+                <div class="pimg"><a href="http://bbs.163.com/user/767923671@qq.com" title="豆芽的小窝"><img width="70" height="70" src="http://img2.cache.netease.com/home/2013/10/16/201310161046188cdef.jpg" alt="爱家达人_家居论坛_网易家居"></a></div>
+                <h3 class="cBlack"><a href="http://bbs.163.com/user/767923671@qq.com" title="豆芽的小窝">豆芽的小窝</a></h3>
+                <p>豆芽是个懂得享受点滴美好的开心果，也记录下了生活中每一次美好<span class="cDRed"><a href="http://bbs.163.com/user/767923671@qq.com">[详细]</a></span></p>
+            </div>
+<div class="picList2 clearfix">
+                <div class="pimg"><a href="http://bbs.163.com/user/594201452@qq.com" title="洞壁琴音"><img width="70" height="70" src="http://img6.cache.netease.com/home/2013/9/16/20130916101502b63f2.jpg" alt="爱家达人_家居论坛_网易家居"></a></div>
+                <h3 class="cBlack"><a href="http://bbs.163.com/user/594201452@qq.com" title="洞壁琴音">洞壁琴音</a></h3>
+                <p>记录幸福生活的点点滴滴！<span class="cDRed"><a href="http://bbs.163.com/user/594201452@qq.com">[详细]</a></span></p>
+            </div>
+<div class="picList2 clearfix">
+                <div class="pimg"><a href="http://bbs.163.com/user/xe19" title="小草奶昔"><img width="70" height="70" src="http://img2.cache.netease.com/home/2013/10/23/2013102310143884fbb.jpg" alt="爱家达人_家居论坛_网易家居"></a></div>
+                <h3 class="cBlack"><a href="http://bbs.163.com/user/xe19" title="小草奶昔">小草奶昔</a></h3>
+                <p>奶昔有一个可爱的女儿,经常与网友分享生活中的趣事儿<span class="cDRed"><a href="http://bbs.163.com/user/xe19">[详细]</a></span></p>
+            </div>
+            <span class="clear"></span>
+            <span class="blank9"></span>
+        </div>
+    </div>
+    <span class="bgline"></span>
+    <span class="clear"></span>
+</div>
+<span class="blank12"></span>
+<div class="area clearfix">
+	<div class="picArea">
+		<div class="titBar tit5 clearfix">
+    		<h3 class="cBlack"><a href="http://home.163.com/special/homeshow/" target="_blank">爱家达人秀</a></h3>
+        	<span class="more"><a href="http://home.163.com/special/homeshow/" target="_blank">更多</a></span>
+   		</div>
+        <span class="clear"></span>
+        <div class="picL">
+        	<a href="http://bbs.home.163.com/photoalbum/sheji/402524797.html?from=bbsthread#p=68ED6295776EFF06" title="创意无限 老外设计师带你游米兰家具展"><img src="http://img5.cache.netease.com/home/2014/4/25/2014042510105961e08.jpg" width="300" height="230" alt="创意无限 老外设计师带你游米兰家具展" /></a>
+            <h3 class="cBlack"><a href="http://bbs.home.163.com/photoalbum/sheji/402524797.html?from=bbsthread#p=68ED6295776EFF06">创意无限 老外设计师带你游米兰家具展</a></h3>
+        </div>
+        <div class="picR">
+        	<ul class="picList3 cBlack">
+            <li><a href="http://bbs.home.163.com/bbs/homebbs/401791942.html" title="沙发保养指南"><img src="http://img4.cache.netease.com/home/2014/4/24/201404240957137ec91.jpg" width="120" height="90" alt="沙发保养指南" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/homebbs/401791942.html" title="沙发保养指南">沙发保养指南</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/riji/401330241.html" title="马桶安装小细节"><img src="http://img5.cache.netease.com/home/2014/4/23/201404230957081fa82.jpg" width="120" height="90" alt="马桶安装小细节" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/riji/401330241.html" title="马桶安装小细节">马桶安装小细节</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/riji/400699711.html" title="衣柜为何要俯卧"><img src="http://img2.cache.netease.com/home/2014/4/22/201404220956381b77c.jpg" width="120" height="90" alt="衣柜为何要俯卧" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/riji/400699711.html" title="衣柜为何要俯卧">衣柜为何要俯卧</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/riji/400309228.html" title="门槛石有利之处"><img src="http://img2.cache.netease.com/home/2014/4/21/20140421100358eb67f.jpg" width="120" height="90" alt="门槛石有利之处" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/riji/400309228.html" title="门槛石有利之处">门槛石有利之处</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/homebbs/400085317.html" title="地板找平三要点"><img src="http://img1.cache.netease.com/home/2014/4/18/20140418101023007fe.jpg" width="120" height="90" alt="地板找平三要点" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/homebbs/400085317.html" title="地板找平三要点">地板找平三要点</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/riji/399269559.html" title="选购瓷砖有风险"><img src="http://img2.cache.netease.com/home/2014/4/17/201404170954569f1a1.png" width="120" height="90" alt="选购瓷砖有风险" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/riji/399269559.html" title="选购瓷砖有风险">选购瓷砖有风险</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/homebbs/399222169.html" title="装修计划不能忽略"><img src="http://img3.cache.netease.com/home/2014/4/16/20140416100143698aa.jpg" width="120" height="90" alt="装修计划不能忽略" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/homebbs/399222169.html" title="装修计划不能忽略">装修计划不能忽略</a></h3></li>
+            <li><a href="http://bbs.home.163.com/bbs/riji/398872636.html" title="装修公司问题多"><img src="http://img5.cache.netease.com/home/2014/4/15/201404150953146d0a7.jpg" width="120" height="90" alt="装修公司问题多" /></a>
+            <h3><a href="http://bbs.home.163.com/bbs/riji/398872636.html" title="装修公司问题多">装修公司问题多</a></h3></li>
+            </ul>
+        </div>
+        <span class="clear"></span>
+        <span class="blank12"></span>
+    </div>
+</div>
+<span class="blank12"></span>
+<div class="area">
+    <div class="titBar tit3">
+        <h2 class="titbg4">人气排行榜</h2>
+        <div class="titlist">
+  
+        </div>
+    </div>
+	<span class="clear"></span>
+    <span class="blank12"></span>
+    <div class="rankL">
+    	<div class="titBar tit1">
+        	<h3 class="cBlack"><span>装修基金排行榜</span></h3>
+        	
+        </div>
+        <div class="ranktext clearfix">
+            <ul class="rankList">
+ <li><span class="front">1</span><a href="http://bbs.163.com/user/fan_jiangdaohai" title="装修公司问题多" class="td_L">.古道西风</a><span class="td_R">47602</span></li>
+<li><span class="front">2</span><a href="http://bbs.163.com/user/calvin1611" title="装修公司问题多" class="td_L">calvin1611</a><span class="td_R">40001</span></li>
+<li><span class="front">3</span><a href="http://bbs.163.com/user/tread_blood" title="装修公司问题多" class="td_L">tread_blood</a><span class="td_R">30201</span></li>
+<li><span class="follow">4</span><a href="http://bbs.163.com/user/vip_lzzl" title="装修公司问题多" class="td_L">vip_lzzl</a><span class="td_R">19662</span></li>
+<li><span class="follow">5</span><a href="http://bbs.163.com/user/renying_tina" title="装修公司问题多" class="td_L">renying_tina</a><span class="td_R">19595</span></li>
+<li><span class="follow">6</span><a href="http://bbs.163.com/user/houlongxian" title="装修公司问题多" class="td_L">*雪中飞龙*</a><span class="td_R">19514</span></li>
+<li><span class="follow">7</span><a href="http://bbs.163.com/user/767923671@qq.com" title="装修公司问题多" class="td_L">767923671</a><span class="td_R">19487</span></li>
+<li><span class="follow">8</span><a href="http://bbs.163.com/user/juanzi_1016" title="装修公司问题多" class="td_L">juanzi_1016</a><span class="td_R">17662</span></li>
+<li><span class="follow">9</span><a href="http://bbs.163.com/user/pipi_mother" title="装修公司问题多" class="td_L">pipi_mother</a><span class="td_R">17287</span></li>
+<li><span class="follow">10</span><a href="http://bbs.163.com/user/594201452@qq.com" title="装修公司问题多" class="td_L">洞壁琴音</a><span class="td_R">17249</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="rankM">
+    	<div class="titBar tit1">
+        	<h3 class="cBlack"><span>24小时人气板块</span></h3>
+        
+        </div>
+        <div class="ranktext clearfix">
+            <ul class="rankList">
+ <li><span class="front">1</span><a href="http://bbs.home.163.com/bbs/riji/372893357.html" title="【2013东鹏装修日记大赛】朵妈的装修历程24---定制柜子" class="td_L">【2013东鹏装修日记大赛】朵妈的装...</a><span class="td_R">106000</span></li>
+<li><span class="front">2</span><a href="http://bbs.home.163.com/bbs/dny_furniture/376853471.html" title="迪诺雅家具——新年钜惠，感恩回馈！我和我的小伙伴们都惊呆了！" class="td_L">迪诺雅家具——新年钜惠，感恩回馈！我...</a><span class="td_R">3014973</span></li>
+<li><span class="front">3</span><a href="http://bbs.home.163.com/bbs/riji/384300542.html" title="【2014版】装修日记每周之星大评选，500元购物基金等你拿！" class="td_L">【2014版】装修日记每周之星大评选...</a><span class="td_R">46386</span></li>
+<li><span class="follow">4</span><a href="http://bbs.home.163.com/bbs/chuishui/385124536.html" title="钓友的野钓生活" class="td_L">钓友的野钓生活...</a><span class="td_R">7991</span></li>
+<li><span class="follow">5</span><a href="http://bbs.home.163.com/bbs/sheji/387341238.html" title="2014大型公益户型设计服务月第1季报名中" class="td_L">2014大型公益户型设计服务月第1季...</a><span class="td_R">73188</span></li>
+<li><span class="follow">6</span><a href="http://bbs.home.163.com/bbs/dianqi/389823335.html" title="闯关答题，西蒙电气马上送礼" class="td_L">闯关答题，西蒙电气马上送礼...</a><span class="td_R">951895</span></li>
+<li><span class="follow">7</span><a href="http://bbs.home.163.com/bbs/yigui/399622169.html" title="[箭牌衣柜特约淘家帮NO.09]定制品位卧室，为新婚夫妇设计1万元时尚衣柜" class="td_L">[箭牌衣柜特约淘家帮NO.09]定制...</a><span class="td_R">29523</span></li>
+<li><span class="follow">8</span><a href="http://bbs.home.163.com/bbs/riji/400403559.html" title="【2014东鹏装修日记大赛】桃妈的装修日记之二---验房及设计" class="td_L">【2014东鹏装修日记大赛】桃妈的装...</a><span class="td_R">7652</span></li>
+<li><span class="follow">9</span><a href="http://bbs.home.163.com/bbs/sheji/400733558.html" title="毛胚大户型求改造成两套两居户型！" class="td_L">毛胚大户型求改造成两套两居户型！...</a><span class="td_R">9801</span></li>
+<li><span class="follow">10</span><a href="http://bbs.home.163.com/bbs/riji/401344537.html" title="装修选材注意事项" class="td_L">装修选材注意事项...</a><span class="td_R">16183</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="rankR">
+    	<div class="titBar tit1">
+        	<h3 class="cBlack"><span>24小时回帖排行</span></h3>
+        	
+        </div>
+        <div class="ranktext clearfix">
+            <ul class="rankList">
+ <li><span class="front">1</span><a href="http://bbs.home.163.com/bbs/homeshow/404028712.html" title="来晒一晒给爸妈全新厨房~做儿女们的入,不要乱入啊!" class="td_L">来晒一晒给爸妈全新厨房~做儿女们的入...</a><span class="td_R">35</span></li>
+<li><span class="front">2</span><a href="http://bbs.home.163.com/bbs/homebbs/403775277.html" title="【咱家土豪装修范】我和我的土豪厨房" class="td_L">【咱家土豪装修范】我和我的土豪厨房...</a><span class="td_R">25</span></li>
+<li><span class="front">3</span><a href="http://bbs.home.163.com/bbs/children/403773150.html" title="忙趁东风放纸鸢" class="td_L">忙趁东风放纸鸢...</a><span class="td_R">15</span></li>
+<li><span class="follow">4</span><a href="http://bbs.home.163.com/bbs/hcyy/404033034.html" title="【四月的窗】花花草草总关情" class="td_L">【四月的窗】花花草草总关情...</a><span class="td_R">14</span></li>
+<li><span class="follow">5</span><a href="http://bbs.home.163.com/bbs/hcyy/403781847.html" title="[花草词典]雍容华贵真牡丹" class="td_L">[花草词典]雍容华贵真牡丹...</a><span class="td_R">14</span></li>
+<li><span class="follow">6</span><a href="http://bbs.home.163.com/bbs/homeshow/404095437.html" title="夺命的饮水习惯！！！" class="td_L">夺命的饮水习惯！！！...</a><span class="td_R">13</span></li>
+<li><span class="follow">7</span><a href="http://bbs.home.163.com/bbs/dianqi/404024860.html" title="这到底是冰箱还是消毒柜啊我去！~" class="td_L">这到底是冰箱还是消毒柜啊我去！~...</a><span class="td_R">12</span></li>
+<li><span class="follow">8</span><a href="http://bbs.home.163.com/bbs/homebbs/403767077.html" title="[咱家土豪范装修]四人眼中的土豪范" class="td_L">[咱家土豪范装修]四人眼中的土豪范...</a><span class="td_R">11</span></li>
+<li><span class="follow">9</span><a href="http://bbs.home.163.com/bbs/sheji/403780012.html" title="我设计的头像" class="td_L">我设计的头像...</a><span class="td_R">11</span></li>
+<li><span class="follow">10</span><a href="http://bbs.home.163.com/bbs/drbj/403775722.html" title="【达人扮家】果皮制成的花朵" class="td_L">【达人扮家】果皮制成的花朵...</a><span class="td_R">9</span></li>
+            </ul>
+        </div>
+    </div>   
+</div>
+<span class="blank3"></span>
+<!--<div class="area clearfix">
+	<div class="gg960x100"><a href="#" target="_blank"><img width="960" height="100" src="http://img1.cache.netease.com/home/2012/10/9/2012100910051906127.jpg"></a></div>
+</div>-->
+<span class="blank9"></span>
+<div class="area">
+<a href="http://home.163.com/special/taojiabang09/"><img src="http://img1.cache.netease.com/home/2014/4/22/2014042215431905120.jpg" width="960" height="100" alt="淘家帮" /></a>
+</div>
+<span class="blank12"></span>
+<div class="friendLink2 clearfix">
+<h2>友情链接</h2>
+<h3><a href="http://www.rayli.com.cn/home/">瑞丽女性网</a>|<a href="http://www.pchouse.com.cn/">太平洋家居</a>|<a href="http://www.17house.com">一起装修网</a>|<a href="http://www.asia-home.com.cn/">亚太家居网</a>|<a href="http://jj.changsha.cn/">星辰在线</a>|<a href="http://www.jieju.cn/">中洁网</a>|<a href="http://home.house365.com">365地产家居网</a>|<a href="http://www.trends.com.cn/home/">时尚网家居频道</a>|<a href="http://www.hometex114.com/">中华纺织网</a>|<a href="http://www.bmlink.com/">中国建材网</a>|<a href="http://www.a963.com/">中华室内设计网</a>|<a href="http://www.cnjzjj.com
+">中国家装家居网</a>|<a href="http://fsjiaju.com/">顺德家具网</a>|<a href="http://www.jiaju.cc/">中国家具网</a>|<a href="http://www.51zsjc.com/">无忧装饰建材网</a>|<a href="http://www.72xuan.com/">七十二炫装修网</a>|<a href="http://jjrw.com/">中国家具招聘网</a>|<a href="http://www.jiancai365.cn/">中国建材采购网</a>|<a href="http://www.ruibai.com/">瑞百温州装饰建材网</a>|<a href="http://www.lightingchina.com/">中国照明网</a>|<a href="http://jz.co188.com/">建筑土木在线</a>|<a href="http://www.jiajuol.com/">家居在线</a>|<a href="http://aijiake.com/">爱家客</a>|<a href="http://www.jiancai.com/">建材网</a>|<a href="http://beijing.aifang.com/">爱房网</a>|<a href="http://home.gz.soufun.com/">广州装修家居</a>||<a href="http://www.house.hc360.com/">慧聪房产</a>|<a href="http://home.365azw.com/">爱装网</a>|<a href="http://www.china-chuwei.com/">中华厨卫网</a>|<a href="http://www.333cn.com/">中国设计之窗</a>|<a href="http://www.tumanduo.com/">装修图满多</a>|<a href="http://www.zxdyw.com/">装修第一网</a>|<a href="http://www.ccd.com.cn/">中国建筑装饰网</a>|<a href="http://www.zsezt.com/">装修装饰设计网</a>|<a href="http://www.51fashion.com.cn/">时尚饰界</a>|<a href="http://www.51cwc.cn/">厨卫品牌导购网</a>|<a href="http://bbs.nantaihu.com">72南太湖</a>|<a href="http://bbs.8264.com/ ">旅游论坛</font>|<a href="http://bbs.szonline.net/">深圳论坛</a>|
+<a href="http://bbs.wed114.cn">结婚论坛</a>|<a href="http://bbs.bianzhirensheng.com/">编织人生论坛</a>|<a href="http://bbs.xfwed.com/">幸福婚嫁论坛</a>|<a href="http://bbs.house365.com/">南京论坛</a>|<a href="http://bbs.o.cn/">广州论坛</a>|
+<a href="http://www.qdqss.cn/">青岛新闻网</a></h3>
+</div>
+<style type="text/css">
+.channel-end,.channelEnd-rightS,.channelEnd-link,.channelEnd-top { background:#496C9C;}
+.channel-end {width:960px;height:37px;overflow:hidden;margin:0 auto 0;line-height:38px; color:#EFF6FF; border-bottom:1px solid #102646;}
+.channelEnd-rightS {display:block;float:right;width:8px;height:37px;overflow:hidden}
+.channelEnd-link {float:left;height:37px;line-height:37px;overflow:hidden;color:#EFF6FF;}
+.channelEnd-link a {float:none;padding:0 5px;font-weight:normal;background:none;}
+.channelEnd-link .firstNode {margin-left:8px; background:none;}
+.channelEnd-top {display:block;float:right;width:80px;height:37px;overflow:hidden;line-height:37px;text-indent:10px; border-left:2px solid #1A3760;}
+.channel-end a ,.channel-end a:visited { color:#EFF6FF;}
+.channel-end a:hover { color:#ff0;}
+</style>
+<div class="channel-end">
+	<span class="channelEnd-link cBlue">
+    	<a class="firstNode" href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://travel.163.com/">旅游</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/blogs/">博客</a>-<a href="http://t.163.com/">微博</a>-<a href="http://help.3g.163.com/">手机版</a>
+    </span>
+    <span class="channelEnd-rightS"></span>
+    <span class="channelEnd-top cBlue"><a href="#top" target="_self">返回顶部&uarr;</a></span>
+</div>
+<!-- 代码 -->
+ <div class="foot">
+<div class="text"><a href="http://post.news.163.com/msg/housemail.jsp" rel="nofollow">联系电话:020-85105389</a>　<a href="http://post.news.163.com/msg/housemail.jsp" rel="nofollow">主编信箱</a> <a href="http://t.163.com/zt/feedback" rel="nofollow">意见反馈</a> <a href="http://gz.house.163.com/special/gzhousemap/" rel="nofollow">广州房产站点地图</a></div>
+<a href="http://corp.163.com/" rel="nofollow">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html" rel="nofollow">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" rel="nofollow">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" rel="nofollow">招聘信息</a> - <a href="http://help.163.com/" rel="nofollow">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" rel="nofollow">隐私政策</a> - <a href="http://emarketing.biz.163.com/" rel="nofollow">网络营销</a> - <a href="http://sitemap.163.com/" rel="nofollow">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div><script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript">
+//<![CDATA[	
+new NTES.ui.Slide(NTES("#fonav > li"), NTES("#focnt li.fc"), "on", "mouseover",5000);// 焦点图切换
+//]]>
+</script>
+<!-- 2013对联 -->
+<script>
+var coupletTop = 80;
+var coupletLeftHref="http://g.163.com/a?CID=27566&Values=1504130849&Redirect=http://www.arrowceramic.com/newsview_125.html";
+var coupletRightHref="http://g.163.com/a?CID=27566&Values=1504130849&Redirect=http://www.arrowceramic.com/newsview_125.html";
+var coupletLeftUrl = 'http://img1.126.net/channel14/016488_20300_0414lt.jpg';
+var coupletRightUrl ='http://img1.126.net/channel14/016488_20300_0414lt.jpg';
+var coupletLeftUrlb = 'http://img1.126.net/channel14/016488_100300_0414lt.swf';
+var coupletRightUrlb = 'http://img1.126.net/channel14/016488_100300_0414lt.swf';
+</script>
+<script src="http://img1.126.net/channel7/temp/duilian_130628.js"></script>
+<!-- 2013对联 -->
+<!-- 看后吧 -->
+<SCRIPT LANGUAGE="JavaScript1.1" SRC="http://g.163.com/r?site=netease&affiliate=bbs&cat=homebbs&type=popup&location=1"></SCRIPT>
+<script>!function(i){function t(){}function n(){var i=Math.round((+new Date-B)/1e3);return 0>i?0:i}function e(i){var t=i.className,n=u(i),e={script:1,style:1,link:1,img:1,hr:1,br:1},a=!0;return e[n]?a=!1:/blank\d/.test(t)&&(a=!1),a}function a(t){g||(v&&window._ntes_sendInfo?(i.each(_,function(i,t){l(t)}),g=!0):_.push(t)),g&&l(t)}function c(i){return 10>i?i.toString():i>=62?"z":String.fromCharCode(i+(36>i?55:61))}function o(i,t){if(!t)return i;var n=i.length-1,e=i.charCodeAt(n);return 58>e?e-=48:91>e?e-=55:123>e&&(e-=61),i.substr(0,n)+c(e+t)}function r(i,t,n){t&&t.setAttribute((n?"_":"")+"jcid",i)}function f(i){if(i){var t=this.getAttribute("href")||"";m++;var e="/ntes_p?"+p+"&_nct="+n()+"&_nah="+escape(t)+"&_nat={id}_"+i;a(e)}}function l(i){_ntes_sendInfo("jc",_ntes_src_addr+i.replace("{id}",v))}function s(i,t,n){for(var e=0,a={a:1,area:1};!a[u(i)]&&!(n=i.getAttribute("_jcid"));)if(i=i.parentNode,!i.tagName||e++>5)return;var c=i;if(!n)for(;i&&i!=t&&!(n=i.getAttribute("jcid"));)i=i.parentNode;c&&n&&f.call(c,n)}function u(i){return i.tagName.toLowerCase()}function d(t,n,e){if("iframe"!=u(t))n(t,e);else{var a,c=h(t),o=function(){if("function"==typeof a&&a.call(this),c=h(t)){var o=c.body;i(o).addEvent("click",function(i){var t=i.target;s(t,o)}),n(o,e)}};c&&/^http/.test(c.location.href)?o():t.attachEvent?t.attachEvent("onload",o):(a=t.onload,t.onload=o)}}function h(i){var t;try{t=i.contentDocument}catch(n){}if(!t&&i.contentWindow){try{var e=i.contentWindow.document;"object"==typeof e&&(t=e)}catch(n){}if(!t)return null}var a=1;try{t.location&&(a=0)}catch(n){}return a?null:t}var v,E,p="_nacc=siteclick&_npurl="+escape(document.URL),m=0,g=!1,_=[],b=document.body,C=i(window),A=window.performance,B=A&&A.timing?A.timing.connectStart:+new Date,k=[function(i,t,n){r(i+c(n.start||1),t,n.all)},function(t,n,e){var a=e.start||1;i("a",n).each(function(i,n){r(t+c(a++),n)})},function(t,n,a){for(var o=1,f=a.level||1,l=[n],s=0;f>s;s++){var d=[];i.each(l,function(t,n){var a=0;"a"==u(n)||/ntes-nav-select/.test(n.className)||i.each(n.children,function(i,t){e(t)&&(d.push(t),a++)}),a||d.push(n)}),l=d}i.each(l,function(i,n){r(t+c(o++),n)})},function(t,n){var e=i(">form",n);e[0]&&e.addEvent("submit",function(){f.call(this,t+"1")})},function(t,n,e){var a=i(e.h,n),o=i(e.b,n);if(a&&o){var f=e.step||10,l=2;r(t+"1",n),a.each(function(i,n){r(t+c(l+i*f),n)}),o.each(function(i,n){r(t+c(l+i*f+1),n)})}},function(t,n,a){var o=a.union||"",f={};if(/^[\s\d,]+$/.test(o)){var l=0;i.each(o.split(/\s*,\s*/),function(i,t){if(t=parseInt(t))for(var n=0;t>n;n++)f[l++]=i})}var s=2;r(t+"1",n);var u=parseInt(a.step)||10,d=i(a.h,n);if(d&&h){i.each(d,function(i,n){r(t+c(i*u+s),n)});var h=i(a.b,n);i.each(h,function(n,a){var o=n*u+s+1,l=a.children;if(0==l.length)l=[a];else for(;1==l.length;)l=l[0].children;var d=0;i.each(l,function(i,n){e(n)&&("undefined"!=typeof f[i]&&(d=f[i]),r(t+c(o+d),n),d++)})})}}];t.prototype={init:function(t,e){t&&5==t.length&&(v=t),E||(E=Math.random()<(e||.1),E&&(i("body").addEvent("click",function(i){s(i.target,b)}),i.ready(function(){function i(){t&&(a("/ntes_u?"+t+"&_nct="+n()+"&_mcn="+m+e),t=0)}var t=p+"&_nch={id}",e="",c="&_msl="+n();C.addEvent("load",function(){e="&_msl="+n()}),a("/ntes_u?"+t+c),C.addEvent("beforeunload",i);var o=navigator.userAgent.toLowerCase();!/compatible/.test(o)&&/firefox/.test(o)&&C.addEvent("unload",i)}),this.retain&&this.area(b,this.retain)))},area:function(t,n){var e=this,a=function(i,t){e.area(i,t)};for(var c in n){var o=n[c],r=0;/(.*?)\*$/.test(c)&&(c=RegExp.$1,r=1);var f=c?/^#/.test(c)?i(c):i(c,t):[t];i.util.isArray(f)||(f=[f]);for(var l=0;l<f.length;l++){var s=r?o[0]:o[l];if(s&&f[l])if(s.i)for(var u=s.s||1,h=0;u>h;h++)s.j=h,this.zone(f[l+h],s);else d(f[l],a,s)}}},zone:function(t,n){var e=o(n.i,n.j),a=k[n.f||0],c=n.p||{};if(t&&a)if(c.dyn){var r,f;i(t).addEvent("mouseover",function(){for(var i,n=t.children[0];n&&(i=n.children[0]);)n=i;var o=t.innerHTML.replace(/<.*?>/g,"").length;!n||n==r&&o==f||(a(e,t,c),r=n,f=o)})}else d(t,function(i){a(e,i,c)})},batch:function(i){E?this.area(b,i):this.retain=i}},window._aCM=new t}(NTES),function(){_aCM.init("jja09"),setTimeout(function(){_aCM.batch({">.NTES-nav":[{">.nav-link":[{"":[{i:"111",f:1,p:{dyn:1}}]}],">.rightCon":[{"":[{i:"121"}]}],">.NTES-nav-rss":[{"":[{i:"131"}]}]}],">.ad960":[{">.left":[{"":[{i:"211"}]}],">.right":[{"":[{i:"221"}]}]}],">.homeNavTop":[{">.logo1":[{"":[{i:"311"}]}],">.logo2":[{"":[{i:"321"}]}],">.text":[{"":[{i:"331",f:1}]}],">.top_search":[{"":[{i:"341",f:3}]}]}],".menu":[{">.main":[{"":[{i:"411"}]}],">.exp":[{"":[{i:"421"}]}]}],">.homeNavBom2":[{".noBg":[{"":[{i:"511"}]}],li:[0,{"":[{i:"521"}]},{"":[{i:"531"}]}]}],">.areabg1":[{".focusImg":[{".fc":[{i:"611",s:4}],"#fonav":[{i:"615"}]}],".content":[{">.bbsShow":[{i:"621",f:1}]},{">.cBlack":[{i:"631"},{i:"633"},{i:"635"}],">.hdigest":[{i:"632"},{i:"634"},{i:"636"}],">.titBar":[{i:"637"}],">.f14bla":[{i:"638",f:2}]},{".firstNd":[{i:"671",f:1}],li:[0,{i:"672"},{i:"673"},{i:"674"},{i:"675"}]}],"#login_false":[{3:[{i:"641"}]}],"#login_true":[{".fB":[0,{i:"651"}]}],".tit2":[{">.more":[{i:"661"}]}],".gg250X210":[{"":[{i:"681"}]}]}],">.areabg2":[{".titbg1":[{"":[{i:"711"}]}],".titlist":[{"":[{i:"721",f:1}]}],".tit4":[{">.cBlack":[{i:"731"}],">.more":[{i:"732"}]},{">.cBlack":[{i:"751"}],">.more":[{i:"752"}]}],".picList1":[{">.imgShow":[{i:"741",f:1}],">.pictext":[{i:"742"}]}],".content":[0,{li:[{i:"761",s:10}]},{".cBlack":[{i:"771"},{i:"77D",f:1}],".more":[{i:"772"},{i:"77E"}],li:[{i:"773"},{i:"774"},{i:"775"},{i:"776"},{i:"777"},{i:"778"},{i:"779"},{i:"77A"},{i:"77B"},{i:"77C"},{i:"77F"},{i:"77G"},{i:"77H"},{i:"77I"},{i:"77J"},{i:"77K"}]},{".f14px":[{i:"791"},{i:"794"}],".pimg":[{i:"792"},{i:"795"},{i:"798"}],".ptext":[{i:"793"},{i:"796"}],".more":[{i:"797"}],".cBlack":[0,0,0,{i:"799"}]}],".tit2":[{"":[{i:"781",f:1}]}],">.colR>a":[{"":[{i:"7A1"}]}]},{".titbg2":[{"":[{i:"911"}]}],".titlist":[{"":[{i:"921",f:1}]}],".tit4":[{">.cBlack":[{i:"931"}],">.more":[{i:"932"}]}],".content":[{li:[{i:"941",s:11}]},{".cBlack":[{i:"951"}],".more":[{i:"952"}],li:[{i:"953",s:11}]},{".pimg":[{i:"971"},{i:"974"},{i:"977"}],".cBlack":[{i:"972"},{i:"975"},{i:"978"}],p:[{i:"973"},{i:"976"},{i:"979"}]}],".tit2":[{">.cBlack":[{i:"961"}],">.more":[{i:"962"}]}]},{".titbg3":[{"":[{i:"C11"}]}],".titlist":[{"":[{i:"C21",f:1}]}],".content":[{li:[{i:"C31",s:10}]},{li:[{i:"C41",s:10}]}],".cBlack":[0,0,{"":[{i:"C51"}]}],".picList2":[{">.pimg":[{i:"C61"}],">.cBlack":[{i:"C62"}],".cDRed":[{i:"C63"}]},{">.pimg":[{i:"C71"}],">.cBlack":[{i:"C72"}],".cDRed":[{i:"C73"}]},{">.pimg":[{i:"C81"}],">.cBlack":[{i:"C82"}],".cDRed":[{i:"C83"}]}]}],">.area":[0,0,{"":[{"":[{i:"811"}]}]},0,0,{"":[{"":[{i:"B11"}]}]},0,0,{li:[{"":[{i:"E11"}]},{"":[{i:"E21"}]},{"":[{i:"E31"}]},{"":[{i:"E41"}]},{"":[{i:"E51"}]},{"":[{i:"E61"}]},{"":[{i:"E71"}]},{"":[{i:"E81"}]},{"":[{i:"E91"}]},{"":[{i:"EA1"}]},{"":[{i:"EB1"}]},{"":[{i:"EC1"}]},{"":[{i:"ED1"}]},{"":[{i:"EE1"}]},{"":[{i:"EF1"}]},{"":[{i:"EG1"}]},{"":[{i:"EH1"}]},{"":[{i:"EI1"}]},{"":[{i:"EJ1"}]},{"":[{i:"EK1"}]},{"":[{i:"EL1"}]},{"":[{i:"EM1"}]},{"":[{i:"EN1"}]},{"":[{i:"EO1"}]},{"":[{i:"EP1"}]},{"":[{i:"EQ1"}]},{"":[{i:"ER1"}]},{"":[{i:"ES1"}]},{"":[{i:"ET1"}]},{"":[{i:"EU1"}]}]},{"":[{"":[{i:"F11"}]}]}],".picArea":[{".cBlack":[{"":[{i:"A11"}]}],".more":[{"":[{i:"A21"}]}],">.picL":[{"":[{i:"A31",f:1}]}],li:[{"":[{i:"A41",f:1}]},{"":[{i:"A51",f:1}]},{"":[{i:"A61",f:1}]},{"":[{i:"A71",f:1}]},{"":[{i:"A81",f:1}]},{"":[{i:"A91",f:1}]},{"":[{i:"AA1",f:1}]},{"":[{i:"AB1",f:1}]}]},{".cBlack":[{"":[{i:"D11"}]}],".more":[{"":[{i:"D21"}]}],">.picL":[{"":[{i:"D31",f:1}]}],li:[{"":[{i:"D41",f:1}]},{"":[{i:"D51",f:1}]},{"":[{i:"D61",f:1}]},{"":[{i:"D71",f:1}]},{"":[{i:"D81",f:1}]},{"":[{i:"D91",f:1}]},{"":[{i:"DA1",f:1}]},{"":[{i:"DB1",f:1}]}]}],">.friendLink2":[{">h3":[{"":[{i:"G11",f:1}]}]}],">.channel-end":[{">.channelEnd-link":[{"":[{i:"H11",f:1}]}],">.channelEnd-top":[{"":[{i:"H21"}]}]}],">.foot":[{"":[{"":[{i:"I11",f:1}]}]}]})},50)}();</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+neteaseClickStat();
+    </script>
+</body>
+</html>

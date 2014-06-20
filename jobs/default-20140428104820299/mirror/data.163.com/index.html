@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="数读,网易数读,infographic,datablog,信息图,图表,数据分析,网易新闻" />
+<title>数读_网易新闻</title>
+<script >var _ntes_const={stime : new Date()};</script>
+<link href="http://img1.cache.netease.com/cnews/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img10/lm0622/guonei.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<link href="http://img1.cache.netease.com/cnews/img12/datablog/datablog-min.css" rel="stylesheet" type="text/css">
+<link href="http://img1.cache.netease.com/cnews/img12/datablog/datablog-list-min.css" rel="stylesheet" type="text/css">
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<base target="_blank" />
+</head>
+<body>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+<div class="area">
+  <div class="path clearfix"> <span class="logo"><a href="http://news.163.com/"><img src="http://img1.cache.netease.com/img09/logo/endpage/news.png" alt="网易新闻" width="70" height="27"></a></span> <span class="crumb"><a href="http://news.163.com/">新闻频道</a> &gt; 数读专栏 </span> </div>
+</div>
+<img src="http://img1.cache.netease.com/cnews/img12/datablog/banner.png" width="965" height="126" class="banner" />
+<div class="area"> <span class="areaLine"></span>
+  <div class="subscribe">
+    <div class="right">订阅本栏目：<a href="http://news.163.com/special/00011K6L/rss_newsattitude.xml" class="rss">RSS</a><a href="http://t.163.com/datablog" class="t_163">网易微博</a><a href="http://weibo.com/datablog" class="sina_weibo">新浪微博</a></div>
+  </div>
+  <span class="areaLine"></span>
+  <div class="main clearfix">
+    <div class="left">
+      <ul class="post-list">
+                        <li>
+          <h2><a href="http://data.163.com/14/0428/07/9QTBD3FA00014MTN.html">国产剧题材匮乏，都市、革命剧占半壁江山</a></h2>
+          <div><span class="date">2014-04-28</span><a href='http://comment.news.163.com/news3_bbs/9QTBD3FA00014MTN.html' class="discuss-count">5872 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0428/07/9QTBD3FA00014MTN.html"><img src="http://img3.cache.netease.com/cnews/2014/4/28/2014042807101253749.png" width="550" height="310" alt="国产剧题材匮乏，都市、革命剧占半壁江山" /></a>
+          <p>根据广电总局发布的历年电视剧发行数据，都市和革命是中国近几年最盛产的电视剧题材。2013年，当代都市题材电视剧产量达5521集，占据了该年总产量的34.8%。而都市剧近年来几乎变成了家庭伦理剧的天下。与此同时，近代革命题材电视剧近几年呈井喷式增长。从2007年到2013年，其产量占比从6.1%猛增到15.2%，2012年更是达到了21.3%。这一题材剧也遭遇了和都市剧类似的命运：电视屏幕被各种跟风谍战戏淹没后，如今抗日剧又一统了天下。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9QTBD3FA00014MTN.html' class="discuss-count">5872 人参与讨论</a> | <a href="http://data.163.com/14/0428/07/9QTBD3FA00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0425/09/9QLRNDKN00014MTN.html">BP漏油账单：政府罚款不手软，人人有权申索赔</a></h2>
+          <div><span class="date">2014-04-25</span><a href='http://comment.news.163.com/news3_bbs/9QLRNDKN00014MTN.html' class="discuss-count">5273 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0425/09/9QLRNDKN00014MTN.html"><img src="http://img5.cache.netease.com/cnews/2014/4/25/201404250922288a581.png" width="550" height="310" alt="BP漏油账单：政府罚款不手软，人人有权申索赔" /></a>
+          <p>2010年4月20日晚，英国石油公司（BP）在墨西哥湾所属的“深水地平线”（Deepwater 
+Horizon）石油钻井平台发生天然气泄漏并发生爆炸，事故当场造成11人死亡。3天后平台底部的油井开始不断漏油，漏油量从每天5000桶，到后来达到2.5～3万桶，从而演变成美国有史以来最严重的环境公害。BP公司作为事故首要责任方，为此付出了沉重代价，包括各种应急措施、政府罚款、赔偿等，公司一共支付了约410亿美元。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9QLRNDKN00014MTN.html' class="discuss-count">5273 人参与讨论</a> | <a href="http://data.163.com/14/0425/09/9QLRNDKN00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0423/00/9QFNJALA00014MTN.html">各国人的道德尺度：哪些能接受，哪些不能接受</a></h2>
+          <div><span class="date">2014-04-23</span><a href='http://comment.news.163.com/news3_bbs/9QFNJALA00014MTN.html' class="discuss-count">8360 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0423/00/9QFNJALA00014MTN.html"><img src="http://img6.cache.netease.com/cnews/2014/4/23/20140423001141dd13c.png" width="550" height="310" alt="各国人的道德尺度：哪些能接受，哪些不能接受" /></a>
+          <p>上周，皮尤研究中心发布了新一期的全球态度调查，分别就八项和道德有关的议题对40个国家的民众进行了态度统计。这八项议题包括：婚外情，赌博，同性恋，堕胎，婚前性行为，酗酒，离婚，以及避孕。</p>
+          <div>编辑：<span class="post-editor">周子琦 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9QFNJALA00014MTN.html' class="discuss-count">8360 人参与讨论</a> | <a href="http://data.163.com/14/0423/00/9QFNJALA00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0421/07/9QBATP0B00014MTN.html">中国行政成本规模大增速快，占财政支出近2成</a></h2>
+          <div><span class="date">2014-04-21</span><a href='http://comment.news.163.com/news3_bbs/9QBATP0B00014MTN.html' class="discuss-count">18909 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0421/07/9QBATP0B00014MTN.html"><img src="http://img5.cache.netease.com/cnews/2014/4/21/2014042107165742fd1.png" width="550" height="310" alt="中国行政成本规模大增速快，占财政支出近2成" /></a>
+          <p>中国高企的三公经费长期被世人诟病，在这样的舆论压力之下三公经费的公开已进入第四个年头。然而三公经费只是中国政府行政成本的冰山一角，臃肿的机构、数量庞大的行政人员、低效的机制都在使行政成本急剧增加。1990年代以来，中国政府运行的显性成本占财政支出的总比重几乎都在10%以上，而且大部分年份增速超过15%，远远高于同期GDP的增长增速。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9QBATP0B00014MTN.html' class="discuss-count">18909 人参与讨论</a> | <a href="http://data.163.com/14/0421/07/9QBATP0B00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0417/20/9Q2GDKPG00014MTN.html">盘点1833年以来的重大海难</a></h2>
+          <div><span class="date">2014-04-17</span><a href='http://comment.news.163.com/news3_bbs/9Q2GDKPG00014MTN.html' class="discuss-count">4310 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0417/20/9Q2GDKPG00014MTN.html"><img src="http://img3.cache.netease.com/cnews/2014/4/17/201404172100584793c.png" width="550" height="310" alt="盘点1833年以来的重大海难" /></a>
+          <p>16日上午8时58分许，载有475人的“岁月号”客轮（6825吨级）在韩国全罗南道珍岛郡观梅岛西南方向约3公里海上意外进水，客轮逐渐倾斜，最后完全沉没。目前，尚有280余人生死不明，救援工作正紧锣密鼓地进行。信息科普网站Fact Monster提供了1833年以来全球发生的一些重大海难事件资料，在这些除战争军方互击所致的海难中，外力撞击、遭遇风暴、爆炸着火等是导致沉船的主要原因。</p>
+          <div>编辑：<span class="post-editor">周子琦 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9Q2GDKPG00014MTN.html' class="discuss-count">4310 人参与讨论</a> | <a href="http://data.163.com/14/0417/20/9Q2GDKPG00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0416/05/9PUAJNAP00014MTN.html">避税天堂不能说的秘密：藏21万亿美元隐形财富</a></h2>
+          <div><span class="date">2014-04-16</span><a href='http://comment.news.163.com/news3_bbs/9PUAJNAP00014MTN.html' class="discuss-count">7590 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0416/05/9PUAJNAP00014MTN.html"><img src="http://img2.cache.netease.com/cnews/2014/4/16/20140416060024bac81.png" width="550" height="310" alt="避税天堂不能说的秘密：藏21万亿美元隐形财富" /></a>
+          <p>全球有多少财富流失到避税天堂？根据英国的税收正义联盟（Tax Justice Network）公布的一份报告显示，截至2010年底，保守估计全世界有总额高达21万亿美元的资产转移到了全球各地的所谓避税天堂，这比2012年美国的国内生产总值16.2万亿美元还要高出许多。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9PUAJNAP00014MTN.html' class="discuss-count">7590 人参与讨论</a> | <a href="http://data.163.com/14/0416/05/9PUAJNAP00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0414/07/9PP9NF2N00014MTN.html">非洲中国企业形象调查：360度差评无死角</a></h2>
+          <div><span class="date">2014-04-14</span><a href='http://comment.news.163.com/news3_bbs/9PP9NF2N00014MTN.html' class="discuss-count">31576 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0414/07/9PP9NF2N00014MTN.html"><img src="http://img5.cache.netease.com/cnews/2014/4/14/201404140707503c9cd.png" width="550" height="310" alt="非洲中国企业形象调查：360度差评无死角" /></a>
+          <p>近日，南非职业道德研究所公布了一项针对在非中国企业的形象调查，参与调查者为来自15个非洲国家的常年与中国保持经济合作关系的经理人。报告分别就在非中企的声誉、产品和服务质量、社会和经济责任、对环保的重视以及雇佣状况进行了调查，结果显示，在非洲人眼中，当地的中国企业呈现全方位的明显负面形象：它们不仅声誉不好、产品服务质量差，还毫无社会责任感，工资不高，也不尊重非洲员工。</p>
+          <div>编辑：<span class="post-editor">周子琦 李建南</span> | <a href='http://comment.news.163.com/news3_bbs/9PP9NF2N00014MTN.html' class="discuss-count">31576 人参与讨论</a> | <a href="http://data.163.com/14/0414/07/9PP9NF2N00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0411/06/9PHG3K8V00014MTN.html">军火生意成绩单：美俄生意最好，印度花钱最多</a></h2>
+          <div><span class="date">2014-04-11</span><a href='http://comment.news.163.com/news3_bbs/9PHG3K8V00014MTN.html' class="discuss-count">4162 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0411/06/9PHG3K8V00014MTN.html"><img src="http://img5.cache.netease.com/cnews/2014/4/11/2014041106263732d9a.png" width="550" height="310" alt="军火生意成绩单：美俄生意最好，印度花钱最多" /></a>
+          <p>2009-2013年全球武器交易额与更早的五年相比增加了14%，全球竞争不断加剧，而传统的市场格局正经受着像中国这样新兴军售大国的挑战。美国、俄罗斯依然把持着军火出口的头两把交椅，两国出口总和达753.2亿美元，占全球出口份额的56.2%。德国、中国和法国紧随其后。中国10年来的军售成绩由世界第8跃升为第4，其表现可谓抢眼。另一方面印度军购持续发力，已成为全球最大武器买家。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9PHG3K8V00014MTN.html' class="discuss-count">4162 人参与讨论</a> | <a href="http://data.163.com/14/0411/06/9PHG3K8V00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0403/23/9OUMANKO00014MTN.html">中国器官捐献率世界居末 每百万人仅0.03人捐献</a></h2>
+          <div><span class="date">2014-04-03</span><a href='http://comment.news.163.com/news3_bbs/9OUMANKO00014MTN.html' class="discuss-count">36045 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0403/23/9OUMANKO00014MTN.html"><img src="http://img3.cache.netease.com/cnews/2014/4/3/20140403231046053bf.png" width="550" height="310" alt="中国器官捐献率世界居末 每百万人仅0.03人捐献" /></a>
+          <p>在中国，每年约有150万人因末期器官功能衰竭需要移植，而仅1万人能如愿得到移植，供需比例只有1:150。而据世界卫生组织的数据，全球平均器官供需比为1:20~30，美国为1:5，英国则为1:3。悬殊的供需差距主要在于器官供应的稀缺，而与世界其他国家相比，中国的器官捐献率可谓低到了山谷里。据中国卫生部的数据，中国的器官捐献率才达到0.03/百万人，不到西班牙的1/1000，仅约英国的1/600，巴西的1/400。</p>
+          <div>编辑：<span class="post-editor">周子琦 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9OUMANKO00014MTN.html' class="discuss-count">36045 人参与讨论</a> | <a href="http://data.163.com/14/0403/23/9OUMANKO00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0402/07/9OQD2P1O00014MTN.html">助科研、促创收、惠外交：熊猫输出不停歇</a></h2>
+          <div><span class="date">2014-04-02</span><a href='http://comment.news.163.com/news3_bbs/9OQD2P1O00014MTN.html' class="discuss-count">5439 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0402/07/9OQD2P1O00014MTN.html"><img src="http://img3.cache.netease.com/cnews/2014/4/2/201404021555598619c.png" width="550" height="310" alt="助科研、促创收、惠外交：熊猫输出不停歇" /></a>
+          <p>根据网站“熊猫动物园”数据，目前在中国境外，共有47只大熊猫生活在13个国家和地区的共18个动物园中。其中，美国拥有最多的大熊猫，包括在当地出生的熊猫，共计14只。其次是日本，有6只。此外，西班牙、台湾、奥地利分别有3只。
+实际上，除每年交付的100万美元外，接收方要证明自己有能力让大熊猫落户可并不容易。以2011年去英国苏格兰爱丁堡的两只熊猫为例，园方除了每年要支付100万美元外，还要斥巨资为熊猫搭建五星级馆舍……</p>
+          <div>编辑：<span class="post-editor">周子琦 李建南</span> | <a href='http://comment.news.163.com/news3_bbs/9OQD2P1O00014MTN.html' class="discuss-count">5439 人参与讨论</a> | <a href="http://data.163.com/14/0402/07/9OQD2P1O00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0331/07/9OL9GSAJ00014MTN.html">缺乏互信、忧虑冲击，台湾社会不买服贸的账</a></h2>
+          <div><span class="date">2014-03-31</span><a href='http://comment.news.163.com/news3_bbs/9OL9GSAJ00014MTN.html' class="discuss-count">11125 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0331/07/9OL9GSAJ00014MTN.html"><img src="http://img2.cache.netease.com/cnews/2014/3/31/20140331073125b4c73.png" width="550" height="310" alt="缺乏互信、忧虑冲击，台湾社会不买服贸的账" /></a>
+          <p>马英九从2008年上台以来，便深信推动自由贸易协议与让台湾经济和中国大陆深度整合，是台湾经济转型的最佳路径。服贸协议则是马英九执政后与大陆签订的第19项协议，也是截至目前在台湾社会最具争议性的两岸协议。尽管中国大陆和台湾官方，对服务贸易协议的宣传都是“对台湾有利”、“大陆让利”，但台湾民众依然对服贸协议疑虑重重。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9OL9GSAJ00014MTN.html' class="discuss-count">11125 人参与讨论</a> | <a href="http://data.163.com/14/0331/07/9OL9GSAJ00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0328/06/9ODF7FN400014MTN.html">全球空气污染致死情况：中国及周边代价最高</a></h2>
+          <div><span class="date">2014-03-28</span><a href='http://comment.news.163.com/news3_bbs/9ODF7FN400014MTN.html' class="discuss-count">8113 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0328/06/9ODF7FN400014MTN.html"><img src="http://img5.cache.netease.com/cnews/2014/3/28/201403280637138cc38.png" width="550" height="310" alt="全球空气污染致死情况：中国及周边代价最高" /></a>
+          <p>最近，随着京津冀等多省市再度遭雾霾袭击，许多地区已拉响重度污染警报。而3月25日，世界卫生组织（WHO）也发布了一项针对全球空气污染致死情况的调查报告。数据显示，2012年，世界共有700万人因空气污染死去，相当于每8人中就有1人死于糟糕的空气质量。而从全球来看，西太平洋中低收入国家和东南亚为此付出的代价最为惨痛。</p>
+          <div>编辑：<span class="post-editor">周子琦 李建南</span> | <a href='http://comment.news.163.com/news3_bbs/9ODF7FN400014MTN.html' class="discuss-count">8113 人参与讨论</a> | <a href="http://data.163.com/14/0328/06/9ODF7FN400014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0326/08/9O8G50B500014MTN.html">美国所得税：穷人免税拿补贴</a></h2>
+          <div><span class="date">2014-03-26</span><a href='http://comment.news.163.com/news3_bbs/9O8G50B500014MTN.html' class="discuss-count">14427 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0326/08/9O8G50B500014MTN.html"><img src="http://img5.cache.netease.com/cnews/2014/3/26/20140326082201228ba.png" width="550" height="310" alt="美国所得税：穷人免税拿补贴" /></a>
+          <p>美国的联邦税法是世界上最全面、复杂的税法，其篇幅几乎达7万页，而个人所得税作为联邦税收中最重要的一部分，其征收也及其严格，但其实税法规定的可减免项目繁多，美国人真正要交的税比简单地套用阶梯税率要少得多。2013年，美国有43.3%的家庭不用缴纳联邦所得税。如此庞大的的免税人群其实是通过种类繁多的税收减免政策获益的。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9O8G50B500014MTN.html' class="discuss-count">14427 人参与讨论</a> | <a href="http://data.163.com/14/0326/08/9O8G50B500014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0323/23/9O2BTPAA00014MTN.html">美公共图书馆人气高 年轻高学历有钱者更爱去</a></h2>
+          <div><span class="date">2014-03-23</span><a href='http://comment.news.163.com/news3_bbs/9O2BTPAA00014MTN.html' class="discuss-count">13654 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0323/23/9O2BTPAA00014MTN.html"><img src="http://img4.cache.netease.com/cnews/2014/3/23/20140323230955919c9.png" width="550" height="310" alt="美公共图书馆人气高 年轻高学历有钱者更爱去" /></a>
+          <p>对于绝大部分美国人来说，公共图书馆是一个不可缺少的存在，它不仅受到国民的极高重视，也被广泛地利用在美国人日常的生活里。据皮尤研究中心的调查，在过去的一年中，有54%的美国人去过图书馆，而有72%的人住在“图书馆使用型家庭”。</p>
+          <div>编辑：<span class="post-editor">周子琦 李建南</span> | <a href='http://comment.news.163.com/news3_bbs/9O2BTPAA00014MTN.html' class="discuss-count">13654 人参与讨论</a> | <a href="http://data.163.com/14/0323/23/9O2BTPAA00014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+                <li>
+          <h2><a href="http://data.163.com/14/0321/07/9NRHM9L300014MTN.html">美式中产生活离你有多远</a></h2>
+          <div><span class="date">2014-03-21</span><a href='http://comment.news.163.com/news3_bbs/9NRHM9L300014MTN.html' class="discuss-count">16704 人参与讨论</a></div>
+          <a href="http://data.163.com/14/0321/07/9NRHM9L300014MTN.html"><img src="http://img6.cache.netease.com/cnews/2014/3/21/2014032107340999e7c.png" width="550" height="310" alt="美式中产生活离你有多远" /></a>
+          <p>在北京月收入能达到20000元想必是很多人梦寐以求的目标，这在全国任何一个城市都绝对算得上是高收入了。不过令人沮丧的是，这20000元能在北京维持的生活标准也仅仅相当于普通美国中产阶级。</p>
+          <div>编辑：<span class="post-editor">张亚彬 吴晓琪</span> | <a href='http://comment.news.163.com/news3_bbs/9NRHM9L300014MTN.html' class="discuss-count">16704 人参与讨论</a> | <a href="http://data.163.com/14/0321/07/9NRHM9L300014MTN.html">阅读全文&gt;&gt;</a></div>
+        </li>
+              </ul>
+            <div class="paginator">                  <a href="http://data.163.com/special/datablog/" target="_self">首页</a>  <a href="#" target="_self">上一页</a>  <a href="http://data.163.com/special/datablog/" target="_self" class="on">1</a>                
+         <a href="http://data.163.com/special/datablog_02/" target="_self" >2</a>                
+         <a href="http://data.163.com/special/datablog_03/" target="_self" >3</a>                
+         <a href="http://data.163.com/special/datablog_04/" target="_self" >4</a>                
+         <a href="http://data.163.com/special/datablog_05/" target="_self" >5</a>                
+         <a href="http://data.163.com/special/datablog_06/" target="_self" >6</a>                
+         <a href="http://data.163.com/special/datablog_07/" target="_self" >7</a>                
+         <a href="http://data.163.com/special/datablog_08/" target="_self" >8</a>                
+         <a href="http://data.163.com/special/datablog_09/" target="_self" >9</a>                
+         <a href="http://data.163.com/special/datablog_10/" target="_self" >10</a>                
+         <a href="http://data.163.com/special/datablog_11/" target="_self" >11</a>                
+         <a href="http://data.163.com/special/datablog_12/" target="_self" >12</a>                
+         <a href="http://data.163.com/special/datablog_13/" target="_self" >13</a>                
+         <a href="http://data.163.com/special/datablog_14/" target="_self" >14</a>                
+         <a href="http://data.163.com/special/datablog_15/" target="_self" >15</a>                
+         <a href="http://data.163.com/special/datablog_16/" target="_self" >16</a>                
+         <a href="http://data.163.com/special/datablog_17/" target="_self" >17</a>                
+         <a href="http://data.163.com/special/datablog_18/" target="_self" >18</a>                
+         <a href="http://data.163.com/special/datablog_19/" target="_self" >19</a>                
+         <a href="http://data.163.com/special/datablog_20/" target="_self" >20</a>                
+                        <a href="http://data.163.com/special/datablog_02/" target="_self">下一页</a><a target="_self" href="http://data.163.com/special/datablog_20/">最末页</a></div>
+       </div>
+    <div class="right">
+      <div class="about">
+        <div class="imgbox"><img src="http://img1.cache.netease.com/cnews/img12/datablog/newsquare_s.png" width="100" height="100" alt="网易新闻《数读》栏目" /></div>
+        <p>网易新闻《数读》栏目。在这里，我们用数据说话，提供轻量化的阅读体验。</p>
+      </div>
+      <span class="areaLine"></span>
+      <div class="poster">
+        <h4 class="articleTitle">Posted by:</h4>
+        <ul>
+          <li><img src="http://img6.cache.netease.com/cnews/2012/7/16/20120716101340c0878.jpg" width="60" height="60" alt="吴晓琪" />
+            <p>吴晓琪</p>
+            <p class="position">网易新闻中心编辑</p>
+          </li>
+          <li><img src="http://img2.cache.netease.com/cnews/2013/2/25/20130225113320b9ef2.jpg" width="60" height="60" alt="张亚彬" />
+            <p>张亚彬</p>
+            <p class="position">网易新闻中心编辑</p>
+          </li>
+          <li><img src="http://img1.cache.netease.com/cnews/2013/8/8/20130808145451d6f17.jpg" width="60" height="60" alt="周子琦" />
+            <p>周子琦</p>
+            <p class="position">网易新闻中心编辑</p>
+          </li>
+          <li><img src="http://img2.cache.netease.com/cnews/2014/3/18/201403181848379c9c6.jpg" width="60" height="60" alt="李健南" />
+            <p>李建南</p>
+            <p class="position">网易新闻中心编辑</p>
+          </li>
+        </ul>
+      </div>
+      <span class="areaLine"></span>
+      <div class="lastest-news">
+        <h4 class="articleTitle">专栏最受欢迎文章</h4>
+        <ul class="list">
+	                      <li> <span class="logo-rank-top">1</span>
+            <p class="title"><a href="http://data.163.com/14/0428/07/9QTBD3FA00014MTN.html" title="国产剧题材匮乏，都市、革命剧占半壁江山">国产剧题材匮乏，都市、革命剧占半壁江山</a> </p>
+          </li>
+                    <li> <span class="logo-rank-top">2</span>
+            <p class="title"><a href="http://data.163.com/14/0425/09/9QLRNDKN00014MTN.html" title="BP漏油账单：政府罚款不手软，人人有权申索赔">BP漏油账单：政府罚款不手软，人人有权申索赔</a> </p>
+          </li>
+                    <li> <span class="logo-rank-top">3</span>
+            <p class="title"><a href="http://data.163.com/14/0423/00/9QFNJALA00014MTN.html" title="各国人的道德尺度：哪些能接受，哪些不能接受">各国人的道德尺度：哪些能接受，哪些不能接受</a> </p>
+          </li>
+                    <li> <span class="logo-rank-top">4</span>
+            <p class="title"><a href="http://data.163.com/14/0417/20/9Q2GDKPG00014MTN.html" title="盘点1833年以来的重大海难">盘点1833年以来的重大海难</a> </p>
+          </li>
+                    <li> <span class="logo-rank-top">5</span>
+            <p class="title"><a href="http://data.163.com/14/0224/07/9LR4DIVD00014MTN.html" title="列宁，你好；列宁，再见">列宁，你好；列宁，再见</a> </p>
+          </li>
+                  </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="END_nav_">
+<span class="nav_link"><a rel="nofollow" href="http://www.163.com/">网易首页</a>-<a rel="nofollow" href="http://news.163.com/">新闻</a>-<a rel="nofollow" href="http://sports.163.com/">体育</a>-<a rel="nofollow" href="http://ent.163.com/">娱乐</a>-<a rel="nofollow" href="http://money.163.com/">财经</a>-<a rel="nofollow" href="http://auto.163.com/">汽车</a>-<a rel="nofollow" href="http://tech.163.com/">科技</a>-<a rel="nofollow" href="http://digi.163.com/">数码</a>-<a rel="nofollow" href="http://mobile.163.com/">手机</a>-<a rel="nofollow" href="http://lady.163.com/">女人</a>-<a rel="nofollow" href="http://game.163.com/">游戏</a>-<a rel="nofollow" href="http://bbs.163.com/">论坛</a>-<a rel="nofollow" href="http://v.163.com/">视频</a>-<a rel="nofollow" href="http://blog.163.com/">博客</a>-<a rel="nofollow" href="http://house.163.com/" id="houseUrl2">房产</a>-<a rel="nofollow" id="homeUrl2" href="http://home.163.com/">家居</a>-<a rel="nofollow" href="http://m.163.com/">应用</a>-<a rel="nofollow" href="http://t.163.com/">微博</a></span>
+  <div class="top_search">
+    <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search">
+      <input type="hidden" value="news.163" name="keyfrom"/>
+      <input type="hidden" value="user163" name="suser"/>
+      <input type="hidden" value="gbk" name="ue"/>
+      <label><span class="hidden">搜索</span>
+      <input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/>
+      </label>
+      <noscript>
+      <select name="site" class="left">
+        <option value="网易" selected="selected">新闻</option>
+        <option value="">网页</option>
+      </select>
+      </noscript>
+      <div id="divSelect2" class="left"> </div>
+      <input type="submit" class="btn" value="搜索" name="Submit"/>
+      <input type="hidden" value="page" id="in" name="in"/>
+    </form>
+    <a href="http://news.163.com/special/00011K6L/rss.html"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img1.cache.netease.com/cnews/img07/rss.gif" style="width: 26px; height: 14px;"/></a></div>
+</div> 
+<span class="blank9"></span> 
+<div class="foot">
+<div class="text"><a href="http://www.bjjubao.org/index.htm">北京互联网违法不良信息举报</a>　<a href="http://t.163.com/zt/feedback">意见反馈</a>　<a href="http://news.163.com/sitemap.html">新闻地图</a>　<a href="http://news.163.com/special/i/000117JD/index_history.html">历史回顾</a></div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014</span>
+</div>
+<!-- 弹窗代码 -->
+<!-- 代码 -->
+
+<!-- 即时消息 -->
+<script>
+(function(){	
+	var version = window.navigator.appVersion;
+	var isIE6 = (version.indexOf("MSIE 6.0") != -1 || version.indexOf("MSIE 5.5") != -1)? true:false;
+	if(location.hostname.indexOf("news") == -1){   
+           showQR(460, "http://img2.cache.netease.com/news/2013/newapp5.jpg");
+	}
+	function showQR(top, imgUrl){
+		var QRbox= document.createElement("div");
+		var QRboxCSS ={
+			'width': "110px",
+			'height': "147px",
+			'position': "fixed",
+			'_position': "absolute",
+			'top': top + "px",
+			'right': "3px",
+			'display':"block",
+			'zIndex':100
+		};
+		for(var key in QRboxCSS){
+			QRbox.style[key] = QRboxCSS[key];
+		}
+	 	if(isIE6){
+	 		QRbox.style.position = "absolute";
+	 	}
+	 	
+		QRbox.innerHTML="<a href='http://3g.163.com/links/4102' target='_blank'></a>";
+		var link =QRbox.getElementsByTagName("a")[0];
+		var linkCSS = {
+			display:"block",
+			width: "100%",
+			height: "100%",
+			backgroundImage: "url("+imgUrl+")",
+			backgroundPosition: "0px 0px"
+		};
+		for(var key in linkCSS){
+			link.style[key] = linkCSS[key]
+		}
+		document.body.appendChild(QRbox);
+		var linkEventMap = {
+			"mouseover": function(){
+				link.style.backgroundPosition = "-110px 0px";
+			},
+			"mouseout": function(){
+				link.style.backgroundPosition = "0px 0px";
+			}
+		}
+		for(var evt in linkEventMap){
+			var func = linkEventMap[evt];
+			addEvent(evt, link, func);
+		}
+		addEvent("scroll", window, function(){
+			if(isIE6){
+				QRbox.style.top = getScrollTop() + top + "px";
+			}
+		})
+	}
+	function addEvent(evt, elem, callback){
+		if(elem.addEventListener){
+			elem.addEventListener(evt, callback, false)
+		} else {
+			elem.attachEvent && elem.attachEvent("on"+evt, callback);
+		} 
+	}
+	function getScrollTop(){
+	    if(typeof pageYOffset!= 'undefined'){
+	        //most browsers
+	        return pageYOffset;
+	    }
+	    else{
+	        var B= document.body; //IE 'quirks'
+	        var D= document.documentElement; //IE with doctype
+	        D= (D.clientHeight)? D: B;
+	        return D.scrollTop;
+	    }
+	}
+})();
+(function(){function e(e,n,r,i){var r=r||500,s=i||function(){},o,u=parseInt(t(e,"height"),10);e.toggled?o=e.originalHeight:(o=u,e.originalHeight=o);var a=Math.round(r/o);n=="show"&&(e.style.height="0"),e.style.display="block",e.toggled=!0;var f=o;for(var l=f;l>=0;l--)(function(t){var r=n=="show"?t*a:(f-t)*a;setTimeout(function(){(t==0&&n=="hide"||t==f&&n=="show")&&s(),e.style.height=t+"px";var r=t/f;e.style.opacity=r,e.style.filter="alpha(opacity="+r*100+")"},r)})(l)}function t(e,t){if(e.style[t])return e.style[t];if(e.currentStyle)return e.currentStyle[t];if(document.defaultView&&document.defaultView.getComputedStyle){t=t.replace(/([A-Z])/g,"-$1"),t=t.toLowerCase();var n=document.defaultView.getComputedStyle(e,"");return n&&n.getPropertyValue(t)}return null}function n(e,t,n){var r=function(e,t){try{return e.contains?e!=t&&e.contains(t):!!(e.compareDocumentPosition(t)&16)}catch(n){}},i=function(e){var t=e.currentTarget,i=e.relatedTarget;!r(t,i)&&t!=i&&n.call(e.currentTarget,e)};e.addEventListener?t=="mouseenter"?e.addEventListener("mouseover",i,!1):t=="mouseleave"?e.addEventListener("mouseout",i,!1):e.addEventListener(t,n,!1):e.attachEvent("on"+t,n)}function r(t){var r=this;r.cfg=t;var i=function(){n(r.cfg.closeBtn,"click",function(){r.close()}),n(r.cfg.wrap,"mouseenter",function(){r._timingClose("stop")}),n(r.cfg.wrap,"mouseleave",function(){r._timingClose("start",3)}),n(window,"focus",function(){r._pollStop=!1}),n(window,"blur",function(){r._pollStop=!0}),window[r.cfg.pollCallback]=r._push,window[r.cfg.contentCallback]=r._fillContent,r.start()},s=function(e,t){var n="popush_scriptloader";document.getElementById(n)!==null&&document.body.removeChild(document.getElementById(n));var i=document.createElement("script");i.id=n,i.type="text/javascript",i.async=!0,i.src=r.cfg.preventCache?e+"?"+Math.round(Math.random()*1e10):e,i.onload=t||function(){return!1},document.body.appendChild(i)},o=function(){var e=location.host.split(".").reverse()[2],t="?id="+r.cfg.id+"&cname="+e+"&rnd="+Math.round(Math.random()*1e10);(new Image).src=(r.cfg.countUrl||"count.php")+t};r._getDisplayState=function(){return!r._state||r._state=="hide"?"hide":"show"},r._display=function(t){if(r._getDisplayState()==t)return!1;e(r.cfg.contentWrap,t),r._state=t},r._timingClose=function(e,t){if(r._getDisplayState()=="hide")return!1;var t=t||r.cfg.hideAfter;e=="start"?r._closeTimer=setTimeout(function(){r._display("hide")},t*1e3):e=="stop"&&typeof r._closeTimer!="undefined"&&clearTimeout(r._closeTimer)},r.close=function(){if(!-[1,]&&!window.XMLHttpRequest){r.cfg.wrap.style.display="none";return !1;}r._getDisplayState()=="show"?r._display("hide"):r.cfg.wrap.style.display="none"},r._fillContent=function(e){r.contentCache=e,r.cfg.contentWrap.innerHTML=e,r._display("show"),r._timingClose("start")},r.manualShow=function(){if(r._getDisplayState()=="show")return!1;r.contentCache?r._fillContent(r.contentCache):s(r.cfg.contentUrl)},r._push=function(e){var t=Math.round((new Date).valueOf()/1e3),n=parseInt(e,10),i=t-n,u=NTES.cookie.get("PopPushData");if(u==n)return!1;if(r.cfg.oldTime&&i>r.cfg.oldTime)return!1;s(r.cfg.contentUrl),NTES.cookie.set("PopPushData",e,"30m",".163.com","/"),o()},r._poll=function(){r._pollStop||s(r.cfg.pollUrl)},r.start=function(){r._pollStop=!1,r._poll(),window.setInterval(r._poll,r.cfg.pollCycle*1e3)},i()}window.PopPush=r})()
+</script>
+<style type="text/css">
+#instant-news{width:300px;position:fixed;left:40px;bottom:0;z-index:100;
+_position: absolute;
+_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-172));
+}
+#instant-news-close{color:#B2b2b5;font-size:24px;font-weight:400;position:absolute;top:3px;right:4px;text-align:center;cursor:pointer;margin:0;padding:0;_display:none;}
+#instant-news-content{height:210px;padding:0;overflow:hidden;display:none;}
+</style>
+<div id="instant-news"><div id="instant-news-close">×</div><div id="instant-news-content"></div></div>
+<script>
+var wholeSiteNewsPushBgImgObj = new Image();wholeSiteNewsPushBgImgObj.src="http://img1.cache.netease.com/news/img14/wsw/bg-3.png";
+(function(N){
+    var t = N.cookie.get("PopPushData");
+    if(t && t != "") N.cookie.set("PopPushData", parseInt(t, 10), "30m", ".163.com", "/");
+})(window.NTES);
+var instant_news_push = new PopPush({
+    id: "instantnews",
+    wrap: document.getElementById('instant-news'),
+    contentWrap: document.getElementById('instant-news-content'),
+    closeBtn: document.getElementById('instant-news-close'),
+    pollUrl: "http://www.163.com/special/0077450P/hot_pop_js.js",
+    pollCallback: "latestInstantNews",
+    contentUrl: "http://temp.163.com/special/00804IKG/instant_news_content_cb.js",
+    contentCallback: "instantNewsContent",
+    pollCycle: 120,
+    hideAfter: 30,
+    oldTime: 7200,
+    countUrl: "http://temp.163.com/special/hot_pop_content/",
+    preventCache: false
+});
+</script> 
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0502010100";
+var wrUrl="http://163.wrating.com/";
+vjTrack();
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?c=860010-0502010100" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<!-- START NetEase Analytics 2006 -->
+    <script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "news"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- END NetEase Analytics 2006 -->
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+<!-- 浏览器升级 -->
+<script>!function(i){function n(){var n=this;this.proc={inca:function(t,e){var c=1;i("a",e).each(function(i,e){n.add(t+a(c++),e)})},subdiv:function(t,e,c){for(var f=1,o=c.level||1,d=[e],s=0;o>s;s++){var u=[];i.each(d,function(n,a){var t=0;/ntes-nav-select/.test(a.className)||i.each(a.children,function(i,n){r(n)&&(u.push(n),t++)}),t||u.push(a)}),d=u}i.each(d,function(i,e){n.add(t+a(f++),e)})},uniq:function(i,t,e){n.add(i+a(e.start||1),t)},form:function(a,t){var e=i(">form",t);e[0]&&e.addEvent("submit",function(){n.send.call(this,null,a+"1")})},tabgroup:function(t,e,c){var r=i(c.h,e),f=i(c.b,e),o=c.step||10,d=2;n.add(t+1,e),r.each(function(i,e){n.add(t+a(d+i*o),e)}),f.each(function(i,e){n.add(t+a(d+i*o+1),e)})},tabgroups:function(t,e,c){var f=c.union||"",o={};if(/^[\s\d,]+$/.test(f)){var d=0;i.each(f.split(/\s*,\s*/),function(i,n){if(n=parseInt(n))for(var a=0;n>a;a++)o[d++]=i})}var s=2;n.add(t+1,e);var u=parseInt(c.step)||10,h=i(c.h,e);i.each(h,function(i,e){n.add(t+a(i*u+s),e)});var v=i(c.b,e);i.each(v,function(e,c){var f=e*u+s+1,d=c.children;if(0==d.length)d=[c];else for(;1==d.length;)d=d[0].children;var h=0;i.each(d,function(i,e){r(e)&&("undefined"!=typeof o[i]&&(h=o[i]),n.add(t+a(f+h),e),h++)})})}}}function a(i){return 10>i?i.toString():i>62?"z":String.fromCharCode(i+(36>i?55:61))}function t(i,n){if(!n)return i;var t=i.length-1,e=i.charCodeAt(t);return 58>e?e-=48:91>e?e-=55:123>e&&(e-=61),i.substr(0,t)+a(e+n)}function e(){var i=_ntes_page_data.getRunTime()||0;return 0>i&&(i=0),i}function c(i){window.addEventListener?window.addEventListener("load",i,!1):window.attachEvent&&window.attachEvent("onload",i)}function r(i){var n=i.className,a=i.tagName.toLowerCase(),t={script:1,style:1,link:1,img:1,hr:1,br:1},e=!0;return t[a]?e=!1:/blank\d/.test(n)&&(e=!1),e}var f,o="_nacc=siteclick",d={cc:0};n.prototype={init:function(n){if(Math.random()<.1&&5==n.length){f=n,this.wl=[];var a=this;i("body").addEvent("click",function(i){i=i||window.event;for(var n=i.target||i.srcElement,t=0;"a"!=n.tagName.toLowerCase();){if(n=n.parentNode,!n.tagName||t>5)return;t++}for(var e=n.getAttribute("clkid"),c=n;!e&&(c=c.parentNode,c!=this&&c);)e=c.getAttribute("clkid");e&&a.send.call(n,null,e)}),i.ready(function(){a.onLoad()})}},onLoad:function(){function n(){d.unl||_ntes_sendInfo("un",_ntes_src_addr+"/ntes_u?"+a+"&_nct="+e()+"&_mcn="+d.cc+t),d.unl=1}var a=o+"&_npurl="+escape(document.URL)+"&_nch="+f,t="";if(window._ntes_sendInfo){i.each(this.wl,function(i){_ntes_sendInfo("cm",i)});var r="";if(window.NTES_logger_start_time){var s=NTES_logger_start_time.getTime();r="&_msl="+((new Date).getTime()-s),c(function(){t="&_msl="+((new Date).getTime()-s)})}_ntes_sendInfo("un",_ntes_src_addr+"/ntes_u?"+a+r),_ntes_bindEvent(window,"beforeunload",n);var u=window.navigator.userAgent.toLowerCase();!/compatible/.test(u)&&/firefox/.test(u)&&_ntes_bindEvent(window,"unload",n)}},send:function(i,n){if(n){var a="";"a"==this.tagName.toLowerCase()&&(a=this.getAttribute("href")||""),d.cc++;var t=_ntes_src_addr+"/ntes_p?"+o+"&_nct="+e()+"&_npurl="+escape(document.URL)+"&_nah="+escape(a)+"&_nat="+f+"_"+n;window._ntes_sendInfo?_ntes_sendInfo("cm",t):this.wl.push(t)}},area:function(n,a){for(var t in a){var e=t?/^#/.test(t)?i(t):i(t,n):[n];i.util.isArray(e)||(e=[e]);for(var c=a[t],r=0;r<c.length;r++)if(c[r]&&e[r])if(c[r].i)for(var f=c[r].s||1,o=0;f>o;o++)c[r].j=o,this.zone(e[r+o],c[r]);else this.area(e[r],c[r])}},zone:function(i,n){var a=t(n.i,n.j),e=n.f||"uniq",c=n.p||{};i&&this.proc[e]&&this.proc[e](a,i,c)},batch:function(i){f&&this.area(document.body,i)},add:function(i,n){n&&n.setAttribute("clkid",i)}},window._aCM=new n}(NTES),function(){_aCM.init("xwa08"),_aCM.batch({">.NTES-nav":[{">.nav-link":[{"":[{i:"111",f:"subdiv"}]}],">.NTES-nav-rss":[{"":[{i:"121"}]}],".NTES-link":[{"":[{i:"131",f:"inca"}]}]}],".path":[{">.logo":[{"":[{i:"211",f:"inca"}]}],">.crumb":[{"":[{i:"221",f:"inca"}]}]}],">.area":[0,{".right":[{"":[{i:"311",f:"inca"}]}],".paginator":[{"":[{i:"321",f:"inca"}]}],li:[{">h2":[{i:"331"}],">div":[{i:"332",f:"inca"},{i:"334",f:"inca"}],">a":[{i:"333"}]},{">h2":[{i:"341"}],">div":[{i:"342",f:"inca"},{i:"344",f:"inca"}],">a":[{i:"343"}]},{">h2":[{i:"351"}],">div":[{i:"352",f:"inca"},{i:"354",f:"inca"}],">a":[{i:"353"}]},{">h2":[{i:"361"}],">div":[{i:"362",f:"inca"},{i:"364",f:"inca"}],">a":[{i:"363"}]},{">h2":[{i:"371"}],">div":[{i:"372",f:"inca"},{i:"374",f:"inca"}],">a":[{i:"373"}]},{">h2":[{i:"381"}],">div":[{i:"382",f:"inca"},{i:"384",f:"inca"}],">a":[{i:"383"}]},{">h2":[{i:"391"}],">div":[{i:"392",f:"inca"},{i:"394",f:"inca"}],">a":[{i:"393"}]},{">h2":[{i:"3A1"}],">div":[{i:"3A2",f:"inca"},{i:"3A4",f:"inca"}],">a":[{i:"3A3"}]},{">h2":[{i:"3B1"}],">div":[{i:"3B2",f:"inca"},{i:"3B4",f:"inca"}],">a":[{i:"3B3"}]},{">h2":[{i:"3C1"}],">div":[{i:"3C2",f:"inca"},{i:"3C4",f:"inca"}],">a":[{i:"3C3"}]},{">h2":[{i:"3D1"}],">div":[{i:"3D2",f:"inca"},{i:"3D4",f:"inca"}],">a":[{i:"3D3"}]},{">h2":[{i:"3E1"}],">div":[{i:"3E2",f:"inca"},{i:"3E4",f:"inca"}],">a":[{i:"3E3"}]},{">h2":[{i:"3F1"}],">div":[{i:"3F2",f:"inca"},{i:"3F4",f:"inca"}],">a":[{i:"3F3"}]},{">h2":[{i:"3G1"}],">div":[{i:"3G2",f:"inca"},{i:"3G4",f:"inca"}],">a":[{i:"3G3"}]},{">h2":[{i:"3H1"}],">div":[{i:"3H2",f:"inca"},{i:"3H4",f:"inca"}],">a":[{i:"3H3"}]}],".lastest-news":[{li:[{i:"3I1",f:"inca"},{i:"3I2",f:"inca"},{i:"3I3",f:"inca"},{i:"3I4",f:"inca"},{i:"3I5",f:"inca"}]}]}],">.END_nav_":[{">.nav_link":[{"":[{i:"411",f:"inca"}]}],">.top_search":[{"":[{i:"421",f:"form"}]}]}],">.foot":[{"":[{"":[{i:"511",f:"inca"}]}]}],">div":[0,0,0,0,0,{"":[{"":[{i:"611",f:"inca"}]}]}]})}(NTES);</script>
+<script type="text/javascript" src="http://img1.cache.netease.com/2012/ieupdate/update_funcs_v1_1.js" charset="gbk"></script><script type="text/javascript">
+//__ieUpdate();
+__f2e_monitor("news");
+</script>
+</body>
+</html>

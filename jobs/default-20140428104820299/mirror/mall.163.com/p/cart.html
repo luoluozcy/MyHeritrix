@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>购物车</title>
+
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/base.css?v=20140428181855"/>
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/core.css?v=20140428181855"/>
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/order/order.css?v=20140428181855"/>
+<script src="http://pimg1.126.net/health/js/jquery-1.4.2.js?v=201205221605"></script>
+<script src="http://pimg1.126.net/health/js/easyCore.js?v=20140428181855"></script>
+<script src="http://pimg1.126.net/health/js/dialog.js?v=20140428181855"></script>
+<script src="http://pimg1.126.net/health/js/orderCore.js?v=20140428181855"></script>
+<script src="http://pimg1.126.net/health/js/cart/cart.js?v=20140428181855"></script>
+</head>
+<body class="wrapNarrow">
+<noscript><div id="noScript">
+<div><h2>请开启浏览器的Javascript功能</h2><p>亲，没它我们玩不转啊！求您了，开启Javascript吧！<br/>不知道怎么开启Javascript？那就请<a href="http://www.baidu.com/s?wd=%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80Javascript%E5%8A%9F%E8%83%BD" target="_blank">猛击这里</a>！</p></div>
+</div></noscript>
+<nav id="topNav">
+	<div id="topNavWrap">
+		<div id="topNavLeft"><script>Core.navInit("http://pimg1.126.net/health/","","20140428181855")</script></div>
+		<ul id="topNavRight">
+			<li class="miniCartLi">
+			  <div id="js_miniCartBox" class="miniCartBox">
+				  <a target="_blank" href="/p/cart.html" class="miniCartBar topNavHolder">购物车&nbsp;<span class="miniCartNum num0">0</span>&nbsp;件<i></i></a><b class="holderLine">|</b>
+				  <div class="miniConWrap hide">
+				  	<div class="line"></div>
+					<div class="miniCartCon">				
+					</div>
+				  </div>
+			  </div>
+			</li>
+			<li><a href="/p/personal/my_order.html" target="_blank" rel="nofollow">我的订单</a>&nbsp;&nbsp;|</li>
+			<li><div class="mcDropMenuBox">
+				<a class="topNavHolder" target="_blank" href="/p/personal/index.html" rel="nofollow">个人中心<i></i></a><b class="holderLine">|</b>
+				<div class="mcDropMenu">
+					<a class="clearfix" target="_blank" href="/p/personal/listfavorite.html" rel="nofollow">我的收藏</a>
+					<a class="clearfix" target="_blank" href="/p/personal/my_coupon.html" rel="nofollow">我的优惠券</a>
+					<a class="clearfix" target="_blank" href="/p/personal/my_points/1_0_1.html" rel="nofollow">我的积分</a>
+					<a class="clearfix" target="_blank" href="/p/personal/myPrize.html" rel="nofollow">我的奖品</a>
+				</div>
+			</div></li> 
+            <li><a target="_blank" href="/p/footer/buy.html">帮助</a>&nbsp;&nbsp;|</li>
+            <li><a id="addFavBtn" href="javascript:;" target="_blank">收藏本站</a>&nbsp;&nbsp;|</li>						          
+			<li><div class="mcDropMenuBox focusNE">
+				<a class="topNavHolder" target="_blank" href="http://weibo.com/u/1885047601/home" rel="nofollow">关注我们<i></i></a>
+				<div class="mcDropMenu"><i class="line"></i>
+					<a class="clearfix" target="_blank" href="http://weibo.com/u/1885047601/home" rel="nofollow"><em class="xlwb"></em><span>新浪微博</span></a>					
+					<a class="clearfix" target="_blank" href="http://t.qq.com/wangyimall163" rel="nofollow"><em class="txwb"></em><span>腾讯微博</span></a>
+				</div>
+			</div></li>            
+		</ul>
+	</div>
+</nav>
+<header id="docHead">
+  <div class="fixedBg"></div>
+  <div id="docHeadWrap" class="orderHeadWrap">
+	<div class="navCategorys hide">
+		<h2>
+		 全部商品分类<span class="cusp"></span>
+		</h2>
+	</div><iframe frameborder="0" class="categorysIframe" scrolling="no" style="display:none"></iframe>
+	<a hidefocus="true" title="网易商城" class="logoLnk" href="/"></a><span class="postage"></span>
+  </div>
+</header>
+<article class="mainWrap orderMain">
+	<ul class="orderConfirmSteps stp1 clearfix">
+      <li class="active">查看购物车</li><li>填写购买信息</li><li >在线付款</li><li>确认收货</li><li class=" li5">评价</li>
+    </ul>
+      <div class="cartEmpty empty2">
+          <p>购物车是空的，赶快选购吧！<br />如果已添加商品，请<a onclick="easyNav.login()" href="javascript:;">登录</a>查看</p>
+          <p><a href="/">立即去逛逛</a></p>
+      </div>
+<form id="cartForm" action="/p/order/confirm.html" method="post"></form>
+</article>
+<article class="btmWrap">
+    <ul id="tabName" class="tabName clearfix">
+    	<li class="favTab active" rel="#favListOnCart" style="display:none">收藏夹中的商品</li>
+    	<li class="recommondTab hide" rel="#recommondWrap">根据浏览为您推荐</li>
+    </ul>
+    <div id="favListOnCart" style="display:none">
+        <div id="collectViewBox">
+         <a href="javascript:;" id="collectViewL"></a>
+         <a href="javascript:;" id="collectViewR"></a>
+         <div id="collectViewScroll"><div class="productsView clearfix"></div></div>
+        </div>
+    </div>
+  <div id="recommondWrap" class="recommondWrap clearfix hide">
+  </div>
+  <input type="hidden" id="from" value="rbovhcart" />	
+    <div style="display:none" class="confirmTips giftsTips" id="js_giftsTips"><ul></ul><span class="cusp"></span></div>
+</article>
+<a class="guideOnlineDis" href="http://zxkf.163.com/index.do?productId=2&tag=3" title="在线客服休息中">在线客服</a>
+<a id="srcoll2Top" title="返回顶部" href="javascript:;">返回顶部</a>
+<footer id="docFoot">
+<div class="siteFeatures">
+  <ul class="sfWrap">
+    <li>100%正品</li>
+    <li>7天无条件退换货</li>
+    <li>退换货免运费</li>
+  </ul>
+</div>
+    <div class="footBgWrap">
+      <ul id="guideList" class="clearfix">
+        <li>
+          <dl>
+            <dt class="guide4"><em>网易电商</em></dt>
+			<dd>
+			<a target="_blank" href="/p/footer/aboutus.html">关于我们</a>&#12288;<a target="_blank" href="/p/footer/joinus.html">商家入驻</a>
+			</dd>           
+		    <dd>
+            <a href="http://caipiao.163.com/#from=mall" target="_blank">网易彩票</a>&#12288;<a href="http://piao.163.com/#form=mall" target="_blank">网易电影票</a>
+            </dd>
+			<dd>
+			<a target="_blank" href="https://8.163.com/#from=mall">网易理财</a>&#12288;<a target="_blank" href="http://baoxian.163.com/#from=mall">网易保险</a>
+			</dd>			
+            <dd>
+			<a href="http://tuan.163.com/#from=mall" target="_blank">网易团长</a>&#12288;<a target="_blank" href="http://epay.163.com/#from=mall">网易宝</a>
+            </dd>
+          </dl>
+        </li>	  
+        <li>
+          <dl>
+            <dt class="guide1"><em>购物</em></dt>
+            <dd>
+			<a target="_blank" href="/p/footer/buy.html">购物流程</a>&#12288;<a target="_blank" href="/p/footer/transfer.html">快递运输</a>            </dd>
+			<dd>
+			<a target="_blank" href="/p/footer/promise.html">安全承诺</a>&#12288;<a target="_blank" href="/p/footer/point.html">积分说明</a>
+			</dd>
+            <dd><a target="_blank" href="/p/footer/coupon.html">优惠券说明</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt class="guide2"><em>支付</em></dt>
+            <dd>
+			<a target="_blank" href="/p/footer/epay163.html">网易宝支付</a>&#12288;<a target="_blank" href="/p/footer/alipay.html">支付宝支付</a>
+			</dd>
+            <dd>
+			<a target="_blank" href="/p/footer/epay.html">网银支付</a>&#12288;&#12288;<a rel="nofollow" target="_blank" href="/p/footer/expressPay.html">快捷支付</a>
+			</dd>
+            <dd>
+			<a target="_blank" href="/p/footer/payproblem.html">支付问题</a>
+			</dd>
+          </dl>
+        </li>		
+        <li class="bd_none">
+          <dl>
+            <dt class="guide3"><em>售后</em></dt>
+            <dd>
+			<a target="_blank" href="/p/footer/custom.html">联系客服</a>&#12288;<a target="_blank" href="/p/footer/refund.html">退换货说明</a>
+			</dd>
+            <dd><a target="_blank" href="/p/footer/after.html">售后服务政策</a></dd>
+          </dl>
+        </li>
+		<li class="btmLogo bd_none"><a href="/">网易商城</a><p class="contactus">020-83568090-2</p></li>
+      </ul>
+    </div>
+	<div id="aboutNEST">
+<a href="http://corp.163.com/eng/about/overview.html" rel="nofollow">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html" rel="nofollow">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" rel="nofollow">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" rel="nofollow">招聘信息</a> - <a href="http://help.163.com/" rel="nofollow">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" rel="nofollow">隐私政策</a> - <a href="http://emarketing.163.com/" rel="nofollow">网络营销</a> - <a href="/" title="网易商城">网易商城</a>
+<br/>
+增值电信业务经营许可证：浙B2-20110418&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lede.com/prove.html">网站相关资质证明</a>
+<br/>
+<span class="copyTxt">网易公司版权所有 &copy;1997-2014</span>
+	</div>
+</footer>
+<script>Core && Core.quickInit && Core.quickInit();</script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">_ntes_nacc = "baojian";neteaseTracker();neteaseClickStat(1);</script>
+</body>
+</html>

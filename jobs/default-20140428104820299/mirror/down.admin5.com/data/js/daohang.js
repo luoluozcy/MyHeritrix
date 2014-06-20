@@ -1,0 +1,1 @@
+document.writeln("<strong><a href=\"http:\/\/www.admin5.com\/\" target=\"_blank\">站长网<\/a> | <a href=\"http:\/\/www.admin6.com/v/?a=59\" target=\"_blank\">广告联盟<\/a> | <a href=\"http:\/\/www.ttuu.com\/\" target=\"_blank\">目录<\/a> | <a href=\"http:\/\/www.xuanxue.com\/\" target=\"_blank\">培训<\/a> | <a href=\"http:\/\/www.admin5.net\/\" target=\"_blank\">A5交易<\/a><\/strong>")

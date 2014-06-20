@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>i达人_网易微博</title>
+<meta name="Keywords" content="知名微博,名人微博,明星微博" />
+<meta name="Description" content="明星,名人,体育,娱乐等各行各业的知名微博,尽在网易微博" />
+<link rel="apple-touch-icon-precomposed" href="http://img1.cache.netease.com/t/img10/logo/logo_ipad.png" />
+<link rel="stylesheet" type="text/css" href="http://static.t.126.net/frontend/project/css/common1.3.3.css" />
+
+<link rel="stylesheet" href="http://static.t.126.net/frontend/project/daren/css/daren2.0.5.css" type="text/css" />
+<style type="text/css">
+#idr-tweet {background: none repeat scroll 0 0 #FFFFFF;padding-left:15px;width: 648px;border:1px solid #D8D8D8 ;}
+.star-item ul { width:auto;}
+.star-item{width:auto;padding:0;background:none;}
+.star-item:hover{background-color:#f6f6f6; }
+.star-sort{padding-right:24px;width:221px}
+.star-item .star-list-one { margin-right: 27px;}
+
+ 
+.daren-info-hd{ width:665px; }
+.daren-info-hd h3 { width:155px;}
+.daren-info-hd span{ left:110px;top:0;}
+.daren-info-bd, .daren-subinfo-bd {border-width:0;}
+.daren-info-bd{padding:20px 0 0 0;}
+
+.dr-says { background: url("http://static.t.126.net/frontend/project/daren/img/lineee.png") repeat-y scroll 698px top transparent;border-right:1px solid #D8D8D8;position:relative; }
+
+
+.idr-top { border-top:1px solid #D8D8D8; width:260px;padding:0;}
+.daren-info-left {float: left;margin-right: 18px; width: 680px;}
+#refresh:link,#refresh:visited,#refresh:hover{color:#8ba4cd; position:absolute; right:14px;}
+.daren-info{ padding:0 0 40px 15px;}
+.daren-info h2{margin-right:15px;}
+.idr-top .daren-info{margin-top:0;}
+.idr-top h2 {border-bottom-style:inset;border-bottom-color:#ccc;}
+
+.bottom-line{position:absolute; border-bottom:1px solid #D8D8D8;bottom:0;right:0; height:1px; width:260px;}
+.daren-wraper{border-bottom:1px solid #D8D8D8; padding:0 15px 40px; width:230px;}
+
+</style>
+<script type="text/javascript" src="http://static.t.126.net/frontend/js/lib/ntes_jslib_1.4.4.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="global-nav" id="globalNav">
+   <div class="global-nav-inner"> 
+      <div class="global-nav-left">
+         <h1 class="navi-logo"><a href="/" class="logo">网易微博</a></h1>
+         <ul class="global-nav-left-list">
+            <li class="item"><a class="link link-hover" href="/" tracker="{ method:'mine',keyfrom:'rank.topnav'}">首页</a></li>
+            <li class="item current js-hover">
+               <a class="link" href="/microchannel" tracker="{ method:'Channel',keyfrom:'rank.topnav'}">
+                  <span>微频道<em></em><i class="icon-newS"></i></span>
+               </a>
+               <div class="global-nav-sublist js-list">
+                  <ul class="global-nav-sublist-list">
+                     <li><a href="/zt" tracker="{ method:'zt',keyfrom:'rank.topnav'}">专题汇</a></li>
+                     <li><a href="/chat" tracker="{ method:'chat',keyfrom:'rank.topnav'}">交流会</a></li>
+                     <li><a href="/debate" tracker="{ method:'debate',keyfrom:'rank.topnav'}">微辩论</a></li>
+                     <li><a href="/event" tracker="{ method:'activity',keyfrom:'rank.topnav'}">微活动</a></li>
+                     <li><a href="/rank/daren" tracker="{ method:'idaren',keyfrom:'rank.topnav'}">i达人</a></li>
+                     <li class="solid-line"></li>
+                     <li><a href="/guess" tracker="{ method:'click',keyfrom:'opNav.find'}">找人</a></li>
+                     <li class="solid-line"></li>
+                     <li class=" js-hover">
+                        <a href="/app" tracker="{ method:'click',keyfrom:'opNav.app'}">应用</a>
+                        <div class="global-nav-sublist global-nav-sublist-app js-list">
+                           <div class="clearfix">
+                              <ul class="global-nav-sublist-list js-left" id="leftApp"></ul>
+                              <ul class="global-nav-sublist-list js-right"id="rightApp"></ul>
+                           </div>
+                           <div class="solid-line"></div>
+                           <ul class="global-nav-sublist-list">
+                              <li><a  href="/app/myapp" tracker="{ method:'click',keyfrom:'opNav.app.myapp'}">管理我的应用</a></li>
+                           </ul>
+                           <ul class="global-nav-sublist-list">
+                              <li><a  href="/app" tracker="{ method:'click',keyfrom:'opNav.app'}">应用首页</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="js-hover">
+                        <a href="/qun" tracker="{ method:'click',keyfrom:'opNav.qun'}">微群</a>
+                        <div class="global-nav-sublist global-nav-sublist-qun js-list">
+                           <ul class="global-nav-sublist-list" id="qun-list"></ul>
+                           <div class="solid-line"></div>
+                           <ul class="global-nav-sublist-list">
+                              <li><a href="/qun">微群广场</a></li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </li>
+            <li class="item "><a class="link link-hover" href="/column" tracker="{ method:'column',keyfrom:'rank.topnav'}">微专栏</a></li>
+         </ul>
+         <div id="searchForm" class="search-box">
+            <input class="search-input js-input" type="text" autocomplete="off"  val="搜微博/用户/应用" />
+            <a class="search-btn js-btn" href="javascript:;"><em class="icon-search-black"></em></a>
+            <div class="navi-search-result js-list">
+               <ul></ul>
+            </div>
+         </div>
+      </div>
+      <ul class="global-nav-right" id="globalNavUser"></ul>
+  </div>
+  <div class="global-nav-bg"></div>
+</div>
+<div class="global-top-banner" id="globalTopBanner">
+  <div class="global-top-banner-wraper">
+    <div class="global-top-banner-logo-wraper">
+      <div class="global-top-banner-logo">
+      </div>
+    </div>
+    <div class="global-top-banner-login-wraper">
+      <table cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr valign="bottom">
+            <td></td>
+            <td>
+              <div class="global-top-banner-message" id="topBannerError">
+                <em class="icon-forbidS"></em>
+                <span>网易邮箱/通行证用户可直接登录</span>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <label class="global-top-banner-lb">帐号</label>
+            </td>
+            <td>
+              <div class="global-top-banner-text-wraper">
+                <input type="text" class="global-top-banner-inputText" id="topBannerLoginEmail" />
+                <input type="text" class="global-top-banner-reminder" value="如name@example.com" id="topBannerHint" />
+              </div>
+            </td>
+            <td valign="middle">
+              <div class="global-top-banner-lplus sb">
+                <span id="topBanerSaveLoginWraper">
+                  <input type="checkbox" id="topBannerSaveLogin" />
+                  <label for="topBannerSaveLogin"> 下次自动登录</label>
+                </span>
+                <div class="global-top-banner-tiparea" id="topBanerTip">
+                  <div class="global-top-banner-tiparea-top arrowup-red">
+                  </div>
+                  <p>为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <label class="global-top-banner-lb">密码</label>
+            </td>
+            <td>
+              <input type="password" class="global-top-banner-inputText" id="topBannerLoginPassword" />
+            </td>
+            <td align="left">
+              <div class="global-top-banner-lplus">
+                <a href="javascript:;" class="global-top-banner-sp global-top-banner-btn" id="topBannerLoginBtn">登录</a>
+                <a href="http://reg.163.com/RecoverPasswd1.shtml" target="_blank" class="global-top-banner-forget">忘记密码？</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div class="global-top-banner-rigister-wraper">
+      <div class="global-top-banner-btn-wraper">
+        <p>还没有微博帐号?</p>
+        <a href="http://t.163.com/signup/login?keyfrom=reg.login" target="_blank" class="rect-btn-icon r-silver-btn" id="topBannerRegBtn">
+          <em>快速注册</em>
+        </a>
+        <a href="javascript:;" id="topBannerClose" class="global-top-banner-sp global-top-banner-close"></a>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="header">
+   <div class="header-inner">
+      <a class="sub-logo" href="/rank/daren" title="i达人">i达人</a>
+   </div>
+</div>
+<div class="subnavi">
+   <div class="subnavi-inner">
+      <a href="/rank/daren" class="fB on">i 达人</a>
+      <span class="line">&nbsp;</span>
+      <a href="/rank/group">i 品牌</a>
+      <span class="line">&nbsp;</span>
+      <a href="/rank/media">i 媒体</a>
+      <p class="daren-type">
+         <a class="daren-apply" target="_blank" hidefocus="true" title="申请达人认证" href="http://t.163.com/Verified/idaren">申请认证</a>   
+      </p>
+   </div>
+</div>
+<div class="wrapper js-gotop">
+   <div class="daren-list">
+      <div class="daren-list-bd">
+         <ul class="daren-type-list clearfix" id="idr-sort-list">
+         	<li >
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1386149676000?method=click&keyfrom=daren.fenlei" target="_blank" title="媒体达人">媒体达人<span></span></a>
+            	<p class="daren-list-name" >
+                  <a href="/rank/daren/tweet/1386149676000/tag/1386150147425?method=click&keyfrom=daren.fenlei" target="_blank"  title="官方">官方</a>
+            	</p>
+            </li>
+         	<li style="width:934px;">
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293764975353?method=click&keyfrom=daren.fenlei" target="_blank" title="娱乐达人">娱乐达人<span></span></a>
+            	<p class="daren-list-name" style="width:854px;">
+                  <a href="/rank/daren/tweet/1293764975353/tag/1293779159853?method=click&keyfrom=daren.fenlei" target="_blank"  title="模特">模特</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1293779824812?method=click&keyfrom=daren.fenlei" target="_blank"  title="演员">演员</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1293779353252?method=click&keyfrom=daren.fenlei" target="_blank"  title="歌手">歌手</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1301632570971?method=click&keyfrom=daren.fenlei" target="_blank"  title="快乐女声">快乐女声</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1295419397101?method=click&keyfrom=daren.fenlei" target="_blank"  title="音乐">音乐</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1295488537253?method=click&keyfrom=daren.fenlei" target="_blank"  title="导演">导演</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1293779492020?method=click&keyfrom=daren.fenlei" target="_blank"  title="主持">主持</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1295506350620?method=click&keyfrom=daren.fenlei" target="_blank"  title="影评">影评</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1300350845565?method=click&keyfrom=daren.fenlei" target="_blank"  title="娱评">娱评</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1299663009676?method=click&keyfrom=daren.fenlei" target="_blank"  title="制片人">制片人</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1297931863403?method=click&keyfrom=daren.fenlei" target="_blank"  title="明星经纪人">明星经纪人</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1302575728446?method=click&keyfrom=daren.fenlei" target="_blank"  title="编剧">编剧</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1295506101560?method=click&keyfrom=daren.fenlei" target="_blank"  title="剧评">剧评</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1306218262361?method=click&keyfrom=daren.fenlei" target="_blank"  title="花儿朵朵">花儿朵朵</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1300849690797?method=click&keyfrom=daren.fenlei" target="_blank"  title="DJ">DJ</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1293780280049?method=click&keyfrom=daren.fenlei" target="_blank"  title="摇滚">摇滚</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1310451263932?method=click&keyfrom=daren.fenlei" target="_blank"  title="影视策划">影视策划</a>
+                  <a href="/rank/daren/tweet/1293764975353/tag/1327995387529?method=click&keyfrom=daren.fenlei" target="_blank"  title="舞蹈">舞蹈</a>
+            	</p>
+            </li>
+         	<li style="width:934px;">
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293765561953?method=click&keyfrom=daren.fenlei" target="_blank" title="文化达人">文化达人<span></span></a>
+            	<p class="daren-list-name" style="width:854px;">
+                  <a href="/rank/daren/tweet/1293765561953/tag/1294639015105?method=click&keyfrom=daren.fenlei" target="_blank"  title="诗人">诗人</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1293767785869?method=click&keyfrom=daren.fenlei" target="_blank"  title="作家">作家</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1293766715827?method=click&keyfrom=daren.fenlei" target="_blank"  title="思想">思想</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1295345447645?method=click&keyfrom=daren.fenlei" target="_blank"  title="历史">历史</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1295247029800?method=click&keyfrom=daren.fenlei" target="_blank"  title="文化评论">文化评论</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1293779074550?method=click&keyfrom=daren.fenlei" target="_blank"  title="学者">学者</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1293768894677?method=click&keyfrom=daren.fenlei" target="_blank"  title="专栏作家">专栏作家</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1294192458188?method=click&keyfrom=daren.fenlei" target="_blank"  title="电影">电影</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1294191897065?method=click&keyfrom=daren.fenlei" target="_blank"  title="星座">星座</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1293767716832?method=click&keyfrom=daren.fenlei" target="_blank"  title="编剧">编剧</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1311130946357?method=click&keyfrom=daren.fenlei" target="_blank"  title="书评人">书评人</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1294113032919?method=click&keyfrom=daren.fenlei" target="_blank"  title="艺术">艺术</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1293767687962?method=click&keyfrom=daren.fenlei" target="_blank"  title="媒体">媒体</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1294216730594?method=click&keyfrom=daren.fenlei" target="_blank"  title="出版人">出版人</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1303466938775?method=click&keyfrom=daren.fenlei" target="_blank"  title="贴图">贴图</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1294206862837?method=click&keyfrom=daren.fenlei" target="_blank"  title="原创">原创</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1293777004108?method=click&keyfrom=daren.fenlei" target="_blank"  title="漫画">漫画</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1295598795403?method=click&keyfrom=daren.fenlei" target="_blank"  title="教育">教育</a>
+                  <a href="/rank/daren/tweet/1293765561953/tag/1303699510983?method=click&keyfrom=daren.fenlei" target="_blank"  title="心理">心理</a>
+            	</p>
+            </li>
+         	<li style="width:934px;">
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293764950255?method=click&keyfrom=daren.fenlei" target="_blank" title="财经达人">财经达人<span></span></a>
+            	<p class="daren-list-name" style="width:854px;">
+                  <a href="/rank/daren/tweet/1293764950255/tag/1293768135874?method=click&keyfrom=daren.fenlei" target="_blank"  title="经济学者">经济学者</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1294212395107?method=click&keyfrom=daren.fenlei" target="_blank"  title="企业家">企业家</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1307619161157?method=click&keyfrom=daren.fenlei" target="_blank"  title="媒体">媒体</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1298887235943?method=click&keyfrom=daren.fenlei" target="_blank"  title="理财">理财</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1294717921168?method=click&keyfrom=daren.fenlei" target="_blank"  title="财经专栏">财经专栏</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1299641951098?method=click&keyfrom=daren.fenlei" target="_blank"  title="管理咨询">管理咨询</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1303969721908?method=click&keyfrom=daren.fenlei" target="_blank"  title="建筑交通">建筑交通</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1295415343573?method=click&keyfrom=daren.fenlei" target="_blank"  title="证券基金">证券基金</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1296178688856?method=click&keyfrom=daren.fenlei" target="_blank"  title="金融财务">金融财务</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1295945093134?method=click&keyfrom=daren.fenlei" target="_blank"  title="经理人">经理人</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1328858722482?method=click&keyfrom=daren.fenlei" target="_blank"  title="创业">创业</a>
+                  <a href="/rank/daren/tweet/1293764950255/tag/1316162374111?method=click&keyfrom=daren.fenlei" target="_blank"  title="电子商务">电子商务</a>
+            	</p>
+            </li>
+         	<li style="width:934px;">
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293765084456?method=click&keyfrom=daren.fenlei" target="_blank" title="生活达人">生活达人<span></span></a>
+            	<p class="daren-list-name" style="width:854px;">
+                  <a href="/rank/daren/tweet/1293765084456/tag/1293782013472?method=click&keyfrom=daren.fenlei" target="_blank"  title="摄影">摄影</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1298513951585?method=click&keyfrom=daren.fenlei" target="_blank"  title="设计">设计</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1300772311045?method=click&keyfrom=daren.fenlei" target="_blank"  title="创意">创意</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1294203568277?method=click&keyfrom=daren.fenlei" target="_blank"  title="自拍">自拍</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1295428639024?method=click&keyfrom=daren.fenlei" target="_blank"  title="育儿">育儿</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1293776528304?method=click&keyfrom=daren.fenlei" target="_blank"  title="时尚">时尚</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1293776047250?method=click&keyfrom=daren.fenlei" target="_blank"  title="美食">美食</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1293776516282?method=click&keyfrom=daren.fenlei" target="_blank"  title="美容">美容</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1302071992868?method=click&keyfrom=daren.fenlei" target="_blank"  title="养生">养生</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1297825439566?method=click&keyfrom=daren.fenlei" target="_blank"  title="健身">健身</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1316486024950?method=click&keyfrom=daren.fenlei" target="_blank"  title="网易生活家">网易生活家</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1314081147000?method=click&keyfrom=daren.fenlei" target="_blank"  title="淘女郎">淘女郎</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1334648876869?method=click&keyfrom=daren.fenlei" target="_blank"  title="志愿者">志愿者</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1367998618469?method=click&keyfrom=daren.fenlei" target="_blank"  title="拍客">拍客</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1371524009429?method=click&keyfrom=daren.fenlei" target="_blank"  title="易女郎">易女郎</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1293776398388?method=click&keyfrom=daren.fenlei" target="_blank"  title="情感">情感</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1308920633099?method=click&keyfrom=daren.fenlei" target="_blank"  title="化妆造型">化妆造型</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1294112046858?method=click&keyfrom=daren.fenlei" target="_blank"  title="宠物">宠物</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1294218046720?method=click&keyfrom=daren.fenlei" target="_blank"  title="网络红人">网络红人</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1317005854679?method=click&keyfrom=daren.fenlei" target="_blank"  title="绿色">绿色</a>
+                  <a href="/rank/daren/tweet/1293765084456/tag/1310535363248?method=click&keyfrom=daren.fenlei" target="_blank"  title="葡萄酒">葡萄酒</a>
+            	</p>
+            </li>
+         	<li style="width:934px;">
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293765200058?method=click&keyfrom=daren.fenlei" target="_blank" title="游戏达人">游戏达人<span></span></a>
+            	<p class="daren-list-name" style="width:854px;">
+                  <a href="/rank/daren/tweet/1293765200058/tag/1295404430656?method=click&keyfrom=daren.fenlei" target="_blank"  title="电竞名人">电竞名人</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1295404415545?method=click&keyfrom=daren.fenlei" target="_blank"  title="魔兽名人">魔兽名人</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1294391864385?method=click&keyfrom=daren.fenlei" target="_blank"  title="游戏业内">游戏业内</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1312269611311?method=click&keyfrom=daren.fenlei" target="_blank"  title="暗黑名人">暗黑名人</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1294645880974?method=click&keyfrom=daren.fenlei" target="_blank"  title="游戏美女">游戏美女</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1294645900738?method=click&keyfrom=daren.fenlei" target="_blank"  title="游戏官方">游戏官方</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1329723797830?method=click&keyfrom=daren.fenlei" target="_blank"  title="游戏媒体">游戏媒体</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1324536285664?method=click&keyfrom=daren.fenlei" target="_blank"  title="有爱达人">有爱达人</a>
+                  <a href="/rank/daren/tweet/1293765200058/tag/1330573306142?method=click&keyfrom=daren.fenlei" target="_blank"  title="单机达人">单机达人</a>
+            	</p>
+            </li>
+         	<li >
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293765018437?method=click&keyfrom=daren.fenlei" target="_blank" title="旅游达人">旅游达人<span></span></a>
+            	<p class="daren-list-name" >
+                  <a href="/rank/daren/tweet/1293765018437/tag/1306376210705?method=click&keyfrom=daren.fenlei" target="_blank"  title="专家">专家</a>
+                  <a href="/rank/daren/tweet/1293765018437/tag/1296185208418?method=click&keyfrom=daren.fenlei" target="_blank"  title="摄影">摄影</a>
+                  <a href="/rank/daren/tweet/1293765018437/tag/1293777835443?method=click&keyfrom=daren.fenlei" target="_blank"  title="旅游">旅游</a>
+                  <a href="/rank/daren/tweet/1293765018437/tag/1296038763586?method=click&keyfrom=daren.fenlei" target="_blank"  title="户外">户外</a>
+                  <a href="/rank/daren/tweet/1293765018437/tag/1308885373651?method=click&keyfrom=daren.fenlei" target="_blank"  title="媒体">媒体</a>
+                  <a href="/rank/daren/tweet/1293765018437/tag/1308886592971?method=click&keyfrom=daren.fenlei" target="_blank"  title="旅游业内">旅游业内</a>
+                  <a href="/rank/daren/tweet/1293765018437/tag/1308886382208?method=click&keyfrom=daren.fenlei" target="_blank"  title="旅游局">旅游局</a>
+                  <a href="/rank/daren/tweet/1293765018437/tag/1308886263210?method=click&keyfrom=daren.fenlei" target="_blank"  title="行者">行者</a>
+            	</p>
+            </li>
+         	<li >
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293764963438?method=click&keyfrom=daren.fenlei" target="_blank" title="体育达人">体育达人<span></span></a>
+            	<p class="daren-list-name" >
+                  <a href="/rank/daren/tweet/1293764963438/tag/1296038022827?method=click&keyfrom=daren.fenlei" target="_blank"  title="篮球">篮球</a>
+                  <a href="/rank/daren/tweet/1293764963438/tag/1294379988421?method=click&keyfrom=daren.fenlei" target="_blank"  title="体操">体操</a>
+                  <a href="/rank/daren/tweet/1293764963438/tag/1294887375317?method=click&keyfrom=daren.fenlei" target="_blank"  title="NBA">NBA</a>
+                  <a href="/rank/daren/tweet/1293764963438/tag/1302767349377?method=click&keyfrom=daren.fenlei" target="_blank"  title="武术">武术</a>
+                  <a href="/rank/daren/tweet/1293764963438/tag/1296527783546?method=click&keyfrom=daren.fenlei" target="_blank"  title="体育媒体">体育媒体</a>
+                  <a href="/rank/daren/tweet/1293764963438/tag/1303800415372?method=click&keyfrom=daren.fenlei" target="_blank"  title="媒体">媒体</a>
+                  <a href="/rank/daren/tweet/1293764963438/tag/1294911278108?method=click&keyfrom=daren.fenlei" target="_blank"  title="体育">体育</a>
+                  <a href="/rank/daren/tweet/1293764963438/tag/1294211926100?method=click&keyfrom=daren.fenlei" target="_blank"  title="足球">足球</a>
+            	</p>
+            </li>
+         	<li style="width:934px;">
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293765398925?method=click&keyfrom=daren.fenlei" target="_blank" title="新闻达人">新闻达人<span></span></a>
+            	<p class="daren-list-name" style="width:854px;">
+                  <a href="/rank/daren/tweet/1293765398925/tag/1295601657803?method=click&keyfrom=daren.fenlei" target="_blank"  title="社会">社会</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1295592260063?method=click&keyfrom=daren.fenlei" target="_blank"  title="军事">军事</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1305860829001?method=click&keyfrom=daren.fenlei" target="_blank"  title="政府官员">政府官员</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1295320445549?method=click&keyfrom=daren.fenlei" target="_blank"  title="法律">法律</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1295581551732?method=click&keyfrom=daren.fenlei" target="_blank"  title="公益">公益</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1295581860263?method=click&keyfrom=daren.fenlei" target="_blank"  title="环保">环保</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1325142642621?method=click&keyfrom=daren.fenlei" target="_blank"  title="慈善">慈善</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1342593529792?method=click&keyfrom=daren.fenlei" target="_blank"  title="当事人">当事人</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1313054199700?method=click&keyfrom=daren.fenlei" target="_blank"  title="领事">领事</a>
+                  <a href="/rank/daren/tweet/1293765398925/tag/1314770954295?method=click&keyfrom=daren.fenlei" target="_blank"  title="网易跟贴">网易跟贴</a>
+            	</p>
+            </li>
+         	<li style="width:934px;">
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293764986551?method=click&keyfrom=daren.fenlei" target="_blank" title="科技达人">科技达人<span></span></a>
+            	<p class="daren-list-name" style="width:854px;">
+                  <a href="/rank/daren/tweet/1293764986551/tag/1295581228851?method=click&keyfrom=daren.fenlei" target="_blank"  title="媒体">媒体</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1294321537489?method=click&keyfrom=daren.fenlei" target="_blank"  title="互联网">互联网</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1303111732950?method=click&keyfrom=daren.fenlei" target="_blank"  title="IT">IT</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1296184008353?method=click&keyfrom=daren.fenlei" target="_blank"  title="企业">企业</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1296179186473?method=click&keyfrom=daren.fenlei" target="_blank"  title="家电">家电</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1295580512004?method=click&keyfrom=daren.fenlei" target="_blank"  title="通信">通信</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1295599837233?method=click&keyfrom=daren.fenlei" target="_blank"  title="投资VC">投资VC</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1297849311619?method=click&keyfrom=daren.fenlei" target="_blank"  title="动漫">动漫</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1294208134925?method=click&keyfrom=daren.fenlei" target="_blank"  title="数码">数码</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1293769170943?method=click&keyfrom=daren.fenlei" target="_blank"  title="科普">科普</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1294380043616?method=click&keyfrom=daren.fenlei" target="_blank"  title="手机开发">手机开发</a>
+                  <a href="/rank/daren/tweet/1293764986551/tag/1294213998196?method=click&keyfrom=daren.fenlei" target="_blank"  title="手机">手机</a>
+            	</p>
+            </li>
+         	<li >
+         	   <a class="daren-type-name" href="/rank/daren/tweet/1293765032178?method=click&keyfrom=daren.fenlei" target="_blank" title="汽车达人">汽车达人<span></span></a>
+            	<p class="daren-list-name" >
+                  <a href="/rank/daren/tweet/1293765032178/tag/1294637624780?method=click&keyfrom=daren.fenlei" target="_blank"  title="汽车">汽车</a>
+            	</p>
+            </li>
+         </ul>
+         <div id="idr-sort-sliderBar" class="idr-sort-sliderBar"></div>
+      </div>
+   </div>
+<div class="daren-subinfo">
+      <div class="daren-subinfo-bd dr-says clearfix">
+         <div class="daren-info-left">
+               <div class="daren-info-hd">
+            <h3>达人正在说</h3>
+            <span>Saying</span>
+            <a href="javascript:;" id="refresh">刷新看看</a>
+         </div>
+         <div id="idr-tweet">
+            <ul class="statusListBox"></ul>
+            <p class="pager-wrap pageList" id="darenTweetPager"></p>
+         </div>
+        </div>
+         <div class="idr-top">
+           <div class="daren-wraper">
+            <h2>人气达人榜</h2>
+            <table>
+               <thead>
+                  <tr>
+                     <td class="short1">排名</td>
+                     <td class="short2">姓名</td>
+                     <td class="long">被关注数</td>
+                     <td>关注</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade high">
+                        1</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/163naec?method=click&keyfrom=darens.name" class="name" target="_blank" title="网易经济">网易经济</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">33933028</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'163naec',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade high">
+                        2</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/YOU?method=click&keyfrom=darens.name" class="name" target="_blank" title="微博小易">微博小易</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">33152248</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'YOU',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade high">
+                        3</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/maoyushi?method=click&keyfrom=darens.name" class="name" target="_blank" title="茅于轼">茅于轼</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">31742915</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'maoyushi',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade low">
+                        4</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/zhengxuguang?method=click&keyfrom=darens.name" class="name" target="_blank" title="郑旭光">郑旭光</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">31465322</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'zhengxuguang',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade low">
+                        5</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/lianyue?method=click&keyfrom=darens.name" class="name" target="_blank" title="第八大洲">第八大洲</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">28694471</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'lianyue',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade low">
+                        6</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/zmbaohu?method=click&keyfrom=darens.name" class="name" target="_blank" title="张鸣">张鸣</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">27388329</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'zmbaohu',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade low">
+                        7</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/hhan?method=click&keyfrom=darens.name" class="name" target="_blank" title="韩寒">韩寒</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">18915748</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'hhan',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade low">
+                        8</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/jiangyiyan?method=click&keyfrom=darens.name" class="name" target="_blank" title="江一燕">江一燕</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">15890537</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'jiangyiyan',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade low">
+                        9</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/wen_ruian?method=click&keyfrom=darens.name" class="name" target="_blank" title="温瑞安">温瑞安</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">15576723</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'wen_ruian',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="short1">
+                        <span class="grade low">
+                        10</span>
+                     </td>
+                     <td class="short2">
+                        <a href="/5867695216?method=click&keyfrom=darens.name" class="name" target="_blank" title="丁东1951">丁东1951</a>
+                     </td>
+                     <td class="long">
+                        <span class="num">12775828</span>
+                     </td>
+                     <td>
+                        <a href="javascript:;" class="add-focusS" onclick="WB.follow({screenName:'5867695216',node:this,audit:{method:'follow'},callbackFuc:function(){test11(this.node);}})">
+                        <em class="add-signS">+</em>关注</a>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+           </div>
+
+            <div class="daren-info" id="mod-idr-list">
+            <h2>最新加入</h2>
+             <div class="daren-info-bd">
+               <div class="star-item">
+
+               <ul class="clearfix">
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="坐着看太阳">
+                        <a href="javascript:;" hidefocus="true" title="坐着看太阳">
+                           <img alt="坐着看太阳" src="http://timge3.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2F126.fm%2F4aqYpS&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="3447336909" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/3447336909?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="坐着看太阳" title="坐着看太">坐着看太</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="曾旎">
+                        <a href="javascript:;" hidefocus="true" title="曾旎">
+                           <img alt="曾旎" src="http://timge5.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2Fimg1.cache.netease.com%2Ft%2Fimg%2Fdefault80.png&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="zengni1981" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/zengni1981?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="曾旎" title="曾旎">曾旎</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="alana0902">
+                        <a href="javascript:;" hidefocus="true" title="alana0902">
+                           <img alt="alana0902" src="http://timge1.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2F126.fm%2F442JpH&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="alana0902" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/alana0902?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="alana0902" title="alana090">alana090</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="xiaoxiangmide">
+                        <a href="javascript:;" hidefocus="true" title="xiaoxiangmide">
+                           <img alt="xiaoxiangmide" src="http://timge4.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="0431316988" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/0431316988?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="xiaoxiangmide" title="xiaoxian">xiaoxian</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="matsumoto830">
+                        <a href="javascript:;" hidefocus="true" title="matsumoto830">
+                           <img alt="matsumoto830" src="http://timge7.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2F126.fm%2F1vgdCE&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="5560500035" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/5560500035?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="matsumoto830" title="matsumot">matsumot</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="138386177">
+                        <a href="javascript:;" hidefocus="true" title="138386177">
+                           <img alt="138386177" src="http://timge4.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2Fmimg.126.net%2Fp%2Fbutter%2F1008031648%2Fimg%2Fface_big.gif&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="0862117116" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/0862117116?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="138386177" title="13838617">13838617</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="策展人与学者李哲远">
+                        <a href="javascript:;" hidefocus="true" title="策展人与学者李哲远">
+                           <img alt="策展人与学者李哲远" src="http://timge9.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2F126.fm%2FIPT1P&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="7815410728" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/7815410728?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="策展人与学者李哲远" title="策展人与">策展人与</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="aibaomsn">
+                        <a href="javascript:;" hidefocus="true" title="aibaomsn">
+                           <img alt="aibaomsn" src="http://timge2.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2F126.fm%2F3EUpEI&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="8111576733" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/8111576733?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="aibaomsn" title="aibaomsn">aibaomsn</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="留常理">
+                        <a href="javascript:;" hidefocus="true" title="留常理">
+                           <img alt="留常理" src="http://timge9.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2F126.fm%2F2Q0Vat&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="7652747163" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/7652747163?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="留常理" title="留常理">留常理</a>
+                     </p>
+                  </li>
+                  <li class="star-list-one">
+                     <div class="star-list-photo js-icon js-float" data="薛彬Brin">
+                        <a href="javascript:;" hidefocus="true" title="薛彬Brin">
+                           <img alt="薛彬Brin" src="http://timge5.126.net/image?w=48&amp;h=48&amp;url=http%3A%2F%2F126.fm%2F2NlMaU&amp;gif=0&amp;quality=85" class="thumb" />
+                        </a>
+                        <input type="checkbox" value="xuebin92" class="js-check" />
+                     </div>
+                     <p class="star-list-name">
+                        <a href="/xuebin92?method=click&keyfrom=daren.jiaru.name" target="_blank" class="js-float" data="薛彬Brin" title="薛彬Brin">薛彬Brin</a>
+                     </p>
+                  </li>
+               </ul>
+                              <div class="star-sort">
+                  <span class="star-say cBlue"></span>
+                  <input type="checkbox" class="chkAll js-checkAll" name="checkAll0" id="checkAll"/>
+                  <label for="checkAll0" class="checkLabel">全选</label>
+                  <a href="javascript:;" class="daren-btn js-addfocus" title="关注所选">关注所选</a>
+               </div>
+              </div>         
+            </div>
+           </div>
+      </div>
+       <div class="clearfix"></div>
+       <div class="bottom-line"></div>
+      </div>
+   </div>
+</div>
+
+<div class="footer">
+	<div class="foot">
+		<a target="_blank" href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a target="_blank" href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a target="_blank" href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a target="_blank" href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a target="_blank" href="http://sitemap.163.com/">网站地图</a> - <a target="_blank" href="/Verified">微博i达人认证</a> - <a target="_blank" href="http://open.t.163.com">微博开放平台</a> - <a target="_blank" href="http://t.163.com/specification">微博视觉规范</a> - <a target="_blank" href="http://post.news.163.com/msg/jubao.jsp">不良信息举报</a><br />
+		网易公司版权所有<br />
+		<span class="cRed">&copy;1997-2014</span>
+	</div>
+</div><script type="text/javascript" src="http://static.t.126.net/frontend/project/js/core/core1.7.0.js" charset="utf-8"></script><script type="text/javascript">
+var screenName = "",
+    type = "daren",
+    from="guanzhu0";
+</script>
+<script type="text/javascript" src="http://static.t.126.net/frontend/project/daren/js/daren2.0.4.js" charset="utf-8"></script>
+<script language="javascript" type="text/javascript">
+    getTalkList($("#idr-tweet"), iDarenConfig.url.darenTweet, -1, -1);
+    NTES("#refresh").addEvent("click", function() {
+        getTalkList($("#idr-tweet"), iDarenConfig.url.darenTweet, -1, -1);
+    });
+</script>
+
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "weibo";
+neteaseTracker();
+</script>
+</body>
+</html>

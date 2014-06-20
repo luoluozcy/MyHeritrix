@@ -1,0 +1,136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网易保险登录_网易保险 买保险原来这么简单！ 品牌直销|态度筛选|超值价格|拒绝骚扰</title>
+<link rel="stylesheet" type="text/css" href="http://pimg1.126.net/baoxian/css/main.css?201404281846" />
+<link rel="stylesheet" type="text/css" href="http://pimg1.126.net/baoxian/css/common.css?201404281846" />
+<script type="text/javascript" src="http://pimg1.126.net/baoxian/js/base.js?201404281846"></script>
+<script type="text/javascript" src="http://pimg1.126.net/baoxian/js/suggest.js?201404281846"></script>
+</head>
+
+<body>
+	<div class="top_head">
+   		<div class="login_logo"><a href="/"><img src="http://pimg1.126.net/baoxian/images/logo2.png?201311061811" /></a></div>
+    </div>
+  <div class="login_main">
+     <div class="left_ad" style="padding:60px 80px 0 50px"><a target="_blank" href="http://baoxian.163.com/car/activity_20140401.html?from=txzdly"><img src="http://pimg1.126.net/baoxian//images/upload/mail/201404/20140425234039_435x315.jpg" /></a></div>
+<form action="https://reg.163.com/logins.jsp?type=1&product=baoxian" id="loginForm" onsubmit="return checkLogin()" method="post">
+	
+	<input type="hidden" name="url" id="goingToUrl" value="http://baoxian.163.com/myinsu/award_exchange.html" />
+	
+	<div class="login_box">
+    	<div class="login_top_wap">
+         <div class="login_top_wap2">
+        <div class="login_top">
+        <h1 class="login_title">登录网易通行证</h1>
+          
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" >
+            <tr>
+              <td  height="20">&nbsp;</td>
+              <td  ><div class="pro_ts"><span id="nameInputErr" class="ursLoginErr"></span></div></td>
+            </tr>
+            <tr>
+              <td valign="top"  ><div class="zhmm" >帐 号：</div></td>
+              <td style="position:relative"> <span class="suggest_box" id="useremail_box">
+              <div class="input_wap"><input type="text" class="login_input" id="useremail" autocomplete="off"  name="username"/></div>
+               </span>
+              
+               </td>
+            </tr>
+            <tr>
+              <td valign="top"  ><div align="right" class="zhmm">密 码：</div></td>
+              <td> <div class="input_wap"><input type="password" id="password" name="password" class="login_input" /></div>
+                <!-- <div class="pro_ts" style="display:none"> <span id="passInputErr" class="ursLoginErr"></span></div>-->
+                </td>
+            </tr>
+            <tr>
+              <td valign="bottom" height="50">&nbsp;</td>
+              <td valign="bottom" ><input type="submit" id="loginBtn1" value="登录" class="urs_login_btn" /><a href="http://reg.163.com/RecoverPasswd1.shtml" class="login_link m_b_8 m_l_30">忘记密码？</a></td>
+            </tr>
+          </table>
+          <div class="fg_line"></div>
+              <div class="login_tip">没有网易通行证？<a href="#" onclick="javascript:location.href='http://reg.163.com/reg/reg.jsp?product=baoxian&username_r=&url='+encodeURIComponent('http://baoxian.163.com/index.html') + '&loginurl='+encodeURIComponent('http://baoxian.163.com/index.html?isShowLogin=1') " class="login_link">立即注册>></a></div>
+                  </div>
+        </div></div>
+        <div class="login_bottom"></div>
+		</div>
+ </form>  
+ </div>   
+       <script type="text/javascript">
+
+//添加登录帐号的记忆功能
+function setLoginName(id,id1) {
+ var p_info = this.getCookie("P_INFO");
+ var cookieValue;
+ var cookieName;
+ if (p_info != null && p_info != false) {
+   cookieValue = p_info.split("|");
+   if (cookieValue != null && cookieValue.length > 0) {
+	  cookieName = cookieValue[0];
+   }
+ };
+ if (cookieName) {
+   document.getElementById(id).style.color = "#000";
+   document.getElementById(id).value = cookieName;
+   if(document.getElementById(id1)){
+	document.getElementById(id1).focus();
+   }
+ };
+};
+setLoginName.prototype.getCookie = function(sName) {
+var sRE = "(?:; )?" + sName + "=([^;]*);?";
+var oRE = new RegExp(sRE);
+if (oRE.test(document.cookie)) {
+  return decodeURIComponent(RegExp["$1"]);
+} else {
+   return null;
+}
+};
+if($("useremail")){new setLoginName("useremail","password");}
+//登录帐号输入提示
+var email_str=["@163.com","@126.com","@yeah.net","@vip.163.com","@vip.126.com","@popo.163.com","@188.com","@qq.com","@yahoo.com.cn","@sina.com"];
+new suggest(email_str,"useremail_box","useremail");
+//登录表单验证
+Validator = {   
+	Email : /^([-+.\w])+@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+};
+function checkLogin(){   
+	if(!Validator.Email.test($("useremail").value)){
+		$("nameInputErr").innerHTML="帐号不能为空";
+		$("useremail").focus();
+		return false;
+	}
+	if($("password").value == ""){
+		$("nameInputErr").innerHTML="密码不能为空";
+		$("password").focus();
+		return false;
+	}
+};
+
+if($('password')){
+	$('password').onkeyup=function(){
+		var eventObj=window.event||arguments[0];
+		if(eventObj.keyCode==13){
+			$('loginBtn1').onclick()
+		}
+	}
+}
+</script>
+
+<div class="wrap_new copyright_box">
+    <a href="http://corp.163.com/eng/about/overview.html">About NetEase</a>-<a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a>-<a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>-<a href="http://corp.163.com/gb/job/job.html">招聘信息</a>-<a href="http://help.163.com/">客户服务</a>-<a href="http://gb.corp.163.com/gb/legal.html">相关法律</a>-<a href="http://emarketing.163.com/">网络营销</a>-<a href="http://baoxian.163.com/">网易保险</a><br/>
+    <span class="mr5">增值电信业务经营许可证：浙B2-20110418</span>|<a href="http://www.lede.com/prove.html">网站相关资质证明</a><br/>
+    <span class="ml20">网易公司版权所有 &copy;1997-2014</span>
+</div>
+<!-- START NetEase Devilfish 2006 -->
+<script src="//analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "baoxian";
+neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+</body>
+</html>

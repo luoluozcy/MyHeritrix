@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>错误提示 - 网易保险，智慧您的保险选择</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<link rel="stylesheet" href="http://img3.126.net/baoxian/css/common.css?201308022013" />
+<link rel="stylesheet" href="http://img3.126.net/baoxian/css/index.css?201308022013" />
+</head>
+<body>
+<script type="text/javascript" src="http://img3.126.net/baoxian/js/base.js?20111222"></script>
+<script type="text/javascript" src="http://img3.126.net/baoxian/js/popup.js?20111222"></script>
+<script type="text/javascript" src="http://img3.126.net/baoxian/js/suggest.js?20111222"></script>
+<script type="text/javascript" src="http://img3.126.net/baoxian/js/custom.js?20111222"></script>
+<!--登录框 开始-->
+<div class="urs_login_box" id="login_popup" style="display:none;">
+  <!--第一行—顶部*/-->
+  <div class="urs_login_top">
+    <div class="urs_login_t_m"></div>
+  </div>
+  <div class="urs_login_t_l"></div>
+  <div class="urs_login_t_r"></div>
+  <!--第二行—中间内容区*/-->
+  <form class="urs_login_form" id="loginForm" onsubmit="return false" action="#">
+  <!--<form class="urs_login_form" id="loginForm" action="/login.html" method="post" onsubmit="return checkLogin()">-->
+    <div class="urs_login_suggest"> <span class="suggest_box" id="useremail_box">
+      <input type="text" class="urs_login_input" id="useremail" autocomplete="off" value="如name@example.com" style="color:#999;" name="ursLoginUserName"/>
+      <span id="nameInputErr" class="ursLoginErr"></span> </span> </div>
+    <div class="urs_login_middle">
+      <div class="urs_login_m_l"></div>
+      <div class="urs_login_m_r"></div>
+      <div class="urs_login_context">
+        <h3 class="urs_login_title clearfix"><span class="urs_login_close" onclick="loginpopup.closePopup()"></span>登录网易通行证</h3>
+        <div class="urs_login_con clearfix">
+          <table width="96%" border="0" cellpadding="0" cellspacing="0" class="urs_login_table">
+            <tr>
+              <td width="29%" height="44"><div align="right">帐号：</div></td>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td height="44"><div align="right">密码：</div></td>
+              <td colspan="2"><input type="password" id="password" name="ursLoginUserPass" class="urs_login_input" />
+                <span id="passInputErr" class="ursLoginErr"></span></td>
+            </tr>
+            <tr>
+              <td height="16">&nbsp;</td>
+              <td width="35%"></td>
+              <td><a href="http://reg.163.com/RecoverPasswd1.shtml" class="urs_login_link">忘记密码？</a></td>
+            </tr>
+            <tr>
+              <td  height="30">&nbsp;</td>
+              <td><input type="button" id="loginBtn1" value="登录" class="urs_login_btn" /></td>
+              <td><div align="right"><a href="#" onclick="javascript:location.href='http://reg.163.com/reg/reg.jsp?product=epay&username_r=&url='+encodeURIComponent('http://baoxian.163.com/index.html') + '&loginurl='+encodeURIComponent('http://baoxian.163.com/index.html?isShowLogin=1') " class="urs_login_link">注册网易通行证>></a></div></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!--第三行—底部*/-->
+  <div class="urs_login_b_m"><span style="display:block"></span></div>
+  <div class="urs_login_b_l"></div>
+  <div class="urs_login_b_r"></div>
+</div>
+<!--登录框 结束-->
+<div class="top-nav-wrap">
+  <div class="top-nav clearfix">
+    <div class="fl">
+      
+      <span>欢迎来到网易保险！</span><a href="#" onclick="jumpTo('/index.html', true)" >请登录</a> <a href="#" onclick="javascript:location.href='http://reg.163.com/reg/reg.jsp?product=baoxian&url='+encodeURIComponent('http://baoxian.163.com') +'&loginurl='+encodeURIComponent('http://baoxian.163.com/index.html?isShowLogin=1')">免费注册</a>
+	  
+    </div>
+     <span class="tools clearfix fr"> 
+		<a href="http://baoxian.163.com">首页</a>| <a href="#" onclick="jumpTo('/query.html', true)" >我的保单</a>| <a href="${ctx}/help/help_tbzn.jsp" target="_blank">帮助中心</a>| <a href="http://survey2.163.com/html/bxfeedback/paper.html" target="_blank">意见反馈</a>
+	</span>
+  </div>
+</div>
+<script type="text/javascript">
+//添加登录帐号的记忆功能
+function setLoginName(id,id1) {
+ var p_info = this.getCookie("P_INFO");
+ var cookieValue;
+ var cookieName;
+ if (p_info != null && p_info != false) {
+   cookieValue = p_info.split("|");
+   if (cookieValue != null && cookieValue.length > 0) {
+	  cookieName = cookieValue[0];
+   }
+ };
+ if (cookieName) {
+   document.getElementById(id).style.color = "#000";
+   document.getElementById(id).value = cookieName;
+   if(document.getElementById(id1)){
+	document.getElementById(id1).focus();
+   }
+ };
+};
+setLoginName.prototype.getCookie = function(sName) {
+var sRE = "(?:; )?" + sName + "=([^;]*);?";
+var oRE = new RegExp(sRE);
+if (oRE.test(document.cookie)) {
+  return decodeURIComponent(RegExp["$1"]);
+} else {
+   return null;
+}
+};
+/*用户登录相关 开始*/
+var loginpopup = new popup("login_popup","#000",20);
+function login(formId){
+	loginpopup.create(formId);
+	if($("useremail")){new setLoginName("useremail","password");}
+	//$("loginForm").action=target;
+};
+//登录帐号输入提示
+var email_str=["@163.com","@126.com","@yeah.net","@vip.163.com","@vip.126.com","@popo.163.com","@188.com","@qq.com","@yahoo.com.cn","@sina.com"];
+new suggest(email_str,"useremail_box","useremail");
+//登录表单验证
+Validator = {   
+    Email : /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+};
+function checkLogin(){   
+	$("nameInputErr").innerHTML = !Validator.Email.test($("useremail").value) ? "帐号不能为空" : "";
+    $("passInputErr").innerHTML = $("password").value == "" ? "密码不能为空" : "";
+    if($("nameInputErr").innerHTML != "" || $("passInputErr").innerHTML != ""){return false;}   
+};
+
+function checkLogin(fm){
+    $("nameInputErr").innerHTML = !Validator.Email.test($("useremail").value) ? "帐号不能为空" : "";
+    $("passInputErr").innerHTML = $("password").value == "" ? "密码不能为空" : "";
+    if($("nameInputErr").innerHTML != "" || $("passInputErr").innerHTML != ""){return false;}   
+    createHidden(fm, "ursLoginUserName", $("useremail").value);
+    createHidden(fm, "ursLoginUserPass", $("password").value);
+    if(fm.onsubmit && (undefined!=fm.onsubmit() && !fm.onsubmit())){
+		return false;
+	}
+    loginpopup.closePopup();
+	fm.submit();
+};
+if($('password')){
+	$('password').onkeyup=function(){
+		var eventObj=window.event||arguments[0];
+		if(eventObj.keyCode==13){
+			$('loginBtn1').onclick()
+		}
+	}
+}
+/*用户登录相关 结束*/
+
+</script>
+<div class="header">
+  <div class="info">
+    <div class="logo"><a href="/"></a></div>
+    <div class="logos"></div>
+  </div>
+</div>
+<div class="busy_info clearfix">
+			<span class="logo1"></span><span><strong>对不起，系统忙，请稍后再试</strong>
+		<br />
+			<a href="/" class="fa-song mr10">&lt;&lt;返回首页</a>&nbsp;&nbsp;
+			<a href="/order/query.html" class="fa-song">查看我的保单&gt;&gt;</a>
+		
+		</span>
+</div>
+<div class="bx_footer_box">
+	<div class="wrap_new">
+    	<ul class="bx_footer clearfix">
+    		<li>
+            	<em class="advantage"></em>
+            	<dl class="bx_footer_list">
+            		<dt>平台优势</dt>
+            		<dd>·价格透明</dd>
+            		<dd>·信息安全</dd>
+            		<dd>·理赔无忧</dd>
+            	</dl>
+            </li>
+    		<li>
+            	<em class="new_user"></em>
+            	<dl class="bx_footer_list">
+            		<dt>新手上路</dt>
+            		<dd>·<a href="http://baoxian.163.com/help/help_tbzn.jsp#qa_tbzn_14" target="_blank">网上投保流程</a></dd>
+            		<dd>·<a href="http://baoxian.163.com/study/special/baoxian_study/" target="_blank">保险知识</a></dd>
+            		<dd>·平台客服：020-83568090-2-7</dd>
+            	</dl>
+            </li>
+    		<li>
+            	<em class="help_center"></em>
+            	<dl class="bx_footer_list">
+            		<dt>帮助中心</dt>
+            		<dd>·<a href="http://baoxian.163.com/html/lpzy.jsp" target="_blank">如何理赔</a></dd>
+            		<dd>·<a href="http://baoxian.163.com/vip/exchange.html" target="_blank">如何兑换投保礼</a></dd>
+            		<dd>·<a href="http://baoxian.163.com/myinsu/complaints.html?tab=add" target="_blank">投诉/留言</a></dd>
+             		<dd>·商务联系：010-82558428</dd>
+           	</dl>
+            </li>
+    		<li class="last">
+            	<em class="netease"></em>
+            	<dl class="bx_footer_list">
+            		<dt>网易电商</dt>
+            		<dd>·<a href="http://caipiao.163.com/" target="_blank">彩票</a><a href="http://baoxian.163.com/" target="_blank" class="ml10">保险</a></dd>
+            		<dd>·<a href="http://tuan.163.com/" target="_blank">团购</a><a href="http://baojian.163.com/" target="_blank" class="ml10">保健品</a></dd>
+            		<dd>·<a href="http://mall.163.com/" target="_blank">商城</a><a href="http://yxp.163.com/" target="_blank" class="ml10">印象派</a></dd>
+            	</dl>
+            </li>
+    	</ul>
+    </div>
+</div>
+<div class="wrap_new copyright_box">
+    <a href="http://corp.163.com/eng/about/overview.html">About NetEase</a>-<a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a>-<a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a>-<a href="http://corp.163.com/gb/job/job.html">招聘信息</a>-<a href="http://help.163.com/">客户服务</a>-<a href="http://gb.corp.163.com/gb/legal.html">相关法律</a>-<a href="http://emarketing.163.com/">网络营销</a>-<a href="http://baoxian.163.com/">网易保险</a><br/>
+    <span class="mr5">增值电信业务经营许可证：浙B2-20110418</span>|<a href="http://www.lede.com/prove.html">网站相关资质证明</a><br/>
+    <span class="ml20">网易公司版权所有 &copy;1997-2013</span>
+</div>
+
+<!-- 安全网站认证链接 开始-->    
+<!-- 安全网站认证链接 结束-->    
+<!-- START NetEase Devilfish 2006 -->
+<script src="//analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "baoxian";
+neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+
+</body>
+</html>

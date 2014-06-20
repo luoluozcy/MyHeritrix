@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* Copyright 2010, NetEase.World Of Warcraft(CTM). All Rights Reserved. */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, em, img, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; }
+ol, ul { list-style: none; }
+:focus { outline: 0; }
+html, body { font: normal 12px/1.3 "Microsoft YaHei", Arial, Helvetica, sans-serif; background:url(http://img1.cache.netease.com/game/wow/Patch41/bg.jpg) no-repeat top center #000;}
+a { outline: none; text-decoration: none; color:#c48f01; cursor:pointer;}
+a:hover { text-decoration:underline; color: #e43f19;}
+p { margin: 0.5em 0 }
+.clear { clear:both; height:0; width:0; padding:0; margin:0; border:0; overflow:hidden;  }
+.block18 { clear:both; height:18px; overflow:hidden; display:block;}
+.block15 { clear:both; height:15px; overflow:hidden; display:block;}
+.block10 { clear:both; height:10px; overflow:hidden; display:block;}
+.block8 { clear:both; height:8px; overflow:hidden; display:block;}
+#main { width:960px; margin:0 auto; overflow:hidden; }
+/* 头部 */
+#ctm_top { height:229px; background:url(http://img1.cache.netease.com/game/wow/Patch41/banner.jpg) no-repeat top center; position:relative; }
+#ctm_top .ne_logo a { display:block; width:280px; height:25px; position:absolute; right:65px; bottom:25px; }
+/* 导航 */
+#ctm_nav { height:91px; background:url(http://img1.cache.netease.com/game/wow/Patch41/menu-bg.jpg) no-repeat top center; position:relative; color:#fdeea4;}
+#ctm_nav .nav { height:50px; overflow:hidden; position:absolute; top:25px; left:0px; }
+#ctm_nav .nav .nav_link { width:130px; margin:5px 0 0 95px; float:left; }
+#ctm_nav .nav .nav_link a { padding:5px 5px 0 5px; color:#fdeea4; }
+#ctm_nav .nav .nav_link a:hover { text-decoration:underline; color: #e43f19; }
+/* news */
+#ctm_new { height:490px; background:url(http://img1.cache.netease.com/game/wow/Patch41/new-bg.jpg) no-repeat top center #000; position:relative; }
+#ctm_new .ne_txt { width:500px; font-size:16px; margin:0 0 0 30px;  color:#fdeea4;}
+/* 焦点图新闻 */
+#slideshow { height:280px; width:565px; overflow:hidden; position:relative; padding:15px 0 0 10px; }
+#slideshow .container { height:280px; width:565px; position:relative; z-index:10; }
+#slideshow .mask { height:280px; width: 565px; position: absolute; top:15px; left:10px; z-index:30; cursor:pointer; }
+#slideshow .caption { position:absolute; left:30px; bottom:30px; width:500px; z-index:35;  color:#fdeea4;}
+#slideshow .caption h3 { font-size:20px; color:#fff; font-weight:normal; }
+#slideshow .paging { position:absolute; top:25px; right: 15px; width:16px; z-index:35; }
+#slideshow .paging a { display:block; height:16px; margin-bottom:5px; background-color: #fff; opacity:.5; -moz-border-radius:3px; border-radius:3px }
+#slideshow .paging a:hover, #slideshow .paging a.current { opacity: 1; }
+#slideshow .preview { color:#000; text-align:center; width:100px; padding:5px; background:#fff; position: absolute; display:none; right:35px; top:15px; -moz-border-radius:5px; border-radius:5px; z-index:35; }
+#slideshow .preview span { display: block; }
+#slideshow .slide { height:280px; width:565px; position:absolute; top:0; left:0; background-position: 0 0; background-repeat: no-repeat; z-index:15; }
+#slideshow .slide .click-area { width:565px; height:280px; position:absolute; bottom:0; left:0; z-index:20; }
+#slideshow .slide .click-area embed { z-index:25; }
+#slideshow .mask { background:url(http://img1.cache.netease.com/game/laikai/CTM/mask.png) no-repeat; }
+/* 缩略图新闻 */
+.featured-news { width:545px; height:140px; line-height:1.08em; overflow:hidden; position:absolute; left:30px; bottom:30px;}
+.featured-news .featured { float:left; margin-right:15px; width:120px; font-size:13px; }
+.featured-news .featured:last-child { margin:0; }
+.featured-news .featured a:hover, .featured-news .featured a:focus { color:#e43f19; }
+.featured-news .featured a .featured-img { height:90px; display:block; border:1px solid transparent; background-position:50%; -moz-border-radius:3px; border-radius:3px; }
+.featured-news .featured a:hover { text-decoration:none; }
+.featured-news .featured-desc { padding:7px 0 0 0; display:block; font-size:12px; line-height:18px; }
+.featured-news .featured a { color:#c48f01; }
+.featured-news .featured a .featured-img { border-color:#541f09; -moz-box-shadow:#e43f19 0 0 10px; -webkit-box-shadow:#e43f19 0 0 10px; box-shadow:#e43f19 0 0 10px; }
+.featured-news a:hover .featured-img { border-color:#e43f19; }
+/* 要闻 新闻 */
+#ctm_new .right-new { width:350px; position:absolute; right:15px; top:20px; overflow:hidden; }
+#ctm_new .right-new a { color:#fdeea4; }
+#ctm_new .right-new a:hover { text-decoration:underline; color: #e43f19; }
+#ctm_new .right-new .headline { text-align: left; padding: 0 5px; height:135px; overflow:hidden; }
+#ctm_new .right-new .headline h2 { font-size: 18px; line-height: 24px; margin:7px 0 4px; font-weight:normal; }
+#ctm_new .right-new .headline h3 { line-height: 25px; font-weight:normal; color: #c48f01; }
+#ctm_new .right-new .headline h3 a { color: #c48f01; }
+#ctm_new .right-new .new-list { width:350px; height:125px; overflow:hidden; }
+#ctm_new .right-new .new-list ul { list-style:none; line-height:25px; margin:0 0 0 10px; }
+#ctm_new .right-new .new-list li { background:url(http://img1.cache.netease.com/game/laikai/CTM/new_list.png) no-repeat left center; text-indent:2em; }
+#ctm_new .right-new .new-more { width:350px; height:23px; margin:3px 0 0 -5px; position:relative; background:url(http://img1.cache.netease.com/game/laikai/CTM/new-more.gif) no-repeat right top; }
+#ctm_new .right-new .new-more a { display:block; width:57px; height:23px; position:absolute; right:0; top:0; }
+#ctm_new .right-new .new-more a:hover { background:url(http://img1.cache.netease.com/game/laikai/CTM/new-more.gif) no-repeat 0 -23px; }
+/* 新增副本 */
+#ctm-patch-fb { position:relative;}
+#ctm-patch-fb .zam-txt { display:block; position:absolute; top:10px; left:50px;}
+#ctm-patch-fb .zug-txt { display:block; position:absolute; top:10px; left:500px;}
+#ctm-patch-fb p { color:#c48f01; line-height:18px; text-indent:2em;}
+#ctm-patch-fb .fb-title { height:71px; background:url(http://img1.cache.netease.com/game/wow/Patch41/fb-title.jpg) no-repeat top center;}
+#ctm-patch-fb .fb-zam {height:219px; background:url(http://img1.cache.netease.com/game/wow/Patch41/zam.jpg) no-repeat top center; position:relative;}
+#ctm-patch-fb .fb-zam a { display:block; height:219px; }
+#ctm-patch-fb .fb-zam a.zam:hover { background:url(http://img1.cache.netease.com/game/wow/Patch41/zam-2.jpg) no-repeat 0 -221px;}
+#ctm-patch-fb .fb-zug {height:232px; background:url(http://img1.cache.netease.com/game/wow/Patch41/zug.jpg) no-repeat top center; position:relative;}
+#ctm-patch-fb .fb-zug a { display:block; height:232px; width:960px;}
+#ctm-patch-fb .fb-zug a.zug:hover {background:url(http://img1.cache.netease.com/game/wow/Patch41/zug-2.jpg) no-repeat 0 -232px;}
+/* 新系统功能 */
+#ctm_pf { height:403px; background:url(http://img1.cache.netease.com/game/wow/Patch41/ctmnew.jpg) no-repeat top center #000; position:relative;}
+#ctm_pf .new-ft { width:575px; height:335px; position:absolute; left:5px; top:50px; }
+#ctm_pf .new-ft .ft-title { height:25px; margin:0 0 0 10px; color:#fdeea4;}
+#ctm_pf .new-ft .ft-title h2 { line-height:25px; font-size:18px; font-weight:normal; background:url(http://img1.cache.netease.com/game/laikai/CTM/new_list.png) no-repeat 170px 8px;}
+#ctm_pf .new-ft .ft-txt { width:570px; height:305px; }
+#ctm_pf .new-ft .ft-txt .ft { float:left; margin:50px 0 0 140px; width:140px; height:100px; display:inline;}
+#ctm_pf .new-ft .ft-txt .ft h2 {line-height:25px; font-size:16px; font-weight:normal; color:#fdeea4;}
+#ctm_pf .new-ft .ft-txt .ft p { color:#837635; line-height:20px; font-size:12px;}
+/* 各职业变动 */
+#ctm_pf .new-zy { width:350px; height:335px; position:absolute; right:12px; top:50px; }
+#ctm_pf .new-zy .zy-title { height:25px; margin:0 0 10px 10px; color:#fdeea4; }
+#ctm_pf .new-zy .zy-title h2 { font-size:18px; font-weight:normal; background:url(http://img1.cache.netease.com/game/laikai/CTM/new_list.png) no-repeat 152px 8px; margin:0; padding:0;}
+#ctm_pf .new-zy .zy-txt { width:345px; height:295px;}
+#ctm_pf .new-zy .zy-txt .zy { float:left; margin:12px 0 0 59px; width:110px; height:45px; display:inline; }
+#ctm_pf .new-zy .zy-txt .zy h2 {font-size:14px; color:#c48f01;}
+#ctm_pf .new-zy .zy-txt .zy p { color:#c48f01; font-size:12px; }
+#ctm-stor { height:391px; background:url(http://img1.cache.netease.com/game/wow/Patch41/gushi-bg.jpg) no-repeat top center; position:relative; color:#fdeea4;}
+#ctm-stor .p-top { width:250px; text-indent:2em; position:absolute; top:70px; left:50px; line-height:23px;}
+#ctm-stor .p-bottom { width:380px; text-indent:2em; position:absolute; top:230px; left:50px; line-height:23px;}
+#ctm-stor a { display:block; width:128px; height:34px; position:absolute; top:332px; left:65px; }
+#ctm4-2 { height:338px; background:url(http://img1.cache.netease.com/game/wow/Patch41/4.2.jpg) no-repeat top center; position:relative;}
+#ctm4-2 .title4-2 { position:absolute; top:30px; left:30px;}
+#ctm4-2 .title4-2 h2 {line-height:25px; font-size:18px; font-weight:normal; color:#fdeea4; }
+#ctm4-2 .ctm4-2-1 { width:290px; height:230px; position:absolute; left:25px; top:80px; background:url(http://img1.cache.netease.com/game/wow/Patch41/1.png) no-repeat top center;}
+#ctm4-2 .ctm4-2-1 a { width:290px; height:230px; display:block; }
+#ctm4-2 .ctm4-2-2 { width:290px; height:230px; position:absolute; left:335px; top:80px; background:url(http://img1.cache.netease.com/game/wow/Patch41/hyzj.png) no-repeat top center;}
+#ctm4-2 .ctm4-2-2 a { width:290px; height:230px; display:block; }
+#ctm4-2 .ctm4-2-3 { width:290px; height:230px; position:absolute; left:645px; top:80px; background:url(http://img1.cache.netease.com/game/wow/Patch41/3.png) no-repeat top center;}
+#ctm4-2 .ctm4-2-3 a { width:290px; height:230px; display:block; }
+/* footer */
+.foot_ad { height:55px;}
+.footer{ min-width:100%; height:200px;}
+.foot { color:#372511; text-align:center; line-height:45px;}
+.foot .col { color:#ffb100;}
+.foot .text{ border-bottom:1px solid #372511; margin: 0; padding: 0; }
+.footer a:link,.footer a:visited{ color: #372511; }

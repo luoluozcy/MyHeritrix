@@ -1,0 +1,956 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>电视频道|电视剧_网易娱乐</title>
+<base target="_blank" />
+<meta name="keywords" content="电视、电视剧、电视节目、电视新闻" />
+<meta name="description" content="电视频道提供电视节目表，最新电视剧，港台电视剧、日韩电视剧、欧美电视剧等，最新的电视预告片、明星探班、拍摄花絮，最热门的电视剧及电视评论。" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="http://img1.cache.netease.com/ent/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/ent/img12/tv0706/tv.css" rel="stylesheet" type="text/css" />
+<script >var _ntes_const={stime : new Date()};</script>
+</head>
+<body>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+<style type="text/css">
+ /* 广告位 */
+.ggarea{width:958px; margin:0 auto; border:1px solid #dcdddd; clear:both; overflow:hidden; background:#fafafa;}
+.ggarea .ggtext{padding-left:12px; width:965px;}
+.ggarea .ggtext li{width:120px; float:left;margin-right:13px;}
+.ggarea .ggtext li a{color:#7b7c7d;}
+.ggarea .ggimg{padding-left:12px;}
+.ggarea .ggimg li{margin-right:12px; float:left;}
+.ggarea .ggimg li.gg130{width:130px;}
+.ggarea .ggimg li.gg650{width:650px;}
+.gg735 {width:735px; overflow:hidden; float:left;}
+.gg210 {width:210px; overflow:hidden; float:right;}
+.gg195_60{margin-left:8px;}
+.gg195_60 li{margin-bottom:10px;}
+</style>
+<!-- adText -->
+<div class="ggarea clearfix">
+	<span class="blank6"></span>
+    <ul class="ggtext">
+<li><a rel="nofollow" href="http://baoxian.163.com/products/invest/#from=pddt">钱还在贬值？发财攻略</a></li>
+<li><a rel="nofollow" href="http://mail.blog.163.com/blog/static/8220942420101724210925/">手机号免费生成邮箱</a></li>
+<li><a rel="nofollow" href="http://fm.163.com/?100305scgw002">网易首款桌面邮箱软件</a></li>
+<li><a rel="nofollow" href="http://yuedu.163.com/client?act=rdscwzl_20120817_01&utm_source=scwzl&utm_medium=20120817_01">十万好书杂志，免费读</a></li>
+<li><a rel="nofollow" href="http://tech.163.com/3g/">来这里玩转3G手机</a></li>
+<li><a rel="nofollow" href="http://help.3g.163.com/">手机上网易 随时随地</a></li>
+<li><a rel="nofollow" href="http://help.3g.163.com/news/">手机上每日查星座运势 </a></li>
+    </ul>
+    <span class="blank6"></span>
+    <ul class="ggimg">
+    	<li class="gg130"><iframe height="100" frameborder="no" width="130" scrolling="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=ent&cat=tv&type=logo130x100&location=1"></iframe></li>
+        <li class="gg650"><iframe height="100" frameborder="no" width="650" scrolling="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=ent&cat=tv&type=column650x100&location=1"></iframe></li>
+        <li class="gg130"><iframe height="100" frameborder="no" width="130" scrolling="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=ent&cat=tv&type=logo130x100&location=2"></iframe></li>
+    </ul>
+    <span class="blank6"></span>
+    <ul class="ggtext">
+<li><a rel="nofollow" href="http://caipiao.163.com/">来网易彩票拿千万大奖</a></li>
+<li><a rel="nofollow" href="http://yuedu.163.com">十万好书杂志免费读</a></li>
+<li><a rel="nofollow" href="http://vipmail.163.com/?08">百万精英首选VIP邮箱</a></li>
+<li><a rel="nofollow" href="http://ent.163.com/music/">最新最热音乐资讯</a></li>
+<li><a rel="nofollow" href="http://ent.163.com/movie/">最新最热电影资讯</a></li>
+<li><a rel="nofollow" href="http://help.3g.163.com/news/">手机上每日查星座运势</a></li>
+<li><a rel="nofollow" href="http://baojian.163.com/products/3-21.html#from=wztv">男人小鸟变大雕</a></li>
+    </ul>    
+    <span class="blank6"></span>
+</div>
+ <span class="blank9"></span>
+<a name="top" id="top"></a>
+<link href="http://img1.cache.netease.com/ent/img12/music0711/guide_2012.css" rel="stylesheet" type="text/css" />
+<div class="guide_2012">
+<span class="logo1"><a href="http://ent.163.com/"><img src="http://img1.cache.netease.com/ent/img10/tv1005/logo.gif" width="107" height="24" alt="网易娱乐" /></a></span>
+<span class="logo2"><a href="http://ent.163.com/tv/"><img src="http://img1.cache.netease.com/ent/img12/tv0706/logo_tv.gif" alt="音乐" /></a></span>
+<p class="navText"><a href="http://www.163.com/">网易首页</a> &gt; <a href="http://ent.163.com/">网易娱乐</a> &gt; 电视</p>
+<div class="top_search">
+<form target="_blank" id="formtopmobile" name="nisearch_top_ent" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="ent.163" name="keyfrom"/>  
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top_ent" name="q" /></label>
+<noscript><select name="site" class="left">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript> 
+        <div id="divSelectEnt" class="left">
+        </div> 
+        <input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="inent" name="in"/>
+</form>
+</div>
+<script type="text/javascript"> 
+//<![CDATA[
+(function NTES_Nav_ent(){
+	function $_G_ent(id){
+		return document.getElementById(id);
+	}
+	function clickselect_ent(e){
+		e = e || window.event;
+		e.cancelBubble = true;
+		var name = this.innerHTML;
+		var txt = document.createTextNode(name);
+		selected_ent.removeChild(selected_ent.firstChild);
+		selected_ent.appendChild(txt);
+		select_main_ent.style.display = "none";
+		var title = this.getAttribute("title");
+		$_G_ent("siteName_ent").value = title;
+		if (title == "网易") {
+		document.nisearch_top_ent.action = "http://news.yodao.com/search";
+		}
+		else {document.nisearch_top_ent.action = "http://www.yodao.com/search";
+		}
+	}
+	function a_mouseover_ent () {
+		this.className = "active";
+	}
+	function a_mouseout_ent () {
+		this.className = "";
+	}
+	$_G_ent("divSelectEnt").innerHTML = '<input id="siteName_ent" type="hidden" value="网易" name="site" /><div id="select_area_ent" class="select_box"><span id="selected_ent" class="search_site">新闻</span><div id="select_main_ent" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+	var select_area_ent = $_G_ent("select_area_ent"), selected_ent = $_G_ent("selected_ent"), select_main_ent = $_G_ent("select_main_ent"), select_list_ent = select_main_ent.getElementsByTagName("a"), len_ent = select_list_ent.length;
+	select_area_ent.onclick = select_main_ent.onmouseover = function(){
+		select_main_ent.style.display = "block";
+	}
+	select_main_ent.onmouseout = function(){
+		select_main_ent.style.display = "none";
+	}
+	
+	for (var i = 0; i < len_ent; i++) {
+		select_list_ent[i].onclick = clickselect_ent;
+		select_list_ent[i].onmouseover = a_mouseover_ent;
+		select_list_ent[i].onmouseout = a_mouseout_ent;
+	}
+})();
+//]]>
+</script>
+</div>
+<span class="blank6"></span>
+<div class="guide_2012_nav">
+<ul class="menu">
+<li class="index">
+<a href="http://ent.163.com/" class="sp">首页</a>
+</li>
+<li class="star">
+<a href="http://ent.163.com/star/" class="sp">明星</a>
+<a href="http://ent.163.com/special/00031HA3/doggshoot.html">偷拍</a>
+</li>
+<li class="movie">
+<a href="http://ent.163.com/movie/" class="sp">电影</a>
+<a href="http://ent.163.com/special/0003000B/moviespecials.html">专题</a>
+<a href="http://ent.163.com/special/2011pfb/">票房</a>
+<a href="http://ent.163.com/special/00031HA4/Firstshowing.html">新片</a> 
+<a href="http://ent.163.com/special/000335NF/movie_video.html">预告</a> 
+<a href="http://www.youdao.com/movieshow/">影讯</a> 
+<a href="http://ent.163.com/special/pingshentuanhz/">独家评论</a>
+</li>
+<li class="tv">
+<a href="http://ent.163.com/tv/" class="on"><span class="cGray">电视</span></a>
+<a href="http://ent.163.com/special/00034IG6/tvbaogao.html">观剧报告</a> 
+<a href="http://ent.163.com/special/00034IVE/TVguide.html">电视指南</a>
+<a href="http://ent.163.com/special/00034J9Q/tvdjch.html">策划</a>
+</li>
+<li class="music">
+<a href="http://ent.163.com/music/" class="sp">音乐</a>
+<a href="http://ent.163.com/special/00031HA6/ablumcp.html">测评</a>
+<a href="http://ent.163.com/special/00031HA6/mvtry.html">MV</a>  
+<a href="http://ent.163.com/special/00031HA6/chinesemid.html">唱片</a> 
+<a href="http://ent.163.com/special/zglxyyjb/">音乐金榜</a> 
+</li>
+</ul>
+<div class="list">
+<ul class="text">
+<li class="nobg"><a href="http://ent.163.com/special/0003000D/tvspecials.html">热门电视剧</a></li>
+<li><a href="http://ent.163.com/special/rmzongyi/">热门综艺</a></li>
+<li><a href="http://ent.163.com/special/00034J9Q/tvdjch.html">独家策划</a></li>
+<li><a href="http://ent.163.com/special/00034IG6/tvbaogao.html">观剧报告</a></li>
+<li><a href="http://ent.163.com/special/00034IVE/TVguide.html">一周电视指南</a></li>
+<li><a href="http://ent.163.com/special/tvpianhuahz/">精彩片花</a></li>
+<li><a href="http://ent.163.com/special/tvphotohz/">高清剧照</a></li>
+<li><a href="http://ent.163.com/latest/">滚动新闻</a></li>
+</ul>
+<span class="list_right"><a href="http://v.163.com/tvlist/index_29.html" class="tvygb">电视节目预告表</a><a href="http://m.163.com/tveasy/" class="sjkhd">网易电视指南手机客户端</a></span>
+</div>
+</div> <span class="blank9"></span>
+<div class="area">
+<div class="focusImg">
+<ul class="fimg" id="fimgcnt">
+<li class="on">
+<a href="http://ent.163.com/14/0428/11/9QTRTEH000031GVS.html" title="《离婚律师》曝剧照 演绎＂舌尖上＂的情感"><img src="http://img2.cache.netease.com/ent/2014/4/28/20140428115643c093f.jpg" width="565" height="280" alt="《离婚律师》曝剧照 演绎＂舌尖上＂的情感" /></a>
+<p class="titles"><a href="http://ent.163.com/14/0428/11/9QTRTEH000031GVS.html">《离婚律师》曝剧照 演绎"舌尖上"的情感</a></p>
+</li>
+<li>
+<a href="http://ent.163.com/14/0428/10/9QTNCEUF00031GVS.html" title="《薛丁山》明晚开播 战争主题剧照曝光"><img src="http://img4.cache.netease.com/ent/2014/4/28/20140428103820fdf7c.jpg" width="565" height="280" alt="《薛丁山》明晚开播 战争主题剧照曝光" /></a>
+<p class="titles"><a href="http://ent.163.com/14/0428/10/9QTNCEUF00031GVS.html">《薛丁山》明晚开播 战争主题剧照曝光</a></p>
+</li>
+<li>
+<a href="http://ent.163.com/photoview/00B70003/527319.html#p=9QQS97NL00B70003" title="《宫锁连城》陆毅高云翔双生夺爱"><img src="http://img4.cache.netease.com/ent/2014/4/27/201404270909298f2de.jpg" width="565" height="280" alt="《宫锁连城》陆毅高云翔双生夺爱" /></a>
+<p class="titles"><a href="http://ent.163.com/photoview/00B70003/527319.html#p=9QQS97NL00B70003">《宫锁连城》陆毅高云翔双生夺爱</a></p>
+</li>
+<li>
+<a href="http://ent.163.com/14/0426/07/9QO83HSI00031GVS.html" title="《中国好舞蹈》郭富城海清再秀舞技"><img src="http://img1.cache.netease.com/ent/2014/4/26/2014042610040217811.jpg" width="565" height="280" alt="《中国好舞蹈》郭富城海清再秀舞技" /></a>
+<p class="titles"><a href="http://ent.163.com/14/0426/07/9QO83HSI00031GVS.html">《中国好舞蹈》郭富城海清再秀舞技</a></p>
+</li>
+</ul>
+<span class="blank6"></span>
+<div class="forday" style="width:92px;">
+<ul id="fimgmenu" style="width:92px;">
+<li class="on">1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+</ul>
+</div>
+</div>
+<div class="focusRight">
+<span class="blank6"></span>
+<!-- 头条 -->
+<h2 class="bigsize left"><a href="http://ent.163.com/14/0427/19/9QS46H7600034TG9.html">[毒舌]舌尖2:考虑过炸鸡和啤酒的感受吗</a></h2><span class="titleMore"><a href="http://ent.163.com/14/0427/19/9QS46H7600034TG9.html"></a></span>
+<p class="cDGray" style="clear:both;">
+<a href="http://ent.163.com/14/0428/04/9QT29HAI00032DGD.html">评:从"咬"变成了"咀嚼"</a> | <a target="_blank" href="http://ent.163.com/14/0427/08/9QQV0SHN00031GVS.html">网友赞比第一集好看</a> | <a target="_blank" href="http://ent.163.com/14/0424/03/9QIKBQIV00032DGD.html">收益已上亿</a><br />
+<a href="http://ent.163.com/14/0424/12/9QJJNCRE00034S01.html">哪些"舌尖上的美食"是高热食物</a> | <a target="_blank" href="http://ent.163.com/14/0428/07/9QTBKHD300032DGD.html">有人看出了"武侠片的味道"</a><br />
+</p
+<span class="blank9"></span>
+<h3 class="bigsize"><a href="http://ent.163.com/14/0428/13/9QU1N7E400031GVS.html">曝央视将引进《生活大爆炸》 推绿色版本</a></h3>
+<p class="cDGray">
+<a href="http://ent.163.com/14/0427/10/9QR5TEKV00031GVS.html">多部美剧遭视频网站下架 因政策原因</a> | <a target="_blank" href="http://ent.163.com/14/0428/07/9QTCPIF600031GVS.html">央视播《冰与火》引质疑</a><br />
+</p>
+<span class="blank9"></span>
+<h3 class="bigsize"><a href="http://ent.163.com/14/0428/08/9QTFNSH000031GVS.html">《步步2》结局遭剧透 吴奇隆刘诗诗"私奔"</a></h3>
+<p class="cDGray">
+<a href="http://ent.163.com/14/0422/12/9QEFADD800034R73.html">[策划]非"步步迷"需要补的功课</a> | <a target="_blank" href="http://ent.163.com/14/0418/11/9Q422PID00031GVS.html">遭遇卫视剪刀手缩水4集</a><br />
+</p>
+<span class="blank20"></span>
+<ul class="f12bla cDGray">
+<li><a href="http://ent.163.com/14/0428/11/9QTP24IL00031GVS.html">《她们的秘密》揭秘"张家姐妹"的情感迷雾</a></li>
+<li><a href="http://ent.163.com/14/0428/07/9QTDUP0P00031GVS.html">《来吧孩子》将播产房实录 惊心动魄看生命降临</a></li>
+<li><a href="http://ent.163.com/14/0428/07/9QTDRUB100031GVS.html">曾轶可加盟《花样年华2》 "曾哥"十分"小女生"</a></li>
+<li><a href="http://ent.163.com/14/0428/07/9QTBKK7K00032DGD.html">一月只见两面 吴奇隆:和刘诗诗不能用"注定"定义</a></li>
+</ul>
+</div>
+</div>
+<span class="blank9"></span>
+<div class="area area_bg clearfix">
+<div class="colL">
+<div>
+<div class="col_box">
+<div class="titleBar">
+<h2>独家策划</h2><span class="more"><a href="http://ent.163.com/special/00034J9Q/tvdjch.html" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank12"></span>
+<div class="col_l">
+<div class="bigPic">
+<a href="http://ent.163.com/14/0312/18/9N5G67SR00034R74.html"><img src="http://img2.cache.netease.com/ent/2014/3/31/20140331121118665cd.jpg" width="300" height="225" alt="＂你懂的＂国产剧审查"/></a>
+<div class="title"><a href="http://ent.163.com/14/0312/18/9N5G67SR00034R74.html" title="＂你懂的＂国产剧审查">"你懂的"国产剧审查</a></div>
+<p>不能有鬼不能早恋，小三不能幸福。<span class="cDRed"><a href="http://ent.163.com/14/0312/18/9N5G67SR00034R74.html">[详细]</a></span></p>
+</div>
+</div>
+<div class="col_r">
+<div class="content">
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0327/07/9OB0SACR00034S01.html"><img src="http://img5.cache.netease.com/ent/2014/3/31/20140331121844093fd.jpg" width="120" height="90" alt="韩星能拉多少收视？" /></a>
+<h3><a href="http://ent.163.com/14/0327/07/9OB0SACR00034S01.html">韩星能拉多少收视？</a></h3>
+<p>韩星扎堆上内地综艺，"叫兽"贡献最大，金贤重超李敏镐，鸟叔是负数。<span class="cDRed"><a href="http://ent.163.com/14/0327/07/9OB0SACR00034S01.html">[详细]</a></span></p>
+</li>
+</ul>
+<span class="blank15"></span>
+<span class="blank15"></span>
+<span class="blank15"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0323/23/9O2EHC3800034R74.html"><img src="http://img4.cache.netease.com/ent/2014/3/31/20140331122037e821d.jpg" width="120" height="90" title="记一个国产剧剧本的诞生" alt="记一个国产剧剧本的诞生" /></a>
+<h3><a href="http://ent.163.com/14/0323/23/9O2EHC3800034R74.html">记一个国产剧剧本的诞生</a></h3>
+<p>土豪投资人给女儿要角色，卖盒饭的都能提剧本修改意见。<span class="cDRed"><a href="http://ent.163.com/14/0323/23/9O2EHC3800034R74.html">[详细]</a></span></p>
+</li>
+</ul>
+</div>
+</div>
+<span class="blank9"></span>
+</div>
+</div>
+<span class="blank9"></span>
+<div>
+<div class="col_box">
+<div class="titleBar">
+<h2>观剧报告</h2><span class="more"><a href="http://ent.163.com/special/gjbghz2013/" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank12"></span>
+<div class="col_l">
+<div class="content">
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0417/14/9Q1QCIIL00034R94.html"><img src="http://img5.cache.netease.com/ent/2014/4/22/20140422100114b4228.jpg" width="120" height="90" title="《宫锁连城》：拼贴教科书" alt="《宫锁连城》：拼贴教科书" /></a>
+<h3><a href="http://ent.163.com/14/0417/14/9Q1QCIIL00034R94.html">《宫锁连城》：拼贴教科书</a></h3>
+<p>于正就像个裁缝，把一块块熟知的桥段精华拼贴出新的衣裳。<span class="cDRed"><a href="http://ent.163.com/14/0417/14/9Q1QCIIL00034R94.html">[详细]</a></span></p>
+</li>
+</ul>
+<span class="blank20"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0416/10/9PUPJM3O00034R94.html"><img src="http://img2.cache.netease.com/ent/2014/4/22/20140422100021b8bc4.jpg" width="120" height="90" title="《幸福在哪里》：怀旧版＂致青春＂做得很到" alt="《幸福在哪里》：怀旧版＂致青春＂做得很到" /></a>
+<h3><a href="http://ent.163.com/14/0416/10/9PUPJM3O00034R94.html">《幸福在哪里》：怀旧版"致青春"做得很到</a></h3>
+<p>用纯粹的爱情、精致的怀旧风格传递出对那个时代的眷恋。<span class="cDRed"><a href="http://ent.163.com/14/0416/10/9PUPJM3O00034R94.html">[详细]</a></span></p>
+</li>
+</ul>
+<span class="blank20"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0415/11/9PSCLVSB00034R94.html"><img src="http://img6.cache.netease.com/ent/2014/4/22/2014042209563172178.jpg" width="120" height="90" title="《大河儿女》：高满堂流水线作品" alt="《大河儿女》：高满堂流水线作品" /></a>
+<h3><a href="http://ent.163.com/14/0415/11/9PSCLVSB00034R94.html">《大河儿女》：高满堂流水线作品</a></h3>
+<p>稍调整就ok，这是高满堂的本事，但观众有理由要求更多。<span class="cDRed"><a href="http://ent.163.com/14/0415/11/9PSCLVSB00034R94.html">[详细]</a></span></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col_r">
+<div class="content">
+<ul class="f14bla">
+<li><a href="http://ent.163.com/14/0328/11/9OE176G100034R94.html">《望海的女人》：90年代苦情剧的落寞</a></li>
+<li><a href="http://ent.163.com/14/0327/14/9OBOJ5NV00034R94.html">《一仆二主》：谁相信张嘉译是屌丝？</a></li>
+<li><a href="http://ent.163.com/14/0325/11/9O68D6A200034R94.html">《家宴》：人物塑造得好比啥都强</a></li>
+<li><a href="http://ent.163.com/14/0325/11/9O67O2TM00034R94.html">《妻子的秘密》：场场狗血无缝连接</a></li>
+<li><a href="http://ent.163.com/14/0320/15/9NPQU2IJ00034R94.html">《我的儿子是奇葩》：角色不讨喜是硬伤</a></li>
+<li><a href="http://ent.163.com/14/0319/11/9NMQU1JA00034R94.html">《老兵》：赵本山跨界混搭成“东北乱炖”</a></li>
+<li><a href="http://ent.163.com/14/0318/14/9NKJ4SOR00034R94.html">《江南四大才子》：无厘头不是想学就能学</a></li>
+<li><a href="http://ent.163.com/14/0307/10/9MNPH77A00034R94.html">《陶之恋》：就是一部过时的悬浮剧</a></li>
+<li><a href="http://ent.163.com/14/0306/14/9MLKMUDN00034R94.html">《爱的妇产科》：以人情味"中和"重口味</a></li>
+<li><a href="http://ent.163.com/14/0303/12/9MDOIKKU00034R94.html">《大丈夫》：主流商业剧的典范</a></li>
+<li><a href="http://ent.163.com/14/0224/16/9LS3JO4K00034R94.html">《父母爱情》：细节足够动人</a></li>
+<li><a href="http://ent.163.com/14/0220/12/9LHC6E2500034R94.html">《乡村爱情圆舞曲》：成功的贺岁剧</a></li>
+<li><a href="http://ent.163.com/14/0213/14/9KVJ2U7700034R94.html">《隋唐英雄3》：英雄彻底沦为陪衬</a></li>
+</ul>
+</div>
+</div>
+<span class="blank9"></span>
+</div>
+</div>
+<span class="blank9"></span>
+<div>
+<div class="col_box">
+<div class="titleBar">
+<h2>精彩片花</h2><span class="more"><a href="http://ent.163.com/special/tvpianhuahz/" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank6"></span>
+<div class="photoList2">
+<ul>
+<li><a href="http://v.ent.163.com/video/2014/4/S/T/V9PRBR4ST.html"><img src="http://img4.cache.netease.com/ent/2014/4/26/2014042616104947d0b.jpg" width="120" height="90" alt="'照亮星球'主题曲" /></a><h5><a href="http://v.ent.163.com/video/2014/4/S/T/V9PRBR4ST.html">"照亮星球"主题曲</a></h5></li>
+<li><a href="http://v.ent.163.com/video/2014/4/N/J/V9PO629NJ.html"><img src="http://img1.cache.netease.com/ent/2014/4/25/201404251522349bda6.png" width="120" height="90" alt="《裸婚之后》插曲" /></a><h5><a href="http://v.ent.163.com/video/2014/4/N/J/V9PO629NJ.html">《裸婚之后》插曲</a></h5></li>
+<li><a href="http://v.ent.163.com/video/2014/4/3/K/V9PM3HR3K.html"><img src="http://img2.cache.netease.com/ent/2014/4/24/201404241513283bd3b.png" width="120" height="90" alt="《神犬》成长记 " /></a><h5><a href="http://v.ent.163.com/video/2014/4/3/K/V9PM3HR3K.html">《神犬》成长记 </a></h5></li>
+<li><a href="http://v.ent.163.com/video/2014/4/5/B/V9PITLG5B.html"><img src="http://img4.cache.netease.com/ent/2014/4/23/20140423111133af050.png" width="120" height="90" alt="《一场爱情》片花" /></a><h5><a href="http://v.ent.163.com/video/2014/4/5/B/V9PITLG5B.html">《一场爱情》片花</a></h5></li>
+<li><a href="http://v.ent.163.com/video/2014/4/Q/5/V9PGPS8Q5.html"><img src="http://img3.cache.netease.com/ent/2014/4/22/201404221350036cdf2.jpg" width="120" height="90" alt="新版《神雕》片花" /></a><h5><a href="http://v.ent.163.com/video/2014/4/Q/5/V9PGPS8Q5.html">新版《神雕》片花</a></h5></li>
+<li><a href="http://v.ent.163.com/video/2014/4/D/K/V9P6CQRDK.html"><img src="http://img5.cache.netease.com/ent/2014/4/18/201404181315465cbff.jpg" width="120" height="90" alt="《金玉》唐嫣片花" /></a><h5><a href="http://v.ent.163.com/video/2014/4/D/K/V9P6CQRDK.html">《金玉》唐嫣片花</a></h5></li>
+<li><a href="http://v.ent.163.com/video/2014/4/U/7/V9P64F0U7.html"><img src="http://img6.cache.netease.com/ent/2014/4/18/201404181314223dfb1.jpg" width="120" height="90" alt="《唱战记》片花" /></a><h5><a href="http://v.ent.163.com/video/2014/4/U/7/V9P64F0U7.html">《唱战记》片花</a></h5></li>
+<li><a href="http://v.ent.163.com/video/2014/4/3/T/V9P16EK3T.html"><img src="http://img4.cache.netease.com/ent/2014/4/18/201404181311585c1e3.jpg" width="120" height="90" alt="《薛丁山》主题曲" /></a><h5><a href="http://v.ent.163.com/video/2014/4/3/T/V9P16EK3T.html">《薛丁山》主题曲</a></h5></li>
+</ul>
+</div>
+<span class="blank9"></span>
+</div>
+</div>
+</div>
+<div class="colR">
+<div class="titleBar">
+<h2>电视热点专题</h2><span class="more"><a href="http://ent.163.com/special/0003000D/tvspecials.html" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank15"></span>
+<div class="content">
+<ul class="f12bla">
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/2014chunwan/"><img src="http://img2.cache.netease.com/ent/2013/12/18/2013121813553853563.jpg" height="60" width="80" alt="央视马年春晚 2014.2" /></a>
+<h3><a href="http://ent.163.com/special/2014chunwan/">央视马年春晚 2014.2</a></h3>
+<p>冯小刚任总导演，赵本山把关语言类。<span class="cDRed"><a target="_blank" href="http://ent.163.com/special/2014chunwan/">[专题]</a></span></p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/2013tvbtq/"><img src="http://img1.cache.netease.com/ent/2013/11/29/20131129151820286f3.jpg" height="60" width="80" alt="TVB46届台庆 2013.12" /></a>
+<h3><a href="http://ent.163.com/special/2013tvbtq/">TVB46届台庆 2013.12</a></h3>
+<p>黄子华、田蕊妮称帝后，张智霖仅夺角色奖。<span class="cDRed"><a target="_blank" href="http://ent.163.com/special/2013tvbtq/">[专题]</a></span></p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/jinzhong48/"><img src="http://img2.cache.netease.com/ent/2013/9/30/201309301550457f65f.jpg" height="60" width="80" alt="第48届金钟奖 2013.10" /></a>
+<h3><a href="http://ent.163.com/special/jinzhong48/">第48届金钟奖 2013.10</a></h3>
+<p>《含苞欲坠》揽四项大奖，周渝民终获视帝。<span class="cDRed"><a target="_blank" href="http://ent.163.com/special/jinzhong48/">[专题]</a></span></p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/65emmys/"><img src="http://img3.cache.netease.com/ent/2013/9/30/20130930154438c3a33.jpg" height="60" width="80" alt="第65届艾美奖 2013.9" /></a>
+<h3><a href="http://ent.163.com/special/65emmys/">第65届艾美奖 2013.9</a></h3>
+<p>《绝命毒师》以奖谢幕，谢耳朵再获视帝。<span class="cDRed"><a target="_blank" href="http://ent.163.com/special/65emmys/">[专题]</a></span></p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/19ssj/"><img src="http://img1.cache.netease.com/ent/2013/9/30/20130930153808c945e.jpg" height="60" width="80" alt="第19届上视节 2013.6" /></a>
+<h3><a href="http://ent.163.com/special/19ssj/">第19届上视节 2013.6</a></h3>
+<p>张嘉译宋丹丹分别加冕白玉兰奖视帝视后。<span class="cDRed"><a target="_blank" href="http://ent.163.com/special/19ssj/">[专题]</a></span></p>
+</li>
+</ul>
+</div>
+<span class="blank9"></span>
+<div class="titleBar">
+<h2>热门综艺</h2><span class="more"><a href="http://ent.163.com/special/rmzongyi/" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank15"></span>
+<div class="content">
+<ul class="f12bla">
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/xiaoao2014/"><img src="http://img6.cache.netease.com/ent/2014/3/24/2014032412252748d3b.jpg" height="60" width="80" alt="《笑傲江湖》" /></a>
+<h3><a href="http://ent.163.com/special/xiaoao2014/">《笑傲江湖》</a></h3>
+<p>原创喜剧真人秀 东方卫视 周日 21：00</p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/yanshuojia2013/"><img src="http://img5.cache.netease.com/ent/2013/8/7/201308071634229edef.jpg" height="60" width="80" alt="《超级演说家》" /></a>
+<h3><a href="http://ent.163.com/special/yanshuojia2013/">《超级演说家》</a></h3>
+<p>语言竞技真人秀 安徽卫视 周四 21：10</p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/mengxiangxdd2013/"><img src="http://img1.cache.netease.com/ent/2013/7/10/20130710152506cbe35.jpg" height="60" width="80" alt="《梦想星搭档》" /></a>
+<h3><a href="http://ent.163.com/special/mengxiangxdd2013/">《梦想星搭档》</a></h3>
+<p>原创公益音乐节目 央视 周日20:05</p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/haoshengyin2013/"><img src="http://img3.cache.netease.com/ent/2013/7/10/201307101526113438c.jpg" height="60" width="80" alt="《好声音》第二季" /></a>
+<h3><a href="http://ent.163.com/special/haoshengyin2013/">《好声音》第二季</a></h3>
+<p>音乐评论类 浙江卫视 每周日21:15</p>
+</li>
+<li class="firstNd marb30 clearfix">
+<a href="http://ent.163.com/special/wdzgx2013/"><img src="http://img2.cache.netease.com/ent/2013/7/2/201307021432314a6d2.jpg" height="60" width="80" alt="《我的中国星》" /></a>
+<h3><a href="http://ent.163.com/special/wdzgx2013/">《我的中国星》</a></h3>
+<p>音乐选秀 湖北卫视 周日22:00</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="area area_bg clearfix">
+<span class="blank9"></span>
+<div class="colL">
+<div class="col_box">
+<div class="titleBar">
+<h2>一周电视指南 <span class="f12px fN cDGray">（4.25-5.1）</span></h2><span class="more"><a href="http://ent.163.com/special/00034CV8/tvlistmore.html" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank12"></span>
+<div class="col_l">
+<div class="content">
+<span class="f14px fB">电视剧指南</span>
+<span class="blank9"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/special/tvlist140410/?1397107808927"><img src="http://img2.cache.netease.com/ent/2014/4/10/20140410134441efec0.jpg" width="120" height="90" title="《宫锁连城》" alt="《宫锁连城》" /></a>
+<h3><a href="http://ent.163.com/special/tvlist140410/?1397107808927">《宫锁连城》</a></h3>
+<p>《宫3》是否脱胎于《梅花烙》，等到剧集播出的时候，观众们自有判断。<span class="cDRed"><a href="http://ent.163.com/special/tvlist140410/?1397107808927">[详细]</a></span></p>
+</li>
+</ul>
+<span class="blank15"></span>
+<span class="blank15"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/special/tvlist140410/?1397107808927"><img src="http://img4.cache.netease.com/ent/2014/4/10/201404101343543e60a.jpg" width="120" height="90" title="《秀秀的男人》" alt="《秀秀的男人》" /></a>
+<h3><a href="http://ent.163.com/special/tvlist140410/?1397107808927">《秀秀的男人》</a></h3>
+<p>《秀秀的男人》非常符合秋瓷炫的苦情路线，简直可以说是为其量身定做的作品。<span class="cDRed"><a href="http://ent.163.com/special/tvlist140410/?1397107808927">[详细]</a></span></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col_r">
+<div class="content">
+<span class="f14px fB">综艺指南</span>
+<span class="blank9"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/special/zy20140425/"><img src="http://img5.cache.netease.com/ent/2014/4/24/20140424165149ef493.jpg" width="120" height="90" title="《非诚勿扰》" alt="《非诚勿扰》" /></a>
+<h3><a href="http://ent.163.com/special/zy20140425/">《非诚勿扰》</a></h3>
+<p>“冰美人”黄潇潇哭诉盼牵手，机车型男亮相 。<span class="cDRed"><a href="http://ent.163.com/special/zy20140425/">[详细]</a></span></p>
+</li>
+</ul>
+<span class="blank15"></span>
+<span class="blank15"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/special/zy20140418/"><img src="http://img1.cache.netease.com/ent/2014/4/24/2014042416525149339.jpg" width="120" height="90" title="《年代秀》" alt="《年代秀》" /></a>
+<h3><a href="http://ent.163.com/special/zy20140418/">《年代秀》</a></h3>
+<p>赵本山年代秀“复出”，录制现场惊遇25年前神秘女子。<span class="cDRed"><a href="http://ent.163.com/special/zy20140418/">[详细]</a></span></p>
+</li>
+</ul>
+</div>
+</div>
+<span class="blank9"></span>
+</div>
+</div>
+<div class="colR">
+<div class="titleBar">
+<h2>其他剧集推荐</h2><span class="more"><a href="http://ent.163.com/special/000346H5/oumeiju.html" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank15"></span>
+<div class="content">
+<ul class="f12bla">
+ <li class="nobg"><a href="http://data.ent.163.com/tv/182436.html"><span class="fB">【港】《女人俱乐部》</span> 七女神集体回归</a><p class="cDGray"><a href="http://data.ent.163.com/tv/182436.html">4月21日起 翡翠台每周一~五21:30播出</a></p></li>
+ <li class="nobg"><a href="http://data.ent.163.com/tv/182171.html"><span class="fB">【英】《低俗怪谈》</span> 英伦风心理恐怖剧</a><p class="cDGray"><a href="http://data.ent.163.com/tv/182171.html">5月12日起 showtime每周一晚播出</a></p></li>
+ <li class="nobg"><a href="http://data.ent.163.com/tv/182169.html"><span class="fB">【日】《潘多拉4》</span> 堺雅人接棒科学怪人</a><p class="cDGray"><a href="http://data.ent.163.com/tv/182169.html">4月27日起 WOWOW台每周日晚22：00播出</a></p></li>
+ <li class="nobg"><a href="http://data.ent.163.com/tv/182170.html"><span class="fB">【美】《冰血暴》</span> 华生演科恩兄弟式喜剧</a><p class="cDGray"><a href="http://data.ent.163.com/tv/182170.html">4月15日起 FX每周二晚22:00播出</a></p></li>
+ <li class="nobg"><a href="http://data.ent.163.com/tv/182103.html"><span class="fB">【韩】《危情三日》</span> 朴有天当“逃犯”</a><p class="cDGray"><a href="http://data.ent.163.com/tv/182103.html">3月25日起 SBS每周三/四晚22:00播出</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="area area_bg clearfix">
+<span class="blank9"></span>
+<div class="colL">
+<div class="col_box">
+<div class="titleBar">
+<h2>超级面对面</h2><span class="more"><a href="http://ent.163.com/special/00034J2Q/dianshichat.html" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank12"></span>
+<div class="col_l">
+<div class="content">
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0422/16/9QEUKT9I00031GVS.html"><img src="http://img5.cache.netease.com/ent/2014/4/24/2014042410451909417.jpg" width="120" height="90" title="《步步惊情》主演做客 " alt="《步步惊情》主演做客 " /></a>
+<h3><a href="http://ent.163.com/14/0422/16/9QEUKT9I00031GVS.html">《步步惊情》主演做客 </a></h3>
+<p>谈及可能面临的比较和吐槽，吴奇隆坦然表示：“现在哪一部戏是不吐槽的？”<span class="cDRed"><a href="http://ent.163.com/14/0422/16/9QEUKT9I00031GVS.html">[详细]</a></span></p>
+</li>
+</ul>
+<span class="blank20"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0421/13/9QBVHKJ700031GVS.html"><img src="http://img3.cache.netease.com/ent/2014/4/22/201404220856040efd3.jpg" width="120" height="90" title="《金玉良缘》主演做客 " alt="《金玉良缘》主演做客 " /></a>
+<h3><a href="http://ent.163.com/14/0421/13/9QBVHKJ700031GVS.html">《金玉良缘》主演做客 </a></h3>
+<p>霍建华表示玉麒麟这个角色非唐嫣莫属：“我现在想不到任何人可以替代她”。<span class="cDRed"><a href="http://ent.163.com/14/0421/13/9QBVHKJ700031GVS.html">[详细]</a></span></p>
+</li>
+</ul>
+<span class="blank20"></span>
+<ul class="f12bla">
+<li class="firstNd clearfix">
+<a href="http://ent.163.com/14/0404/07/9OVHRCPG00031GVS.html#p=9OTQPNM800B70003"><img src="http://img2.cache.netease.com/ent/2014/4/4/20140404141915010ce.jpg" width="120" height="90" title="《麻辣女王》主创访谈" alt="《麻辣女王》主创访谈" /></a>
+<h3><a href="http://ent.163.com/14/0404/07/9OVHRCPG00031GVS.html#p=9OTQPNM800B70003">《麻辣女王》主创访谈</a></h3>
+<p>制片人何静：“我觉得很遗憾，在《麻辣女王》中，一场热吻的镜头都没有安排。”<span class="cDRed"><a href="http://ent.163.com/14/0404/07/9OVHRCPG00031GVS.html#p=9OTQPNM800B70003">[详细]</a></span></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col_r">
+<div class="content">
+<ul class="f14bla">
+<li><a href="http://ent.163.com/14/0328/07/9ODH61K700031GVS.html#p=9OBHTHVV00B70003">《绯闻女王》主创访谈</a> <span class="cBlue f12px">尚雯婕台词自我发挥</span></li>
+<li><a href="http://ent.163.com/14/0327/16/9OBTUVM000031GVS.html#p=9OBUBCED00B70003">《隋唐4》主演做客 </a> <span class="cBlue f12px">张卫健:不坚持就不能独一无二</span></li>
+<li><a href="http://ent.163.com/14/0324/07/9O37TR2S00031GVS.html#">《一仆二主》主演做客 </a> <span class="cBlue f12px">闫妮梦中光脚追张嘉译</span></li>
+<li><a href="http://ent.163.com/14/0321/07/9NRG5MI300031GVS.html#">《闪爱女王》主创访谈 </a> <span class="cBlue f12px">王岳伦：诗龄还不会演戏</span></li>
+<li><a href="http://ent.163.com/14/0317/13/9NHT713E00031GVS.html">《妻子的秘密》主演做客</a> <span class="cBlue f12px">赵丽颖:每次哭都让我心累</span></li>
+<li><a href="http://ent.163.com/14/0314/07/9N9FR9JV00031GVS.html#p=9N83800H00B70003">《搜查女王》主创访谈</a> <span class="cBlue f12px">翟天临为拍裸戏做俯卧撑</span></li>
+<li><a href="http://ent.163.com/14/0314/07/9N9FG9PG00031GVS.html">《四大才子》主演做客</a> <span class="cBlue f12px">"无厘头"不是瞎胡闹</span></li>
+<li><a href="http://ent.163.com/14/0309/20/9MU14B4V00031GVS.html">《我儿奇葩》主演做客 </a> <span class="cBlue f12px">佟大为关悦演情侣被嫌不羞涩</span></li>
+<li><a href="http://ent.163.com/14/0220/15/9LHNO76M00031GVS.html">《父母爱情》主演做客 </a> <span class="cBlue f12px">郭涛:首戏就“洞房”剧组太坏</span></li>
+<li><a href="http://ent.163.com/14/0217/07/9L953EF700031GVS.html#">《大丈夫》主演做客 </a> <span class="cBlue f12px">李小冉预告色诱戏</span></li>
+<li><a href="http://ent.163.com/14/0120/07/9J11NOTU00031GVS.html#p=9J11CC4800B70003">《爱情公寓4》主演做客</a> <span class="cBlue f12px">陈赫：每对感情都有很大推进</span></li>
+<li><a href="http://ent.163.com/13/1217/07/9G9FJOEF00031GVS.html#p=9G7SLF7500B70003">《烽火佳人》主演做客 </a> <span class="cBlue f12px">陈键锋:亲热戏不能太激烈</span></li>
+<li><a href="http://ent.163.com/13/1125/09/9EH3NQJG00031GVS.html">《老有所依》主演做客</a> <span class="cBlue f12px">刘涛:1天打3次电话给妈妈</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="colR">
+<div class="titleBar">
+<h2>一周收视综述</h2><span class="more"><a href="http://ent.163.com/special/yizhoushoushi/" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank15"></span>
+<div class="content">
+<ul class="f12bla">
+ <li class="nobg"><a href="http://ent.163.com/14/0425/08/9QLOMGUB00031GVS.html"><span class="fB">一周港视：《叛逃》大结局最高收视30点</span> </a><p class="cDGray"><a href="http://ent.163.com/14/0425/08/9QLOMGUB00031GVS.html">4月14日-4月20日，，由黄浩然、黄翠如 </a></p></li>
+ <li class="nobg"><a href="http://ent.163.com/14/0425/08/9QLOIA9R00031GVS.html"><span class="fB">一周美视：《丑闻》本季大结局入围前十</span> </a><p class="cDGray"><a href="http://ent.163.com/14/0425/08/9QLOIA9R00031GVS.html">4月14日-4月20日，上周《生活大爆炸》 </a></p></li>
+ <li class="nobg"><a href="http://ent.163.com/14/0424/07/9QJ24PDT00031GVS.html"><span class="fB">一周韩视：《乘着歌声的爱情》临近结局</span> </a><p class="cDGray"><a href="http://ent.163.com/14/0424/07/9QJ24PDT00031GVS.html">4月14日-4月20日，本周由于韩国发生了 </a></p></li>
+ <li class="nobg"><a href="http://ent.163.com/14/0418/07/9Q3L6C6400031GVS.html"><span class="fB">一周韩视：《好时节》剧情紧凑获好评</span> </a><p class="cDGray"><a href="http://ent.163.com/14/0418/07/9Q3L6C6400031GVS.html">4月7日-4月13日，KBS2金喜善主演的新剧</a></p></li>
+ <li class="nobg"><a href="http://ent.163.com/14/0417/07/9Q13PP3C00031GVS.html"><span class="fB">一周美视：体育协会男篮决赛助CBS登顶</span> </a><p class="cDGray"><a href="http://ent.163.com/14/0417/07/9Q13PP3C00031GVS.html">4月7日-4月13日，上周收视的热点集中在</a></p></li>
+ <li class="nobg"><a href="http://ent.163.com/14/0415/07/9PRSAVNL00031GVS.html"><span class="fB">一周日视：《奇妙物语》众多红星加盟</span> </a><p class="cDGray"><a href="http://ent.163.com/14/0415/07/9PRSAVNL00031GVS.html">4月3日-4月9日，上周没有任何春季日剧 </a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="area area_bg clearfix">
+<span class="blank9"></span>
+<div class="colL">
+<div class="col_box">
+<div class="titleBar">
+<h2>新闻动态</h2><span class="more"><a href="http://ent.163.com/latest/" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank12"></span>
+<div class="collm_bg clearfix">
+<div class="col_l">
+<div class="content" style="margin-right:3px;">
+<span class="f14px fB"><a href="http://ent.163.com/special/000346H5/neidiju.html">内地新闻</a></span>
+<span class="blank9"></span>
+<ul class="f14bla">
+<li><a href="http://ent.163.com/14/0428/13/9QU2CIC900031GVS.html">《金玉良缘》霍建华哭痛观众心 花美男大秀哭技</a></li>
+<li><a href="http://ent.163.com/14/0428/17/9QUDUU0L00031GVS.html">《小宝与老财》热播 顾宇峰演绎高富帅的抗战</a></li>
+<li><a href="http://ent.163.com/14/0428/16/9QUCI00O00031GVS.html">《爱的多米诺》开播 于和伟王丽坤首搭都市戏</a></li>
+<li><a href="http://ent.163.com/14/0428/14/9QU42EGT00031GVS.html">《大丈夫》广东卫视将播 观众：仍然很期待</a></li>
+<li><a href="http://ent.163.com/14/0428/14/9QU3U1M700031GVS.html">《宫锁连城》湖南热播 “蛋花汤”剧情真相揭秘</a></li>
+</ul>
+</div>
+<span class="blank20"></span>
+<div class="content" style="margin-right:3px;">
+<span class="f14px fB"><a href="http://ent.163.com/special/000346H5/gangtaiju.html">港台新闻</a></span>
+<span class="blank9"></span>
+<ul class="f14bla">
+<li><a href="http://ent.163.com/14/0428/08/9QTHNNK900031GVS.html">炎亚纶《爱上两个我》救美 与李毓芬双双挂彩</a></li>
+<li><a href="http://ent.163.com/14/0428/08/9QTGTF0H00031GVS.html">《女人俱乐部》热播 吴启华乐做“小男人”</a></li>
+<li><a href="http://ent.163.com/14/0427/09/9QQVKN4P00031GVS.html"><em class=' I_N_V_'>网友神剪32对TVB经典情侣群像引怀旧</em></a></li>
+<li><a href="http://ent.163.com/14/0426/16/9QP5IC8100031GVS.html">福山雅治献声主题曲 《你照亮我星球》曝预告片</a></li>
+<li><a href="http://ent.163.com/14/0426/09/9QOETFN300031GVS.html">台剧女主角念诗狂甩男主14巴掌 网友大呼过瘾</a></li>
+</ul>
+</div>
+</div>
+<div class="col_r">
+<div class="content">
+<span class="f14px fB"><a href="http://ent.163.com/special/000346H5/oumeiju.html">国际新闻</a></span>
+<span class="blank9"></span>
+<ul class="f14bla">
+<li><a href="http://ent.163.com/14/0428/17/9QUFG5U800031GVS.html">美剧《24小时》回归 新季“鲍小强”转战英国</a></li>
+<li><a href="http://ent.163.com/14/0428/15/9QU7G7NU00031GVS.html">美剧下架 海外剧国内网站同步播出恐终结</a></li>
+<li><a href="http://ent.163.com/14/0428/13/9QU1N7E400031GVS.html">曝央视将引进《生活大爆炸》 推绿色版本</a></li>
+<li><a href="http://ent.163.com/14/0428/11/9QTPGJN400031GVS.html">美剧粉连夜上书总局：这些剧揭露了资本主义丑恶</a></li>
+<li><a href="http://ent.163.com/14/0428/08/9QTH8C9U00031GVS.html">剧版《冰血暴》叫好叫座 "华生"表现"麻麻地"</a></li>
+</ul>
+</div>
+<span class="blank20"></span>
+<div class="content">
+<span class="f14px fB"><a href="http://ent.163.com/special/00032VQS/zongyijiemu.html">综艺新闻</a></span>
+<span class="blank9"></span>
+<ul class="f14bla">
+<li><a href="http://ent.163.com/14/0428/17/9QUED89V00031GVS.html">吴奇隆吐槽刘诗诗"精神分裂" 自曝遭其"毒打"</a></li>
+<li><a href="http://ent.163.com/14/0428/15/9QU9DJFN00031GVS.html">《超演2》总决赛录制完成 李咏提前透露亚军归属</a></li>
+<li><a href="http://ent.163.com/14/0428/14/9QU53RQ100031GVS.html">"屌丝歌神"亮相《最美和声》 高材生"得罪"导师</a></li>
+<li><a href="http://ent.163.com/14/0428/11/9QTR6O9M00031GVS.html">《妈咪》张柏芝挥泪力挺破产家庭 小朋友送拥抱</a></li>
+<li><a href="http://ent.163.com/14/0428/11/9QTR2FTR00031GVS.html">谢娜公开炮轰张丹丹删戏 回应：这是一场误会</a></li>
+</ul>
+</div>
+</div>
+</div>
+<span class="blank9"></span>
+</div>
+</div>
+<div class="colR">
+<div class="titleBar">
+<h2>在线看电视</h2><span class="more"><a href="http://v.163.com/tvlist/index_29.html" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank12"></span>
+<div class="onlinetv">
+<ul>
+<li><a href="http://v.163.com/tvlist/borpage_60.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_bjws.gif" width="21" height="21" alt="北京卫视" />北京卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_81.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_dfws.gif" width="21" height="21" alt="东方卫视" />东方卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_43.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_zjws.gif" width="21" height="21" alt="浙江卫视" />浙江卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_44.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_jsws.gif" width="22" height="18" alt="江苏卫视" />江苏卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_36.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_lnws.gif" width="21" height="21" alt="辽宁卫视" />辽宁卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_42.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_ahws.gif" width="17" height="17" alt="安徽卫视" />安徽卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_51.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_dnws.gif" width="21" height="21" alt="东南卫视" />东南卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_38.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_hnws.gif" width="18" height="18" alt="河南卫视" />河南卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_59.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_cqws.gif" width="21" height="21" alt="重庆卫视" />重庆卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_58.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_scws.gif" width="21" height="14" alt="四川卫视" />四川卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_56.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_nmws.gif" width="27" height="8" alt="内蒙卫视" />内蒙卫视</a></li>
+<li><a href="http://v.163.com/tvlist/borpage_47.html"><img src="http://img1.cache.netease.com/ent/img12/tv0706/icon_hbws.jpg" width="22" height="14" alt="湖北卫视" />湖北卫视</a></li>
+</ul>
+</div>
+</div>
+</div>
+<span class="blank9"></span>
+<div class="area">
+<div class="col_box">
+<div class="titleBar">
+<h2>高清剧照</h2><span class="more"><a href="http://ent.163.com/special/tvphotohz/" class="cDGray">更多 &gt;&gt;</a></span>
+</div>
+<span class="blank12"></span>
+<div class="photoList">
+<div class="photoL">
+<ul>
+<li><a href="http://ent.163.com/photoview/00B70003/524843.html#p=9OBMMA4600B70003"><img src="http://img6.cache.netease.com/ent/2014/3/28/20140328111201a6aa0.png" width="300" height="225" alt="《宫锁连城》曝夺爱海报" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524843.html#p=9OBMMA4600B70003">《宫锁连城》曝夺爱海报</a></h5></li>
+</ul>
+</div>
+<div class="photoR">
+<ul>
+<li><a href="http://ent.163.com/photoview/00B70003/524226.html#p=9NPBVN9H00B70003"><img src="http://img5.cache.netease.com/ent/2014/3/28/201403281125035a48b.png" width="120" height="90" alt="胡歌《琅琊榜》剧照" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524226.html#p=9NPBVN9H00B70003">胡歌《琅琊榜》剧照</a></h5></li>
+<li><a href="http://ent.163.com/photoview/00B70003/524603.html#p=9O663L8I00B70003"><img src="http://img5.cache.netease.com/ent/2014/3/28/201403281123107d280.png" width="120" height="90" alt="《武则天》男星剧照" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524603.html#p=9O663L8I00B70003">《武则天》男星剧照</a></h5></li>
+<li><a href="http://ent.163.com/photoview/00B70003/524701.html#p=9O8KU0IO00B70003"><img src="http://img3.cache.netease.com/ent/2014/3/28/20140328111959852c3.png" width="120" height="90" alt="《宫锁连城》剧照" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524701.html#p=9O8KU0IO00B70003">《宫锁连城》剧照</a></h5></li>
+<li><a href="http://ent.163.com/photoview/00B70003/524714.html#p=9O8P0RVD00B70003"><img src="http://img3.cache.netease.com/ent/2014/3/28/201403281117394cc72.png" width="120" height="90" alt="《急诊室故事》海报" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524714.html#p=9O8P0RVD00B70003">《急诊室故事》海报</a></h5></li>
+</ul>
+<span class="blank20"></span>
+<ul>
+<li><a href="http://ent.163.com/photoview/00B70003/524821.html"><img src="http://img6.cache.netease.com/ent/2014/3/28/2014032811153793210.png" width="120" height="90" alt="《唱战记》校园海报" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524821.html">《唱战记》校园海报</a></h5></li>
+<li><a href="http://ent.163.com/photoview/00B70003/524842.html"><img src="http://img6.cache.netease.com/ent/2014/3/28/2014032811132966849.png" width="120" height="90" alt="黄海波张静初剧照" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524842.html">黄海波张静初剧照</a></h5></li>
+<li><a href="http://ent.163.com/photoview/00B70003/524932.html#p=9ODSUABD00B70003"><img src="http://img5.cache.netease.com/ent/2014/3/28/20140328110853591e9.png" width="120" height="90" alt="《风雷急》海报" /></a><h5><a href="http://ent.163.com/photoview/00B70003/524932.html#p=9ODSUABD00B70003">《风雷急》海报</a></h5></li>
+<li><a href="http://ent.163.com/photoview/00B70003/521788.html#p=9L1QAVSH00B70003"><img src="http://img6.cache.netease.com/ent/2014/2/20/20140220114422b548d.png" width="120" height="90" alt="《父母爱情》写真" /></a><h5><a href="http://ent.163.com/photoview/00B70003/521788.html#p=9L1QAVSH00B70003">《父母爱情》写真</a></h5></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<span class="blank3"></span>
+<!-- /special/0001jt/nav09_end.html -->
+<style type="text/css">
+.channel-end,.channelEnd-rightS,.channelEnd-link,.channelEnd-top {background:url(http://img3.cache.netease.com/cnews/img09/endnav_bg1001.jpg);}
+.channel-end {width:960px;height:37px;overflow:hidden;margin:10px auto 0;line-height:38px;background-position:left -67px;background-repeat:repeat;}
+.channelEnd-rightS {display:block;float:right;width:8px;height:37px;overflow:hidden;background-position:right -141px;background-repeat:no-repeat;}
+.channelEnd-link {float:left;height:37px;line-height:37px;overflow:hidden;color:#1E50A2;background-position:left -30px;background-repeat:no-repeat;}
+.channelEnd-link a {float:none;padding:0 5px;font-weight:normal;background:none;}
+.channelEnd-link .firstNode {margin-left:5px; background:none;}
+.channelEnd-top {display:block;float:right;width:70px;height:37px;overflow:hidden;line-height:37px;text-indent:10px;background-position:left -30px;background-repeat:no-repeat;}
+</style>
+<div class="channel-end">
+	<span class="channelEnd-link cBlue">
+    	<a class="firstNode" href="http://www.163.com/"  rel="nofollow">网易首页</a>-<a href="http://news.163.com/"  rel="nofollow">新闻</a>-<a href="http://sports.163.com/"  rel="nofollow">体育</a>-<a href="http://ent.163.com/"  rel="nofollow">娱乐</a>-<a href="http://money.163.com/"  rel="nofollow">财经</a>-<a href="http://auto.163.com/"  rel="nofollow">汽车</a>-<a href="http://tech.163.com"  rel="nofollow">科技</a>-<a href="http://digi.163.com/"  rel="nofollow">数码</a>-<a href="http://mobile.163.com/"  rel="nofollow">手机</a>-<a href="http://lady.163.com/"  rel="nofollow">女人</a>-<a href="http://house.163.com/"  rel="nofollow">房产</a>-<a href="http://game.163.com/"  rel="nofollow">游戏</a>-<a href="http://book.163.com/"  rel="nofollow">读书</a>-<a href="http://edu.163.com/"  rel="nofollow">教育</a>-<a href="http://travel.163.com/"  rel="nofollow">旅游</a>-<a href="http://bbs.163.com/"  rel="nofollow">论坛</a>-<a href="http://v.163.com/"  rel="nofollow">视频</a>-<a href="http://blog.163.com/blogs/"  rel="nofollow">博客</a>-<a href="http://t.163.com/"  rel="nofollow">微博</a>-<a href="http://jiu.163.com"  rel="nofollow">酒香</a>-<a href="http://help.3g.163.com/"  rel="nofollow">手机版</a>
+    </span>
+    <span class="channelEnd-rightS"></span>
+    <span class="channelEnd-top cBlue"><a href="#top" target="_self"  rel="nofollow">返回顶部&uarr;</a></span>
+</div><span class="blank9"></span>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript"> 
+//<![CDATA[
+new NTES.ui.Slide(NTES("#fimgmenu > li"), NTES("#fimgcnt > li"), "on", "mouseover",8000); // 头图切换
+//]]>
+</script>
+<!-- 代码 -->
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="foot">
+<a href="http://t.163.com/zt/feedback">意见反馈</a>　
+报料邮箱:ent163baoliao#163.com #改为@
+<a href="http://bbs.ent.163.com/list/entjianyi.html ">给网易娱乐提意见</a> 
+<div class="text"></div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014</span>
+</div>
+
+<!-- 即时消息 -->
+<script>
+(function(){	
+	var version = window.navigator.appVersion;
+	var isIE6 = (version.indexOf("MSIE 6.0") != -1 || version.indexOf("MSIE 5.5") != -1)? true:false;
+	showQR(460, "http://img3.cache.netease.com/news/2012/qr_newapp.png");
+	function showQR(top, imgUrl){
+		var QRbox= document.createElement("div");
+		var QRboxCSS ={
+			'width': "110px",
+			'height': "147px",
+			'position': "fixed",
+			'_position': "absolute",
+			'top': top + "px",
+			'right': "3px",
+			'display':"block",
+			'z-index':100
+		};
+		for(var key in QRboxCSS){
+			QRbox.style[key] = QRboxCSS[key];
+		}
+	 	if(isIE6){
+	 		QRbox.style.position = "absolute";
+	 	}
+	 	
+		QRbox.innerHTML="<a href='http://3g.163.com/links/4102' target='_blank'></a>";
+		var link =QRbox.getElementsByTagName("a")[0];
+		var linkCSS = {
+			display:"block",
+			width: "100%",
+			height: "100%",
+			backgroundImage: "url("+imgUrl+")",
+			backgroundPosition: "0px 0px"
+		};
+		for(var key in linkCSS){
+			link.style[key] = linkCSS[key]
+		}
+		document.body.appendChild(QRbox);
+		var linkEventMap = {
+			"mouseover": function(){
+				link.style.backgroundPosition = "-110px 0px";
+			},
+			"mouseout": function(){
+				link.style.backgroundPosition = "0px 0px";
+			}
+		}
+		for(var evt in linkEventMap){
+			var func = linkEventMap[evt];
+			addEvent(evt, link, func);
+		}
+		addEvent("scroll", window, function(){
+			if(isIE6){
+				QRbox.style.top = getScrollTop() + top + "px";
+			}
+		})
+	}
+	function addEvent(evt, elem, callback){
+		if(elem.addEventListener){
+			elem.addEventListener(evt, callback, false)
+		} else {
+			elem.attachEvent && elem.attachEvent("on"+evt, callback);
+		} 
+	}
+	function getScrollTop(){
+	    if(typeof pageYOffset!= 'undefined'){
+	        //most browsers
+	        return pageYOffset;
+	    }
+	    else{
+	        var B= document.body; //IE 'quirks'
+	        var D= document.documentElement; //IE with doctype
+	        D= (D.clientHeight)? D: B;
+	        return D.scrollTop;
+	    }
+	}
+})();
+(function(){function e(e,n,r,i){var r=r||500,s=i||function(){},o,u=parseInt(t(e,"height"),10);e.toggled?o=e.originalHeight:(o=u,e.originalHeight=o);var a=Math.round(r/o);n=="show"&&(e.style.height="0"),e.style.display="block",e.toggled=!0;var f=o;for(var l=f;l>=0;l--)(function(t){var r=n=="show"?t*a:(f-t)*a;setTimeout(function(){(t==0&&n=="hide"||t==f&&n=="show")&&s(),e.style.height=t+"px";var r=t/f;e.style.opacity=r,e.style.filter="alpha(opacity="+r*100+")"},r)})(l)}function t(e,t){if(e.style[t])return e.style[t];if(e.currentStyle)return e.currentStyle[t];if(document.defaultView&&document.defaultView.getComputedStyle){t=t.replace(/([A-Z])/g,"-$1"),t=t.toLowerCase();var n=document.defaultView.getComputedStyle(e,"");return n&&n.getPropertyValue(t)}return null}function n(e,t,n){var r=function(e,t){try{return e.contains?e!=t&&e.contains(t):!!(e.compareDocumentPosition(t)&16)}catch(n){}},i=function(e){var t=e.currentTarget,i=e.relatedTarget;!r(t,i)&&t!=i&&n.call(e.currentTarget,e)};e.addEventListener?t=="mouseenter"?e.addEventListener("mouseover",i,!1):t=="mouseleave"?e.addEventListener("mouseout",i,!1):e.addEventListener(t,n,!1):e.attachEvent("on"+t,n)}function r(t){var r=this;r.cfg=t;var i=function(){n(r.cfg.closeBtn,"click",function(){r.close()}),n(r.cfg.wrap,"mouseenter",function(){r._timingClose("stop")}),n(r.cfg.wrap,"mouseleave",function(){r._timingClose("start",3)}),n(window,"focus",function(){r._pollStop=!1}),n(window,"blur",function(){r._pollStop=!0}),window[r.cfg.pollCallback]=r._push,window[r.cfg.contentCallback]=r._fillContent,r.start()},s=function(e,t){var n="popush_scriptloader";document.getElementById(n)!==null&&document.body.removeChild(document.getElementById(n));var i=document.createElement("script");i.id=n,i.type="text/javascript",i.async=!0,i.src=r.cfg.preventCache?e+"?"+Math.round(Math.random()*1e10):e,i.onload=t||function(){return!1},document.body.appendChild(i)},o=function(){var e=location.host.split(".").reverse()[2],t="?id="+r.cfg.id+"&cname="+e+"&rnd="+Math.round(Math.random()*1e10);(new Image).src=(r.cfg.countUrl||"count.php")+t};r._getDisplayState=function(){return!r._state||r._state=="hide"?"hide":"show"},r._display=function(t){if(r._getDisplayState()==t)return!1;e(r.cfg.contentWrap,t),r._state=t},r._timingClose=function(e,t){if(r._getDisplayState()=="hide")return!1;var t=t||r.cfg.hideAfter;e=="start"?r._closeTimer=setTimeout(function(){r._display("hide")},t*1e3):e=="stop"&&typeof r._closeTimer!="undefined"&&clearTimeout(r._closeTimer)},r.close=function(){if(!-[1,]&&!window.XMLHttpRequest){r.cfg.wrap.style.display="none";return !1;}r._getDisplayState()=="show"?r._display("hide"):r.cfg.wrap.style.display="none"},r._fillContent=function(e){r.contentCache=e,r.cfg.contentWrap.innerHTML=e,r._display("show"),r._timingClose("start")},r.manualShow=function(){if(r._getDisplayState()=="show")return!1;r.contentCache?r._fillContent(r.contentCache):s(r.cfg.contentUrl)},r._push=function(e){var t=Math.round((new Date).valueOf()/1e3),n=parseInt(e,10),i=t-n,u=NTES.cookie.get("PopPushData");if(u==n)return!1;if(r.cfg.oldTime&&i>r.cfg.oldTime)return!1;s(r.cfg.contentUrl),NTES.cookie.set("PopPushData",e,"30m",".163.com","/"),o()},r._poll=function(){r._pollStop||s(r.cfg.pollUrl)},r.start=function(){r._pollStop=!1,r._poll(),window.setInterval(r._poll,r.cfg.pollCycle*1e3)},i()}window.PopPush=r})()
+</script>
+<style type="text/css">
+#instant-news{width:270px;position:fixed;left:40px;bottom:0;z-index:10;
+_position: absolute;
+_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-172));
+}
+#instant-news-close{color:#B6C4D3;font-size:18px;font-weight:400;position:absolute;top:5px;right:4px;text-align:center;cursor:pointer;margin:0;padding:0;_display:none;}
+#instant-news-content{height:170px;padding:0;border-bottom:1px solid #A6B7C9;overflow:hidden;display:none;}
+</style>
+<div id="instant-news"><div id="instant-news-close">×</div><div id="instant-news-content"></div></div>
+<script>
+(function(N){
+    var t = N.cookie.get("PopPushData");
+    if(t && t != "") N.cookie.set("PopPushData", parseInt(t, 10), "30m", ".163.com", "/");
+})(window.NTES);
+var instant_news_push = new PopPush({
+    id: "instantnews",
+    wrap: document.getElementById('instant-news'),
+    contentWrap: document.getElementById('instant-news-content'),
+    closeBtn: document.getElementById('instant-news-close'),
+    pollUrl: "http://www.163.com/special/0077450P/hot_pop_js.js",
+    pollCallback: "latestInstantNews",
+    contentUrl: "http://temp.163.com/special/00804IKG/instant_news_content_cb.js",
+    contentCallback: "instantNewsContent",
+    pollCycle: 120,
+    hideAfter: 30,
+    oldTime: 7200,
+    countUrl: "http://temp.163.com/special/hot_pop_content/",
+    preventCache: false
+});
+</script>
+<!--  电视 -->
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0504010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0504010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "ent"; //站点ID。
+    neteaseTracker();
+</script>
+<!--大数据统计-->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+<!-- 浏览器升级代码 -->
+<script>!function(i){function t(){}function n(){var i=Math.round((+new Date-w)/1e3);return 0>i?0:i}function e(i){var t=i.className,n=l(i),e={script:1,style:1,link:1,img:1,hr:1,br:1},a=!0;return e[n]?a=!1:/blank\d/.test(t)&&(a=!1),a}function a(t){p||(h&&window._ntes_sendInfo?(i.each(b,function(i,t){s(t)}),p=!0):b.push(t)),p&&s(t)}function r(i){return 10>i?i.toString():i>62?"z":String.fromCharCode(i+(36>i?55:61))}function o(i,t){if(!t)return i;var n=i.length-1,e=i.charCodeAt(n);return 58>e?e-=48:91>e?e-=55:123>e&&(e-=61),i.substr(0,n)+r(e+t)}function f(i,t,n){t&&t.setAttribute((n?"_":"")+"jcid",i)}function c(i){if(i){var t=this.getAttribute("href")||"";g++;var e="/ntes_p?"+_+"&_nct="+n()+"&_nah="+escape(t)+"&_nat={id}_"+i;a(e)}}function s(i){_ntes_sendInfo("jc",_ntes_src_addr+i.replace("{id}",h))}function u(i,t,n){for(var e=0,a={a:1,area:1};!a[l(i)]&&!(n=i.getAttribute("_jcid"));)if(i=i.parentNode,!i.tagName||e++>5)return;var r=i;if(!n)for(;i&&i!=t&&!(n=i.getAttribute("jcid"));)i=i.parentNode;r&&n&&c.call(r,n)}function l(i){return i.tagName.toLowerCase()}function d(t,n,e){if("iframe"!=l(t))n(t,e);else{var a,r=v(t),o=function(){if("function"==typeof a&&a.call(this),r=v(t)){var o=r.body;i(o).addEvent("click",function(i){var t=i.target;u(t,o)}),n(o,e)}};r&&/^http/.test(r.location.href)?o():t.attachEvent?t.attachEvent("onload",o):(a=t.onload,t.onload=o)}}function v(i){var t;try{t=i.contentDocument}catch(n){}if(!t&&i.contentWindow){try{var e=i.contentWindow.document;"object"==typeof e&&(t=e)}catch(n){}if(!t)return null}var a=1;try{t.location&&(a=0)}catch(n){}return a?null:t}var h,m,_="_nacc=siteclick&_npurl="+escape(document.URL),g=0,p=!1,b=[],A=document.body,E=i(window),y=window.performance,w=y&&y.timing?y.timing.connectStart:+new Date,B=[function(i,t,n){f(i+r(n.start||1),t,n.all)},function(t,n,e){var a=e.start||1;i("a",n).each(function(i,n){f(t+r(a++),n)})},function(t,n,a){for(var o=1,c=a.level||1,s=[n],u=0;c>u;u++){var d=[];i.each(s,function(t,n){var a=0;"a"==l(n)||/ntes-nav-select/.test(n.className)||i.each(n.children,function(i,t){e(t)&&(d.push(t),a++)}),a||d.push(n)}),s=d}i.each(s,function(i,n){f(t+r(o++),n)})},function(t,n){var e=i(">form",n);e[0]&&e.addEvent("submit",function(){c.call(this,t+"1")})},function(t,n,e){var a=i(e.h,n),o=i(e.b,n);if(a&&o){var c=e.step||10,s=2;f(t+"1",n),a.each(function(i,n){f(t+r(s+i*c),n)}),o.each(function(i,n){f(t+r(s+i*c+1),n)})}},function(t,n,a){var o=a.union||"",c={};if(/^[\s\d,]+$/.test(o)){var s=0;i.each(o.split(/\s*,\s*/),function(i,t){if(t=parseInt(t))for(var n=0;t>n;n++)c[s++]=i})}var u=2;f(t+"1",n);var l=parseInt(a.step)||10,d=i(a.h,n);if(d&&v){i.each(d,function(i,n){f(t+r(i*l+u),n)});var v=i(a.b,n);i.each(v,function(n,a){var o=n*l+u+1,s=a.children;if(0==s.length)s=[a];else for(;1==s.length;)s=s[0].children;var d=0;i.each(s,function(i,n){e(n)&&("undefined"!=typeof c[i]&&(d=c[i]),f(t+r(o+d),n),d++)})})}}];t.prototype={init:function(t,e){t&&5==t.length&&(h=t),m||(m=Math.random()<(e||.1),m&&(i("body").addEvent("click",function(i){u(i.target,A)}),i.ready(function(){function i(){t&&(a("/ntes_u?"+t+"&_nct="+n()+"&_mcn="+g+e),t=0)}var t=_+"&_nch={id}",e="",r="&_msl="+n();E.addEvent("load",function(){e="&_msl="+n()}),a("/ntes_u?"+t+r),E.addEvent("beforeunload",i);var o=navigator.userAgent.toLowerCase();!/compatible/.test(o)&&/firefox/.test(o)&&E.addEvent("unload",i)}),this.retain&&this.area(A,this.retain)))},area:function(t,n){var e=this,a=function(i,t){e.area(i,t)};for(var r in n){var o=n[r],f=0;/(.*?)\*$/.test(r)&&(r=RegExp.$1,f=1);var c=r?/^#/.test(r)?i(r):i(r,t):[t];i.util.isArray(c)||(c=[c]);for(var s=0;s<c.length;s++){var u=f?o[0]:o[s];if(u&&c[s])if(u.i)for(var l=u.s||1,v=0;l>v;v++)u.j=v,this.zone(c[s+v],u);else d(c[s],a,u)}}},zone:function(t,n){var e=o(n.i,n.j),a=B[n.f||0],r=n.p||{};t&&a&&(r.dyn?i(t).addEvent("mouseover",function(){for(var i,n=t.children[0];n&&(i=n.children[0]);)n=i;n&&!n.getAttribute("jdyn")&&(a(e,t,r),n.setAttribute("jdyn",1))}):d(t,function(i){a(e,i,r)}))},batch:function(i){m?this.area(A,i):this.retain=i}},window._aCM=new t}(NTES),function(){_aCM.init("yla04"),setTimeout(function(){_aCM.batch({">.NTES-nav":[{">.nav-link":[{"":[{i:"111",f:2}]}],">.NTES-nav-rss":[{"":[{i:"121"}]}],".NTES-link":[{"":[{i:"131",f:1}]}]}],">.ggarea":[{li:[{"":[{i:"211"}]},{"":[{i:"221"}]},{"":[{i:"231"}]},{"":[{i:"241"}]},{"":[{i:"251"}]},{"":[{i:"261"}]},{"":[{i:"271"}]},0,0,0,{"":[{i:"281"}]},{"":[{i:"291"}]},{"":[{i:"2A1"}]},{"":[{i:"2B1"}]},{"":[{i:"2C1"}]},{"":[{i:"2D1"}]},{"":[{i:"2E1"}]}]}],"#top":[{"":[{"":[{i:"311"}]}]}],">.guide_2012":[{">.logo1":[{"":[{i:"411",f:1}]}],">.logo2":[{"":[{i:"421",f:1}]}],">.navText":[{"":[{i:"431",f:1}]}],">.top_search":[{"":[{i:"441",f:3}]}]}],">.guide_2012_nav":[{".index":[{"":[{i:"511"}]}],".star":[{"":[{i:"521"}]}],".movie":[{"":[{i:"531"}]}],".tv":[{"":[{i:"541"}]}],".music":[{"":[{i:"551"}]}],".text":[{">.nobg":[{i:"561"}],">li":[0,{i:"562"},{i:"563"},{i:"564"},{i:"565"},{i:"566"},{i:"567"},{i:"568"}]}],".list_right":[{"":[{i:"571",f:1}]}]}],">.area":[{">.focusImg":[{li:[{i:"611",s:4}]}],".left":[{"":[{i:"621"}]}],".titleMore":[{"":[{i:"631",f:1}]}],".cDGray":[{"":[{i:"641"}]},{"":[{i:"661"}]},{"":[{i:"681"}]}],".bigsize":[0,{"":[{i:"651",f:1}]},{"":[{i:"671",f:1}]}],".f12bla":[{">li":[{i:"691",s:4}]}]}],">.area_bg":[{".col_box":[{".more":[{i:"711",f:1}],a:[0,{i:"712"}],".title":[{i:"713",f:1}],p:[{i:"714",f:1}],".f12bla":[{i:"715",f:1,s:2}]},{".more":[{i:"721",f:1}],".f12bla":[{i:"722",f:1,s:3}],".content":[0,{i:"725",f:1}]},{".more":[{i:"731",f:1}],li:[{i:"732",s:8}]}],".titleBar":[0,0,0,{">.more":[{i:"741",f:1}]},{">.more":[{i:"761",f:1}]}],".content":[0,0,0,{".firstNd":[{i:"751",f:1,s:5}]},{".firstNd":[{i:"771",f:1,s:5}]}]},{".titleBar":[{">h2":[{i:"811"}],">.more":[{i:"812",f:1}]}],".content":[{".firstNd":[{i:"821",f:1,s:2}]},{".firstNd":[{i:"831",f:1,s:2}]},{".nobg":[{i:"851",s:5}]}],".more":[0,{"":[{i:"841",f:1}]}]},{".titleBar":[{">.more":[{i:"911",f:1}]}],".content":[{".firstNd":[{i:"921",f:1,s:3}]},{li:[{i:"931",f:1,s:13}]},{".nobg":[{i:"951",s:6}]}],".more":[0,{"":[{i:"941",f:1}]}]},{".more":[{"":[{i:"A21",f:1}]},{"":[{i:"A11",f:1}]}],".col_l":[{".f14px":[{i:"A31",f:1,s:2}],li:[{i:"A33",s:10}]}],".col_r":[{".f14px":[{i:"A41",f:1,s:2}],li:[{i:"A43",s:10}]}],"ul>li":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{"":[{i:"A51"}]},{"":[{i:"A61"}]},{"":[{i:"A71"}]},{"":[{i:"A81"}]},{"":[{i:"A91"}]},{"":[{i:"AA1"}]},{"":[{i:"AB1"}]},{"":[{i:"AC1"}]},{"":[{i:"AD1"}]},{"":[{i:"AE1"}]},{"":[{i:"AF1"}]},{"":[{i:"AG1"}]}]}],".col_box":[0,0,0,0,0,0,{".more":[{"":[{i:"B11",f:1}]}],li:[{"":[{i:"B21"}]},{"":[{i:"B31"}]},{"":[{i:"B41"}]},{"":[{i:"B51"}]},{"":[{i:"B61"}]},{"":[{i:"B71"}]},{"":[{i:"B81"}]},{"":[{i:"B91"}]},{"":[{i:"BA1"}]}]}],">.channel-end":[{">.channelEnd-link":[{"":[{i:"C11",f:1}]}],">.channelEnd-top":[{"":[{i:"C21",f:1}]}]}],">.foot":[{"":[{"":[{i:"D11",f:1}]}]}],">div":[0,0,0,0,0,0,0,0,0,0,0,0,{"":[{"":[{i:"E11",f:1}]}]}]})},50)}();</script>
+<script type="text/javascript" src="http://img1.cache.netease.com/2012/ieupdate/update_funcs_v1_1.js" charset="gbk"></script><script type="text/javascript">
+//__ieUpdate();
+__f2e_monitor("ent");
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>有道词典-师兄教我学英语</title>
+<meta name="keywords" content="英语,有道词典,师兄,师妹,大学,考试,学生,试卷,游戏,心理测试" />
+<meta name="description" content="有道词典开发的师兄教我学英语活动网站，用户可以在这里玩游戏，并帮助师妹解决英语问题。" />
+<link rel="shortcut icon" href="http://shared.youdao.com/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="all.css">
+<!--[if IE 6]>
+<script type="text/javascript">
+document.execCommand("BackgroundImageCache", false, true);
+</script>
+<![endif]-->
+</head>
+<body>
+
+<div id="container">
+
+    <div id="imgpreload" class="imgpreload" style="display:none;">
+        <div><span></span></div>
+        <p>正在努力加载中......</p>
+    </div>
+
+    <div id="menu" class="menu">
+        <div class="menuwrap">
+            <div class="menuwrap-content">
+            <i class=""></i>
+            <h2>MENU</h2>
+            <ul>
+                <li class="active-intr"><a href="#活动介绍">活动介绍</a></li>
+                <li class="index"><a class="go2index" href="http://shixiong.youdao.com/index.html">首页</a></li>
+                <li class="dict-site"><a href="http://cidian.youdao.com/" target="_blank">有道词典官网</a></li>
+            </ul>
+            </div>
+            <div class="menuwrap-bg"></div>
+        </div>
+        <div class="innerbg"></div>
+    </div>
+    <div id="bolangbgIndex" class="bolangbg" style="display:none;"><div></div></div>
+    <div id="introduceWrap" class="mod">
+        <div class="mod-content">
+            <h2>活 动 介 绍</h2>
+            <p>今天，你将在校园里遇到一位漂亮师妹，你可以帮她解决英语问题。正确解答，就能和她共进午餐甚至去她寝室坐坐哦！你想帮助哪一位呢？快去选择吧！</p>
+            <a href="javascript:void(0);">关闭</a>
+        </div>
+        <div class="mod-bg"></div>
+    </div>
+    <div id="masklayer"></div>
+
+    <h1 id="logo">有道词典 - 师兄叫我学英语</h1>
+    <div id="home" class="home" style="display:none;">
+        <div class="inner-wrap">
+            <div id="scene">
+                <div id="sm1" data-index="0" class="sm"><i></i></div>
+                <div id="sm2" data-index="1" class="sm"><i></i></div>
+                <div id="sm3" data-index="2" class="sm"><i></i></div>
+            </div>
+            <div id="xuemeiGifSmall"><div></div></div>
+            <div class="paopao paopao1">师兄，我的英语作业还没做完</div>
+            <div class="paopao paopao2">可以帮我吗？</div>
+            <a href="javascript:void(0);">立刻帮助师妹</a>
+            <div id="progressBar"><span></span></div>
+            <p class="choose-tip">选择你要帮助的师妹</p>
+            <p class="small">别着急，师妹马上就出现......</p>
+        </div>
+    </div>
+
+    <div id="game1" class="game mod">
+        <div class="mod-content">
+        <div class="content">
+            <h2></h2>
+
+            <a href="javascript:void 0;" class="answer" data-answer="a"><span
+                    class="left"></span><span
+                    class="ori"></span><span
+                    class="meaning"></span><span class="right"></span></a>
+            <a href="javascript:void 0;" class="answer" data-answer="b"><span
+                    class="left"></span><span
+                    class="ori"></span><span
+                    class="meaning"></span><span class="right"></span></a>
+            <a href="javascript:void 0;" class="answer" data-answer="c"><span
+                    class="left"></span><span
+                    class="ori"></span><span
+                    class="meaning"></span><span class="right"></span></a>
+            <a href="javascript:void 0;" class="answer" data-answer="d"><span
+                    class="left"></span><span
+                    class="ori"></span><span
+                    class="meaning"></span><span class="right"></span></a>
+
+            <div class="help">
+                <span>点击求助有道词典</span>
+                <a href="javascript:void 0;" class="dictIcon"></a>
+                <span class="arrow-down" style="display:none;"></span>
+            </div>
+        </div>
+        </div>
+        <div class="mod-bg"></div>
+    </div>
+
+    <div id="game2" class="game mod">
+        <div class="mod-content">
+        <h2 class="menuTitle">快帮师妹把单词拖入右面的分类中吧</h2>
+        <ul id="menuDrag" style="z-index:2">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="category" style="z-index:1">
+            <div class="c1">
+               <h2></h2>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div  class="c2">
+               <h2></h2>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="c3">
+               <h2></h2>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div  class="c4">
+               <h2></h2>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="menuHelp">
+
+            <!--<a class="dictIcon" href=""></a>-->
+            <span class="word">将单词拖入这里显示单词释义</span>
+            <span class="result"></span>
+        </div>
+
+
+        </div>
+        <div class="mod-bg"></div>
+        <div class="bounding-box"></div>
+    </div>
+
+    <div id="game3" class="game mod">
+        <div class="mod-content">
+        <div id="game3Title"></div>
+        <div class="menu-help">
+            <span class="word">单词拖入这里显示单词释义</span>
+            <p class="result"></p>
+        </div>
+        <ul class="menu-result">
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+
+        </ul>
+        <p class="tip">快帮师妹把单词拖入对应图片下方吧</p>
+        <ul class="menu-drag">
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+        </ul>
+
+        </div>
+        <div class="mod-bg"></div>
+        <div class="bounding-box"></div>
+    </div>
+
+
+    <div id="video" style="display:none;"></div>
+    <div id="videoLastImage"></div>
+    <div id="videoLoading">载入......</div>
+
+
+    <div id="showResult" class="mod" style="display:none;">
+        <div class="mod-content">
+            <a href="http://cidian.youdao.com/download/YoudaoDict_sx.exe" class="download" hidefocus="true" target="_blank">点击下载</a>
+            <a href="javascript:void(0);" class="appraise" hidefocus="true">查看评价</a>
+        </div>
+        <div class="mod-bg"></div>
+    </div>
+    <div id="masklayer1" style="display:none;"></div>
+
+    <div id="shareWrap" class="" style="display:none;">
+        <div id="slide">
+            <div class="cover">
+                <div class="cover-inner"><ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul></div>
+            </div>
+            <a href="javascript:void(0);" class="btn btn-left" hidefocus="true">left</a>
+            <a href="javascript:void(0);" class="btn btn-right" hidefocus="true">right</a>
+            <div class="tab">
+                <a href="javascript:void(0);" data-index="1" hidefocus="true">1</a>
+                <a href="javascript:void(0);" data-index="2" hidefocus="true">2</a>
+                <a href="javascript:void(0);" data-index="3" hidefocus="true">3</a>
+                <a href="javascript:void(0);" data-index="4" hidefocus="true">4</a>
+                <a href="javascript:void(0);" data-index="5" hidefocus="true">5</a>
+            </div>
+        </div>
+        <div id="share">
+            <p>分享到：</p>
+            <div class="mod">
+                <div class="mod-content">
+                    <a class="sina" href="javascript:void(0);" onclick="share.toWeibo(this)" target="_blank" hidefocus="true" title="分享到新浪微薄">新浪微薄</a>
+                    <a class="tengxun" href="javascript:void(0);" onclick="share.toTxWeibo(this)" target="_blank" hidefocus="true" title="分享到腾讯微薄">腾讯微薄</a>
+                    <a class="renren" href="javascript:void(0);" onclick="share.toRenRen(this)" target="_blank" hidefocus="true" title="分享到人人网">人人</a>
+                    <a class="qqspace" href="javascript:void(0);" onclick="share.toQzone(this)" target="_blank" hidefocus="true" title="分享到QQ空间">QQ空间</a>
+                    <a class="netease" href="javascript:void(0);" onclick="share.to163(this)" target="_blank" hidefocus="true" title="分享到网易微博">网易微博</a>
+                </div>
+                <div class="mod-bg"></div>
+            </div>
+        </div>
+        <div id="helpOtherMeizi">
+            <a class="go2index" data-choose="1" href="http://shixiong.youdao.com/index.html">去帮助其她师妹</a>
+        </div>
+    </div>
+    <div id="masklayer2" style="display:none;"></div>
+
+    <div id="choose" class="mod" style="display:none;">
+        <div class="mod-content">
+            <div class="title">1师妹开起来遇到了不会做的题目呢，我要：</div>
+            <p data-value="A">1主动搭讪问是否需要帮助</p>
+            <p class="active" data-value="B">1不主动等师妹来问我</p>
+        </div>
+        <div class="mod-bg"></div>
+    </div>
+
+    <div id="result1" class="result-wrap" style="display:none;">
+        <div class="img-wrap"></div>
+        <div id="result11" class="result-bottom-wrap mod" style="display:none;">
+            <div class="mod-content"><div class="content">
+                <div class="left-side">
+                    <p class="big">师兄，我也有好多题不会，你也来帮帮我吧～</p>
+                    <p>分享评价就能解锁下一位师妹</p>
+                    <button>分享并解锁</button>
+                    <a class="sina" href="javascript:void(0);" onclick="share.toWeibo(this)" target="_blank" hidefocus="true" title="分享到新浪微博">分享并解锁</a>
+                    <a class="renren" href="javascript:void(0);" onclick="share.toRenRen(this)" target="_blank" hidefocus="true" title="分享到人人网">分享并解锁</a>
+                </div>
+                <div class="right-side">
+                    <span class="circle-meizi"></span>
+                    <i class="heart-lock"></i>
+                </div>
+            </div></div>
+            <div class="mod-bg"></div>
+        </div>
+        <div id="result12" class="result-bottom-wrap mod" style="display:none;">
+            <div class="mod-content"><div class="content">
+                <div class="shareinresult">
+                    <a class="sina" href="javascript:void(0);" onclick="share.toWeibo(this)" target="_blank" hidefocus="true" title="分享到新浪微博">新浪微博</a>
+                    <a class="tengxun" href="javascript:void(0);" onclick="share.toTxWeibo(this)" target="_blank" hidefocus="true" title="分享到腾讯微博">腾讯微博</a>
+                    <a class="renren" href="javascript:void(0);" onclick="share.toRenRen(this)" target="_blank" hidefocus="true" title="分享到人人网">人人</a>
+                    <a class="qqspace" href="javascript:void(0);" onclick="share.toQzone(this)" target="_blank" hidefocus="true" title="分享到QQ空间">QQ空间</a>
+                    <!-- <a class="netease" href="javascript:void(0);" onclick="share.to163(this)" target="_blank" hidefocus="true" title="分享到网易微博">网易微博</a> -->
+                </div>
+            </div></div>
+            <div class="mod-bg"></div>
+        </div>
+        <div id="result13" class="result-bottom-wrap mod" style="display:none;">
+            <div class="mod-content"><div class="content">
+                <div class="left-side">
+                    <p class="big">解锁成功！师兄快来帮我吧～</p>
+                    <button class="go2index" data-choose="1">我来了</button>
+                </div>
+                <div class="right-side">
+                    <span class="circle-meizi"></span>
+                </div>
+            </div></div>
+            <div class="mod-bg"></div>
+        </div>
+    </div>
+
+    <div id="result2" class="result-wrap" style="display:none;">
+        <div class="img-wrap"></div>
+        <div id="result21" class="result-bottom-wrap mod" style="display:none;">
+            <div class="mod-content"><div class="content">
+                <p>完成下面的填空，就能与下一位师妹相遇哦～</p>
+                <p class="big">有道词典是市场第一的互联网词典，拥有
+                    <input id="youdaoDictUsersNum" type="text" value="">&nbsp;亿用户！</p>
+                <div class="submit-answer">
+                    <a class="btn-submit-answer" href="javascript:void(0);">提交答案并解锁</a>
+                    <a class="search-baidu" href="http://www.baidu.com/" target="_blank">百度以下</a>
+                    <p>答题提示：搜索引擎搜索“有道词典”，第一条结果中就有答案！</p>
+                </div>
+            </div></div>
+            <div class="mod-bg"></div>
+        </div>
+        <div id="result22" class="result-bottom-wrap mod" style="display:none;">
+            <div class="mod-content"><div class="content">
+                <div class="left-side">
+                    <p class="big">谢谢师兄解锁～看来你很了解有道词典呢～</p>
+                    <p class="big">我等了好半天，师兄快来帮我吧～</p>
+                    <button class="go2index" data-choose="1">我来了</button>
+                </div>
+                <div class="right-side">
+                    <span class="circle-meizi"></span>
+                    <!-- <i class="heart-lock"></i> -->
+                </div>
+            </div></div>
+            <div class="mod-bg"></div>
+        </div>
+    </div>
+
+    <div id="result3" class="result-wrap mod" style="display:none;">
+        <div class="mod-content">
+            <div id="voteForMeizi">
+                <span class="vmeizi1" data-meizi="1"></span>
+                <span class="vmeizi2" data-meizi="2"></span>
+                <span class="vmeizi3" data-meizi="3"></span>
+            </div>
+            <div id="result31" class="result3x" style="display:none;">
+                <p>（≧∀≦）恭喜你成功帮助了所有师妹！</p>
+                <p>来投个票吧，这三位师妹里你最喜欢谁？</p>
+            </div>
+            <div id="result32" class="result3x" style="display:none;">
+                <p>（｡･ω･｡）原来你最喜欢的是她啊~</p>
+                <p>看看大家的选择，哪个师妹最受欢迎？</p>
+                <button>分享查看投票结果</button>
+                <a class="sina" href="javascript:void(0);" onclick="share.toWeibo(this)" target="_blank" hidefocus="true" title="分享到新浪微博" style="display:none;">分享查看投票结果</a>
+                <a class="renren" href="javascript:void(0);" onclick="share.toRenRen(this)" target="_blank" hidefocus="true" title="分享到人人网" style="display:none;">分享查看投票结果</a>
+                <p class="small">已有<strong>0</strong>人参与投票</p>
+            </div>
+            <div id="result33" class="result3x" style="display:none;">
+                <div class="shareinresult">
+                    <a class="sina" href="javascript:void(0);" onclick="share.toWeibo(this)" target="_blank" hidefocus="true" title="分享到新浪微博">新浪微博</a>
+                    <a class="tengxun" href="javascript:void(0);" onclick="share.toTxWeibo(this)" target="_blank" hidefocus="true" title="分享到腾讯微博">腾讯微博</a>
+                    <a class="renren" href="javascript:void(0);" onclick="share.toRenRen(this)" target="_blank" hidefocus="true" title="分享到人人网">人人</a>
+                    <a class="qqspace" href="javascript:void(0);" onclick="share.toQzone(this)" target="_blank" hidefocus="true" title="分享到QQ空间">QQ空间</a>
+                    <!-- <a class="netease" href="javascript:void(0);" onclick="share.to163(this)" target="_blank" hidefocus="true" title="分享到网易微博">网易微博</a> -->
+                </div>
+            </div>
+            <div id="result34" style="display:none;">
+                <ul>
+                    <li class="meizi1" data-meizi="1">
+                        <i></i>
+                        <p>
+                            <span class="percent">50</span>&nbsp;&nbsp;&nbsp;
+                            <span class="votenum">20000</span>票
+                        </p>
+                        <div class="voteratio" style=""></div>
+                    </li>
+                    <li class="meizi2" data-meizi="2">
+                        <i></i>
+                        <p>
+                            <span class="percent">20</span>&nbsp;&nbsp;&nbsp;
+                            <span class="votenum">8000</span>票
+                        </p>
+                        <div class="voteratio" style=""></div>
+                    </li>
+                    <li class="meizi3" data-meizi="3">
+                        <i></i>
+                        <p>
+                            <span class="percent">30</span>&nbsp;&nbsp;&nbsp;
+                            <span class="votenum">12000</span>票
+                        </p>
+                        <div class="voteratio" style=""></div>
+                    </li>
+                </ul>
+                <div style="text-align:center;">
+                    <button class="go2index" data-choose="1">to be continued</button>
+                </div>
+            </div>
+        </div>
+        <div class="mod-bg"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="packed.js"></script>
+</body>
+</html>

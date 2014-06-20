@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* Creat by zhao 2011.06.02 for XX.com*/
+/**** 最后一次修改的同学在此写上修改时间和原因 ****/
+/* 其中参考了Tyler Tate的1kbcss框架 */
+/* 全局样式，谨慎操作！ */
+
+/* RESET CSS 统一浏览器 */
+html{color:#333;background:#FFF;font-family:Verdana, Arial, Helvetica, sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;vertical-align:baseline;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,a img{border:none;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;}
+caption,th{text-align:left;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%;}
+.yuedu {margin-left:20px; margin-right:20px}
+.yuedu span{line-height:26px;}
+/* 预定义默认样式 */
+h1{font-size:18px;margin:0 0 .75em}
+h2{font-size:16px;margin:0 0 1em}
+h3{font-size:14px;margin:0 0 1.286em}
+h4{font-size:12px;margin:0 0 1.5em}
+h5{font-size:10px;margin:0 0 1.8em}
+h6{font-size:0px;margin:0 0 2.25em}
+img{display:inline-block;vertical-align:text-bottom}
+p{margin:0 0 1em}
+ul{list-style:none}
+a{color:#333;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a:visited{color:#fc2012}
+                                      
+/* 布局 */
+.wrapper{width:100%;zoom:1}
+.container{width:1002px;overflow: auto;margin:0 auto;}
+.srow{margin:0 auto 10px;overflow: auto;}  /*一列小布局模块 */
+.lrow{width:100%; margin-bottom:10px;}              					                  			/*自适应行*/
+.col1{overflow: hidden;}                         				 						  			/*重复行列模块 */
+.col2{margin: 0 2%;overflow: hidden;float:left;display:inline; width:46%}                 			/*2列元素*/
+.col3{margin: 0 2%;overflow: hidden;float:left;display:inline; width:29%}                 			/*3列元素*/
+.col4{margin: 0 2%;overflow: hidden;float:left;display:inline; width:21%}                 			/*4列元素*/
+.fclear:before, .fclear:after {content:"";display:table;clear:both;}								/*清除浮动 */
+.fclear {zoom:1;clear:both;}
+.fleft{float:left}                                       /*左浮动 */
+.fright{float:right}                                     /*右浮动 */
+.fcenter{ margin:0 auto; text-align:center;} 	 	 	 /*元素居中*/
+.eborder{border:1px solid #ddd}                          /*1px的实边*/
+.first{margin-left:0;padding-left:0}                     /*第一个元素左边距0*/
+.last{margin-right:0;padding-right:0}                    /*最后一个元素右边距0*/ 
+.cborder{border:none!important;}                         /*去除元素边*/
+.ehide{display:none;}                                    /*隐藏元素*/ 
+.eshow{display: block;}                                  /*显示元素*/ 
+
+/* 元素 */
+.ml2{margin-left:2px;}
+.mr2{margin-right:2px;}
+.mt2{margin-top:2px;}
+.mb2{margin-bottom:2px;}
+.ml6{margin-left:6px;}
+.mr6{margin-right:6px;}
+.mt6{margin-top:6px;}
+.mb6{margin-bottom:6px;}
+.ml10{margin-left:10px;}
+.mr10{margin-right:10px;}
+.mt10{margin-top:10px;}
+.mb10{margin-bottom:10px;}
+.ml20{margin-left:20px;}
+.mr20{margin-right:20px;}
+.mt20{margin-top:20px;}
+.mb20{margin-bottom:20px;}
+.ml30{margin-left:30px;}
+.mr30{margin-right:30px;}
+.mt30{margin-top:30px;}
+.mb30{margin-bottom:30px;}
+.mlr6{margin:0 6px;}
+.mlr10{margin:0 10px;}
+.mlr20{margin:0 20px;}
+.mg6{margin:6px;}
+.mg10{margin:10px;}
+.mg20{margin:20px;}
+.mg30{margin:30px;}
+.pd10{padding:10px;}
+.pdt10{padding-top:10px;}
+.pdl10{padding-left:10px;}
+.pdr10{padding-right:10px;}
+.pdb10{padding-bottom:10px;}
+.pd20{padding:20px;}
+.pd30{padding:30px;}
+.fs16{font-size:16px;}
+.fs14{font-size:14px;}
+.fs12{font-size:12px;}
+
+/* 元素预先定义宽度*/
+.grid1 { width:60px; }
+.grid2 { width:140px; }
+.grid3 { width:220px; }
+.grid4 { width:300px; }
+.grid5 { width:380px; }
+.grid6 { width:460px; }
+.grid7 { width:540px; }
+.grid8 { width:620px; }
+.grid9 { width:700px; }
+.grid10 { width:780px; }
+.grid11 { width:860px; }
+.grid12 { width:940px; }
+
+/* 隐藏方法，支持IE6透明*/
+img{behavior: url(js/iepngfix.htc);}
+/* 兼容HTML5  */
+article,aside,dialog,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video,address{display:block;margin:0;padding:0;}
+/* 支持透明  */
+.transparent{filter:alpha(opacity=60); -moz-opacity:0.6;-khtml-opacity: 0.6; opacity: 0.6; } 
+/* 打印样式 */
+@media print{.bgnoprint{background:display:none;}.noprint,.ad{display:none}}

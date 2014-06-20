@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>网易看游戏-最大的移动端游戏媒体</title>
+    <meta charset="gb2312">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="keywords" content="看游戏，网易，游戏资讯，游戏攻略，游戏视频，新游" />
+    <meta name="description" content="《网易看游戏》是最大的移动端游戏媒体，致力于成为你全天候的游戏伴侣，内容囊括游戏资讯、评测、礼包、攻略、数据库、活动等，已覆盖多款热门游戏。这里拥有移动端最大的游戏社区，已有多位美女主播、赛事解说、游戏主创入驻。" />
+    <meta name="author" content="网易，NetEase Inc." />
+    <meta name="copyright" content="网易，NetEase Inc." />
+    <meta name="front-end technicist" content="govo" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+	<meta property="qc:admins" content="15365274351750161636375" />
+    <link rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v3/css/normalize.min.css" />
+	
+	<style type="text/css">
+		.dload-hs{float:left; clear:left; margin-top:27px; width:196px; height:58px; background:url(http://res.nie.netease.com/kyx/gw/13v2/images/dl_hs.png) no-repeat;
+			text-indent:-9999px;}
+		.dload-hs:hover{background-position:left bottom;}
+	</style>
+
+    <script type="text/javascript">
+        var ua = navigator.userAgent.toLocaleLowerCase();
+        var pf = navigator.platform.toLocaleLowerCase();
+        var m = window.location.search.toString().match(/[\?&]*v=([^&]+)/);
+        var v = m?m[1]:null;
+        var isAndroid = (/android/i).test(ua)||((/iPhone|iPod|iPad/i).test(ua) && (/linux/i).test(pf))
+							|| (/ucweb.*linux/i.test(ua));
+        var isIOS =(/iPhone|iPod|iPad/i).test(ua) && !isAndroid;
+        var isWinPhone = (/Windows Phone|ZuneWP7/i).test(ua);
+        var isMobile = isAndroid || isIOS || isWinPhone || v=="m"; //DEBUG
+        if(isMobile){
+            document.write('<li'+'nk rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v3/css/main.css"/>');
+        }else{
+            document.write('<li'+'nk rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v3/css/base.css"/>');
+        }
+    </script>
+
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v3/css/ie6.css"/>
+    <![endif]-->
+    <!--[if (gt IE 6)&(lt IE 9)]>
+    <link rel="stylesheet" href="http://res.nie.netease.com/kyx/gw/13v3/css/ie78.css"/>
+    <![endif]-->
+
+</head>
+<body>
+<div id="wraper" class="wraper wraper-0">
+    <div class="scenehead">
+        <div class="main">
+            <div class="head"><h1><a href="http://kanyouxi.163.com/" title="网易看游戏-首个支持个性订阅的游戏新媒体">网易看游戏-首个支持个性订阅的游戏新媒体</a></h1></div>
+        </div>
+    </div>
+    <div class="scene scene1" minheight="560" offset="102" maxheight="1076">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main" maxpaddingtop="102">
+                        <div class="content" height="400">
+                            <div id="screen1_title">
+                                <img ressrc="http://res.nie.netease.com/kyx/gw/13v3/images/title_text_front.png" src="http://res.nie.netease.com/kyx/gw/13v3/images/logo_small_m.png" width="301" height="61" alt=""/>
+                            </div>
+                            <h2 class="title">网易看游戏</h2>
+                            <p class="subtitle">最大的移动端游戏媒体</p>
+                            <p class="about">《网易看游戏》是最大的移动端游戏媒体，致力于成为你全天候的游戏伴侣，内容囊括游戏资讯、评测、礼包、攻略、数据库、活动等，已覆盖多款热门游戏。这里拥有移动端最大的游戏社区，已有多位美女主播、赛事解说、游戏主创入驻。</p>
+                        </div>
+                        <div class="iphone">
+                            <div class="iphone-child iphone-front"><div class="iphone-content"></div></div>
+                            <div class="iphone-child iphone-back"><div class="iphone-content"></div></div>
+                        </div>
+                        <div class="dload">
+                            <a href="http://analytics.163.com/ntes_clck?urlid=768&sign=1212d654936b920d8b083622b2f533eb&url=https%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fid656134031%3Fmt%3D8" target="_blank" class="dload-iphone">iPhone版下载</a>
+                            <a href="http://kanyouxi.163.com/android/" target="_blank" class="dload-android">Android版下载</a>
+                            <a href="http://kanyouxi.163.com/hs/?from=kanyouxi" target="_blank" class="dload-hs">炉石传说手机助手下载</a>
+                            <div class="dload-send">
+                                <p class="dload-qr">
+                                    <img src="http://res.nie.netease.com/kyx/gw/13v3/images/dload_qr.png" alt="扫描二维码下载"/>
+                                </p>
+                                <p class="dload-send-tips">扫描二维码下载 或</p>
+                                <p class="dload-send-active"><a href="#send" class="sendphone-link">发送下载地址到手机</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene2-nobg" maxheight="916">
+        <div class="main">
+            <div class="content">
+                <h2 class="title">游戏齐备</h2>
+                <p class="subtitle">丰富资讯一站式畅享</p>
+                <ul class="about">
+                    <li>游戏齐备-热门游戏囊括其中，覆盖游戏最全的手机应用媒体</li>
+                    <li>资讯多样-新闻、攻略、活动、解说、?图、趣闻、八卦等游戏内容应有尽有</li>
+                    <li>更新及时-24小时不断更新，每日新增1000余篇游戏资讯，新鲜内容尽收眼底</li>
+                    <li>团队专业-多位资深编辑，美女主播，赛事解说等为你带来最全方位的游戏报道</li>
+                </ul>
+            </div>
+            <div id="animation_screen2" class="iphone">
+                <div class="iphone-child" ><div class="iphone-content"></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene3-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">个性订阅</h2>
+                            <p class="subtitle">只看想看的游戏资讯</p>
+                            <ul class="about">
+                                <li>上百个资讯源-100多个精品资讯源，自由订阅，所有关注内容轻松锁定追踪</li>
+                                <li>6大内容板块-热门游戏包含6大内容板块（新闻、攻略、活动、图片、视频、八卦），随心挑选</li>
+                            </ul>
+                        </div>
+                        <div class="iphone">
+                            <div class="iphone-content"></div>
+                            <div class="screen3-pop1"></div>
+                            <div class="screen3-pop2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene4-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">视听兼备</h2>
+                            <p class="subtitle">随时随地感受游戏魅力</p>
+                            <ul class="about">
+                                <li>游戏齐备-早安游戏圈、游戏怪谈、贵圈真乱、越玩越开心等多档语音栏目，随时随地收听</li>
+                                <li>更新及时-YY语音、CC语音、QT语音、唱吧等明星主播定期主持，新鲜不断</li>
+                            </ul>
+                        </div>
+                        <div class="iphone" id="animation_screen4">
+                            <div class="iphone-child"><div class="iphone-content"></div></div>
+                            <div class="screen4-pop1">
+                                <span class="recoard-popo"><img ressrc="http://res.nie.netease.com/kyx/gw/13v3/images/screen_4_pop1_clean.png" alt=""/></span>
+                                <span class="recoard-wraper"><img ressrc="http://res.nie.netease.com/kyx/gw/13v3/images/recoard.png" class="recoard" alt=""/></span>
+                                <span class="recoard-player"></span>
+                            </div>
+                            <div class="screen4-pop2"><img ressrc="http://res.nie.netease.com/kyx/gw/13v3/images/screen_4_pop2.png" alt=""/></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene5-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">360°互动</h2>
+                            <p class="subtitle">一个游戏圈的精彩等你发现</p>
+                            <ul class="about">
+                                <li>一键互动-赞/评论/转发，轻松发布你的游戏态度</li>
+                                <li>自由言论-自由发表评论，分享你的恩怨情仇</li>
+                                <li>消息提醒-即时消息提醒，交流一刻都不耽搁</li>
+                                <li>名人验证-游戏主创、Coser、主播、赛事解说纷纷入驻，与名人面对面切磋</li>
+                            </ul>
+                        </div>
+                        <div class="iphone" id="animation_screen5">
+                            <div class="screen5-pop2"></div>
+                            <div class="iphone-child">
+                                <div class="iphone-content">
+                                    <div class="canvas-screen5-popostage" style="display: none;">
+
+                                    </div>
+                                    <canvas id="canvas_screen5_popo" width="224" height="318"></canvas>
+                                </div>
+                            </div>
+                            <div class="screen5-pop1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene6-nobg" maxheight="916">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="w-3">
+                    <div class="main">
+                        <div class="content">
+                            <h2 class="title">界面干净</h2>
+                            <p class="subtitle">零广告干扰畅爽阅读</p>
+                            <ul class="about">
+                                <li>无广告无软文-资讯回归游戏本身，阅读零干扰</li>
+                                <li>易阅读的界面-沉静的界面风格，多彩的游戏资讯，赏于心悦于目</li>
+                            </ul>
+                        </div>
+                        <div class="iphone"><div class="iphone-content"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene7-nobg">
+        <div class="w-1">
+            <div class="w-2">
+                <div class="main">
+                    <div class="backtop"><a href="#backtop">返回顶部</a></div>
+
+                    <div class="contact">
+                        <div class="contact-bg"></div>
+                        <a class="contact-icon contact-message" href="#leavemessage">留言</a>
+                        <a class="contact-icon contact-weibo" id="contact_weibo" href="http://weibo.com/163kanyouxi" target="_blank">微博</a>
+                        <a class="contact-icon contact-weixin" href="#weixin">微信</a>
+                        <a class="contact-icon contact-yixin" href="#yixin">易信</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene scene-foot scene8">
+        <div class="w-1">
+            <div class="w-2">
+                 <div class="main">
+                     <div class="dload-btm">
+                         <a class="dload-btm-iphone" href="http://analytics.163.com/ntes_clck?urlid=771&sign=54b799b65a9cc9515629176b66b8c81a&url=https%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fid656134031%3Fmt%3D8" target="_blank">iPhone版下载</a>
+                         <a class="dload-btm-android" href="http://kanyouxi.163.com/android/" target="_blank">Android版下载</a>
+                     </div>
+                     <div class="dload-qr-btm">
+                        <div class="dload-qr-btm-img">
+                            <img src="http://res.nie.netease.com/kyx/gw/13v3/images/dload_qr_btm.png" alt="扫描二维码下载"/>
+                        </div>
+                        <div class="dload-send">
+                            <p class="dload-send-tips">扫描二维码下载 或</p>
+                            <p class="dload-send-active"><a href="#sendbtm" class="sendphone-link">发送下载地址到手机</a></p>
+                        </div>
+
+                     </div>
+                 </div>
+
+                <div class="foot">
+                    <div class="copyright">
+                        <p>
+                            <span id="ncp-l1"><a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a> - <a href="http://help.163.com/" target="_blank">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" target="_blank">相关法律</a></span>
+                        </p>
+                        <p><span id="ncp-l2">网易公司版权所有 <span style="font-family: 'Microsoft YaHei'">&copy;</span>1997-2014</span> 粤B2-20090191</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--wraper--></div>
+<div class="rightnav">
+    <a class="rn-1 rn-1-on" href="#rn1">官网首页</a>
+    <a class="rn-2" href="#rn2">游戏齐备</a>
+    <a class="rn-3" href="#rn3">个性订阅</a>
+    <a class="rn-4" href="#rn4">视听兼备</a>
+    <a class="rn-5" href="#rn5">360°互动</a>
+    <a class="rn-6" href="#rn6">界面干净</a>
+    <a class="rn-7" href="#rn7">界面干净</a>
+</div>
+
+<div class="pop-box" id="leavemessage" style="display:none;">
+    <div class="pop-box-head"><h3>发信给我们</h3></div>
+    <form action="http://cgi.mmog.163.com:8088/v4a/do_vote/664/">
+    <div class="pop-box-content" id="leavemessage_ifm">
+
+    </div>
+    </form>
+    <div class="pop-box-btm"></div>
+    <div class="pop-box-close"></div>
+</div>
+
+<div class="pop-box" id="im_follow" style="display:none;">
+    <div class="pop-box-head"><h3>在<span class="im-name">易信</span>关注网易看游戏</h3></div>
+    <div class="pop-box-content" style="padding-left: 0;">
+        <p style="text-align: center;padding: 10px 0;margin-top: -1em;color: #000;" id="im_follow_tips">请打开<span class="im-name">易信</span>，扫描此二维码，即可关注：</p>
+
+
+    <p style="text-align: center;padding-bottom: 1em;" id="im_follow_qr"></p>
+    </div>
+    <div class="pop-box-btm"></div>
+    <div class="pop-box-close"></div>
+</div>
+
+<div class="topnav">
+    <div class="topnav-ct">
+        <div class="logo-small"></div>
+        <div class="dload-small">
+            <a class="dload-small-iphone" href="http://analytics.163.com/ntes_clck?urlid=770&sign=1faee7c48c5781cd0d1172ad8668e509&url=https%3A%2F%2Fitunes.apple.com%2Fcn%2Fapp%2Fid656134031%3Fmt%3D8" target="_blank">iPhone版下载</a>
+            <a class="dload-small-android" href="http://kanyouxi.163.com/android/" target="_blank">Android版下载</a>
+        </div>
+    </div>
+    <div class="topnav-border"></div>
+</div>
+<script type="text/javascript">
+    var ieVersion = 0;var isIE6 = false;var isIE7 = false;var isIE8 = false; var isIE9 = false;
+</script>
+<!--[if lte IE 6]>
+<script type="text/javascript">ieVersion = 6;isIE6 = true;</script>
+<![endif]-->
+<!--[if IE 7]>
+<script type="text/javascript">ieVersion = 7;isIE7 = true;</script>
+<![endif]-->
+<!--[if IE 8]>
+<script type="text/javascript">ieVersion = 8;isIE8 = true;</script>
+<![endif]-->
+<!--[if IE 9]>
+<script type="text/javascript">ieVersion = 9;isIE9 = true;</script>
+<![endif]-->
+<!-- jquery mix NIE (最新版本）-->
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+<!--<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>-->
+<script type="text/javascript">
+    nie.config.stats.clickStats=true;
+    nie.config.stats.id="kanyouxi";
+
+    var DEBUG = false;
+
+    function addClickTracker(keyval,name){
+        if(typeof (nie)=="undefined"){
+            console.log(keyval,name);
+            return;
+        }
+        nie.config.stats.url.add("kanyouxi/trace_0717.html?"+keyval,name);
+    }
+</script>
+
+<script type="text/javascript">
+    if(!isMobile){
+        document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/js/sendphone.js" charset="utf-8"></scr'+'ipt>');
+        if(!ieVersion || ieVersion>8){
+            document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/lib/easeljs-0.6.1.min.js"></scr'+'ipt>');
+            document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/lib/tweenjs-0.4.1.min.js"></scr'+'ipt>');
+        }
+    }
+</script>
+<script type="text/javascript">
+    if(!isMobile){
+        document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/js/html-animation.js" charset="utf-8"></scr'+'ipt>');
+        document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/lib/jquery.nicescroll.min.js"></scr'+'ipt>');
+    }
+</script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/js/ie_lte8.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+    if(!isMobile){
+        document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/js/pc_main.js" charset="utf-8"></scr'+'ipt>');
+    }else{
+        document.write('<scr'+'ipt type="text/javascript" src="http://res.nie.netease.com/kyx/gw/13v3/js/m_main.min.js" charset="utf-8"></scr'+'ipt>');
+    }
+</script>
+</body>
+</html>

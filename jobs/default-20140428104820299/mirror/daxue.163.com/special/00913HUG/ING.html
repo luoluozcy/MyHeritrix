@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>网易ING_校园频道</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="keywords" content="网易_校园频道" />
+<meta name="description" content="校园频道" />
+<meta content="all" name="robots" />
+<meta name="author" content="" />
+<meta name="Copyright" content="Netease" />
+<link href="http://img1.cache.netease.com/campus/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+<link href="http://img1.cache.netease.com/campus/img/campus090721/campus_channel.css" rel="stylesheet" type="text/css"/>
+<link href="http://img1.cache.netease.com/campus/img/campus090721/campus_more.css" rel="stylesheet" type="text/css"/>
+<base target="_blank" />
+<style type="text/css">
+.nomal{ display:none;}
+.on{ display:block;}
+</style>
+</head>
+<body>
+<!-- nav -->
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+<!-- nav end-->
+<div class="area">
+<div class="ad960">
+<!--子栏目通栏-->
+<div class="left"><iframe src="http://pro.163.com/html.ng/site=netease&affiliate=campus&cat=other&type=column&location=1" width="750" height="70" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+<div class="right"><iframe src="http://pro.163.com/html.ng/site=netease&affiliate=campus&cat=other&type=logo200x70&location=1" width="200" height="70" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+<!-- 顶部通栏广告 -->
+</div>
+</div>
+<span class="blank3"></span>
+<!--snav-->
+<div class="channel">
+      <h1><a id="top" href="http://daxue.163.com/">校园频道</a></h1>
+      <div class="position">
+     	 <a href="http://www.163.com/">网易首页</a>  &gt; <a href="http://campus.163.com/" target="_blank">校园频道</a> &gt; 校园动态
+      </div>
+</div><!--snav end-->
+<div class="nav_channel">
+<span class="nav">
+<a href="http://daxue.163.com/special/00913J5N/daxuerss.xml">要闻</a> 
+<a href="http://daxue.163.com/special/00913HUG/ING.html">网易ING</a> 
+<a href="http://daxue.163.com/special/00913HUG/information.html">高校看台</a>
+<a href="http://daxue.163.com/special/00913HUG/news.html">校园热闻</a> 
+<a href="http://daxue.163.com/special/00913HUG/fun.html">玩转校园</a> 
+<a href="http://daxue.163.com/special/00913HUG/video.html">校园拍客</a> 
+<a href="http://daxue.163.com/special/00913HUG/emotion.html">校园情感</a> 
+<a href="http://daxue.163.com/special/00913HUG/entertainment.html">校园乐闻</a>
+<a href="http://daxue.163.com/special/00913HUG/fashion.html">校园时尚</a>
+<a href="http://daxue.163.com/special/00913HUG/media.html">高校媒体联盟</a> 
+<a href="http://daxue.163.com/special/00913HUG/coperation.html">合作信息</a> 
+</span>
+<span class="rightS"></span>
+</div>
+<div class="blank6"></div>
+<!-- content -->
+<div class=" area clearfix">
+<span class="conEnd"></span>
+<div class="conL">
+<div class="titleBar ui_s1">
+<h2>网易ING</h2>
+</div>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2012-09-25 10:15)</span><a href="http://daxue.163.com/special/xyfdj02/">放大镜02:大学生体质堪忧</a></li>
+<li><span class="f12px cDGray">(2012-09-18 10:01)</span><a href="http://daxue.163.com/special/xyfdj/">放大镜01:大学生何时"断奶"</a></li>
+<li><span class="f12px cDGray">(2012-09-15 17:36)</span><a href="http://daxue.163.com/special/zouhengfu/">邹恒甫微博曝北大丑闻 </a></li>
+<li><span class="f12px cDGray">(2012-08-02 16:14)</span><a href="http://daxue.163.com/12/0702/17/85E5DO8900913JC5.html">纪念我们一起疯的岁月</a></li>
+<li><span class="f12px cDGray">(2011-02-12 12:02)</span><a href="http://edu.163.com/special/2011qiuzhijueshengbaodian/">2011大学生求职决胜宝典</a></li>
+</ul>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2010-07-07 10:38)</span><a href="http://daxue.163.com/special/0091sp/keaixiaozhang.html">校长，我可以抱抱您吗？</a></li>
+<li><span class="f12px cDGray">(2010-06-30 14:51)</span><a href="http://daxue.163.com/special/0091sp/nvdaxuesheng.html">反感女大学生露腿请闭眼</a></li>
+<li><span class="f12px cDGray">(2010-07-22 15:37)</span><a href="http://daxue.163.com/special/0091sp/tangjun.html">对唐骏“学历门”必须深究到底</a></li>
+<li><span class="f12px cDGray">(2010-08-09 14:43)</span><a href="http://daxue.163.com/special/0091sp/last.html">网易校园专题策划综合专题</a></li>
+<li><span class="f12px cDGray">(2010-08-02 17:12)</span><a href="http://daxue.163.com/special/0091sp/cumc.html">全国高校市场营销大赛</a></li>
+</ul>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2010-07-30 14:56)</span><a href="http://daxue.163.com/special/0091sp/chenggongxue.html">一“骏”是否能够遮百丑？</a></li>
+<li><span class="f12px cDGray">(2010-07-16 14:46)</span><a href="http://daxue.163.com/special/009163BT/zhangjingru.html">师大名家传记(九):党史专家张静如</a></li>
+<li><span class="f12px cDGray">(2010-07-12 09:48)</span><a href="http://daxue.163.com/special/009163B9/huangji.html">师大名家传记(八):著名教育家黄济</a></li>
+<li><span class="f12px cDGray">(2010-07-06 13:36)</span><a href="http://daxue.163.com/special/009163A6/iecp.html">武汉大学首届学生社团国际交流营</a></li>
+<li><span class="f12px cDGray">(2010-07-02 18:07)</span><a href="http://daxue.163.com/special/009163A1/fudanexpo.html">你是明星 点亮世博——《复旦青年》</a></li>
+</ul>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2010-07-01 11:02)</span><a href="http://daxue.163.com/special/009163AN/sunruyong.html">师大名家传记(七)：生态学家孙儒泳先生</a></li>
+<li><span class="f12px cDGray">(2010-05-13 14:24)</span><a href="http://daxue.163.com/special/009148R8/dxszk.html">大学生周刊：当个世界杯的超级看客</a></li>
+<li><span class="f12px cDGray">(2010-06-24 13:35)</span><a href="http://daxue.163.com/special/009163A4/paihangbang.html">看就业选专业——2010大学就业排行榜</a></li>
+<li><span class="f12px cDGray">(2010-06-23 15:31)</span><a href="http://daxue.163.com/special/009163AM/wangzikun.html">学府人物志：数学家王梓坤</a></li>
+<li><span class="f12px cDGray">(2010-06-22 14:58)</span><a href="http://daxue.163.com/special/009163AK/huangzuqia.html">师大名家传记：物理学家黄祖洽先生</a></li>
+</ul>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2010-04-26 15:32)</span><a href="http://daxue.163.com/CBL">“畅享世界杯”天津校园足球挑战赛落幕</a></li>
+<li><span class="f12px cDGray">(2010-06-08 16:43)</span><a href="http://daxue.163.com/special/0091sp/stu.html">2009中国大学生年度人物评选投票</a></li>
+<li><span class="f12px cDGray">(2010-06-07 17:42)</span><a href="http://daxue.163.com/special/009163A5/heziquan.html">学府人物志(4):史学家何兹全先生</a></li>
+<li><span class="f12px cDGray">(2010-06-01 10:28)</span><a href="http://daxue.163.com/special/009143R8/wangxuming08.html">王旭明：不要把大学生村官当干部</a></li>
+<li><span class="f12px cDGray">(2010-06-04 09:44)</span><a href="http://daxue.163.com/special/009163A3/kuaileertongjie.html">全国各族儿童庆六一活动</a></li>
+</ul>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2010-06-03 18:15)</span><a href="http://daxue.163.com/special/009163A4/mycosjiuye.html">2010年中国大学生就业报告</a></li>
+<li><span class="f12px cDGray">(2010-05-28 15:37)</span><a href="http://daxue.163.com/special/009163A0/qigong.html">学府人物志：启功先生逝世五周年专辑</a></li>
+<li><span class="f12px cDGray">(2010-05-14 13:34)</span><a href="http://daxue.163.com/special/00914DPF/cat.html">关注校园流浪猫——优雅的流浪</a></li>
+<li><span class="f12px cDGray">(2010-05-25 16:32)</span><a href="http://daxue.163.com/special/00914EE1/fudan.html">“复旦网易世博报道团”现场直播</a></li>
+<li><span class="f12px cDGray">(2010-05-24 16:32)</span><a href="http://daxue.163.com/special/009143R8/wangxuming07.html">少女之死：请不要往民主身上泼粪</a></li>
+</ul>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2010-05-19 17:57)</span><a href="http://daxue.163.com/special/00914DJL/gumingyuan.html">学府人物志——京师学人第2期：顾明远</a></li>
+<li><span class="f12px cDGray">(2010-05-14 15:51)</span><a href="http://daxue.163.com/special/0091sp/weibo.html">网易校园微话题</a></li>
+<li><span class="f12px cDGray">(2010-05-12 13:23)</span><a href="http://daxue.163.com/special/0091sp/beichuan.html">北川中学重建一周年纪实</a></li>
+<li><span class="f12px cDGray">(2010-05-07 14:19)</span><a href="http://daxue.163.com/special/009143R8/wangxuming06.html">王旭明：维护校园安全要打持久战</a></li>
+<li><span class="f12px cDGray">(2010-04-29 10:51)</span><a href="http://daxue.163.com/special/00914CG2/meiguo.html">“美国名校零距离”夏令营活动召集中</a></li>
+</ul>
+<ul class="newsList dotted">
+<li><span class="f12px cDGray">(2010-04-27 14:09)</span><a href="http://daxue.163.com/rendaqingjingju">中国人民大学2010五四文化节情景剧大赛</a></li>
+<li><span class="f12px cDGray">(2010-05-11 15:11)</span><a href="http://daxue.163.com/special/0091sp/ywgqds.html">第八届全国大学生英文歌曲大赛</a></li>
+<li><span class="f12px cDGray">(2010-05-11 15:11)</span><a href="http://daxue.163.com/special/0091sp/ycwljydc.html">英才网联大学生就业心态调查</a></li>
+<li><span class="f12px cDGray">(2010-04-21 10:51)</span><a href="http://daxue.163.com/special/009143R8/wangxuming05.html">王旭明点评：看分填志愿值得大书特书</a></li>
+<li><span class="f12px cDGray">(2010-04-23 14:49)</span><a href="http://daxue.163.com/special/00914C4G/taodayong.html">学府人物志——京师学人第1期：陶大镛</a></li>
+</ul>
+                <div class="pageList lrBothMar4">
+    	   <a href="#" target="_self">上一页</a>
+                             <span>1</span>
+                            <a  href="http://daxue.163.com/special/00913HUG/ING_02.html" target="_self">2</a>
+                            <a  href="http://daxue.163.com/special/00913HUG/ING_03.html" target="_self">3</a>
+                            <a  href="http://daxue.163.com/special/00913HUG/ING_04.html" target="_self">4</a>
+                            <a  href="http://daxue.163.com/special/00913HUG/ING_05.html" target="_self">5</a>
+                        <a href="http://daxue.163.com/special/00913HUG/ING_02.html" target="_self">下一页</a>     
+   		</div>
+        </div>
+<div class="conR">
+<div class="focuse clearfix">
+<div id="tabImg">
+<div class="focuseImg nomal on">
+<a href="http://daxue.163.com/10/0407/09/63LHLUDM00913J5O.html"><img src="http://img4.cache.netease.com/edu/2010/4/7/201004070954305311e.jpg" width="270" height="180" alt="河北魏县选160名女教师做礼仪小姐 " /></a>
+<h3><a href="http://daxue.163.com/10/0407/09/63LHLUDM00913J5O.html">河北魏县选160名女教师做礼仪小姐 </a></h3>
+</div>
+<div class="focuseImg nomal">
+<a href="http://daxue.163.com/10/0406/11/63J6CQHB00913J5O.html"><img src="http://img3.cache.netease.com/edu/2010/4/6/201004061119165a061.jpg" width="270" height="180" alt="'蚁族'无奈北京唐家岭将大规模拆迁" /></a>
+<h3><a href="http://daxue.163.com/10/0406/11/63J6CQHB00913J5O.html">"蚁族"无奈北京唐家岭将大规模拆迁</a></h3>
+</div>
+<div class="focuseImg nomal">
+<a href="http://daxue.163.com/10/0401/13/636IM9QE00913J5R.html"><img src="http://img3.cache.netease.com/edu/2010/4/1/2010040114064008952.jpg" width="270" height="180" alt="“最牛乡村学校”耗资4000万似别墅" /></a>
+<h3><a href="http://daxue.163.com/10/0401/13/636IM9QE00913J5R.html">“最牛乡村学校”耗资4000万似别墅</a></h3>
+</div>
+<ul class="focuseNum" id="menuBar_focus"><li class="on">1</li><li>2</li><li>3</li></ul>
+</div>
+<span class="clear"></span>
+</div>
+<div class="titleBar3 ui_sm">
+<h2>校园热闻</h2>
+<span class="more">
+<a href="http://daxue.163.com/special/00913HUG/news.html">更多</a>
+</span>
+<span class="clear"></span>
+</div>
+<ul class="f12bla">
+<li><a href="http://daxue.163.com/10/0407/09/63LJ9C8R00913J5O.html">CUBA篮球宝贝惊现裤袜男“夏姐”(图)</a></li>
+<li><a href="http://daxue.163.com/10/0407/09/63LIV94S00913J5O.html">半数大学生宁当"蚁族"也要挤进北京上海</a></li>
+<li><a href="http://daxue.163.com/10/0407/09/63LIPKUC00913J5O.html">官员将应聘者分数改高致其被以作弊为由解聘</a></li>
+<li><a href="http://daxue.163.com/10/0407/09/63LIJE1A00913J5O.html">山大女生在男生宿舍楼下摆百根蜡烛求爱(图)</a></li>
+<li><a href="http://daxue.163.com/10/0407/09/63LIB8H000913J5O.html">高三女生因情感纠纷遭同学割喉(图)</a></li>
+</ul>
+<div class="titleBar3 ui_sm">
+<h2>校园乐闻</h2>
+<span class="more">
+<a href="http://daxue.163.com/special/00913HUG/entertainment.html">更多</a>
+</span>
+<span class="clear"></span>
+</div>
+<ul class="photoList">
+<li>
+<a href="http://daxue.163.com/10/0325/10/62K7RSP800913J66.html"><img height="90" width="120" src="http://img3.cache.netease.com/edu/2010/3/25/20100325104845b5fd4.jpg"/></a>
+<h3><a href="http://daxue.163.com/10/0325/10/62K7RSP800913J66.html">日本皇室“姐妹花”</a></h3>
+</li>
+<li>
+<a href="http://daxue.163.com/photoview/0HQO0091/100.html#p=1"><img height="90" width="120" src="http://img4.cache.netease.com/edu/2010/3/15/2010031513355011c46.jpg"/></a>
+<h3><a href="http://daxue.163.com/photoview/0HQO0091/100.html#p=1">美女漫画家风靡日本</a></h3>
+</li>
+</ul>
+<div class="titleBar3 ui_sm">
+<h2>高校看台</h2>
+<span class="more">
+<a href="http://daxue.163.com/special/00913HUG/information.html">更多</a>
+</span>
+<span class="clear"></span>
+</div>
+<ul class="f12bla">
+<li><a href="http://daxue.163.com/10/0407/09/63LJK3KG00913J5R.html">钱学森之问促高校纷设实验班培养拔尖人才</a></li>
+<li><a href="http://daxue.163.com/10/0407/09/63LJDEOI00913J5R.html">湖北省规定高考代考大学生将被开除学籍</a></li>
+<li><a href="http://daxue.163.com/10/0406/10/63J4L8PA00913J5R.html">长江大学千名师生江边祭3名救人英雄(视频)</a></li>
+<li><a href="http://daxue.163.com/10/0406/10/63J3KT6K00913J5R.html">沈阳民族艺术学校因没评上"重点"状告教育部</a></li>
+<li><a href="http://daxue.163.com/10/0406/10/63J33IQS00913J5R.html">清华大学校长率团抵达硅谷：校友是清华的财</a></li>
+</ul>
+<span class="blank3"></span>
+<div class="titleBar3 ui_sm">
+<h2>卧谈会</h2>
+<span class="more">
+<a href="http://daxue.163.com/special/00913HUG/talking.html">更多</a>
+</span>
+<span class="clear"></span>
+</div>
+<ul class="f12bla">
+<li><a href="http://daxue.163.com/10/0304/10/60U3E35T00913KML.html">爸妈对我们说的最泪奔的一句话</a></li>
+<li><a href="http://daxue.163.com/10/0301/11/60MF5CTD00913KML.html">女性容貌真的能够决定职场成败</a></li>
+<li><a href="http://daxue.163.com/10/0221/11/601SJHQR00913KML.html">最牛征婚女罗玉凤 坚守都市梦想</a></li>
+<li><a href="http://daxue.163.com/10/0220/11/5VV9Q12C00913J60.html">一个留英博士生的四个除夕夜</a></li>
+<li><a href="http://daxue.163.com/10/0220/09/5VV43I0100913KML.html">研究称上过大学的女性婚姻更幸福</a></li>
+</ul>
+<span class="blank3"></span>
+<div class="titleBar3 ui_sm">
+<h2>玩转校园</h2>
+<span class="more">
+<a href="http://daxue.163.com/special/00913HUG/fun.html">更多</a>
+</span>
+<span class="clear"></span>
+</div>
+<ul class="f12bla">
+<li><a href="http://daxue.163.com/10/0311/10/61G69LL200913J5T.html">岭南写真：广东高校“森女”当道</a></li>
+<li><a href="http://daxue.163.com/10/0308/10/618E7QEE00913J5T.html">女大学生漫画《我们都是小青年》网上走红</a></li>
+<li><a href="http://daxue.163.com/10/0221/15/602AF0QV00913J5T.html">美国名校网上竞争语录 西点：上学不差钱</a></li>
+<li><a href="http://daxue.163.com/10/0220/11/5VVBL92P00913J5T.html">大学生搞网络春晚点击过亿 凤姐春哥同台争 </a></li>
+<li><a href="http://daxue.163.com/10/0125/10/5TS86NQC00913J5T.html">大学校园流行“攒人品”(图)</a></li>
+</ul>
+<span class="blank3"></span>
+</div>
+</div>
+<span class="clear"></span>
+<span class="conEnd"></span>
+<!--- content end--->
+ <div class="blank12"></div>
+<style type="text/css">
+.channel-end,.channelEnd-rightS,.channelEnd-link,.channelEnd-top {background:url(http://img3.cache.netease.com/cnews/img09/endnav_bg1001.jpg);}
+.channel-end {width:960px;height:37px;overflow:hidden;margin:10px auto 0;line-height:38px;background-position:left -67px;background-repeat:repeat;}
+.channelEnd-rightS {display:block;float:right;width:8px;height:37px;overflow:hidden;background-position:right -141px;background-repeat:no-repeat;}
+.channelEnd-link {float:left;height:37px;line-height:37px;overflow:hidden;color:#1E50A2;background-position:left -30px;background-repeat:no-repeat;}
+.channelEnd-link a {float:none;padding:0 5px;font-weight:normal;background:none;}
+.channelEnd-link .firstNode {margin-left:5px; background:none;}
+.channelEnd-top {display:block;float:right;width:70px;height:37px;overflow:hidden;line-height:37px;text-indent:10px;background-position:left -30px;background-repeat:no-repeat;}
+</style>
+<div class="channel-end">
+	<span class="channelEnd-link cBlue">
+    	<a class="firstNode" href="http://www.163.com/"  rel="nofollow">网易首页</a>-<a href="http://news.163.com/"  rel="nofollow">新闻</a>-<a href="http://sports.163.com/"  rel="nofollow">体育</a>-<a href="http://ent.163.com/"  rel="nofollow">娱乐</a>-<a href="http://money.163.com/"  rel="nofollow">财经</a>-<a href="http://auto.163.com/"  rel="nofollow">汽车</a>-<a href="http://tech.163.com"  rel="nofollow">科技</a>-<a href="http://digi.163.com/"  rel="nofollow">数码</a>-<a href="http://mobile.163.com/"  rel="nofollow">手机</a>-<a href="http://lady.163.com/"  rel="nofollow">女人</a>-<a href="http://house.163.com/"  rel="nofollow">房产</a>-<a href="http://game.163.com/"  rel="nofollow">游戏</a>-<a href="http://book.163.com/"  rel="nofollow">读书</a>-<a href="http://edu.163.com/"  rel="nofollow">教育</a>-<a href="http://travel.163.com/"  rel="nofollow">旅游</a>-<a href="http://bbs.163.com/"  rel="nofollow">论坛</a>-<a href="http://v.163.com/"  rel="nofollow">视频</a>-<a href="http://blog.163.com/blogs/"  rel="nofollow">博客</a>-<a href="http://t.163.com/"  rel="nofollow">微博</a>-<a href="http://jiu.163.com"  rel="nofollow">酒香</a>-<a href="http://help.3g.163.com/"  rel="nofollow">手机版</a>
+    </span>
+    <span class="channelEnd-rightS"></span>
+    <span class="channelEnd-top cBlue"><a href="#top" target="_self"  rel="nofollow">返回顶部&uarr;</a></span>
+</div> <div class="blank9"></div>
+<!-- 代码 -->
+<div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　<a href="http://post.news.163.com/msg/zhubian.jsp">客服电话:(010)82558519</a> </div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a> <br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<div class="blank6"></div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/css/Js163Core.js" charset="gb2312"></script>
+<script type="text/javascript">
+//<![CDATA[
+var focus_more = new NTES.UI.Slide($("#menuBar_focus > li"), $("#tabImg > div"), "on", "mouseover",8000); // 头图切换
+function tabDivcnt(obj,num,len,cn)
+{
+ var cssname=cn;
+ for(var id = 1;id<=len;id++)
+ {
+  var ss=obj+id;
+  var snav =obj+"nav"+id;
+  var scnt =obj+"cnt"+id;
+  if(id==num){
+  try{document.getElementById(ss).style.display="block"}catch(e){};
+  try{document.getElementById(snav).className=cssname}catch(e){};
+  try{document.getElementById(scnt).style.display="block"}catch(e){};
+  }else{
+  try{document.getElementById(ss).style.display="none"}catch(e){};
+  try{document.getElementById(snav).className=""}catch(e){};
+  try{document.getElementById(scnt).style.display="none"}catch(e){};
+  }
+ }  
+}
+ //]]>
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://163.wrating.com/a1.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0519010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0519010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "edu"; //站点ID。
+    neteaseTracker();
+    </script>
+</body>
+</html>

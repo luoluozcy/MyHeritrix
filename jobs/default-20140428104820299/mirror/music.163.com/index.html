@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta property="qc:admins" content="27354635321361636375" />
+<meta name="keywords" content="网易云音乐，音乐，播放器，网易，下载，播放，DJ，免费，明星，精选，歌单，识别音乐，收藏，分享音乐，音乐互动，高音质，320K，音乐社交" />
+<meta name="description" content="网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。" />
+<title>网易云音乐 发现好音乐</title>
+<script type="text/javascript">
+var GRef = '';
+var GAbroad = false;
+var GUser={};
+window.NEJ_CONF = {p_csrf:{cookie:'__csrf',param:'csrf_token'}};
+//线上环境参数配置
+window.MUSIC_CONFIG = {
+pushHost:'web.push.126.net',
+pushPort:'6003',
+pushKey:'3b97981848064bbabeaaf2fb1eab7368'
+};
+GUtil = {
+getBase:function(){
+return 'http://'+location.hostname;
+},
+getPathAndHash:function(_url){//获取URL path 之后的所有内容,并将/#/替换成/m/使之成为path的一部分
+if(!_url) return '';
+var _reg0 = /^https?:\/\/.*?\//i,
+_reg1 = /\/?#\/?/i;
+return _url.replace(_reg0,'/').replace(_reg1,'/m/');
+},
+composeRefer:function(_url,_ref){//对所有的页面请求都加上ref参数表示被嵌套的来源
+if(!_ref) return _url;
+var _hi = _url.indexOf('#'),
+_si = _url.indexOf('?');
+if(_si>0&&(_si<_hi||_hi<0)){
+return _url.substring(0,_si+1)+'ref='+_ref+'&'+_url.substring(_si+1);
+}else if(_hi>0&&(_si<0||_si>_hi)){
+return _url.substring(0,_hi)+'?ref='+_ref+_url.substring(_hi);
+}else{
+return _url+'?ref='+_ref;
+}
+}
+};(function(){
+var _ua = window.navigator.userAgent,
+_isMobile = /(mobile|mobi|wap|iphone)/i.test(_ua) && !/(ipad)/i.test(_ua),
+_isAndroid = /android/i.test(_ua),
+_igList = [/^\/xiami$/],//不需要以单页面打开的列表，比如某些活动页面
+_pn = location.pathname,
+_idx = _pn.lastIndexOf('/'),
+_pReg = /\s*(\w+)\s*=\s*(\d+)\s*/,
+_redirect2mobile = function(){
+var _type,_murl,
+_params = {},
+_hash = location.hash,
+_mReg = /^#.*(share|song|playlist|dj|album|mv|topic)/,
+_base = 'http://'+location.hostname,
+_sindex = _hash.lastIndexOf('?'),
+_search = _sindex>-1?_hash.substring(_sindex+1):'';
+if(!_hash.length||!_mReg.test(_hash)||!_search){
+location.href = _base+'/m/';
+return;
+}else{
+_type = RegExp.$1;
+}
+for(var plist=_search.split('&'),i=plist.length,value;i>=0;i--){
+value = plist[i];
+if(_pReg.test(value)) _params[RegExp.$1] = RegExp.$2;
+}
+if(_type=='dj'){
+_murl = '/m/program/'+_params.id+'/0';
+}else if(_type=='share'){
+_murl = '/m/share/'+_params.uid+'/'+_params.id;
+}else if(_type=='playlist'){
+_murl = '/m/playlist/'+_params.id+'/0';;
+}else{
+_murl = '/m/'+_type+'/'+_params.id;
+}
+location.href = _base+_murl;
+};
+if(_isMobile || _isAndroid){
+_redirect2mobile();
+return;
+}
+if(!_pn||_pn=='/') return;
+for(var i in _igList){
+if(_igList[i].test(_pn)) return;
+}
+if(top==self){
+location.href = '/#'+GUtil.getPathAndHash(location.href);
+return;
+}
+//搜索引擎过来的内容页连接
+if(top==self&&/^\/static\/(song|playlist|album|artist)/i.test(_pn)){
+location.href = '/#'+_pn.substring(0,_idx).replace('/static/','/')+'?id='+_pn.substring(_idx+1);
+}
+})();
+(function(){
+var _addEvent = function(_node,_type,_cb){
+if(_node.addEventListener){
+_node.addEventListener(_type,_cb);
+}else if(_node.attachEvent){
+_node.attachEvent('on'+_type,_cb);
+}
+},
+_onAnchorClick = function(_event){//截获所有<a>标签的点击事件，自定义页面的跳转
+_event = _event||window.event;
+var _el = _event.target||_event.srcElement,
+_base = location.protocol+'//'+location.host;
+while(_el&&_el!=document){
+if(_el.tagName&&_el.tagName.toLowerCase()=='a'){
+//fix ie6下有时javascript:;不能阻止默认事件的bug.
+if(_el.href.indexOf('javascript:')>=0){
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+return;
+}
+//新窗口打开的链接、云音乐单页面形式的链接、站外的链接不做拦截处理。
+if(_el.target=='_blank'
+||_el.target=='blank'
+||(_el.href.charAt(0)!='/'&&_el.href.indexOf(location.hostname)<0)
+||_el.href==_base
+||_el.href.indexOf(_base+'/#')>=0) return;
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+location.dispatch2(_el.href);
+break;
+}else{
+_el = _el.parentNode;
+}
+}
+};
+_addEvent(document,'click',_onAnchorClick);
+//扩展一个js中直接使用的页面跳转的方法，以拦截js中的页面跳转行为
+location.dispatch2 = function(_url,_replace){
+var delegate = false;
+try{
+delegate = !!top.GDispatcher;
+}catch(e){
+delegate = false;
+}
+if(delegate){
+top.GDispatcher.dispatch(_url,_replace);
+}else{
+_url = GUtil.composeRefer(_url,GRef);
+//邮箱音乐盒中，每次链接的跳转都要将proxy.html的地址合并到hash中
+if(GRef&&GRef=='mail'){
+var _hindex,_sindex,
+_reg = /(http:\/\/.+\/proxy.html)/,
+_hreg = /#(.*?)$/,
+_href = decodeURIComponent(location.href);
+if(!_reg.test(decodeURIComponent(_url))&&_reg.test(_href)){
+_hindex = _url.indexOf('#');
+_sindex = _url.lastIndexOf('?');
+if(_hindex>0){
+_url = _url+(_sindex>_hindex?'&':'?')+'proxy='+encodeURIComponent(RegExp.$1);
+}else{
+_url = _url+'#proxy='+encodeURIComponent(RegExp.$1);
+}
+}
+}
+if(_replace){
+location.replace(_url);
+}else{
+location.href = _url;
+}
+}
+};
+})();</script>
+<link rel="shortcut icon" href="http://s1.music.126.net/music.ico?v1" />
+<link href="http://s2.music.126.net/s/2/core.css?e905c970711c99f8cb0474edcaf265d5" type="text/css" rel="stylesheet"/><link href="http://s2.music.126.net/s/2/pt_frame.css?493504847daaf933c424288dbd7da6c0" type="text/css" rel="stylesheet"/>
+<style>html,body{overflow:hidden;}</style>
+<script>if(top!=self)top.location=self.location;</script>
+</head>
+<body>
+<iframe name="contentFrame" id="g_iframe" class="g-iframe" scrolling="auto" frameborder="0" src="about:blank"></iframe>
+<script type="text/javascript">
+var GCopyrights = [];
+var Hash=function(){var d,e,f,a=this,b=document.documentMode,c=a.history,g=function(){var b=a.location.href.indexOf("#");return-1==b?"":a.location.href.substr(b+1)},h=function(){var a=g();a!=e&&(e=a,d(a,!1))},i=function(){var a="onhashchange",b=a in document.body;return b||(document.body.setAttribute(a,"return;"),b="function"==typeof document.body[a]),b&&(void 0===document.documentMode||document.documentMode>7)},j=function(){var b,a=document.createElement();return a.innerHTML='<iframe src="javascript:void(0)" tabindex="-1" style="display: none;"></iframe>',b=a.childNodes[0],document.body.appendChild(b),b},k=function(a){try{var b=f.contentWindow.document;b.open(),b.write("<html><body>"+a+"</body></html>"),b.close(),e=a}catch(c){setTimeout(function(){k(a)},10)}},l=function(){try{f=j()}catch(b){return setTimeout(l,10),void 0}k(e);var c=e;setInterval(function(){var b,h;try{b=f.contentWindow.document.body.innerText,b!=c?(c=b,a.location.hash=e=b,d(b,!0)):(h=g(),h!=e&&k(h))}catch(i){}},50)};return{init:function(f){d||(d=f,e=g(),f(e,!0),i()?a.addEventListener?a.addEventListener("hashchange",h,!1):a.attachEvent&&a.attachEvent("onhashchange",h):a.ActiveXObject?(!b||8>b)&&l():(c.navigationMode&&(c.navigationMode="compatible"),setInterval(h,50)))},go:function(b){b!=e&&(f?k(b):(a.location.hash=e=b,d(b,!1)))}}}();var GDispatcher = (function(){
+var _lastPage = '',
+_igReg = /f=(.*?)/,
+_hReg = /\/?#.*/,
+_default = '/discover';
+function _isIE10plus(){
+var _ua = window.navigator.userAgent;
+return (/msie\s+(.*?);/i.test(_ua)||/trident\/.+rv:([\d\.]+)/i.test(_ua))&&(parseInt(RegExp.$1)>=10);
+};
+function _onHashChange(_hash){
+var _url,
+_iframe = document.getElementById('g_iframe');
+if(!_hash||_igReg.test(_hash)){//忽略统计来源的hash
+_url = _default;
+}else{
+_url = _hash.replace('/m/','/#/');
+}
+//针对ie10+ location.replace的bug做特殊处理
+if(_isIE10plus()){
+if(_lastPage.replace(_hReg,'')==_url.replace(_hReg,'')){//只是hash的改变
+_iframe.contentWindow.location.replace(_url);
+} else{
+_iframe.parentNode.removeChild(_iframe);
+_iframe = document.createElement('iframe');
+_iframe.id = 'g_iframe';
+_iframe.src = 'about:blank';
+_iframe.className = 'g-iframe';
+document.body.insertAdjacentElement('afterBegin',_iframe);
+_iframe.contentWindow.location.href = _url;
+}
+}else{
+_iframe.contentWindow.location.replace(_url);
+}
+_lastPage = _url;
+if(typeof window.onHashChange=='function'){
+window.onHashChange(_hash);
+}
+};
+Hash.init(_onHashChange);
+return {
+dispatch:function(_url,_replace){
+var _ph = GUtil.getPathAndHash(_url);
+if(!_ph) return;
+if(_replace){
+location.replace(GUtil.getBase()+'#'+_ph);
+}else{
+location.hash = _ph;
+}
+},
+refreshIFrame:function(_url){
+_onHashChange(_url);
+}
+};
+})();</script>
+<div class="g-btmbar">
+<div class="m-playbar m-playbar-unlock" style="top:-53px;">
+<div class="updn">
+<div class="left f-fl"><a href="#" class="btn" hidefocus="true" data-action="lock"></a></div>
+<div class="right f-fl"></div>
+</div>
+<div class="bg"></div>
+<div class="hand" title="展开播放条"></div>
+<div class="wrap" id="g_player">
+<div class="btns">
+<a href="#" hidefocus="true" data-action="prev" class="prv" title="上一首(ctrl+←)">上一首</a>
+<a href="#" hidefocus="true" data-action="play" class="ply" title="播放/暂停(p)">播放/暂停</a>
+<a href="#" hidefocus="true" data-action="next" class="nxt" title="下一首(ctrl+→)">下一首</a>
+</div>
+<div class="head"><img src="http://s4.music.126.net/style/web2/img/default_album.jpg"><a href="#" hidefocus="true" class="mask"></a></div>
+<div class="play">
+<div class="j-flag words"></div>
+<div class="m-pbar">
+<div class="j-flag barbg">
+<div class="j-flag rdy" style="width:0%;"></div>
+<div class="j-flag cur" style="width:0%;"><span class="j-flag btn f-tdn f-alpha"></span></div>
+</div>
+<span class="j-flag time"><em>00:00</em> / 00:00</span>
+</div>
+</div>
+<div class="oper f-fl">
+<a href="#" hidefocus="true" data-action="like" class="icn icn-add" title="收藏">收藏</a>
+<a href="#" hidefocus="true" data-action="share" class="icn icn-share" title="分享">分享</a>
+</div>
+<div class="ctrl f-fl f-pr">
+<div class="j-flag m-vol" style="visibility:hidden;">
+<div class="j-t barbg"></div>
+<div class="j-t vbg"><div class="curr"></div>
+<span class="j-t btn f-alpha"></span></div>
+</div>
+<a href="#" hidefocus="true" data-action="setvolume" class="j-flag icn icn-vol"></a>
+<a href="#" hidefocus="true" data-action="setmode" class="j-flag icn icn-shuffle" title="随机"></a>
+<span class="add f-pr">
+<span class="j-flag tip" style="display:none;">已添加到播放列表</span>
+<a href="#" title="播放列表" hidefocus="true" data-action="playlist" class="j-flag icn icn-list s-fc3">0</a>
+</span>
+<div class="j-flag tip tip-1" style="display:none;"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="template-box" style="display:none;"> <textarea name="ntp" id="ntp-login-nav"><div class="lyct lyct-1 f-cb">
+<ul class="n-logwlc f-cb">
+<li class="j-flag fst">
+<a href="#" class="logo u-blg u-blg-mb"></a>
+<a href="#" class="wd">手机号登录</a>
+</li>
+<li class="j-flag">
+<a href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Login&forcelogin=true" class="logo u-blg u-blg-sn"></a>
+<a href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Login&forcelogin=true" class="wd" target="_blank">新浪微博登录</a>
+</li>
+<li class="j-flag">
+<a href="http://music.163.com/api/sns/authorize?snsType=6&clientType=web2&callbackType=Login&forcelogin=true" class="logo u-blg u-blg-tc"></a>
+<a href="http://music.163.com/api/sns/authorize?snsType=6&clientType=web2&callbackType=Login&forcelogin=true" class="wd" target="_blank">腾讯微博登录</a>
+</li>
+<li class="j-flag">
+<a href="#" class="logo u-blg u-blg-wy"></a>
+<a href="#" class="wd">网易通行证登录</a>
+</li>
+</ul>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-login-mobile"><div class="lyct lyct-1 f-cb">
+<div class="n-log f-cb">
+<div class="log">
+<div class="itm top"><i class="u-slg2 u-slg2-mb"></i><span class="f-fl f-ff2 f-fs3">手机号登录</span></div>
+<div class="itm">
+<input type="text" class="j-flag u-txt txt" placeholder="手机号登录">
+</div>
+<div class="itm">
+<input type="password" class="j-flag u-txt txt" placeholder="密码">
+</div>
+<div class="j-flag u-err" style="display:none;"><i class="u-icn u-icn-25"></i><span>帐号或密码错误！</span></div>
+<div class="itm">
+<a href="#" class="j-flag ft s-fc3">忘记密码？</a>
+<label class="auto s-fc3"><input type="checkbox" class="j-flag f-rdi" checked="checked">自动登录</label>
+</div>
+<div class="btnwrap">
+<a class="j-flag u-btn2 u-btn2-2 u-btn2-lg" hidefocus="true" href="#"><i>登&#12288;录</i></a>
+</div>
+<div class="j-flag u-err" style="display:none;"><i class="u-icn u-icn-25"></i><span>网络未连接！</span></div>
+<div class="reg s-fc3">
+没有帐号？<a href="#" class="j-flag s-fc3">免费注册</a>
+</div>
+</div>
+<div class="other">
+<div class="tit s-fc3">其他帐号登录：</div>
+<ul>
+<li><a href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Login&forcelogin=true" class="j-flag u-btn u-btn-sn" target="_blank">新浪微博登录</a></li>
+<li><a href="http://music.163.com/api/sns/authorize?snsType=6&clientType=web2&callbackType=Login&forcelogin=true" class="j-flag u-btn u-btn-tc" target="_blank">腾讯微博登录</a></li>
+<li><a href="#" class="j-flag u-btn u-btn-wy">网易通行证登录</a></li>
+</ul>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-login-netease"><div class="lyct lyct-1 f-cb">
+<div class="n-log f-cb">
+<div class="log">
+<div class="itm top"><i class="u-slg2 u-slg2-wy"></i><span class="f-fl f-ff2 f-fs3">网易通行证登录</span></div>
+<div class="itm f-pr" style="z-index:5;">
+<input type="text" class="j-flag u-txt txt" placeholder="帐号">
+<ul class="j-flag fill" style="visibility:hidden;"></ul>
+</div>
+<div class="itm">
+<input type="password" class="j-flag u-txt txt" placeholder="密码">
+</div>
+<div class="j-flag u-err" style="display:none;"><i class="u-icn u-icn-25"></i><span>帐号或密码错误！</span></div>
+<div class="itm">
+<a href="http://reg.163.com/getpasswd/RetakePassword.jsp" class="ft s-fc3" target="_blank">忘记密码？</a>
+<label class="auto s-fc3"><input type="checkbox" class="j-flag f-rdi" checked="checked">自动登录</label>
+</div>
+<div class="btnwrap">
+<a class="j-flag u-btn2 u-btn2-2 u-btn2-lg" hidefocus="true" href="#"><i>登&#12288;录</i></a>
+</div>
+<div class="j-flag u-err" style="display:none;"><i class="u-icn u-icn-25"></i><span>网络未连接！</span></div>
+<div class="reg s-fc3">
+没有帐号？<a href="http://reg.163.com/reg/reg.jsp?product=music" class="s-fc3" target="_blank">免费注册</a>
+</div>
+</div>
+<div class="other">
+<div class="tit s-fc3">其他帐号登录：</div>
+<ul>
+<li><a href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Login&forcelogin=true" class="j-flag u-btn u-btn-sn" target="_blank">新浪微博登录</a></li>
+<li><a href="http://music.163.com/api/sns/authorize?snsType=6&clientType=web2&callbackType=Login&forcelogin=true" class="j-flag u-btn u-btn-tc" target="_blank">腾讯微博登录</a></li>
+<li><a href="#" class="j-flag u-btn u-btn-mb">手机号登录</a></li>
+</ul>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="jst-login-suggest">{list suggests as item}
+<li><a href="#">${item}</a></li>
+{/list}
+</textarea>
+<textarea name="ntp" id="ntp-setnickname"><div class="lyct lyct-1 f-cb">
+<div class="n-set">
+<label class="lb s-fc3">取一个昵称：</label>
+<div class="itm">
+<input type="text" class="j-flag u-txt txt" placeholder="昵称不少于4个英文或2个汉字">
+</div>
+<div class="j-flag u-err" style="display:none;"><i class="u-icn u-icn-25"></i><span></span></div>
+<div class="btnwrap">
+<a class="j-flag u-btn2 u-btn2-2 u-btn2-lg" hidefocus="true" href="#"><i>完&#12288;成</i></a>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-setpassword"><div class="lyct lyct-1 f-cb">
+<div class="n-set n-set-1">
+<div class="j-flag note s-fc3"></div>
+<label class="j-flag lb s-fc3">设置密码：</label>
+<div class="itm">
+<input type="password" class="j-flag u-txt txt" placeholder="不少于6位">
+</div>
+<div class="j-flag u-err"><i class="u-icn u-icn-25"></i><span>帐号或密码错误！</span></div>
+<div class="btnwrap">
+<a class="j-flag u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true" href="#"><i>上一步</i></a>
+<a class="j-flag u-btn2 u-btn2-2" hidefocus="true" href="#"><i>完&#12288;成</i></a>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-reg-mobile"><div class="lyct lyct-1 f-cb">
+<div class="n-check n-check-1">
+<div class="itm">
+<input type="text" class="j-flag u-txt txt" placeholder="请输入手机号">
+<a class="j-flag u-btn2 u-btn2-2 u-btn2-w4" hidefocus="true" href="#"><i>获取验证码</i></a>
+</div>
+<div class="j-flag u-err" style="display:none;"><i class="u-icn u-icn-25"></i><span></span></div>
+<div class="safe s-fc3">为了安全，我们会向你的手机发送短信验证码！</div>
+</div>
+</div>
+<div class="lybt">
+<div class="lybtc">
+<a class="j-flag f-tdu back" href="#">返回登录</a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-reg-captchaverify"><div class="lyct lyct-1 f-cb">
+<div class="n-check">
+<div class="tip s-fc3">你的手机号为：<strong class="j-flag s-fc1">+86 13565215486</strong></div>
+<label class="lb s-fc3">请输入接收到的短信验证码：</label>
+<div class="itm">
+<input type="text" class="j-flag u-txt txt" value=""><span class="j-flag s-fc3">(00:00)</span><a href="#" class="j-flag s-fc1">重新获取验证码</a>
+</div>
+<div class="j-flag u-err"><i class="u-icn u-icn-25"></i><span>验证码错误！</span></div>
+<div class="btnwrap">
+<a class="j-flag u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true" href="#"><i>上一步</i></a>
+<a class="j-flag u-btn2 u-btn2-2" hidefocus="true" href="#"><i>下一步</i></a>
+</div>
+</div>
+</div>
+<div class="lybt">
+<div class="lybtc">
+<a class="j-flag f-tdu back" href="#">返回登录</a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-reg-setting"><div class="lyct lyct-1 f-cb">
+<div class="n-set">
+<label class="lb s-fc3">取一个昵称：</label>
+<div class="itm">
+<input type="text" class="j-flag u-txt txt" placeholder="昵称不少于4个英文或2个汉字">
+</div>
+<label class="lb s-fc3">设置密码：</label>
+<div class="itm">
+<input type="password" class="j-flag u-txt txt" placeholder="不少于6位">
+</div>
+<div class="j-flag u-err"><i class="u-icn u-icn-25"></i><span>帐号或密码错误！</span></div>
+<div class="btnwrap">
+<a class="j-flag u-btn2 u-btn2-2 u-btn2-lg" hidefocus="true" href="#"><i>完&#12288;成</i></a>
+</div>
+</div>
+</div>
+<div class="lybt">
+<div class="lybtc">
+<a class="j-flag f-tdu back" href="#">返回登录</a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-login-tips"><div class="lyct lyct-1 f-cb">
+<div class="n-fdback">
+<p class="j-flag s-fc3"></p>
+<div class="btnwrap">
+<a href="#" hidefocus="true" class="j-flag u-btn2 u-btn2-2 u-btn2-lg"><i>返回登录</i></a>
+</div>
+<div class="ft">
+<a href="#" class="j-flag s-fc3">忘记密码？</a>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-login-auto"><div class="lyct lyct-1 f-cb">
+<div class="u-load s-fc4"><i class="icn"></i> 正在登录...</div>
+<div class="n-fdback n-fdback-1 f-tc">
+<div class="u-err"><i class="u-icn u-icn-25"></i><span></span></div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-player-playinfo"><a hidefocus="true" href="{if !program}/song?id=${id}{else}/dj?id=${program.id}{/if}" class="fc1 f-fl">${name|escape}{if !!program}[DJ节目]{/if}</a>{if mvid > 0}<a hidefocus="true" href="/mv?id=${mvid}" class="mv f-fl" title="MV"></a>{/if}
+<span class="by f-fl">
+{if !program}
+${artists|getArtistName}
+{elseif !!program.dj}
+<a hidefocus="true" href="/user/home?id=${program.dj.userId}">${program.dj.nickname|escape}</a>
+{/if}
+</span>
+{if source}<a href="#${source.link}" class="src" title="来自${source.title}"></a>{/if}
+</textarea>
+<textarea name="ntp" id="m-player-playlist"><div class="list" id="g_playlist">
+<div class="listhd">
+<div class="listhdc">
+<h4 class="j-flag">播放列表(0)</h4>
+<a href="#" class="addall" data-action="likeall"><span class="ico ico-add"></span>收藏全部</a><span class="line"></span>
+<a href="#" class="clear j-flag" data-action="clear"><span class="ico icn-del"></span>清除</a>
+<p class="lytit f-ff0 f-thide j-flag"></p>
+<span class="close j-flag" data-action="close">关闭</span>
+</div>
+</div>
+<div class="listbd" onselectstart = "return false">
+<img class="imgbg j-flag" src=""/>
+<div class="msk"></div>
+<div class="listbdc">
+<ul class="f-cb j-flag"></ul>
+<div class="nocnt j-flag">
+<i class="ico ico-face"></i> 你还没有添加任何歌曲<br>去首页<a href="/discover/" class="f-tdu">发现音乐</a>，或在<a href="/my/" class="f-tdu">我的音乐</a>收听自己收藏的歌单。
+</div>
+</div>
+<div class="bline j-flag"><span class="scrol j-flag" hidefocus="true"></span></div>
+<div class="ask j-flag">
+<a class="ico ico-ask"></a>
+</div>
+<div class="upload j-flag">
+<a href="#" class="up j-flag">上传歌词</a>
+<a href="#" class="dw j-flag">歌曲报错</a>
+</div>
+<div class="listlyric j-flag"></div>
+<div class="bline bline-1 j-flag">
+<span class="scrol scrol-1 j-flag" hidefocus="true"></span>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-player-playtrack"><li class="" data-action="iplay">
+<div class="col col-1"><div class="playicn"></div></div>
+<div class="col col-2"></div>
+<div class="col col-3"><div class="icns"><i class="j-t ico ico-add" title="收藏" data-action="ilike">收藏</i><i class="ico ico-share" title="分享" data-action="ishare">分享</i><i class="ico icn-del" title="删除" data-action="idelete">删除</i></div></div>
+<div class="col col-4"></div>
+<div class="col col-5"></div>
+<div class="col col-6"><a href="#" class="ico ico-src" title="" data-action="link">来源</a></div>
+</li>
+</textarea>
+<textarea name="ntp" id="m-player-lyric"><div class="listlyric j-flag">
+</div>
+</textarea>
+<textarea name="jst" id="m-lyric-line"> {if !scrollable}
+<p>*该歌词不支持自动滚动*</p>
+{/if}
+{list lines as line}
+<p class="j-item" data-time = ${line.time}>${line.lyric}</p>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-create"><div class="lyct m-crgd f-cb f-tc">
+<p>歌单名：<input type="text" class="u-txt j-flag"></p>
+<div class="u-err f-vhide j-flag"><i class="u-icn u-icn-25"></i>错误提示</div>
+<p class="tip s-fc4">可通过“收藏”将音乐添加到新歌单中</p>
+<div class="btn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"><i>新 建</i></a>
+<a href="javascript:;" class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true"><i>取 消</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment"><div class="u-title u-title-1">
+<h3><span class="f-ff2">评论</span></h3><span class="sub s-fc3">共<span class="j-flag">0</span>条评论</span>
+</div>
+<div class="m-cmmt">
+<div class="iptarea">
+<div class="head"><img src="http://s4.music.126.net/style/web2/img/default_avatar.jpg?param=50y50"></div>
+<div class="j-flag"></div>
+</div>
+<div class="cmmts j-flag"></div>
+<div class="j-flag"></div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment2"><div class="dbox dbox-cmt">
+<span class="darr"><i class="bd">◆</i><i class="bg">◆</i></span>
+<div class="m-cmmt m-cmmt-s">
+<div class="iptarea j-flag">
+</div>
+<div class="cmmts">
+<div class="j-flag"></div>
+<div class="dmore dmore-cmt f-cb">
+<div class="dhas s-fc3">后面还有<span class="j-flag">0</span>条评论，<a data-type="viewmore" class="s-fc3 f-ff1" href="javascript:void(0)">查看更多&gt;</a></div>
+<a data-type="cc" class="dtoggle" href="javascript:void(0)">收起<i data-type="cc" class="u-icn u-icn-61"></i></a>
+</div>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment3"><div class="dcmt">
+<p><span class="f-fw1">评论</span> (<span class="j-flag"></span>)</p>
+<div class="m-cmmt m-cmmt-s">
+<div class="iptarea j-flag">
+</div>
+<div class="cmmts j-flag">
+</div>
+<div class="j-flag">
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item"> {list beg..end as y}
+{var x=xlist[y]}
+<div class="itm" data-id="${x.commentId}">
+<div class="head">
+<a href="/user/home?id=${x.user.userId}"><img src="${x.user.avatarUrl}?param=50y50"></a>
+</div>
+<div class="cntwrap">
+<div class="">
+<div class="cnt f-brk">
+<a href="/user/home?id=${x.user.userId}" class="s-fc7">${escape(x.user.nickname)}</a>
+{if x.user.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.user.expertTags && x.user.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;<a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7">${escape(x.beRepliedUser.nickname)}</a>
+{if x.beRepliedUser.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.beRepliedUser.expertTags && x.beRepliedUser.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')} （${timeformat(x.time)}）
+</div>
+</div>
+<div class="rp">
+{if GUser&&GUser.userId&&(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+<span class="dlt"><a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="delete">删除</a><span class="sep">|</span></span>
+{/if}
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply">回复</a>
+</div>
+</div>
+</div>
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item-2"> {list beg..end as y}
+{var x=xlist[y]}
+<div class="itm" data-id="${x.commentId}">
+<div class="head">
+<a href="/user/home?id=${x.user.userId}"><img src="${x.user.avatarUrl}?param=50y50"></a>
+</div>
+<div class="cntwrap">
+<div class="f-brk">
+<a href="/user/home?id=${x.user.userId}" class="s-fc7">${escape(x.user.nickname)}</a>
+{if x.user.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.user.expertTags && x.user.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;<a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7">${escape(x.beRepliedUser.nickname)}</a>
+{if x.beRepliedUser.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.beRepliedUser.expertTags && x.beRepliedUser.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')} （${timeformat(x.time)}）
+</div>
+<div class="rp">
+{if GUser&&GUser.userId&&(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+<span class="dlt">
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="delete">删除</a><span class="sep">|</span>
+</span>
+{/if}
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply">回复</a>
+</div>
+</div>
+</div>
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-input-1"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag">评论</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+<div class="corr u-arr"><em class="arrline">◆</em><span class="arrclr">◆</span></div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-2"> <div class="rept m-quk m-quk-1 f-pr">
+<div class="iner">
+<div class="corr u-arr u-arr-1"><em class="arrline">◆</em><span class="arrclr">◆</span></div>
+<div class="m-cmmtipt m-cmmtipt-1 f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr j-wrap">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag">回复</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-3"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)">回复</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-4"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap f-pr">
+<textarea class="u-txt area j-flag"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag" style="display:none;"></i>
+<a class="f-fr u-btn u-btn-1 j-flag" href="javascript:void(0)">发送</a><span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-5"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)">评论</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-subscribe"><div class="lyct lyct-1 m-favgd f-cb">
+<div class="tit j-flag"><i class="u-icn u-icn-33"></i>新歌单</div>
+<div class="j-flag">
+<div class="u-load s-fc4"><i class="icn"></i> 加载中...</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-subscribe-item"><ul>
+{list beg..end as y}
+{var x=xlist[y]}
+<li data-id="${x.id}" class="xtag {if x.trackCount+size>1000}dis{/if}">
+<div class="item f-cb">
+<div class="left">
+<a href="javascript:void(0)" class="avatar" target="_blank">
+<img alt="" src="${x.coverImgUrl}?param=40y40">
+</a>
+</div>
+<p class="name f-thide"><a class="s-fc0" href="javascript:void(0)" target="_blank">${escape(cutStr(x.name,40))}</a></p>
+<p class="s-fc3">${x.trackCount}首</p>
+</div>
+</li>
+{/list}
+</ul>
+</textarea>
+<textarea name="ntp" id="m-wgt-forward"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare">
+<div class="u-txtwrap f-pr">
+<label style="display: block;" class="j-flag">说点什么</label>
+<textarea class="u-txt area j-flag" text = ><&#47;textarea>
+</div>
+<div class="oper f-cb j-flag">
+<div class="face f-fl f-pr">
+<i class="u-icn u-icn-36 f-fl j-flag"></i>
+<i class="u-icn u-icn-41 j-flag"></i>
+</div>
+<span class="zs f-fr s-fc3 j-flag">140</span>
+</div>
+<div class="btnwrap">
+<a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#"><i>转发</i></a>
+<a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="#"><i>取消</i></a>
+</div>
+<div class="j-flag u-err"><i class="u-icn u-icn-25"></i><span></span></div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-import-ok"><div class="lyct f-cb f-tc">
+<p class="f-fs3 f-ff2"><i class="u-icn u-icn-76"></i>&nbsp;&nbsp;歌曲同步完成</p>
+<div class="lybtn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 j-flag" hidefocus="true"><i>查看我的音乐</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-atlist"> <div class="u-atlist">
+{if suggests.length == 0}
+<p>轻敲空格完成输入</p>
+{else}
+<p>选择最近@的人或直接输入</p>
+{/if}
+<div class="lst">
+{list suggests as suggest}
+<a href="javascript:;" data-index=${suggest_index} class="f-thide j-sgt">${suggest.nickname}</a>
+{/list}
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-receiverInput"> <div class="ct f-pr">
+<div class="u-txtwrap f-pr">
+<div class="u-txt txtwrap j-flag">
+{if receiver}
+<div class="blk s-fc3 j-receiver">${receiver.nickname}<a href="#" class="cls" title="删除">&times;</a></div>
+{/if}
+<span class="holder-parent j-flag" style="float:left">
+<input type="text" class="txt j-flag" />
+<label class="holder j-flag">选择或输入好友昵称</label>
+</span>
+</div>
+</div>
+<ul class="full j-flag" style="_height:182px;display:none">
+{list users as user}
+<li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}><a href="#"><img src=${user.avatarUrl}>${user.nickname}</a></li>
+{/list}
+</ul>
+<div class="j-flag" style="position:absolute;left: -1000px;width:auto;"></div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-receiverList"> {list users as user}
+<li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}><a href="#"><img src=${user.avatarUrl}>${user.nickname}</a></li>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-sharewin"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare">
+<ul class="m-tabs1 j-flag">
+<li><a href="#"><em>分享给大家</em></a></li>
+<li><a href="#"><em>私信分享</em></a></li>
+</ul>
+<div class="f-cb j-flag">
+<div class="share f-fr">
+<span class="f-fl s-fc3">同时分享到：</span>
+<ul class="u-logo u-logo-s f-cb">
+<li><a class="u-slg u-slg-sn j-t" data-action="sns" data-type="2" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Binding&forcelogin=true" title="新浪微博"></a></li>
+<li><a class="u-slg u-slg-tc j-t" data-action="sns" data-type="6" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=6&clientType=web2&callbackType=Binding&forcelogin=true" title="腾讯微博"></a></li>
+<li style="display:none;"><a class="u-slg u-slg-wy j-t" data-action="sns" data-type="7" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=7&clientType=web2&callbackType=Binding&forcelogin=true" title="网易微博"></a></li>
+<li><a class="u-slg u-slg-qz j-t" data-action="sns" data-type="5" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=5&clientType=web2&callbackType=Binding&forcelogin=true" title="QQ空间"></a></li>
+<li><a class="u-slg u-slg-rr j-t" data-action="sns" data-type="4" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=4&clientType=web2&callbackType=Binding&forcelogin=true" title="人人网"></a></li>
+<li><a class="u-slg u-slg-db j-t" data-action="sns" data-type="3" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=3&clientType=web2&callbackType=Binding&forcelogin=true" title="豆瓣网"></a></li>
+</ul>
+</div>
+</div>
+<div class="u-err j-flag" style="display:none">最多选择10位好友</div>
+<div class="j-flag"></div>
+<div class="u-txtwrap f-pr">
+<textarea class="u-txt area j-flag" placeholder="说点什么吧" data-action="txt"><&#47;textarea>
+</div>
+<div class="oper f-cb">
+<div class="face f-fl f-pr">
+<i class="u-icn u-icn-36 f-fl j-flag" data-action="emot"></i>
+<i class="u-icn u-icn-41 j-flag" data-action="at"></i>
+</div>
+<span class="f-fr s-fc4 j-flag">140/140</span>
+</div>
+<div class="btnwrap">
+<a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#" data-action="share"><i>分享</i></a>
+<a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="#" data-action="close"><i>取消</i></a>
+</div>
+<div class="u-err j-flag"><i class="u-icn u-icn-25"></i><span></span></div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-search-suggest">{macro listArtists(artists)}
+{list artists as art}
+${art.name|mark}&nbsp;
+{/list}
+{/macro}
+<div class="m-schlist">
+<p class="note s-fc3"><a class="s-fc3 xtag" href="/search/#/?s=${keyword}&type=1002">搜“${keyword|cutStr}” 相关用户</a> &gt;</p>
+<div class="rap">
+{list result.order as index}
+{var lst=result[index]}
+{if !!lst&&!!lst.length}
+<div class="itm f-cb">
+{if index=="songs"}
+<h3 class="hd"><i class="icn u-icn u-icn-26"></i><em class="f-fl">单曲</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as song}
+<li><a class="s-fc0 f-thide xtag" href="/song?id=${song.id}">${song.name|mark}-${listArtists(song.artists)}</a></li>
+{/list}
+</ul>
+{elseif index=="artists"}
+<h3 class="hd"><i class="icn u-icn u-icn-27"></i><em class="f-fl">歌手</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as artist}
+<li><a class="s-fc0 f-thide xtag" href="/artist?id=${artist.id}">${artist.name|mark}</a></li>
+{/list}
+</ul>
+{elseif index=="albums"}
+<h3 class="hd"><i class="icn u-icn u-icn-28"></i><em class="f-fl">专辑</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as album}
+<li><a class="s-fc0 f-thide xtag" href="/album?id=${album.id}">${album.name|mark}-${album.artist.name|mark}</a></li>
+{/list}
+</ul>
+{elseif index=="playlists"}
+<h3 class="hd"><i class="icn u-icn u-icn-29"></i><em class="f-fl">歌单</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as playlist}
+<li><a class="s-fc0 f-thide xtag" href="/playlist?id=${playlist.id}">${playlist.name|mark}</a></li>
+{/list}
+</ul>
+{/if}
+</div>
+{/if}
+{/list}
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-unbind-alert"><div class="lyct f-cb f-tc">
+<p class="f-fs1"><i class="u-icn u-icn-89 j-flag"></i><span class="f-fw1">&nbsp;&nbsp;&nbsp;<span class="j-flag">你的账号已解绑成功</span></span></p>
+<p class="mesg j-flag">&nbsp;</p>
+<div class="lybtn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"><i>我知道了</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-layer-tip"><div class="lyct f-cb f-tc">
+<p class="f-fs1 j-flag">message</p>
+<div class="lybtn">
+<a hidefocus="true" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" href="javascript:;"><i>我知道了</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-portrait"><div class="m-emts z-show">
+<div class="j-flag emtwrap f-cb"></div>
+<div class="page">
+<a href="#" hidefocus="true" class="j-flag u-btn u-btn-prv"></a><em class="j-flag s-fc3">1/2</em><a href="#" hidefocus="true" class="j-flag u-btn u-btn-nxt"></a>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="jst-portrait">{list plist as item}
+<span title="${item.key}" class="emtitm"><img data-text="${item.key}" data-url="${item.key|purl}" class="f-alpha" src="${item.key|purl}"></span>
+{/list}
+</textarea>
+</div>
+<script src="http://s3.music.126.net/s/2/core.js?3b6a5133b4fa5626aed2b4b5185c381b" type="text/javascript"></script><script src="http://s3.music.126.net/s/2/pt_index.js?86e402193fda75fd837e308cc1b64dc4" type="text/javascript"></script>
+</body>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-38766552-1'],['_setLocalGifPath', '/UA-38766552-1/__utm.gif'],['_setLocalRemoteServerMode']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = 'http://wr.da.netease.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();//fix ipad下的一个bug
+if (navigator.userAgent.indexOf('iPad') != -1) {
+iframeHeight = Math.max(
+Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
+Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
+Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+);
+top.document.body.style.height = iframeHeight + 20 + 'px';
+}</script>
+</html>

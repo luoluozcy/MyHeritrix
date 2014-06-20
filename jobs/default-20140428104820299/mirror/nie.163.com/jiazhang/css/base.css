@@ -1,0 +1,116 @@
+@charset "gb2312";
+/*
+	描述：
+	版本: 09v2 
+	作者：
+	创建日期：09/
+	修改日期：09/08/20
+	修改: Jerry Li
+*/
+
+/*=== reset Start ===*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;padding:0;vertical-align:baseline;}
+body{font-family:"宋体",Arial;line-height:170%;font-size:12px;color:#000;}
+a,a:visited{color:#00f;text-decoration:none;}
+a:hover{color:#f60;text-decoration:underline;}
+a img,img{border:0;}
+ul,li{list-style:none;padding:0;margin:0;vertical-align:middle;}
+td{vertical-align:top;}
+/*=== reset End ===*/
+
+/*=====clear Start=====*/
+html body .clear,
+html body div.clear,
+html body span.clear,
+html body li.clear,
+html body dd.clear{
+float:none;
+display:block;
+clear:both;
+width:0;
+height:0;
+margin:0;
+padding:0;
+border:none;
+font-size:0;
+line-height:0;
+font-size:0;
+list-style:none;
+overflow:hidden;
+visibility:hidden;
+background:none;}
+/*=====clear End=====*/
+/*=====png in ie6 Start=====*/
+* html .png{
+position:relative;
+behavior: expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
+this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + encodeURI(this.src) + "', sizingMethod='image')",
+this.src = encodeURI("http://res.nie.163.com/comm/blank.gif")):(this.origBg =this.origBg?  this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + encodeURI(this.origBg) + "', sizingMethod='crop')",
+this.runtimeStyle.backgroundImage = "none")),this.pngSet=true)
+);
+}
+/*=====png in ie6 End=====*/
+
+/*=== layout Start ===*/
+.wraper{max-width:1260px;min-width:960px;_width:expression((document.documentElement.clientWidth>1260||document.body.clientWidth>1260)?"1260px":(document.documentElement.clientWidth<960||document.body.clientWidth<960)?"960px":"100%");margin:0 auto;}
+.foot{text-align:center;color:#000;}
+.foot a,.foot a:visited{color:#000;}
+.meta-home{position:absolute;top:10px;left:12px;width:152px;height:80px;float:left;overflow:hidden;text-indent:-9999px;}
+.top-meta{position:absolute;top:0;right:0px;width:262px;height:38px;}
+.top-meta a{float:left;width:74px;height:30px;margin:4px 6px 0 7px;overflow:hidden;text-indent:-9000px;background:url(http://res.nie.163.com/comm/blank.gif) no-repeat;}
+/*=== layout End===*/
+
+/*======Element Start======*/
+.wraper-outer{background:#f1ede4 url(../images/bd_repeaty.jpg) repeat-x 0 0;min-width:960px;_width:expression((document.documentElement.clientWidth<960||document.body.clientWidth<960)?"960px":"100%");}
+.wraper-1{background:url(../images/head.jpg) no-repeat 50% 0;}
+.head{width:960px;margin:0 auto;position:relative;height:153px;}
+.main{width:960px;margin:0 auto;position:relative;padding-bottom:20px;}
+
+	.content{float:left;width:662px;background:url(../images/ct_mid.gif) repeat-y 0 0;text-align:center;}
+	.ct-wraper-1{background:url(../images/ct_top.gif) no-repeat 50% 0;clear:both;}
+	.ct-wraper-2{background:url(../images/ct_btm.gif) no-repeat 50% 100%;clear:both;padding:10px 0;}
+	
+	.ct-sub{width:645px;margin:0 auto;background:url(../images/ct_sub_mid.gif) repeat-y 50% 0;text-align:left;}
+	.ct-sub-wraper-1{background:url(../images/ct_sub_top.gif) no-repeat 50% 0;clear:both;}
+	.ct-sub-wraper-2{background:url(../images/ct_sub_btm.gif) no-repeat 50% 100%;clear:both;padding:8px 12px;color:#555;text-indent:2em;}
+	
+	.flow{margin:10px auto;}
+	
+	.sidebar{float:right;width:298px;margin-top:10px;background:url(../images/sidebar_repeaty.gif) repeat-y 50% 0;position:relative;}
+	.sidebar-wraper-1{clear:both;background:url(../images/sidebar_top.gif) no-repeat 0 0;}
+	.sidebar-wraper-2{background:url(../images/sidebar_btm.gif) no-repeat 0 100%;padding-bottom:5px;}
+	
+	.news{height:250px;}
+	.news h3{height:40px;visibility:hidden;}
+	.news ul{padding:10px 12px 0 16px;}
+	.news li{line-height:1.8em;height:1.8em;overflow:hidden;background:url(../images/items.gif) no-repeat -30px -150px;padding-left:8px;}
+	.news-time{color:#03A7B0;}
+	.news a,.news a:visited{color:#333;}
+	.news a:hover{color:#f60;}
+	
+	.action-buttons{padding:0 0 8px;text-align:center;}
+	.action-buttons img{vertical-align:middle;}
+	
+	.gamelist{background:url(../images/gamelist_mid.gif) repeat-y 0 0;width:291px;margin:0 auto;}
+	.gamelist-wraper-1{background:url(../images/gamelist_title.gif) no-repeat 0 0;}
+	.gamelist-wraper-2{background:url(../images/gamelist_btm.gif) no-repeat 0 100%;padding:24px 3px 6px 4px;}
+	
+	.gtypes{display:block;background:#fff;}
+	.gtypes h2{height:22px;line-height:23px;padding:0 10px;overflow:hidden;border:1px solid #ccc;background:url(../images/items.gif) repeat-x 0 -96px;color:#03A7B0;font-size:14px;cursor:pointer;}
+	.gtypes h2 strong{float:left;}
+	.gtypes h2 span{float:right;width:12px;height:12px;margin:6px 0 0;overflow:hidden;background:url(../images/items.gif) no-repeat -22px 0;}
+	.gtypes .on h2 span{background-position:0 0;cursor:pointer;}
+	.gtype .gitems{display:none;}
+	.gtypes .on .gitems{display:block;}
+
+
+		.gitem{height:22px;overflow:hidden;line-height:22px;padding:0 0 0 12px;/*background:url(http://res.nie.netease.com/nie/gw/09v1/images/ico_game.png) no-repeat 12px 0;*/}
+		.gitem a,.gitem a:visited,.gitem a:hover{color:#000;text-decoration:none;}
+		.gitem a:hover{text-decoration:underline;}
+		.gico{float:left;margin:2px 2px 0 0;}
+		.gname{float:left;}
+		.gstatus{float:right;color:#03A7B0;font-weight:700;padding-right:22px;background:url(../images/items.gif) no-repeat 40px -46px;}
+
+
+/*======Element End======*/

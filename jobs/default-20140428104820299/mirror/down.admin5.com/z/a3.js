@@ -1,0 +1,5 @@
+document.writeln("<!--2013.12.12-2014.1.12--><a href=\"http://www.wnzj.com\" target=\"_blank\"><img src=\"http:\/\/down.admin5.com\/z\/img\/wna5.gif\" width=190 height=50 \/><\/a>");
+document.writeln("<!--2013.8.22-2013.11.23 Ìý·çÂô--><a href=\"http://www.netnic.com.cn/Promotions.html\" target=\"_blank\"><img src=\"http:\/\/down.admin5.com\/z\/img\/qishang.jpg\" width=190 height=50\/><\/a>");
+document.writeln("<!--2013.9.13-2013.10.13 ³æÂô--><a href=\"http://www.7e.hk\" target=\"_blank\"><img src=\"http:\/\/down.admin5.com\/z\/img\/10000270887009.gif\" width=190 height=50\/><\/a>");
+document.writeln("<!--2013.10.18-2013.11.18--><a href=\"http://www.wsisp.net/sale/201403/\" target=\"_blank\"><img src=\"http:\/\/down.admin5.com\/z\/img\/ad_5.gif\" width=190 height=50\/><\/a>");
+document.writeln("<!--2013.1.1-2014.1.1 Ìý·çÂô--><a href=\"http://www.aoolong.com\" target=\"_blank\"><img src=\"http:\/\/down.admin5.com\/z\/img\/aolong-1.gif\" width=190 height=50\/><\/a>")

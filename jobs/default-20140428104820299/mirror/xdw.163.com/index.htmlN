@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<head>
+  
+
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <title>《大话外传新篇》官方网站--网易第二代无商城网游</title>
+  <meta name="keywords" content="战歌,新大外公测,大话西游之战歌,大话西游之战歌官网,战歌官网,新大外官网,大话外传新篇,新大外好玩,无商城,免费网游" />
+  <meta name="description" content="《大话外传新篇》是网易首款免费无商城网游，继承了大话系列正统2D回合血脉，于2013年8月开放测试。新大外结合四大全新特色，推出“零负担裸游”理念，提倡脱身游戏负担，实现无压游戏愿景！" />
+  <meta name="robots" content="all" />
+  <meta name="author" content="网易，NetEase Inc." />
+  <meta name="copyright" content="网易，NetEase Inc." />
+  <meta name="pmid" content="273048" />
+  <meta name="editor" content="Willson" />
+  <meta name="designer" content="tangzhenkai" />
+  <meta name="front-end technicist" content="lam,eyfan" />
+  
+  <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/xdw/gw/13v1/css/bass.css" media="all" />
+  <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/xdw/gw/13v1/css/index.css" media="all" />
+  <!--[if lte IE 8]>
+  <script charset="gb2312" src="http://res.nie.netease.com/xdw/gw/13v1/js/html5.js"></script>
+  <![endif]-->
+  <!-- jquery mix NIE (最新版本）-->
+  <script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>    
+  <script charset="gb2312" src="http://res.nie.netease.com/xdw/gw/13v1/js/index.js"></script> 
+  <script type="text/javascript">
+  nie.config.copyRight.setNormal();
+  </script>
+</head>
+<body>
+<div id="NIE-topBar"></div>
+
+<div id="wrap">
+<div id="wrap-bg1">
+<div id="wrap-bg2">
+<article id="main">
+
+<header class="fbanner">
+<h1 class="hidden">新大话外传 网易免费无商城回合</h1>
+
+<nav>
+<ul class="flink">
+<li class="flink_1"><a href="http://xdw.163.com/index.html">首页</a></li>
+<li class="flink_2"><a href="http://xdw.163.com/news/xw.html">新闻中心</a></li>
+<li class="flink_3"><a href="http://xdw.163.com/feature/">游戏特色</a></li>
+<li class="flink_4"><a href="http://xdw.163.com/newbie/">新手指南</a></li>
+<li class="flink_5"><a href="http://xdw.baike.163.com/" target="_blank">大话百科</a></li>
+<li class="flink_6"><a href="http://xdw.163.com/download/">下载专区</a></li>
+<li class="flink_7"><a href="http://xdw.gm.163.com/" target="_blank">客户服务</a></li>
+<li class="flink_8"><a href="http://xdw.netease.com/" target="_blank">论坛</a></li>
+</ul>
+</nav>
+
+<a href="http://xdw.163.com/" class="fBtn fBtn_logo">新大话外传 网易免费无商城回合</a>
+
+<!--<a target="_blank" href="http://xdw.163.com/banben/" class="fBtn fBtn_detail">点击查看详情</a>-->
+
+</header>
+
+<section class="fHeader">
+<aside class="fBox1">
+<a href="http://xdw.163.com/download/" target="_blank" class="fBtn fBtn_download">下载游戏</a>
+<a href="http://xdw.163.com/reg" target="_blank" class="fBtn fBtn_Sign">帐号注册</a>
+<a href="http://xdw.163.com/libao/" target="_blank" class="fBtn fBtn_Gift">礼包</a>
+<a href="http://pay.163.com/" target="_blank" class="fBtn fBtn_Charge">充值</a>
+</aside>
+
+<div class="fBox2">
+<div class="fSwitch2">
+
+      
+
+<a href="http://xdw.163.com/news/2014/4/27/8444_435871.html" target="_blank"><img src="http://img.nie.163.com/images/2014/4/27/2014-04-27_441915.jpg" width="705" height="245"/></a>						
+
+
+<a href="http://xdw.163.com/51/" target="_blank"><img src="http://img.nie.163.com/images/2014/4/23/2014-04-23_440443.jpg" width="705" height="245"/></a>						
+
+
+<a href="http://xdw.163.com/2014/zhengba/" target="_blank"><img src="http://img.nie.163.com/images/2014/4/17/2014-04-17_438419.jpg" width="705" height="245"/></a>						
+
+
+<a href="http://xdw.163.com/2014/yangcheng/" target="_blank"><img src="http://img.nie.163.com/images/2014/4/17/2014-04-17_438403.jpg" width="705" height="245"/></a>						
+
+      
+
+</div>
+<div class="fSwitchNav2">
+</div>
+</div>
+</section>
+
+<section class="fLeft">
+<div class="fBox fBox1">
+<form class="fsearch" action="http://www.yodao.com/search" method="get" target="_blank">
+<input type="hidden" value="gbk" name="ue">
+<input type="hidden" value="xdw.163.com" name="keyfrom">
+<input type="hidden" value="xdw.163.com" name="site">
+<input id="q" name="q" type="text" class="search_key" value="请输入关键字" onclick="if(this.value == '请输入关键字')this.value = ''">
+<input class="submit" type="submit" value="">
+</form>
+</div>
+
+<div class="fBox fBox2">
+<header>新手上路</header>
+<section class="pBox1">
+<figcaption> 初入大外</figcaption>
+<figure>
+<a href="http://xdw.163.com/guide/2012/2/3/8450_262815.html" target="_blank">七情</a>
+<a href="http://xdw.163.com/guide/2009/8/13/4085_204064.html" target="_blank">新大外精灵</a>
+<a href="http://xdw.163.com/guide/2011/7/20/8450_242483.html" target="_blank">新手群聊</a>
+<a href="http://xdw.163.com/guide/2008/11/14/4085_194798.html" target="_blank">师徒系统</a>
+<a href="http://xdw.163.com/guide/2011/7/20/8450_242487.html" target="_blank">跨服组队</a>
+</figure>
+</section>
+
+<section class="pBox2">
+<figcaption> 声名鹊起</figcaption>
+<figure>
+<a href="http://xdw.163.com/guide/2009/4/7/4085_199146.html" target="_blank">师门任务</a>
+<a href="http://xdw.163.com/guide/2009/3/27/4085_198824.html" target="_blank">挖宝玩法</a>
+<a href="http://xdw.163.com/guide/zhsfs.html" target="_blank">宝宝飞升</a>
+<a href="http://xdw.163.com/guide/2008/10/21/4085_193961.html" target="_blank">跨服镇妖</a>
+<a href="http://xdw.163.com/guide/2009/3/11/4085_198113.html" target="_blank">人物修炼</a>
+<a href="http://xdw.163.com/guide/2009/4/7/4085_199155.html" target="_blank">每日任务</a>
+</figure>
+</section>
+
+<section class="pBox3">
+<figcaption> 笑傲三界</figcaption>
+<figure>
+<a href="http://xdw.163.com/guide/2009/4/14/4085_199375.html" target="_blank">跨服副本</a>
+<a href="http://xdw.163.com/guide/2011/4/26/8450_235404.html" target="_blank">跨服战场</a>
+<a href="http://xdw.163.com/guide/2009/9/2/4085_204979.html" target="_blank">宝石系统</a>
+<a href="http://xdw.163.com/guide/2010/8/19/4085_221493.html" target="_blank">百鬼夜行</a>
+<a href="http://xdw.163.com/guide/2012/3/19/8450_266883.html" target="_blank">六欲</a>
+<a href="http://xdw.163.com/guide/2011/2/19/8450_231574.html" target="_blank">零星装</a>
+
+</figure>
+</section>
+</div>
+
+<div class="fBox fBox3">
+<header>网站工具</header>
+<section>
+<table>
+<tr>
+<td class="tLeft"><figcaption>查询专题</figcaption></td>
+<td class="tRight">
+<a href="http://xdw.163.com/bang/bang_season_22/level_1_1.html" target="_blank">跨服帮战排行榜</a>
+<a href="http://xdw.163.com/phb/jjc3/grade_1/0/1.html" target="_blank">竞技场</a>
+<a href="http://xdw.163.com/phb/zhenyao/0/1.html" target="_blank">镇妖排行榜</a>
+<a href="http://xdw.163.com/phb/linglongta/0/1.html" target="_blank">玲珑塔排行榜</a>
+<a href="http://xdw.163.com/rank/?url=/war_god_500/all/all_1.html" target="_blank">全服战神榜</a>
+<a href="http://xdw.163.com/server/" target="_blank" class="b">服务器查询</a>
+</td>
+</tr>
+<tr style="height:100px">
+<td class="tLeft"><figcaption>工具专题</figcaption></td>
+<td class="tRight">
+<a href="http://xdw.163.com/guide/figure.html" target="_blank">召唤兽计算器</a>
+</td>
+</tr>
+<tr style="height:100px">
+<td class="tLeft"><figcaption>常用入口</figcaption></td>
+<td class="tRight">
+<a href="http://xdw.cbg.163.com/" target="_blank" class="b">藏宝阁</a>
+<a href="http://gs.163.com/" target="_blank" class="b">推广员序列号领取</a>
+</td>
+</tr>
+</table>
+</section>
+</div>
+
+<div class="fBox fBox4">
+<header>“微”大外</header>
+
+<section class="pBox1">
+<figcaption>新浪微博关注</figcaption>
+<figure>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/weibo_logo.jpg"/>
+<p>大话外传新篇</p>
+<a class="aBtn aBtn_Focus" href="http://weibo.com/163pk" target="_blank">关注</a>
+</figure>
+</section>
+
+<section class="pBox2">
+<figcaption>微信二维码关注</figcaption>
+<figure>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/weixin_logo.jpg"/>
+<p>大话外传新篇</p>
+</figure>
+</section>
+
+</div>
+
+<div class="fBox fBox5">
+<header>客户服务</header>
+<section class="pBox1">
+<div class="fLink">
+<a href="http://xdw.gm.163.com/" target="_blank">客服专区</a>
+<a target="_blank" href="http://gm.163.com/safe_xyw/index.html">防盗指南</a>
+<a target="_blank" href="http://xdw.gm.163.com/load_kind.html?2917">帐号修复</a> 
+<a target="_blank" href="http://xdw.gm.163.com/res/guide/kind/2921.html">强制离线</a>
+<a target="_blank" href="http://xdw.gm.163.com/res/guide/kind/3453.html">密码找回</a>
+<a target="_blank" href="http://xdw.gm.163.com/load_kind.html?2923">更改密码</a>
+<a target="_blank" href="http://xdw.gm.163.com/load_kind.html?2922">被盗处理</a>
+<a target="_blank" href="http://xdw.gm.163.com/load_kind.html?861">防沉迷</a>
+<a target="_blank" href="http://xdw.gm.163.com/res/guide/kind/4649.html">帐号保护</a>
+<a target="_blank" href="http://reg.163.com/game_user_info.shtml">帐号直通车</a>
+<a target="_blank" href="http://mvip.163.com/tqzq/pk.html">手机验证特权</a>
+<a target="_blank" href="http://pay.163.com/index.jsp">快速充值</a>
+<a target="_blank" href="http://xdw.163.com/news/2008/11/18/4084_194885.html">帐号激活</a>
+<a target="_blank" href="http://xdw.163.com/server/">服务器查询</a> 
+<a target="_blank" href="http://ecard.163.com/script/index">折扣购卡(推荐)</a>
+<a target="_blank" href="http://sj.19pay.cn/pm/163.do?method=intro">手机卡充点</a>
+</div>
+<p>客服电话：020-83918183</p>
+</section>
+</div>
+
+</section>
+
+<section class="fCenter">
+<div class="fBox fBox1">
+<header>
+      
+
+<a href="http://pk.163.com/news/2014/4/28/8444_435973.html" target="_blank">首届跨服家族战战况排名公布</a>						
+
+      
+</header>
+<section>
+<ul class="fBox1Nav">
+<li class="flink_1"><a href="javascript:void(0)">新闻中心</a></li>
+<li class="flink_2"><a href="javascript:void(0)">维护公告</a></li>
+<li class="flink_3"><a href="javascript:void(0)">精彩活动</a></li>
+</ul>
+
+<a href="http://xdw.163.com/news/xw.html" class="fmore">更多</a>
+
+<div class="fBox1Tabs">
+<div class="fBox1Tab fBox1Tab1">
+<ul>
+      
+
+<li><a href="http://pk.163.com/news/2014/4/28/8444_435973.html" target="_blank"><span class="fChannel"></span>首届跨服家族战战况排名公布</a><time>04-28</time></li>						
+
+
+<li><a href="http://pk.163.com/news/2014/4/27/8444_435871.html" target="_blank"><span class="fChannel"></span>跨服家族战直播结束，云和山的彼端夺冠！</a><time>04-27</time></li>						
+
+
+<li><a href="http://pk.163.com/news/2014/4/26/8444_435805.html" target="_blank"><span class="fChannel"></span>4月27日跨服家族战出线名单公布</a><time>04-26</time></li>						
+
+
+<li><a href="http://pk.163.com/news/2014/4/25/8444_435481.html" target="_blank"><span class="fChannel"></span>决战前夕，周日跨服家族战看点解析！</a><time>04-25</time></li>						
+
+
+<li><a href="http://pk.163.com/news/2014/4/24/8444_435293.html" target="_blank"><span class="fChannel"></span>跨服家族战全面备战，冠军宝座虚位以待</a><time>04-24</time></li>						
+
+      
+
+</ul>
+</div>
+<div class="fBox1Tab fBox1Tab2">
+<ul>
+      
+
+<li><a href="http://pk.163.com/2014/4/23/8445_435203.html" target="_blank"><span class="fChannel"></span>2014年4月24日停机维护公告</a><time>04-23</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/4/21/8445_434707.html" target="_blank"><span class="fChannel"></span>2014年04月24日维护预览</a><time>04-21</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/4/16/8445_433789.html" target="_blank"><span class="fChannel"></span>2014年4月17日停机维护公告</a><time>04-16</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/4/14/8445_433349.html" target="_blank"><span class="fChannel"></span>2014年4月17日维护预览</a><time>04-14</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/4/9/8445_432321.html" target="_blank"><span class="fChannel"></span>2014年4月10日停机维护公告</a><time>04-09</time></li>						
+
+      
+</ul>
+</div>
+<div class="fBox1Tab fBox1Tab3">
+<ul>
+      
+
+<li><a href="http://pk.163.com/2014/4/14/8447_433081.html" target="_blank"><span class="fChannel"></span>钻石联赛冠军魔王降临采访稿</a><time>04-14</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/4/14/8447_433077.html" target="_blank"><span class="fChannel"></span>联赛采访：【一百段冠军】直到世界尽头</a><time>04-14</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/4/14/8447_433075.html" target="_blank"><span class="fChannel"></span>联赛采访：【六九段冠军】茄呢啡</a><time>04-14</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/4/14/8447_433071.html" target="_blank"><span class="fChannel"></span>联赛采访：【八九段冠军】四个爷们一个妞</a><time>04-14</time></li>						
+
+
+<li><a href="http://pk.163.com/2014/3/23/8447_429237.html" target="_blank"><span class="fChannel"></span>霸者横栏 魔王降临再夺钻石冠军</a><time>03-23</time></li>						
+
+      
+</ul>
+</div>
+</div>
+</section>
+</div>
+
+<div class="fBox fBox2" style="width:444px">
+<header class="hidden">新闻图片</header>
+      
+
+<a href="http://pk.163.com/news/2014/4/24/8444_435293.html" target="_blank"><img src="http://img.nie.163.com/images/2014/4/24/2014-04-24_440673.jpg" width="200" height="75" title="跨服家族赛冠军宝座虚位以待！"/></a>						
+
+
+<a href="http://xdw.netease.com/viewthread.php?tid=599802" target="_blank"><img src="http://img.nie.163.com/images/2014/4/22/2014-04-22_439489.jpg" width="200" height="75" title="家族真人秀活动开启"/></a>						
+
+      
+
+</div>
+
+<div class="fBox fBox3">
+<header class="hidden">卖点</header>
+<ul class="fBox3Nav">
+<li class="flink_1"><a href="">裸消费</a></li>
+<li class="flink_2"><a href="">裸负担</a></li>
+<li class="flink_3"><a href="">裸战斗</a></li>
+<li class="flink_4"><a href="">裸真相</a></li>
+</ul>
+
+<div class="fBox3Tabs">
+<div class="fBox3Tab fBox3Tab1"><img src="http://res.nie.netease.com/xdw/gw/13v1/pic/lxf.jpg"/></div>
+<div class="fBox3Tab fBox3Tab2"><img src="http://res.nie.netease.com/xdw/gw/13v1/pic/lfd.jpg"/></div>
+<div class="fBox3Tab fBox3Tab3"><img src="http://res.nie.netease.com/xdw/gw/13v1/pic/lzd.jpg"/></div>
+<div class="fBox3Tab fBox3Tab4"><img src="http://res.nie.netease.com/xdw/gw/13v1/pic/lzx.jpg"/></div>
+</div>
+</div>
+
+<div class="fBox fBox4">
+<header><span class="fltL">大外百科</span><a href="http://xdw.baike.163.com/" class="fmore" target="_blank">更多</a></header>
+<section class="pBox pBox1">
+<figcaption>热门词条
+</figcaption>
+<figure>
+<a href="http://xdw.baike.163.com/ziliao/62.html" target="_blank">大内四大天王</a>
+<a href="http://xdw.baike.163.com/ziliao/56.html" target="_blank">道具拍卖</a>
+<a href="http://xdw.baike.163.com/ziliao/119.html" target="_blank">刑天墓道</a>
+<a href="http://xdw.baike.163.com/ziliao/23.html" target="_blank">校场演武</a>
+<a href="http://xdw.baike.163.com/ziliao/46.html" target="_blank">人物属性</a>
+<a href="http://xdw.baike.163.com/ziliao/32.html" target="_blank">帮派大战</a>
+</figure>
+</section>
+
+<section class="pBox pBox2">
+<figcaption>热门攻略</figcaption>
+<figure>
+<a target="_blank" href="http://xdw.baike.163.com/gonglue/132.html">敏白骨VS敏地府</a>
+<a target="_blank" href="http://xdw.baike.163.com/gonglue/133.html">浅谈地府爆击</a>
+<a target="_blank" href="http://xdw.baike.163.com/gonglue/134.html">浅谈6v6的钻石联赛</a>
+<a target="_blank" href="http://xdw.baike.163.com/gonglue/131.html">夺魄战术</a>
+</figure>
+</section>
+
+<section class="pBox pBox3">
+<figcaption>最新更新</figcaption>
+<figure>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/90.html">幽冥之宝</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/65.html">家具表</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/122.html">召唤兽</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/115.html">物品分解</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/118.html">装备概述</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/117.html">装备打造</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/129.html">兽王之碑</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/96.html">挖宝玩法</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/68.html">精英副本</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/93.html">师徒系统</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/77.html">个人住宅</a>
+<a target="_blank" href="http://xdw.baike.163.com/ziliao/71.html">功德值</a>
+</figure>
+</section>
+</div>
+
+<div class="fBox fBox5">
+<header><span class="fltL">游戏截图</span><a href="http://xdw.163.com/feature/?page=4" class="fmore" target="_blank">更多</a></header>
+<section>
+<a href="javascript:void(0)" class="fLbtn"></a>
+<div class="fjt">
+<ul>
+      
+
+<li><img src="http://img.nie.163.com/images/2014/2/12/2014-02-12_418333.jpg" width="435" height="240" title="精彩截图"/></li>
+						
+
+
+<li><img src="http://img.nie.163.com/images/2014/2/12/2014-02-12_418327.jpg" width="435" height="240" title="精彩截图"/></li>
+						
+
+
+<li><img src="http://img.nie.163.com/images/2013/8/8/2013-08-08_322165.jpg" width="435" height="240" title="精彩截图"/></li>
+						
+
+      
+      
+      
+      
+      
+
+</ul>
+</div>
+<a href="javascript:void(0)" class="fRbtn"></a>
+</section>
+</div>
+
+<div class="fBox fBox6">
+<header><span class="fltL">视频&壁纸</span><a href="http://xdw.163.com/show/video/" class="fmore">更多</a></header>
+<section date-f4v="http://v.nie.netease.com/xdw/2013/0911_2/dhwtmsy.f4v" data-mp4="http://v.nie.netease.com/xdw/2013/0911_2/dhwtmsy.mp4" data-pic="http://res.nie.netease.com/xdw/qt/13/images/2013-08-23_334983.jpg"></section>
+</div>
+</section>
+
+<section class="fRight">
+<div class="fBox fBox1">
+<header class="hidden">客服热线</header>
+<p>020-83918183</p>
+<a href="http://im.gm.163.com/contact/?s=xdw" target="_blank">点击登记您的帐号</a>
+</div>
+
+<div class="fBox fBox2">
+<header>七大门派</header>
+<section>
+<div class="fBox2Nav">
+<ul>
+<li class="flink_1"><a href="javascript:void(0)">大唐官府</a></li>
+<li class="flink_2"><a href="javascript:void(0)">方寸山</a></li>
+<li class="flink_3"><a href="javascript:void(0)">幽冥地府</a></li>
+<li class="flink_4"><a href="javascript:void(0)">白骨洞</a></li>
+<li class="flink_5"><a href="javascript:void(0)">瑶池</a></li>
+<li class="flink_6"><a href="javascript:void(0)">普陀山</a></li>
+<li class="flink_7"><a href="javascript:void(0)">魔龙潭</a></li>
+</ul>
+</div>
+<div class="fBox2Tabs">
+<div class="fBox2Tab fBox2Tab1">
+<p class="fjs">三界中顽强高贵的战士，肉盾与团队辅助，也可一击绝杀对手。<a href="http://xdw.163.com/feature/" target="_blank">详细</a></p>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/slogo.jpg" class="fslogo"/>
+<p class="fsx">风袭</p>
+<p class="ftd">大唐官府怒气技</p>
+<div class="fswf"><img src="http://res.nie.netease.com/pk/qt/13/0615_fab/images/dt.jpg" width="200" height="150"/></div>
+</div>
+<div class="fBox2Tab fBox2Tab2">
+<p class="fjs">翻手为云覆手雨，他们是最擅长封印技能的侠士。<a href="http://xdw.163.com/feature/" target="_blank">详细</a></p>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/fangcunshan.jpg" class="fslogo"/>
+<p class="fsx">归元符</p>
+<p class="ftd">方寸山怒气技</p>
+<div class="fswf"><img src="http://res.nie.netease.com/pk/qt/13/0615_fab/images/fc.jpg" width="200" height="150"/></div>
+</div>
+<div class="fBox2Tab fBox2Tab3">
+<p class="fjs">侵虐如火，动如雷震，于幽暗之中爆发致命一击。<a href="http://xdw.163.com/feature/" target="_blank">详细</a></p>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/youmingdifu.jpg" class="fslogo"/>
+<p class="fsx">夺魄一击</p>
+<p class="ftd">幽冥地府怒气技</p>
+<div class="fswf"><img src="http://res.nie.netease.com/pk/qt/13/0615_fab/images/df.jpg" width="200" height="150"/></div>
+</div>
+<div class="fBox2Tab fBox2Tab4">
+<p class="fjs">或练蛊制毒以残害敌人，或驱蛇遣鬼以禁制敌方。<a href="http://xdw.163.com/feature/" target="_blank">详细</a></p>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/liangxinmian.jpg" class="fslogo"/>
+<p class="fsx">两心绵</p>
+<p class="ftd">白骨洞怒气技</p>
+<div class="fswf"><img src="http://res.nie.netease.com/pk/qt/13/0615_fab/images/bgd.jpg" width="200" height="150"/></div>
+</div>
+<div class="fBox2Tab fBox2Tab5">
+<p class="fjs">雷电劈天地，残云扫妖魔。拥有强悍的多目标法术伤害技能。<a href="http://xdw.163.com/feature/" target="_blank">详细</a></p>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/tianleizhan.jpg" class="fslogo"/>
+<p class="fsx">天雷斩</p>
+<p class="ftd">瑶池怒气技</p>
+<div class="fswf"><img src="http://res.nie.netease.com/pk/qt/13/0615_fab/images/yc.jpg" width="200" height="150"/></div>
+</div>
+<div class="fBox2Tab fBox2Tab6">
+<p class="fjs">唯一专攻回复辅助之道的侠士。第一治疗门派。<a href="http://xdw.163.com/feature/" target="_blank">详细</a></p>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/putuoshan.jpg" class="fslogo"/>
+<p class="fsx">慈航</p>
+<p class="ftd">普陀山怒气技</p>
+<div class="fswf"><img src="http://res.nie.netease.com/pk/qt/13/0615_fab/images/pt.jpg" width="200" height="150"/></div>
+</div>
+<div class="fBox2Tab fBox2Tab7">
+<p class="fjs">能够操控众人生死。恐怖的控尸门派，团队中的另类突击手。 
+<a href="http://xdw.163.com/feature/" target="_blank">详细</a></p>
+<img src="http://res.nie.netease.com/xdw/gw/13v1/pic/moshenzhou.jpg" class="fslogo"/>
+<p class="fsx">魔神咒</p>
+<p class="ftd">魔龙潭怒气技</p>
+<div class="fswf"><img src="http://res.nie.netease.com/pk/qt/13/0615_fab/images/mlt.jpg" width="200" height="150"/></div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="fBox fBox3">
+<header><span class="fltL">超级联赛专题</span><a href="http://xdw.163.com/liansai/" target="_blank" class="fmore">更多</a></header>
+<section>
+<iframe src="http://xdw.163.com/phb/ladder_jjc_10.html" frameborder="0" scrolling="no" allowtransparency="true" style="height: 186px;width: 245px;"></iframe>
+<a href="http://xdw.163.com/guide/2013/10/15/8450_380311.html" class="fBtn fBtn_role" target="_blank">规则介绍</a>
+<a href="http://xdw.163.com/liansai/" class="fBtn fBtn_project" target="_blank">专题介绍</a>
+</section>
+</div>
+
+<div class="fBox fBox4">
+<header><span class="fltL">玩家天地</span><a href="http://xdw.163.com/gl/tj.html" class="fmore">更多</a></header>
+<section>
+<ul class="fBox4Nav">
+<li class="flink_1 current"><a href="">最新推荐</a></li>
+<li class="flink_2"><a href="">玩家攻略</a></li>
+<li class="flink_3"><a href="">心情图文</a></li>
+</ul>
+
+<div class="fBox4Tabs">
+<div class="fBox4Tab fBox4Tab1">
+<ul>
+      
+
+<li><a href="http://pk.163.com/gl/2014/4/22/8460_434743.html" target="_blank">【家族种植攻略】教你轻松种植得成就</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/4/22/8460_434741.html" target="_blank">【天魔神域】魔龙天魔1—6boss攻略</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/4/11/8460_432725.html" target="_blank">【攻略】坐骑技能</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/4/4/8460_431387.html" target="_blank">【群英会出品】官印打造及省钱技巧</a></li>
+						
+
+
+<li><a href="http://pk.163.com/tx/2014/3/28/8470_430275.html" target="_blank">【青慕四格】鱼忆七秒</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/3/26/8460_429855.html" target="_blank">【群英会出品】娱乐漫谈之天降灵猴</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/3/14/8460_427699.html" target="_blank">【群英会出品】40副本水陆大会</a></li>
+						
+
+      
+
+</ul>
+</div>
+<div class="fBox4Tab fBox4Tab2">
+<ul>
+      
+
+<li><a href="http://pk.163.com/gl/2014/4/22/8460_434743.html" target="_blank">【家族种植攻略】教你轻松种植得成就</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/4/22/8460_434741.html" target="_blank">【天魔神域】魔龙天魔1—6boss攻略</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/4/11/8460_432725.html" target="_blank">【攻略】坐骑技能</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/4/4/8460_431387.html" target="_blank">【群英会出品】官印打造及省钱技巧</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/3/26/8460_429855.html" target="_blank">【群英会出品】娱乐漫谈之天降灵猴</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/3/14/8460_427699.html" target="_blank">【群英会出品】40副本水陆大会</a></li>
+						
+
+
+<li><a href="http://pk.163.com/gl/2014/3/14/8460_427697.html" target="_blank">【群英会出品】30级副本营救唐皇</a></li>
+						
+
+      
+
+</ul>
+</div>
+<div class="fBox4Tab fBox4Tab3">
+<ul>
+      
+
+<li><a href="http://pk.163.com/tx/2014/3/28/8470_430275.html" target="_blank">【青慕四格】鱼忆七秒</a></li>
+						
+
+
+<li><a href="http://pk.163.com/tx/2014/3/7/8470_426525.html" target="_blank">【青慕四格】人忘七年</a></li>
+						
+
+
+<li><a href="http://pk.163.com/tx/2014/2/28/8470_425135.html" target="_blank">新坐骑四格系列（五）</a></li>
+						
+
+
+<li><a href="http://pk.163.com/tx/2014/2/27/8470_424897.html" target="_blank">新坐骑四格系列（四）</a></li>
+						
+
+
+<li><a href="http://pk.163.com/tx/2014/2/25/8470_424373.html" target="_blank">新坐骑故事系列（三）胖子没有坐骑</a></li>
+						
+
+
+<li><a href="http://pk.163.com/tx/2014/2/24/8470_423977.html" target="_blank">新坐骑四格系列（二）</a></li>
+						
+
+
+<li><a href="http://pk.163.com/tx/2014/2/22/8470_423929.html" target="_blank">大外鸡驴盘点第一期：半夜出蛮荒神牛</a></li>
+						
+
+      
+
+</ul>
+</div>
+</div>
+
+</section>
+</div>
+
+<div class="fBox fBox5">
+<header><span class="fltL">玩家真人秀</span><a href="http://xdw.163.com/show/" class="fmore">更多</a></header>
+<section>
+      
+
+<div>
+<a href="http://pk.163.com/show/2014/4/22/8472_434813.html" target="_blank">
+<img src="http://img.nie.163.com/images/2014/4/22/2014-04-22_439785.jpg" width="100" height="150"/>
+<p class="fname">【家族真人秀】战无不胜:小塵埃</p>
+<p></p>
+</a>
+</div>						
+
+
+<div>
+<a href="http://pk.163.com/show/2014/4/22/8472_434805.html" target="_blank">
+<img src="http://img.nie.163.com/images/2014/4/22/2014-04-22_439787.gif" width="100" height="150"/>
+<p class="fname">【家族真人秀】普天同乐:似火年华</p>
+<p></p>
+</a>
+</div>						
+
+      
+
+</section>
+</div>
+</section>
+
+</article>
+
+<footer id="footer">
+<div id="NIE-copyRight"></div>
+</footer>
+
+</div>
+</div>
+</div>
+
+<style type="text/css" media="all">
+.float_bar { width:100%; height:42px; clear:both; background:#fffdee; border-top:3px solid #dc6829; position:absolute; left:0; bottom:0; z-index:99; }
+.float_bar_1 {position:fixed;}
+.float_bar * { margin:0; padding:0; border:none; list-style:none; }
+.float_bar .main { width:980px; height:42px; clear:both; margin:0 auto; background:url(http://res.nie.netease.com/xdw/qt/13/0929_bm/images/float_bg.png) no-repeat 0 0; position:relative; }
+.float_bar h3, .float_bar dl,.float_bar dt, .float_bar dd { float:left; height:42px; overflow:hidden; }
+.float_bar h3 { width:130px; height:42px; overflow:hidden; line-height:999px; }
+.float_bar dt { height:42px; background:url(http://res.nie.netease.com/xdw/qt/13/0929_bm/images/float_bg.png) no-repeat 0 0; overflow:hidden; line-height:999px; }
+.float_bar dd { padding:0 5px; }
+a.lnk_bar { display:inline-block; height:20px; font:12px/20px '宋体'; border:1px solid #f9ddb8; background:#fff; padding:0 12px; margin:10px 0 0; }
+a.lnk_bar:link, a.lnk_bar:visited { color:#1f1f1f; text-decoration:none; }
+a.lnk_bar:hover { color:#fff; background:#e0462b; border-color:#e0462b; text-decoration:none; }
+.float_bar .item_help { width:256px; }
+.float_bar .item_help dt { width:76px; background-position:0 -49px; }
+.float_bar .item_gift { width:253px; }
+.float_bar .item_gift dt { width:68px; background-position:0 -96px; }
+.float_bar .item_event { width:170px; }
+.float_bar .item_event dt { width:68px; background-position:0 -146px; }
+.float_bar .lnk_close { display:inline-block; width:13px; height:13px; cursor:pointer; background:url(http://res.nie.netease.com/xdw/qt/13/0929_bm/images/float_bg.png) no-repeat 0 -307px; position:absolute; top:0; right:0; }
+.float_bar .item_tool { width:112px; height:32px; background:url(http://res.nie.netease.com/xdw/qt/13/0929_bm/images/float_bg.png) no-repeat 0 -195px; padding:10px 0 0 30px; position:absolute; left:818px; bottom:0; }
+.float_bar .item_tool span { display:block; width:112px; height:22px; overflow:hidden; font:12px/22px '宋体'; background:url(http://res.nie.netease.com/xdw/qt/13/0929_bm/images/float_bg.png) no-repeat 0 -255px; text-indent:30px; cursor:pointer; }
+.float_bar .item_toolmain { display:none; width:89px; border:1px solid #f9ddb8; background:#fff; position:absolute; bottom:32px; }
+.float_bar .item_toolmain li { margin:0; padding:0; overflow:hidden; height:24px; font:12px/24px '宋体'; }
+.float_bar .item_toolmain a { display:block; text-indent:13px; }
+.float_bar .item_toolmain a:link, .float_bar .item_toolmain a:visited { color:#333; text-decoration:none; }
+.float_bar .item_toolmain a:hover { color:#fff; text-decoration:none; background:#e0462b; }
+.float_bar .tool_on .item_toolmain { display:block; }
+</style>
+
+<div id="setfooter"></div>
+<div id="float_bar" class="float_bar">
+	<div class="main">
+		<h3>最新推荐</h3>
+		<dl class="item_help">
+			<dt>玩法</dt>
+			<dd><a href="http://xdw.baike.163.com/ziliao/203.html" target="_blank" class="lnk_bar">跨服家族战</a></dd>
+			<dd><a href="http://xdw.baike.163.com/ziliao/202.html" target="_blank" class="lnk_bar">家族农场</a></dd>
+		</dl>
+		<dl class="item_gift">
+			<dt>奖励</dt>
+			<dd><a href="http://xdw.163.com/fab/ " target="_blank" class="lnk_bar">新玩家礼包</a></dd>
+			<dd><a href="http://xdw.163.com/laowanjia/" target="_blank" class="lnk_bar">回归奖励</a></dd>
+		</dl>
+		<dl class="item_event">
+			<dt>活动</dt>
+			<dd><a href="http://xdw.163.com/news/2014/4/8/8444_431851.html" target="_blank" class="lnk_bar">新服活动</a></dd>
+		</dl>
+		<div class="item_tool" id="movetools"><span>工具栏</span>
+			<div class="item_toolmain">
+				<ul>
+					<li><a href="http://xdw.163.com/phb/jjc3/grade_1/0/1.html" target="_blank">竞技场</a></li>
+					<li><a href="http://xdw.163.com/server/" target="_blank">服务器查询</a></li>
+					<li><a href="http://xdw.cbg.163.com/" target="_blank">藏宝阁</a></li>
+				</ul>
+			</div>
+		</div>
+		<span class="lnk_close" id="moveclose"></span>
+	</div>
+</div>
+<script>
+var scrollbottom
+if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE6.0"){
+	$("#float_bar").css({"bottom":"auto"})
+	scrollbottom = function(){
+		$("#float_bar").css({"top":$(window).scrollTop()+$(window).height()-$("#float_bar").height()})
+	}
+	var scrolls = setInterval(scrollbottom,20)
+}
+else{
+	$("#float_bar").addClass("float_bar_1")
+}
+$("#movetools").hover(function(){
+	$(this).addClass("tool_on")
+},function(){
+	$(this).removeClass("tool_on")
+})
+$("#moveclose").click(function(){
+	$("#float_bar").hide()
+})
+</script>
+
+
+
+<!--style>
+#fcrb {_position:absolute;position:fixed;width:120px;height:388px;overflow:hidden;margin-top:-194px;top:50%;right:0;}
+#closefcrb {position:absolute;display:block;width:20px;height:20px;background:url(http://res.nie.netease.com/comm/blank.gif) no-repeat -9999px -9999px;top:3px;right:3px;}
+</style>
+<script>
+$(function(){
+	$("#closefcrb").click(function(){
+		$("#fcrb").hide()
+	})
+})
+</script>
+<div id="fcrb">
+<a id="closefcrb"></a>
+<a href="http://xdw.163.com/2013/zhongqiu/" target="_blank"><img src="http://res.nie.netease.com/xdw/qt/13/0918/img.jpg"></a>
+</div-->
+
+
+
+<!--飘窗start-->
+<link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/comm/js/nie/util/qUrs/base.css" media="all" charset="gb2312"/>
+<script>
+nie.use(["nie.util.qUrs"],function(){
+	$(function(){
+		new nie.util.qUrs({
+			holder:"#NIE-quickReg",//容器选择器，默认为"div.NIE-quickReg"
+			type:1,//类别 1:邮箱注册需要验证码;2:邮箱注册不需要验证码;			
+			msgType:1//提交后信息类别 1:弹框(默认);2:切换层(iframe专用)
+		});
+		$("#sideBox .openMainBox").click(function(){
+			$("#mainBox").show();
+			$("#sideQuickReg").width(340);
+			$(".openMainBox").hide();
+			$("#sideBox").css("background-position"," 0px -347px");
+			$("#sideBox").height(44);
+		});
+		$("#sideBox .closeMainBox").click(function(){
+			$("#mainBox").hide();
+			$("#sideQuickReg").width(44);
+			$("#sideBox").css("background-position"," 0px 0px");
+			$(".openMainBox").show();
+			$("#sideBox").height(347);
+		});
+		//默认飘窗关闭
+		$("#sideBox .closeMainBox").click();
+		//
+		$(window).scroll(function(){
+			$("#sideQuickReg").css("top",$(document).scrollTop()+50);
+		});
+	});
+});
+</script>
+<style>
+#sideQuickReg{overflow:hidden;position:absolute;z-index:90;top:50px;right:0;-webkit-transition:top .5s ease;-moz-transition:top .5s ease;-ms-transition:top .5s ease;}
+#sideQuickReg .hide{display:none;}
+
+#NIE-quickReg{overflow:hidden;position:relative;width:264px;padding:0 14px 0 18px;height:258px;}
+#NIE-quickReg .qr-submit{height:38px;}
+#NIE-quickReg .qr-submit input{background:url(http://res.nie.netease.com/xdw/qt/13/1204_reg/images/btns.png) no-repeat left 0;width:128px;height:38px;border:none;outline:none;line-height:120px;}
+#NIE-quickReg .qr-submit input:hover{background-position:right 0;}
+#NIE-quickReg .qr-tab{border-bottom-color:#d43725;padding:0 8px;width:248px;}
+#NIE-quickReg .qr-tab li{color:#4f4f4f;font:14px/25px "simsun";background:url(http://res.nie.netease.com/xdw/qt/13/1204_reg/images/tagQuickReg.jpg) no-repeat 0 -25px;width:124px;height:25px;}
+#NIE-quickReg .qr-tab li.qr-tab-current{color:#fffad6;background-position:0 0;}
+#NIE-quickReg .qr-noEmail a{color:#e0462b;}
+#NIE-quickReg .qr-noEmail a:hover{color:#e0462b;}
+#NIE-quickReg .qrInpTxt{border-color:#3c3c3c;}
+
+#mainBox{float:right;overflow:hidden;padding-top:65px;height:522px;width:296px;background:#fff9ea url(http://res.nie.netease.com/xdw/qt/13/1204_reg/images/bg.jpg) no-repeat right top;}
+
+#mainBox .downloadLine{overflow:hidden;padding:55px 8px 0 8px;height:76px;}
+#mainBox .downloadLine a{overflow:hidden;float:left;_display:inline;width:128px;height:38px;line-height:120px;margin:19px 4px;background:url(http://res.nie.netease.com/xdw/qt/13/1204_reg/images/btns.png) no-repeat;}
+#mainBox .downloadLine .downloadMini{background-position:left -40px;}
+#mainBox .downloadLine .downloadMini:hover{background-position:right -40px;}
+#mainBox .downloadLine .downloadIns{background-position:left -80px;}
+#mainBox .downloadLine .downloadIns:hover{background-position:right -80px;}
+
+#mainBox .getItemLine{overflow:hidden;padding-top:57px;height:72px;}
+#mainBox .getItemLine .getItem{overflow:hidden;float:left;_display:inline;width:128px;height:38px;line-height:120px;margin:19px 83px 33px 92px;background:url(http://res.nie.netease.com/xdw/qt/13/1204_reg/images/btns.png) no-repeat left -120px;}
+#mainBox .getItemLine .getItem:hover{background-position:right -120px;}
+
+#sideBox{float:right;overflow:hidden;width:44px;height:428px;background:url(http://res.nie.netease.com/xdw/qt/13/1204_reg/images/bg.jpg) no-repeat left top;}
+#sideBox .openMainBox{display:block;width:44px;height:347px;text-indent:-9999em;}
+#sideBox .closeMainBox{display:block;width:44px;height:44px;}
+</style>
+
+<!--sideQuickReg start-->
+<div id="sideQuickReg">
+
+<div id="mainBox">
+  <div class="hide">1、9秒快速注册</div>
+  <!-- Start 大通行证.快速注册 -->
+  <div id="NIE-quickReg" class="NIE-quickReg">
+    <p class="NIE-quickReg-loading">注册网易通行证加载中,请稍候.</p>
+    <input type="hidden" name="promark" value='yz2qtl8h'>
+  </div>
+  <!-- End 大通行证.快速注册 --> 
+  <div class="hide">2、5秒极速下载3M客户端</div>
+  <div class="downloadLine">
+    <a class="downloadMini" href="http://xyw.gdl.netease.com/DHWZOnline-4.0.270.Mini.exe">微端下载</a>
+    <a class="downloadIns" href="http://xyw.gdl.netease.com/DHWZOnline-4.0.270.Ins.exe">完整版下载</a>
+  </div>
+  <div class="hide">3、领极品礼包，获抽奖机会</div>
+  <div class="getItemLine">
+    <a class="getItem" id="getGiftBtn" href="javascript:;">点击领取</a>
+  </div>
+</div>
+
+<div id="sideBox">
+  <a class="openMainBox" href="javascript:;">轻松三秒 享更多惊心让利！</a>
+  <a class="closeMainBox" href="javascript:;"></a>
+</div>
+
+</div>
+<!--sideQuickReg end-->
+
+<!--飘窗end-->
+
+<!--飘窗附带弹层start-->
+<style>
+#bgSQ {display:none;position:absolute;width:100%;height:100%;background:#000;filter:Alpha(opacity=70);opacity:0.7;top:0;left:0;z-index:9999;}
+#sideQuickRegUsed{display:none;position:absolute;z-index:99999;width:820px;overflow: hidden; height:435px; background:#f7f7f7 ;}
+#sideQuickRegUsed .aCloseSQ{position:absolute;width: 30px;height: 30px; display:block;right: 0px;top: 0px;cursor:pointer;overflow:hidden; text-indent: -9999px; }
+#sideQuickRegUsed .dg_titleSQ{ background:url(http://res.nie.netease.com/xdw/qt/13/1129_fab12/images/pop_top.jpg) no-repeat top right; width:820px; height:68px; line-height:68px; font-size:30px; color:#ffffff; text-align:center; font-weight:bold;zoom:1;}
+#sideQuickRegUsed .dg_conSQ{ height:435px; overflow:hidden;background:url(http://res.nie.netease.com/xdw/qt/13/1129_fab12/images/pic05.jpg) no-repeat top right; }
+#sideQuickRegUsed .dg_conSQ p{ text-indent:-126px; padding-left:150px; font-size:14px; color:#1b0e0c; width:335px; font-family:"宋体"; margin-top:10px;}
+#sideQuickRegUsed .dg_conSQ p span{ margin-right:7px;}
+#sideQuickRegUsed .pt45{ padding-top:45px; width:750px;margin:0 auto; width:750px; color:#3b3b3d; font-size: 16px; line-height:180%;}
+</style>
+
+<div id='bgSQ'></div>
+<div id="sideQuickRegUsed" class="dialogBoxSQ">
+  <a class="aCloseSQ" onclick="closedsQSQ()" title="关闭">关闭</a>
+  <div class="dg_titleSQ">领取1212元白金卡</div>
+  <div class="dg_conSQ">
+    <div class="fltL pt45">
+	<iframe id="aframe" frameborder="0" width="475" height="147" scrolling="no" src2="http://get-cdkey.webapp.163.com/htmls/pk_fab_20130819.html" src="http://get-cdkey.webapp.163.com/htmls/pk_fab_20130819.html?r=0.6190485416445881" allowtransparency="true"></iframe>
+      <p><span>【如何激活礼包】:</span>进入游戏，ALT+E打开物品栏，在最后一栏找到聚宝盆，右键点击"聚宝盆", 在"输入激活码序列号"处选择"大话外传新篇大礼包"，输入正确的序列号即可得到礼包！</p>
+    </div>
+  </div>
+</div>
+
+<script>
+$('#getGiftBtn').click(function(){
+	$('#aframe').attr('src',$('#aframe').attr('src2')+'?r='+Math.random());
+	opendsQSQ('#sideQuickRegUsed');
+	return false;
+});
+//弹出框start
+var _curr_tcqSQ = null;
+function opendsQSQ(o){
+	if(_curr_tcqSQ) closedsQSQ(_curr_tcqSQ);
+	$("#bgSQ").css({"height":$(document).height()}).show();
+	$(".dTcQSQ").hide();
+	$(o).show().css({"top":($(window).height()-$(o).height())/2+$(window).scrollTop(),"left":($(window).width()-$(o).outerWidth())/2+$(window).scrollLeft()});
+	_curr_tcqSQ = o;
+}
+function closedsQSQ(o){
+	$("#sideQuickRegUsed").hide();
+	$("#bgSQ").hide();
+};
+//弹出框end
+</script>
+<!--飘窗附带弹层end-->
+</body>
+</html>

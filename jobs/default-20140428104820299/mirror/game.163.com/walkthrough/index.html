@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gb18030" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="keywords" content=""> 
+<meta name="description" content="">
+<meta name="author" content="网易" />
+<meta name="Copyright" content="网易版权所有" />
+<meta name="robots" content="index, follow" /> 
+<meta name="googlebot" content="index, follow" /> 
+<base target="_blank" />
+<title>最新滚动攻略_网易游戏频道</title> 
+<link href="http://img1.cache.netease.com/cnews/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+<link href="http://img1.cache.netease.com/game/img09/instant10/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- end --><!-- 游戏顶部 -->
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script><span class="blank12"></span>
+<a name="top" id="top"></a>
+<div class="channel">
+  <h1>
+     <a target="_self" href="http://game.163.com"><img height="28" width="112" alt="网易游戏" src="http://img2.cache.netease.com/game/img09/gamelogonew.gif" /><br />网易游戏</a>
+  </h1>
+  <h2><a href="http://game.163.com/special/latest_gonglue/"><img src="http://img1.cache.netease.com/game/img09/instant10/game_gdgl.jpg" alt="滚动攻略" /></a></h2>
+  <div class="crumb"><a href="http://www.163.com">网易首页</a> &gt; <a href="http://game.163.com">网易游戏</a> &gt; 滚动攻略</div>
+  <div class="top_search" >
+	  <form target="_blank" id="formtopgame" name="nisearch_top_game" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="game.163" name="keyfrom"/>  
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onFocus="this.value=''" id="searchInput_top_game" name="q"/></label>
+<noscript><select name="site" class="left" style="display:none">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript> 
+        <div id="divSelectGame" class="left">
+        </div> 
+        <input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="ingame" name="in"/>
+</form></div><script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav_game(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect_game(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected_game.removeChild(selected_game.firstChild);
+                selected_game.appendChild(txt);
+                select_main_game.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName_game").value = title;
+                if (title == "网易") {
+				document.nisearch_top_game.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top_game.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover_game () {
+                this.className = "active";
+            }
+            function a_mouseout_game () {
+                this.className = "";
+            }
+            $_G("divSelectGame").innerHTML = '<input id="siteName_game" type="hidden" value="网易" name="site" /><div id="select_area_game" class="select_box"><span id="selected_game" class="search_site">新闻</span><div id="select_main_game" class="select_list" style="display:none"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area_game = $_G("select_area_game"), selected_game = $_G("selected_game"), select_main_game = $_G("select_main_game"), select_list_game = select_main_game.getElementsByTagName("a"), len_game = select_list_game.length;
+            select_area_game.onclick = select_main_game.onmouseover = function(){
+                select_main_game.style.display = "block";
+            }
+            select_main_game.onmouseout = function(){
+                select_main_game.style.display = "none";
+            }
+            
+            for (var i = 0; i < len_game; i++) {
+                select_list_game[i].onclick = clickselect_game;
+                select_list_game[i].onmouseover = a_mouseover_game;
+                select_list_game[i].onmouseout = a_mouseout_game;
+            }
+        })();
+//]]>
+</script>
+<div class="calendar">
+    <div id="getCalendar" class="pointer">往期回顾</div>
+    <div class="calendarMain" id="calendarBox" style="display: none;">
+    <div class="selectDate"><a target="_self" href="#" id="prevMonth">上一月</a> <span id="setYear">2009</span>年<span id="setMonth">11</span>月 <a target="_self" href="#" id="nextMonth">下一月</a></div>
+    <div class="title">
+    	<ul><li class="endweek">日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li class="endweek">六</li></ul>
+    </div>
+    <div class="list">
+    	<ul id="calendarList"><li></li></ul>
+    </div>
+    </div>
+</div>
+</div>
+<div class="nav_channel">
+  <span class="nav">
+      <a class="firstNode nav-yellow fB" href="http://game.163.com/">首页</a>
+      <a href="http://game.163.com/tvgame/">TVGame</a>
+<a href="http://game.163.com/esports/">电子竞技</a>
+<a href="http://game.163.com/special/wallpaper/gaming_theme.html">壁纸</a>
+<a href="http://game.163.com/girls/">游戏美女</a>
+<a href="http://game.163.com/chanye/">产业</a>
+<a class="nav-yellow fB" href="http://game.163.com/xin/">新网游</a>
+<a class="nav-nobg" href="http://product.game.163.com/">找游戏</a>
+<a class="nav-nobg" href="http://product.game.163.com/n/gtimeod.html">测试表</a>
+<a class="nav-nobg" href="http://ka.game.163.com/">发卡中心</a>
+<a class="nav-nobg" href="http://game.163.com/special/list/olreview.html">评测</a>
+<a class="fB" href="http://cc.163.com/">CC语音</a>
+<a class="nav-yellow fB" href="http://bbs.game.163.com/">论坛</a>
+<a class="nav-yellow fB" href="http://wowui.w.163.com/163ui/">有爱插件</a>
+    </span>
+  <span class="nav-plus">
+      <a class="mobile" href="http://help.3g.163.com/">手机版</a>
+  </span>
+</div>
+<div class="subnav">
+<a href="http://game.163.com/special/list/yiboliu.html"><em class="cDRed">易播流</em></a> | <a href="http://game.163.com/special/">专题策划</a> | <a href="http://game.163.com/special/list/youxiwanjia.html">玩家新闻</a> | <a href="http://game.163.com/chanye/">产业热点</a> | <a href="http://game.163.com/special/list/gamevideos.html">视频直击</a> | <a href="http://game.163.com/special/list/yejiefangtan.html">人物专访</a> | <a href="http://game.163.com/special/news/pingce_allgame.html">单机游戏评测</a> | <a href="http://game.163.com/rank/">新闻点击榜</a> | <a href="http://game.163.com/rank/">跟贴排行榜</a> | <a href="http://game.163.com/walkthrough/">游戏攻略</a> | <a href="http://game.163.com/special/sw/daren.html ">微博</a>
+</div>
+<span class="blank9"></span>
+<div class="area bg_1">
+<span class="bg_line"></span>
+<div class="col_side">
+<div class="box_ctg">
+<h2>分类列表</h2>
+<ul id="instantHolder"></ul>
+</div>
+<span class="blank20"></span>
+</div>
+<div class="col_main">
+<span class="blank9"></span>
+<div class="bar_ctrls cDGray">
+<span class="bar_ctrls_block"><span class="left">条数：</span><ul class="left" id="instantSize"><li>10条</li><li>40条</li><li>80条</li></ul></span>
+<span class="bar_ctrls_block"><span class="left">刷新间隔：</span><ul class="left" id="instantInterval"><li>60秒</li><li>120秒</li><li>300秒</li></ul></span>
+<span class="bar_ctrls_block"><span class="btn_check btn_checked"><span class="fB cDRed" id="remain">000</span> 秒后刷新</span></span>
+<span class="bar_ctrls_block"><button type="button" class="btn_manual" id="manual"></button></span>
+</div>
+<span class="blank15"></span>
+<span class="hr_dot"></span>
+<div id="instantPanel"></div>
+</div>
+<span class="bg_line"></span>
+</div>
+<span class="loading hidden" id="loading">页面加载中…</span>
+<div id="templates" class="hidden">
+<div title="calendar">
+<!--
+<#
+var href;
+for(var i = 0, j; i < calendar.weeks.length; i++){
+	for(j = 0; j < 7; j++){
+#>
+<li>
+<#
+		if(calendar.weeks[i][j].value){
+			if(calendar.weeks[i][j].state > 0 || calendar.year < 2010 || (calendar.year == 2010 && calendar.month < 11) || (calendar.year == 2010 && calendar.month == 11 && calendar.weeks[i][j].value < 11)){
+#>
+<#=calendar.weeks[i][j].value#>
+<#
+			} else {
+				if(calendar.weeks[i][j].state == 0){ href = "http://game.163.com/special/00314JT4/hotgameinstantjson.js";} else { href = String.format("http://snapshot.news.163.com/wgethtml/http+!!game.163.com!special!00314JT4!hotgameinstantjson.js/%1-%2/%3/0.js", calendar.year, ("0" + calendar.month).slice(-2), ("0" + calendar.weeks[i][j].value).slice(-2));}
+    			if(curUrl == href){
+#>
+<span class="current"><#=calendar.weeks[i][j].value#></span>
+<#
+				} else {
+#>
+<a href="<#=href#>" <# if(calendar.weeks[i][j].state == 0){ #>class="now"<# } #>><#=calendar.weeks[i][j].value#></a>
+<#
+				}
+			}
+		}
+#>
+</li>
+<#
+	}
+}
+#>
+-->
+</div>
+<div title="panel">
+<!--
+<div class="cnt">
+<span class="blank15"></span>
+<ul class="list_txt">
+<#
+for(var i = 0, len = list.length; i < len; i++){
+if(i % 5 == 0 && i != 0){
+#>
+</ul>
+<span class="blank15"></span>
+</div>
+<span class="hr_dot"></span>
+<div class="cnt">
+<span class="blank15"></span>
+<ul class="list_txt">
+<#
+}
+#>
+<li><span class="right f12px cDGray">(<#=list[i].p#>)</span><a href="<#=category[list[i].c].l#>" class="cOrange">[<#=category[list[i].c].n#>]</a> <a href="<#=list[i].l#>"><#=list[i].t#></a></li>
+<#
+}
+#>
+</ul>
+<span class="blank15"></span>
+</div>
+<span class="hr_dot"></span>
+<span class="blank15"></span>
+<div class="bar_pages">
+<#
+if(page <= 1){
+#>
+<span class="bar_pages_flip">上一页</span>
+<#
+} else {
+#>
+<a href="#page=<#=page-1#>" class="bar_pages_flip">上一页</a>
+<#
+}
+var before = true, behind = true;
+for(var i = 1; i <= total; i++){
+if((page <= 5 && i <= 7) || (page > 5 && page <= total - 5 && i > page - 3 && i < page + 3) || (page > total - 5 && i > total - 7) || i == 1 || i == total){
+if(page == i){
+#>
+<span class="active"><#=i#></span>
+<#
+} else {
+#>
+<a href="#page=<#=i#>"><#=i#></a>
+<#
+}
+} else {
+if(before && i < page){
+#>
+……
+<#
+before = false;
+}
+if(behind && i > page){
+#>
+……
+<#
+behind = false;
+}
+}
+}
+if(page >= total){
+#>
+<span class="bar_pages_flip">下一页</span>
+<#
+} else {
+#>
+<a href="#page=<#=page+1#>" class="bar_pages_flip">下一页</a>
+<#
+}
+#>
+</div>
+<span class="blank15"></span>
+-->
+</div>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" charset="gb2312"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/game/img09/instant10/hotgameinstant.js"></script>
+<style type="text/css">
+.channel-end,.channelEnd-rightS,.channelEnd-link,.channelEnd-top {background:url(http://img3.cache.netease.com/cnews/img09/endnav_bg1001.jpg);}
+.channel-end {width:960px;height:37px;overflow:hidden;margin:10px auto 0;line-height:38px;background-position:left -67px;background-repeat:repeat;}
+.channelEnd-rightS {display:block;float:right;width:8px;height:37px;overflow:hidden;background-position:right -141px;background-repeat:no-repeat;}
+.channelEnd-link {float:left;height:37px;line-height:37px;overflow:hidden;color:#1E50A2;background-position:left -30px;background-repeat:no-repeat;}
+.channelEnd-link a {float:none;padding:0 5px;font-weight:normal;background:none;}
+.channelEnd-link .firstNode {margin-left:5px; background:none;}
+.channelEnd-top {display:block;float:right;width:70px;height:37px;overflow:hidden;line-height:37px;text-indent:10px;background-position:left -30px;background-repeat:no-repeat;}
+</style>
+<div class="channel-end">
+	<span class="channelEnd-link cBlue">
+    	<a class="firstNode" href="http://www.163.com/"  rel="nofollow">网易首页</a>-<a href="http://news.163.com/"  rel="nofollow">新闻</a>-<a href="http://sports.163.com/"  rel="nofollow">体育</a>-<a href="http://ent.163.com/"  rel="nofollow">娱乐</a>-<a href="http://money.163.com/"  rel="nofollow">财经</a>-<a href="http://auto.163.com/"  rel="nofollow">汽车</a>-<a href="http://tech.163.com"  rel="nofollow">科技</a>-<a href="http://digi.163.com/"  rel="nofollow">数码</a>-<a href="http://mobile.163.com/"  rel="nofollow">手机</a>-<a href="http://lady.163.com/"  rel="nofollow">女人</a>-<a href="http://house.163.com/"  rel="nofollow">房产</a>-<a href="http://game.163.com/"  rel="nofollow">游戏</a>-<a href="http://book.163.com/"  rel="nofollow">读书</a>-<a href="http://edu.163.com/"  rel="nofollow">教育</a>-<a href="http://travel.163.com/"  rel="nofollow">旅游</a>-<a href="http://bbs.163.com/"  rel="nofollow">论坛</a>-<a href="http://v.163.com/"  rel="nofollow">视频</a>-<a href="http://blog.163.com/blogs/"  rel="nofollow">博客</a>-<a href="http://t.163.com/"  rel="nofollow">微博</a>-<a href="http://jiu.163.com"  rel="nofollow">酒香</a>-<a href="http://help.3g.163.com/"  rel="nofollow">手机版</a>
+    </span>
+    <span class="channelEnd-rightS"></span>
+    <span class="channelEnd-top cBlue"><a href="#top" target="_self"  rel="nofollow">返回顶部&uarr;</a></span>
+</div><span class="blank12"></span>
+<div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0516010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0516010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "game"; //站点ID。
+    neteaseTracker();
+    neteaseClickStat(); 
+    </script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+</body>
+</html>

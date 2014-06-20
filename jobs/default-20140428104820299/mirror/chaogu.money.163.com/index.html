@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网易模拟炒股大赛</title>
+<script type="text/javascript">
+    //<![CDATA[
+        var formhash = '704931266404e0f481185c6ac799f2d9';
+        var authhash = 'k5b2iegcopmsgcr44gnqvq37s5';
+        var me_id = 0;
+        var from_url = 'http://chaogu.money.163.com/';
+        var logout_url = 'http://chaogu.money.163.com/';
+                var new_stocks = 'sz000035,ZKJ,中科健,sz000090,TJJT,天健集团,sz000416,MSKG,民生控股,sz000505,ZJKG,珠江控股 ,sz000582,BBWG,北部湾港 ,sz000616,YCTZ,亿城投资,sz000617,SYJC,石油济柴,sz000779,STPS,*ST派神 ,sz000898,AGGF,鞍钢股份,sz000902,ZGFZ,中国服装 ,sz000958,DFRD,东方热电,sz002134,STPL,*ST普林 ,sz002164,STDL,*ST东力 ,sz002234,STMH,*ST民和,sz002265,XYGF,西仪股份,sz002373,STLX,*ST联信,sz300083,JSJM,劲胜精密 ,sz300144,SCYY,宋城演艺 ,sz300370,AKKJ,安控科技,sh600087,TSCY,退市长油,sh600234,SSWH,山水文化 ,sh600247,STCC,ST成城 ,sh600299,STXC,*ST新材 ,sh600301,STNH,ST南化,sh600306,STSC,*ST商城 ,sh600398,HLZJ,海澜之家,sh600634,ZJKG,中技控股 ,sh600689,STSM,*ST三毛 ,sh600769,XLDY,祥龙电业,sh600873,MHSW,梅花生物,sh601919,ZGYY,中国远洋';
+	//]]>
+    </script>
+    <link rel="stylesheet" type="text/css" href="/src/css/default.css?16188000.css" media="screen" />
+    <script type="text/javascript" src="/src/js/jquery-1.8.0.min.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/jquery.tools.min.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/jquery.cookies.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/base.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/basic.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163utils.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.form.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.dialog.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.stock.js?16188000.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/src/js/m163.stock.utils.js?16188000.js" charset="utf-8"></script>
+
+</head>
+<body>
+<div class="alltop">
+<iframe id="top_iframe" name="top_iframe" src="http://money.163.com/special/ntesnav/" frameborder="no" scrolling="no" style="width: 100%;height:34px;border:0px;overflow:hidden;"></iframe>
+</div>
+<div class="TOPbanner">
+	<div class="wrap">
+		<div class="match-box">
+    		<div class="mc-banner">
+    			<span class="bannerLimg"></span>
+    			<span class="bannerRimg"></span>
+    			<a href="http://money.163.com/" title="主办：网易财经" target="_blank"><span class="link_163"></span></a>
+				<a href="http://www.7878.com/" title="技术支持：资本魔方" target="_blank"><span class="link_7878"></span></a>
+    		</div>
+    		<ul class="mc-nav">                                 
+    			<li class="al"><a href="http://chaogu.money.163.com/">大赛首页</a></li>
+    			<li id="account_menu" ><a href="http://chaogu.money.163.com/account/">交易系统</a></li>
+    			<li id="people_menu" ><a href="http://chaogu.money.163.com/people/">个人中心</a></li>
+    			<li id="track_feeds_menu" ><a href="http://chaogu.money.163.com/track/feeds">我的跟踪</a></li>
+    			<li ><a href="http://chaogu.money.163.com/toplist">排行榜</a></li>
+    			<li ><a href="http://chaogu.money.163.com/announcements">赛事公告</a></li>
+    			<li ><a href="http://chaogu.money.163.com/awards">赛事简介</a></li>
+    			<li ><a href="http://chaogu.money.163.com/rules">交易规则</a></li>
+    			<li><a href="http://bbs.money.163.com/list/chaogu.html" target="_blank">大赛交流区</a></li>
+    		</ul>
+    		
+    		<div class="contenMessage">
+	    		<!-- MESSAGES -->
+		        		        		        <!-- END MESSAGES -->
+	        </div>
+	        
+	        <!-- 自选股 -->
+	        
+    		    <div class="contenBOX2" style="border-top: 0px;">
+    	<div class="tipBox">
+              <table width="100%" cellspacing="0" cellpadding="0" border="0" class=" a-C333">
+              <tbody>
+               <tr>
+                  <td width="80" style="font-size:14px;"><a href="http://i.money.163.com/" target="_blank" style="color: red;font-weight:bold;">我的自选股</a></td>
+                  <td width="70" style="font-size:14px;"><a href="http://quotes.money.163.com/" target="_blank" style="color: red;">行情中心</a></td>
+                  <td width="10"><span class="line3-Cccc">&nbsp;</span></td>
+                  <td width="15">
+                  	<div class="next-quote"></div>
+                  	<div class="prev-quote"></div>
+                  </td>
+                  <td>
+                  	<div class="market">
+                  		<ul>
+                  			<li>
+                  				<div id="code_0000001" class="item">
+                  					<span><a href="http://quotes.money.163.com/0000001.html" target="_blank"><b>上证指数：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_1399001" class="item">
+                  					<span><a href="http://quotes.money.163.com/1399001.html" target="_blank"><b>深成指数：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  			<li>
+                  				<div id="code_hkHSI" class="item">
+                  					<span><a href="http://quotes.money.163.com/hkstock/HSI.html" target="_blank"><b>恒生指数：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_hkHSCCI" class="item">
+                  					<span><a href="http://quotes.money.163.com/hkstock/HSCCI.html" target="_blank"><b>红筹指数：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  			<li>
+                  				<div id="code_FG_rj225" class="item">
+                  					<span><a href="http://quotes.money.163.com/gi/home/detail/W00004.html" target="_blank"><b>日经225：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_FG_yingguo" class="item">
+                  					<span><a href="http://quotes.money.163.com/gi/home/detail/W00032.html" target="_blank"><b>英国富时：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  			<li>
+                  				<div id="code_FG_deguo" class="item">
+                  					<span><a href="http://quotes.money.163.com/gi/home/detail/W00031.html" target="_blank"><b>德国DAX：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_FG_faguo" class="item">
+                  					<span><a href="http://quotes.money.163.com/gi/home/detail/W00031.html" target="_blank"><b>法国CAC40：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  			<li>
+                  				<div id="code_US_DOWJONES" class="item">
+                  					<span><a href="http://quotes.money.163.com/usstock/hq/DOWJONES.html" target="_blank"><b>道琼斯：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_US_NASDAQ" class="item">
+                  					<span><a href="http://quotes.money.163.com/usstock/hq/NASDAQ.html" target="_blank"><b>纳斯达克：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  			<li>
+                  				<div id="code_FG_blt_yuanyou" class="item">
+                  					<span><a href="http://quotes.money.163.com/stock/#query=gjqz" target="_blank"><b>布兰特原油：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_FG_ny_qingyuanyou" class="item">
+                  					<span><a href="http://quotes.money.163.com/stock/#query=gjqz" target="_blank"><b>纽约轻原油：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  			<li>
+                  				<div id="code_FG_usd_cny" class="item">
+                  					<span><a href="http://quotes.money.163.com/forex/" target="_blank"><b>美元/人民币：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_FG_huangjin" class="item">
+                  					<span><a href="http://quotes.money.163.com/stock/#query=gjqz" target="_blank"><b>黄金：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  			<li>
+                  				<div id="code_FG_eur_usd" class="item">
+                  					<span><a href="http://quotes.money.163.com/forex/" target="_blank"><b>欧元/美元：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  				<div id="code_FG_usd_jpy" class="item">
+                  					<span><a href="http://quotes.money.163.com/forex/" target="_blank"><b>美元/日元：</b></a></span>
+			                  		<span><b>--</b></span>
+			                  		<span>--</span>
+			                  		<span>--</span>
+			                  		<span style="display:none">--</span>
+                  				</div>
+                  			</li>
+                  		</ul>
+                  		
+                  	</div>
+                  </td>
+                  <td width="10"><span class="line3-Cccc">&nbsp;</span></td>
+                  <td width="120"><input id="symbol_input" class="Inputtop global-stock-search"></td>
+                  <td width="40" style="padding:0px;"><span class="button5"><a id="symbol_search_btn" href="javascript:void(0)">查行情</a></span></td>
+               </tr>
+            </tbody>
+            </table>
+         </div>
+         <iframe src="http://money.163.com/special/minichaogu/" width="665" height="320" allowTransparency="true" frameborder="0" scrolling="no" style="float: left;margin-top:-10px;margin-right:35px;"></iframe>
+         <div style="float: left;width:234px;">
+	         <div class="userInfoBox">
+	               <span class="button1"><a href="javascript:void(0)" class="login_btn">登录</a></span> 
+	               <span class="button1"><a href="http://reg.163.com/reg/reg.jsp?url=http://chaogu.money.163.com/">注册</a></span>
+	               <div class="line1 m-t-20 m-b-20"></div>
+	               <span class="button2"><a href="http://chaogu.money.163.com/apply" class="apply">立即报名参赛</a></span>
+	         </div>
+	         <div style="border:1px solid #E3E3E3;padding:11px 12px;margin-top:-1px;">
+	         	<p style="margin:0px 0px 8px 0px;font-size:14px; font-weight:bold; ">当前参赛总人数：<span id="apply_count" style="color:red">--</span> 人</p>
+	         	<p>报名须知：参赛用户须为网易通行证用户，若您已登录，请直接点击报名。</p>
+	         </div>
+         </div>
+         <div class="clear"></div>
+    </div>
+
+    <div class="contenBOX2 m-t-15" style="padding:0px; width:958px;position:relative;overflow:hidden;">
+    	<div class="newhead">
+    		<h3>大赛排行榜</h3>
+    	</div>
+    	<span style="top:62px; right:20px;" class="timeSET a-C999-line"><a href="http://chaogu.money.163.com/toplist">查看更多</a></span>
+		<span style="top:62px; right:320px;" class="timeSET a-C999-line">(数据更新频率：15分钟)</span>
+	    <!-- the tabs -->
+	    <ul class="tabsTopL">
+	        <li><a class="current" href="javascript:void(0)">总收益榜</a></li>
+	        <li><a class="" href="javascript:void(0)">日收益榜</a></li>    
+	        <li><a class="" href="javascript:void(0)">周收益榜</a></li>
+	        <li><a class="" href="javascript:void(0)">月收益榜</a></li>
+	    </ul>
+	    <!-- tab "panes" -->
+	    <div class="mc-chartlist m-b-10">
+	    	<div id="total_yield_list" style="display: block;">
+	        	<div class="tops_loading"><img alt="正在加载..." src="/img/ajax-loader.gif"/></div>  
+	        </div>
+	        <div id="day_yield_list" style="display: none;">
+	        	<div class="tops_loading"><img alt="正在加载..." src="/img/ajax-loader.gif"/></div>
+	        </div>
+	        <div id="week_yield_list" style="display: none;">
+	       		<div class="tops_loading"><img alt="正在加载..." src="/img/ajax-loader.gif"/></div>
+	       	</div>
+	        <div id="month_yield_list" style="display: none;">
+	        	<div class="tops_loading"><img alt="正在加载..." src="/img/ajax-loader.gif"/></div>
+	        </div>
+	    </div>
+    </div>
+    
+    <!-- 选手微博 -->
+    <div class="contenBOX2 m-t-15" style="padding:0px; width:958px;overflow:hidden; position:relative;">
+	    <div class="newhead">
+	    	<h3>高手风采<span style="margin-left:20px; font-size:12px; font-weight:normal;color:#FFA442;">敬告高手：请尽量实名注册微博，完善微博头像、介绍等资料。方便我们对您的推广宣传。</span></h3>
+	    </div>
+	    <div id="gaoshou_list" class="mc-chartlist2">
+	    	<div class="tops_loading"><img alt="正在加载..." src="/img/ajax-loader.gif"/></div>
+	    </div>
+    </div>
+    
+    <!-- 微博讨论 -->
+    <div class="contenBOX2 m-t-15" style="padding:0px; width:958px;overflow:hidden; position:relative;">
+		<div class="newhead"><h3>微博讨论</h3></div>
+	    <div class="mc-chartlist2">
+	    	<div style="display:block">
+	    		<iframe id="weibo_iframe" name="weibo_iframe" src="http://t.163.com/zt/money/0025/monichaogutest" width="960" height="540" allowTransparency="true" frameborder="0" scrolling="no" style="margin:-24px -10px 0px -2px;_margin:0px -5px 0px -5px"></iframe>
+	    	</div>
+	    </div>
+    </div>
+    
+    <div style="padding:0px; width:958px;" class="contenBOX2 m-t-15">
+    	<div class="newhead"><h3>主办机构</h3></div>
+        	<div style="padding:10px 15px;">
+           	<table width="100%" cellspacing="0" cellpadding="0" border="0" class=" m-t-10">
+            <tbody>
+            	<tr>
+                	<td width="8%">主办单位：</td>
+                	<td width="25%"><a href="http://money.163.com/" target="_blank"><img width="196" height="50" src="/img/163logo.gif"/></a></td>
+                	<td width="8%">技术支持：</td>
+                	<td width="60%"><a href="http://www.7878.com/" target="_blank"><img src="/img/kubologo.jpg" width="196" height="50"/></a></td>
+             	</tr>
+            </tbody>
+           	</table>
+       	</div> 
+    </div>
+    
+    <div class="foot m-t-20 m-b-20">
+    	<iframe id="foot_iframe" name="foot_iframe" src="http://money.163.com/special/monichaogufoot/" frameborder="no" scrolling="no" style="width: 100%;border:0px;overflow:hidden;"></iframe>
+    </div>
+    
+<script type="text/javascript">
+var is_status = 0;
+function ajax_tops(order, limit, target){
+	$.get('http://chaogu.money.163.com/ajax_tops?order=' + order + '&limit=' + limit, function(data){
+		target.html(data);
+		target.find(".track_a").click(function(){
+			if( $(this).attr("is_track") == "1" ) return ;
+			m163.track.add(this, function(o, data){
+				$(o).removeClass("icon-16-addFriend").addClass("icon-16-addFriend2").attr("title", "已跟踪").attr("is_track", "1");
+			});
+		});	
+	});
+}
+function ajax_user_trackers(){
+	var len1 = $("#total_yield_list").parent().find(".tops_loading").length;
+	var len2 = $("#gaoshou_list").find(".tops_loading").length;
+	if( !is_status || len1 || len2 ) {
+		setTimeout("ajax_user_trackers()", 2000);
+		return false;
+	}
+	if( !m163.me.id ){
+		return false;
+	}
+	$.get('http://chaogu.money.163.com/track/ajax_user_trackers', function(data){
+		if( data.status == 'ok' )
+		{
+			for( var i = 0; i < data.result.match_user_trackers.length; i++)
+			{
+				var tracker_id = data.result.match_user_trackers[i].tracker_id;
+				$(".track_a[rel='" + tracker_id + "']").removeClass("icon-16-addFriend").addClass("icon-16-addFriend2").attr("title", "已跟踪").attr("is_track", "1");
+				$(".track2_a[rel='" + tracker_id + "']").parent().removeClass("button4").addClass("button5").attr("is_track", "1");
+				$(".track2_a[rel='" + tracker_id + "']").html("已跟踪");
+			}
+		}
+	}, 'json');
+}
+$(document).ready(function(){
+	$("ul.tabsTopL").tabs("div.mc-chartlist > div");
+	m163.status(undefined, function(){
+		is_status = 1;
+		if( m163.me.id )
+		{
+			$(".track_a[rel='" + m163.me.id + "']").remove();
+			$(".track2_a[rel='" + m163.me.id + "']").remove();
+		}
+	});
+	//行情滚动
+	var t_id, i = 0, s = 0, direction = 0;
+	function scroll(){
+		var ul = $(".market").find("ul");
+		s = 1;
+		if( !direction ){
+			ul.animate({marginTop:'-40px'}, 500, function(){
+				s = 0;
+				var len1 = ul.children().length;
+				ul.children().eq(0).insertAfter(ul.children().eq(len1-1));
+				ul.css({'margin-top':'-20px'});
+				if( i )
+				{
+					i--;
+					scroll();
+				}
+				else{
+					auto_scroll();
+				}
+			});
+		}else{
+			ul.animate({marginTop:'0px'}, 500, function(){
+				s = 0;
+				var len1 = ul.children().length;
+				ul.children().eq(len1-1).insertAfter(ul.children().eq(0));
+				ul.css({'margin-top':'-20px'});
+				if( i )
+				{
+					i--;
+					scroll();
+				}else{
+					auto_scroll();
+				}
+			});
+		}
+	}
+	function add_scroll(){
+		if( s == 1 ){
+			i++;
+			return;
+		}else{
+			clearInterval(t_id);
+			scroll();
+		}
+	}
+	function auto_scroll()
+	{
+		clearInterval(t_id);
+		t_id = setInterval(function(){
+			direction = 0;
+			scroll();
+		}, 10000);
+	}
+	function feed_api()
+	{
+		$.getJSON("http://api.money.126.net/data/feed/0000001,1399001,hkHSI,hkHSCCI,FG_rj225,FG_yingguo,FG_deguo,FG_faguo,US_DOWJONES,US_NASDAQ,FG_blt_yuanyou,FG_ny_qingyuanyou,FG_usd_cny,FG_huangjin,FG_eur_usd,FG_usd_jpy,money.api?callback=?", function(data){
+			for(key in data)
+			{
+				var body = data[key];
+				//console.log(body);
+				if( !body || typeof(body) != 'object' ) continue;
+				switch(body.type)
+				{
+					case 'SH':
+					case 'SZ':
+						var o = $("#code_" + body.code);
+						break;
+					case 'FG':
+						var o = $("#code_" + body.type + "_" + body.code);
+						break;
+					case 'USI':
+						var o = $("#code_US_" + body.symbol);
+						break;
+					default:
+						var o = $("#code_hk" + body.symbol);
+						break;
+				}
+				var price = parseFloat(body.price).toFixed(2);
+				var updown = parseFloat(body.updown).toFixed(2);
+				var turnover = parseInt(body.turnover/10000000).toFixed(2);
+				var percent = body.percent;
+				if( typeof(percent) == 'number'){
+					percent = parseFloat(body.percent).toPercent();
+				}
+				var h1 = updown >= 0 ? '<span class="f-Cred">+' + price + '</span>' : '<span class="f-Cgreen">' + price + '</span>';
+				var h2 = updown >= 0 ? '<span class="f-Cred">+' + updown + '</span>' : '<span class="f-Cgreen">' + updown + '</span>';
+				var h3 = updown >= 0 ? '<span class="f-Cred">+' + percent + '</span>' : '<span class="f-Cgreen">' + percent + '</span>';
+				o.children().eq(1).html("<b>" + h1 + "</b>");
+				o.children().eq(2).html(h2);
+				o.children().eq(3).html(h3);
+				o.children().eq(4).html(turnover + "亿");
+			}
+		});
+	}
+	auto_scroll();
+	feed_api();
+	setInterval(function(){
+		feed_api();
+	}, 8000);
+	$(".next-quote").click(function(){
+		direction = 0;
+		add_scroll();
+	});
+	$(".prev-quote").click(function(){
+		direction = 1;
+		add_scroll();
+	});
+	function search_symbol(symbol)
+	{
+		var p = (symbol.substr(0, 1) == '3' || symbol.substr(0, 1) == '0') ? 1 : 0;
+		window.open("http://quotes.money.163.com/" + p + symbol + ".html");
+	}
+	m163.stock.add_selected_callback(function(symbol){
+		search_symbol(symbol);
+	});
+	$("#symbol_search_btn").click(function(){
+		var symbol = $("#symbol_input").val().trim();
+		if( symbol.length != 6 ) return false;
+		search_symbol(symbol);
+	});
+	ajax_tops(0, 10, $("#total_yield_list"));
+	$.get('http://chaogu.money.163.com/ajax_gaoshou', function(data){
+		var target = $("#gaoshou_list");
+		target.html(data);
+		target.find(".track2_a").click(function(){
+			if( $(this).attr("is_track") == "1" ) return ;
+			m163.track.add(this, function(o, data){
+				$(o).parent().removeClass("button4").addClass("button5").attr("is_track", "1");
+				$(o).html("已跟踪");
+			});
+		});	
+	});
+	ajax_tops(1, 10, $("#day_yield_list"));
+	ajax_tops(7, 10, $("#week_yield_list"));
+	ajax_tops(30, 10, $("#month_yield_list"));
+	ajax_user_trackers();
+});
+</script>		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#account_menu, #people_menu, #track_feeds_menu").click(function(){
+		if( !m163.me.id )
+		{
+			var from = $(this).find("a").attr("href");
+			m163.dialog.load("/account/login/?from=" + from);
+			return false;
+		}
+		return true;
+	});
+})
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://163.wrating.com/a1.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0507010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0507010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<!-- START NetEase Devilfish 2006 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "stock";     //站点ID。
+neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+</body>
+</html>
+

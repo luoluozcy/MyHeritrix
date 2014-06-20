@@ -1,0 +1,1 @@
+document.writeln("<!--广告置换 小虫操作--><a href=\"http://www.ghzbuy.com\" target=\"_blank\"><img src=\"/z/img/a5_a4.gif\" border=0 width=980 height=60><\/a>")

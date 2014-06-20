@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+</head>
+<script language="javascript">
+window.document.title="车型图库_网易汽车_买车第一站";
+function getParameter(name) {
+//	var url = document.location.href;
+	var url = "http://pic.auto.163.com/";
+	var start = url.indexOf("?")+1;
+	if (start==0) {
+		return "";
+	}
+	var value = "";
+	var queryString = url.substring(start);
+	var paraNames = queryString.split("&");
+	for (var i=0; i<paraNames.length; i++) {
+		if (name==getParameterName(paraNames[i])) {
+			value = getParameterValue(paraNames[i])
+		}
+	}
+	return value;
+}
+function getParameterName(str) {
+	var start = str.indexOf("=");
+	if (start==-1) {
+		return str;
+	}
+	return str.substring(0,start);
+}
+
+function getParameterValue(str) {
+	var start = str.indexOf("=");
+	if (start==-1) {
+		return "";
+	}
+	return str.substring(start+1);
+}
+
+if(self!=top){
+ // top.location=self.location;
+    top.location="http://pic.auto.163.com/autopic/";
+}
+
+	var gotourl=getParameter("url") ;
+		
+	if(gotourl==""){
+		//gotourl = "main.html";
+		window.location="http://pic.auto.163.com/autopic/";
+	}
+	else {
+		gotourl = unescape(gotourl);
+	}
+	function init_nav() {
+	 document.getElementById("main").src=gotourl;
+}
+	</script>
+<frameset rows="200,*" cols="*" frameborder="no" border="0" framespacing="0">
+  <frame src="head081009.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
+  <frameset rows="*" cols="200,*" framespacing="0" frameborder="no" border="0" onload="init_nav()">
+    <frame src="http://pic.auto.163.com/left.html" name="leftFrame" scrolling="yes" noresize="noresize" id="leftFrame" title="leftFrame" />
+    <frame name="main" scrolling="yes" noresize="noresize" id="main" title="mainFrame" />
+  </frameset>
+</frameset>
+<noframes>
+</body><body>
+</noframes></html>

@@ -1,0 +1,803 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base target="_blank" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>【风暴英雄】开发理念 - 风暴大厅（A.163.COM）| 风暴英雄国服官网合作中文站</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="keywords" content="风暴英雄开发理念,暴雪嘉年华" />
+<meta name="description" content="风暴英雄基础介绍及资料。最专业风暴英雄资料，尽在A.163.COM！" />
+<link rel="stylesheet" type="text/css" media="all" href="http://img1.cache.netease.com/game/blizzard/static/css/common.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://game.163.com/special/00314RSV/heroes-common.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://game.163.com/special/00314RSV/heroes-endpage.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://game.163.com/special/00314RSV/heroes-endpage-wide.css" />
+</head>
+<body>
+<!--Begin Head-->
+<div style="height:35px; background:url(http://img1.cache.netease.com/cnews/img09/ntes_bg.jpg) repeat-x;">
+	<div class="NTES_nav_ NTES_bg_">
+    <span class="NTES_logo"><a href="http://game.163.com/"><img alt="游戏专题" src="http://img1.cache.netease.com/subject/images/newlogo100628/game.gif" /></a></span>
+	<span class="nav_link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://t.163.com/">微博</a></span>
+    <div class="top_search">
+	  <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="game.163" name="keyfrom"/>
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/></label>
+		<noscript><select name="site" class="left">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript>
+        <div id="divSelect" class="left">
+        </div>
+<input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="in" name="in"/>
+</form>
+<a href="http://www.163.com/rss"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img1.cache.netease.com/cnews/img07/rss.gif" /></a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected.removeChild(selected.firstChild);
+                selected.appendChild(txt);
+                select_main.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName").value = title;
+                if (title == "网易") {
+				document.nisearch_top.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover () {
+                this.className = "active";
+            }
+            function a_mouseout () {
+                this.className = "";
+            }
+            $_G("divSelect").innerHTML = '<input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area = $_G("select_area"), selected = $_G("selected"), select_main = $_G("select_main"), select_list = select_main.getElementsByTagName("a"), len = select_list.length;
+            select_area.onclick = select_main.onmouseover = function(){
+                select_main.style.display = "block";
+            }
+            select_main.onmouseout = function(){
+                select_main.style.display = "none";
+            }
+            
+            for (var i = 0; i < len; i++) {
+                select_list[i].onclick = clickselect;
+                select_list[i].onmouseover = a_mouseover;
+                select_list[i].onmouseout = a_mouseout;
+            }
+        })();
+//]]>
+</script>
+</div>
+<span class="clear"><!-- Clear --></span> 
+<!-- End Head -->
+<div class="wrapper">
+	<div class="header">		
+		<!-- Menu -->
+		<div class="menu">
+			<ul class="menu-content clearfix">
+	<li><a href="http://a.163.com/">首页</a></li>
+	<li><a href="http://a.163.com/special/sp/basic.html">基础</a>
+		<ul>
+			<li><a href="http://a.163.com/special/sp/level-quest.html">等级与任务</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes-maps.html">地图简介</a></li>
+			<li><a href="http://a.163.com/special/sp/mechanism.html">核心机制</a></li>
+			<li><a href="http://a.163.com/special/sp/dev_aim.html">开发理念</a></li>
+			<li><a href="http://a.163.com/special/sp/events.html">大事记</a></li>
+		</ul>
+	</li>
+	<li><a href="http://a.163.com/special/sp/heroes_main.html">英雄</a>
+		<ul>
+			<li><a href="http://a.163.com/special/sp/heroes_warrior.html">战斗型</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes_assassin.html">刺杀型</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes_support.html">辅助型</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes_specialist.html">专业型</a></li>
+		</ul>
+	</li>
+	<li><a href="http://a.163.com/special/heroes_video/">视频</a></li>
+	<li><a href="#" class="wait">数据库</a></li>
+	<li><a href="#" class="wait">下载</a></li>
+	<li><a href="#" class="wait">百科</a></li>
+	<li><a href="http://bbs.d.163.com/forum-353-1.html">论坛</a></li>
+</ul>
+<script type="text/javascript" src="http://img1.cache.netease.com/common/libs/jquery/1.8.3/jquery.noconflict.min.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/game/static/js/common-game-site.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+	Menu.init('.menu-content');
+	$('.wait').click(function(){
+		alert('敬请期待');
+		return false;
+	});
+});
+</script>
+		</div>
+	</div>
+	<div class="heroes-content clearfix">
+		<div class="content-left">
+			<div class="location">
+				<a href="http://game.163.com/">网易游戏频道</a><a href="http://a.163.com/">风暴英雄</a><a>开发理念</a>
+			</div>
+			<div class="article-content">
+			  <div class="special-link">
+			  <table class="f_table no-border" style="width:800px;">
+			  	<tr>
+					<td align="center">
+					<span class="f12px"><a href="http://a.163.com/special/sp/basic.html">基础介绍</a> | <a href="http://a.163.com/special/sp/heroes-maps.html">地图介绍</a> | <a href="http://a.163.com/special/sp/level-quest.html">等级与任务</a> | <a href="http://a.163.com/special/sp/mechanism.html">核心机制</a> | <a href="http://a.163.com/special/sp/dev_aim.html">开发理念</a> | <a href="http://a.163.com/special/sp/events.html">大事记</a></span>
+					</td>
+				</tr>
+			  </table>
+			  </div>
+				<h1 class="special">《风暴英雄》的开发理念</h1>
+				<div id="endText">
+				<table class="f_table no-border" style="width:920px;">
+					<tr>
+						<td>
+						<p class="f_center">
+<object id="FPlayer1384061177763" width="700" height="480" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" thumbnail="http://vimg3.ws.126.net/image/snapshot/2013/11/6/2/V9CD16062_logo.jpg"><param name="movie" value="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="allownetworking" value="all" /><param name="wmode" value="opaque" /><param name="flashvars" value="sid=V6FERU4MT&topicid=0031&hiddenR=true&vid=V9CD16061&coverpic=http://vimg1.ws.126.net/image/snapshot/2013/11/6/2/V9CD16062.jpg&pltype=7&autoplay=false" /><!--[if !IE]><--><object id="FPlayer1384061177763" width="700" height="480" data="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" type="application/x-shockwave-flash"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="allownetworking" value="all" /><param name="wmode" value="opaque" /><param name="flashvars" value="sid=V6FERU4MT&topicid=0031&hiddenR=true&vid=V9CD16061&coverpic=http://vimg1.ws.126.net/image/snapshot/2013/11/6/2/V9CD16062.jpg&pltype=7&autoplay=false" /></object><!--<![endif]--></object>
+<script type="text/javascript"> if (/(iPhone|iPad|iPod)/ig.test(navigator.userAgent)){ var str1 = '<video controls="controls" autoplay="autoplay" preload="auto" width="700" height="480">'; var str2 = '<source type="video/mp4" src="http://flv.bn.netease.com/videolib3/1311/10/EUzCA9541/SD/EUzCA9541-mobile.mp4"> 您的浏览器暂时无法播放此视频.</video>';document.getElementById("FPlayer1384061177763").parentNode.innerHTML = str1 + str2;}</script>
+<br>
+<a href="http://v.game.163.com/video/2013/11/6/1/V9CD16061.html" target="_blank">《风暴英雄》开发者访谈视频</a>
+						</p>
+						<p>在2014年的暴雪嘉年华上举行的《风暴英雄》预览环节，游戏开发团队的四位人员：Dustin Browder（游戏总监）、Alan Dabiri（首席软件工程师）、Sam Didier（高级艺术总监）、Chris Sigaty（出品监制）一起出席，就游戏的主要信息进行披露和问答，具体内容包括游戏的核心机制、英雄、战场等。</p>
+						<ul>
+						<li>游戏的目的是让玩家可以和朋友都使用暴雪英雄一起玩。</li>
+						<li>《魔兽争霸3》的游戏编辑器和游戏的机制对于MOBA游戏的诞生非常重要。</li>
+						<li>《星际争霸2》的编辑器很强大，所以开发团队用它做了一个游戏，由于开始收到的反馈不错，于是决定做得更多。</li>
+						<li>为暴雪嘉年华所创作的艺术画是把所有暴雪游戏世界结合起来的基础工作。</li>
+						<li>《炉石传说》的借鉴意义：《炉石传说》同时包含了有趣的玩法以及魔兽系列的精髓，对于《风暴英雄》来说开发团队也希望把的乐趣和暴雪所有游戏的世界观结合起来。</li>
+						<li>在游戏里使用阿尔萨斯就像是控制一个前所未有致命的英雄，他能窃取并拥有敌人的灵魂然后再将它们投入战场。</li>
+						<li>你可以自由选择同一个英雄的不同技能。</li>
+						<li>一些英雄让开发团队专门去体验该英雄发生变化之前的样子，比如阿尔萨斯。</li>
+						<li>《星际争霸2》里的阿巴瑟同样出现在英雄列表中，他能从很远的地方跳进友方英雄身体中，使得他可以在其中使用一些射击技能。他的本体倒不十分危险。</li>
+						<li>英雄拥有不一样的皮肤，有的只是颜色和细节不一样，有的则是整个模型也不一样。</li>
+						<li>单局游戏的目标时长约为20分钟。</li>
+						<li>不仅英雄有等级，队伍也有等级，这使得开发辅助（Support）英雄和专家（Specialist）英雄时有更多选择。</li>
+						<li>游戏地图可以从匹配游戏中移除，并能有新地图加入。不同的战场意味着和朋友玩有更多的乐趣。</li>
+						<li>两三场团战不至于决定游戏的胜负，除非双方的实力本来就不平衡。</li>
+						<li>互相的交流至关重要，会影响最后的结果。</li>
+						<li>坐骑的存在使得组团和散团都非常之快。</li>
+						<li>单个英雄的能力很棒，但是你将不能让你的英雄比其它人所有人都强大，这个游戏是团队游戏。</li>
+						<li>技能和天赋之外还有很多可自定义，将来会推出。</li>
+						<li>游戏玩起来具有竞争性，是否成为电子竞技项目取决于玩家社区。</li>
+						</ul>
+				</td>
+				</tr>
+				</table>
+<p></div>
+<!-- 图集开始 0031/57127 -->
+<link href="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_wz_1.0.css" rel="stylesheet" type="text/css">
+<link href="http://img1.cache.netease.com/utf8/microblog/plugin/css/wb2.0.5.css" charset="utf-8" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wb2.2.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wbshare1.0.3.js" charset="utf-8"></script>
+<style type="text/css">#gallery57127 .nph_photo_view{ height:400px;}</style>
+<div class="nph_gallery" id="gallery57127">
+<div class="nph_bg">
+    <div id="modePhoto57127" class="nph_photo">
+        <div class="nph_photo_view">
+            <div class="nph_cnt" id="photoView57127"><i></i><img src="http://img1.cache.netease.com/cnews/img/gallery11/bg06.png" id="photo57127" onerror="this.src=this.src.replace(/600x450_|900x600_/, '');" /></div>
+            <div class="nph_photo_prev"><a href="#" hidefocus="true" class="nph_btn_pphoto" id="photoPrev57127" target="_self"></a></div>
+            <div class="nph_photo_next"><a href="#" hidefocus="true" class="nph_btn_nphoto" id="photoNext57127" target="_self"></a></div>
+            <div class="nph_photo_loading" id="photoLoading57127"></div>
+            <div class="nph_photo_viewlarge" data-link="http://game.163.com/photoview/5ILS0031/57127.html"></div>        </div>
+        <div class="nph_cnt">
+            <div id="setInfo57127"><span id="photoType57127" class="nph_set_cur"><span class="nph_c_lh" id="photoIndex57127"></span>/63</span></div>
+            <div class="nph_photo_desc" id="photoDesc57127"></div>
+        </div>
+<!-- --><div class="nph_cnt clearfix">
+<!--     --><div class="nph_photo_thumb" id="scrl57127">
+<!--         --><div class="clearfix">
+<!--             --><div class="nph_scrl">
+<!--                 --><div class="nph_scrl_thumb">
+<!--  11  66666666       --><div class="nph_scrl_main"><ul class="nph_list_thumb" id="thumb57127"></ul></div>
+<!--  11  66    66       --><div class="nph_scrl_bar clearfix">
+<!--  11  66        3333333  --><div class="nph_scrl_bd">
+<!--  11  66             33      --><div class="nph_scrl_ct">
+<!--  11  66666666       33          --><a href="" hidefocus="true" class="nph_btn_scrl" id="bar57127">
+<!--  11  66    66  3333333              --><b class="nph_btn_lt"></b><b class="nph_btn_rt"></b><span class="nph_btn_bd"><span></span></span>
+<!--  11  66    66       33  .com    --></a>
+<!--  11  66    66       33      --></div>
+<!--  11  66666666  3333333  --></div>
+<!--                     --></div>
+<!--                 --></div>
+<!--             --></div>
+<!--         --></div>
+<!--     --></div>
+<!-- --></div>
+    </div>
+    <div class="nph_photo_ctrl">
+        <div style="float:right;margin-top:-3px;">&nbsp;|&nbsp;&nbsp;<a href="http://yuetu.163.com/?f=ArticlePhoto#game" class="cBlue"><img src="http://img1.cache.netease.com/cnews/img/gallery13/wz/img/yuetu_logo_btm.png?1" style="vertical-align:middle;"></a></div>
+        <div class="nph-share-top js-nph-pop" style="float:right;margin:0;">
+            <span class="cBlue">分享到<em class="nph-poplist-arr"></em></span>
+            <div class="nph-poplist" id="nph_share57127">
+                <ul class="clearfix">
+                    <li class="first"><a href="javascript:" class="ntshare-t163"><span class="inner"><i class="nph-share-icon nph-share-163"></i>网易微博<span class="count" style="display:none;">0</span></span></a></li>
+                    <li><a href="javascript:" class="ntshare-sina"><span class="inner"><i class="nph-share-icon nph-share-sina"></i>新浪微博</span></a></li>
+                    <li><a href="javascript:" class="ntshare-qzone"><span class="inner"><i class="nph-share-icon nph-share-qzone"></i>腾讯空间</span></a></li>
+                    <li><a href="javascript:" class="ntshare-renren"><span class="inner"><i class="nph-share-icon nph-share-renren"></i>人人网</span></a></li>
+                    <li class="last"><a href="javascript:" class="ntshare-youdao"><span class="inner"><i class="nph-share-icon nph-share-youdao"></i>有道云笔记</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <ul style="float:right;">
+            <li><a href="http://game.163.com/?f=ArticlePcenter" class="cBlue">网易游戏频道出品</a>&nbsp;&nbsp;|&nbsp;</li>            <li><a href="http://game.163.com/photoview/5ILS0031/57127.html?f=ArticlePview" class="nph_icon_pset">查看图集</a>&nbsp;&nbsp;|&nbsp;</li>
+        </ul>
+    </div>
+<!-- 图片数据 start-->
+<textarea class="hidden" id="photoList57127">
+<li>
+<a href="#p=9D9LBQFP5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LBQFP5ILS0031.jpg" alt="HotS发布会现场实录 (1)" /></a>
+<h2>HotS发布会现场实录 (1)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LBQFP5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LBQFP5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LBRME5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LBRME5ILS0031.jpg" alt="HotS发布会现场实录 (2)" /></a>
+<h2>HotS发布会现场实录 (2)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LBRME5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LBRME5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LBT5M5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LBT5M5ILS0031.jpg" alt="HotS发布会现场实录 (3)" /></a>
+<h2>HotS发布会现场实录 (3)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LBT5M5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LBT5M5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC1DJ5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LC1DJ5ILS0031.jpg" alt="HotS发布会现场实录 (4)" /></a>
+<h2>HotS发布会现场实录 (4)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC1DJ5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LC1DJ5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC29H5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LC29H5ILS0031.jpg" alt="HotS发布会现场实录 (5)" /></a>
+<h2>HotS发布会现场实录 (5)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC29H5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LC29H5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC3655ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LC3655ILS0031.jpg" alt="HotS发布会现场实录 (6)" /></a>
+<h2>HotS发布会现场实录 (6)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC3655ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LC3655ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC45D5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LC45D5ILS0031.jpg" alt="HotS发布会现场实录 (7)" /></a>
+<h2>HotS发布会现场实录 (7)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC45D5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LC45D5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC5005ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LC5005ILS0031.jpg" alt="HotS发布会现场实录 (8)" /></a>
+<h2>HotS发布会现场实录 (8)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC5005ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LC5005ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC5R75ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LC5R75ILS0031.jpg" alt="HotS发布会现场实录 (9)" /></a>
+<h2>HotS发布会现场实录 (9)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC5R75ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LC5R75ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC6N95ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LC6N95ILS0031.jpg" alt="HotS发布会现场实录 (10)" /></a>
+<h2>HotS发布会现场实录 (10)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC6N95ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LC6N95ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC7IB5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LC7IB5ILS0031.jpg" alt="HotS发布会现场实录 (11)" /></a>
+<h2>HotS发布会现场实录 (11)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC7IB5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LC7IB5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LC8SF5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LC8SF5ILS0031.jpg" alt="HotS发布会现场实录 (12)" /></a>
+<h2>HotS发布会现场实录 (12)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LC8SF5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LC8SF5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCADO5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCADO5ILS0031.jpg" alt="HotS发布会现场实录 (13)" /></a>
+<h2>HotS发布会现场实录 (13)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCADO5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCADO5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCBPJ5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCBPJ5ILS0031.jpg" alt="HotS发布会现场实录 (14)" /></a>
+<h2>HotS发布会现场实录 (14)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCBPJ5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCBPJ5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCD9N5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCD9N5ILS0031.jpg" alt="HotS发布会现场实录 (15)" /></a>
+<h2>HotS发布会现场实录 (15)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCD9N5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCD9N5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCEQI5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCEQI5ILS0031.jpg" alt="HotS发布会现场实录 (16)" /></a>
+<h2>HotS发布会现场实录 (16)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCEQI5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCEQI5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCG4U5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCG4U5ILS0031.jpg" alt="HotS发布会现场实录 (17)" /></a>
+<h2>HotS发布会现场实录 (17)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCG4U5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCG4U5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCGVL5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCGVL5ILS0031.jpg" alt="HotS发布会现场实录 (18)" /></a>
+<h2>HotS发布会现场实录 (18)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCGVL5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCGVL5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCIBT5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LCIBT5ILS0031.jpg" alt="HotS发布会现场实录 (19)" /></a>
+<h2>HotS发布会现场实录 (19)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCIBT5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCIBT5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCJ4G5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LCJ4G5ILS0031.jpg" alt="HotS发布会现场实录 (20)" /></a>
+<h2>HotS发布会现场实录 (20)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCJ4G5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCJ4G5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCKLG5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCKLG5ILS0031.jpg" alt="HotS发布会现场实录 (21)" /></a>
+<h2>HotS发布会现场实录 (21)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCKLG5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCKLG5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCM2U5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LCM2U5ILS0031.jpg" alt="HotS发布会现场实录 (22)" /></a>
+<h2>HotS发布会现场实录 (22)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCM2U5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCM2U5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCNK05ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCNK05ILS0031.jpg" alt="HotS发布会现场实录 (23)" /></a>
+<h2>HotS发布会现场实录 (23)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCNK05ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCNK05ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCOTL5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCOTL5ILS0031.jpg" alt="HotS发布会现场实录 (24)" /></a>
+<h2>HotS发布会现场实录 (24)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCOTL5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCOTL5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCPRV5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCPRV5ILS0031.jpg" alt="HotS发布会现场实录 (25)" /></a>
+<h2>HotS发布会现场实录 (25)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCPRV5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCPRV5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCQVB5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LCQVB5ILS0031.jpg" alt="HotS发布会现场实录 (26)" /></a>
+<h2>HotS发布会现场实录 (26)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCQVB5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCQVB5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCRQK5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LCRQK5ILS0031.jpg" alt="HotS发布会现场实录 (27)" /></a>
+<h2>HotS发布会现场实录 (27)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCRQK5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCRQK5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCSLF5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LCSLF5ILS0031.jpg" alt="HotS发布会现场实录 (28)" /></a>
+<h2>HotS发布会现场实录 (28)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCSLF5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCSLF5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCTUA5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCTUA5ILS0031.jpg" alt="HotS发布会现场实录 (29)" /></a>
+<h2>HotS发布会现场实录 (29)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCTUA5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LCTUA5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LCUTA5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LCUTA5ILS0031.jpg" alt="HotS发布会现场实录 (30)" /></a>
+<h2>HotS发布会现场实录 (30)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LCUTA5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LCUTA5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LD09J5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LD09J5ILS0031.jpg" alt="HotS发布会现场实录 (31)" /></a>
+<h2>HotS发布会现场实录 (31)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LD09J5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LD09J5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LD1QH5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LD1QH5ILS0031.jpg" alt="HotS发布会现场实录 (32)" /></a>
+<h2>HotS发布会现场实录 (32)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LD1QH5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LD1QH5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LD3A65ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LD3A65ILS0031.jpg" alt="HotS发布会现场实录 (33)" /></a>
+<h2>HotS发布会现场实录 (33)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LD3A65ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LD3A65ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LD4O55ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LD4O55ILS0031.jpg" alt="HotS发布会现场实录 (34)" /></a>
+<h2>HotS发布会现场实录 (34)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LD4O55ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LD4O55ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LD6675ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LD6675ILS0031.jpg" alt="HotS发布会现场实录 (35)" /></a>
+<h2>HotS发布会现场实录 (35)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LD6675ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LD6675ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LD7KE5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LD7KE5ILS0031.jpg" alt="HotS发布会现场实录 (36)" /></a>
+<h2>HotS发布会现场实录 (36)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LD7KE5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LD7KE5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LD9585ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LD9585ILS0031.jpg" alt="HotS发布会现场实录 (37)" /></a>
+<h2>HotS发布会现场实录 (37)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LD9585ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LD9585ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDAHT5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LDAHT5ILS0031.jpg" alt="HotS发布会现场实录 (38)" /></a>
+<h2>HotS发布会现场实录 (38)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDAHT5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDAHT5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDC4P5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LDC4P5ILS0031.jpg" alt="HotS发布会现场实录 (39)" /></a>
+<h2>HotS发布会现场实录 (39)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDC4P5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDC4P5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDDG95ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LDDG95ILS0031.jpg" alt="HotS发布会现场实录 (40)" /></a>
+<h2>HotS发布会现场实录 (40)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDDG95ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LDDG95ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDF2K5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDF2K5ILS0031.jpg" alt="HotS发布会现场实录 (41)" /></a>
+<h2>HotS发布会现场实录 (41)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDF2K5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDF2K5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDGEF5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDGEF5ILS0031.jpg" alt="HotS发布会现场实录 (42)" /></a>
+<h2>HotS发布会现场实录 (42)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDGEF5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LDGEF5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDHTM5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LDHTM5ILS0031.jpg" alt="HotS发布会现场实录 (43)" /></a>
+<h2>HotS发布会现场实录 (43)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDHTM5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LDHTM5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDJCN5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDJCN5ILS0031.jpg" alt="HotS发布会现场实录 (44)" /></a>
+<h2>HotS发布会现场实录 (44)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDJCN5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDJCN5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDKQA5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDKQA5ILS0031.jpg" alt="HotS发布会现场实录 (45)" /></a>
+<h2>HotS发布会现场实录 (45)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDKQA5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LDKQA5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDMCP5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDMCP5ILS0031.jpg" alt="HotS发布会现场实录 (46)" /></a>
+<h2>HotS发布会现场实录 (46)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDMCP5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDMCP5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDNQO5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDNQO5ILS0031.jpg" alt="HotS发布会现场实录 (47)" /></a>
+<h2>HotS发布会现场实录 (47)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDNQO5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LDNQO5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDPA95ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDPA95ILS0031.jpg" alt="HotS发布会现场实录 (48)" /></a>
+<h2>HotS发布会现场实录 (48)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDPA95ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LDPA95ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDQMV5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDQMV5ILS0031.jpg" alt="HotS发布会现场实录 (49)" /></a>
+<h2>HotS发布会现场实录 (49)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDQMV5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDQMV5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDS385ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LDS385ILS0031.jpg" alt="HotS发布会现场实录 (50)" /></a>
+<h2>HotS发布会现场实录 (50)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDS385ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDS385ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDU015ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LDU015ILS0031.jpg" alt="HotS发布会现场实录 (51)" /></a>
+<h2>HotS发布会现场实录 (51)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDU015ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LDU015ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LDV345ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LDV345ILS0031.jpg" alt="HotS发布会现场实录 (52)" /></a>
+<h2>HotS发布会现场实录 (52)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LDV345ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LDV345ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LE01K5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LE01K5ILS0031.jpg" alt="HotS发布会现场实录 (53)" /></a>
+<h2>HotS发布会现场实录 (53)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LE01K5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LE01K5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LE0UH5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LE0UH5ILS0031.jpg" alt="HotS发布会现场实录 (54)" /></a>
+<h2>HotS发布会现场实录 (54)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LE0UH5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LE0UH5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LE1PC5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LE1PC5ILS0031.jpg" alt="HotS发布会现场实录 (55)" /></a>
+<h2>HotS发布会现场实录 (55)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LE1PC5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LE1PC5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LE2LD5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LE2LD5ILS0031.jpg" alt="HotS发布会现场实录 (56)" /></a>
+<h2>HotS发布会现场实录 (56)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LE2LD5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LE2LD5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LE3GH5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LE3GH5ILS0031.jpg" alt="HotS发布会现场实录 (57)" /></a>
+<h2>HotS发布会现场实录 (57)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LE3GH5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-10/t_9D9LE3GH5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LEV1E5ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LEV1E5ILS0031.jpg" alt="HotS发布会现场实录 (58)" /></a>
+<h2>HotS发布会现场实录 (58)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LEV1E5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LEV1E5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LEVS95ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LEVS95ILS0031.jpg" alt="HotS发布会现场实录 (59)" /></a>
+<h2>HotS发布会现场实录 (59)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LEVS95ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LEVS95ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LF0JS5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LF0JS5ILS0031.jpg" alt="HotS发布会现场实录 (60)" /></a>
+<h2>HotS发布会现场实录 (60)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LF0JS5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LF0JS5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LF1BP5ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LF1BP5ILS0031.jpg" alt="HotS发布会现场实录 (61)" /></a>
+<h2>HotS发布会现场实录 (61)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LF1BP5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LF1BP5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LF2255ILS0031" hidefocus="true"><img data-id="57127" src="http://img4.cache.netease.com/photo/0031/2013-11-10/s_9D9LF2255ILS0031.jpg" alt="HotS发布会现场实录 (62)" /></a>
+<h2>HotS发布会现场实录 (62)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LF2255ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LF2255ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D9LF2U25ILS0031" hidefocus="true"><img data-id="57127" src="http://img3.cache.netease.com/photo/0031/2013-11-10/s_9D9LF2U25ILS0031.jpg" alt="HotS发布会现场实录 (63)" /></a>
+<h2>HotS发布会现场实录 (63)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LF2U25ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-10/t_9D9LF2U25ILS0031.jpg</i>
+</li>
+</textarea>
+<!-- 图片数据 end-->
+    <input type="hidden" value="9D9LBQFP5ILS0031,9D9LBRME5ILS0031,9D9LBT5M5ILS0031,9D9LC1DJ5ILS0031,9D9LC29H5ILS0031,9D9LC3655ILS0031,9D9LC45D5ILS0031,9D9LC5005ILS0031,9D9LC5R75ILS0031,9D9LC6N95ILS0031,9D9LC7IB5ILS0031,9D9LC8SF5ILS0031,9D9LCADO5ILS0031,9D9LCBPJ5ILS0031,9D9LCD9N5ILS0031,9D9LCEQI5ILS0031,9D9LCG4U5ILS0031,9D9LCGVL5ILS0031,9D9LCIBT5ILS0031,9D9LCJ4G5ILS0031,9D9LCKLG5ILS0031,9D9LCM2U5ILS0031,9D9LCNK05ILS0031,9D9LCOTL5ILS0031,9D9LCPRV5ILS0031,9D9LCQVB5ILS0031,9D9LCRQK5ILS0031,9D9LCSLF5ILS0031,9D9LCTUA5ILS0031,9D9LCUTA5ILS0031,9D9LD09J5ILS0031,9D9LD1QH5ILS0031,9D9LD3A65ILS0031,9D9LD4O55ILS0031,9D9LD6675ILS0031,9D9LD7KE5ILS0031,9D9LD9585ILS0031,9D9LDAHT5ILS0031,9D9LDC4P5ILS0031,9D9LDDG95ILS0031,9D9LDF2K5ILS0031,9D9LDGEF5ILS0031,9D9LDHTM5ILS0031,9D9LDJCN5ILS0031,9D9LDKQA5ILS0031,9D9LDMCP5ILS0031,9D9LDNQO5ILS0031,9D9LDPA95ILS0031,9D9LDQMV5ILS0031,9D9LDS385ILS0031,9D9LDU015ILS0031,9D9LDV345ILS0031,9D9LE01K5ILS0031,9D9LE0UH5ILS0031,9D9LE1PC5ILS0031,9D9LE2LD5ILS0031,9D9LE3GH5ILS0031,9D9LEV1E5ILS0031,9D9LEVS95ILS0031,9D9LF0JS5ILS0031,9D9LF1BP5ILS0031,9D9LF2255ILS0031,9D9LF2U25ILS0031," name="imgIds" />
+</div>
+
+
+
+                                                                        
+
+<div id="photoLayout57127" class="nph_photo_layout">
+    <script type="text/javascript">//<![CDATA[
+    // 图片加载后自适应容器
+    window.nph_fitImg=function(a,b,c){var d=a.parentNode.getBoundingClientRect(),e=a.width,f=a.height,g=b||d.width,h=c||d.height,i={wrap:g/h,img:e/f},j={width:0,height:0,left:0,top:0};i.img<i.wrap?(j.width=g,j.height=Math.round(j.width/i.img),j.left=0,j.top=Math.round((h-j.height)/2)):i.img>i.wrap?(j.height=h,j.width=Math.round(j.height*i.img),j.top=0,j.left=Math.round((g-j.width)/2)):(j.width=g,j.height=h,j.left=0,j.top=0),a.style.width=j.width+"px",a.style.height=j.height+"px",a.style.marginTop=j.top+"px",a.style.marginLeft=j.left+"px",a.style.visibility="visible"};
+    //]]></script>
+    <div class="nph_layout_bg"></div>
+    <div class="nph_layout_htp">
+        <div class="nph_layout_htp_top clearfix"><span>图集已浏览完毕</span><div class="nph_btn_again">重新浏览</div><a href="javascript:" class="nph_layout_close"></a></div>
+        <div class="nph_layout_htp_ad250" style="display:none;"></div>
+        <div class="nph_layout_htp_title"><a href="http://yuetu.163.com/">悦图推荐</a></div>
+        <div class="nph_layout_htp_bd">
+            <div class="nph_layout_htp_bd_t">
+                <a class="nph_htp_yuetu" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57112">
+                    <img alt="Heros of the Storm战场细节" src="about:blank" data-src="http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7VA98S5ILS0031.jpg" style="visibility:hidden;" onload="nph_fitImg(this,590,250);" />
+                    <h4 style="font-size:18px;">Heros of the Storm战场细节</h4>
+                </a>
+            </div>
+            <div class="nph_layout_htp_bd_b clearfix">
+                <a class="nph_htp_yuetu" style="width:292px;_width:289px;height:100%;float:left;margin-right:6px;" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57110" />
+                    <img alt="Heroes of the Storm游戏试玩实拍" src="about:blank" data-src="http://img3.cache.netease.com/photo/0031/2013-11-09/400x300_9D7QIBJL5ILS0031.JPG" style="visibility:hidden;" onload="nph_fitImg(this,292,228);" />
+                    <h4>Heroes of the Storm游戏试玩实拍</h4>
+                </a>
+                <a class="nph_htp_yuetu nph_htp_yuetu_imgtext" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57108">
+                    <div class="nph_htp_yuetu_imgtext_pic" style="width:55%;float:left;">
+                        <img alt="Heroes of the Storm英雄皮肤展示" src="about:blank" data-src="http://img3.cache.netease.com/photo/0031/2013-11-09/400x300_9D7PAMDE5ILS0031.jpg" style="visibility:hidden;" onload="nph_fitImg(this,161,111);" />
+                    </div>
+                    <div class="nph_htp_yuetu_imgtext_text" style="margin-left:55%;">
+                        <h4>Heroes of the Storm英雄皮肤展示</h4><div class="yuetu_arrow yuetu_arrow-l"></div>
+                    </div>
+                </a>
+                <a class="nph_htp_yuetu nph_htp_yuetu_imgtext"  style="margin-top:6px;" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57106">
+                    <div class="nph_htp_yuetu_imgtext_pic" style="width:55%;float:right;">
+                        <img alt="Heroes of the Storm英雄角色图" src="about:blank" data-src="http://img3.cache.netease.com/photo/0031/2013-11-09/400x300_9D7L7B5U5ILS0031.jpg" style="visibility:hidden;" onload="nph_fitImg(this,161,111);" />
+                    </div>
+                    <div class="nph_htp_yuetu_imgtext_text" style="margin-right:55%;">
+                        <h4>Heroes of the Storm英雄角色图</h4><div class="yuetu_arrow yuetu_arrow-r"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery11/ntes_ui_scroll.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_wz_1.0.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_share_menu_1.0.min.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/share_0.1.js" charset="gb2312"></script>
+<script type="text/javascript">//<![CDATA[
+NTES.ready(function ($) { new nph.Gallery({ sn: "57127", photoViewMode: 0  }); });
+window._ntshare2 && new window._ntshare2("#nph_share57127", {
+    url: document.location.href,
+    title: document.title,
+    summary: "",
+    pic: function() { return $('#photo57127').attr('src'); },
+    t163: {
+        source: encodeURIComponent("网易图片库"),
+        title: encodeURIComponent(document.title),
+        link: encodeURIComponent(document.location.href),
+        check1stImg: false,
+        togImg: true,
+        method: 'click',
+        keyfrom: 'share163tu.click',
+        images: function() { return $('#photo57127').attr('src'); }
+    }
+});
+//]]></script>
+<!-- 图集后贴图 -->
+<div class="WZTJ_htpGG" style="display:none;">
+    <a href="http://g.163.com/a?CID=27765&Values=554935378&Redirect=http://go.163.com/2014/0423/tl/" target="_blank"><img src="http://img1.126.net/channel14/016529_590250_0422.jpg" width="590" height="250" alt="天龙八部"></a>
+</div>
+<script type="text/javascript">//<![CDATA[
+NTES.ready(function(a){if(window._nph_htpgg_inited)return!1;var b=function(a){a&&a.parentNode&&a.parentNode.removeChild(a)};a.each(a("div[id^=photoLayout]"),function(c,d){var e=a(d).$(".nph_layout_htp_ad250")[0],f=a(".WZTJ_htpGG")[0].cloneNode(!0);b(a(d).$(".nph_layout_htp_bd_t")[0]),e&&e.appendChild(f)&&(e.style.display="block"),f.style.display="block"}),window._nph_htpgg_inited=!0});
+//]]></script><img src="http://img2.cache.netease.com/nocache/statistic/mod003.gif" width="0" height="0" border="0" />
+<!-- 图集结束 0031/57127 --><div id="endText"></p>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		<div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+	</div>
+</div> 
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0516010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0516010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "game"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+</body>
+</html>

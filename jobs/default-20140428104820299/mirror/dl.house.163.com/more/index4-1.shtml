@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>网易房产大连买房</title>
+    <meta name="keywords" content="网易大连房产,房产" />
+    <meta name="description" content="网易房产,网易大连房产,买房" />
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <base target="_blank" />
+    <link href="/resourse/css/base.css" rel="stylesheet" type="text/css" /><link href="/resourse/css/newslist.css" rel="stylesheet" type="text/css" />
+      <script src="/resourse/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript" charset="gb2312"></script>
+</head>
+<body>
+    <div class="NTES_nav_">
+	<span class="nav_link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a> |</span>
+
+    <div class="rightCon">
+		<div class="NTES-link">
+			<a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a>
+		</div>
+		<a href="http://www.163.com/rss"><img width="26" height="14" border="0" src="http://img3.cache.netease.com/cnews/img07/rss.gif" class="rss" alt="Rss"></a>
+	</div>
+
+</div>
+
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var logiframe = "";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"..." : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO || logstate=="1") {
+		var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+		if(mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入我的邮箱</a>';
+			}
+		if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入我的博客</a><a href="http://photo.163.com/?username='+passport+'\">进入我的相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入我的约会</a><a href="http://t.163.com">进入我的微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				logiframe = '<iframe allowTransparency=\"true\" style=\"width: 56px; height:26px; float:left; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.'+logdomain+'/mailinfo/shownewmsg_www_1222.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div>'+logiframe+'|<a class=\"ntes-usercenter-loginout\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+		};
+	}
+})
+//]]>
+</script>
+<span class="blank3"></span>&nbsp;<div class="ad960">
+        <!--子栏目通栏-->
+        <div class="left">
+            
+            <a href='http://www.elephant-parade.com/' target='_blank' title='大象群'><img style='position:absolute;' border='0' src='/resourse/images/blank.gif' width='750px' height='70px' alt='大象群' title='大象群'/></a><embed id='' width='750px' height='70px' type='application/x-shockwave-flash' src='/infoimg/20120529/cc897946-fec0-4e18-a50a-cf085d544214.swf' plugspace='http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash' wmode='opaque' quality='autohigh'></embed>
+
+
+        </div>
+        <div class="right">
+            
+            <a href='http://beijing.chineseoffice.com.cn/' target='_blank' title='中国写字楼网'><img style='position:absolute;' border='0' src='/resourse/images/blank.gif' width='200px' height='70px' alt='中国写字楼网' title='中国写字楼网'/></a><embed id='' width='200px' height='70px' type='application/x-shockwave-flash' src='/infoimg/20110126/ca5aeed5-7ac7-4d57-b25f-f5150228130f.swf' plugspace='http://www.macromedia.com/shockwave/download/index.cgi?p1_prod_version=shockwaveflash' wmode='opaque' quality='autohigh'></embed>
+
+
+        </div>
+        <!-- 顶部通栏广告 -->
+    </div>
+    <span class="blank9"></span>
+    <div class="channel">
+        <span class="logo"><a href="http://www.163.com/" title="网易">
+            <img src="/resourse/images/logo.jpg" width="107" height="24" alt="网易" /></a></span>
+        <span class="clogo"><a href="#" title="新闻">
+            <img src="http://img1.cache.netease.com/house/img09/area1210/newlogo.gif" alt="新闻" /></a></span>
+        <p class="position cGray">
+            <a href="http://www.163.com/">网易首页</a> &gt; <a href="http://house.163.com/">网易房产</a> &gt; <a href="http://news.163.com/" title="新闻">新闻</a></p>
+ 
+       
+        
+<div class="top_search">
+    <form target="_blank" id="formtop_house" name="nisearch_top_house" method="get" action="http://news.yodao.com/search">
+    <input type="hidden" value="house.163" name="keyfrom" />
+    <input type="hidden" value="user163" name="suser" />
+    <input type="hidden" value="gbk" name="ue" />
+    <label>
+        <span class="hidden">搜索</span>
+        <input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top_house"
+            name="q" />
+    </label>
+    <noscript>
+        <select name="site" class="left">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select>
+    </noscript>
+    <div id="divSelectAuto" class="left">
+    </div>
+    <input type="submit" class="btn" value="搜索" name="Submit" />
+    <input type="hidden" value="page" id="inauto" name="in" />
+    </form>
+</div>
+
+<script type="text/javascript"> 
+//<![CDATA[
+        (function NTES_Nav_house(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect_house(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected_house.removeChild(selected_house.firstChild);
+                selected_house.appendChild(txt);
+                select_main_house.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName_house").value = title;
+                if (title == "网易") {
+				document.nisearch_top_house.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top_house.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover_house () {
+                this.className = "active";
+            }
+            function a_mouseout_house () {
+                this.className = "";
+            }
+            $_G("divSelectAuto").innerHTML = '<input id="siteName_house" type="hidden" value="网易" name="site" /><div id="select_area_house" class="select_box"><span id="selected_house" class="search_site">新闻</span><div id="select_main_house" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area_house = $_G("select_area_house"), selected_house = $_G("selected_house"), select_main_house = $_G("select_main_house"), select_list_house = select_main_house.getElementsByTagName("a"), len_house = select_list_house.length;
+            select_area_house.onclick = select_main_house.onmouseover = function(){
+                select_main_house.style.display = "block";
+            }
+            select_main_house.onmouseout = function(){
+                select_main_house.style.display = "none";
+            }
+            
+            for (var i = 0; i < len_house; i++) {
+                select_list_house[i].onclick = clickselect_house;
+                select_list_house[i].onmouseover = a_mouseover_house;
+                select_list_house[i].onmouseout = a_mouseout_house;
+            }
+        })();
+//]]>
+</script>
+
+
+
+    </div>
+      
+    
+<div class="channel_nav">
+    
+    <div class="menu">
+        <h2 class="main">
+            
+            <a href="/index.html">首页</a>
+            
+            <strong class="on"><a href="/news.html" title="新闻">新闻</a></strong>
+            
+            
+            <a href="/more/index5-1.shtml" title="专题">专题</a> 
+            <a href="/more/index1-1.shtml" title="滚动">滚动</a> 
+            <a href="/more/index14-1.shtml" title="政策">政策</a> 
+            <a href="/more/index16-1.shtml" title="房企">房企</a> 
+            <a href="/more/index17-1.shtml" title="土地">土地</a>
+            
+            
+               <strong class=" sp"><a href="/more/index4-1.shtml" title="买房">买房</a></strong> 
+            
+            
+            <a href="/more/index13-1.shtml" title="楼讯">楼讯</a> 
+            <a href="/more/index11-1.shtml" title="优惠">优惠</a> 
+            <strong class=" sp"><a href="http://home.163.com/" title="家居">家居</a></strong>
+            <a href="http://home.163.com/special/001048P5/hangye.html" title="行业">行业</a> 
+            <a href="http://home.163.com/special/001048P5/gonglue.html" title="装修">装修</a> 
+            <a href="http://home.163.com/special/001048P5/fengshui.html" title="家居风水">风水</a> 
+            <a href="http://home.163.com/special/001048P5/shejishi.html" title="名师">名师</a>
+            <a href="http://go.home.163.com/homeshow/listall.html" title="秀家">秀家</a>
+            <strong class=" sp"><a href=" http://bbs.gz.house.163.com/list/yzjlb.html" title="业主">业主</a></strong> 
+            <a href="http://bbs.gz.house.163.com/list/enterprise.html" title="业内">业内</a> 
+            <a href="http://bbs.gz.house.163.com/list/hire.html" title="租售">租售</a>
+            <a href="http://bbs.gz.house.163.com/list/myhome.html" title="家居">家居</a>
+               
+        </h2>
+        <div class="exp">
+        </div>
+    </div>
+    
+</div>
+<span class="blank9"></span>
+    <span class="blank12"></span>
+    
+    <div class="area">
+        <div class="titleBar ui_s1">
+            <h2>
+                更多买房</h2>
+        </div>
+        <span class="blank3"></span>
+        <div class="listPages">
+<span class="s1">上一页</span> <a class="on" href="/more/index4-1.shtml" target="_self">1</a>
+ <a href="/more/index4-2.shtml" target="_self">2</a> <a href="/more/index4-3.shtml" target="_self">3</a> <a href="/more/index4-4.shtml" target="_self">4</a> <a href="/more/index4-5.shtml" target="_self">5</a> <a href="/more/index4-6.shtml" target="_self">6</a> <a href="/more/index4-7.shtml" target="_self">7</a> <a href="/more/index4-8.shtml" target="_self">8</a> <a href="/more/index4-9.shtml" target="_self">9</a> <a href="/more/index4-10.shtml" target="_self">10</a> <a href="/more/index4-11.shtml" target="_self">11</a> <a href="/more/index4-12.shtml" target="_self">12</a> <a href="/more/index4-13.shtml" target="_self">13</a> <a href="/more/index4-14.shtml" target="_self">14</a> <a href="/more/index4-15.shtml" target="_self">15</a> <a href="/more/index4-16.shtml" target="_self">16</a> <a href="/more/index4-17.shtml" target="_self">17</a> <a href="/more/index4-18.shtml" target="_self">18</a> <a href="/more/index4-19.shtml" target="_self">19</a> <a href="/more/index4-20.shtml" target="_self">20</a> <a href="/more/index4-2.shtml" target="_self">下一页</a></div>
+ 
+        <span class="blank15"></span>
+        <div class="textListbg clearfix">
+<ul class="textList">
+<li class="list-left"><a href="/news2/140427/4/1054186-1.shtml" target="_blank">购房者要慎重选择分期首付</a><span> 04-27 09:34</span></li>
+<li class="list-right"><a href="/news2/140427/4/1054182-1.shtml" target="_blank">一季度房地产贷款增速放缓</a><span> 04-27 09:13</span></li>
+<li class="list-left"><a href="/news2/140424/4/1054124-1.shtml" target="_blank">全球各地房价,出租收益率排名,最高为8%</a><span> 04-24 14:32</span></li>
+<li class="list-right"><a href="/news2/140424/4/1054125-1.shtml" target="_blank">东港商务区三大强势配套  佳兆业中心优享升值空</a><span> 04-24 11:30</span></li>
+<li class="list-left"><a href="/news2/140423/4/1054105-1.shtml" target="_blank">万达·海公馆赏樱季温暖启幕</a><span> 04-23 09:33</span></li>
+<li class="list-right"><a href="/news2/140422/4/1054087-1.shtml" target="_blank">龙湖·滟澜山萌系手工DIY专场&拉斯维加斯</a><span> 04-22 17:14</span></li>
+<li class="list-left"><a href="/news2/140422/4/1054085-1.shtml" target="_blank">【中冶蓝城】小院里的洋房，美好颠覆想象！</a><span> 04-22 15:42</span></li>
+<li class="list-right"><a href="/news2/140421/4/1054067-1.shtml" target="_blank">银帆国际“童年艺术季”欢乐落幕</a><span> 04-21 10:26</span></li>
+<li class="list-left"><a href="/news2/140415/4/1053931-1.shtml" target="_blank">招商地产·兰溪谷项目临时接待中心开放</a><span> 04-15 12:17</span></li>
+<li class="list-right"><a href="/news2/140415/4/1053930-1.shtml" target="_blank">2014开发区万达广场区域发展高峰论坛圆满落幕！</a><span> 04-15 10:17</span></li>
+</ul>
+<span class="blank15"></span>
+<ul class="textList">
+<li class="list-left"><a href="/news2/140414/4/1053895-1.shtml" target="_blank">买房纠纷:借名买房 对方欠债时房或被查封</a><span> 04-14 09:04</span></li>
+<li class="list-right"><a href="/news2/140410/4/1053837-1.shtml" target="_blank">购房者在市场深处潜伏</a><span> 04-10 08:07</span></li>
+<li class="list-left"><a href="/news2/140408/4/1053793-1.shtml" target="_blank">地铁二号线今年开通 佳兆业中心升值提速</a><span> 04-08 09:32</span></li>
+<li class="list-right"><a href="/news2/140408/4/1053792-1.shtml" target="_blank">【银帆国际】时尚环保DIY 助力公益事业</a><span> 04-08 09:29</span></li>
+<li class="list-left"><a href="/news2/140404/4/1053720-1.shtml" target="_blank">4月6日【银帆国际】时尚环保DIY火爆预约中</a><span> 04-04 17:04</span></li>
+<li class="list-right"><a href="/news2/140404/4/1053719-1.shtml" target="_blank">最美四月艳阳天，万达·海公馆邀您登山夺宝</a><span> 04-04 13:44</span></li>
+<li class="list-left"><a href="/news2/140402/4/1053675-1.shtml" target="_blank">中国买家热搜新西兰房产 一年兴趣激增至89%</a><span> 04-02 17:07</span></li>
+<li class="list-right"><a href="/news2/140402/4/1053673-1.shtml" target="_blank">你要成为自己的老板了，你老板知道吗？</a><span> 04-02 15:47</span></li>
+<li class="list-left"><a href="/news2/140402/4/1053671-1.shtml" target="_blank">老板花百万为情人买房 分手后欲要回遭遇败诉</a><span> 04-02 15:26</span></li>
+<li class="list-right"><a href="/news2/140402/4/1053654-1.shtml" target="_blank">北京二手房成交低 中介新业务专供离婚买房户</a><span> 04-02 08:43</span></li>
+</ul>
+<span class="blank15"></span>
+<ul class="textList">
+<li class="list-left"><a href="/news2/140403/4/1053697-1.shtml" target="_blank">4月6日【银帆国际】时尚环保DIY</a><span> 04-01 16:56</span></li>
+<li class="list-right"><a href="/news2/140401/4/1053630-1.shtml" target="_blank">楼市投机客需要揉揉眼睛再“下注”</a><span> 04-01 09:24</span></li>
+<li class="list-left"><a href="/news2/140401/4/1053629-1.shtml" target="_blank">任志强:城镇化还不到70% 今年房价将略有增长</a><span> 04-01 09:19</span></li>
+<li class="list-right"><a href="/news2/140401/4/1053625-1.shtml" target="_blank">金马路【银帆国际】给你稳稳的幸福</a><span> 04-01 09:04</span></li>
+<li class="list-left"><a href="/news2/140401/4/1053619-1.shtml" target="_blank">大连：供热临近结束室温仍须达标</a><span> 04-01 08:39</span></li>
+<li class="list-right"><a href="/news2/140401/4/1053618-1.shtml" target="_blank">大连:小区停车费一年涨三回业主有没有发言权</a><span> 04-01 08:36</span></li>
+<li class="list-left"><a href="/news2/140401/4/1053617-1.shtml" target="_blank">大连：近半月45家供热单位被投诉</a><span> 04-01 08:32</span></li>
+<li class="list-right"><a href="/news2/140401/4/1053616-1.shtml" target="_blank">大连10条公交线路站点有调整</a><span> 04-01 08:26</span></li>
+<li class="list-left"><a href="/news2/140401/4/1053615-1.shtml" target="_blank">大连放弃公租房实物配租一年后才能申请租金补贴</a><span> 04-01 08:21</span></li>
+<li class="list-right"><a href="/news2/140401/4/1053614-1.shtml" target="_blank">大连：泉水A区公租房今天补办入住手续</a><span> 04-01 08:15</span></li>
+</ul>
+<span class="blank15"></span>
+<ul class="textList">
+<li class="list-left"><a href="/news2/140328/4/1053559-1.shtml" target="_blank">赌王巅峰对决，就在水晶郦湾</a><span> 03-28 13:33</span></li>
+<li class="list-right"><a href="/news2/140327/4/1053539-1.shtml" target="_blank">清华名仕齐聚万达3月30日金融论坛风云对话</a><span> 03-27 11:05</span></li>
+<li class="list-left"><a href="/news2/140326/4/1053515-1.shtml" target="_blank">大连3月17-23日商品住宅成交1781套 环比上</a><span> 03-26 10:07</span></li>
+<li class="list-right"><a href="/news2/140326/4/1053513-1.shtml" target="_blank">银帆国际折得房率均价7000元/㎡</a><span> 03-26 09:00</span></li>
+<li class="list-left"><a href="/news2/140325/4/1053483-1.shtml" target="_blank">龙湖·滟澜山拉斯维加斯博彩体验季热势再启</a><span> 03-25 10:22</span></li>
+<li class="list-right"><a href="/news2/140324/4/1053463-1.shtml" target="_blank">大连星光耀广场全城大型滚子争霸赛</a><span> 03-24 17:27</span></li>
+<li class="list-left"><a href="/news2/140324/4/1053452-1.shtml" target="_blank">房价涨跌难辨买或不买 市民称错过就是一辈子</a><span> 03-24 12:06</span></li>
+<li class="list-right"><a href="/news2/140324/4/1053448-1.shtml" target="_blank">“为幸福加码”——银帆国际工地探营</a><span> 03-24 09:59</span></li>
+<li class="list-left"><a href="/news2/140322/4/1053425-1.shtml" target="_blank">"以房养老"?请先算20年后的中国房价是多少</a><span> 03-22 10:16</span></li>
+<li class="list-right"><a href="/news2/140320/4/1053362-1.shtml" target="_blank">大连星光耀广场——7%年固定收益,六年返租</a><span> 03-20 13:59</span></li>
+</ul>
+<span class="blank15"></span>
+<ul class="textList">
+<li class="list-left"><a href="/news2/140320/4/1053361-1.shtml" target="_blank">招商地产，为大连注入绿色活力</a><span> 03-20 10:13</span></li>
+<li class="list-right"><a href="/news2/140320/4/1053358-1.shtml" target="_blank">购房纠纷可通过仲裁机构"一裁终局"</a><span> 03-20 09:44</span></li>
+<li class="list-left"><a href="/news2/140320/4/1053356-1.shtml" target="_blank">大连市商品房二手房一周成交完全报告</a><span> 03-20 09:38</span></li>
+<li class="list-right"><a href="/news2/140320/4/1053342-1.shtml" target="_blank">给子女买房注意哪些大连学区房法律问题解析</a><span> 03-20 08:45</span></li>
+<li class="list-left"><a href="/news2/140319/4/1053338-1.shtml" target="_blank">"滟澜"夺目"水晶"璀璨,龙湖大连首年惊艳全城.</a><span> 03-19 16:07</span></li>
+<li class="list-right"><a href="/news2/140319/4/1053339-1.shtml" target="_blank">激情圣诞，狂欢在滟澜。</a><span> 03-19 15:55</span></li>
+<li class="list-left"><a href="/news2/140319/4/1053337-1.shtml" target="_blank">奔驰赏悦会，共享饕餮盛宴</a><span> 03-19 15:04</span></li>
+<li class="list-right"><a href="/news2/140318/4/1053302-1.shtml" target="_blank">大连东港新美景  佳兆业中心展魅力画卷</a><span> 03-18 11:32</span></li>
+<li class="list-left"><a href="/news2/140318/4/1053297-1.shtml" target="_blank">星光耀广场C组团 首家涉外服务式公寓</a><span> 03-18 10:39</span></li>
+<li class="list-right"><a href="/news2/140318/4/1053296-1.shtml" target="_blank">【银帆国际】多数人的选择，与跟风无关</a><span> 03-18 09:44</span></li>
+</ul>
+<span class="blank15"></span>
+<ul class="textList">
+<li class="list-left"><a href="/news2/140317/4/1053278-1.shtml" target="_blank">大连出台地方税收保障办法 预计每年增收15亿元</a><span> 03-17 09:50</span></li>
+<li class="list-right"><a href="/news2/140314/4/1053259-1.shtml" target="_blank">银帆国际 金马路上央企筑作一生无悔好生活</a><span> 03-14 17:29</span></li>
+<li class="list-left"><a href="/news2/140314/4/1053258-1.shtml" target="_blank">星海瑰宝 即将闪耀</a><span> 03-14 14:06</span></li>
+<li class="list-right"><a href="/news2/140314/4/1053256-1.shtml" target="_blank">正版拉斯维加斯空降水晶郦湾！</a><span> 03-14 10:49</span></li>
+<li class="list-left"><a href="/news2/140313/4/1053238-1.shtml" target="_blank">万达·海公馆“春暖百花开，为爱植绿意”</a><span> 03-13 12:04</span></li>
+<li class="list-right"><a href="/news2/140312/4/1053220-1.shtml" target="_blank">资本进军东港  佳兆业中心收益未来</a><span> 03-12 13:30</span></li>
+<li class="list-left"><a href="/news2/140307/4/1053132-1.shtml" target="_blank">银帆国际3.8女神节特别活动火热报名中</a><span> 03-07 13:27</span></li>
+<li class="list-right"><a href="/news2/140307/4/1053131-1.shtml" target="_blank">星光耀广场宠爱女人心活动暖情启幕</a><span> 03-07 11:23</span></li>
+<li class="list-left"><a href="/news2/140307/4/1053126-1.shtml" target="_blank">万达·海公馆3.8美丽女人节明星style大起底</a><span> 03-07 09:37</span></li>
+<li class="list-right"><a href="/news2/140307/4/1053117-1.shtml" target="_blank">什么是好房子？ 高层住宅中16～19层最好</a><span> 03-07 09:10</span></li>
+</ul>
+<span class="blank15"></span>
+<ul class="textList">
+</ul></div>
+
+        <span class="blank20"></span>
+        <div class="listPages">
+<span class="s1">上一页</span> <a class="on" href="/more/index4-1.shtml" target="_self">1</a>
+ <a href="/more/index4-2.shtml" target="_self">2</a> <a href="/more/index4-3.shtml" target="_self">3</a> <a href="/more/index4-4.shtml" target="_self">4</a> <a href="/more/index4-5.shtml" target="_self">5</a> <a href="/more/index4-6.shtml" target="_self">6</a> <a href="/more/index4-7.shtml" target="_self">7</a> <a href="/more/index4-8.shtml" target="_self">8</a> <a href="/more/index4-9.shtml" target="_self">9</a> <a href="/more/index4-10.shtml" target="_self">10</a> <a href="/more/index4-11.shtml" target="_self">11</a> <a href="/more/index4-12.shtml" target="_self">12</a> <a href="/more/index4-13.shtml" target="_self">13</a> <a href="/more/index4-14.shtml" target="_self">14</a> <a href="/more/index4-15.shtml" target="_self">15</a> <a href="/more/index4-16.shtml" target="_self">16</a> <a href="/more/index4-17.shtml" target="_self">17</a> <a href="/more/index4-18.shtml" target="_self">18</a> <a href="/more/index4-19.shtml" target="_self">19</a> <a href="/more/index4-20.shtml" target="_self">20</a> <a href="/more/index4-2.shtml" target="_self">下一页</a></div>
+
+    </div>
+    
+    <span class="blank20"></span>
+    
+    <div class="nav_channel_end">
+    <span class="nav"><a href="http://www.163.com/" class="firstNode">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a
+        href="http://sports.163.com/">体育</a>-<a href="http://www.gz2010.cn/">亚运</a>-<a href="http://ent.163.com/">娱乐</a>-<a
+            href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com">科技</a>-<a
+                href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a
+                    href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a
+                        href="http://edu.163.com/">教育</a>-<a href="http://travel.163.com/">旅游</a>-<a href="http://bbs.163.com/">论坛</a>-<a
+                            href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/blogs/">博客</a>-<a href="http://help.3g.163.com/">手机版</a>
+    </span><span class="rightS"></span><span class="cBlue"><a target="_self" href="#top"
+        class="goHome">返回顶部</a></span>
+</div>
+    <span class="blank9"></span>
+    <div class="editorSign">
+      
+        编辑：郭晓霞、王艳宾  技术：张龙飞
+
+
+    </div>
+    <span class="blank9"></span>
+    
+    
+
+<span class="blank9"></span>
+<div class="foot">
+    <!--
+<div class="text"><a>联系电话:010-85863388</a> <a href="mailto:xiaoxia0119@126.com"> 主编信箱</a></div>
+-->
+<div class="text"><a>北京联系电话:010-85863388转831   大连联系电话:0411-83726856</a> <a href="  mailto:wangyy20132010@163.com">主编信箱</a></div>
+
+
+    
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">
+        公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">
+            招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">
+                相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">
+                    网站地图</a><br />
+    网易公司版权所有<br />
+    <span class="cRed">&copy;1997-2010</span>
+</div>
+<script type="text/javascript" src="http://analytics.163.com/ntes.js"></script>
+<script type="text/javascript">
+_ntes_nacc = 'house';
+neteaseTracker();
+</script>
+<!--googleanalytics by kean-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16361238-2']);
+  _gaq.push(['_setDomainName', '.house.163.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    
+</body>
+</html>

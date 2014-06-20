@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <title>电话号码查询</title>
+    <style>
+        body {
+            font: small/normal arial;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+        .bold{font-weight:bold;}
+        .hui0{color:#000;}
+        .hui9{color:#999;}
+        .fno{font-weight:normal;}
+        .floatl{ position:absolute;top:0;left:0;}
+        .p_con{line-height:24px;}
+        .p_conx{line-height:24px; position:relative;}
+        .plpx{padding:0 0 0 66px;*padding:4px 0 0 66px; margin:0;}
+        .phtrackvr {
+            background:url(images/phtrack.jpg) no-repeat;
+            padding-left:70px;
+            line-height:normal;
+            margin-bottom:19px;
+            padding-top:5px;
+            width:520px;
+            height:70px;
+        }
+        .phtrackvr_first {
+
+        }
+
+        .phtrackvr h3 {
+            font-size:small;
+            height:20px;
+            padding:0 0 3px 0;
+            margin:0;
+        }
+        .taobtn {
+            background:#dedede url(images/taobtn.gif) no-repeat;
+            padding-left:3px;
+            line-height:25px;
+            display:inline-block;
+            margin-left:5px;
+            float:left;
+        }
+        .taobtn_in {
+            background:url(images/taobtn.gif) no-repeat right top;
+            padding:0 15px 0 15px;
+            display:inline-block;
+            color:#000;
+            text-decoration:none;
+        }
+        .vrinput, .vrinputfocus {
+            border:1px solid;
+            border-color:#A9A9A9 #D0D0D0 #D0D0D0 #A9A9A9;
+            background: url(images/phone_icon.png) no-repeat 5px 2px #fff;
+            padding:0 10px 0 25px;
+            height:22px;
+            font:13px/22px Arial, Helvetica, sans-serif;
+            color:#888;
+            *vertical-align:middle;
+        }
+        .vrinputfocus {
+            border-color:#639CEA;
+            outline:none;
+            color:#000;
+        }
+        .numerror {
+            color: #C00;
+            background-color: #FFE7E7;
+            padding: 0 5px;
+            display: inline-block;
+        }
+        .numerror2 {
+            color: #C00;
+            padding: 0 5px;
+            display: inline-block;
+        }
+
+            /*.pho_b{margin:0 0 0 12px;}*/
+
+        .numerror3 {
+            color: #000;
+            padding: 0 5px;
+            display: inline-block;
+        }
+        .phtrackvr em {color: #000;}
+        .phtrackvr .chengse {
+            background-color: #FF7B00;
+            color: #FFFFFF;
+            display: inline-block;
+            height: 18px;
+            line-height: 18px;
+            margin-left: 1px;
+            padding: 0 2px 0 3px;
+        }
+        .title{color:#666;height:22px;line-height:22px;}
+
+        .stb,.btnactive {
+            float: left;
+            margin-left: 0px;
+            width: 75px;
+            height: 25px;
+            background: url(images/btn1_w.png) no-repeat right top;
+            border: none;
+            /*margin: 0 0 0 -1px;*/
+            padding: 0;
+            cursor: pointer;
+            font-size: 12px;
+            color: black;
+            outline: none;
+        }
+
+        .btnactive {
+            background: url(images/btn2_w.png) no-repeat right top;
+        }
+    </style>
+</head>
+<body style="width:280px; height: 45px;">
+
+
+<div id="numdiv">
+    <div class="title bold">电话号码：</div>
+    <div>
+        <input id="idinput" type="text" class="vrinput" maxlength="20" style="float: left; color: rgb(136, 136, 136);width:158px" value="输入电话号码进行查询">
+        <!--span class="taobtn"><a href="#" class="taobtn_in" id="submit">号码通验证</a></span-->
+        <input type=submit class=stb value="号码通验证" id="submit"
+               onmousedown="this.className='btnactive'"
+               onmouseup="this.className='stb'" onmouseout="this.className='stb'">
+    </div>
+</div>
+<div class="pho_b" id="inputerror" style="display: none;">
+    <span class="numerror2">请输入有效的电话号码(5位及以上)</span>
+</div>
+<div class="pho_b" id="noexistnumber" style="display: none;">
+    <span class="numerror2">抱歉,未找到该号码的相关信息</span>
+</div>
+<div class="p_con" id="numberbelongs" style="display:none">
+    <span class="hui6">归属地区：</span><span class="bold hui0" id="phonenumberdetail"></span>
+</div>
+<div class="p_conx" id="phonenumberfrom" style="display: none;"></div>
+
+<script src="js/addrquery.js"></script>
+</body>
+</html>
+
+

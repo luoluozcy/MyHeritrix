@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>为首页评分</title>
+		<script type="text/javascript" src="http://mimg.127.net/hd/all/121015_score/scripts/config.js"></script>
+		<style type="text/css">
+			body{color:#000;background:#fff;font-size:12px;line-height:150%;text-align:left}
+			body,input,select,button{font-family:verdana}
+			h1,h2,h3,select,input,button{font-size:100%}
+			body,h1,h2,ul,li,form,p,img{margin:0;padding:0;border:0}
+			input,button,select,img{margin:0;line-height:normal}
+			ul{list-style:none}
+			.ico{display:inline-block;+display:inline;+zoom:1}
+			.operate,
+			.operate-score .title2,
+			.ico{background-image:url(http://mimg.127.net/hd/all/121015_score/img/global.png);background-repeat:no-repeat}
+			.ico-close{width:8px;height:8px;background-position:0 -224px}
+			.ico-star{width:32px;height:31px;background-position:0 -160px}
+			.ico-sns{width:24px;height:24px}
+			.ico-sns-t163{background-position:0 0}
+			.ico-sns-weibo{background-position:0 -32px}
+			.ico-sns-tqq{background-position:0 -64px}
+			.ico-sns-renren{background-position:0 -96px}
+			.ico-sns-kaixin{background-position:0 -128px}
+			.mask{position:absolute;z-index:998;left:0;top:0;width:100%;height:100%;background:#000;opacity:.3;filter:alpha(opacity=30)}
+			.msgbox{outline:none;border:1px solid #898989;width:460px;position:fixed;-position:absolute;+zoom:1;z-index:999;box-shadow:0 0 5px rgba(0,0,0,.2);background:#fff}
+			.msgbox-close{z-index:20;position:absolute;right:0;top:0;line-height:0;padding:8px}
+			.preview{position:relative;+zoom:1;height:144px}
+			.preview-pic{position:absolute;left:30px;top:33px}
+			.preview-desc{color:#848585;position:absolute;left:190px;top:33px}
+			.preview-desc .title{line-height:150%;font-size:14px;margin-bottom:10px}
+			.preview-desc .cont{width:240px;text-indent:2em}
+			.operate{border-top:1px solid #E5E5E5;height:82px;background-repeat:repeat-x;background-position:0 -240px}
+			.operate-score{position:absolute;width:222px;padding-left:30px;height:82px;border-right:1px solid #E5E5E5}
+			.operate-score .title{color:#555;margin-top:10px}
+			.operate-score .title2{margin-top:10px;text-indent:16px;background-position:0 -333px}
+			.operate-score .stars{margin-top:5px}
+			.stars .item{float:left;margin-right:7px;cursor:pointer}
+			.stars-over .item{cursor:default}
+			.stars-on1 .item1 .ico-star,
+			.stars-on2 .item1 .ico-star,.stars-on2 .item2 .ico-star,
+			.stars-on3 .item1 .ico-star,.stars-on3 .item2 .ico-star,.stars-on3 .item3 .ico-star,
+			.stars-on4 .item1 .ico-star,.stars-on4 .item2 .ico-star,.stars-on4 .item3 .ico-star,.stars-on4 .item4 .ico-star,
+			.stars-on5 .item1 .ico-star,.stars-on5 .item2 .ico-star,.stars-on5 .item3 .ico-star,.stars-on5 .item4 .ico-star,.stars-on5 .item5 .ico-star{background-position:0 -192px}
+			.operate-share{position:absolute;left:253px;padding-left:30px}
+			.operate-share .title{color:#555;margin-top:10px}
+			.operate-share .sns{margin-top:10px}
+			.sns .item{cursor:pointer;float:left;margin-right:7px}
+		</style>
+		<script>
+			window.onload = function(){
+				try{
+					window.oIfmSco;
+					window.sIndex = 'bak163';
+					if(top.oScoreIndex && top.oScoreIndex.scoreIndex && oIndexConfig[top.oScoreIndex.scoreIndex].title){
+						oIfmSco = oIndexConfig[top.oScoreIndex.scoreIndex];
+						sIndex = top.oScoreIndex.scoreIndex;
+					}
+					var sHtmlTmp = '<p class="preview-pic"><img src="http://mimg.127.net/hd/all/121015_score/img/' + sIndex + '_s.jpg" alt="' + oIfmSco.title + '" /></p><div class="preview-desc"><h2 class="title">' + oIfmSco.title + '</h2><p class="cont">' + oIfmSco.desc + '</p></div>'
+					document.getElementById('previewArea').innerHTML = sHtmlTmp;
+				}catch(e){
+					var sTmpUrl = window.location.href;
+					if(sTmpUrl.indexOf('reload') == -1){
+						window.location.href = sTmpUrl + '?reload';
+					}else{
+						if(oIndexConfig && oIndexConfig[sIndex]){
+							oIfmSco = oIndexConfig[sIndex]
+						}
+						var sHtmlTmp = '<p class="preview-pic"><img src="http://mimg.127.net/hd/all/121015_score/img/' + sIndex + '_s.jpg" alt="' + oIfmSco.title + '" /></p><div class="preview-desc"><h2 class="title">' + oIfmSco.title + '</h2><p class="cont">' + oIfmSco.desc + '</p></div>'
+						document.getElementById('previewArea').innerHTML = sHtmlTmp;
+						document.getElementById('scoreArea').style.display = 'none';
+						document.getElementById('shareArea').style.display = 'none';
+					}
+				}
+				
+				// 读取cookie
+				try{
+					if(top.fGetCookie){
+						var sMailIndexS = top.fGetCookie('mailIndexS');
+						var sMailIndexScEach = sMailIndexS.split('|');
+						var sMailIndexScEachName = '';
+						var sMailIndexScEachScor = ''
+						for(var i = 0; i < sMailIndexScEach.length; i++){
+							sMailIndexScEachName = sMailIndexScEach[i].split('-')[0];
+							sMailIndexScEachScor = sMailIndexScEach[i].split('-')[1];
+							if(sMailIndexScEachName == sIndex){
+								if(sMailIndexScEachScor != '' && sMailIndexScEachScor <= 5){
+									window.bStarsShow = false;
+									fSetStar(sMailIndexScEachScor, true);
+								}
+								break;
+							}
+						}
+					}
+				}catch(e){}
+				
+				// 统计访问
+				if(top.gOption){
+					var sVisited = 'http://count.mail.163.com/statistics/c9cByc.do?product=score_index_' + sIndex + '&area=0&frmjs=true&domain=' + top.gOption.sDomain + '&rnd=' + (new Date()).getTime();
+					fImgReq(sVisited);
+				}
+			};
+			function fStarsShow(s){
+				var oTar = document.getElementById('starsArea');			
+				if(bStarsShow){
+					oTar.className = 'stars stars-on' + s;
+					oTar.title = s + '分';
+				}else{
+					return;
+				}
+			}
+			
+			function fSetStar(s, bCookie){
+				var oTar = document.getElementById('starsArea');
+				if(bStarsShowSet){
+					oTar.className = 'stars stars-over stars-on' + s;
+					oTar.title = '你已经投了' + s + '分';
+					document.getElementById('complete').className = 'title2';
+					document.getElementById('complete').innerHTML = '您已对作品评分(' + s + '分)！';
+					for(var i = 1; i <= 5; i++){
+						var sStarId = 'star-a';
+						if(i > s){
+							document.getElementById('star-a' + i).style.display = 'none';
+						}
+					}
+					window.bStarsShowSet = false;
+					window.bStarsShow = false;
+					if(!bCookie && window.sIndex.indexOf('bak') == -1 ){
+						if(top.fSetCookie && top.fGetCookie){
+							var sMailIndexS = top.fGetCookie('mailIndexS');
+							sMailIndexS = sMailIndexS + window.sIndex + '-' + s + '|';
+							top.fSetCookie('mailIndexS', sMailIndexS);
+						}
+						if(top.gOption){
+							var sGrade = 'http://count.mail.163.com/statistics/OAkwkh.do?product=score_index_' + window.sIndex + '&area=' + s + '&frmjs=true&domain=' + top.gOption.sDomain + '&rnd=' + (new Date()).getTime();
+							fImgReq(sGrade);
+						}
+					}
+				}
+			}
+			
+			function fImgReq(s){
+				var oImg = document.createElement("img");
+				oImg.setAttribute("src", s);
+				oImg.setAttribute("alt", "1");
+				oImg.style.display="none";
+				document.body.appendChild(oImg);
+			}
+			
+			function oShare(s){
+				var oFunc = {
+					 t163 : gShare.shareT163
+					,tsina : gShare.shareTsina
+					,tqq : gShare.shareTqq
+					,renren : gShare.shareRenren
+					,kaixin : gShare.shareKaixin
+				};
+				var sUrl = 'http://email.163.com/';
+				if(top.gOption){
+					sUrl = top.gOption.sCookieDomain;
+				}
+				var sImgUrl = 'http://mimg.127.net/hd/all/121015_score/img/' + sIndex + '_b.jpg';
+				var sCountType = 'score_index';
+				var sCountId = sIndex;
+				var sCountFrom = 'score_index';
+				var sCommonShare = ' （分享自@网易免费邮箱）';
+				var sT163Share = ' （分享自@网易邮箱）';
+				var sShareTxt = oIfmSco.share;
+				if(s == 't163'){
+					sShareTxt += sT163Share;
+				}else{
+					sShareTxt += sCommonShare;
+				}
+				window.open(oFunc[s]('', '', sShareTxt, sImgUrl, sCountType, sCountId, sCountFrom));
+			}
+			
+			// 未投票
+			window.bStarsShowSet = true;
+			window.bStarsShow = true;
+		</script>
+	</head>
+	<body>
+		<div class="msgbox">
+			<!-- 关闭 -->
+			<a href="javascript:void(0);" class="msgbox-close" title="关闭" onclick="top.oScoreIdx.close();"><b class="ico ico-close"></b></a>
+			<!-- 预览 -->
+			<div class="preview" id="previewArea">
+			</div>
+			<!-- 操作 -->
+			<div class="operate">
+				<!-- 评分 -->
+				<div class="operate-score" id="scoreArea">
+					<h2 class="title" id="complete">请点击评分：</h2>
+					<ul class="stars stars-on3" id="starsArea" title="3星">
+						<li class="item item1" id="star-a1"><b class="ico ico-star" onmouseover="fStarsShow(1);" onclick="fSetStar(1);"></b></li>
+						<li class="item item2" id="star-a2"><b class="ico ico-star" onmouseover="fStarsShow(2);" onclick="fSetStar(2);"></b></li>
+						<li class="item item3" id="star-a3"><b class="ico ico-star" onmouseover="fStarsShow(3);" onclick="fSetStar(3);"></b></li>
+						<li class="item item4" id="star-a4"><b class="ico ico-star" onmouseover="fStarsShow(4);" onclick="fSetStar(4);"></b></li>
+						<li class="item item5" id="star-a5"><b class="ico ico-star" onmouseover="fStarsShow(5);" onclick="fSetStar(5);"></b></li>
+					</ul>
+				</div>
+				<!-- 分享 -->
+				<div class="operate-share" id="shareArea">
+					<h2 class="title">分享给朋友：</h2>
+					<div class="sns">
+						<a class="item" href="javascript:void(0);" onclick="oShare('t163');" title="分享到网易微博"><b class="ico ico-sns ico-sns-t163"></b></a>
+						<a class="item" href="javascript:void(0);" onclick="oShare('tsina');" title="分享到新浪微博"><b class="ico ico-sns ico-sns-weibo"></b></a>
+						<a class="item" href="javascript:void(0);" onclick="oShare('tqq');" title="分享到腾讯微博"><b class="ico ico-sns ico-sns-tqq"></b></a>
+						<a class="item" href="javascript:void(0);" onclick="oShare('renren');" title="分享到人人网"><b class="ico ico-sns ico-sns-renren"></b></a>
+						<a class="item" href="javascript:void(0);" onclick="oShare('kaixin');" title="分享到开心网"><b class="ico ico-sns ico-sns-kaixin"></b></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function Share() {
+				if (typeof Share._initialized == "undefined") {
+					Share.prototype.shareTqq = function(url,title,description,pic,type,id,from){
+						var p = {
+							title:"#网易免费邮箱# "+ title + description,
+							// url:url,
+							appkey:"",
+							pic:pic,//（例如：var _pic='图片url1|图片url2|图片url3....）
+							u:""//你的网站地址
+						};
+						var s = [];
+						for(var i in p){
+							s.push(i + '=' + encodeURIComponent(p[i]||''));
+						}
+						gShare.statistics(type,id,from,"tqq");
+						return "http://v.t.qq.com/share/share.php?"+s.join("&");
+					};
+
+					Share.prototype.shareT163 = function(url,title,description,pic,type,id,from) {
+						var p = {
+							source:"网易免费邮箱",
+							info:"#网易免费邮箱# "+ title +" " +description+" "+url,
+							images:pic
+						};
+						var s = [];
+						for(var i in p){
+							s.push(i + '=' + encodeURIComponent(p[i]||''));
+						}
+						gShare.statistics(type,id,from,"t163");
+						return "http://t.163.com/article/user/checkLogin.do?"+s.join("&");
+					};
+
+					Share.prototype.shareKaixin = function(url,title,description,pic,type,id,from) {
+						var p = {
+							rtitle:"#网易免费邮箱# "+ title,
+							rurl:encodeURIComponent(url),
+							rcontent:description + " " + url
+						};
+						var s = [];
+						for(var i in p){
+							s.push(i + '=' + encodeURIComponent(p[i]||''));
+						}
+						gShare.statistics(type,id,from,"kaixin");
+						return "http://www.kaixin001.com/repaste/share.php?"+s.join("&");
+					};
+
+					Share.prototype.shareTsina = function(url,title,description,pic,type,id,from){
+						var p = {
+							url:url,
+							type:'3',
+							count:1,
+							appkey:"",
+							title:"#网易免费邮箱# "+ title +" "+ description,
+							pic:pic,
+							relateUid:"",
+							rnd:new Date().valueOf()
+						};
+						var s = [];
+						for(var i in p){
+							s.push(i + '=' + encodeURIComponent(p[i]||''));
+						}
+						gShare.statistics(type,id,from,"tsina");
+						return "http://service.weibo.com/share/share.php?"+s.join('&');
+					};
+
+					Share.prototype.shareRenren = function(url,title,description,pic,type,id,from){
+						var p = {
+							url:url,
+							title:"#网易免费邮箱# "+ title,
+							content:description,
+							pic:pic
+						};
+						var s = [];
+						for(var i in p){
+							s.push(i + '=' + encodeURIComponent(p[i]||''));
+						}
+						gShare.statistics(type,id,from,"renren");
+						return "http://share.renren.com/share/buttonshare/post/4001?"+s.join('&');
+					};
+
+					Share.prototype.shareQQ = function(url,title,description,pic,type,id,from){
+						var p = {
+							url:url,
+							desc:description,/*默认分享理由(可选)*/
+							summary:"",/*摘要(可选)*/
+							title:"#网易免费邮箱# "+ title,/*分享标题(可选)*/
+							site:"",/*分享来源 如：腾讯网(可选)*/
+							pics:pic /*分享图片的路径(可选)*/
+						};
+						var s = [];
+						for(var i in p){
+							s.push(i + '=' + encodeURIComponent(p[i]||''));
+						}
+						gShare.statistics(type,id,from,"qqzone");
+						return "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?"+s.join('&');
+					};
+					
+					Share.prototype.statistics  = function (type,id,from,to){
+						return;
+					}
+					/**
+					Share.prototype.statistics  = function (type,id,from,to){
+						$.ajax({
+								url : "/jifen/statistics/share.do",
+								// context : document.body,
+								// contentType : "application/json; charset=utf-8",
+								type : "GET",
+								data : {
+									type : type,
+									id : id,
+									from : from,
+									to : to
+								}
+						});
+					};
+					*/
+
+					Share._initialized = true;
+				}
+			}
+			var gShare = new Share();
+		</script>
+	</body>
+</html>

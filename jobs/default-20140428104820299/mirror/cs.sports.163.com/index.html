@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>中超数据直播系统|2014中超联赛|2014中超赛程|中超直播|中超门票_网易体育</title>
+<base target="_self" />
+<meta name="keywords" content="网易体育频道中超数据直播系统,中超联赛, 2014中超联赛,2014中超赛程,中超门票,中超公司" />
+<meta name="description" content="中超联赛, 2014中超联赛,2014中超赛程,中超门票,中超公司,广州恒大,山东鲁能,天津泰达,上海申花,北京国安,杭州绿城" />
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.1.css" />
+<link href="http://img1.cache.netease.com/sports/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="/css/csl.css?r=1" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery-1.6.1.min.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" charset="gb2312"></script>
+<script type="text/javascript" src="/js/commen.js?r=1"></script>
+</head>
+<body>
+<!--channel_nav -->
+<div class="NTES-nav">
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a> |</span>
+    <div class="rightCon">
+		<div class="NTES-link">
+			<a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a>
+		</div>
+		<a href="http://www.163.com/rss"><img width="26" height="14" border="0" src="http://img3.cache.netease.com/cnews/img07/rss.gif" class="rss" alt="Rss"></a>
+	</div>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var logiframe = "";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"..." : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO || logstate=="1") {
+		var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+		if(mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入我的邮箱</a>';
+			}
+		if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+			entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入我的博客</a><a href="http://photo.163.com/?username='+passport+'\">进入我的相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入我的约会</a><a href="http://t.163.com">进入我的微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				logiframe = '<iframe allowTransparency=\"true\" style=\"width: 56px; height:26px; float:left; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.'+logdomain+'/mailinfo/shownewmsg_www_1222.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div>'+logiframe+'|<a class=\"ntes-usercenter-loginout\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+		};
+	}
+})
+//]]>
+</script>
+<div class="tt-area">
+  <a href="/cnt/" class="tclogo"></a>
+  <a href="/acl/" class="acllogo"></a>
+  <a href="/" class="csllogo"></a>
+</div>
+<div class="nav-con">
+  <div class="nav"> 
+    <ul>
+    <li id="nav_index"><span><a href="/">数据库首页</a></span></li>
+    <li id="nav_fixture"><span><a href="/fixture/">中超赛程</a></span></li>
+    <li id="nav_team">
+      <div id="teamcon" class="navmore">
+        <a href="" class="arr" >中超球队</a>
+        <div style="position:absolute;top:31px;left:-3px;z-index:100;">
+          <div class="navmorecontent" style="display:none" id="teamdetail">
+              <a href="/team/25/">天津泰达</a>
+              <a href="/team/29/">杭州绿城</a>
+              <a href="/team/19/">山东鲁能</a>
+              <a href="/team/31/">上海绿地</a>
+              <a href="/team/166/">大连阿尔滨</a>
+              <a href="/team/20/">北京国安</a>
+              <a href="/team/24/">河南建业</a>
+              <a href="/team/233/">哈尔滨毅腾</a>
+              <a href="/team/206/">上海上港</a>
+              <a href="/team/126/">上海申鑫</a>
+              <a href="/team/30/">辽宁宏运</a>
+              <a href="/team/167/">广州富力</a>
+              <a href="/team/154/">广州恒大</a>
+              <a href="/team/28/">贵州茅台</a>
+              <a href="/team/77/">江苏舜天</a>
+              <a href="/team/21/">长春亚泰</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li id="nav_tables"><span><a href="/tables/">积分榜</a></span></li>
+    <li id="nav_playerrank"><span><a href="/stat/player/">射手榜</a></span></li>
+    <li id="nav_teamrank"><span><a href="/stat/team/">球队统计</a></span></li>
+    <li id="nav_compare"><span><a href="/compare/index.html">对比</a></span></li>
+	 <li id="nav_compare"><span><a href="http://caipiao.163.com/order/jczq/?from=deportes_4">足彩</a></span></li>
+    </ul>
+    <p class="nav-surpport">CslData 提供数据支持</p>
+  </div>
+</div>
+<!-- cba guide end-->
+<div class="csl-area clearfix">
+<h2 class="navpath nor-bluec"><a href="http://www.163.com/">网易首页</a> &gt; <a href="http://sports.163.com/zc/">中超</a> &gt; <a href="http://cs.sports.163.com/">中超赛事系统</a></h2>
+<span class="blank12"></span> 
+<script type="text/javascript">
+jQuery(document).ready(function(){
+    if(typeof(nav_type)!="undefined"){
+      jQuery("#nav_"+nav_type).addClass("dq fB");
+    }
+	NTES('.nav li').each(function(){
+		var t = NTES(this);
+		if(t.className!='dq fB'){
+		  NTES(this).addEvent('mouseover',function(){
+			NTES.style.addCss(t,"dq");
+		  });
+		  NTES(this).addEvent('mouseout',function(){
+			NTES.style.removeCss(t,"dq");
+		  });
+		}
+	});
+	new NTES.ui.PopupLayer($("#teamcon"), $("#teamdetail"), "mouseover",0);
+}); 
+</script>
+
+<script language="javascript">var nav_type = "index";</script>
+<!--teamnav-->
+<div class="team-nav"> 
+	<div class="team-navleft"></div>
+	<ul id="teamNavList"> 
+		<li><a href="/team/25/"><img src="/images/team/lk/25.png" alt="" width="44" height="52"/></a><h4>天津泰达</h4></li>
+		<li><a href="/team/29/"><img src="/images/team/lk/29.png" alt="" width="44" height="52"/></a><h4>杭州绿城</h4></li>
+		<li><a href="/team/19/"><img src="/images/team/lk/19.png" alt="" width="44" height="52"/></a><h4>山东鲁能</h4></li>
+		<li><a href="/team/31/"><img src="/images/team/lk/31.png" alt="" width="44" height="52"/></a><h4>上海绿地</h4></li>
+		<li><a href="/team/24/"><img src="/images/team/lk/24.png" alt="" width="44" height="52"/></a><h4>河南建业</h4></li>
+		<li><a href="/team/20/"><img src="/images/team/lk/20.png" alt="" width="44" height="52"/></a><h4>北京国安</h4></li>
+		<li><a href="/team/166/"><img src="/images/team/lk/166.png" alt="" width="44" height="52"/></a><h4>大连阿尔滨</h4></li>
+		<li><a href="/team/233/"><img src="/images/team/lk/233.png" alt="" width="44" height="52"/></a><h4>哈尔滨毅腾</h4></li>
+		<li><a href="/team/206/"><img src="/images/team/lk/206.png" alt="" width="44" height="52"/></a><h4>上海上港</h4></li>
+		<li><a href="/team/126/"><img src="/images/team/lk/126.png" alt="" width="44" height="52"/></a><h4>上海申鑫</h4></li>
+		<li><a href="/team/30/"><img src="/images/team/lk/30.png" alt="" width="44" height="52"/></a><h4>辽宁宏运</h4></li>
+		<li><a href="/team/167/"><img src="/images/team/lk/167.png" alt="" width="44" height="52"/></a><h4>广州富力</h4></li>
+		<li><a href="/team/154/"><img src="/images/team/lk/154.png" alt="" width="44" height="52"/></a><h4>广州恒大</h4></li>
+		<li><a href="/team/28/"><img src="/images/team/lk/28.png" alt="" width="44" height="52"/></a><h4>贵州茅台</h4></li>
+		<li><a href="/team/77/"><img src="/images/team/lk/77.png" alt="" width="44" height="52"/></a><h4>江苏舜天</h4></li>
+		<li><a href="/team/21/"><img src="/images/team/lk/21.png" alt="" width="44" height="52"/></a><h4>长春亚泰</h4></li>
+	</ul>
+	<div class="team-navright"></div>
+</div>
+<script type="text/javascript"> 
+	NTES('#teamNavList li').each(function(){
+		var t = NTES(this);
+		if(t.className!='on'){
+			NTES(this).addEvent('mouseover',function(){
+				NTES.style.addCss(t,"on");
+			});
+			NTES(this).addEvent('mouseout',function(){
+				NTES.style.removeCss(t,"on");
+			});
+		}
+	});
+
+	function daily(){
+	  jQuery.getJSON("/match/databox/01.json", function(data){
+
+		var blank='<div class="blank12"></div>';
+		var tableHead='<table width="84%" cellspacing="0" cellpadding="0" class="dataTB2"> <tbody><tr> <th class="leftTH" width="80"><div class="lineleft">比赛状态</div></th> <th width="80">开球时间</th> <th width="90">主队</th> <th width="40">比分</th><th width="90">客队</th><th width="120">直播</th> <th class="rightTH"><div class="lineright">信息</div></th> </tr>';
+		var tableTail='</tbody></table>';
+
+		var list='';
+		jQuery.each(data, function(key,value){
+			list+=blank+'<h3 class="gamedate">'+value.date+'</h3>'+tableHead;
+			jQuery.each(value.matchs, function(i,item){
+				var trs='';
+				if(i==0){
+					trs+='<tr class="bg1">';
+				}else if(i%2==1){
+					trs+='<tr class="bg2">';
+				}else{
+					trs+='<tr>';
+				}
+				var score=item.homeScore+'-'+item.awayScore;
+				if(item.status=='未开赛'){
+					score=' VS ';
+				}
+				trs+='<td class="nolbo">'+item.status+'</td><td>'+item.kickoff+'</td><td><a href="/team/'+item.homeId+'/">'+item.home+'</a></td><td>'+score+'</td><td><a href="/team/'+item.awayId+'/">'+item.away+'</a></td><td>'+(item.tv==""?'无':item.tv)+'</td><td class="norbo">';
+				var links='';
+				if(item.statusCode==0||item.statusCode==8){
+					links=pOrRLink('preview',item.preview,item.live,item.stat);
+					links+=liveLink(item.statusCode,item.liveCode,item.live);
+					links+=statLink(item.stat);
+				}else if(item.statusCode==7){
+					links=liveLink(item.statusCode,item.liveCode,item.live);
+					var report=pOrRLink('report',item.report,item.live,item.stat);
+					links+=statLink(item.stat);
+					if(report!=''){
+						links+=' | ';
+					}
+					links+=report;
+					links+=videoLink('final',item.videoSet,item.videoLink);
+				}else{
+					links=liveLink(item.statusCode,item.liveCode,item.live);
+					links+=statLink(item.stat);
+					links+=videoLink('live',item.videoSet,item.videoLink);
+				}
+				trs+=links;
+				trs+='</td></tr>'
+				list+=trs;
+			});
+			list+=tableTail;
+		});
+		list='<div class="contenttop"></div>'+list+'<div class="blank15"></div><div class="contentbottom"></div>';
+		jQuery("#daily").html(list);
+	  });
+	}
+		
+	function refresh() {
+		daily();
+		setTimeout("refresh()", 65000);
+	}
+
+	jQuery(document).ready(function(){
+		refresh();
+	});
+</script>
+<!--teamnav end-->
+<span class="blank9"></span>
+</div>
+<div class="csl-area clearfix">
+  <div class="colLM">
+		<div class="content" id="daily"> 
+		</div>
+  </div>
+  <!--colLM1 end-->
+  <div class="colR1">
+	
+    <div class="titlebar ui_til1">
+		<h2>中超积分榜</h2> <a href="/tables/" class="more">完整积分榜</a>
+	</div>
+	<div class="content">
+			<span class="blank9"></span>	
+			<table cellspacing="0" cellpadding="0" class="data-tab2 jblue-color">
+				 <tbody>
+					 <tr>
+					  <th width="40">名次</th>
+					  <th style="text-align:left">球队</th>
+					  <th width="40">比赛</th>
+					  <th width="40">积分</th>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknumtop">1</span></td>
+					  <td align="left"><a href="/team/154/">广州恒大</a></td>
+					  <td>8</td>
+					  <td>21</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknumtop">2</span></td>
+					  <td align="left"><a href="/team/19/">山东鲁能</a></td>
+					  <td>8</td>
+					  <td>19</td>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknumtop">3</span></td>
+					  <td align="left"><a href="/team/20/">北京国安</a></td>
+					  <td>8</td>
+					  <td>18</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknum">4</span></td>
+					  <td align="left"><a href="/team/167/">广州富力</a></td>
+					  <td>8</td>
+					  <td>17</td>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknum">5</span></td>
+					  <td align="left"><a href="/team/206/">上海上港</a></td>
+					  <td>8</td>
+					  <td>15</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknum">6</span></td>
+					  <td align="left"><a href="/team/77/">江苏舜天</a></td>
+					  <td>8</td>
+					  <td>13</td>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknum">7</span></td>
+					  <td align="left"><a href="/team/28/">贵州茅台</a></td>
+					  <td>8</td>
+					  <td>11</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknum">8</span></td>
+					  <td align="left"><a href="/team/29/">杭州绿城</a></td>
+					  <td>8</td>
+					  <td>11</td>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknum">9</span></td>
+					  <td align="left"><a href="/team/31/">上海绿地</a></td>
+					  <td>8</td>
+					  <td>9</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknum">10</span></td>
+					  <td align="left"><a href="/team/25/">天津泰达</a></td>
+					  <td>8</td>
+					  <td>9</td>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknum">11</span></td>
+					  <td align="left"><a href="/team/126/">上海申鑫</a></td>
+					  <td>8</td>
+					  <td>8</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknum">12</span></td>
+					  <td align="left"><a href="/team/21/">长春亚泰</a></td>
+					  <td>8</td>
+					  <td>6</td>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknum">13</span></td>
+					  <td align="left"><a href="/team/30/">辽宁宏运</a></td>
+					  <td>8</td>
+					  <td>6</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknum">14</span></td>
+					  <td align="left"><a href="/team/166/">大连阿尔滨</a></td>
+					  <td>8</td>
+					  <td>6</td>
+					</tr>
+                                    <tr class="bg2">
+            					  <td><span class="ranknum">15</span></td>
+					  <td align="left"><a href="/team/24/">河南建业</a></td>
+					  <td>8</td>
+					  <td>6</td>
+					</tr>
+                                    <tr>
+            					  <td><span class="ranknum">16</span></td>
+					  <td align="left"><a href="/team/233/">哈尔滨毅腾</a></td>
+					  <td>8</td>
+					  <td>0</td>
+					</tr>
+          			  </tbody>
+			</table>
+	</div>
+  </div>
+</div>
+<!--parea end-->
+</div>
+<!--极光系统锚点统计 -->
+
+<script>!function(n){function t(){this.proc={inca:function(t,i,a){var e=a.start||1;n("a",i).each(function(n,i){o(t+c(e++),i)})},subdiv:function(t,i,e){for(var r=1,f=e.level||1,u=[i],s=0;f>s;s++){var d=[];n.each(u,function(t,i){var e=0;"a"==i.tagName.toLowerCase()||/ntes-nav-select/.test(i.className)||n.each(i.children,function(n,t){a(t)&&(d.push(t),e++)}),e||d.push(i)}),u=d}n.each(u,function(n,i){o(t+c(r++),i)})},uniq:function(n,t,i){o(n+c(i.start||1),t,i.all)},form:function(t,i){var a=n(">form",i);a[0]&&a.addEvent("submit",function(){f.call(this,t+"1")})},tabgroup:function(t,i,a){var e=n(a.h,i),r=n(a.b,i);if(e&&r){var f=a.step||10,u=2;o(t+"1",i),e.each(function(n,i){o(t+c(u+n*f),i)}),r.each(function(n,i){o(t+c(u+n*f+1),i)})}},tabgroups:function(t,i,e){var r=e.union||"",f={};if(/^[\s\d,]+$/.test(r)){var u=0;n.each(r.split(/\s*,\s*/),function(n,t){if(t=parseInt(t))for(var i=0;t>i;i++)f[u++]=n})}var s=2;o(t+"1",i);var d=parseInt(e.step)||10,l=n(e.h,i);if(l&&v){n.each(l,function(n,i){o(t+c(n*d+s),i)});var v=n(e.b,i);n.each(v,function(i,e){var r=i*d+s+1,u=e.children;if(0==u.length)u=[e];else for(;1==u.length;)u=u[0].children;var l=0;n.each(u,function(n,i){a(i)&&("undefined"!=typeof f[n]&&(l=f[n]),o(t+c(r+l),i),l++)})})}}}}function i(){var n=_ntes_page_data.getRunTime()||0;return 0>n?0:n}function a(n){var t=n.className,i=n.tagName.toLowerCase(),a={script:1,style:1,link:1,img:1,hr:1,br:1},e=!0;return a[i]?e=!1:/blank\d/.test(t)&&(e=!1),e}function e(t){m||(v&&window._ntes_sendInfo?(n.each(g,function(n,t){u(t)}),m=!0):g.push(t)),m&&u(t)}function c(n){return 10>n?n.toString():n>62?"z":String.fromCharCode(n+(36>n?55:61))}function r(n,t){if(!t)return n;var i=n.length-1,a=n.charCodeAt(i);return 58>a?a-=48:91>a?a-=55:123>a&&(a-=61),n.substr(0,i)+c(a+t)}function o(n,t,i){t&&t.setAttribute((i?"_":"")+"jcid",n)}function f(n){if(n){var t="";"a"==this.tagName.toLowerCase()&&(t=this.getAttribute("href")||""),p++;var a="/ntes_p?"+_+"&_nct="+i()+"&_nah="+escape(t)+"&_nat={id}_"+n;e(a)}}function u(n){_ntes_sendInfo("cl",_ntes_src_addr+n.replace("{id}",v))}function s(n,t,i){for(var a=0;"a"!=n.tagName.toLowerCase();){if(i=n.getAttribute("_jcid"))return i;if(n=n.parentNode,!n.tagName||a++>5)return null}for(;n&&n!=t&&!(i=n.getAttribute("jcid"));)n=n.parentNode;return i}function d(t,i,a){if("iframe"!=t.tagName.toLowerCase())i(t,a);else{var e,c=l(t),r=function(){if("function"==typeof e&&e.call(this),c=l(t)){var r=c.body;n(r).addEvent("click",function(n){var t=n.target;f.call(t,s(t,r))}),i(r,a)}};c&&/^http/.test(c.location.href)?r():t.attachEvent?t.attachEvent("onload",r):(e=t.onload,t.onload=r)}}function l(n){var t;try{t=n.contentDocument}catch(i){}if(!t&&n.contentWindow){try{"object"==typeof n.contentWindow.document&&(t=n.contentWindow.document)}catch(i){}if(!t)return null}var a=1;try{t.location&&(a=0)}catch(i){}return a?null:t}var v,h,_="_nacc=siteclick&_npurl="+escape(document.URL),p=0,m=!1,g=[],b=document.body;t.prototype={init:function(t,a){t&&5==t.length&&(v=t),h||(h=Math.random()<(a||.1),h&&(n("body").addEvent("click",function(n){var t=n.target;f.call(t,s(t,b))}),n.ready(function(){function t(){a&&(e("/ntes_u?"+a+"&_nct="+i()+"&_mcn="+p+c),a=0)}var a=_+"&_nch={id}",c="",r="";if(window.NTES_logger_start_time){var o=NTES_logger_start_time.getTime();r="&_msl="+((new Date).getTime()-o),n(window).addEvent("load",function(){c="&_msl="+((new Date).getTime()-o)})}e("/ntes_u?"+a+r),_ntes_bindEvent(window,"beforeunload",t);var f=window.navigator.userAgent.toLowerCase();!/compatible/.test(f)&&/firefox/.test(f)&&_ntes_bindEvent(window,"unload",t)}),this.retain&&this.area(b,this.retain)))},area:function(t,i){var a=this,e=function(n,t){a.area(n,t)};for(var c in i){var r=i[c],o=0;/(.*?)\*$/.test(c)&&(c=RegExp.$1,o=1);var f=c?/^#/.test(c)?n(c):n(c,t):[t];n.util.isArray(f)||(f=[f]);for(var u=0;u<f.length;u++){var s=o?r[0]:r[u];if(s&&f[u])if(s.i)for(var l=s.s||1,v=0;l>v;v++)r[u].j=v,this.zone(f[u+v],s);else d(f[u],e,s)}}},zone:function(t,i){var a=r(i.i,i.j),e=this.proc[i.f||"uniq"],c=i.p||{};t&&e&&(c.dyn?n(t).addEvent("mouseover",function(){for(var n=t.children[0];n&&n.children[0];)n=n.children[0];n&&!n.getAttribute("jdyn")&&(e(a,t,c),n.setAttribute("jdyn",1))}):d(t,function(n){e(a,n,c)}))},batch:function(n){h?this.area(b,n):this.retain=n}},window._aCM=new t}(NTES),function(){_aCM.init("tyh23"),setTimeout(function(){_aCM.batch({">.NTES-nav":[{">.nav-link":[{"":[{i:"111",f:"inca"}]}],".NTES-link":[{"":[{i:"121",f:"inca"}]}],a:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{"":[{i:"131"}]}]}],">.tt-area":[{"":[{"":[{i:"211",f:"inca"}]}]}],".nav":[{"#nav_index":[{">span":[{i:"311",f:"inca"}]}],"#nav_fixture":[{">span":[{i:"321",f:"inca"}]}],"#nav_team":[{".arr":[{i:"331"}],"#teamdetail":[{i:"332",f:"inca"}]}],"#nav_tables":[{">span":[{i:"341",f:"inca"}]}],"#nav_playerrank":[{">span":[{i:"351",f:"inca"}]}],"#nav_teamrank":[{">span":[{i:"361",f:"inca"}]}],"#nav_compare":[{">span":[{i:"371",f:"inca"}]}]}],">.csl-area":[{">.navpath":[{"":[{i:"411"}]}],li:[{"":[{i:"421",f:"inca"}]},{"":[{i:"431",f:"inca"}]},{"":[{i:"441",f:"inca"}]},{"":[{i:"451",f:"inca"}]},{"":[{i:"461",f:"inca"}]},{"":[{i:"471",f:"inca"}]},{"":[{i:"481",f:"inca"}]},{"":[{i:"491",f:"inca"}]},{"":[{i:"4A1",f:"inca"}]},{"":[{i:"4B1",f:"inca"}]},{"":[{i:"4C1",f:"inca"}]},{"":[{i:"4D1",f:"inca"}]},{"":[{i:"4E1",f:"inca"}]},{"":[{i:"4F1",f:"inca"}]},{"":[{i:"4G1",f:"inca"}]},{"":[{i:"4H1",f:"inca"}]}]},{"#daily":[{"":[{i:"511",f:"inca",p:{dyn:1}}]}],".titlebar":[{"":[{i:"521",f:"inca"}]}],".bg2":[0,0,0,0,{">td":[{i:"531"},{i:"532",f:"inca"}]},{">td":[{i:"551"},{i:"552",f:"inca"}]},{">td":[{i:"571"},{i:"572",f:"inca"}]},{">td":[{i:"591"},{i:"592",f:"inca"}]},{">td":[{i:"5B1"},{i:"5B2",f:"inca"}]},{">td":[{i:"5D1"},{i:"5D2",f:"inca"}]},{">td":[{i:"5F1"},{i:"5F2",f:"inca"}]},{">td":[{i:"5H1"},{i:"5H2",f:"inca"}]}],tr:[0,0,0,0,0,0,0,0,0,0,0,{">td":[{i:"541"},{i:"542",f:"inca"}]},0,{">td":[{i:"561"},{i:"562",f:"inca"}]},0,{">td":[{i:"581"},{i:"582",f:"inca"}]},0,{">td":[{i:"5A1"},{i:"5A2",f:"inca"}]},0,{">td":[{i:"5C1"},{i:"5C2",f:"inca"}]},0,{">td":[{i:"5E1"},{i:"5E2",f:"inca"}]},0,{">td":[{i:"5G1"},{i:"5G2",f:"inca"}]},0,{">td":[{i:"5I1"},{i:"5I2",f:"inca"}]}]}],">.foot":[{"":[{"":[{i:"611",f:"inca"}]}]}]})},50)}(NTES);</script>
+<!--cba-area -->
+<div align="center" class="foot">
+<div class="text">策划：麻小勇 林志霖 美术：胡云杰 技术：吴肇宣 张振朋 王季冬 <a style="color:red" target="_blank" href="http://fankui.163.com/ft/comment.fb?pid=10004&fid=14008">意见反馈</a></div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a
+  href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a
+  href="http://gb.corp.163.com/gb/cs.html">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a
+  href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br>
+网易公司版权所有<br>
+<span class="cRed">&copy;1997-2014</span></div>
+<!-- Dicky Lau -->
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+	var vjAcc = "860010-0505010000";
+	var wrUrl = "http://163.wrating.com/";
+	vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0505010000" width="1" height="1" /></noscript>
+<!-- END WRating v1.0 -->
+<!-- NetEase Analytics code 2006-06-27 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	_ntes_nacc = "sports"; //站点ID。
+	neteaseTracker();
+</script>
+</body>
+</html>
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.1.js"></script>
+
+

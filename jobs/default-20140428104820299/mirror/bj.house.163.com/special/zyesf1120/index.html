@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>中原地产二手房搜索</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <base target="_blank" />
+    <script src="http://img6.cache.netease.com/house/img13/sy0608/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="http://img6.cache.netease.com/house/img13/sy0608/jquery.autocomplete.min.js" type="text/javascript"></script>
+    <style type="text/css">
+    /* Global CSS */
+	html {overflow-y:scroll;}
+	body { margin:0; font:12px "\5B8B\4F53", sans-serif; background:#ffffff; }
+	div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, p { padding:0; margin:0; }
+	table, td, tr, th { font-size:12px; }
+	li { list-style-type:none; }
+	img { vertical-align:top; border:0; }
+	ol, ul { list-style:none; }
+	h1, h2, h3, h4, h5, h6 { font-size:12px; font-weight:normal; }
+	.hidden { display:none;}
+	/*table,tr,td{padding:0px;}*/
+	address, cite, code, th { font-weight:normal; font-style:normal; }
+	em{  font-style:normal; }
+	.I_V_{background:url(http://img1.cache.netease.com/img09/icon/icon.png) left center no-repeat;padding-left:18px}
+	.ntes-passport a { color:#727171; }
+	.ntes-passport a:hover { color:#ba2636; }
+	.f14px { font-size:14px;}
+	.fB { font-weight:bold; }
+	.left { float:left; }
+	.right { float:right; }
+	.clearfix, .area, .header, .footer, .area-sub, .area-main { *zoom:1;}
+	.clearfix:after, .area:after, .header:after, .footer:after, .content:after, .area-sub:after, .area-main:after, .main-col-10:after, .main-col-9:after, .tab-con:after { display:block; overflow:hidden; clear:both; height:0; visibility:hidden; content:"."; }
+	/*link css*/
+	a { color:#252525; text-decoration:none; }
+	a:visited { text-decoration:none; }
+	a:hover { color:#ba2636; text-decoration:underline; }
+	a:active { color:#ba2636; }
+	.more a:hover { color: #BA2636; }
+	.more a, .more a:visited { color:#888; }
+	/*colors*/
+	.cLGray,.cLGray:visited,.cLGray a { color:#666;}
+	.cDGray,.cDGray:visited,.cDGray a { color:#888;}
+	.cDYellow,.cDYellow:visited,.cDYellow a { color:#f0e4bd;}
+	.cDRed,.cDRed:visited,.cDRed a{ color:#ba2636;}
+	.cDBlue,.cDBlue:visited,.cDBlue a { color:#174F82;}
+	.cBlue,.cBlue:visited,.cBlue a { color:#376a77;}
+	.cDYellow a:hover,a.cDYellow:hover,.cBlue a:hover,a.cBlue:hover,.cLGray a:hover,a.cLGray:hover,.cDGray a:hover,a.cDGray:hover,.cDBlue a:hover,a.cDBlue:hover,.cDRed a:hover,a.cDRed:hover{color:#ba2636;}
+	/*span blank*/
+	.blankW { background:#fff; }
+	.blank3 { clear:both; height:3px; overflow:hidden; display:block; font-size:1px; }
+	.blank6 { clear:both; height:6px; overflow:hidden; display:block; font-size:1px; }
+	.blank9 { clear:both; height:9px; overflow:hidden; display:block; font-size:1px; }
+	.blank10 { clear:both; height:10px; overflow:hidden; display:block; font-size:1px; }
+	.blank12 { clear:both; height:12px; overflow:hidden; display:block; font-size:1px; }
+	.blank15 { clear:both; height:15px; overflow:hidden; display:block; font-size:1px; }
+	.blank20 { clear:both; height:20px; overflow:hidden; display:block; font-size:1px; }
+	.blank30 { clear:both; height:30px; overflow:hidden; display:block; font-size:1px; }
+	.blank40 { clear:both; height:40px; overflow:hidden; display:block; font-size:1px; }
+	/*tab*/
+	.tab .normal {display:none;}
+	.tab .on {display:block;}
+	/*title*/
+	.title-bar { height: 25px; line-height: 25px; overflow: hidden; }
+	.title-bar h2 { float: left; height:25px; font-weight: bold; line-height: 25px; }
+	.title-bar .more { float: right; line-height: 25px; }
+	.ui-til1 { height:43px; line-height:43px; }
+	.ui-til1 h2 { float: left; font-family: "Microsoft YaHei", "微软雅黑"; font-size: 16px; width:200px; height:38px; line-height:37px; border-bottom: 5px solid #252525; overflow: hidden; }
+	.ui-til1 .links { width:757px; height: 38px; line-height: 37px; border-bottom: 5px solid #A11515; }
+	.ui-til1 .links .more { padding-top:7px; color:#ddd; }
+	.ui-til1 .more a { font-size:14px; color:#252525; padding:0 15px; line-height:29px; border-right: 1px solid #ddd; }
+	.ui-til1 .more a.last { padding-right: 9px; border-right:0; }
+	.ui-til1 .more a:visited { color:#252525; }
+	.ui-til1 .more a.current:visited { color: #F1F1F1; }
+	.ui-til1 .more .current, .ui-til1 .more a:hover { text-decoration: none; color:#f1f1f1; background:#373737; padding:5px 18px; -webkit-border-radius:13px; -moz-border-radius:13px; border-radius: 13px; margin: 0 -2px 0 -3px; position: relative; border-right:0; }
+	.ui-til1 .more a.last:hover { padding-right: 9px; margin: 0 0 0 -3px;  -webkit-border-radius:13px 0 0 13px; -moz-border-radius:13px 0 0 13px; border-radius:  13px 0 0 13px; }
+	.ui-til1 .more a.lastCurrent { background: none repeat scroll 0 0 #373737; border-radius: 13px 0 0 13px; border-right: 0 none; color: #F1F1F1; margin: 0 0 0 -3px; padding: 5px 18px; padding-right: 9px; position: relative; text-decoration: none; }
+	.ui-til2 { clear:both; margin:0 auto;}
+	.ui-til2 h2 { float: left; font-size:16px; font-family: "Microsoft YaHei", "微软雅黑"; overflow: hidden; }
+	.ui-til2 .readAll { background: url(http://img6.cache.netease.com/house/img13/sy0608/bg_x.gif) no-repeat scroll right -216px transparent; padding-right:16px;}
+	/*layout 布局*/
+	.area { clear: both; margin: 0 auto; width: 960px; color:#252525; }
+	.area-main { float: left; width: 400px; }
+	.area-sub { float: right; width: 560px;}
+	.sub-col-6 { float: left; width: 220px;}
+	.sub-col-8 { float: right; width: 300px; }
+	.main-col-1 { float:left; width:620px;}
+	.sub-col-1 { float:right; width:300px;}
+	.main-col-2 { float:left; width:320px;}
+	.sub-col-2 { float:right; width:600px;}
+	.area-main .mod{padding-right: 20px;}
+	.area-main p { line-height:25px;}
+	.area-bg { background:url(http://img6.cache.netease.com/house/img13/sy0608/bg_y.gif) 640px top repeat-y;}
+	.area-sub-bg { background:url(http://img6.cache.netease.com/house/img13/sy0608/bg_y.gif) 240px top repeat-y;}
+	.area-sub-bg2 { background:url(http://img6.cache.netease.com/house/img13/sy0608/bg_y.gif) 299px top repeat-y;}
+	.gray-bor { background:#373737; clear:both; height:5px; overflow:hidden; display:block; font-size:1px;}
+	.gray-bor2 { background:#ddd; clear:both; height:1px; overflow:hidden; display:block; font-size:1px;}
+	.red-bor { background:#BC2C09; clear:both; height:5px; overflow:hidden; display:block; font-size:1px;}
+	/*中原地产*/
+	.es-soso{ width: 620px;height: 35px;clear: both;margin: 0 auto;}
+	.es-soso h2 {float: left;width: 117px;margin: 0;}
+	.es-soso h2 img {border: none;}
+	.es-soso .es-search {float: right;width: 485px;height: 33px;border: 1px solid #BC2C09;position: relative;z-index: 2;}
+	.es-soso .es-search .txt {float: left;border: none;width: 360px;border-left: 1px solid #BC2C09;border-right: 1px solid #BC2C09;height: 33px;font-size: 12px;line-height: 33px;color: #888;text-indent: 9px;}
+	.es-soso .es-search .btn {float: right;width: 39px;background: url(http://img6.cache.netease.com/house/img13/sy0608/bg_x.gif) 12px -280px no-repeat;height: 33px;border: none;text-indent: -999px;cursor: pointer;overflow: hidden;}
+	#warper1 {position: relative;width: 84px;height: 22px;float: left;font-size: 14px;margin-top: 6px;display: inline;z-index: 3;}
+	#warper1 ul {list-style: none;margin: 0;padding: 0;}
+	#warper1 ul li {line-height: 25px;height: 23px;cursor: pointer;margin: 0;font-size: 14px;text-indent: 12px;overflow: hidden;}
+	.sel-inputbox-1 {width: 84px;height: 22px;line-height: 22px;background: url(http://img6.cache.netease.com/house/img13/sy0608/bg_x.gif) 62px -318px no-repeat;border: none;font-size: 14px;text-indent: 12px;cursor: pointer;}
+	.sel-listcss-1 {display: none;position: absolute;width: 84px;left: -1px;top: 27px;border: 1px solid #ccc;background: #fff;z-index: 9999;}
+	.sel-hover {background: #BC2C09;color: #fff;}
+	/*弹窗*/
+	.ac_results {padding: 0;margin: 0;border: 1px solid #be2b00;background-color: white;overflow: hidden;z-index: 99999;}
+	.ac_results ul {width: 100%;list-style-position: outside;list-style: none;padding: 0;margin: 0;}
+	.ac_results li {margin: 0;padding: 2px 5px;cursor: default;display: block;font: menu;font-size: 12px;line-height: 22px;overflow: hidden;}
+	.ac_loading {background: white;}
+	.ac_over {background-color: #d35400;color: #fff;}
+	.csearch span {float: left;padding-right: 10px;}
+	.csearch label {float: right;}
+	/*内容列表*/
+	.es-tab { width:620px; clear:both; margin:0 auto; overflow:hidden;}
+	.es-tab ul { float:left; border-left:1px solid #ddd;}
+	.es-tab li { float:left; background:#F7F7F7; height:34px; width:154px; font-size:14px; line-height:34px; text-align:center; color:#666; border-top:1px solid #ddd; border-right:1px solid #ddd; border-bottom:1px solid #ddd; cursor:pointer;}
+	.es-tab li.on { font-weight:bold; width:153px; color:#252525; background:#fff; border-top:1px solid #BC2C09; border-bottom:1px solid #fff;}
+	.es-piclist1 { width:620px; margin:0 auto; clear:both; overflow:hidden;}
+	.es-piclist1 ul { float:left; width:650px; clear:both;}
+	.es-piclist1 li { float:left; width:100px; height:160px; padding:17px 0 0 0; margin-right:30px; display:inline;}
+	.es-piclist1 li img { clear:both; margin-bottom:6px;}
+	.es-piclist1 li h2 { width:100px; line-height:21px; overflow:hidden;}
+	.es-piclist1 li h3 { width:100px; color:#666; font-weight:bold; padding-top:2px;}
+	.es-piclist1 li p { color:#666; line-height:19px; padding-top:3px;}
+	.es-piclist1 .es-dec { width:620px; color:#666; clear:both; margin:0 auto; overflow:hidden;}
+	.es-piclist1 .es-dec .es-text { float:left;}
+	.es-piclist1 .es-dec .es-more { float:right;}
+	.es-piclist2 { width:620px; margin:0 auto; clear:both; overflow:hidden; text-align:center;}
+	.es-piclist2 ul { float:left; width:650px; clear:both;}
+	.es-piclist2 li { float:left; width:80px; height:200px; margin-right:27px; display:inline;}
+	.es-piclist2 li img { clear:both; margin-bottom:6px;}
+	.es-piclist2 li h2 { width:80px; line-height:21px; font-weight:bold; overflow:hidden;}
+	.es-piclist2 li h3 { width:80px; color:#666; padding-top:2px;}
+	.es-piclist2 li p { line-height:19px; padding-top:3px;}
+	.es-piclist2 .es-dec { width:620px; color:#666; clear:both; margin:0 auto; overflow:hidden;}
+	.es-piclist2 .es-dec .es-text { float:left;}
+	.es-piclist2 .es-dec .es-more { float:right;}
+	.es-datalist{ width:300px; clear:both; color:#252525; text-align:left;}
+	.es-datalist td{ line-height:25px; border-bottom:1px dotted #eee;text-align:left;}
+	.es-datalist .pad26 { padding-left:26px;}
+	.es-datalist .nobor td { border-bottom:none;}
+	.es-datalist th{ line-height:20px; text-align:left;}
+	.es-datalist .num1 { font-family:Arial; font-style: italic; font-weight:bold; color:#BC2C09; font-size:12px; padding:0 8px 0 5px;}
+	.es-datalist .num2 { font-family:Arial; font-style: italic; font-weight:bold; color:#252525; font-size:12px; padding:0 8px 0 5px;}
+	/*list*/
+	.mod-list li { clear: both; overflow: hidden; }
+	.main-list li { background: url(http://img6.cache.netease.com/house/img13/sy0608/bg_n.gif) no-repeat scroll -367px -158px transparent; clear: both; font-size: 14px; height: 28px; line-height: 28px; padding-left: 11px; }
+	.sub-list li { background: url(http://img6.cache.netease.com/house/img13/sy0608/bg_n.gif) no-repeat scroll -367px -161px transparent; height: 24px; line-height: 24px; padding-left: 11px; }
+    </style>
+</head>
+<body>
+<div class="area" id="es">
+    <div class="title-bar ui-til1"><h2><a href="http://www.centanet.com/?hmsr=163&hmmd=esf_house_bk&hmci=bj" class="for-zytrack"><img src="http://img6.cache.netease.com/house/img13/sy0608/title_zyesf.gif" width="151" height="30" alt="中原二手房"><br>中原二手房</a></h2>
+        <div class="links right">
+            <span class="more"><a href="http://bj.centanet.com/ershoufang/?hmsr=163&hmmd=esf_house_bk&hmci=bj" class="for-zytrack">二手房</a>
+<a href="http://bj.centanet.com/jingjiren/?hmsr=163&hmmd=esf_house_bk&hmci=bj" class="for-zytrack">金牌经纪人</a>
+<a href="http://bjxzl.centanet.com/?hmsr=163&hmmd=esf_house_bk&hmci=bj" class="for-zytrack">商业楼宇</a>
+</span>
+        </div>
+    </div>
+</div>
+<span class="blank40"></span>
+<div class="area area-bg clearfix">
+  <div class="main-col-1">
+    <div class="es-soso">
+        <h2><a href="http://www.centanet.com/?hmsr=163&hmmd=esrk_tzh"><img src="http://img6.cache.netease.com/house/img13/sy0608/logo_zydc.gif" width="117" height="35" alt="中原地产"></a></h2>
+        <div class="es-search">
+            <div id="warper1">
+                <select id="sltPostType" style="display: none;">
+                    <option value="s">二手房</option>
+                    <option value="r">租 房</option>
+                </select>
+                <div class="sel-inputbox-1" id="input1">
+                    类 型</div>
+            </div>
+            <input type="text" maxlength="20" class="txt" id="txtSearchKey" onFocus="HandleOnfocus1(this)"
+                onblur="HandleOnblur1(this)" value="请输入小区名称、学校、房源特色…" />
+            <input type="button" value="搜索" id="searchBtn" class="btn" onClick="OpenSearchPageBJ(document.getElementById('txtSearchKey').value)" />
+        </div>
+    </div>
+    <span class="blank20"></span>
+    <div class="es-tab">
+      <ul id="es-tab">
+        <li class="on">热门推荐</li>
+        <li>推荐二手房(售)</li>
+        <li>推荐二手房(租)</li>
+        <li>金牌经纪人</li>
+      </ul>
+    </div>
+	<span class="blank20"></span>
+    <div class="tab" id="es-text">
+      <div class="es-piclist1 normal on">
+        <div class="es-dec"><span class="es-text">(根据多项表现指标综合计算排名)</span> <span class="es-more">共房源 <span class="cDRed">444</span> 套 更新时间：2014/4/28 17:07:31</span></div>
+        <ul>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/9a88dafc-9e1a-46a9-8987-2fc1e4fa42e4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="山水文园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/89/4a/fdf47b2c4074b31a01083c9f3e82_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="山水文园" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/9a88dafc-9e1a-46a9-8987-2fc1e4fa42e4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="华威桥" class="for-zytrack">华威桥</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/9a88dafc-9e1a-46a9-8987-2fc1e4fa42e4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="山水文园" class="for-zytrack">山水文园</a></h3>
+            <p>面积：<span class="cDRed">158</span>㎡<br />售价：<span class="cDRed">870万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/249fa628-fbe3-4221-94fc-bed6545352c7.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="时代紫芳一区" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/95/60/cf098460412fa9964b218b9852db_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="时代紫芳一区" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/249fa628-fbe3-4221-94fc-bed6545352c7.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄" class="for-zytrack">方庄</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/249fa628-fbe3-4221-94fc-bed6545352c7.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="时代紫芳一区" class="for-zytrack">时代紫芳一区</a></h3>
+            <p>面积：<span class="cDRed">94</span>㎡<br />售价：<span class="cDRed">400万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/b4a43ca7-0161-4df6-a07b-6ef46f034304.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄六号" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/fe/f7/6fb979da479a8993ccee3aa5c9be_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="方庄六号" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/b4a43ca7-0161-4df6-a07b-6ef46f034304.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄" class="for-zytrack">方庄</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/b4a43ca7-0161-4df6-a07b-6ef46f034304.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄六号" class="for-zytrack">方庄六号</a></h3>
+            <p>面积：<span class="cDRed">73</span>㎡<br />售价：<span class="cDRed">380万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/e773d71e-9c98-487e-bf95-6bdea039b87c.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="三环新城" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/e2/3c/cd8952f942e6ab637d78e9e979dc_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="三环新城" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/e773d71e-9c98-487e-bf95-6bdea039b87c.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丰台西" class="for-zytrack">丰台西</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/e773d71e-9c98-487e-bf95-6bdea039b87c.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="三环新城" class="for-zytrack">三环新城</a></h3>
+            <p>面积：<span class="cDRed">117</span>㎡<br />售价：<span class="cDRed">360万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/aa83d672-0381-45bd-8744-ae03f5a02a7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富贵园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/62/89/8637621e42f5a6eb78ebb37e930f_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="富贵园" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/aa83d672-0381-45bd-8744-ae03f5a02a7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="崇文门" class="for-zytrack">崇文门</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/aa83d672-0381-45bd-8744-ae03f5a02a7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富贵园" class="for-zytrack">富贵园</a></h3>
+            <p>面积：<span class="cDRed">130</span>㎡<br />售价：<span class="cDRed">780万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/db847207-400a-4bc6-9248-a949fa8cc339.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="芳城园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/39/a3/2f6b88cc4071b2daf659deb8e0fc_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="芳城园" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/db847207-400a-4bc6-9248-a949fa8cc339.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄" class="for-zytrack">方庄</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/db847207-400a-4bc6-9248-a949fa8cc339.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="芳城园" class="for-zytrack">芳城园</a></h3>
+            <p>面积：<span class="cDRed">69</span>㎡<br />售价：<span class="cDRed">300万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/0271c0f2-8929-424f-b62e-f730710a865a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="水上华城" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/35/8d/07b2e14142f9bb51b3a886a7b465_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="水上华城" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/0271c0f2-8929-424f-b62e-f730710a865a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="广渠门" class="for-zytrack">广渠门</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/0271c0f2-8929-424f-b62e-f730710a865a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="水上华城" class="for-zytrack">水上华城</a></h3>
+            <p>面积：<span class="cDRed">213</span>㎡<br />售价：<span class="cDRed">1,480万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/d3aad98f-4228-4a8a-97e8-7111b1873665.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万年花城" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/8a/46/a5b35839466caff75294eefa600a_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="万年花城" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/d3aad98f-4228-4a8a-97e8-7111b1873665.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丰台西" class="for-zytrack">丰台西</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/d3aad98f-4228-4a8a-97e8-7111b1873665.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万年花城" class="for-zytrack">万年花城</a></h3>
+            <p>面积：<span class="cDRed">95</span>㎡<br />售价：<span class="cDRed">420万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/d6e01829-ee00-4d81-ae18-c4b59b06b359.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="晶城秀府" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/b6/80/f8e31dc44716911e9b3ee2e0cce3_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="晶城秀府" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/d6e01829-ee00-4d81-ae18-c4b59b06b359.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="赵公口" class="for-zytrack">赵公口</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/d6e01829-ee00-4d81-ae18-c4b59b06b359.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="晶城秀府" class="for-zytrack">晶城秀府</a></h3>
+            <p>面积：<span class="cDRed">228</span>㎡<br />售价：<span class="cDRed">880万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/7b7faedc-5cb2-4c89-bf25-186fd2067b55.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="山水文园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/88/37/c7dd337e42e383c82e50afd9b0ee_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="山水文园" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/7b7faedc-5cb2-4c89-bf25-186fd2067b55.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="华威桥" class="for-zytrack">华威桥</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/7b7faedc-5cb2-4c89-bf25-186fd2067b55.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="山水文园" class="for-zytrack">山水文园</a></h3>
+            <p>面积：<span class="cDRed">170</span>㎡<br />售价：<span class="cDRed">1,100万</span></p>
+          </li>
+        </ul>
+      </div>
+	  <div class="es-piclist1 normal">
+        <div class="es-dec"><span class="es-text">(根据多项表现指标综合计算排名)</span> <span class="es-more">共房源 <span class="cDRed">8717</span> 套 更新时间：2014/4/28 17:07:31</span></div>
+        <ul>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/9a88dafc-9e1a-46a9-8987-2fc1e4fa42e4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="山水文园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/89/4a/fdf47b2c4074b31a01083c9f3e82_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="山水文园" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/9a88dafc-9e1a-46a9-8987-2fc1e4fa42e4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="华威桥" class="for-zytrack">华威桥</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/9a88dafc-9e1a-46a9-8987-2fc1e4fa42e4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="山水文园" class="for-zytrack">山水文园</a></h3>
+            <p>面积：<span class="cDRed">158</span>㎡<br />售价：<span class="cDRed">870万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/249fa628-fbe3-4221-94fc-bed6545352c7.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="时代紫芳一区" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/95/60/cf098460412fa9964b218b9852db_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="时代紫芳一区" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/249fa628-fbe3-4221-94fc-bed6545352c7.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄" class="for-zytrack">方庄</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/249fa628-fbe3-4221-94fc-bed6545352c7.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="时代紫芳一区" class="for-zytrack">时代紫芳一区</a></h3>
+            <p>面积：<span class="cDRed">94</span>㎡<br />售价：<span class="cDRed">400万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/b4a43ca7-0161-4df6-a07b-6ef46f034304.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄六号" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/fe/f7/6fb979da479a8993ccee3aa5c9be_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="方庄六号" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/b4a43ca7-0161-4df6-a07b-6ef46f034304.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄" class="for-zytrack">方庄</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/b4a43ca7-0161-4df6-a07b-6ef46f034304.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄六号" class="for-zytrack">方庄六号</a></h3>
+            <p>面积：<span class="cDRed">73</span>㎡<br />售价：<span class="cDRed">380万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/e773d71e-9c98-487e-bf95-6bdea039b87c.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="三环新城" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/e2/3c/cd8952f942e6ab637d78e9e979dc_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="三环新城" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/e773d71e-9c98-487e-bf95-6bdea039b87c.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丰台西" class="for-zytrack">丰台西</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/e773d71e-9c98-487e-bf95-6bdea039b87c.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="三环新城" class="for-zytrack">三环新城</a></h3>
+            <p>面积：<span class="cDRed">117</span>㎡<br />售价：<span class="cDRed">360万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/7403f472-6de0-4f78-bd97-5808a9e81c4a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="建茗苑" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/86/19/d94b9fe84620abbbdcad36b05352_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="建茗苑" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/7403f472-6de0-4f78-bd97-5808a9e81c4a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="广安门外" class="for-zytrack">广安门外</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/7403f472-6de0-4f78-bd97-5808a9e81c4a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="建茗苑" class="for-zytrack">建茗苑</a></h3>
+            <p>面积：<span class="cDRed">94</span>㎡<br />售价：<span class="cDRed">315万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/5e6b48ba-734b-481a-8e8d-90f71114be7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富力城" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/c5/fb/ab9418ce4d2296db0ec60fe38ad7_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="富力城" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/5e6b48ba-734b-481a-8e8d-90f71114be7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="双井" class="for-zytrack">双井</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/5e6b48ba-734b-481a-8e8d-90f71114be7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富力城" class="for-zytrack">富力城</a></h3>
+            <p>面积：<span class="cDRed">120</span>㎡<br />售价：<span class="cDRed">740万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/aa83d672-0381-45bd-8744-ae03f5a02a7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富贵园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/62/89/8637621e42f5a6eb78ebb37e930f_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="富贵园" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/aa83d672-0381-45bd-8744-ae03f5a02a7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="崇文门" class="for-zytrack">崇文门</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/aa83d672-0381-45bd-8744-ae03f5a02a7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富贵园" class="for-zytrack">富贵园</a></h3>
+            <p>面积：<span class="cDRed">130</span>㎡<br />售价：<span class="cDRed">780万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/a3fd5acc-16f8-409c-af72-67577c95f0a4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="阳春光华" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/25/c0/e83b52874d14bcac42a87ddd6919_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="阳春光华" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/a3fd5acc-16f8-409c-af72-67577c95f0a4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万柳" class="for-zytrack">万柳</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/a3fd5acc-16f8-409c-af72-67577c95f0a4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="阳春光华" class="for-zytrack">阳春光华</a></h3>
+            <p>面积：<span class="cDRed">106</span>㎡<br />售价：<span class="cDRed">766万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/db847207-400a-4bc6-9248-a949fa8cc339.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="芳城园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/39/a3/2f6b88cc4071b2daf659deb8e0fc_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="芳城园" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/db847207-400a-4bc6-9248-a949fa8cc339.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="方庄" class="for-zytrack">方庄</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/db847207-400a-4bc6-9248-a949fa8cc339.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="芳城园" class="for-zytrack">芳城园</a></h3>
+            <p>面积：<span class="cDRed">69</span>㎡<br />售价：<span class="cDRed">300万</span></p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/ershoufang/ce93dca6-d3b4-4675-b0a3-ecdb87c6e366.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="杨庄北区" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/6e/28/8d7b3335449f834a042b2b708818_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="杨庄北区" /></a>
+            <h2><a href="http://bj.centanet.com/ershoufang/ce93dca6-d3b4-4675-b0a3-ecdb87c6e366.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="杨庄" class="for-zytrack">杨庄</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/ershoufang/ce93dca6-d3b4-4675-b0a3-ecdb87c6e366.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="杨庄北区" class="for-zytrack">杨庄北区</a></h3>
+            <p>面积：<span class="cDRed">93</span>㎡<br />售价：<span class="cDRed">280万</span></p>
+          </li>
+        </ul>
+      </div>
+	  <div class="es-piclist1 normal">
+        <div class="es-dec"><span class="es-text">(根据多项表现指标综合计算排名)</span> <span class="es-more">共房源 <span class="cDRed">2198</span> 套 更新时间：2014/4/28 17:07:31</span></div>
+        <ul>
+             <li>
+            <a href="http://bj.centanet.com/zufang/5e6b48ba-734b-481a-8e8d-90f71114be7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富力城" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/c5/fb/ab9418ce4d2296db0ec60fe38ad7_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="富力城" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/5e6b48ba-734b-481a-8e8d-90f71114be7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="双井" class="for-zytrack">双井</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/5e6b48ba-734b-481a-8e8d-90f71114be7a.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="富力城" class="for-zytrack">富力城</a></h3>
+            <p>面积：<span class="cDRed">120</span>㎡<br />租价：<span class="cDRed"> 13,000</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/bc8d1dc5-9d21-43e9-8189-fc8e505d78b2.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丽水湾畔" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/cb/43/a32c1e2c42ff896874700c20e9b4_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="丽水湾畔" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/bc8d1dc5-9d21-43e9-8189-fc8e505d78b2.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="崇文门" class="for-zytrack">崇文门</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/bc8d1dc5-9d21-43e9-8189-fc8e505d78b2.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丽水湾畔" class="for-zytrack">丽水湾畔</a></h3>
+            <p>面积：<span class="cDRed">140</span>㎡<br />租价：<span class="cDRed"> 8,500</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/9ab9dfbb-2917-429d-bf84-2fb6bd2ae523.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万年花城" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/8a/dd/ed8cc13b48b6a0da307c2143e7ad_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="万年花城" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/9ab9dfbb-2917-429d-bf84-2fb6bd2ae523.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丰台西" class="for-zytrack">丰台西</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/9ab9dfbb-2917-429d-bf84-2fb6bd2ae523.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万年花城" class="for-zytrack">万年花城</a></h3>
+            <p>面积：<span class="cDRed">52</span>㎡<br />租价：<span class="cDRed"> 3,300</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/2a6ead81-835f-4570-89cc-348c4b235dc4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="莱蒙湖别墅" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/58/4b/0cdbb8134ec2b688d210d9bd4b14_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="莱蒙湖别墅" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/2a6ead81-835f-4570-89cc-348c4b235dc4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="后沙峪" class="for-zytrack">后沙峪</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/2a6ead81-835f-4570-89cc-348c4b235dc4.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="莱蒙湖别墅" class="for-zytrack">莱蒙湖别墅</a></h3>
+            <p>面积：<span class="cDRed">596</span>㎡<br />租价：<span class="cDRed"> 45,000</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/d0be39a0-bc78-4c3c-895d-78831115fc03.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万泉新新家园" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/1d/6a/725a40ce41b98d7a5bbd9090c098_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="万泉新新家园" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/d0be39a0-bc78-4c3c-895d-78831115fc03.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万柳" class="for-zytrack">万柳</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/d0be39a0-bc78-4c3c-895d-78831115fc03.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万泉新新家园" class="for-zytrack">万泉新新家园</a></h3>
+            <p>面积：<span class="cDRed">164</span>㎡<br />租价：<span class="cDRed"> 19,000</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/44f3753c-e555-444b-93ea-35cf6361f3d8.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丰侨公寓" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/5a/11/d62278934ec09f66a9429e91d426_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="丰侨公寓" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/44f3753c-e555-444b-93ea-35cf6361f3d8.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="金融街" class="for-zytrack">金融街</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/44f3753c-e555-444b-93ea-35cf6361f3d8.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="丰侨公寓" class="for-zytrack">丰侨公寓</a></h3>
+            <p>面积：<span class="cDRed">131</span>㎡<br />租价：<span class="cDRed"> 21,000</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/cf7c6e9e-cccd-4343-a3c5-b05a2de76ad8.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="翠屏北里西区" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/bb/1f/3e76f70e4091a2e5152a5dfe993c_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="翠屏北里西区" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/cf7c6e9e-cccd-4343-a3c5-b05a2de76ad8.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="果园" class="for-zytrack">果园</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/cf7c6e9e-cccd-4343-a3c5-b05a2de76ad8.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="翠屏北里西区" class="for-zytrack">翠屏北里西区</a></h3>
+            <p>面积：<span class="cDRed">60</span>㎡<br />租价：<span class="cDRed"> 2,500</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/1ce7b3e4-8ec3-4fe8-a535-72cd9401bdf0.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万城华府" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/7c/0e/1fc40cbd4bfa9ba6303ba0849013_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="万城华府" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/1ce7b3e4-8ec3-4fe8-a535-72cd9401bdf0.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万柳" class="for-zytrack">万柳</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/1ce7b3e4-8ec3-4fe8-a535-72cd9401bdf0.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="万城华府" class="for-zytrack">万城华府</a></h3>
+            <p>面积：<span class="cDRed">333</span>㎡<br />租价：<span class="cDRed"> 60,000</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/8e8f5559-e164-4718-9747-f4bac479de89.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="朝内南小街回迁" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/ba/69/fec2fd384b96a520169ca4efb337_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="朝内南小街回迁" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/8e8f5559-e164-4718-9747-f4bac479de89.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="朝阳门内" class="for-zytrack">朝阳门内</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/8e8f5559-e164-4718-9747-f4bac479de89.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="朝内南小街回迁" class="for-zytrack">朝内南小街回迁</a></h3>
+            <p>面积：<span class="cDRed">55</span>㎡<br />租价：<span class="cDRed"> 5,500</span>元</p>
+          </li>
+             <li>
+            <a href="http://bj.centanet.com/zufang/baa6c052-076d-4354-b95e-ab3ad9d10097.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="新世界太华公寓" class="for-zytrack"><img src="http://pic.centanet.com/beijing/postimage/9a/2f/644ce79546048bfe36bf85435afd_120x90.jpg" width="100" height="70" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134814b2dfe.jpg'" alt="新世界太华公寓" /></a>
+            <h2><a href="http://bj.centanet.com/zufang/baa6c052-076d-4354-b95e-ab3ad9d10097.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="崇文门" class="for-zytrack">崇文门</a></h2>
+			<h3 class="cDRed"><a href="http://bj.centanet.com/zufang/baa6c052-076d-4354-b95e-ab3ad9d10097.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="新世界太华公寓" class="for-zytrack">新世界太华公寓</a></h3>
+            <p>面积：<span class="cDRed">95</span>㎡<br />租价：<span class="cDRed"> 8,500</span>元</p>
+          </li>
+        </ul>
+      </div>
+	  <div class="es-piclist2 normal">
+		  <ul>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2012120088/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="兰贵府" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2012120088.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="兰贵府" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2012120088/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="兰贵府" class="for-zytrack">兰贵府</a></h2>
+			  <p>万年花城中心分行&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2012120088/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="兰贵府" class="for-zytrack">(41个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2014030114/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="秦刚" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2014030114.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="秦刚" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2014030114/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="秦刚" class="for-zytrack">秦刚</a></h2>
+			  <p>万年花城中心分行&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2014030114/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="秦刚" class="for-zytrack">(77个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2013040226/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="杨晓波" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2013040226.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="杨晓波" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2013040226/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="杨晓波" class="for-zytrack">杨晓波</a></h2>
+			  <p>富力城分行B组&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2013040226/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="杨晓波" class="for-zytrack">(48个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2009080075/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李聪" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2009080075.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="李聪" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2009080075/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李聪" class="for-zytrack">李聪</a></h2>
+			  <p>富力城东分行A组&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2009080075/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李聪" class="for-zytrack">(33个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2007060504/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李仁军" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2007060504.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="李仁军" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2007060504/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李仁军" class="for-zytrack">李仁军</a></h2>
+			  <p>万泉新新分行A组&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2007060504/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李仁军" class="for-zytrack">(67个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2013010003/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="曹庆隆" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2013010003.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="曹庆隆" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2013010003/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="曹庆隆" class="for-zytrack">曹庆隆</a></h2>
+			  <p>万年花城中心分行&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2013010003/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="曹庆隆" class="for-zytrack">(35个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2012020050/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李富强" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2012020050.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="李富强" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2012020050/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李富强" class="for-zytrack">李富强</a></h2>
+			  <p>国际村分行A组&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2012020050/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="李富强" class="for-zytrack">(84个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2013080093/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="王维" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2013080093.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="王维" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2013080093/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="王维" class="for-zytrack">王维</a></h2>
+			  <p>崇文富贵园分行B&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2013080093/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="王维" class="for-zytrack">(90个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2013080118/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="柯门闩" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2013080118.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="柯门闩" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2013080118/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="柯门闩" class="for-zytrack">柯门闩</a></h2>
+			  <p>万寿路分行A组&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2013080118/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="柯门闩" class="for-zytrack">(90个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2013070010/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="赵红明" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2013070010.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="赵红明" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2013070010/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="赵红明" class="for-zytrack">赵红明</a></h2>
+			  <p>知春路分行A组&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2013070010/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="赵红明" class="for-zytrack">(86个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2010040240/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="闫世杰" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2010040240.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="闫世杰" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2010040240/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="闫世杰" class="for-zytrack">闫世杰</a></h2>
+			  <p>方庄时代紫芳分行&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2010040240/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="闫世杰" class="for-zytrack">(81个房源)</a></h3>
+			</li>
+   			<li><a href="http://bj.centanet.com/jingjiren/m-2009110246/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="毕勇波" class="for-zytrack"><img src="http://pic.centanet.com/beijing/Pic/agent/2009110246.jpg" width="80" height="110" onerror="this.src='http://img1.cache.netease.com/house/2013/8/5/20130805134817b0991.jpg'" alt="毕勇波" /></a>
+			  <h2 class="cDRed"><a href="http://bj.centanet.com/jingjiren/m-2009110246/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="毕勇波" class="for-zytrack">毕勇波</a></h2>
+			  <p>中央别墅分行C组&nbsp;</p>
+			  <h3><a href="http://bj.centanet.com/jingjiren/m-2009110246/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="毕勇波" class="for-zytrack">(42个房源)</a></h3>
+			</li>
+		  </ul>
+		</div>	  
+	  
+    </div>
+  </div>
+  <div class="sub-col-1">
+	<div class="title-bar ui-til2">
+	  <h2 class="left">热门楼盘排行榜</h2>
+	</div>
+	<span class="blank12"></span>
+	<span class="gray-bor2"></span>
+	<span class="blank12"></span>
+	<table width="300" cellspacing="0" cellpadding="0" border="0" class="es-datalist">
+	  <thead>
+		<tr>
+		  <th width="160"><span class="pad26">楼盘名<br />&nbsp;</span></th>
+		  <th width="45">最低<br /><span class="cLGray">(万)</span></th>
+		  <th width="45">最高<br /><span class="cLGray">(万)</span></th>
+		  <th width="50">均价<br /><span class="cLGray">(元/㎡)</span></th>
+		</tr>
+	  </thead>
+	  <tbody>
+   		<tr>
+		  <td><span class="num1">1</span> <a href="http://bj.centanet.com/search-xq-psppwdwygp-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="阳春光华" class="for-zytrack">阳春光华</a></td>
+		  <td>620</td>
+		  <td>1,450</td>
+		  <td>64,784</td>
+		</tr>
+   		<tr>
+		  <td><span class="num1">2</span> <a href="http://bj.centanet.com/search-xq-psppwewssp-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="光大水墨风" class="for-zytrack">光大水墨风</a></td>
+		  <td>860</td>
+		  <td>2,700</td>
+		  <td>90,763</td>
+		</tr>
+   		<tr>
+		  <td><span class="num1">3</span> <a href="http://bj.centanet.com/search-xq-psppwawsep-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="七星园" class="for-zytrack">七星园</a></td>
+		  <td>240</td>
+		  <td>460</td>
+		  <td>33,793</td>
+		</tr>
+   		<tr>
+		  <td><span class="num2">4</span> <a href="http://bj.centanet.com/search-xq-psppwywhgp-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="蜂鸟家园" class="for-zytrack">蜂鸟家园</a></td>
+		  <td>360</td>
+		  <td>720</td>
+		  <td>78,831</td>
+		</tr>
+   		<tr>
+		  <td><span class="num2">5</span> <a href="http://bj.centanet.com/search-xq-psepwswxgp-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="天秀花园安" class="for-zytrack">天秀花园安</a></td>
+		  <td>400</td>
+		  <td>850</td>
+		  <td>50,144</td>
+		</tr>
+   		<tr>
+		  <td><span class="num2">6</span> <a href="http://bj.centanet.com/search-xq-psspwbwekp-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="新坐标" class="for-zytrack">新坐标</a></td>
+		  <td>150</td>
+		  <td>300</td>
+		  <td>41,549</td>
+		</tr>
+   		<tr>
+		  <td><span class="num2">7</span> <a href="http://bj.centanet.com/search-xq-psbpwdwhkp-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="融景城" class="for-zytrack">融景城</a></td>
+		  <td>335</td>
+		  <td>720</td>
+		  <td>36,353</td>
+		</tr>
+   		<tr>
+		  <td><span class="num2">8</span> <a href="http://bj.centanet.com/search-xq-psppwawssp-0/esf/?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="六合园" class="for-zytrack">六合园</a></td>
+		  <td>160</td>
+		  <td>355</td>
+		  <td>31,183</td>
+		</tr>
+	  </tbody>
+	</table>
+	<span class="blank20"></span>
+	<div class="title-bar ui-til2">
+	  <h2 class="left">成交新闻排行</h2>
+	</div>
+	<span class="blank12"></span>
+	<ul class="mod-list sub-list">
+   	  <li><a href="http://bj.centanet.com/news/26728.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="986万尊尚首选中信城——规划内学区 央企开发商" class="for-zytrack">986万尊尚首选中信城——规划内学区 央企开发商</a></li>
+   	  <li><a href="http://bj.centanet.com/news/26727.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="新景家园业主王阿姨的选房之道" class="for-zytrack">新景家园业主王阿姨的选房之道</a></li>
+   	  <li><a href="http://bj.centanet.com/news/26725.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="410万成交万年花城二期全南两居  学区+地铁双优势！" class="for-zytrack">410万成交万年花城二期全南两居  学区+地铁双优势！</a></li>
+   	  <li><a href="http://bj.centanet.com/news/26724.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="商人高先生的置业经历——珠江骏景 升值抗跌首选！" class="for-zytrack">商人高先生的置业经历——珠江骏景 升值抗跌首选！</a></li>
+   	  <li><a href="http://bj.centanet.com/news/26723.html?hmsr=163&hmmd=esf_house_bk&hmci=bj" title="孩子考入北京大学 温州张阿姨的「置业经」" class="for-zytrack">孩子考入北京大学 温州张阿姨的「置业经」</a></li>
+	</ul>
+  
+  </div>
+</div>
+<span class="blank15"></span>
+<script charset="gb2312" src="http://img6.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="http://img6.cache.netease.com/house/img13/sy0608/select.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+new NTES.ui.Slide($("#es-tab > li"), $("#es-text > div"), "on", "mouseover")
+        window.onload = function () {
+            //虚拟select表单
+            var selector1 = new SELECT.Selector({
+                selectId: "sltPostType",
+                divId: "input1",
+                warperId: "warper1",
+                css: "sel-listcss-1",
+                licss: "sel-hover"
+            });
+            selector1.createUl();
+        };
+//]]>
+    </script>
+    <script type="text/javascript">
+        function HandleOnfocus1(obj) {
+            if (obj.value == "请输入小区名称、学校、房源特色…") {
+                obj.value = "";
+                obj.style.color = "black";
+            }
+        }
+        function HandleOnblur1(obj) {
+            if (obj.value == "") {
+                obj.value = "请输入小区名称、学校、房源特色…";
+                obj.style.color = "#aaa";
+            }
+        }
+        function OpenSearchPageBJ(param) {
+            if (param == "请输入小区名称、学校、房源特色…") {
+                param = "";
+            }
+            var k = "";
+            var type = jQuery('#sltPostType').val();
+            if (param != "")
+                k = encodeURIComponent(param);
+            if (type == "r") {
+            //租房
+                window.open("http://bj.centanet.com/zufang/?key=" + k + "&hmsr=163&hmmd=esf_house_bk&hmci=bj", "_blank"); 
+            } else {
+            //二手房
+                window.open("http://bj.centanet.com/ershoufang/?key=" + k + "&hmsr=163&hmmd=esf_house_bk&hmci=bj", "_blank");
+            }
+            //跳转地址列表
+            //北京
+            //二手房 window.open("http://bj.centanet.com/ershoufang/?key=" + k + "&hmsr=163&hmmd=esf_house_bk&hmci=bj", "_blank");
+            //租房 window.open("http://bj.centanet.com/zufang/?key=" + k + "&hmsr=163&hmmd=esf_house_bk&hmci=bj", "_blank"); 
+            //天津
+            //二手房 window.open("http://tj.centanet.com/ershoufang/?key=" + k + "&hmsr=163&hmmd=esf_house_bk&hmci=tj", "_blank");
+            //租房 window.open("http://tj.centanet.com/zufang/?key=" + k + "&hmsr=163&hmmd=esf_house_bk&hmci=tj", "_blank"); 
+            //成都
+            //二手房 window.open("http://cd.centanet.com/findproperty/search/s_0_0_0_0_0_0_0_0_0_0_0_1_1/" + k + "?hmsr=163&hmmd=esf_house_bk&hmci=cd", "_blank");
+            //租房  window.open("http://cd.centanet.com/findproperty/search/r_0_0_0_0_0_0_0_0_0_0_0_1_1/" + k + "?hmsr=163&hmmd=esf_house_bk&hmci=cd", "_blank");
+            //重庆
+            //二手房 window.open("http://cq.centanet.com/findproperty/search/s_0_0_0_0_0_0_0_0_0_0_0_1_1/" + k + "?hmsr=163&hmmd=esf_house_bk&hmci=cq", "_blank");
+            //租房  window.open("http://cq.centanet.com/findproperty/search/r_0_0_0_0_0_0_0_0_0_0_0_1_1/" + k + "?hmsr=163&hmmd=esf_house_bk&hmci=cq", "_blank");
+            //深圳
+            //二手房 window.open("http://sz.centanet.com/prop/search/s_0_0_0_0_0_0_0_0_0_0_0_1_1/" + k + "?hmsr=163&hmmd=esf_house_bk&hmci=sz", "_blank");
+            //租房  window.open("http://sz.centanet.com/prop/search/r_0_0_0_0_0_0_0_0_0_0_0_1_1/" + k + "?hmsr=163&hmmd=esf_house_bk&hmci=sz", "_blank");
+        }
+        jQuery(document).ready(function () {
+            var txtKey = jQuery('#txtSearchKey');
+            var sltType = jQuery('#sltPostType');
+            var searchurl = "http://bj.centanet.com/page/ad/tip163.aspx";
+            var suffix = "?hmsr=163&hmmd=esf_house_bk&hmci=bj";
+            txtKey.bind('keypress', function (event) {
+                if (event.keyCode == "13" && jQuery(this).val() != "") {
+                    searchKey({ tag: jQuery(this).val() });
+                }
+            });
+            txtKey.autocomplete(
+		searchurl + suffix,
+		 {
+		     width: 360,
+		     scrollHeight: 400,
+		     max: 10,
+		     selectFirst: true,
+		     cacheLength: 0,
+		     matchContains: true,
+		     autoFill: false,
+		     dataType: 'jsonp',
+		     jsonpCallback: "setAutocompleteDataForZY",
+		     extraParams: { 'type': function () {
+		         return sltType.val();
+		     }, 'key': function () {
+		         return txtKey.val();
+		     }, 'q': function () {
+		         return "";
+		     }
+		     },
+		     parse: function (data) {
+		         if (data == null) return;
+		         return jQuery.map(data, function (row) {
+		             if (row == undefined)
+		                 return;
+		             return { data: row, value: row.tag, result: row.tag }
+		         });
+		     },
+		     formatItem: function (data, i, n) {
+		         if (data == undefined)
+		             return;
+		         var key = jQuery.trim(txtKey.val());
+		         var regexp = new RegExp("(" + key + ")", "gi");
+		         var tag = data.tag.replace(regexp, "<strong>$1</strong>");
+		         var count = data.count;
+		         if (data.count != "") {
+		             count = "约" + data.count;
+		         }
+		         return "<div class='csearch'><span><strong>" + tag + "</strong></span><span>" + data.region + "</span><span>" + data.gscope + "</span><label>" + count + "" + data.unit + "</label></div>";
+		     },
+		     formatMatch: function (data, i, n) {
+		         return data.tag;
+		     },
+		     formatResult: function (data, i, n) {
+		         return data.tag;
+		     }
+		 }).result(function (event, data, formatted) {
+		     searchKey(data);
+		 });
+        });
+		function searchKey(data) {
+            if (data == undefined)
+                return;
+            if (data.tag != undefined && data.returnurl == undefined) {
+                $("#searchBtn").click();
+                return;
+            }
+            if (data.returnurl == undefined)
+                return;
+            window.open(data.returnurl, '_blank');
+        }
+    </script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- zytrack -->
+<script language="javascript" type="text/javascript">
+if($(".for-zytrack").length){
+	neteaseClickTracker($(".for-zytrack"), false, "http://click.house.163.com/zybj", "北京中原", "house8zy" );
+}
+neteaseClickTracker($(".letvtrack-fp"), false, "http://click.house.163.com/letvfcpho", "乐视房产轮播图", "houseclick" )
+neteaseClickTracker($(".letvtrack-ft"), false, "http://click.house.163.com/letvfchead", "乐视房产4头条", "houseclick" )
+neteaseClickTracker($(".letvtrack-fl"), false, "http://click.house.163.com/letvfcnews", "乐视房产业内动态", "houseclick" )
+</script>
+<!-- end -->
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+<!-- zytrack -->
+<script language="javascript" type="text/javascript">
+if($(".for-zytrack").length){
+	neteaseClickTracker($(".for-zytrack"), false, "http://click.house.163.com/zybj", "北京中原", "house8zy" );
+}
+</script>
+<!-- end -->
+</body>
+</html>

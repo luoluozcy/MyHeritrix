@@ -1,0 +1,14 @@
+document.writeln("<ul>");
+document.writeln("<!--2013.9.7-2013.12.8 听风卖--><li><a href=\"http://www.dns001.com/hkhost.htm\" target=\"_blank\" style=\"color:red;\" >香港高速免备空间 120元/年 代理6折</a></li>");
+document.writeln("<!--小虫操作：卖每月25号长期按月续费 QQ:52800--><li> <a href=\"http://down.admin5.com/data/ads.html\" target=\"_blank\"　 style=\"color:red;\">虚位以待，联系qq838341952</a></li>");
+document.writeln("<!--空--><li><a href=\"http://www.zzcodes.net\" style=\"color:blue;\" target=\"_blank\" style=\"color:blue;\"  target=\"_blank\">商业源码网(zzcodes.net)！</a></li>");
+document.writeln("<!--听风卖2013.12.11-1.12--><li><a href=\"http://tool.cnzz.com\"style=\"color:blue;\" target=\"_blank\">CNZZ测速工具 全方位分析网站速度</a></li>");
+document.writeln("<!--2013.9.7-2013.12.8 听风卖--><li><a href=\"http://www.bootchina.com/\" target=\"_blank\" style=\"color:blue;\" >华启数据：域名45元 迅捷主机速度更快</a></li>");
+document.writeln("<!--空--><li><a href=\"http://www.09847.com/mi/\"  target=\"_blank\">{已备案域名}西部数码空间13元.送源码</a></li>"); 
+document.writeln("<!--kong--><li><a href=\"http://www.688880.com/\" target=\"_blank\" style=\"color:#F00;\">年赚百万？专业网站建设淘宝刷信誉平台</a></li>");
+document.writeln("<!--小虫操作：卖每月10号长期按月续费 QQ:52800--><li><a href=\"http://www.yone.cn\" target=\"_blank\" >不看炎黄盛世，不买合租空间</a></li>");
+document.writeln("<!--空--><li><a href=\"http://www.lagou.com\"  target=\"_blank\">拉勾网：专业互联网人才招聘平台</a></li>"); 
+document.writeln("<!--空--><li><a href=\"http://www.4jhk.com/services/webhosting/hktejia.asp\" style=\"color:blue;\" target=\"_blank\">香港美国空间月付10元 西部数码主机8折</a></li>"); 
+document.writeln("<!--小虫操作：卖每月10号长期按月续费 QQ:52800--><li><a href=\"http://www.china35.com/\" target=\"_blank\">炎黄网络：托管送服务器4999元/年</a></li>"); 
+document.writeln("<!--空--><li><a href=\"http://www.xshkj.com\" style=\"color:red;\" target=\"_blank\">韩国高速空间免备案99元起！</a></li>"); 
+document.writeln("</ul>");

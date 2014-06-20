@@ -1,0 +1,353 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>大连网易购房直通车</title>
+<style type="text/css">
+<!--
+.STYLE1 {	font-size: 18px;
+	font-weight: bold;
+}
+.STYLE12 {font-size: 16px}
+.STYLE13 {	color: #FF0000;
+	font-weight: bold;
+}
+.STYLE8 {color: #FFFFFF; font-weight: bold; font-size: 14px; }
+.d {	font-size: 12px;
+	line-height: 21px;
+	font-weight: normal;
+	color: #000000;
+	font-family: "宋体";
+	text-indent: 8px;
+}
+.e {	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #0099CC;
+}
+.h {	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #0099CC;
+	border-bottom-color: #0099CC;
+	border-left-color: #0099CC;
+}
+.r {	height: 34px;
+	width: 960px;
+	background-image: url(file:///E|/孙青/scgjcba/images/bei.jpg);
+	background-repeat: repeat-x;
+	font-family: "宋体";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align: left;
+	margin: auto;
+	overflow:hidden;
+	background-color: #fff;
+	border: 1px solid #CCCCCC;
+}
+.r2 {	margin: 11px;
+	height: auto;
+	width: 570px;
+	font-family: "宋体";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	color: #000000;
+}
+.style2 {font-size: 14px}
+.ui_bg1 {height:347px;}
+.ui_t1 {height:37px; line-height:37px;}
+.y {	border: 1px solid #FFFFFF;
+}
+body {
+	background-image: url(img/bj.jpg);
+}
+.wraper {
+	width: 960px;
+	position: absolute;
+	left: 200px;
+	right: auto;
+	clear: both;
+	float: none;
+}
+.style11 {COLOR: #000000;
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.STYLE19 {
+	font-family: "宋体";
+	font-size: 12px;
+}
+.STYLE20 {color: #FF0000}
+.STYLE21 {font-family: "宋体"}
+-->
+</style>
+             <script language="JavaScript" type="text/javascript">
+<!--
+function CheckFormSubmit()
+                    { 
+                     if(checkObjectIsNull('lpmc')){ alert('请填写楼盘名称！'); return false;} if(checkObjectIsNull('name')){ alert('请填写姓名！'); return false;}
+                     if(checkObjectIsNull('phone')){alert('请填写电话！'); return false;}else { if(!checkObjectIsMobile('phone') && !checkObjectIsPhone('phone')){alert('电话格式不是宅电或手机！'); return false; } } 
+                    
+                    
+                    
+                     }
+                       function getObject(objName)
+                            {
+	                            try
+	                            {
+		                            if (document.getElementById)
+		                            {
+				                            return eval('document.getElementById("'+objName+'")');
+		                            }
+		                            else
+		                            {
+				                            return eval('document.all.'+objName);
+		                            }
+	                            }
+	                            catch(e)
+	                            {}
+                            }
+
+                            function checkObjectIsNull(objName)
+                            {
+                                bflag = false ;
+                                var pattern=/^[　\s]*$/ ;
+                                var strName = getObject(objName).value;
+                                if(strName == "" || pattern.test(strName)) 
+                                { 
+                                    bflag = true; 
+		                            getObject(objName).focus();
+                                }
+                                return bflag ;
+                            }
+                            
+                            function checkObjectIsInt(objName)
+                            {
+                                bflag = true ;
+                                var pattern=/^-?\d+$/;
+                                var strName = getObject(objName).value;
+                                if(!pattern.test(strName)) 
+                                { 
+                                    bflag = false; 
+	                                getObject(objName).focus();
+                                }
+                                return bflag ;
+                            }
+                            function checkObjectIsEmail(objName)
+                            {
+                                bflag = true ;
+                                var pattern=/^[a-zA-Z0-9\-_]+@[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,3})$/;
+                                var strName = getObject(objName).value;
+                                if(!pattern.test(strName)) 
+                                { 
+                                    bflag = false; 
+		                            getObject(objName).focus();
+                                }
+                                return bflag ;
+                            }
+                            
+                            function checkObjectIsPhone(objName)
+                            {
+                                bflag = true ;
+                                var pattern=/(^[0-9]{3,4}\-[0-9]{3,8}$)|(^[0-9]{3,8}$)|(^\([0-9]{3,4}\)[0-9]{3,8}$)|(^0{0,1}13[0-9]{9}$)|(^0{0,1}15[0-9]{9}$)|(^0{0,1}18[0-9]{9}$)/;
+                                var strName = getObject(objName).value;
+                                if(!pattern.test(strName)) 
+                                { 
+                                    bflag = false; 
+		                            getObject(objName).focus();
+                                }
+                                return bflag ;
+                            }
+
+                            function checkObjectIsMobile(objName)
+                            {
+                                bflag = true ;
+                                var pattern=/(^0{0,1}13[0-9]{9}$)|(^0{0,1}15[0-9]{9}$)|(^0{0,1}18[0-9]{9}$)/;
+                                var strName = getObject(objName).value;
+                                if(!pattern.test(strName)) 
+                                { 
+                                    bflag = false; 
+		                            getObject(objName).focus();
+                                }
+                                return bflag ;
+                            }
+                            function checkbox(objName)
+						   {
+								var str=document.getElementsByName(objName);
+								var objarray=str.length;
+								var chestr="";
+								for (i=0;i<objarray;i++)
+								{
+								  if(str[i].checked == true)
+								  {
+								   chestr+=str[i].value+",";
+								  }
+								}
+								if(chestr == "")
+								{
+								  return true;
+								}
+								else
+								{
+								  return false;
+								}
+						    }
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+//-->
+</script>
+</head>
+
+<body leftmargin="auto" topmargin="auto" marginwidth="auto" marginheight="auto">
+<script language=JavaScript src="js/ad.js"></script>
+<div class="wraper">
+<div class="r">
+  <div class="r1"style="float:left"><a href="http://house.163.com/"><img src="img/logo_house1010.gif" width="70" height="25" border="0" /></a></div>
+  <div class="r2"style="float:left"><a href="http://www.163.com/">网易首页</a>-<a 
+href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a 
+href="http://www.gz2010.cn/">亚运</a>-<a href="http://ent.163.com/">娱乐</a>-<a 
+href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a 
+href="http://tech.163.com/">科技</a>-<a href="http://digi.163.com/">数码</a>-<a 
+href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a 
+href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a 
+href="http://book.163.com/">读书</a>-<a href="http://bbs.163.com/">论坛</a>-<a 
+href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a></div>
+</div>
+<table width="960" height="385" border="0" align="center" cellpadding="0" cellspacing="0" background="img/toutu11.jpg">
+  <tr>
+    <td height="385" align="center" valign="middle">&nbsp;</td>
+  </tr>
+</table>
+<table width="960" height="78" border="0" align="center" cellpadding="0" cellspacing="0" background="img/liucheng.gif" bgcolor="#FFFFFF" class="kx">
+  
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" class="kx">
+  <tr>
+    <td width="135"><img src="img/pre.jpg" width="135" height="82" /></td>
+    <td background="img/bj.jpg" class="zw  STYLE12"> “网易购房直通车”是163.com网易房产打造、免费为网易网友提供安心买房一站式贴心服务，全年运营。网易网友可以拨打<span class="STYLE13">0411-83726856</span>直接预约，也可以登录网易房产频道，在您中意的楼盘项目页面填写报名相关信息。</td>
+  </tr>
+</table>
+<table width="960" height="112" border="0" align="center" cellpadding="0" cellspacing="6" bgcolor="#86BE39">
+  <tr>
+    <td height="100"><table width="948" height="100" border="0" cellpadding="0" cellspacing="0" class="y">
+      <tr>
+        <td height="98" align="center"><table width="931" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="33" align="center"><font color="#FFFFFF" class="STYLE1">《快捷报名》</font></td>
+          </tr>
+          <tr>
+            <td height="45">           
+             <form name="dlpost" id="diaocha" method="post" action="http://join.nettop.cn/SubmitSex.aspx?TaskId=198" onSubmit="return CheckFormSubmit();">
+                   <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+                        <tr height=" 30"> <td width="9%" align="right" valign="bottom" class="STYLE8">楼盘名称:</td> <td width="23%" align="left" valign="bottom"> <input name="lpmc" type="text" id="lpmc" size="18" maxlength="20">  </td> 
+                          <td width="5%" align="right" valign="bottom" class="STYLE8">姓名:</td>
+				  <td width="23%" align="left" valign="bottom"><input name="name" type="text" id="name" size="18" maxlength="18" /></td>
+                          <td width="5%" align="right" valign="bottom" class="STYLE8">电话:</td>
+                          <td width="19%" align="left" valign="bottom"><input name="phone" type="text" id="phone" size="18" maxlength="18" /></td>
+                          <td width="16%" valign="bottom"><input type="submit" name="submit" value="提交"  />
+                            <input type="reset" name="reset" value="重置" /></td>
+                        </tr> 
+                        <tr>
+                            <td colspan="7">&nbsp;</td>
+                        </tr>
+                   </table>
+              </form>
+              </td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="8"></td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="8"></td>
+  </tr>
+</table>
+<table width="960" height="44" border="0" align="center" cellpadding="0" cellspacing="0" background="img/dejiayuhai.jpg">
+  <tr>
+    <td background="image/cha.jpg">&nbsp;</td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td><table width="100%" height="300" border="0" align="center" cellpadding="3" cellspacing="5">
+      <tr>
+        <td width="246" height="290"><img src="img/dejiatoutu.jpg" width="370" height="277" border="0" /></td>
+        <td width="10" background="img/bj.jpg">&nbsp;</td>
+        <td background="img/bj.jpg"><p class="STYLE19"> 　　德嘉与海项目由杭州南方设计院规划设计,项目规划了独栋别墅、叠拼别墅、洋房及公寓四种产品类型.独栋别墅为西班牙建筑风格,通过与园林的和谐布局实现了360度观景视野.叠拼别墅延续金滩的设计,并在其基础上进行升级,每户皆为独立电梯直接入户设计,不走公共楼梯,实现了100%的得房率,并具有很强的归属感,洋房及公寓立面采用干挂石材与有机涂料相结合,尊荣而不奢华,更增添一份归属感。 </p>
+          <p class="STYLE19">　　世界500强的眼光验证你的选择:紧邻卧龙湾国际商务区,全球性商贸金融企业纷至沓来,随着一批英特尔高管入住金石滩,五大洲的面孔都在这里出现,金石滩越来越成为汇聚全球文化的地球村。同时，轻轨3号线,25分钟直达市内；丹大高速、哈大高速,与省内高速连通。建设中的跨海大桥,无缝连接大连主城和开发区,海之韵广场至大孤山或童牛岭.建成后将开发区至主城距离缩短1/3,驱车直达不到30分钟。  </p>
+          <p class="STYLE19">　　即日起，网易房产大连站携手德嘉与海项目为广大购房者提供如下优惠活动：71——79平电梯洋房现在只需42万元，再送每平1800标准的精装修！数量有限，欲购从速！ 联系电话0411-87326856 　　　　　　　　　　　　　　　　</p>
+          <p align="center" class="STYLE19"><span class="STYLE20"><a href="http://xf.house.163.com/dl/0OUE.html" target="_blank">【点击查看楼盘详情】</a></span></p>
+          <p><br />
+          </p></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" background="image/bj.jpg" bgcolor="#FFFFFF">
+  <tr>
+    <td><table width="100%" border="0" align="center" cellpadding="3" cellspacing="5">
+      <tr>
+        <td width="215"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('image11','','image/tjzh/zh1.jpg',1)"></a><img src="img/niankan.jpg" name="image5" width="215" height="145" border="0" id="image5" /></td>
+        <td width="8" rowspan="2" background="img/bj.jpg">&nbsp;</td>
+        <td width="215"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('zh2','','image/zh2.jpg',1)"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','image/zh2.jpg',1)"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('image21','','image/tjzh/zh2.jpg',1)"></a><img src="img/xiaofuo.jpg" name="image18" width="215" height="145" border="0" id="image18" /></td>
+        <td width="8" rowspan="2" background="img/bj.jpg">&nbsp;</td>
+        <td width="215"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('image31','','image/tjzh/zh3.jpg',1)"></a><img src="img/dejiayangban.jpg" name="image7" width="215" height="145" border="0" id="image7" /></td>
+        <td width="8" rowspan="2" background="img/bj.jpg">&nbsp;</td>
+        <td width="215"><img src="img/dejiahux.jpg" name="image8" width="215" height="145" border="0" id="image8" /></td>
+      </tr>
+      <tr>
+        <td background="img/bj.jpg" class="xbt"><div align="center" class="style11">鸟瞰图</div></td>
+        <td background="img/bj.jpg"><div align="center" class="style11">效果图</div></td>
+        <td background="img/bj.jpg"><div align="center" class="style11">样板间图</div></td>
+        <td background="img/bj.jpg"><div align="center"><span class="xbt"><strong><span class="style11">户型图</span>　</strong>　 　</span></div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+    
+    <table width="960" height="44" border="0" align="center" cellpadding="0" cellspacing="0" background="img/tiao3.jpg">
+  <tr>
+    <td background="image/cha.jpg">&nbsp;</td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td><table width="100%" border="0" align="center" cellpadding="3" cellspacing="5">
+      <tr>
+        <td width="215"><img src="img/t1.jpg" width="290" height="194" /></td>
+        <td width="8">&nbsp;</td>
+        <td width="215"><img src="img/t2.jpg" width="290" height="194" /></td>
+        <td width="8">&nbsp;</td>
+        <td width="215"><img src="img/t3.jpg" width="290" height="194" /></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="960" border="0" align="center" cellpadding="0" cellspacing="0" class="r">
+  <tr>
+    <th width="89" scope="col"><img src="img/special01.gif" width="89" height="55" /></th>
+    <th width="389" align="center" class="d" scope="col"><div align="left">专题制作：王艳宾 　　　　　　电话：0411-83726856 </div></th>
+    <th width="482" align="left" scope="col"><img src="img/logo_house3.png" width="325" height="40" /><a href="http://house.163.com/"><img src="img/special03.gif" width="149" height="41" border="0" /></a></th>
+  </tr>
+</table>
+</div>
+</body>
+</html>

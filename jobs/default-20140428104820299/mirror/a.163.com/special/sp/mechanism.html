@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base target="_blank" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>【风暴英雄】核心机制 - 风暴大厅（A.163.COM）| 风暴英雄国服官网合作中文站</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="keywords" content="风暴英雄核心机制,风暴英雄等级,风暴英雄基础" />
+<meta name="description" content="风暴英雄基础介绍及资料。最专业风暴英雄资料，尽在A.163.COM！" />
+<link rel="stylesheet" type="text/css" media="all" href="http://img1.cache.netease.com/game/blizzard/static/css/common.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://game.163.com/special/00314RSV/heroes-common.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://game.163.com/special/00314RSV/heroes-endpage.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://game.163.com/special/00314RSV/heroes-endpage-wide.css" />
+</head>
+<body>
+<!--Begin Head-->
+<div style="height:35px; background:url(http://img1.cache.netease.com/cnews/img09/ntes_bg.jpg) repeat-x;">
+	<div class="NTES_nav_ NTES_bg_">
+    <span class="NTES_logo"><a href="http://game.163.com/"><img alt="游戏专题" src="http://img1.cache.netease.com/subject/images/newlogo100628/game.gif" /></a></span>
+	<span class="nav_link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://t.163.com/">微博</a></span>
+    <div class="top_search">
+	  <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="game.163" name="keyfrom"/>
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/></label>
+		<noscript><select name="site" class="left">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript>
+        <div id="divSelect" class="left">
+        </div>
+<input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="in" name="in"/>
+</form>
+<a href="http://www.163.com/rss"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img1.cache.netease.com/cnews/img07/rss.gif" /></a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected.removeChild(selected.firstChild);
+                selected.appendChild(txt);
+                select_main.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName").value = title;
+                if (title == "网易") {
+				document.nisearch_top.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover () {
+                this.className = "active";
+            }
+            function a_mouseout () {
+                this.className = "";
+            }
+            $_G("divSelect").innerHTML = '<input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area = $_G("select_area"), selected = $_G("selected"), select_main = $_G("select_main"), select_list = select_main.getElementsByTagName("a"), len = select_list.length;
+            select_area.onclick = select_main.onmouseover = function(){
+                select_main.style.display = "block";
+            }
+            select_main.onmouseout = function(){
+                select_main.style.display = "none";
+            }
+            
+            for (var i = 0; i < len; i++) {
+                select_list[i].onclick = clickselect;
+                select_list[i].onmouseover = a_mouseover;
+                select_list[i].onmouseout = a_mouseout;
+            }
+        })();
+//]]>
+</script>
+</div>
+<span class="clear"><!-- Clear --></span> 
+<!-- End Head -->
+<div class="wrapper">
+	<div class="header">		
+		<!-- Menu -->
+		<div class="menu">
+			<ul class="menu-content clearfix">
+	<li><a href="http://a.163.com/">首页</a></li>
+	<li><a href="http://a.163.com/special/sp/basic.html">基础</a>
+		<ul>
+			<li><a href="http://a.163.com/special/sp/level-quest.html">等级与任务</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes-maps.html">地图简介</a></li>
+			<li><a href="http://a.163.com/special/sp/mechanism.html">核心机制</a></li>
+			<li><a href="http://a.163.com/special/sp/dev_aim.html">开发理念</a></li>
+			<li><a href="http://a.163.com/special/sp/events.html">大事记</a></li>
+		</ul>
+	</li>
+	<li><a href="http://a.163.com/special/sp/heroes_main.html">英雄</a>
+		<ul>
+			<li><a href="http://a.163.com/special/sp/heroes_warrior.html">战斗型</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes_assassin.html">刺杀型</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes_support.html">辅助型</a></li>
+			<li><a href="http://a.163.com/special/sp/heroes_specialist.html">专业型</a></li>
+		</ul>
+	</li>
+	<li><a href="http://a.163.com/special/heroes_video/">视频</a></li>
+	<li><a href="#" class="wait">数据库</a></li>
+	<li><a href="#" class="wait">下载</a></li>
+	<li><a href="#" class="wait">百科</a></li>
+	<li><a href="http://bbs.d.163.com/forum-353-1.html">论坛</a></li>
+</ul>
+<script type="text/javascript" src="http://img1.cache.netease.com/common/libs/jquery/1.8.3/jquery.noconflict.min.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/game/static/js/common-game-site.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+	Menu.init('.menu-content');
+	$('.wait').click(function(){
+		alert('敬请期待');
+		return false;
+	});
+});
+</script>
+		</div>
+	</div>
+	<div class="heroes-content clearfix">
+		<div class="content-left">
+			<div class="location">
+				<a href="http://game.163.com/">网易游戏频道</a><a href="http://a.163.com/">风暴英雄</a><a>游戏机制</a>
+			</div>
+			<div class="article-content">
+			  <div class="special-link">
+			  <table class="f_table no-border" style="width:920px;">
+			  	<tr>
+					<td align="center">
+					<span class="f12px"><a href="http://a.163.com/special/sp/basic.html">基础介绍</a> | <a href="http://a.163.com/special/sp/heroes-maps.html">地图介绍</a> | <a href="http://a.163.com/special/sp/level-quest.html">等级与任务</a> | <a href="http://a.163.com/special/sp/mechanism.html">核心机制</a> | <a href="http://a.163.com/special/sp/dev_aim.html">开发理念</a> | <a href="http://a.163.com/special/sp/events.html">大事记</a></span>
+					</td>
+				</tr>
+			  </table>
+			  </div>
+				<h1 class="special">《风暴英雄》的核心机制</h1>
+				<div id="endText">
+				<table class="f_table no-border" style="width:800px;">
+					<tr>
+						<td>
+						<p class="f_center">
+						<object id="FPlayer1383942326662" width="700" height="480" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" thumbnail="http://vimg1.ws.126.net/image/snapshot/2013/11/M/C/V9C9GREMC_logo.jpg"><param name="movie" value="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="allownetworking" value="all" /><param name="wmode" value="opaque" /><param name="flashvars" value="sid=V6FERU4MT&topicid=0031&hiddenR=true&vid=V9C9GREMB&coverpic=http://vimg1.ws.126.net/image/snapshot/2013/11/M/C/V9C9GREMC.jpg&pltype=7&autoplay=false" /><!--[if !IE]><--><object id="FPlayer1383942326662" width="700" height="480" data="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" type="application/x-shockwave-flash"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="allownetworking" value="all" /><param name="wmode" value="opaque" /><param name="flashvars" value="sid=V6FERU4MT&topicid=0031&hiddenR=true&vid=V9C9GREMB&coverpic=http://vimg1.ws.126.net/image/snapshot/2013/11/M/C/V9C9GREMC.jpg&pltype=7&autoplay=false" /></object><!--<![endif]--></object>
+<script type="text/javascript"> if (/(iPhone|iPad|iPod)/ig.test(navigator.userAgent)){ var str1 = '<video controls="controls" autoplay="autoplay" preload="auto" width="700" height="780">'; var str2 = '<source type="video/mp4" src="http://flv.bn.netease.com/videolib3/1311/09/jlAKE1756/SD/jlAKE1756-mobile.mp4"> 您的浏览器暂时无法播放此视频.</video>';document.getElementById("FPlayer1383942326662").parentNode.innerHTML = str1 + str2;}</script></p>
+				<p>　　<b>为什么没有装备系统？</b></p>
+				<p>　　没有装备系统，也就意味着没有其它MOBA游戏里那样需要打金然后买装备的系统，另外由于经验是团队共享的，那么补兵也同样不再需要。游戏更看重团队的配合，因此用英雄技能和天赋系统来替代装备存在的意义。</p>
+				<p>　　<b>在经验共享的背后，游戏的开发逻辑是什么？</b></p>
+				<p>　　开发这个的灵感在于想让玩家更简单的获取经验。在游戏里有一个叫Abathur的英雄（来源于《星际争霸2》），它的本体非常虚弱，不能直接参与战斗，完全没有战斗伤害，如果不是经验共享的话，这样的英雄就没办法玩了。但如果给这个英雄以正常的攻击手段，那么这样一个拥有诸多技能的英雄又会显得过强。共享经验可以较好的解决这个问题，同时使得英雄的玩法多样化，并且允许强力的技能性英雄能以指挥的角色存在， 这比玩家们一直在战场上使用物理英雄要好得多。</p>
+				<p>　　如果你要让你的角色高出队友一大截，那么这个游戏不适合你。</p>
+				<p>　　不过，可能会有一个表格来显示队里每个人对团队经验的贡献值。</p>
+				<p>　　<b>技能选择是怎么运作的？</b></p>
+				<p>　　一个特定的办法是你在两个到三个天赋里选择，这是你培养英雄的方式。这些天赋的作用是给你带来更多的攻击伤害，更快的攻击速度或者更远的技能距离。通常在人物的1、4、7级（以此类推至20）选择天赋，或者你可以在游戏开始前就预定好在每个阶段要选什么天赋。这没有技能树或天赋树，你需要选择一个适合的天赋组合。</p>
+				<p>　　<b>游戏的最高等级？一场游戏的时间？</b></p>
+				<p>　　最高等级为25级，时间的目标是20分钟。之所以是这么长，来源于在《星际争霸》、《星际争霸2》和《魔兽争霸3》都差不多是这个时间。</p>
+				<p>　　游戏的开发起源于《星际争霸2》的引擎，所以两个游戏的一些特色会是相通的，像Replay功能就是这样。</p>
+				<p>　　<b>游戏地图是怎样制作的？</b></p>
+				<p>　　将会向社区玩家开源，考虑到在《星际争霸2》的初期，地图的更新不是很频繁，没有满足社区的需求，现在有个很强大的计划，将会有一个强大的地图编辑器提供给玩家，然后大家就可以使用它来编辑多样化的地图，就如果暴雪以前的RTS游戏那样。</p>
+				<p>　　游戏现在有3种不同的模式，计划是在天梯匹配的地图池里保证有3到5张地图可选。</p>
+				<p>　　<b>最终会有多少个英雄？</b></p>
+				<p>　　在暴雪嘉年华上所展示的版本里有18个英雄，实际上在数字方面没有明确的目标。</p><p>
+				<b>　　游戏里英雄的皮肤将如何获得？</b></p>
+				<p>　　当前版本中有两种付费模式：游戏金币购买和现金购买。游戏金币通过在游戏里完成任务获得，累计游戏盘数对此也会有帮助。</p>
+				<p>　　<b>关于电子竞技？</b></p>
+				<p>　　现在不是团队考虑的重点，开发人员更倾向于加入特色的玩法然后玩家社区会自发的去组织——如果他们觉得游戏足够具备竞技性的话，不过这不是游戏的开发目标。游戏的目标是好玩，让玩家们和自己的朋友一起开心，而不是成为硬核玩家的唯一选择。</p>
+				<p>　　<b>高清游戏截图</b></p>
+						<br>
+				</td>
+				</tr>
+				</table>
+				<p></div>
+<!-- 图集开始 0031/57097 -->
+<link href="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_wz_1.0.css" rel="stylesheet" type="text/css">
+<link href="http://img1.cache.netease.com/utf8/microblog/plugin/css/wb2.0.5.css" charset="utf-8" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wb2.2.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wbshare1.0.3.js" charset="utf-8"></script>
+<style type="text/css">#gallery57097 .nph_photo_view{ height:400px;}</style>
+<div class="nph_gallery" id="gallery57097">
+<div class="nph_bg">
+    <div id="modePhoto57097" class="nph_photo">
+        <div class="nph_photo_view">
+            <div class="nph_cnt" id="photoView57097"><i></i><img src="http://img1.cache.netease.com/cnews/img/gallery11/bg06.png" id="photo57097" onerror="this.src=this.src.replace(/600x450_|900x600_/, '');" /></div>
+            <div class="nph_photo_prev"><a href="#" hidefocus="true" class="nph_btn_pphoto" id="photoPrev57097" target="_self"></a></div>
+            <div class="nph_photo_next"><a href="#" hidefocus="true" class="nph_btn_nphoto" id="photoNext57097" target="_self"></a></div>
+            <div class="nph_photo_loading" id="photoLoading57097"></div>
+            <div class="nph_photo_viewlarge" data-link="http://game.163.com/photoview/5ILS0031/57097.html"></div>        </div>
+        <div class="nph_cnt">
+            <div id="setInfo57097"><span id="photoType57097" class="nph_set_cur"><span class="nph_c_lh" id="photoIndex57097"></span>/30</span></div>
+            <div class="nph_photo_desc" id="photoDesc57097"></div>
+        </div>
+<!-- --><div class="nph_cnt clearfix">
+<!--     --><div class="nph_photo_thumb" id="scrl57097">
+<!--         --><div class="clearfix">
+<!--             --><div class="nph_scrl">
+<!--                 --><div class="nph_scrl_thumb">
+<!--  11  66666666       --><div class="nph_scrl_main"><ul class="nph_list_thumb" id="thumb57097"></ul></div>
+<!--  11  66    66       --><div class="nph_scrl_bar clearfix">
+<!--  11  66        3333333  --><div class="nph_scrl_bd">
+<!--  11  66             33      --><div class="nph_scrl_ct">
+<!--  11  66666666       33          --><a href="" hidefocus="true" class="nph_btn_scrl" id="bar57097">
+<!--  11  66    66  3333333              --><b class="nph_btn_lt"></b><b class="nph_btn_rt"></b><span class="nph_btn_bd"><span></span></span>
+<!--  11  66    66       33  .com    --></a>
+<!--  11  66    66       33      --></div>
+<!--  11  66666666  3333333  --></div>
+<!--                     --></div>
+<!--                 --></div>
+<!--             --></div>
+<!--         --></div>
+<!--     --></div>
+<!-- --></div>
+    </div>
+    <div class="nph_photo_ctrl">
+        <div style="float:right;margin-top:-3px;">&nbsp;|&nbsp;&nbsp;<a href="http://yuetu.163.com/?f=ArticlePhoto#game" class="cBlue"><img src="http://img1.cache.netease.com/cnews/img/gallery13/wz/img/yuetu_logo_btm.png?1" style="vertical-align:middle;"></a></div>
+        <div class="nph-share-top js-nph-pop" style="float:right;margin:0;">
+            <span class="cBlue">分享到<em class="nph-poplist-arr"></em></span>
+            <div class="nph-poplist" id="nph_share57097">
+                <ul class="clearfix">
+                    <li class="first"><a href="javascript:" class="ntshare-t163"><span class="inner"><i class="nph-share-icon nph-share-163"></i>网易微博<span class="count" style="display:none;">0</span></span></a></li>
+                    <li><a href="javascript:" class="ntshare-sina"><span class="inner"><i class="nph-share-icon nph-share-sina"></i>新浪微博</span></a></li>
+                    <li><a href="javascript:" class="ntshare-qzone"><span class="inner"><i class="nph-share-icon nph-share-qzone"></i>腾讯空间</span></a></li>
+                    <li><a href="javascript:" class="ntshare-renren"><span class="inner"><i class="nph-share-icon nph-share-renren"></i>人人网</span></a></li>
+                    <li class="last"><a href="javascript:" class="ntshare-youdao"><span class="inner"><i class="nph-share-icon nph-share-youdao"></i>有道云笔记</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <ul style="float:right;">
+            <li><a href="http://game.163.com/?f=ArticlePcenter" class="cBlue">网易游戏频道出品</a>&nbsp;&nbsp;|&nbsp;</li>            <li><a href="http://game.163.com/photoview/5ILS0031/57097.html?f=ArticlePview" class="nph_icon_pset">查看图集</a>&nbsp;&nbsp;|&nbsp;</li>
+        </ul>
+    </div>
+<!-- 图片数据 start-->
+<textarea class="hidden" id="photoList57097">
+<li>
+<a href="#p=9D7AR7PA5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7AR7PA5ILS0031.jpg" alt="Heroes of the Storm高清截图 (1)" /></a>
+<h2>Heroes of the Storm高清截图 (1)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7AR7PA5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7AR7PA5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7AR8NK5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7AR8NK5ILS0031.jpg" alt="Heroes of the Storm高清截图 (2)" /></a>
+<h2>Heroes of the Storm高清截图 (2)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7AR8NK5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7AR8NK5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7AR9PV5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7AR9PV5ILS0031.jpg" alt="Heroes of the Storm高清截图 (3)" /></a>
+<h2>Heroes of the Storm高清截图 (3)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7AR9PV5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7AR9PV5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARAQK5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7ARAQK5ILS0031.jpg" alt="Heroes of the Storm高清截图 (4)" /></a>
+<h2>Heroes of the Storm高清截图 (4)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARAQK5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7ARAQK5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARBRF5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7ARBRF5ILS0031.jpg" alt="Heroes of the Storm高清截图 (5)" /></a>
+<h2>Heroes of the Storm高清截图 (5)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARBRF5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7ARBRF5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARCNE5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7ARCNE5ILS0031.jpg" alt="Heroes of the Storm高清截图 (6)" /></a>
+<h2>Heroes of the Storm高清截图 (6)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARCNE5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7ARCNE5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARDJK5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7ARDJK5ILS0031.jpg" alt="Heroes of the Storm高清截图 (7)" /></a>
+<h2>Heroes of the Storm高清截图 (7)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARDJK5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7ARDJK5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7AREC15ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7AREC15ILS0031.jpg" alt="Heroes of the Storm高清截图 (8)" /></a>
+<h2>Heroes of the Storm高清截图 (8)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7AREC15ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7AREC15ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARF4N5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7ARF4N5ILS0031.jpg" alt="Heroes of the Storm高清截图 (9)" /></a>
+<h2>Heroes of the Storm高清截图 (9)</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARF4N5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7ARF4N5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARFTT5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7ARFTT5ILS0031.jpg" alt="Heroes of the Storm高清截图 (10)" /></a>
+<h2>Heroes of the Storm高清截图 (10)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARFTT5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7ARFTT5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARGJ95ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7ARGJ95ILS0031.jpg" alt="Heroes of the Storm高清图集  (11)" /></a>
+<h2>Heroes of the Storm高清图集  (11)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARGJ95ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7ARGJ95ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7ARHEE5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7ARHEE5ILS0031.jpg" alt="Heroes of the Storm高清图集  (12)" /></a>
+<h2>Heroes of the Storm高清图集  (12)</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7ARHEE5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7ARHEE5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UG0E25ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UG0E25ILS0031.jpg" alt="Arthas dies and scatters the doubloons he was carrying to Blackheart" /></a>
+<h2>Arthas dies and scatters the doubloons he was carrying to Blackheart</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UG0E25ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UG0E25ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UG2EI5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UG2EI5ILS0031.jpg" alt="Arthas raising an army of the undead" /></a>
+<h2>Arthas raising an army of the undead</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UG2EI5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UG2EI5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UG4MO5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UG4MO5ILS0031.jpg" alt="Arthas, witch doctor, Diablo, and Illidan showcase some heroic abilities" /></a>
+<h2>Arthas, witch doctor, Diablo, and Illidan showcase some heroic abilities</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UG4MO5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UG4MO5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UG6ME5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7UG6ME5ILS0031.jpg" alt="Arthas_ArmyB" /></a>
+<h2>Arthas_ArmyB</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UG6ME5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UG6ME5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UG8ST5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UG8ST5ILS0031.jpg" alt="Arthas_frontlineB" /></a>
+<h2>Arthas_frontlineB</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UG8ST5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UG8ST5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGAT25ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGAT25ILS0031.jpg" alt="Diablo and Nova faceoff with Kerrigan and Raynor at the mineshaft" /></a>
+<h2>Diablo and Nova faceoff with Kerrigan and Raynor at the mineshaft</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGAT25ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UGAT25ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGCBN5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7UGCBN5ILS0031.jpg" alt="ETC_Dashing" /></a>
+<h2>ETC_Dashing</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGCBN5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGCBN5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGDPQ5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGDPQ5ILS0031.jpg" alt="ETC_MoshpitHeroicAbility" /></a>
+<h2>ETC_MoshpitHeroicAbility</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGDPQ5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UGDPQ5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGF6O5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGF6O5ILS0031.jpg" alt="Grave golem pushing an enemy nexus" /></a>
+<h2>Grave golem pushing an enemy nexus</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGF6O5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UGF6O5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGGHA5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGGHA5ILS0031.jpg" alt="Paying off Blackheart can be easier said than done" /></a>
+<h2>Paying off Blackheart can be easier said than done</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGGHA5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGGHA5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGI0F5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7UGI0F5ILS0031.jpg" alt="Players must grab doubloons from the environment and other players on Blackheart's Bay" /></a>
+<h2>Players must grab doubloons from the environment and other players on Blackheart's Bay</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGI0F5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGI0F5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGJ175ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGJ175ILS0031.jpg" alt="Psycho stitches explores the underground portion of Haunted Mines" /></a>
+<h2>Psycho stitches explores the underground portion of Haunted Mines</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGJ175ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGJ175ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGKLM5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGKLM5ILS0031.jpg" alt="Raynor calls in some banshee air support" /></a>
+<h2>Raynor calls in some banshee air support</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGKLM5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGKLM5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGMBR5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7UGMBR5ILS0031.jpg" alt="Siege heroes like Naziba the witch doctor can lay waste to forts" /></a>
+<h2>Siege heroes like Naziba the witch doctor can lay waste to forts</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGMBR5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGMBR5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGNPB5ILS0031" hidefocus="true"><img data-id="57097" src="http://img4.cache.netease.com/photo/0031/2013-11-09/s_9D7UGNPB5ILS0031.jpg" alt="Stitches trying to pull Arthas in closer" /></a>
+<h2>Stitches trying to pull Arthas in closer</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGNPB5ILS0031.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0031/2013-11-09/t_9D7UGNPB5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGPQP5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGPQP5ILS0031.jpg" alt="Team fight at the tribute on Cursed Hollow" /></a>
+<h2>Team fight at the tribute on Cursed Hollow</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGPQP5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGPQP5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGQVP5ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGQVP5ILS0031.jpg" alt="Tyrael riding to the rescue" /></a>
+<h2>Tyrael riding to the rescue</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGQVP5ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGQVP5ILS0031.jpg</i>
+</li>
+<li>
+<a href="#p=9D7UGS355ILS0031" hidefocus="true"><img data-id="57097" src="http://img3.cache.netease.com/photo/0031/2013-11-09/s_9D7UGS355ILS0031.jpg" alt="When the Raven Lord curses a team, their minions are weakened and towers stop firing" /></a>
+<h2>When the Raven Lord curses a team, their minions are weakened and towers stop firing</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0031/2013-11-09/600x450_9D7UGS355ILS0031.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0031/2013-11-09/t_9D7UGS355ILS0031.jpg</i>
+</li>
+</textarea>
+<!-- 图片数据 end-->
+    <input type="hidden" value="9D7AR7PA5ILS0031,9D7AR8NK5ILS0031,9D7AR9PV5ILS0031,9D7ARAQK5ILS0031,9D7ARBRF5ILS0031,9D7ARCNE5ILS0031,9D7ARDJK5ILS0031,9D7AREC15ILS0031,9D7ARF4N5ILS0031,9D7ARFTT5ILS0031,9D7ARGJ95ILS0031,9D7ARHEE5ILS0031,9D7UG0E25ILS0031,9D7UG2EI5ILS0031,9D7UG4MO5ILS0031,9D7UG6ME5ILS0031,9D7UG8ST5ILS0031,9D7UGAT25ILS0031,9D7UGCBN5ILS0031,9D7UGDPQ5ILS0031,9D7UGF6O5ILS0031,9D7UGGHA5ILS0031,9D7UGI0F5ILS0031,9D7UGJ175ILS0031,9D7UGKLM5ILS0031,9D7UGMBR5ILS0031,9D7UGNPB5ILS0031,9D7UGPQP5ILS0031,9D7UGQVP5ILS0031,9D7UGS355ILS0031," name="imgIds" />
+</div>
+
+
+
+                                                                        
+
+<div id="photoLayout57097" class="nph_photo_layout">
+    <script type="text/javascript">//<![CDATA[
+    // 图片加载后自适应容器
+    window.nph_fitImg=function(a,b,c){var d=a.parentNode.getBoundingClientRect(),e=a.width,f=a.height,g=b||d.width,h=c||d.height,i={wrap:g/h,img:e/f},j={width:0,height:0,left:0,top:0};i.img<i.wrap?(j.width=g,j.height=Math.round(j.width/i.img),j.left=0,j.top=Math.round((h-j.height)/2)):i.img>i.wrap?(j.height=h,j.width=Math.round(j.height*i.img),j.top=0,j.left=Math.round((g-j.width)/2)):(j.width=g,j.height=h,j.left=0,j.top=0),a.style.width=j.width+"px",a.style.height=j.height+"px",a.style.marginTop=j.top+"px",a.style.marginLeft=j.left+"px",a.style.visibility="visible"};
+    //]]></script>
+    <div class="nph_layout_bg"></div>
+    <div class="nph_layout_htp">
+        <div class="nph_layout_htp_top clearfix"><span>图集已浏览完毕</span><div class="nph_btn_again">重新浏览</div><a href="javascript:" class="nph_layout_close"></a></div>
+        <div class="nph_layout_htp_ad250" style="display:none;"></div>
+        <div class="nph_layout_htp_title"><a href="http://yuetu.163.com/">悦图推荐</a></div>
+        <div class="nph_layout_htp_bd">
+            <div class="nph_layout_htp_bd_t">
+                <a class="nph_htp_yuetu" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57127">
+                    <img alt="Heroes of the Storm发布会现场实录" src="about:blank" data-src="http://img4.cache.netease.com/photo/0031/2013-11-10/600x450_9D9LBQFP5ILS0031.jpg" style="visibility:hidden;" onload="nph_fitImg(this,590,250);" />
+                    <h4 style="font-size:18px;">Heroes of the Storm发布会现场实录</h4>
+                </a>
+            </div>
+            <div class="nph_layout_htp_bd_b clearfix">
+                <a class="nph_htp_yuetu" style="width:292px;_width:289px;height:100%;float:left;margin-right:6px;" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57112" />
+                    <img alt="Heros of the Storm战场细节" src="about:blank" data-src="http://img4.cache.netease.com/photo/0031/2013-11-09/400x300_9D7VA98S5ILS0031.jpg" style="visibility:hidden;" onload="nph_fitImg(this,292,228);" />
+                    <h4>Heros of the Storm战场细节</h4>
+                </a>
+                <a class="nph_htp_yuetu nph_htp_yuetu_imgtext" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57110">
+                    <div class="nph_htp_yuetu_imgtext_pic" style="width:55%;float:left;">
+                        <img alt="Heroes of the Storm游戏试玩实拍" src="about:blank" data-src="http://img3.cache.netease.com/photo/0031/2013-11-09/400x300_9D7QIBJL5ILS0031.JPG" style="visibility:hidden;" onload="nph_fitImg(this,161,111);" />
+                    </div>
+                    <div class="nph_htp_yuetu_imgtext_text" style="margin-left:55%;">
+                        <h4>Heroes of the Storm游戏试玩实拍</h4><div class="yuetu_arrow yuetu_arrow-l"></div>
+                    </div>
+                </a>
+                <a class="nph_htp_yuetu nph_htp_yuetu_imgtext"  style="margin-top:6px;" href="http://yuetu.163.com/?f=ArticleHtp#game&s=0031/57108">
+                    <div class="nph_htp_yuetu_imgtext_pic" style="width:55%;float:right;">
+                        <img alt="Heroes of the Storm英雄皮肤展示" src="about:blank" data-src="http://img4.cache.netease.com/photo/0031/2013-11-09/400x300_9D7PAMDE5ILS0031.jpg" style="visibility:hidden;" onload="nph_fitImg(this,161,111);" />
+                    </div>
+                    <div class="nph_htp_yuetu_imgtext_text" style="margin-right:55%;">
+                        <h4>Heroes of the Storm英雄皮肤展示</h4><div class="yuetu_arrow yuetu_arrow-r"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery11/ntes_ui_scroll.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_wz_1.0.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_share_menu_1.0.min.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/share_0.1.js" charset="gb2312"></script>
+<script type="text/javascript">//<![CDATA[
+NTES.ready(function ($) { new nph.Gallery({ sn: "57097", photoViewMode: 0  }); });
+window._ntshare2 && new window._ntshare2("#nph_share57097", {
+    url: document.location.href,
+    title: document.title,
+    summary: "",
+    pic: function() { return $('#photo57097').attr('src'); },
+    t163: {
+        source: encodeURIComponent("网易图片库"),
+        title: encodeURIComponent(document.title),
+        link: encodeURIComponent(document.location.href),
+        check1stImg: false,
+        togImg: true,
+        method: 'click',
+        keyfrom: 'share163tu.click',
+        images: function() { return $('#photo57097').attr('src'); }
+    }
+});
+//]]></script>
+<!-- 图集后贴图 -->
+<div class="WZTJ_htpGG" style="display:none;">
+    <a href="http://g.163.com/a?CID=27765&Values=554935378&Redirect=http://go.163.com/2014/0423/tl/" target="_blank"><img src="http://img1.126.net/channel14/016529_590250_0422.jpg" width="590" height="250" alt="天龙八部"></a>
+</div>
+<script type="text/javascript">//<![CDATA[
+NTES.ready(function(a){if(window._nph_htpgg_inited)return!1;var b=function(a){a&&a.parentNode&&a.parentNode.removeChild(a)};a.each(a("div[id^=photoLayout]"),function(c,d){var e=a(d).$(".nph_layout_htp_ad250")[0],f=a(".WZTJ_htpGG")[0].cloneNode(!0);b(a(d).$(".nph_layout_htp_bd_t")[0]),e&&e.appendChild(f)&&(e.style.display="block"),f.style.display="block"}),window._nph_htpgg_inited=!0});
+//]]></script><img src="http://img2.cache.netease.com/nocache/statistic/mod003.gif" width="0" height="0" border="0" />
+<!-- 图集结束 0031/57097 --><div id="endText"></p>
+				<p><strong>风暴大厅（A.163.COM）将持续更新《风暴英雄》信息，敬请关注！</strong></p>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		<div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+	</div>
+</div> 
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0516010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0516010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "game"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+</body>
+</html>

@@ -1,0 +1,738 @@
+
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>卡牌工具_《炉石传说》官方网站_暴雪首款免费休闲卡牌网游</title>
+		<meta name="copyright" content="&copy;2014 暴雪娱乐股份有限公司版权所有 上海网之易网络科技发展有限公司" />
+		<meta content="width=1280,maximum-scale=1.0" name="viewport" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<link rel="icon" href="http://hearthstone.nos.netease.com/3/common/hs.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="http://hearthstone.nos.netease.com/3/common/hs.ico" type="image/x-icon"/>		
+			<meta name="keywords" content="炉石传说,国服,公测,炉石传说官网,炉石传说下载,炉石传说卡组,暴雪出品,暴雪,卡牌游戏,卡牌大作" />
+			<meta name="description" content="官方卡牌数据库，你可以筛选查询到游戏中卡牌的基本信息；牌组模拟器功能更能让你随心打造心仪套牌，让你玩游戏更加得心应手。" />
+
+<link rel="stylesheet" href="/css/hs.min.css"/>
+
+		
+<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css?v=5" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/cards.css?v=5" type="text/css" media="all" />		
+	</head>
+	<body>
+		
+	<div id="wraper">
+    <div id="service">
+            <ul class="service-bar">
+                <li class="service-cell service-home">
+                    <a href="http://www.battlenet.com.cn/" tabindex="50" accesskey="1" title="战网首页" data-action="Battle.net Home">&nbsp;</a>
+                </li>
+                <li class="service-cell service-welcome">
+                    <a href="https://www.battlenet.com.cn/oauth/authorize?scope=logout+id+battletag&response_type=code&client_id=netease-hearthstone-site&redirect_uri=http%3A%2F%2Fwww.hearthstone.com.cn%2Fcards%2Fbuilder%2F">登录</a> 或 <a target="_blank" href="https://www.battlenet.com.cn/account/creation/tos.html">注册一个战网通行证</a>
+                </li>
+                <li class="service-cell service-account">
+                    <a href="https://www.battlenet.com.cn/shop/zh/" class="service-link" target="_blank">商店</a>
+                </li>
+                <li class="service-cell service-account">
+                    <a href="https://www.battlenet.com.cn/account/management/" class="service-link" tabindex="50" accesskey="3" data-action="Account" target="_blank">战网通行证</a>
+                </li>
+                <li class="service-cell service-support service-support-enhanced">
+                    <a href="#support" class="service-link service-link-dropdown" tabindex="50" accesskey="4" id="support-link" style="cursor: pointer;" rel="javascript" data-action="Support - Support">
+                        在线客服
+                        <span class="no-support-tickets" id="support-ticket-count"></span>
+                    </a>
+                    <div class="support-menu" id="support-menu" style="display:none;">
+                        <div class="support-primary">
+                            <ul class="support-nav">
+                                <li>
+                                    <a href="http://www.battlenet.com.cn/support/" tabindex="55" class="support-category" id="support-nav-kb" data-action="Support - Knowledge Center" target="_blank"> <strong class="support-caption">知识库中心</strong>
+                                        浏览知识库文档。
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.battlenet.com.cn/support/ticket/status" tabindex="55" class="support-category" id="support-nav-tickets" data-action="Support - Your Support Tickets" target="_blank"> <strong class="support-caption">我的表单</strong>
+                                        查看您的有效技术支持请求。
+                                    </a>
+                                    <div class="ticket-summary" id="ticket-summary" data-action="Support - Support Ticket Status Changed"></div>
+                                </li>
+                            </ul>
+                            <span class="clear">
+                                <!-- --> </span>
+                        </div>
+                        <div class="support-secondary"></div>
+                        </div>
+                </li>
+                <li class="service-cell service-explore">
+                    <a href="#explore" tabindex="50" accesskey="5" class="dropdown" id="explore-link" style="cursor: pointer;" rel="javascript" data-action="Explore - Explore">浏览</a>
+                    <div class="explore-menu" id="explore-menu" style="display:none;">
+                        <div class="explore-primary">
+                            <ul class="explore-nav">
+                                <li>
+                                    <a href="http://www.battlenet.com.cn/" tabindex="55" data-action="Explore - Battle.net Home" target="_blank">
+                                        <strong class="explore-caption">战网首页</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.battlenet.com.cn/account/management/" tabindex="55" data-action="Explore - Account" target="_blank">
+                                        <strong class="explore-caption">账号</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.battlenet.com.cn/support/" tabindex="55" data-action="Explore - Support" target="_blank">
+                                        <strong class="explore-caption">在线客服</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="explore-links">
+                                <h2 class="explore-caption">更多内容</h2>
+                                <ul>
+                                    <li>
+                                        <a href="http://www.battlenet.com.cn/support/article.xml?locale=zh_CN&amp;articleId=29372" tabindex="55" data-action="Explore - 家长监护" target="_blank">家长监护</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.battlenet.com.cn/security/" tabindex="55" data-action="Explore - 账号安全" target="_blank">账号安全</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.battlenet.com.cn/support/" tabindex="55" data-action="Explore - 战网通行证技术支持" target="_blank">战网通行证技术支持</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="clear">
+                                <!-- --> </span>
+
+                            </div>
+                        <ul class="explore-secondary">
+                            <li class="explore-game explore-game-sc2">
+                                <a href="http://www.battlenet.com.cn/sc2/" tabindex="55" data-action="Explore - sc2" target="_blank">
+                                    <span class="explore-game-inner">
+                                        <strong class="explore-caption">《星际争霸&reg;II》</strong>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="explore-game explore-game-wow">
+                                <a href="http://www.battlenet.com.cn/wow/" tabindex="55" data-action="Explore - wow" target="_blank">
+                                    <span class="explore-game-inner">
+                                        <strong class="explore-caption">《魔兽世界&reg;》</strong>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="explore-game explore-game-hs">
+                                <a data-action="Explore - hs" tabindex="55" href="http://www.hearthstone.com.cn/">
+                                    <span class="explore-game-inner"> <strong class="explore-caption">《炉石传说&trade;》</strong>
+                                    </span>
+                                </a>
+                            </li> 
+                            <li class="explore-game explore-game-heroes">
+                                <a data-action="Explore - heroes" tabindex="55" href="http://www.heroesofthestorm.com.cn" target="_blank">
+                                    <span class="explore-game-inner"> <strong class="explore-caption">《风暴英雄&trade;》</strong>
+                                    </span>
+                                </a>
+                            </li>                           
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </div> 
+     <div id="header">
+        <h1 class="logo"><a href="/home"></a></h1>
+        <a class="tag_hs" href="javascript:void(0);"></a>
+    </div>   
+
+
+
+<!--    container -->
+    <div id="container">
+         <ul id="nav" class="clearFix">
+            <li class="nav1"><a hidefocus="true" href="/home/"></a></li>
+            <li class="nav2"><a hidefocus="true" href="/gameguide/"></a></li>
+            <li class="nav3">
+                <a hidefocus="true" href="/articles/13"></a>
+            </li>
+            <li class="nav4"><a hidefocus="true" href="/media/"></a></li>
+            <li class="nav5"><a hidefocus="true" class="active" href="/cards/builder/"></a></li> 
+            <li class="nav6"><a hidefocus="true" href="/download/"></a></li>
+            <li class="nav7"><a hidefocus="true" href="http://bbs.hearthstone.com.cn/" target="_blank"></a></li>
+        </ul>
+
+        <div class="wraperCon">
+            <p class="top_shadow"></p>
+            
+            <div class="wraperConArea">
+
+
+	    <div class="ui-breadcrumbs">
+	    <span class="font_gray"></span>
+	    <a href="/home">网站首页</a> 
+	        &gt; <a href="javascript:void(0)" class="active">卡牌工具</a>   
+
+	    </div>
+
+
+<div class="shareNavWraper">
+	<div id="shareNav" class="clearFix">
+		<input type="text" value=""/>
+		<a class="copyShare" href="javascript:void(0);">复制地址</a>
+                    <ul class="share clearFix">
+                        <li class="sharetip">分享到：</li>
+                        <li><a class="jiathis_button_tsina" href="javascript:void(0)"></a></li>
+                        <li><a class="jiathis_button_tqq" href="javascript:void(0)"></a></li>
+                        <li><a class="jiathis_button_tieba" href="javascript:void(0)"></a></li>
+                        <li><a class="jiathis_button_qzone" href="javascript:void(0)"></a></li>
+                    </ul>
+		<a class="cards_help" href="/articles/27/1402" target="_blank"></a>
+	</div>	
+</div>
+
+
+
+
+		<div id="cards_wraper">
+			<div id="cards_guide">
+				<img src="http://hearthstone.nos.netease.com/3/cards/guide/1.jpg" alt=""/>
+				<a class="btn_guide active" href="javascript:void(0);" hidefocus>了解更多</a>
+				<a href="javascript:void(0);" class="cards_guide_close"><span class="btn_fork"></span>关闭</a>
+			</div>
+
+			<div class="cards_main clearFix">
+				<div id="cards_data">
+					<a href="javascript:void(0)" class="goldenCheck"><span></span>显示金卡</a>
+					<ul class="tabs_hero clearFix">
+						<li class="tab_hero_druid" rel="druid"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_hunter" rel="hunter"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_mage" rel="mage"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_paladin" rel="paladin"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_priest" rel="priest"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_rogue" rel="rogue"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_shaman" rel="shaman"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_warlock" rel="warlock"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_warrior" rel="warrior"><a href="javascript:void(0);"></a></li>
+						<li class="tab_hero_neutral" rel="neutral"><a href="javascript:void(0);"></a><!-- <span class="tab_tag">3</span> --></li>
+					</ul>
+					<p class="tab_over"></p>
+
+					<h3>&nbsp;</h3>
+					<div id="cards_box">
+						<div class="cards_box_border clearFix">
+							
+						</div>	
+
+					</div>
+
+					<p id="cards_page">第<strong>1</strong>页</p>
+
+					
+					<div class="clearFix">
+
+						<div id="cards_search">
+							<a class="cards_btn cards_show_search" href="javascript:void(0);"><span class="cards_select_tag"></span>全库查找</a>
+
+							<a class="cards_reset" href="javascript:void(0);">重置</a>
+							<div class="search_box">
+								<a class="btn_close" href="#"></a>
+								<div class="search_tab">
+									<a class="active" href="javascript:void(0)" rel="exact_search">精确筛选</a>
+									<a href="javascript:void(0)" rel="dim_search">模糊查找</a>
+								</div>
+								
+
+								<div class="exact_search">
+									<div class="checkboxInput clearFix">
+										<label rel="cardType">类别：</label>
+										<div class="search_option">
+		                                    <a class="" href="javascript:void(0)" rel="minion"><span></span>随从</a>
+		                                    <a href="javascript:void(0)" rel="spell"><span></span>法术</a>
+		                                    <a href="javascript:void(0)" rel="weapon"><span></span>武器</a>									
+										</div>
+
+	                                </div>
+									<div class="checkboxInput clearFix">
+										<label rel="cardRace">种族：</label>
+										<div class="search_option">
+		                                    <a class="" href="javascript:void(0)" rel="murloc"><span></span>鱼人</a>
+		                                    <a href="javascript:void(0)" rel="demon"><span></span>恶魔</a>
+		                                    <a href="javascript:void(0)" rel="beast"><span></span>野兽</a>
+		                                    <a class="" href="javascript:void(0)" rel="dragon"><span></span>龙</a>
+		                                    <a href="javascript:void(0)" rel="pirate"><span></span>海盗</a>
+										</div>
+
+	                                </div>
+									<div class="checkboxInput clearFix">
+										<label rel="cardEffect">效果：</label>
+										<div class="search_option">
+		                                    <a class="" href="javascript:void(0)" rel="battlecry"><span></span>战吼</a>
+		                                    <a href="javascript:void(0)" rel="charge"><span></span>冲锋</a>
+		                                    <a href="javascript:void(0)" rel="combo"><span></span>连击</a>
+		                                    <a class="" href="javascript:void(0)" rel="death_rattle"><span></span>亡语</a>
+		                                    <a href="javascript:void(0)" rel="divine_shield"><span></span>圣盾</a>
+		                                    <a href="javascript:void(0)" rel="overload"><span></span>过载</a>
+		                                    <a class="" href="javascript:void(0)" rel="secret"><span></span>奥秘</a>
+		                                    <a href="javascript:void(0)" rel="silence"><span></span>沉默</a>
+		                                    <a href="javascript:void(0)" rel="stealth"><span></span>潜行</a>
+		                                    <a class="" href="javascript:void(0)" rel="taunt"><span></span>嘲讽</a>
+		                                    <a href="javascript:void(0)" rel="windfury"><span></span>风怒</a>
+		                                    <a href="javascript:void(0)" rel="choice"><span></span>抉择</a>
+		                                    <a href="javascript:void(0)" rel="enrage"><span></span>激怒</a>	
+		                                    <a href="javascript:void(0)" rel="spell_damage"><span></span>法术伤害</a>
+										</div>
+
+	                                </div>                                                                                
+
+
+								</div>	
+
+
+								<div class="dim_search">
+									<p class="dim_bg"><input type="text" placeholder="请输入关键字" value=""/><span class="dim_clear"></span></p>
+									<ul>
+										<li>1、如果通过精确筛选无法查找到你想看到的卡牌，你还可以通过输入关键字进行模糊查找。</li>
+										<li>2、关键字是指你所要找的卡牌名称或卡牌描述中所包含的关键字。</li>
+										<li>3、可输入多个关键字，请在关键字和关键字之间留有空格隔断。</li>
+									</ul>
+								</div>
+	                                <div class="search_btn">
+	                                	<a class="cards_btn" href="javascript:void(0);">搜索</a>
+	                                	<a class="cards_btn_clear" href="javascript:void(0);">清空</a>
+	                                </div>
+
+							</div>
+
+
+						</div>
+
+						<div id="cards_filter">
+							<ul class="cards_option clearFix" rel="cost" style="display:block;">
+								<li class="type">
+								<a href="javascript:void(0);">
+									<span class="type_icon type_cost"></span>
+									<ul class="type_select">
+										<li class="type_select1" rel="atk"><span class="type_icon type_atk"></span></li>
+										<li class="type_select2" rel="hp"><span class="type_icon type_hp"></span></li>
+									</ul>									
+								</a>
+
+								</li>
+								<li class="all"><a href="javascript:void(0);" rel=""><span class="type_icon type_cost"></span><span class="type_all">所有</span></a></li>
+								<li><a class="type_icon type_cost" href="javascript:void(0);" rel="0"><span class="cost_num cost_num_0"></span></a></li>
+								<li><a class="type_icon type_cost" href="javascript:void(0);" rel="1"><span class="cost_num cost_num_1"></span></a></li>
+								<li><a class="type_icon type_cost" href="javascript:void(0);" rel="2"><span class="cost_num cost_num_2"></span></a></li>
+								<li><a class="type_icon type_cost" href="javascript:void(0);" rel="3"><span class="cost_num cost_num_3"></span></a></li>
+								<li><a class="type_icon type_cost" href="javascript:void(0);" rel="4"><span class="cost_num cost_num_4"></span></a></li>
+								<li><a class="type_icon type_cost" href="javascript:void(0);" rel="5"><span class="cost_num cost_num_5"></span></a></li>
+								<li><a class="type_icon type_cost" href="javascript:void(0);" rel="6"><span class="cost_num cost_num_6"></span></a></li>
+								<li class="over"><a class="type_icon type_cost type_7_cost" href="javascript:void(0);" rel="7"><span class="cost_num cost_num_7"></span></a></li>
+							</ul>
+							<ul class="cards_option clearFix" rel="atk">
+								<li class="type">
+								<a href="javascript:void(0);">
+									<span class="type_icon type_atk"></span>
+									<ul class="type_select">
+										<li class="type_select1" rel="cost"><span class="type_icon type_cost"></span></li>
+										<li class="type_select2" rel="hp"><span class="type_icon type_hp"></span></li>
+									</ul>									
+								</a>
+
+								</li>
+								<li class="all"><a href="javascript:void(0);" rel=""><span class="type_icon type_atk"></span><span class="type_all">所有</span></a></li>
+								<li><a class="type_icon type_atk" href="javascript:void(0);" rel="0"><span class="atk_num atk_num_0"></span></a></li>
+								<li><a class="type_icon type_atk" href="javascript:void(0);" rel="1"><span class="atk_num atk_num_1"></span></a></li>
+								<li><a class="type_icon type_atk" href="javascript:void(0);" rel="2"><span class="atk_num atk_num_2"></span></a></li>
+								<li><a class="type_icon type_atk" href="javascript:void(0);" rel="3"><span class="atk_num atk_num_3"></span></a></li>
+								<li><a class="type_icon type_atk" href="javascript:void(0);" rel="4"><span class="atk_num atk_num_4"></span></a></li>
+								<li><a class="type_icon type_atk" href="javascript:void(0);" rel="5"><span class="atk_num atk_num_5"></span></a></li>
+								<li><a class="type_icon type_atk" href="javascript:void(0);" rel="6"><span class="atk_num atk_num_6"></span></a></li>
+								<li class="over"><a class="type_icon type_atk type_7_atk" href="javascript:void(0);" rel="7"><span class="atk_num atk_num_7"></span></a></li>
+							</ul>
+							<ul class="cards_option clearFix" rel="hp">
+								<li class="type">
+									<a href="javascript:void(0);">
+										<span class="type_icon type_hp"></span>
+										<ul class="type_select">
+											<li class="type_select1" rel="cost"><span class="type_icon type_cost"></span></li>
+											<li class="type_select2" rel="atk"><span class="type_icon type_atk"></span></li>
+										</ul>										
+									</a>
+
+								</li>
+								<li class="all"><a href="javascript:void(0);" rel=""><span class="type_icon type_hp"></span><span class="type_all">所有</span></a></li>
+								<li><a class="type_icon type_hp" href="javascript:void(0);" rel="1"><span class="hp_num hp_num_1"></span></a></li>
+								<li><a class="type_icon type_hp" href="javascript:void(0);" rel="2"><span class="hp_num hp_num_2"></span></a></li>
+								<li><a class="type_icon type_hp" href="javascript:void(0);" rel="3"><span class="hp_num hp_num_3"></span></a></li>
+								<li><a class="type_icon type_hp" href="javascript:void(0);" rel="4"><span class="hp_num hp_num_4"></span></a></li>
+								<li><a class="type_icon type_hp" href="javascript:void(0);" rel="5"><span class="hp_num hp_num_5"></span></a></li>
+								<li><a class="type_icon type_hp" href="javascript:void(0);" rel="6"><span class="hp_num hp_num_6"></span></a></li>
+								<li class="over"><a class="type_icon type_hp type_7_hp" href="javascript:void(0);" rel="7"><span class="hp_num hp_num_7"></span></a></li>
+							</ul>												
+						</div>
+
+
+
+
+					</div>	
+
+
+
+						<ul id="cards_rarity">
+							<li class="rarity_hasIcon" rel="legendary"><a href="javascript:void(0);"><span class="rarite_icon rarite_icon_orange"></span>传说</a></li>
+							<li class="rarity_hasIcon" rel="epic"><a href="javascript:void(0);"><span class="rarite_icon rarite_icon_purple"></span>史诗</a></li>
+							<li class="rarity_hasIcon" rel="rare"><a href="javascript:void(0);"><span class="rarite_icon rarite_icon_blue"></span>稀有</a></li>
+							<li class="rarity_hasIcon" rel="common"><a href="javascript:void(0);"><span class="rarite_icon rarite_icon_white"></span>普通</a></li>
+							<li rel="free"><a href="javascript:void(0);">基本</a></li>
+							<li rel="" class="rarity_type" style="display:block"><a href="javascript:void(0);">稀有度</a></li>
+						</ul>
+						
+						<a class="cards_prev" href="javascript:void(0);"></a>
+						<a class="cards_next" href="javascript:void(0);"></a>
+
+				</div>
+				<div id="cards_builder">
+					<div id="cards_cost">
+						<ul class="clearFix">
+							<li class="cost_0"><span class="line"><span class="num">0</span></span></li>
+							<li class="cost_1"><span class="line"><span class="num">0</span></span></li>
+							<li class="cost_2"><span class="line"><span class="num">0</span></span></li>
+							<li class="cost_3"><span class="line"><span class="num">0</span></span></li>
+							<li class="cost_4"><span class="line"><span class="num">0</span></span></li>
+							<li class="cost_5"><span class="line"><span class="num">0</span></span></li>
+							<li class="cost_6"><span class="line"><span class="num">0</span></span></li>
+							<li class="cost_7"><span class="line"><span class="num">0</span></span></li>
+						</ul>
+					</div>
+
+					<div class="cards_uid">
+						<input type="text" value="请输入ID查找套牌" maxlength="10"/>
+						<a class="thumb_draw" href="javascript:void(0);"></a>
+					</div>
+
+					<a class="newCards btn_yellow_bg" href="javascript:void(0);">新套牌</a>	
+
+					<ul id="cards_group"></ul>
+
+
+					<div id="cards_selected">
+						 <div class="cards_list_wrap">
+						 	<ul id="cards_list"></ul>
+						 </div>
+						 <span class="scroll_line"></span>
+	
+					</div>
+
+
+
+					
+					<div class="cards_save">
+						<p class="cards_num"><strong>0</strong>/30卡牌</p>
+						<a id="cards_finish" class="cards_btn cards_btn_disabled" href="javascript:void(0);">保存</a>
+					</div>
+
+
+					<div id="saveCon">
+						
+							<p class="top"></p>
+							<div class="saveDetail">
+								<div class="saveConWrap">
+									<ul>
+										<li><span class="font_yellow">套牌名称：</span><span class="deckName"></span></li>
+										<li><span class="font_yellow">创建者：</span><span class="creator"></span></li>
+										<li><span class="font_yellow">标签：</span><span class="tags"></span></li>
+									</ul>
+									<p><span class="font_yellow">套牌描述：</span></p>
+									<p class="description"></p>
+									<p class="border_db"></p>
+									<p class="font_yellow_dark">创建时间：<span class="createTime"></span></p>
+								</div>
+							</div>
+							<p class="bottom"></p>
+							<a href="javascript:;" class="closeBtn">关闭</a>							
+							
+
+					</div>
+				</div>
+			</div>	
+
+		</div>	    
+
+
+    </div>
+    </div>
+    <div class="con_bottom"></div>
+
+
+
+<div class="sitemapWrap">
+    
+<div class="clearFix" id="sitemap">
+
+
+
+                <div class="column">
+                    <h3 class="bnet">
+                        <a target="_blank" data-action="Battle.net Home - Battle.net Home" tabindex="100" href="http://www.battlenet.com.cn/">
+                            <span class="iconCommon iconMapHome"></span>战网首页</a>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a target="_blank" data-action="Battle.net Home - 战网通行证" href="https://www.battlenet.com.cn/account/">战网通行证</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Battle.net Home - 在线客服" href="http://www.battlenet.com.cn/support/">在线客服</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Battle.net Home - 实名好友" href="http://www.battlenet.com.cn/realid/">实名好友</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3 class="games">
+                        <a target="_blank" data-action="Games - Games" tabindex="100" href="http://www.battlenet.com.cn/">
+                            <span class="iconCommon iconMapGame"></span>游戏</a>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a target="_blank" data-action="Games - 《魔兽世界&reg;》" href="http://www.battlenet.com.cn/wow/">《魔兽世界&reg;》</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Games - 《星际争霸&reg;II》" href="http://www.battlenet.com.cn/sc2/">《星际争霸&reg;II》</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Games - 《炉石传说&trade;》" href="http://www.hearthstone.com.cn/home">《炉石传说&trade;》</a>
+                        </li>   
+                        <li>
+                            <a target="_blank" data-action="Games - 《风暴英雄&trade;》" href="http://www.heroesofthestorm.com.cn">《风暴英雄&trade;》</a>
+                        </li>                      
+                        <li>
+                            <a target="_blank" data-action="Games - 游戏客户端下载" href="https://www.battlenet.com.cn/account/download/">游戏客户端下载</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3 class="account">
+                        <a target="_blank" tabindex="100" href="https://www.battlenet.com.cn/account/management/">
+                            <span class="iconCommon iconMapAccout"></span>账号</a>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a target="_blank" data-action="Account - 忘记密码？" href="https://www.battlenet.com.cn/account/support/password-reset.html">忘记密码？</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Account - 注册战网通行证？" href="https://www.battlenet.com.cn/account/creation/tos.html">注册战网通行证？</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Account - 战网通行证安全保护" href="https://www.battlenet.com.cn/account/management/authenticator.html">战网通行证安全保护</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Account - 添加一个游戏" href="https://www.battlenet.com.cn/account/management/get-a-game.html">添加一个游戏</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3 class="support">
+                        <a target="_blank" data-action="Support - Support" tabindex="100" href="http://www.battlenet.com.cn/support/">
+                            <span class="iconCommon iconMapOnline"></span>在线客服</a>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a target="_blank" data-action="Support - 技术支持文章" href="http://www.battlenet.com.cn/support/">技术支持文章</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Support - 保护您的账号" href="http://www.battlenet.com.cn/security/">保护您的账号</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Support - 帮帮我！我的通行证被盗了！" href="http://www.battlenet.com.cn/security/help">帮帮我！我的通行证被盗了！</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Support - 家长监护" href="http://www.battlenet.com.cn/support/article.xml?locale=zh_CN&amp;articleId=29372">家长监护</a>
+                        </li>
+                        <li>
+                            <a target="_blank" data-action="Support - 纠纷解决" href="http://www.battlenet.com.cn/support/article.xml?locale=zh_CN&amp;articleId=31117">纠纷解决</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+</div>
+
+</div>
+
+    
+    <a id="gotop" href="#wraper" hidefocus=true></a>   
+
+    <div id="footer">
+        <div class="cprt">
+            <a target="_blank" href="http://blizzard.com/" class="logo_bz"></a>
+            <a target="_blank" href="http://www.163.com/" class="logo_ne"></a>
+            <div class="info">
+                    <p>&copy;2014 暴雪娱乐股份有限公司版权所有 <span class="t1">由上海网之易网络科技发展有限公司运营<a href="http://www.battlenet.com.cn/legal-cn/infringementnotice"> 著作权侵权</a></span></p>
+                    <p>文网进字[2013]029号&nbsp;<a href="http://www.battlenet.com.cn/static/local-common/images/legal/cn/license.png">沪网文[2011]0682-074号</a>&nbsp;<a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">增值电信业务经营许可证编号：沪B2－20080012</a><a href="http://www.battlenet.com.cn/zh/legal-cn/"> 法律文件</a></p>
+                    <p>新出审字[2013]1510号&nbsp;<a href="mailto:wlyxjb@gmail.com"> 文化部网络游戏举报与联系邮箱：wlyxjb@gmail.com</a>&nbsp; <a href="http://www.gov.cn/flfg/2011-03/21/content_1828568.htm" target="_blank">《互联网文化管理暂行规定》</a></p>
+                    <p class="integrity">
+                        <a target="_blank" href="http://sh.cyberpolice.cn/infoCategoryListAction.do?act=initjpg"><img src="http://blz.nos.netease.com/1/frame/cprt/police.gif"></a>
+                        <a target="_blank" href="http://www.zx110.org/"><img src="http://blz.nos.netease.com/1/frame/cprt/zx110.gif"></a>
+                        <a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20111011175417664"><img src="http://blz.nos.netease.com/1/frame/cprt/sgs-icon.gif"></a>
+                        <a target="_blank" href="http://www.shjbzx.cn/"><img src="http://blz.nos.netease.com/1/frame/cprt/icon20120516.gif"></a>
+                    </p>
+            </div>                  
+        </div>
+        <p class="tips">积极健康的游戏心态是健康游戏的开端，本游戏故事情节设置紧凑，请您合理控制游戏时间，避免沉溺游戏影响生活，注意自我保护，防范网络陷阱。
+        <br>健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+    </div>
+
+</div><div>
+</div>
+
+
+
+
+
+
+
+	<div id="hero_select">
+		<h3 class="">选择英雄</h3>
+		<ul class="hero_list clearFix">
+			<li><a rel="warrior" class="hero1" href="javascript:void(0);"><span class="thumb_draw hero_light hero_active"></span><span class="hero_name">战士</span></a></li>
+			<li><a rel="shaman" class="hero2" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">萨满</span></a></li>
+			<li><a rel="rogue" class="hero3" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">潜行者</span></a></li>
+			<li><a rel="paladin" class="hero4" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">圣骑士</span></a></li>
+			<li><a rel="hunter" class="hero5" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">猎人</span></a></li>
+			<li><a rel="druid" class="hero6" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">德鲁伊</span></a></li>
+			<li><a rel="warlock" class="hero7" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">术士</span></a></li>
+			<li><a rel="mage" class="hero8" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">法师</span></a></li>
+			<li><a rel="priest" class="hero9" href="javascript:void(0);"><span class="thumb_draw hero_light"></span><span class="hero_name">牧师</span></a></li>
+		</ul>
+	</div>
+
+
+	<div id="saveBox">
+		<h3 class="">保存套牌</h3>
+		<div class="save_list">
+			<div class="save_item clearFix">
+				<label class="save_name"><span>*</span>套牌名称：</label><span class="thumb_draw save_con group_input"><input class="group" type="text" maxlength="12"></span>
+			</div>
+			<div class="save_item clearFix">
+				<label class="save_name">创建者：</label><span class="thumb_draw save_con group_input"><input placeholder="炉石玩家" class="name" type="text" maxlength="12"></span>
+			</div>
+			<div class="save_item clearFix">
+				<label class="save_name"><span>*</span>标签：</label>
+				<div class="save_con checkboxInput">
+					<a href="javascript:void(0)"><span></span>速攻流</a>
+					<a href="javascript:void(0)"><span></span>鱼人流</a>
+					<a href="javascript:void(0)"><span></span>后期流</a>
+					<a href="javascript:void(0)"><span></span>奥秘流</a>
+					<a href="javascript:void(0)"><span></span>仆从流</a>
+					<a href="javascript:void(0)"><span></span>巨人流</a>
+				</div>
+			</div>
+			<div class="save_item clearFix">
+				<label class="save_name"><span>*</span>套牌描述：</label>
+
+				<div class="save_con ta_area">
+					<p class="thumb_draw ta_t"></p>
+					<div class="thumb_draw ta_m">
+						<textarea placeholder="限制在300字内" name="" id="" cols="30" rows="10" maxlength="300"></textarea>
+					</div>					
+					<p class="thumb_draw ta_b"></p>					
+				</div>
+
+			</div>
+		</div>
+
+
+		<p class="alignCenter"><a id="cards_submit" href="javascript:void(0);" class="cards_btn">完成</a></p>
+	</div>		
+
+	<div id="saveTip">
+		<div class="saveTipCon">
+			<h3 class="">保存套牌</h3>
+			<div class="tipTxt">您的套牌已经保存成功！<br/><p class="tipId">套牌编号：<strong></strong></p></div>
+			<p style="padding-bottom:20px">在右上角搜索框中输入ID编号，即可查看相应套牌。<br/>快与好友一起分享，让他们也来感受下这套套牌的力量！ </p>
+                    <ul class="share clearFix">
+                        <li class="sharetip">分享到：</li>
+                        <li><a class="jiathis_button_tsina" href="javascript:void(0)"></a></li>
+                        <li><a class="jiathis_button_tqq" href="javascript:void(0)"></a></li>
+                        <li><a class="jiathis_button_tieba" href="javascript:void(0)"></a></li>
+                        <li><a class="jiathis_button_qzone" href="javascript:void(0)"></a></li>
+                    </ul>
+			<p class="saveTipBtn">
+				<a href="javascript:void(0);" class="cards_btn saveTipNew">组建新套牌</a>
+	            <a href="javascript:void(0);" class="cards_btn_clear saveTipOld">返回套牌</a>
+	        </p>
+	
+		</div>
+
+	</div>
+
+
+
+
+
+
+<script language="JavaScript"> 
+function rand(num) {
+   return Math.floor(Math.random()*num)+1;
+}
+document.write("<iframe style=\"display:none\" src=\"http://gad.netease.com/gad/point?point_id=1439&s=MzTdidSmur%2F%2BuRPbDC%2BGGQKS6CA%3D&cache="+rand(9999999)+"\" width=\"0\" height=\"0\"><\/iframe>"); 
+</script>
+
+
+
+
+<script src="/js/hs.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+			<!--[if IE 6]>
+			<script src="/js/DD_belatedPNG_0.0.8a-min.js"></script>
+			<script type="text/javascript">
+				DD_belatedPNG.fix("#sidebar ul,.fastNav,#gotop,.try,.btn_light span,.flower,.news_line,.ui-page,.logo_bz,.logo_ne,.btn_light,.btn_light img,.collapse-button,.video_btn,.media_area h2,.media_wallpaper_pic,a.btn_yellow span,a.btn_yellow");
+			</script>
+			<![endif]-->
+
+			
+<script src="/js/jquery.mCustomScrollbar.concat.min.js?v=5"></script>
+<script src="/js/jquery.tinysort.js?v=5"></script>
+<script src="/js/jquery.zclip.js?v=5"></script>
+<script src="/js/data_cards.js?v=5"></script>
+<script src="/js/cards.js?v=5"></script>
+
+			<script>
+		$(document).ready(function() { 		
+			Common.init();
+			Cards.init(); 
+			$("#sidebar").fixed({"marginTop":20});
+			$(".cards_big_close").fixed({"marginTop":0});
+			$.sc2.scrollTo({trigger:"#gotop"});
+			$.sc2.placeholder({trigger:".dim_bg input"});
+			//$.sc2.placeholder({trigger:".cards_uid input"});
+			$('a.copyShare').zclip({
+				copy:function(){
+					return $('#shareNav input').val()
+				},
+				afterCopy:function(){
+					alert("复制成功");
+				}
+			});
+			$("body").append('<s'+'cript type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1803378"></s'+'cript>');	
+			
+		});
+</script>
+
+		<!-- START NetEase Devilfish 2006 -->
+			<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+			<script type="text/javascript">
+			_ntes_nacc = "hs9";
+			neteaseTracker();
+			neteaseClickStat();
+			</script>
+
+		<!-- END NetEase Devilfish 2006 -->
+
+		<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41922148-1', 'hearthstone.com.cn');
+  ga('send', 'pageview');
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>手机网易网</title>
+    <link rel="stylesheet" href="http://img1.cache.netease.com/3g/img11/3gtouch13/ntes_touch_v131023.css" />
+    <style>
+        .logoBar{background-image:none;border-left:1px solid #790404;width:80%;}
+        .homelink{float: left;}
+        .articleList h1{font-size: 22px;}
+        .articleList h2{color: #808080;font-size: 12px;}
+        #postComment{padding:8px 3.7%;background:#f0f0f0;display:none}
+        #postComment textarea{height:90px;width:68.75%;border:1px solid #ccc;font-size:14px;line-height:30px;}
+        iframe{display:none;}
+        .iframe-ad { display:block; height:35px;}
+        .wrap-ad { height:35px; margin:0 4.2%; border-top:1px solid #ececec;}
+        .wrap-ad .t-ad { display: block; height: 35px; line-height: 35px; font-size: 17px;}
+        .wrap-ad:before{ content:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAMCAYAAACwXJejAAAAg0lEQVR42mMICgqSDw0NtQdis+DgYCsgLceADQQGBuoDFbsAFdhANYhiKDI2NmYFmmICVGgHVWjj5+fHi6HQzc2NG6jIGoRh1oM0Y7NWDGqaJZB2BPJ1sLoPaI1USEiILVCRBVCxU0BAgBrpikC+AinAaR3M4UjBgOpwooKAYGASEy0AoGZIL0o4ls8AAAAASUVORK5CYII=); position: absolute; right: 4.2%; line-height:35px;}
+        @keyframes fadeInOut{
+            0%{opacity:.5;}
+            50%{opacity:1;}
+            100%{opacity:0;}
+        }
+        @-moz-keyframes fadeInOut{
+            0%{opacity:.5;}
+            50%{opacity:1;}
+            100%{opacity:0;}
+        }
+        @-webkit-keyframes fadeInOut{
+            0%{opacity:.5;}
+            50%{opacity:1;}
+            100%{opacity:0;}
+        }
+        #popWin{width:100px;height:100px;border-radius:10px;background:#BABABA;color:#fff;font-size:18px;line-height:100px;text-align:center;display:none;position:fixed;z-index:99;top:40%;font-weight:bold;}
+        .bodyAd{line-height:35px;padding-left:4%;height: 35px;margin-bottom: 10px;background:#ECECEC;}
+        .bodyAd .text-ad { float:left;}
+        .articleList .liveLink{color:blue;}
+        .apps{display:none;}
+        .ad{margin-bottom:10px;background-color: #F4F4F4;}
+        .apps>nav li{float:left;width:50%;}
+        .apps .apps-view-4{height:89px;}
+        .banner_top{width:100%; overflow: hidden;}
+        .banner_top .iframe-ad { height:auto;}
+        .banner_top a{display: block;width: 100%;text-align: center;}
+        .banner_top img{width: 100%;}
+        .banner-imglist {width: 290px;overflow: hidden;margin:10px auto;}
+        .banner-imglist li{width:92px;margin:0 10px 0 0;display: inline;}
+        .banner-imglist li:last-child{margin:0}
+        /*跟贴*/
+        .commentNav{color:#fff;font-size:14px;}
+        .commentNav span{display: block;width: 65px;height: 24px;background: #C52814 url(http://img1.cache.netease.com/3g/img11/3gtouch13/posttag.png) no-repeat right top;background-size:1px 24px;color: #FFF;text-align: center;line-height: 24px;padding: 0 5px;}
+        .commentList{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+        .commentList>div{padding:8px 0;line-height:21px;color:#000;overflow:hidden;border-bottom: 1px solid #E7E7E7;margin: 0 3.7%;}
+        .commentList>div:last-child{border: none}
+        .commentList span{font-size:12px;color:#999999;}
+        .commentList .author97 {color: #528ED4}
+        .commentList .author61 {color: #528ED4}
+        .commentList p{font-size:16px;}
+        .commentList>div div{background:#f9f9e9;border-top:1px solid #c8c89b;border-bottom:1px solid #c8c89b;padding:0 0 3px;}
+        .commentList>div>div,.commentList>div>div>div,.commentList>div>div>div>div,.commentList>div>div>div>div>div{padding:3px;border-left:1px solid #c8c89b;border-right:1px solid #c8c89b;}
+        .commentList>div>div>div>div>div>div{border-left:1px solid #c8c89b;border-right:1px solid #c8c89b;padding:3px;}
+        .commentList>div>div>div>div>div>div div{border-top:none;}
+        body > header{border-bottom: 1px solid #ccc;padding-bottom: 1px;box-shadow:none;background: none;height: 56px;width: 100%;overflow: hidden;}
+        .downloadGuide{height: 50px;background: #ebebeb;overflow: hidden;padding-top:7px; position: relative;}
+        .newsLogo{width: 45px;height: 45px;margin: 0 8px 0  4.2%;float: left;}
+        .newappTitle {overflow: hidden;}
+        .newappTitle h3{font-size: 18px;color: #333;line-height: 21px;margin: 0;}
+        .newappTitle .newappTitle-stitle{background: url(http://img1.cache.netease.com/3g/img11/3gtouch13/stitle1.png) no-repeat left top;display: inline-block;width: 112px;height: 10px;background-size: 112px 10px;float: left;clear: both;margin: 2px 0}
+        .newappTitle .stars{background: url(http://img1.cache.netease.com/3g/img11/3gtouch13/stars.png) repeat-x left top;height: 8px;width: 45px;background-size: 9px 8px;float: left;margin: 1px 0 0 0;clear: both;}
+        .newappTitle .newappTitle-appCount{float: left;color:#aaaaaa;font-size: 9px;margin-left: 3px; font-family: HiraginoSansGB;}
+        .genBtnGreen{
+            background: -moz-linear-gradient(top, #95d37a 3%, #7ac758 5%, #4e8e31 100%);
+            background:  -webkit-gradient(linear, left top, left bottom, color-stop(3%,#95d37a), color-stop(5%,#7ac758), color-stop(100%,#4e8e31));
+            /*border:1px solid #60af3d;*/
+        }
+        .genBtnGreen-wrapper{
+            background: -moz-linear-gradient(top, #6DA858 3%, #2E5A1D 100%);
+            background:  -webkit-gradient(linear, left top, left bottom, color-stop(3%,#6DA858), color-stop(100%,#2E5A1D));
+            padding:1px;
+        }
+        .downloadGuide .appBtn{position: absolute;right: 4.2%;top:16px;width: 61px;height: 25px;font-size: 12px;color: #fff;line-height: 25px;text-align: center;border-radius: 3px;
+             }
+        .downloadGuide .appBtn .genBtnGreen{border-radius: 3px;}
+        .openBtn{color: #fff;font-size: 18px;text-align: center;height: 44px;line-height: 44px;margin:0 4.2% 20px;display: block;border-radius: 3px;}
+        .openBtn a,.openBtn a:visited{color: #fff}
+        .openBtn span{padding: 0 0 0 20px;}
+        .openBtn .genBtnGreen{border-radius: 3px;display: block;}
+        .open-i{background:url(http://img1.cache.netease.com/3g/img11/3gtouch13/openbtn.png) no-repeat 8% 12px;background-size: 21px 21px;}
+        .commentList .nopost{text-align: center;font-size: 18px;color: #a6a6a6;margin: 3px 0;}
+        .commentList .nopost:first-child{margin-top: 10px;}
+        .commentList .nopost:last-child{margin-bottom: 10px;}
+        .headerContent{position: absolute;left:0;top: 0;width: 100%}
+        .video-holder{position: relative;}
+        .play-btn{position: absolute;left:45%;top:43%;background:url(http://img1.cache.netease.com/3g/img11/3gtouch13/playbtn1.png);width: 45px;height: 45px; background-size:45px 45px;}
+        .albumholder{position: relative;line-height: 0;}
+        .albumholder span{display: block;width: 56px;height: 35px;line-height: 35px;font-size: 16px;text-align:center;background: #000;color: #fff;position: absolute;left: 0;bottom: 0;}
+        .albumholder a{display: block;}
+        .audio-comment{color:#bbb;padding-top:5px;display: block; }
+    </style>
+</head>
+<body>
+<header>
+<p class="digest"></p>
+</header>
+<!-- banner top end -->
+<div id="mask"></div>
+<div id="popWin"></div>
+<article class="articleList">
+    <div class="head clearfix">
+        <h1 class="title"></h1>
+        <h2><span class="source"></span> <span class="time"></span> <span>跟贴 <span class="replyCount"></span>条</span></h2>
+    </div>
+    <div class="text clearfix">
+        <div class="text1"></div>
+    </div>
+    <div class="foot clearfix">
+        <div class="pageBtn" id="nextPage" style="display:none;">展开全文</div>
+    </div>
+</article>
+<ul class="banner-imglist" id="bannerImgList"></ul>
+<article class="articleList">
+    <div class="comment_title sTitle">
+        全部跟贴(<span class="replyCount"></span>条)
+    </div>
+    <div class="commentList">
+       <p class="nopost">跟贴是一种信仰，</p>
+       <p class="nopost">态度就在你身上。</p>
+    </div>
+    <div class="genBtnGreen-wrapper openBtn">
+      <a class="genBtnGreen" id="openApp2" href=""><div class="open-i"><span>打开网易新闻客户端看跟贴</span></div></a>
+    </div>
+</article>
+<a id="openApp" class="headerContent" href=""><div class="downloadGuide"><div class="newsLogo"><img src="http://img1.cache.netease.com/3g/img11/3gtouch13/newsapplogo.png" width="45" height="45"></div><div class="newappTitle"><h3>网易新闻客户端</h3><p class="newappTitle-stitle"></p><div class="stars"></div><p class="newappTitle-appCount">(<span id="appCount">416</span>)</p></div><div class="genBtnGreen-wrapper appBtn"><div class="genBtnGreen">下载</div></div></div></a>
+<input type="hidden" id="iosCount" value="574">
+<input type="hidden" id="androidCount" value="381">
+<script src="http://img1.cache.netease.com/3g/img11/3gtouch/xui-2.3.2.min.js"></script>
+<script src="http://img1.cache.netease.com/3g/img11/3gtouch13/NTUI.min.js"></script>
+<script>
+scrollTo(0,1);
+var isAndroid=navigator.userAgent.match(/android/ig),
+         isIos=navigator.userAgent.match(/iphone|ipod/ig),
+         isIpad=navigator.userAgent.match(/ipad/ig),
+         weixin=navigator.userAgent.match(/MicroMessenger/ig);
+//loading mask
+var loading = true,
+        mask = document.getElementById('mask');
+mask.style.height = screen.availHeight - 40 + 'px';
+// document.getElementById('return').href = 'http://3g.163.com/touch/?from=article';
+var tpl={},index=0,i=0,cimg,
+        Next = false,
+        docid = NTUI.getParameter('docid'),
+        sitemapUrl = 'http://3g.163.com/touch/sitemap/main.html',
+        now = new Date().format('yyyy-MM-dd HH:mm:ss'),
+        artiUrl = 'http://3g.163.com/touch/article/'+docid+'/full.html',
+        tailUrl = 'http://3g.163.com/touch/article/'+docid+'/full.html';
+tpl.imgList = '<div class="photoNews"><img class="photoImg" alt="<#=alt#>" src="<#=src#>" width="170px"><div class="photo_mag" style="display:block;"></div></div>';
+tpl.liveLink='<a style="color:blue;" href="<#=href#>" title="<#=title#>" class="liveLink"><#=title#></a>';
+tpl.sugNews = '<li><a href="http://3g.163.com/touch/article.html?from=article&docid=<#=sDocid#>"><#=sTitle#></a></li>';
+tpl.relNews = '<li><a href="http://3g.163.com/touch/article.html?from=article&docid=<#=rDocid#>"><#=rTitle#></a></li>';
+tpl.sitemapLink = '<a href="http://3g.163.com/touch/<#=curl#>/?from=article.sitemap"><#=cname#></a>';
+tpl.sitemapOuterLink = '<a href="<#=curl#>"><#=cname#></a>';
+tpl.replyLink = 'http://3g.163.com/touch/comment.html?docid=<#=docid#>&board=<#=board#>&title=<#=title#>&from=article';
+// X('#loginurl')[0].value = window.location.href;
+tpl.commentListTpl ='<div count="<#=postCount#>"><p class="clearfix"><span class="fl-l author61"><#=nickname#>：</span><span class="fl-r"><#=postCount#> 顶</span></p><p><#=postContent#></p></div>';
+tpl.albumTpl = '<p><div class="albumholder"><a href="http://3g.163.com/touch/photoview.html?setid=<#=albumId#>&channelid=<#=channelId#>&from=article"><img src="<#=cover#>" width="100%"/></a><span>图集</span></div></p>';
+tpl.audio =  '<div class="audio-holder"><audio  controls="controls" src="<#=url_mp4#>" style="width:100%"></audio><span class="audio-comment"><#=alt#></span> </div>';
+tpl.video = '<div class="video-holder"><#=playbtntpl#><video  id="video" src="<#=url_mp4#>" poster="<#=cover#>" style="width:100%"></video></div>';
+var contentHolder = X('.text1');
+//docid截端跳转
+var docidVal= NTUI.getParameter('docid');
+if(docidVal=="http://news.163.com/special/2012home/"){
+    window.location.href="http://3g.163.com/ntes/13/0109/15/8KPP95RR00963VRO.html";
+}
+function artiContent(d){
+    if(!d)return;
+    data = d[docid];
+    window.thisBoard=data.replyBoard;
+    X('.title').html(data.title);
+    document.title = data.title;  //分享标题
+    X('.digest').html(data.body.replace(/<.*?>/g,"").replace(/(^\s*)/g,"").substr(0,30)); //分享摘要
+    X('.time').html(data.ptime.substr(0,16));
+    X('.source').html(data.source);
+    X('.replyCount').html(data.replyCount);
+    X('.replyLink').attr('href',NTUI.simpleParse(tpl.replyLink,{docid:docid,board:data.replyBoard,title:encodeURI(encodeURI(data.title))}));
+    X('#key').html(data.keys);
+    //获取正文内容
+    data.body = data.body.replace(/<!--IMG#(\d+)-->/g, function($0,$1){
+                if($1 != index) index = $1;
+                cimg = data.img[index++];
+                return NTUI.simpleParse(tpl.imgList,{alt:cimg.alt,src:cimg.src});
+            }
+    );
+    data.body = data.body.replace(/<!--VIDEO#(\d+)-->/g, function($0,$1){
+                if($1 != index) index = $1;
+                cmedia = data.video[index++];
+                if(cmedia.url_mp4.match(/.mp3/ig)){
+                    return NTUI.simpleParse(tpl.audio,{url_mp4:cmedia.url_mp4,alt:cmedia.alt});
+                }else{
+                    if(isAndroid){
+                        playbtn ='<div class="play-btn"></div>';
+                    }else{
+                        playbtn ='';
+                    }
+                    return  NTUI.simpleParse(tpl.video,{cover:cmedia.cover,url_mp4:cmedia.url_mp4,playbtntpl:playbtn});
+                }
+                
+            }
+    );
+    for(var j=0;j<data.liveLink.length;j++){
+        var reg_link=new RegExp("<!--LiveLink#"+j+"-->","g");
+        tplLiveLinkHtml=NTUI.simpleParse(tpl.liveLink,{href:data.liveLink[j].href,title:data.liveLink[j].title});
+        data.body=data.body.replace(reg_link,tplLiveLinkHtml);
+    };
+    contentHolder.html(contentHolder.html()+data.body);
+    // 视频
+    function videoControl(){
+        X(".video-holder").click(function(){
+            X("#video")[0].play();
+            X("#video")[0].webkitEnterFullscreen();
+            // X(".play-btn").css({display:'none'});
+        })
+        X(".play-btn").click(function(){
+            X("#video")[0].play();
+        })
+        document.onwebkitfullscreenchange=function(){
+            X("#video")[0].pause();
+        }
+    }
+    videoControl();
+    // }
+    // 图集
+    if(data.photosetID){
+        var albumHolder = document.createElement("p");
+        X(albumHolder).html(NTUI.simpleParse(tpl.albumTpl,{cover:data.cover,albumId:data.photosetID.split("|")[1],channelId:data.photosetID.split("|")[0]}));
+        if(data.video!=""){
+            X('.text1')[0].insertBefore(albumHolder,X('.text1 p')[1])
+        }else{
+            X('.text1')[0].insertBefore(albumHolder,X('.text1 p')[0])
+        }
+    }
+    if(loading){
+        mask.style.display = 'none';
+        X('.articleList,body>footer').css({display:'block'});
+        loading=false;
+    }
+    if(data.hasNext){
+        X('#nextPage').setStyle('display','block');
+        X('#nextPage').click(function(){
+            X('#nextPage').setStyle('display','none');
+            NTUI.importJs(tailUrl);
+            Next=true;
+        });
+    }
+    //图片放大缩小处理
+    X('.photoNews').click(function(e){
+        var cImg = this.firstChild,oWidth = NTUI.getOriginalWidthOfImg(cImg),imgMag = cImg.nextSibling;
+        if(getComputedStyle(cImg,null).width === '170px'){
+            this.style.width = '100%';
+            if(oWidth>parseInt(getComputedStyle(this,null).width)){
+                cImg.style.width = '100%';
+            }
+            else{
+                cImg.style.width = oWidth+'px';
+            }
+            imgMag.style.display = 'none';
+        }
+        else{
+            this.style.width = '170px';
+            cImg.style.width = '170px';
+            imgMag.style.display = 'block';
+        }
+    });
+    // 跟贴
+    (function(){
+    var docid=NTUI.getParameter('docid'),
+        board=window.thisBoard,
+        title=decodeURI(decodeURI(NTUI.getParameter('title'))),
+        from=NTUI.getParameter('from'),
+        start=0,
+        PAGESIZE=10,
+        HIDEFLOOR=7,
+        TF=3,
+        BF=1,
+        tpl={},
+        nd = new Date();
+        tpl.oriPost = '<div><#=floors#><p class="clearfix"><span class="fl-l author97"><#=author#></span><span class="fl-r"><#=floorNo#></span></p><p><#=content#></p></div>';
+        tpl.post = '<div id="<#=postid#>" count="<#=count#>"><p class="clearfix"><span class="fl-l author61"><#=author#></span><span class="fl-r"><#=vote#> 顶</span></p><#=floors#><p><#=content#></p></div>';
+        tpl.fullFloor = '<p class="clearfix"><span class="fl-l author61"><#=author#></span><span class="fl-r"><#=vote#> 顶</span></p><#=floors#><p><#=content#></p>';
+        tpl.fold = '<div><#=floors#><p class="foldLink">点击展开隐藏楼层</p></div>'
+        hotUrl = 'http://comment.api.163.com/api/jsonp/post/list/hot/'+board+'/'+docid+'/0/5/7/'+TF+'/'+BF+'/hotList',
+        newUrl = 'http://comment.api.163.com/api/jsonp/post/list/normal/'+board+'/'+docid+'/desc/<#=start#>/'+PAGESIZE+'/'+HIDEFLOOR+'/'+TF+'/'+BF+'?jsoncallback=newList',
+        postUrl = 'http://comment.api.163.com/api/jsonp/post/insert',
+        voteUrl = 'http://comment.news.163.com/reply/upvote/'+board+'/<#=postid#>',//post only,void
+        unfoldUrl = 'http://comment.api.163.com/api/jsonp/post/load/'+board+'/<#=postid#>?jsoncallback=fullFloorList';
+        shareUrl = '';
+        
+        // X('#post_board')[0].value = board;
+        // X('#post_threadid')[0].value = docid;
+        var sPinfo = NTUI.cookie.get('P_INFO'),isLogin;
+        if(sPinfo){ 
+            var arr = sPinfo.split("|");
+            sUser = arr[0].replace(/\"/, "");
+            isLogin = arr[2];
+            if(isLogin==='1'){
+                // X('#post_userid')[0].value = sUser;
+            }
+        }
+       
+        var popWin = X('#popWin');
+        //读取跟贴
+        var holder=X('.commentList'),failure = false,pageBtn=X('#nextPage');
+        holder.hotPosts = holder[0];
+        holder.newPosts = holder[1];
+        window.commentList = function(d,type){
+            if(failure)return;
+            if(!d){
+                failure = true;
+                holder.html('<div count="">跟贴读取失败，请检查网络连接后重试。</div>');
+                pageBtn.css({display:'none'});
+            }
+            else if(d.code!=='1'){
+                failure = true;
+                holder.html('<div count="">跟贴已关闭或被删除。</div>');
+                pageBtn.css({display:'none'});
+            }
+            else{
+                var posts = d[type],str=tmp='',p,cp,i;
+                if(!posts||posts.length===0){
+                    if(type=='newPosts'){
+                        if(holder[1].noData){
+                            holder[1].innerHTML = '<div count="">目前没有跟贴，欢迎你发表观点。</div>';
+                        }
+                        pageBtn.css({display:'none'});
+                    }
+                    else{
+                        holder[0].innerHTML = '<p class="nopost">跟贴是一种信仰，</p><p class="nopost">态度就在你身上。</p>';
+                    }
+                }
+                else{           
+                    for(i=0;i<3;i++){
+                        p = posts[i];
+                        if(p == undefined){continue}
+                        if(p.NON){
+                            cp = p[p.NON];
+                            tmp = buildFloors(p,TF,BF-1);
+                        }
+                        else{
+                            var l = Object.keys(p).length;
+                            cp = p[l];
+                            tmp = buildFloors(p,l-1);
+                        }
+                        str+=NTUI.simpleParse(tpl.post,{floors:tmp,author:cp.f,vote:cp.v,content:cp.b,postid:cp.pi||docid+'_'+cp.p,count:cp.v});
+                    }
+                    if(type==='hotPosts'){
+                        holder[0].innerHTML = str;
+                    }
+                    else{
+                        holder[1].innerHTML += str;
+                        holder[1].noData = false;
+                        start+=PAGESIZE;
+                    }   
+                }
+            }   
+            if(loading){
+                mask.style.display = 'none';
+                X('.comment,body>footer').css({display:'block'});
+                loading=false;
+            }       
+        }
+        function buildFloors(p,tf,bf){
+            if(tf===0)return '';
+            var cp,i,tmp=tpl.oriPost;
+            if(bf){
+                for(i=1;i<=bf;i++){
+                    cp = p[Number(p.NON)-i];
+                    tmp = NTUI.simpleParse(tmp,{floors:tpl.oriPost,author:cp.f,floorNo:Number(p.NON)-i,content:cp.b});
+                }
+                tmp = NTUI.simpleParse(tmp,{floors:tpl.fold});  
+            }
+            else if(bf===0){
+                tmp = NTUI.simpleParse(tpl.fold,{floors:tmp});
+            }
+            for(i=tf;i>=1;i--){
+                cp = p[i];
+                tmp = NTUI.simpleParse(tmp,{floors:i===1?'':tpl.oriPost,author:cp.f,floorNo:i,content:cp.b});
+            }
+            return tmp;
+        }
+    })()
+    window.hotList = function(d){
+        commentList(d,'hotPosts');
+    }
+    NTUI.importJs(hotUrl);
+    if(Next)return;
+}
+var cachedData = NTUI.storage.load(docid);
+if(cachedData){
+    artiContent(JSON.parse(cachedData));
+}
+else{
+    NTUI.importJs(artiUrl);
+}
+// 评论数
+(function(){
+     if(isAndroid&&(/^[0-9]*$/g.test(X('#androidCount').attr("value")[0]))){
+        X('#appCount').html(X('#androidCount').attr("value")[0]);
+     }else if((isIos||isIpad)&&(/^[0-9]*$/g.test(X('#iosCount').attr("value")[0]))){
+        X('#appCount').html(X('#iosCount').attr("value")[0]);
+     }else{
+        // X('header').css({display:"none"});
+     }
+})();
+var aist = NTUI.getParameter('isappinstalled')||NTUI.getParameter('appinstall');
+var NewOpenApp =function(id,docid,btnElem,btnText){
+     var isAndroid=navigator.userAgent.match(/android/ig),
+         isIos=navigator.userAgent.match(/iphone|ipod/ig),
+         isIpad=navigator.userAgent.match(/ipad/ig);
+     if(isAndroid){
+        var astate = 'd',aurl = 'http://3g.163.com/links/4304';
+        if(aist=='1'){
+            aurl = 'newsapp://doc/'+docid;
+            X(btnElem).html(btnText);
+        }
+        X(id).attr('href',aurl);
+     }
+     if(isIos||isIpad){
+        var astate = 'd',aurl = 'itms-apps://itunes.apple.com/cn/app/id425349261?mt=8';
+        if(aist=='1'){
+            aurl = 'newsapp://doc/'+docid;
+            X(btnElem).html(btnText);
+        }
+        X(id).attr('href',aurl);
+     }
+}
+if(!weixin){
+    new NewOpenApp('#openApp',docid,".open-i span","打开网易新闻客户端看跟贴");
+    new NewOpenApp('#openApp2',docid,".appBtn  .genBtnGreen","打开");
+}else{
+    if(aist == 1){
+        X(".appBtn .genBtnGreen").html("打开");
+        X(".open-i span").html("打开网易新闻客户端看跟贴");
+    }
+    // if(aist != 1 ){
+         X("#openApp").attr('href',"http://a.app.qq.com/o/simple.jsp?pkgname=com.netease.newsreader.activity&g_f=991810");
+         X("#openApp2").attr('href',"http://a.app.qq.com/o/simple.jsp?pkgname=com.netease.newsreader.activity&g_f=991810");
+    // }else{
+    //     X("#openApp").attr('href',"http://3g.163.com/ntes/special/00340D52/weixinfallback.html?docid="+docid+"&isappinstalled="+aist);
+    //     X("#openApp2").attr('href',"http://3g.163.com/ntes/special/00340D52/weixinfallback.html?docid="+docid+"&isappinstalled="+aist);
+    // }
+}
+</script>
+<!-- 统计代码 -->
+<!-- START NetEase Devilfish 2006 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "wap";
+neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+</body>
+</html>

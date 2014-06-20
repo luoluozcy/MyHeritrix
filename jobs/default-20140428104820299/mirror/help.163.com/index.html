@@ -1,0 +1,1049 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta name="keywords" Content="网易帮助,网易在线帮助,网易自助服务,邮箱帮助,博客帮助,相册帮助,将军令帮助,一卡通帮助,邮箱客服,网易客服,在线客服,网易助手小易">
+<meta name="description" Content="网易帮助中心(help.163.com),为网易用户提供在线的产品帮助,您还可以与网易助手小易即时对话解决使用网易产品时遇到的问题">
+<meta name="author" Content="NetEase Customer Service,Customer Experience & Development Team">
+<meta name="copyright" Content="NetEase.com,Inc." />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta property="wb:webmaster" content="74791f0d68f8304e" />
+<link rel="shortcut icon" href="http://www.163.com/favicon.ico" />
+<link rel="stylesheet" href="http://help.163.com/special/00754IUH/global_help.css" media="all" />
+<link rel="stylesheet" href="http://help.163.com/special/00754IUH/index_help.css" media="all" />
+<title>网易帮助中心</title>
+<script type="text/javascript" src="http://mimg.127.net/p/tools/jquery/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="http://help.163.com/special/00754IO5/urs_common.js"></script>
+<script type="text/javascript">
+var msg="";
+var msg1="输入关键词（如：修复密码、一键升级）点击搜索";
+var msg2="或输入服务口令（如：6070043）点击搜索";
+function inEvt(sType,oInput){
+    switch (sType){         
+        case "focus" :              
+            if(oInput.value.replace("\r\n","")==msg.replace("\r\n","")) {
+                clearInterval(changeTip);
+                oInput.value=""; 
+                oInput.className="font2";
+            }           
+            break;
+        case "blur" :
+            if(oInput.value==""||oInput.value.replace("\r\n","")==msg.replace("\r\n","")){ 
+                //oInput.value=msg; 
+                //oInput.className="font1";
+                setTip();
+                changeTip = setInterval(setTip, 2000);
+            }       
+            break;
+        }
+}
+//ie6图片缓存开启
+if(window.attachEvent) {
+    try{   
+        document.execCommand("BackgroundImageCache", false, true);
+    }
+    catch(e){}
+}
+var obj=function(id){return document.getElementById(id);}
+function inituvs(){
+    msg=msg1;
+    obj("q_keywords").value=msg;
+}
+function setTip() {
+    if(obj("q_keywords").value == msg1) {
+        obj("q_keywords").className="font3";
+        msg = msg2;
+        obj("q_keywords").value = msg;
+    }else{
+        obj("q_keywords").className="font1";
+        msg = msg1;
+        obj("q_keywords").value = msg;
+    }
+}
+changeTip = setInterval(setTip, 2000);
+</script>
+</head>
+<body>
+<!-- 客服中心弹窗 --> 
+<div id="w-popbg" style="position: absolute;z-index:9995;top: 0;bottom: 0;left: 0;right: 0;width: 100%;height: 100%;background: #000;opacity: .6;-moz-opacity: .6;filter: Alpha(Opacity=60);-ms-filter: alpha(opacity=60);"></div>
+<div id="w-closebtn" style="position:absolute;z-index:9997;left:50%;margin-left:370px;top:210px;width:20px;height:20px;text-align:center;line-height:16px;font-size:20px;color:#000;border:1px solid #000;cursor:pointer;">x</div>
+<iframe id="w-popframe" src="http://yxplus.yeah.net/help/help.html" style="position:absolute;z-index:9996;left:50%;top:200px;width:804px;height:420px;overflow:hidden;margin-left:-402px;border:0;" scrolling="no" frameBorder = "0"></iframe>
+<!-- /客服中心弹窗 -->  
+<!--头部logo及顶部导航  star-->
+<div class="header">
+    <div class="fl logo">
+        <a href="http://help.163.com" title="返回帮助中心首页"><img src="http://cimg2.163.com/help/v2/img/logo1.gif" /></a>
+    </div>
+    <div class="fr header_nav">
+        <a id="addfav" class="udLine_n" href="javascript:void(0)" title="将本页添加到收藏夹">收藏本页</a><span class="vblank1">|</span><a href="http://www.163.com?a35abh1" title="打开网易首页" target="_blank">网易首页</a><span class="vblank1">|</span><a id="upmail" class="udLine_n iBox" href="javascript:void(0)" title="升级免费邮">邮箱升级</a>
+        <div class="goal_sel hide" id="showFc3">
+            <a href="http://reg.vip.163.com/upgradeIndex.m?a35abe1" target="_blank">升级为VIP163邮</a>
+            <a href="http://reg.vip.126.com/upgradeIndex.m?a35abe1" target="_blank">升级为VIP126邮</a>
+            <a href="http://reg.mail.188.com/servlet/upgrade/checkFreemail?a35abe1" target="_blank">升级为VIP188邮</a>
+        </div>
+    </div>    
+</div><!--/header-->
+<!--头部logo及顶部导航  end-->
+<!-- 导航 star-->
+<div class="bg_pic nav"> 
+    <ul class="navTxt" id="navTxt">
+        <li class="navLi1 default"><a href="http://help.163.com"><b class="navLi-Lbg"></b><span>首&nbsp;&nbsp;&nbsp;&nbsp;页</span><b class="navLi-Rbg"></b></a></li>             
+        <li class="navLi1"><a href="http://help.163.com/special/007528M7/xiaoyi_intd.html"><b class="navLi-Lbg"></b><span>在线咨询</span><b class="navLi-Rbg"></b></a></li> 
+        <li class="fgLine"></li> 
+        <li class="navLi1"><a href="http://help.163.com/special/sp/consult.html"><b class="navLi-Lbg"></b><span>相关资讯</span><b class="navLi-Rbg"></b></a></li> 
+        <li class="fgLine"></li>
+    </ul>
+  </div><!--/nav-->
+<!-- 导航 end-->
+<!-- 搜索区域  star-->
+<div class="bg_pic hlep_con">
+    <div class="help_sea">
+        <form target="_blank" onsubmit="return search_proxy(this);" id="iii">
+        <div class="pic search"><input  id="q_keywords" type="text"  class="font1" onfocus="inEvt('focus',this)" onblur="inEvt('blur',this)" /><input class="pic search_btn" type="submit" value="搜 索"  onmousemove="this.className='pic search_btn search_btn1';" onmouseout="this.className='pic search_btn';"/><a class="link"  href="http://help.163.com/special/007528M7/xiaoyi_intd.html?help_search">在线咨询</a></div>
+        <p class="top_intr">热门关键字：<span onclick="hotKey(this);doSearch(document.getElementById('iii'));">修复密码</span><span onclick="hotKey(this);doSearch(document.getElementById('iii'));">关联手机</span><span onclick="hotKey(this);doSearch(document.getElementById('iii'));">无法登录</span><span onclick="hotKey(this);doSearch(document.getElementById('iii'));">升级为VIP</span><span><a target="_blank" href="http://help.163.com/10/1118/18/6LPTM9U4007525G3.html?help_search_1">iPhone设置</a></span>
+        </p>
+        </form>
+    </div>
+</div>  
+<script type="text/javascript">
+var serachUrl="http://help.163.com/special/sp/help_search.html?s=1#start=0&q=";             
+function doSearch(oForm){
+    var key=document.getElementById('q_keywords').value;
+    key=key.replaceSpecialCharacters().replace(/(^\s*)|(\s*$)/g, "");
+    if(key==msg1 || key=="" ){
+        alert("请输入关键字 如：修复密码");
+    }else{
+        var url=serachUrl+encodeURIComponent(key);
+        if(document.all){
+            var objA=document.createElement("A");
+            objA.href=url;
+            objA.target="_self";
+            oForm.appendChild(objA);
+            objA.click();
+            oForm.removeChild(objA);
+        }else{
+            location.href=url;
+        }
+        //oForm.removeChild(objA);
+        //return true;  
+    }
+    return false;
+}
+function search_proxy(oForm) {
+    var keyword=document.getElementById('q_keywords').value;
+    keyword=keyword.replaceSpecialCharacters().replace(/(^\s*)|(\s*$)/g, "");
+    if ( /^6\d{6}$/.test(keyword) ) {
+        return search_servCode(keyword, oForm, doSearch);
+    }else if ( /^\d{6}$/.test(keyword) ) {
+        return search_old580(keyword, oForm, doSearch);
+    }else{
+        return doSearch(oForm);
+    }
+    
+}
+inituvs();
+</script>
+<!-- 搜索区域  end-->
+<!--页面内容 star-->
+<div class="gCon">
+    <div class="gCon_box">
+        <div class="fl bg_pic gCon_news">
+            <div class="title">
+                <a class="fr moreLink1" href="http://help.163.com/special/sp/consult.html?a35abf1" title="查看更多资讯">更多资讯&gt;&gt;</a>
+                <h3 class="til_sty1">最新消息</h3>
+            </div>
+            <ul class="newsSub" id="newsCon"></ul>
+        </div><!--/gCon_news-->
+        <div  class="fr gCon_banner">
+            <div id="imgScroll" class="ImgScroll"> 
+                <div id="imgTxt" class="ImgContent">
+               <!--<a href="http://hr.163.com/kefuzhaopin/?a35abh2" target="_blank" hidefocus><img src="http://cimg2.163.com/help/v2_2/img/banner_zp.jpg" /></a> -->                
+               <!-- <a href="http://help.163.com/13/0930/14/9A1CLM6I00752JEH.html" target="_blank" hidefocus><img src="http://cimg2.163.com/help/urs/img/helpyixinguanjia.png" /></a>-->
+        <a href="http://help.163.com/special/007528M7/xiaoyi_intd.html?a35abh2" target="_blank" hidefocus><img src="http://cimg2.163.com/help/v2_2/img/banner1.jpg" /></a>           
+				<a href="http://126.am/yixinhelp" target="_blank" hidefocus><img src="http://cimg2.163.com/help/urs/img/yixin_help.jpg" /></a>
+                <a href="http://fax.163.com?a35abh2" target="_blank" hidefocus><img src="http://cimg2.163.com/help/vip/img/faxhelp.png" /></a>        	
+				<a href="http://help.163.com/special/whb_index?a35abh2" target="_blank" hidefocus><img src="http://cimg2.163.com/help/urs/img/dhwhb01.png" /></a>
+                             
+                <!--<a href="http://help.163.com/special/sp/index5.0.html?a35abh2" target="_blank" hidefocus><img 
+src="http://cimg2.163.com/help/urs/img/help5.0_new.png" /></a>
+                <a href="http://pw.163.com?help" target="_blank" hidefocus><img src="http://cimg2.163.com/help/v2_2/img/banner_pw.png" /></a>--><!--图片尺寸（宽*高） 536px*191px -->
+                </div>
+            </div>
+          <div class="imgContorl" id="imgContrl"></div>
+      </div><!--/gCon_banner-->
+                <div class="clear"></div> 
+    </div><!--/gCon_box-->  
+    <div class="gCon_box gCon_pd" id="index_bCon">
+        <ul class="subNav bg_pic" id="index_nav">
+            <li class="bg_pic nowSel"><a class="wth1" href="javascript:void(0)" onmousemove="nav._setStyle(0)">网易热点产品</a></li>
+            <li><a class="wth2" href="javascript:void(0)" onmousemove="nav._setStyle(1)">网易游戏</a></li>
+            <li><a class="wth2" href="javascript:void(0)" onmousemove="nav._setStyle(2)">人工服务</a></li>
+            <li><a class="wth2" href="javascript:void(0)" onmousemove="nav._setStyle(3)">在线活动</a></li>
+        </ul>
+          <!--/20120510 tis by deyu-->         
+         <div class="tis">              
+            <div class="tis_logo">
+                <div class="tis_text" id="marqueebox0"> 
+                    <ul> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu1')">节能灯可省电80%　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu2')">日常省水妙招　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu3')">双键马桶可节一半水　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu4')">节能电器仔细挑，省钱才是硬指标　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu5')">科学摆放填充冰箱，也能省电　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu6')">风扇转速要调好，清凉爽快更环保　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu7')">适宜的电视亮度可防眼疲劳　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu8')">控制空调温度，共享环保生活　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu9')">煮饭提前淘米，并浸泡十分钟　<span style="color:#2050a0;">查看>></span></a></li>                     
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu10')">巧驾车，多省油　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu11')">太阳能热水器，既环保又经济　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu12')">轿车每月停一天，缓解堵塞省能源　<span style="color:#2050a0;">查看>></span></a></li>                     
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu13')">充分利用白纸也是一种美德　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu14')">尽量使用再生纸，不忘环保每一天　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu15')">废塑胶不乱丢，回收利用大环保　<span style="color:#2050a0;">查看>></span></a></li>
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu16')">灯泡换成节能灯，用电能省近八成　<span style="color:#2050a0;">查看>></span></a></li>                    
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu17')">纸张双面来使用，打印复印都节能　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu18')">饮水机莫长开 闲置断电省能源　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu19')">低层少用电梯 节能还能锻炼身体　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu20')">垃圾邮件也破坏环境　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu21')">支持无纸化办公 节能又环保　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu22')">办公废纸是个宝，回收利用少不了　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu23')">保护视力，为革命，眼保健操开始　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu24')">简单打印，简单环保　<span style="color:#2050a0;">查看>></span></a></li>                     
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu25')">为了我们的资源，无纸化办公吧　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu26')">屏幕暗一点 节能又护眼　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu27')">科学用电脑，省电效果好　<span style="color:#2050a0;">查看>></span></a></li>                     
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu28')">电脑配置不求高，适用就好　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu29')">选用节能洗衣机 省水省电有奇迹　<span style="color:#2050a0;">查看>></span></a></li> 
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu30')">随手关灯是一种习惯……　<span style="color:#2050a0;">查看>></span></a></li>
+                    <li><a href="javascript:show_cover('show_dt', 'rollTextMenu31')">过度包装不可取 减少购买为环保　<span style="color:#2050a0;">查看>></span></a></li>  
+                    </ul> 
+                </div>
+            </div>
+                    <div id="screen_cover" class="tis_bgc"></div>
+                         <div id="show_dt" class="tis-fc">
+                                  <a href="javascript:hide_cover('show_dt')" title="关闭" class="tis-fc-close"></a>
+                        
+                         <!-- 浮层贴士内容--> 
+                            <div class="tis_box">   
+                                  <div class="tis_con" id="rollTextMenu1" style="display: none"><h4>节能灯可省电80%</h4><p>一只11W节能灯的照明效果，顶得上60W的普通灯泡，而且每分钟都比普通灯泡节电80％。 如果全国使用12亿支节能灯，节约的电量相当于三峡水电站的年发电量。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu2" style="display: block"><h4>日常省水有妙招</h4><p>洗脸、洗衣、洗菜的生活废水可以收集起来冲厕所等。生活中养成节水习惯，积累下来，一个三口之家每月就能节水1吨以上。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu3" style="display: none"><h4>双键马桶可节一半水</h4><p>与传统单键马桶相比，双键马桶每家每天至少节水一半。9升单键马桶每月用水约为3240升；如用3/6升马桶则为每月1350升。不仅节水1890升，还能减少污水排放。生产自来水和处理污水都需要耗费大量能源，所以可节水也可节能。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu4" style="display: none"><h4>节能电器仔细挑，省钱才是硬指标</h4><p>同样的制冷效果，更少的耗电需求，这就是节能空调的妙处。如果全国的家庭都用它，每年可以节约用电33亿度，相当于少建一个60万千瓦的火力发电厂，还能减排温室气体330万吨。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu5" style="display: none"><h4>科学摆放填充冰箱，也能省电</h4><p>冰箱内食物摆放有序，不要过多过满过密，容积的80%为宜。注意不要将热的食物放在冰箱，这样会加重冰箱负担，更加耗电。电冰箱应尽量减少开门次数和打开门的时间，应及时除霜。特别要注意定期给冷凝器除尘，以免影响制冷效果，浪费电能。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu6" style="display: none"><h4>风扇转速要调好，清凉爽快更环保</h4><p>扇页比较大的电风扇功率也大，耗电自然就多；电风扇的耗电量与转速成正比，最快档与最慢档的耗电量相差约40%。在满足要求的情况下，适当选购电风扇，多使用中、慢档转速的和风和微风。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu7" style="display: none"><h4>适宜电视亮度可防眼疲劳</h4><p>电视机开得越亮、音量越大，耗电量也越大。在室内开一盏5瓦的节能灯，适度调整电视机音量和亮度，收看效果好且不易使眼睛疲劳。白天看电视拉上窗帘避光，可相应降低电视机亮度。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu8" style="display: none"><h4>控制空调温度，共享环保生活</h4><p>建议夏季空调温度设定在26-28摄氏度，冬季设定在16-18摄氏度。夏季空调调高1摄氏度，按每天开10小时计算，则1.5匹空调机可节电0.5千瓦时。夏天空调温度过低，不但浪费能源，还削弱了人体自动调节体温的能力。</p></div>
+                                  <div class="tis_con" id="rollTextMenu9" style="display: none"><h4>煮饭提前淘米，并浸泡十分钟</h4><p>提前淘米并浸泡10分钟，然后再用电饭锅煮，可大大缩短米熟的事件，节点约10%。每户每年可因此省电4.5度，减少二氧化碳排放4.3千克。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu10" style="display: none"><h4>巧驾车，多省油</h4><p>如何巧驾车，多省油？一要保持合理车速；二要避免冷车启动；三要减少怠速时间；四要定期更换机油；五轮胎气压要适当；六尽量避免突然变速；七高速驾驶时不要开窗；八用黏度最低的润滑油；九选择合适的档位，避免低档跑高速。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu11" style="display: none"><h4>太阳能热水器，既环保又经济</h4><p>每个家庭安装2平方米的太阳能热水器，就可以满足全年70％的生活热水需要。经济又环保。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu12" style="display: none"><h4>轿车每月停一天，缓解堵塞省能源</h4><p>每月少开一天，每车每年可节油约44升，相应减排二氧化碳98千克。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu13" style="display: none"><h4>充分利用白纸也是一种美德</h4><p>用过一面的纸可以翻过来做草稿纸、便条纸。拒绝接受那些随处散发的宣传物，制造这些宣传物既会大量浪费纸张，又会因为随处散发、张贴而破坏市容卫生。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu14" style="display: none"><h4>尽量使用再生纸，不忘环保每一天</h4><p>再生纸是用回收的废纸生产的。一吨废纸=800千克再生纸=17棵大树。 在很多国家使用再生纸已经成为时尚，人们以出示印有“再生纸制造”的句片为荣耀，以表明自己的环境意识和文明教养。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu15" style="display: none"><h4>废塑胶不乱丢，回收利用大环保</h4><p>不少废塑胶可以还原为再生塑胶，而所有的废餐盒、食品袋、纺织袋、软包装盒等都可以回炼为燃油。据统计1吨废塑胶=600千克汽油，原来废塑胶也有环保大科学。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu16" style="display: none"><h4>灯泡换成节能灯，用电能省近八成</h4><p>使用节能灯,一个普通家庭至少有6盏电灯,如果都使用9瓦的自镇流荧光灯,以每天使用15小时计算,每天可比40瓦的白炽灯节约2.79千瓦时的电,一天就能节约1.3392元,一年下来就是488.808元。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu17" style="display: none"><h4>纸张双面来使用，打印复印都节能</h4><p>文稿用纸尽量双面使用，尽可能减少一次性签字笔使用；复印打印用双面，边角余料巧利用：复印、打印纸用双面，单面使用后的复印纸，可再利用空白面影印或裁剪为便条纸或草稿纸。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu18" style="display: none"><h4>饮水机莫长开 闲置断电省能源</h4><p>据统计，饮水机每天真正使用的时间约9个小时，其他时间基本闲置，近三分之二的用电量因此被白白浪费掉。 在饮水机闲置时关掉电源，每台每年节电约366度。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu19" style="display: none"><h4>低层少用电梯 节能还能锻炼身体</h4><p>通过较低楼层改走楼梯、多台电梯在休息时间只部分开启等行动，大约可减少10%的电梯用电。这样一来，每台电梯每年可节电5000度，相应减排二氧化碳4.8吨。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu20" style="display: none"><h4>垃圾邮件也破坏环境</h4><p>每年全世界浪费在发送、处理、过滤垃圾信的电力，高达 330 亿 kWh（度），可以用于 240 万户一年的家庭用电，而转换成碳排放的结果，平均一封垃圾邮件会造成 0.2 克的二氧化碳排放量。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu21" style="display: none"><h4>支持无纸化办公 节能又环保</h4><p>用电子邮件代替传统信件，用VIP邮箱的电子传真代替传统的传真机。如果全国人民都行动起来，支持无纸化电子办公，每年可减少纸张消耗100万吨以上，节省造纸所消耗的能源达100多万吨标准煤。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu22" style="display: none"><h4>办公废纸是个宝，回收利用少不了</h4><p>每张纸至少可以回收两次。办公用纸、旧信封信纸、笔记本、书籍、报纸、广告宣传纸、纸箱纸盒、纸食具等在第一次回收后，可再造纸印制成书籍、稿纸、名片、便条纸等。第二次回收后，还可制成卫生纸。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu23" style="display: none"><h4>保护视力，为革命，眼保健操开始</h4><p>【为了您的视力请对电脑设置】桌面-右键-属性-外观-高级-项目选择（窗口）、颜色1（L）选择（其它）将色调改为85，饱和度123，亮度205-添加到自定义颜色-在自定义颜色选定点"确定"。以上为眼科专家配置，长时间使用能有效保护视力。马上行动吧~</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu24" style="display: none"><h4>简单打印，简单环保</h4><p>让单面用纸变成双面用纸其实是个非常简单的事情，在打印时只需将用过的一面翻一下，就可以节约不少的纸张，不仅环保，还节约了大量的办公费用，可谓是一举两得。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu25" style="display: none"><h4>为了我们的资源，无纸化办公吧</h4><p>钱是自己的，资源是大家的，所以不能因为你有钱而浪费，这句话说得真好，我们不应该浪费任何东西，哪怕是一张废纸，为了我们的资源，无纸化办公吧。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu26" style="display: none"><h4>屏幕暗一点 节能又护眼</h4><p>屏幕太亮，不但缩短显示屏的寿命而且费电。调成中等亮度，则既能省电又能保护视力，尤其是对每天面对电脑的白领来说，仅调暗亮度这一个小动作，每年就可以省电4.5度。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu27" style="display: none"><h4>科学用电脑，省电效果好</h4><p>暂时不用电脑时，可以缩短显示器进入睡眠模式的时间设定；当彻底不用电脑时，记得拔掉插头。坚持这样做，每天至少可以节约1度电，还能延长电脑和显示器的寿命。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu28" style="display: none"><h4>电脑配置不求高，适用就好</h4><p>选择合适的电脑配置和外接设备很重要。尤其显示器的选择要适当，因为显示器越大，消耗的能源越多。例如，一台17英寸的显示器比14英寸显示器耗能多35%。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu29" style="display: none"><h4>选用节能洗衣机 省水省电有奇迹</h4><p>买洗衣机前一定要认清能效等级标识，选择高等级、节能型的洗衣机，每月至少能节省一半的水和电。也就是说，相同的用水、电量，节能型洗衣机可以多洗一倍的衣物。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu30" style="display: none"><h4>随手关灯是一种习惯……</h4><p>环保不是一种形式，不是一年关一小时电灯就能做到的。真正应该让环保理念融入到内心，一举一动都成为自发的行为，让我们一起养成随手关灯的好习惯。</p></div>
+                                  
+                                  <div class="tis_con" id="rollTextMenu31" style="display: none"><h4>过度包装不可取 减少购买为环保</h4><p>很多商品都存在着过度包装的情况，既浪费又不环保。在日常购物时，减少购买过度包装的商品，可大大节约能源。 1千克包装纸，耗能约1.3千克标准煤，排放二氧化碳3.5千克。</p></div>
+                                  
+                            </div><!-- tis_box end-->                             
+                                 
+                            <div class="tis_fenxian">
+                                  <div class="tis_wbtext">为地球变绿出力，让更多人参与低碳行动！</div>
+                                  <div class="tis_next"><a title=上一篇 href="javascript:rollText(-1);"><<上一篇</a>&nbsp;&nbsp;<a title=下一篇 href="javascript:rollText(1);">下一篇>></a>
+                            </div>
+                                  
+                          <!--微博分享 star-->      
+                            <div class="tis_weibo">
+                           
+                            <a href="javascript:void(0);" onclick="share('index','sina')" style="margin-left:3px;" title="新浪微博"><span class="gHide"><img src="http://cimg2.163.com/help/urs/img/tiswb.gif" /></span></a>
+                            <a href="javascript:void(0);" onclick="share('index','netease')"  style="margin-left:3px;" title="网易微博"><span class="gHide"><img src="http://cimg2.163.com/help/urs/img/tis163.gif" /></span></a>
+                            <a href="javascript:void(0);" onclick="share('index','qq')" style="margin-left:3px;" title="QQ微博"><span class="gHide"><img src="http://cimg2.163.com/help/urs/img/tisqq.gif" /></span></a>
+                            <a href="javascript:void(0);" onclick="share('index','kaixin')" style="margin-left:3px;" title="开心网"><span class="gHide"><img src="http://cimg2.163.com/help/urs/img/tiskx.gif" /></span></a>
+                            <a href="javascript:void(0);" onclick="share('index','renren')"  style="margin-left:3px;" title="人人网"><span class="gHide"><img src="http://cimg2.163.com/help/urs/img/tisrr.gif" /></span></a>
+                            <a href="javascript:void(0);" onclick="share('index','douban')" style="margin-left:3px;" title="豆瓣网"><span class="gHide"><img src="http://cimg2.163.com/help/urs/img/tisdb.gif" /></span></a>
+                            
+                            </div><!--微博分享 end-->                       
+                                    <!--<div class="tis_pingjia" id="pj" style="display:">                          
+                                    <a class="tis_pj" href="javascript:void(0)" onclick="ksdt()"></a>
+                                    </div>-->   
+                           <!-- 浮层贴士内容结束--> 
+                          
+                          </div>                        
+                      </div>                     
+                   </div>   <!-- tis结束-->   
+        <!--热点产品 star-->
+        <div class="gCon_hotPd" id="gCon_hotPd"><!--新添加此类div为，ID中需包含"gCon_"-->
+            <div class="fl pdBox_l">
+              <div class="pdBox_t">     
+                <!--vip邮箱-->
+                <div class="fl pdCon mrgR1">
+                    <a href="http://vipmail.163.com/?a35abe1" target="_blank"><h2 class="id_pic pdTil_1"></h2></a>
+                    <ul class="pdLink">
+                        <li><a href="http://help.163.com/special/007525FQ/vipmail.html?a35abe1" target="_blank"><b class="iBox id_pic ico_vip163"></b><span>VIP163尊贵邮</span></a></li>
+                        <li><a href="http://help.163.com/special/007525FQ/126vipmail.html?a35abe1" target="_blank"><b class="iBox id_pic ico_vip126"></b><span>VIP126尊享邮</span></a></li>
+                        <li><a href="http://help.163.com/special/007525FQ/188mail.html?a35abe1" target="_blank"><b class="iBox id_pic ico_188"></b><span>VIP188财富邮</span></a></li>
+                    </ul>
+                    <div class="id_pic pd_btn" id="btnFc1">
+                        <a id="btnShow0" class="fl id_pic" href="javascript:void(0)">支付</a>
+                        <a id="btnShow1" class="fr id_pic" href="javascript:void(0)">发票</a>
+                        <div id="showFc0" class="goal_sel hide">
+                            <a href="" target="_blank">VIP163尊贵邮</a>
+                            <a href="" target="_blank">VIP126尊享邮</a>
+                            <a href="" target="_blank">VIP188财富邮</a>
+                        </div>
+                    </div>
+                </div><!--/pdCon-->
+                <!--免费邮箱-->
+                <div class="fl pdCon mrgR1">
+                    <a href="http://email.163.com/?a35abe1" target="_blank"><h2 class="id_pic pdTil_2"></h2></a>
+                    <ul class="pdLink">
+                        <li><a href="http://help.mail.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_newhelp"></b><span>邮箱帮助</span></a></li>
+                        <li><a href="http://help.mail.163.com/feedback.do?m=add" target="_blank"><b class="iBox id_pic ico_newfeedback"></b><span>问题反馈</span></a></li>
+                    </ul>
+                    <div class="id_pic pd_btn" id="btnFc2">
+                        <a id="btnShow2" class="fl id_pic" href="javascript:void(0)" >邮箱升级</a>
+                        <a id="btnShow3" class="fr id_pic" href="javascript:void(0)" >修复密码</a>
+                        <div class="goal_sel hide" id="showFc1" >
+                            <a href="" target="_blank">163免费邮</a>
+                            <a href="" target="_blank">126免费邮</a>
+                            <a href="" target="_blank">Yeah免费邮</a>
+                        </div>
+                    </div>
+                </div><!--/pdCon-->
+                <!--特殊应用-->
+                <div class="fl pdCon">
+                    <h2 class="id_pic pdTil_3"></h2>
+                    <ul class="pdLink pdLink3">
+                        <li><a href="http://help.163.com/special/sp/fax.html?a35abe1" target="_blank"><b class="iBox id_pic ico_fax"></b><span style="color:#CC0000; font-weight:bold;">电子传真</span></a>&nbsp;<img src="http://cimg2.163.com/help/v2_2/img/icon_hot.gif"></li>
+                        <li><a href="http://quan.163.com/help.do?a35abe1" target="_blank"><b class="iBox id_pic ico_yhq"></b><span>网易优惠券</span></a></li>             
+                         <li><a href="http://yixin.im/?163help" target="_blank"><b class="iBox id_pic ico_yixin"></b><span>易 信</span></a>&nbsp;<img src="http://cimg2.163.com/help/urs/img/icon_new.gif"></li>                       
+                    </ul>
+                    <div class="id_pic pd_btn">
+                        <a class="fl id_pic" href="http://fax.163.com?a35abe1" target="_blank">开通传真</a>
+                        <a class="fr id_pic" href="http://fax.163.com/efax/fax-intro-new.html?a35abe1" target="_blank">传真介绍</a>                 
+                    </div>
+                </div><!--/pdCon-->
+                <div class="clear"></div>
+               </div><!--/pdBox_t-->
+               <div class="blank1"></div><!--分隔阴影-->
+               <div class="pdBox_t pdBox_t_1">        
+                <!--帐号安全-->
+                <div class="fl pdCon mrgR1">
+                    <h2 class="id_pic pdTil_4"></h2>
+                    <ul class="pdLink">
+                        <li><a href="http://help.163.com/special/sp/urs_online.html?a35abe1" target="_blank"><b class="iBox id_pic ico_mmxf"></b><span>密码修复</span></a></li>
+                        <li><span class="dbLink"><b class="iBox id_pic ico_jjl"></b><a class="dbLink" href="http://help.163.com/special/sp/ursfaq_ekey.html?a35abe1" target="_blank">将军令</a><span>|</span><a class="dbLink" href="http://help.163.com/special/sp/ursfaq_dzmbk.html?a35abe1" target="_blank">密保卡</a></span></li>
+                        <li><a href="http://mibao.gm.163.com/index.html" target="_blank"><b class="iBox id_pic ico_mbfw"></b><span>网易密保</span></a></li>
+                    </ul>                   
+                </div><!--/pdCon-->
+                <!--社交-->
+                <div class="fl pdCon mrgR1">
+                    <h2 class="id_pic pdTil_5"></h2>
+                    <ul class="pdLink">
+                        <li><a href="http://fankui.163.com/ft/tutorial.fb?pid=5002" target="_blank"><b class="iBox id_pic ico_blog"></b><span>博客</span></a>&nbsp;&nbsp;&nbsp;<a href="http://fankui.163.com/ft/faqList.fb?pid=3001&keyfrom=pHometl" target="_blank"><b class="iBox id_pic ico_twitter"></b><span>微博</span></a>
+                        </li>
+                        <li><a href="http://yuehui.163.com/helpmain.do?a35abe1" target="_blank"><b class="iBox id_pic ico_yueh"></b><span>同城约会</span></a></li>
+                        <li><a href="http://fankui.163.com/ft/faqList.fb?pid=3&?a35abe1" target="_blank"><b class="iBox id_pic ico_photo"></b><span>相册</span></a></li>
+                    </ul>                   
+                </div><!--/pdCon-->
+                <!--商城-->
+                <div class="fl pdCon mrgR1">
+                    <a href="http://shop.163.com/help/shop.html?a35abe1" target="_blank"><h2 class="id_pic pdTil_6"></h2></a>
+                    <ul class="pdLink">
+                        <li><a href="http://help.163.com/caipiao/special/00754IHC/caipiao_help_index.html?a35abe1" target="_blank"><b class="iBox id_pic ico_caip"></b><span>彩票</span></a></li>
+                        <li><a href="http://shop.163.com/game/queryGame.html?a35abe1" target="_blank"><b class="iBox id_pic ico_ecard"></b><span>游戏点卡</span></a></li>
+                        <li><a href="http://kf.yxp.163.com/HelpDesk/Main/Main.aspx" target="_blank"><b class="iBox id_pic ico_yxp"></b><span>印象派</span></a></li>
+                    </ul>                   
+                </div><!--/pdCon-->
+              <div class="fl pdCon">
+                    <h2 class="id_pic pdTil_7"></h2>
+                    <ul class="pdLink">
+                        <li><a href="http://114.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_qyhy"></b><span>企业黄页</span></a></li>
+                        <li><a href="http://qiye.163.com/mail/help-solution.htm?a35abe1" target="_blank"><b class="iBox id_pic ico_qyyx"></b><span>企业邮箱</span></a></li>
+                    </ul>                   
+                </div><!--/pdCon2-->
+                <div class="clear"></div>   
+             </div><!--/pdBox_t-->  
+            </div><!--/pdBox_l-->
+            <div class="fl pdBox_r">
+                <div class="hotBox">
+                    <h3 class="til_sty1">热点问题</h3>
+                    <ul class="newsSub">
+                        <!--<li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/13/0419/14/8SR3FI4V00753VB8.html"  target="_blank" title="">雅虎邮箱8月停用相关对策</a><img src="http://cimg2.163.com/help/v2_2/img/icon_hot.gif" /></li>
+<li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/10/1018/17/6J9UL4K300754IO0.html?a35abd1" target="_blank" title="">如何关联手机？</a></li>
+<li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/09/1224/14/5RAAK5I700753VB8.html?a35abd1"  target="_blank" title="" style="color:#CC0000; font-weight:bold;">一键迁移我的其他邮箱</a><img src="http://cimg2.163.com/help/v2_2/img/icon_hot.gif" /></li>
+<li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/special/sp/index5.0.html?a35abd1"  target="_blank" title="" style="color:#CC0000; font-weight:bold;">网易邮箱5.0版功能位置指引</a><img src="http://cimg2.163.com/help/v2_2/img/icon_hot.gif" /></li>
+-->
+                        <li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/13/0131/14/8MI9RSUH00753VB8.html?a35abd1"  target="_blank" title="" style="color:#CC0000; font-weight:bold;">检查邮箱设置保障帐号安全</a><img src="http://cimg2.163.com/help/v2_2/img/icon_hot.gif" /></li>
+                        <li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/10/1018/15/6J9NL1Q200754IO3.html?a35abd1" target="_blank" title="">如何修改/找回帐号密码?</a></li>
+                                                <li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/09/0605/10/5B1OVIJT00753E6H.html?a35abd1" target="_blank" title="">通行证帐号是什么？</a></li>
+                        <li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/special/sp/urs_jbmb.html?a35abd1" target="_blank" title="">被别人绑定了密保怎么办？</a></li>
+                        <li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/10/1014/19/6IVSTAHT00754INN.html?a35abd1" target="_blank" title="">如何解开对帐号的锁定？</a></li>
+                                                <li><b class="id_pic iBox circleIco"></b><a href="http://help.163.com/12/0614/16/83VL20NJ00753VB8.html?a35abd1" target="_blank" title="">网易邮箱提醒您谨防邮件诈骗</a></li>
+                    </ul>
+                </div>
+                <div class="hotBox fastGal">
+                    <h3 class="til_sty1">快速通道</h3>
+                    <a class="iBox" href="http://help.163.com/special/sp/urs_online.html?a35abI1" target="_blank"><b class="id_pic iBox icoB_xfmm"></b><br ><span>帐号<br />修复指引</span></a><a class="iBox margL1" href="http://reg.vip.163.com/upgradeIndex.m?a35abI1" target="_blank"><b class="id_pic iBox icoB_sjmail"></b><br ><span>邮箱<br />升级</span></a><a class="iBox" href="http://tools.vip.163.com/profile/jifenshop/exchange.m?a35abI1" target="_blank"><b class="id_pic iBox icoB_jfsc"></b><br ><span>VIP<br />积分专区</span></a>
+                </div>
+            </div><!--/pdBox_r-->
+            <div class="clear"></div>
+            <p class="gbox_btnLink">对我们的服务有任何的意见或者建议，请告诉我们。<a href="http://survey2.163.com/html/fankui_help/paper.html" target="_blank">服务反馈</a></p>
+        </div>
+        <!--热点产品 end-->
+        <!--网易游戏 star-->
+        <div class="gCon_games hide" id="gCon_games">
+            <h2>请选择对应的游戏产品进入帮助：</h2>            
+            <div class="gCon_link">
+                <!--西游MMO系列-->
+                <div class="fl gBox">
+                    <h3 class="til_sty1">西游MMO系列</h3>
+                    <table class="gTab" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td><a href="http://xyq.gm.163.com/index.html?a35abe1" target="_blank"><b class="iBox id_pic ico_mhxy"></b><span>梦幻西游</span></a></td>
+                            <td><a href="http://xy2.gm.163.com/index.html?a35abe1" target="_blank"><b class="iBox id_pic ico_dh2"></b><span>大话西游Ⅱ</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://xy3.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_dh3"></b><span>大话西游3</span></a></td>
+                            <td><a href="http://xdw.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_zg"></b><span>大话外传新篇</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://csxy.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_csxy"></b><span>创世西游</span></a></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </div><!--/gBox-->
+                <!--西游MMO系列-->          
+                <div class="fl gBox">
+                    <h3 class="til_sty1">大唐MMO系列</h3>
+                    <table class="gTab" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td><a href="http://dt.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_dthx"></b><span>大唐豪侠</span></a></td>
+                            <td><a href="http://dt2.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_dtws"></b><span>大唐无双</span></a></td>
+                        </tr>
+                    </table>
+                </div><!--/gBox-->
+                <!--更多MMO系列-->          
+                <div class="fl gBox gBox2">
+                    <h3 class="til_sty1">更多MMO游戏</h3>
+                    <table class="gTab gTab2" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td><a href="http://tx3.gm.163.com/index.html?a35abe1" target="_blank"><b class="iBox id_pic ico_tx3"></b><span>天下3</span></a></td>
+                            <td><a href="http://zh.netease.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_zh"></b><span>斩魂</span></a></td>
+                            <td><a href="http://qn.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_qnyh"></b><span>倩女幽魂</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://jl.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_jlmc"></b><span>精灵传说</span></a></td>
+                            <td><a href="http://pet.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_zwwg"></b><span>宠物王国</span></a></td>
+                            <td><a href="http://wh.netease.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_wh"></b><span>武魂</span></a></td>
+                        </tr>                       
+                        <tr>
+                            <td><a href="http://tk.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_itown"></b><span>iTown</span></a></td>
+                            <td><a href="http://ff.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_xff"></b><span>新飞飞</span></a></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </div><!--/gBox-->
+                <!--休闲游戏-->
+                <div class="fl gBox">
+                    <h3 class="til_sty1">休闲游戏</h3>
+                    <table class="gTab" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td><a href="http://popogame.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_fkst"></b><span>疯狂石头</span></a></td>
+                            <td><a href="http://popogame.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_fjxy"></b><span>富甲西游</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://popogame.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_nqfk"></b><span>篮球也疯狂</span></a></td>
+                            <td><a href="http://popogame.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_popog"></b><span>泡泡游戏</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://xyc.163.com/index.html?a35abe1" target="_blank"><b class="iBox id_pic ico_kp"></b><span>卡牌对决</span></a></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </div><!--/gBox-->
+                <!--网页游戏-->         
+                <div class="fl gBox">
+                    <h3 class="til_sty1">网页游戏</h3>
+                    <table class="gTab" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td><a href="http://rich.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_fjxy"></b><span>富甲西游</span></a></td>
+                            <td><a href="http://zg.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_zgfw"></b><span>战国风云</span></a></td>
+                        </tr>                       
+                        <tr>
+                            <td><a href="http://sg.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_sgtx"></b><span>三国天下</span></a></td>
+                            <td><a href="http://fkmm.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_fkmm"></b><span>疯狂蛮蛮</span></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://xjc.gm.163.com/?a35abe1" target="_blank"><b class="iBox id_pic ico_xjc"></b><span>仙界村</span></a></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </div><!--/gBox-->
+                <!--战网平台-->         
+                <div class="fl gBox gBox2">
+                    <h3 class="til_sty1">战网平台</h3>
+                    <table class="gTab gTab2" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td><a href="https://www.battlenet.com.cn/support/index.xml?locale=zh_CN&gameId=11&?a35abe1" target="_blank"><b class="iBox id_pic ico_wow"></b><span>魔兽世界</span></a></td>
+                            <td><a href="https://www.battlenet.com.cn/support/index.xml?locale=zh_CN&gameId=12&?a35abe1" target="_blank"><b class="iBox id_pic ico_zw"></b><span>战网</span></a></td>
+                            <td>&nbsp;</td>
+                        </tr>                       
+                    </table>
+                </div><!--/gBox-->
+                <div class="clear"></div>
+            </div><!--/gCon_link-->
+        </div>
+        <!--网易游戏 end-->
+        <!--人工服务 star-->
+        <div class="gCon_serve hide" id="gCon_serve">
+            <!--免费邮箱、非游戏产品-->
+            <div class="fl sBox">
+                <span class="iBox id_pic sImg sImg1"></span><span class="iBox sTxt">
+                    <b class="id_pic sTil sTil1"></b>
+                    <em>为您解答网易163、126、yeah、随身邮、网易靓号等产品咨询</em>
+                </span>
+                <div class="hotPhone3">
+                     <p>您可通过以下方法咨询：</p>
+                     <div class="btn_yxfw"><a href="http://help.163.com/special/whb_index/?shouye_icon" target="_blank">客服电话</a></div>
+                     <div class="vblank2">|&nbsp;<a href="http://help.163.com/11/0118/11/6QM627FK00753E6D.html?a35ede1" target="_blank">电话语音流程</a></div>
+                     <!--客服邮箱--><!--<div style="width:250px;">客服邮箱：<a href="mailto:kefu@188.com" target="_blank"><b>kefu@188.com</b></a><img src="http://cimg2.163.com/help/v2_2/img/icon_hot.gif"></div>-->                    
+                </div>
+            </div>          
+            <!--网易VIP邮箱-->
+            <div class="fl sBox magL">
+                <span class="iBox id_pic sImg sImg2"></span><span class="iBox sTxt">
+                    <b class="id_pic sTil sTil2"></b>
+                    <em>为您解答VIP163、VIP126、VIP188的产品咨询，7*24小时专享优先服务通道</em>
+                </span>
+                <p class="hotPhone">客服热线：<b>(020) 8510 6888</b><!--<a href="http://help.163.com/09/0624/16/5CJBCUH9007525G3.html?a35ede1"  >优先服务</a><span class="vblank2">|</span>-->
+<a href="http://help.163.com/11/0119/14/6QP352GP00753E6D.html?a35ede1" target="_blank">电话语音流程</a></p><!--<span class="hotPhone">客服邮箱：<b>kefu@vip.163.com</b></span>-->
+            </div>
+            <!--修复密码人工服务-->
+            <div class="fl sBox">
+                <span class="iBox id_pic sImg sImg3"></span><span class="iBox sTxt">
+                    <b class="id_pic sTil sTil3"></b>
+                    <em>为您提供网易免费邮箱、VIP邮箱以及其他通行证帐号密码的人工修复</em>
+                </span>
+                <div class="sType_sle">
+                    <h3>请选择修复密码的产品类型：</h3>
+                    <div class="pdBtn">
+                        <a class="iBox id_pic btn_vip" href="http://help.163.com/11/0120/12/6QRFNIS100754IO2.html?a35ede1" target="_blank"><b class="fr id_pic"></b>VIP邮箱</a>
+                        <a href="http://pw.163.com/?a35ede1" class="iBox id_pic btn_urs" target="_blank">免费邮箱、通行证</a>
+                        <a href="http://mima.163.com/?a35ede1" class="iBox id_pic btn_vip" target="_blank"><b class="fr id_pic"></b>游戏产品</a>
+                    </div>
+                </div>
+            </div>
+            <!--网易游戏产品-->
+            <div class="fl sBox magL">
+                <span class="iBox id_pic sImg sImg4"></span><span class="iBox sTxt">
+                    <b class="id_pic sTil sTil4"></b>
+                    <em>为您解答大话西游、梦幻西游、天下贰等网易所有游戏；网易彩票、商城、交友、相册、博客等产品咨询，7*24小时全天候服务</em>
+                </span>
+                <p class="hotPhone">游戏客服热线：<b>(020) 8391 8160</b><a href="http://help.163.com/11/0118/11/6QM66OKP00753E6D.html?a35ede1" target="_blank">电话语音流程</a></p><p class="hotPhone2">综合类客服热线：<b>(020) 8356 8090-2</b></p>
+            </div>
+            <div class="clear"></div>
+            <p class="gbox_btnLink">对我们的服务有任何的意见或者建议，请告诉我们。<a href="http://survey2.163.com/html/fankui_help/paper.html" target="_blank">服务反馈</a></p>
+        </div><!--/gCon_serve-->
+        <!--人工服务 end-->
+        <!--在线活动 star-->
+        <div class="gCon_activity hide" id="gCon_activity">
+        <div class="activity_left1"> 
+        <div class="intr1" id="info39" style="display:;"><!--介绍区域-->
+          <div class="intr_con" >
+            <div class="intr_img"><a href="http://help.163.com/special/sp/huanbao_yxgn.html?helpzx" target="_blank" onfocus="this.blur()"><img src="http://cimg2.163.com/help/urs/img/hbfx.png"/></a></div>
+            <div class="intr_wor">
+              <a href="http://help.163.com/special/sp/huanbao_yxgn.html?helpzx" target="_blank">微环保分享赢邮箱</a>
+              <p class="p_con">提起环保，已不再是高高在上的概念话题，日常生活中，使用Email或电子传真，减少纸张浪费，为地球减负。分享邮箱微环保并转发，即有机会赢取网易vip高端邮箱服务！</p>
+              <div class="intr_wor_foot1">
+                <p></p>
+                <a class="help_icon inr_btn" href="http://help.163.com/special/sp/huanbao_yxgn.html?helpzx" target="_blank">立即分享</a>
+              </div>
+            </div>
+          </div>
+        </div><!--介绍区域 end-->
+        <div class="intr1" id="info38" style="display:;"><!--介绍区域-->
+          <div class="intr_con" >
+            <div class="intr_img"><a href="http://activity.vip.163.com/activity/netsecurity/index.m?helpzx" target="_blank" onfocus="this.blur()"><img src="http://cimg2.163.com/help/urs/img/youhui20120321.jpg"/></a></div>
+            <div class="intr_wor">
+              <a href="http://activity.vip.163.com/activity/netsecurity/index.m?helpzx" target="_blank">变身网络安全高手赢ipad2</a>
+              <p class="p_con">近期各种邮件骗术层出不穷，参与小易网络安全学堂，教你一一破解骗术，变身网络安全高手，挑战答题赢好礼！</p>
+              <div class="intr_wor_foot1">
+                <p></p>
+                <a class="help_icon inr_btn" href="http://activity.vip.163.com/activity/netsecurity/index.m?helpzx" target="_blank">立即查看</a>
+              </div>
+            </div>
+          </div>
+        </div><!--介绍区域 end-->
+                     <!--<div class="intr1" id="info39" style="display:;">介绍区域
+                      <div class="intr_con" >
+                        <div class="intr_img"><a href="javascript:show_cover('show_dt', 'rollTextMenu0')" onfocus="this.blur()"><img src="http://cimg2.163.com/help/urs/img/hbts.jpg"/></a></div>
+                        <div class="intr_wor">
+                          <a href="javascript:show_cover('show_dt', 'rollTextMenu0')">保护环境 从微做起</a>
+                          <p class="p_con">为了让更多人拥有健康环保的生活方式和绿色生活心态；让我们力所能及地承担起倡导绿色文明的社会责任，并号召更多的人加入微环保吧。</p>
+                          <div class="intr_wor_foot1">
+                            <p></p>
+                            <a class="help_icon inr_btn" href="javascript:show_cover('show_dt', 'rollTextMenu0')">立即查看</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>介绍区域 end-->
+                    <!--<div class="intr1" id="info37" style="display:;">介绍区域
+                      <div class="intr_con" >
+                        <div class="intr_img"><a href="http://help.163.com/special/sp/wlps_index.html?a35abe1" target="_blank" onfocus="this.blur()"><img src="http://cimg2.163.com/help/urs/img/wlfp3.jpg"/></a></div>
+                        <div class="intr_wor">
+                          <a href="http://help.163.com/special/sp/wlps_index.html?a35abe1" target="_blank">四大常见网络骗术大揭秘</a>
+                          <p class="p_con">最近网络诈骗猖獗，聪明的小易特整理了四大防骗Tips供您参考。教您识破身边的骗术，提高防患意识，保障个人信息安全。</p>
+                          <div class="intr_wor_foot1">
+                            <p></p>
+                            <a class="help_icon inr_btn" href="http://help.163.com/special/sp/wlps_index.html?a35abe1" target="_blank">立即查看</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!--介绍区域 end-->
+                    <!--介绍区域<div class="intr1" id="info36" style="display:;">
+                          <div class="intr_con" id="box36">
+                            <div class="intr_img"><a href="http://activity.vip.163.com/activity/yingxiao/index.m?helpzx" target="_blank" onfocus="this.blur()"><img id="img36" src="http://cimg2.163.com/help/vip/img/zzlhb.png"/></a></div>
+                            <div class="intr_wor">
+                              <a href="http://activity.vip.163.com/activity/yingxiao/index.m?helpzx" target="_blank">替老王支招，赢好运红包</a>
+                              <p class="p_con">网易VIP邮箱化身老王，募集妙招为公司解决各类运营中遇到的烦恼，还能领取好运红包哦。</p>
+                              <div class="intr_wor_foot1">
+                                <p>活动时间：<strong id="livetime36">2012-3-10</strong></p>
+                                <a class="help_icon inr_btn" href="http://activity.vip.163.com/activity/yingxiao/index.m?helpzx" target="_blank" id="address36">立即领取</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="intr_con_gq" id="box36_gq" style="display:none;">
+                            <div class="intr_img"><a href="http://activity.vip.163.com/activity/yingxiao/index.m?helpzx" target="_blank" onfocus="this.blur()"><img id="img36" src="http://cimg2.163.com/help/vip/img/zzlhb.png"/></a></div>
+                            <div class="intr_wor">
+                              <span>替老王支招，赢好运红包</span>
+                              <p class="p_con">网易VIP邮箱化身老王，募集妙招为公司解决各类运营中遇到的烦恼，还能领取好运红包哦。</p>
+                              <div class="intr_wor_foot1">
+                                <p>活动时间：<strong id="livetime36">2012-3-10</strong></p>
+                                <span class="help_icon inr_btn">活动已结束</span>
+                              </div>
+                            </div>
+                          </div>
+                    </div><!--介绍区域 end-->
+                <div class="intr_nav" id="pageMark"></div> 
+            <div class="clear"></div>
+            <p class="gbox_btnLink1"><a href="http://help.163.com/special/sp/consult.html?a35abe1">更多活动 >></a></p>
+        </div><!--/gCon_activity-->
+        <!--在线活动 end-->
+    </div><!--/gCon_box-->
+</div><!--/gCon-->
+<!--页面内容 end-->
+<div class="footer">
+    <a href="http://corp.163.com/eng/about/overview.html" target="_blank">About NetEase</a>
+    - <a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a>
+    - <a href="http://gb.corp.163.com/gb/contactus.html" target="_blank">联系方法</a>
+    - <a href="http://hr.163.com/" target="_blank">招聘信息</a>
+    - <a href="http://corp.163.com/gb/legal/legal.html" target="_blank">隐私政策</a>
+    - <a href="http://emarketing.163.com/" target="_blank">网络营销</a>　
+    |　网易公司版权所有 &copy; 1997 - <script src="http://mimg.126.net/copyright/year.js" type="text/javascript"></script>
+</div>
+<!-- START NetEase Devilfish 2006 -->  
+<script type="text/javascript" src="http://analytics.163.com/ntes.js"></script> 
+<script type="text/javascript"> 
+_ntes_nacc = "help";
+neteaseTracker();
+neteaseClickStat();
+</script>
+<script type="text/javascript" src="/special/00754IUH/help_xiaotieshi.js"></script>
+<!--消息内容管理-->
+<script type="text/javascript" src="/special/00754IUH/helpnewsmanage.js" charset="gbk"></script>
+<script type="text/javascript"> 
+indexNewsShow("newsCon","index","a35abh1","3");
+</script>
+<script type="text/javascript">
+//客服中心弹窗
+function centerShowWin(){
+            var sHeight = $(document).height();
+            $('#w-popbg').height(sHeight);
+}
+centerShowWin();
+$("#w-closebtn").click(function(){
+	document.getElementById("w-closebtn").style.display="none";
+	document.getElementById("w-popbg").style.display="none";
+	document.getElementById("w-popframe").style.display="none";
+})
+//添加收藏
+function addfavorite_index(){
+var url=location.href;
+try{
+   if (document.all)
+      window.external.addFavorite(url,"网易帮助中心");
+   else
+      window.sidebar.addPanel("网易帮助中心",url, "");
+   }catch (e){  
+      alert('添加收藏失败,请使用组合快捷键 Ctrl+D 添加!');
+   }
+}
+//事件注册
+var addEvent=function (o, t, f) {
+    if (o.addEventListener) o.addEventListener(t, f, false);
+    else if (o.attachEvent) o.attachEvent('on'+ t, f);
+    else o['on'+ t] = f;
+}
+//获取事件对象
+function getEvent(){
+   if(document.all) return window.event; 
+   func=getEvent.caller; 
+   while(func!=null){ 
+     var arg0=func.arguments[0]; 
+     if(arg0){ 
+       if((arg0.constructor==Event || arg0.constructor ==MouseEvent) || (typeof(arg0)=="object" && arg0.preventDefault && arg0.stopPropagation)){ 
+         return arg0; 
+       } 
+     } 
+     func=func.caller; 
+   } 
+   return null; 
+}
+//中止冒泡
+function stopBubble(){
+    var e=getEvent();
+    if(e && e.stopPropagation){ 
+        e.stopPropagation(); 
+    } else {
+        window.event.cancelBubble = true;    
+    }
+}
+//隐藏导航升级浮层
+function showHd_nav(n){
+    if(n==1) obj("showFc3").style.display="block";
+    else obj("showFc3").style.display="none";
+}
+//内容切换
+function Tab_change(){
+var conD=[];
+var navArr=obj("index_nav").getElementsByTagName("li");//取导航个数
+var navLen=navArr.length;
+//取内容块个数
+var _conArr=function(){ 
+    var allD=obj("index_bCon").getElementsByTagName("div");
+    for(var i=0;i<allD.length;i++){
+        if(allD[i].id.indexOf("gCon_")!="-1")
+            conD.push(allD[i].id);
+    }
+}();
+//样式与内容块复位
+var _ResetStyle=function(){
+    for(var i=0;i<navLen;i++){
+        if(navArr[i])navArr[i].className="";
+        obj(conD[i]).style.display="none";
+    }
+}
+//当前显示
+this._setStyle=function(n){
+    _ResetStyle();
+    navArr[n].className="bg_pic nowSel";
+    obj(conD[n]).style.display="block";
+}
+}
+//按钮浮层
+function btnFc(op){
+var alineD=op.getElementsByTagName("div");  
+var alineA=op.getElementsByTagName("a");
+var alineL=alineD[0].getElementsByTagName("a");
+var nowA="";
+var linkArray=[
+                ["http://help.163.com/special/sp/vip163_pay.html?a35abe1",
+                "http://help.163.com/special/sp/vip126_pay.html?a35abe1",
+                "http://help.163.com/special/sp/vip188_pay.html?a35abe1"
+                ],
+                ["http://help.163.com/special/sp/vip163_invoice.html?a35abe1",
+                "http://help.163.com/special/sp/vip126_invoice.html?a35abe1",
+                "http://help.163.com/special/sp/vip188_invoice.html?a35abe1"
+                ],
+                ["http://reg.vip.163.com/upgradeIndex.m?a35abe1",
+                "http://reg.vip.126.com/upgradeIndex.m?a35abe1"             
+                ],
+                ["http://help.163.com/special/007525G0/163mail_guide.html?id=2237&a35abe1",
+                "http://help.163.com/special/00753VB9/126mail_adv_guide.html?id=2570&a35abe1",
+                "http://help.163.com/special/00753VBA/yeah_adv_guide.html?id=2082&a35abe1"
+                ]
+               ];
+this.showBtnFc=function(n){    
+        if(arguments.length>0)nowA=n;
+        this.hideBtnFc()
+        if(nowA%2==0) alineA[0].className="fl id_pic nowSel_l"
+        else alineA[1].className="fr id_pic nowSel_r" 
+        var len=linkArray[nowA].length;     
+        for(var i=0;i<alineL.length;i++){
+            alineL[i].style.display="none";         
+        }
+        for(var j=0;j<len;j++){
+            alineL[j].href=linkArray[nowA][j];
+            alineL[j].style.display="block";
+        }
+        alineD[0].style.display="block";        
+    }
+this.hideBtnFc=function(n){ 
+    alineD[0].style.display="none"; 
+    alineA[0].className="fl id_pic" ;
+    alineA[1].className="fr id_pic" ;
+}   
+}
+var nav=new Tab_change()
+//初始加载函数
+function loadFun(){
+    var btnshow1=new btnFc(obj("btnFc1"))
+    var btnshow2=new btnFc(obj("btnFc2"))
+    var nav_a=obj("index_nav").getElementsByTagName("a");   
+    addEvent(obj("addfav"),"click",addfavorite_index)   
+    addEvent(obj("upmail"),"mouseover",function(){showHd_nav(1)});
+    addEvent(obj("upmail"),"mouseout",function(){showHd_nav(0)});
+    addEvent(obj("showFc3"),"mouseover",function(){showHd_nav(1)});
+    addEvent(obj("showFc3"),"mouseout",function(){showHd_nav(0)});
+    addEvent(obj("btnShow0"),"mouseover",function(){btnshow1.showBtnFc(0)});
+    addEvent(obj("btnShow0"),"mouseout",function(){btnshow1.hideBtnFc()});
+    addEvent(obj("btnShow1"),"mouseover",function(){btnshow1.showBtnFc(1)});
+    addEvent(obj("btnShow1"),"mouseout",function(){btnshow1.hideBtnFc()});
+    addEvent(obj("showFc0"),"mouseover",function(){btnshow1.showBtnFc()});
+    addEvent(obj("showFc0"),"mouseout",function(){btnshow1.hideBtnFc()});
+    addEvent(obj("btnShow2"),"mouseover",function(){btnshow2.showBtnFc(2)});
+    addEvent(obj("btnShow2"),"mouseout",function(){btnshow2.hideBtnFc()});
+    addEvent(obj("btnShow3"),"mouseover",function(){btnshow2.showBtnFc(3)});
+    addEvent(obj("btnShow3"),"mouseout",function(){btnshow2.hideBtnFc()});
+    addEvent(obj("showFc1"),"mouseover",function(){btnshow2.showBtnFc()});
+    addEvent(obj("showFc1"),"mouseout",function(){btnshow2.hideBtnFc()});
+        new Image().src = "http://cimg2.163.com/help/urs/img/fc_pic_1.png";
+}
+addEvent(window,"load",loadFun);
+            // 网易帮助中心首页推广轮换特效
+            /*             
+                @param aformWidth 外框架宽度px
+                @param aformId    外框架id
+                @param atxtId     内容框架id
+                @param contId     控制框架id
+            */  
+            var autoS;
+            function ImgScroll(aformWidth,aformId,atxtId,acontId){
+                var self = this;
+                var obj = function(id){return document.getElementById(id);}
+                var formwidth = aformWidth;
+                var formId = aformId;
+                var txtId = atxtId;
+                var contId = acontId
+                var speed = 60; //每次切换的像素
+                var time= 10; //时间间隔
+                var now = 0;
+                var nfWidth = 0;//当前scrollleft值
+                var imgTag = obj(txtId).getElementsByTagName("a");
+                var imgTagNum = imgTag.length;
+                var DinnerHtml = obj(formId).innerHTML;             
+                this.ImgAlert = function(){alert(imgTagNum)};
+                //内框架宽度
+                obj(atxtId).style.width=imgTagNum*formwidth+"px";
+                
+                //左翻
+                var turnLeft = function(){
+                    if((obj(formId).scrollLeft+speed)<nfWidth){
+                        obj(formId).scrollLeft += speed;
+                        var autoLeft = setTimeout(turnLeft,time);
+                    }
+                    else{   
+                       obj(formId).scrollLeft = nfWidth;                       
+                       for(var i = 0;i<nfWidth/formwidth;i++){
+                          obj(txtId).appendChild(imgTag[0])
+                          obj(formId).scrollLeft -= formwidth;
+                       }                       
+                    }
+                }
+                
+                //右翻
+                var turnRight = function(){
+                    if((obj(formId).scrollLeft-speed)>0){
+                        obj(formId).scrollLeft -= speed;
+                        var autoRight = setTimeout(turnRight,time);
+                    }
+                    else{
+                       obj(formId).scrollLeft = 0;                      
+                    }
+                }
+                
+                //人工切换
+                this.turnStar = function(n){    
+                    var m = n-now;                                      
+                    if(m>0){
+                         nfWidth = Math.abs(m)*formwidth;                                   
+                         turnLeft();                                                         
+                    }
+                    else if(m<0){
+                        nfWidth = n*formwidth;                      
+                        for(var j = 0;j<Math.abs(m);j++){
+                            obj(txtId).insertBefore(imgTag[imgTagNum-1],imgTag[0]);
+                            obj(formId).scrollLeft += formwidth;                                                                
+                        }
+                        turnRight();    
+                                            
+                    }   
+                    conTroCss(n);                   
+                    now = n;
+                }
+                
+                //自动切换
+                this.autoTurnStar = function(){
+                    nfWidth = formwidth;
+                    turnLeft();
+                    now++;
+                    if(now >= imgTagNum ) now=0 ;
+                    conTroCss(now); 
+                }
+                
+                //控制按钮样式
+                var conTroCss =function(d){
+                    var conT_b = obj(contId).getElementsByTagName("b");
+                    for(var i=0;i<imgTagNum;i++){
+                        if(i!=d)
+                            conT_b[i].className="id_pic iBox";
+                        else
+                            conT_b[i].className="id_pic iBox now";                      
+                    }           
+                }
+                
+                //控制按钮
+                this.contrlOut = function(){
+                    var contrlTxt ="";
+                    for(var i=0;i<imgTagNum;i++)
+                        if(i==0)
+                            contrlTxt += "<b class=\"iBox now\" onmouseover=\"imgA.turnStar("+i+");clearInterval(autoS);\" onmouseout=\"javascript:autoS=setInterval(imgA.autoTurnStar,4000);\"></b>";
+                        else
+                            contrlTxt += "<b class=\"iBox\" onmouseover=\"imgA.turnStar("+i+");clearInterval(autoS);\" onmouseout=\"javascript:autoS=setInterval(imgA.autoTurnStar,4000);\"></b>";
+                    obj(contId).innerHTML = contrlTxt;
+                }()
+                
+                this.addClearAuto = function(){                             
+                    addEvent(obj(aformId),"mouseover",function(){clearInterval(autoS);});
+                    addEvent(obj(aformId),"mouseout",function(){autoS=setInterval(imgA.autoTurnStar,4000);});                   
+                }
+                
+            }
+            var imgA = new ImgScroll(536,"imgScroll","imgTxt","imgContrl");
+            autoS = setInterval(imgA.autoTurnStar,4000);
+            imgA.addClearAuto();
+//初始加载函数(在线活动标签页)
+function aaa(mgs){
+  var soqd=3;
+  var obj="";
+  var i=1;
+  try{
+    for(i;obj!=null;i++){
+      obj=document.getElementById("info"+i);
+      if(obj!=null){
+        obj.style.display="none";
+      }
+    }
+    i=i-2;
+    var st=i-(mgs-1)*soqd;
+    var et=st-3;
+    if(et<0){et=0}
+    var sk=Math.ceil(i/soqd);
+    for (st ;st > et;st--){
+      obj=document.getElementById("info"+st);
+      obj.style.display="";
+    }
+    document.getElementById("pageMark").innerHTML=skl(sk,mgs);
+  }catch(e){
+  
+  }
+}
+function skl(l,ul){
+  var u="";
+  if(l!=1){
+    for(var i=1;i<l+1;i++){
+      if(i==ul){
+        u+='<a class="intr_nav1_on" onclick="aaa('+i+')">'+i+'</a>';
+      }else{
+        u+='<a class="intr_nav1" onclick="aaa('+i+')">'+i+'</a>';
+      }
+    }
+  }
+  return u;
+}
+function bbb(){
+  aaa(1);
+  var obj='';
+  try{
+    for(var i=1;i<obj!=null;i++){
+      obj=document.getElementById("livetime"+i);
+      var result=isTimeOut(obj.innerHTML);
+      if(result){
+        document.getElementById("box"+i).style.display="none";
+        document.getElementById("box"+i+"_gq").style.display="";
+      }
+    }
+  }catch(e){
+  
+  }
+}
+function isTimeOut(w){
+  var timeout=false;
+  var ws=w.split("-");
+  var nowTime=new Date();
+  var endTime = new Date(ws[0],ws[1]-1,ws[2],"23","59","59");
+  var result=endTime-nowTime;
+  if(result < 0){
+    timeout=true;
+  }
+  return timeout;
+}
+addEvent(window,"load",loadFun);
+</script>
+<!-- START searchServCode -->
+<script type="text/javascript" src="/special/00752FD5/srvcode2.js"></script>
+<script type="text/javascript" src="/special/00754IO5/servcode_urs.js"></script>
+<script type="text/javascript" src="/special/00754IGS/servcode_163.js"></script>
+<script type="text/javascript" src="/special/00754IGR/servcode_126.js"></script>
+<script type="text/javascript" src="/special/00754IGQ/servcode_yeah.js"></script>
+<script type="text/javascript" src="/special/00754IV8/servcode_vip163.js"></script>
+<script type="text/javascript" src="/special/00754IJB/servcode_vip126.js"></script>
+<script type="text/javascript" src="/special/00754IN5/servcode_188.js"></script>
+<script type="text/javascript" src="/special/00754K4G/servcode_fax.js"></script>
+<script type="text/javascript" src="/special/007541LP/searchservcode.js"></script>
+<!-- END -->
+</body>
+</html>

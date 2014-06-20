@@ -1,0 +1,1633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="zh-cn" />
+<title>水晶宫VS曼城0-2(2013-2014赛季)_英超_网易体育</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<base target="_blank" />
+<meta name="keywords" content="水晶宫VS曼城战报,英超直播,比赛前瞻" />
+<meta name="description" content="水晶宫VS曼城0-2(2013-2014赛季)。英超-图雷传射哲科闪击 曼城客场2-0胜距榜首3分。" />
+<link href="http://img1.cache.netease.com/sports/css07/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/sports/css07/sports_nav2.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/css07/comment.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/sports/2009/goal/common_v5.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/sports/2009/goal/live_v2.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/sports/2009/goal/live_v2_addon.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="http://img1.cache.netease.com/f2e/sports/tag/tag.490897.css" />
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<style type="text/css">
+#endText h2{ font-size:14px; }
+#endText p{text-indent:2em;}
+#endText p.f_center{text-indent:0; text-align:center;}
+#endText table td p {text-indent:0;}
+#endText .icon{ margin:3px 0 0; border:0;}
+#endText img{border:1px solid #ccc;}
+#endText table{}
+#endText td{ overflow:hidden;text-overflow:ellipsis;}
+#endText a{text-decoration:underline; color:#1f3a87;}
+#endText a:hover{color:#bc2931;}
+
+.qyxx-tab {
+	display:inline-block;
+	padding:5px 0;
+}
+.qyxx-tab li {
+	float:left;
+	display:block;
+	height:25px;
+	line-height:25px;
+	cursor:pointer;
+	padding:3px 5px;
+}
+.qyxx-tab .on {
+	color:#FFFFFF;
+	font-weight:bold;
+	background:url(http://img1.cache.netease.com/sports/2009/goal/qyxx_tab.png) bottom no-repeat;
+	padding:0 3px;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	-moz-border-image: url(qyxx_tab.png) 0;
+}
+</style>
+<!--[if lt IE 9]>
+<style type="text/css">
+.qyxx-tab .on{
+       background-image:none;
+       filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img1.cache.netease.com/sports/2009/goal/qyxx_tab.png', sizingMethod='scale');
+}
+ .qyxx-tab li{
+        padding:0 5px;
+ }
+ #qyxx-tab{
+ 	display:inline;
+ }
+</style>
+
+<![endif]-->
+</style>
+
+<script language="JavaScript">
+<!--
+jQuery(document).ready(function(){
+    loadGoalXmlInfo(695252);
+    loadLatestMatch();
+
+    if (2 != 2) {
+        setInterval(function(){
+            loadGoalXmlInfo(695252);
+            loadLatestMatch();
+        },60*1000);
+    }
+});
+
+function getGoalType(type) {
+    if (type == "Goal" ) {
+        return "";
+    } else if (type == "Own" ) {
+        return "乌龙";
+    } else if (type == "Penalty" ) {
+        return "点球";
+    } else {
+        return "";
+    }
+}
+
+function loadGoalXmlInfo(mid){
+    jQuery.ajax(
+    {
+        url: '/8/match/general/2013/'+mid+'.xml',
+        type: 'GET',
+        dataType: 'xml',
+        timeout: 4000,
+        error: function(){
+                jQuery('#goal_'+mid).empty().append('<td width="50%">无进球</td><td width="50%">无进球</td>').show(); 
+            },
+        success: function(datas){
+        var html='';
+        var homehtml='<td width="50%" valign="top"><ul>';
+        var awayhtml='<td width="50%" valign="top"><ul>';
+        var jHome = jQuery(datas).find('Team:first-child');
+        var homeScore = jHome.attr('score');
+        var homeside = jHome.attr('side');
+        var jAway = jQuery(datas).find('Team:last-child');
+        var awayScore = jAway.attr('score');
+        var awayside = jAway.attr('side');
+        var matchStat = jQuery(datas).find('Result').eq(0).attr("matchStat");
+        var matchPeriod = jQuery(datas).find('Result').eq(0).attr("matchPeriod");
+        var matchTime = jQuery(datas).find('Result').eq(0).attr("matchTime");
+
+        //更新比赛状态
+        var matchStatHtml = "04-27 23:10 开赛";
+        if (matchStat == 1) {
+            matchStatHtml = "比赛进行中 ("+ matchPeriod +" "+ matchTime +"')";
+        } else {
+            matchStatHtml += " ("+ matchPeriod +")";
+        }
+		matchStatHtml+='<br><span class="cGray3">场馆：</span>塞尔赫斯特公园球场';
+        jQuery('#c_mathstat').empty().html(matchStatHtml);
+
+        if(homeScore>0){
+            if(homeside=="1"){
+                var mergeGoalPlayer=new Array();
+                var mergeGoalTimes=new Array();
+                jGoals = jHome.children('Goal');
+                jQuery(jGoals).find('Stat').each(function(){
+                    var jStat = jQuery(this);
+                    var type = getGoalType(jStat.attr('type'));
+                    var player = jStat.attr('player');
+                    var playerOfficialId = jStat.attr('playerOfficialId');
+                    var period=jStat.attr('period');
+                    var goal_time = jStat.attr('time');
+                    //进球时间
+                    try{
+                      goal_time=parseInt(goal_time);
+                    }catch(e){goal_time=0}
+                    if(period=="上半场"){
+                      if(goal_time>45){
+                        goal_time="45+"+(goal_time-45)
+                      }
+                    }else{
+                      if(goal_time>90){
+					    if(period.indexOf("加时")<0){
+							goal_time="90+"+(goal_time-90)
+						}
+						if(goal_time>120){
+							goal_time="120+"+(goal_time-120)
+						}
+                      }
+                    }
+                    //进球
+                    var idx=-1;
+                    jQuery.each(mergeGoalPlayer,function(i,item){
+                      if(item==playerOfficialId+"|"+player){
+                        idx=i;
+                        return false;
+                      }
+                    });
+                    if(idx==-1){
+                      mergeGoalPlayer.push(playerOfficialId+"|"+player);
+                      var goalTimes=new Array();
+                      goalTimes.push(goal_time+type);
+                      mergeGoalTimes.push(goalTimes);
+                    }else{
+                      var goalTimes=mergeGoalTimes[idx];
+                      goalTimes.push(goal_time+type);
+                    }
+                    //homehtml+='<li><a href="/8/player/'+playerOfficialId+'.html">'+player+'</a>'+type+'&nbsp;'+goal_time+'</li>';
+                });
+                jQuery.each(mergeGoalPlayer,function(i,item){
+                    homehtml+='<li><a href="/8/player/'+item.split("|")[0]+'.html">'+item.split("|")[1]+'</a>&nbsp;(';
+                    jQuery.each(mergeGoalTimes[i],function(j,times){
+                        var split=',';
+                        if(j==(mergeGoalTimes[i].length-1)){
+                          split='';
+                        }
+                        homehtml+=times+split;
+                    });
+                    homehtml+=')</li>';
+                });
+            }
+        }
+
+        if(awayScore>0){
+            if(awayside=="2"){
+        var mergeGoalPlayer=new Array();
+                var mergeGoalTimes=new Array();
+                //解析进球
+                jGoals = jAway.children('Goal');
+                jQuery(jGoals).find('Stat').each(function(){
+                    var jStat = jQuery(this);
+                    var type = getGoalType(jStat.attr('type'));
+                    var player = jStat.attr('player');
+                    var playerOfficialId = jStat.attr('playerOfficialId');
+                    var goal_time = jStat.attr('time'); 
+                    var period=jStat.attr('period');
+                    //进球时间
+                    try{
+                      goal_time=parseInt(goal_time);
+                    }catch(e){goal_time=0}
+                    if(period=="上半场"){
+                      if(goal_time>45){
+                        goal_time="45+"+(goal_time-45)
+                      }
+                    }else{
+					  if(goal_time>90){
+                          if(period.indexOf("加时")<0){
+    						goal_time="90+"+(goal_time-90)
+        				  }
+    					  if(goal_time>120){
+        					goal_time="120+"+(goal_time-120)
+        				  }
+					  }
+                    }
+                    //进球
+                    var idx=-1;
+                    jQuery.each(mergeGoalPlayer,function(i,item){
+                      if(item==playerOfficialId+"|"+player){
+                        idx=i;
+                        return false;
+                      }
+                    });
+                    if(idx==-1){
+                      mergeGoalPlayer.push(playerOfficialId+"|"+player);
+                      var goalTimes=new Array();
+                      goalTimes.push(goal_time+type);
+                      mergeGoalTimes.push(goalTimes);
+                    }else{
+                      var goalTimes=mergeGoalTimes[idx];
+                      goalTimes.push(goal_time+type);
+                    }
+                    //awayhtml+='<li><a href="/8/player/'+playerOfficialId+'.html">'+player+'</a>'+type+'&nbsp;'+goal_time+'</li>';
+                });
+                jQuery.each(mergeGoalPlayer,function(i,item){
+                    awayhtml+='<li><a href="/8/player/'+item.split("|")[0]+'.html">'+item.split("|")[1]+'</a>&nbsp;(';
+                    jQuery.each(mergeGoalTimes[i],function(j,times){
+                        var split=',';
+                        if(j==(mergeGoalTimes[i].length-1)){
+                          split='';
+                        }
+                        awayhtml+=times+split;
+                    });
+                    awayhtml+=')</li>';
+                });
+            }
+        }
+        if(homeScore==0){
+            homehtml+='无进球';
+        }
+        if(awayScore==0){
+            awayhtml+='无进球';
+        }
+
+        homehtml+='</ul></td>';
+        awayhtml+='</ul></td>';
+        html+=homehtml+awayhtml;
+        jQuery('#goal_'+mid).empty().append(html).show(); 
+		
+		//更新右侧本轮最新进球层的高度
+		var BiggerLiCount = 0;
+		var TmpLiCount = 0;
+		jQuery('#goal_'+mid+' ul').each(function(index, element) {
+			TmpLiCount = jQuery(this).find('li').length;
+			BiggerLiCount = Math.max(BiggerLiCount, TmpLiCount);
+        });
+		var MinZoomLiCount = 2;
+		var LiHeight = 25;
+		var MinRightListohHeight = 208;
+		if (BiggerLiCount > MinZoomLiCount){
+			jQuery('#latestMatch .rightListoh').css("height", (BiggerLiCount - MinZoomLiCount) * LiHeight + MinRightListohHeight);
+		}
+
+        //开始点球
+        var htmlshoot='';
+        var homehtmlshoot='<td align="right">';
+        var awayhtmlshoot='<td align="left">';
+        var homeShootOutScore = jHome.attr('shootOutScore');
+        var awayShootOutScore = jAway.attr('shootOutScore');
+
+        if(homeShootOutScore>0){
+            if(homeside=="1"){
+                jShootOut = jHome.children('ShootOut');
+                jQuery(jShootOut).find('PenaltyShot').each(function(){
+                    var jPenaltyShot = jQuery(this);
+                    var player=jPenaltyShot.attr('player');
+                    var Outcome=jPenaltyShot.attr('outcome');
+                    if(Outcome=="Scored"){
+                        homehtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball.gif" width="16" height="16" alt="'+player+'" />';
+                    }else{
+                        homehtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball_x.gif" width="16" height="16" alt="'+player+'" />';
+                    }
+                });
+            }
+        }
+
+        if(awayShootOutScore>0){
+            if(awayside=="2"){
+                //解析进球
+                jShootOut = jAway.children('ShootOut');
+                jQuery(jShootOut).find('PenaltyShot').each(function(){
+                    var jPenaltyShot = jQuery(this);
+                    var player=jPenaltyShot.attr('player');
+                    var Outcome=jPenaltyShot.attr('outcome');
+                    if(Outcome=="Scored"){
+                        awayhtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball.gif" width="16" height="16" alt="'+player+'" />';
+                    }else{
+                        awayhtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball_x.gif" width="16" height="16" alt="'+player+'" />';
+                    }
+                });
+            }
+        }
+        homehtmlshoot+='</td>';
+        awayhtmlshoot+='</td>';
+        htmlshoot+=homehtmlshoot+'<td class="cGreen">点球</td>'+awayhtmlshoot;
+        if(homeShootOutScore>0 || awayShootOutScore>0){
+            jQuery('#shoot_'+mid).empty().append(htmlshoot).show();
+        }
+        //结束点球
+        if (homeShootOutScore > awayShootOutScore){
+            var c_html="(点)"+homeScore+"-"+awayScore;
+            jQuery('#c_score').empty().html(c_html);
+        } else if (homeShootOutScore < awayShootOutScore){
+            var c_html=homeScore+"-"+awayScore+"(点)";
+            jQuery('#c_score').empty().html(c_html);
+        } else if (matchStat == 0 || matchStat == 3) {
+            jQuery('#c_score').empty().html("VS");
+        } else {
+            jQuery('#c_score').empty().html(homeScore+"-"+awayScore);
+        }
+        //结束比分修改
+    }});
+}
+
+function loadShootXmlInfo(mid){
+    jQuery.ajax(
+    {
+        url: '/8/match/general/2013/'+mid+'.xml',
+        type: 'GET',
+        dataType: 'xml',
+        timeout: 3000,
+        error: function(){
+            },
+        success: function(datas){
+        var htmlshoot='';
+        var homehtmlshoot='<td align="right">';
+        var awayhtmlshoot='<td align="left">';
+        var jHome = jQuery(datas).find('Team:first-child');
+        var homeShootOutScore = jHome.attr('shootOutScore');
+        var homeScore = jHome.attr('score');
+        var homeside=jHome.attr('side');
+
+        var jAway = jQuery(datas).find('Team:last-child');
+        var awayShootOutScore = jAway.attr('shootOutScore');
+        var awayScore = jHome.attr('score');
+        var awayside = jAway.attr('side');
+              
+        if(homeShootOutScore>0){
+            if(homeside=="1"){
+                jShootOut = jHome.children('ShootOut');
+                jQuery(jShootOut).find('PenaltyShot').each(function(){
+                    var jPenaltyShot = jQuery(this);
+                    var player=jPenaltyShot.attr('player');
+                    var Outcome=jPenaltyShot.attr('Outcome');
+                    if(Outcome=="Scored"){
+                        homehtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball.gif" width="16" height="16" alt="'+player+'" />';
+                    }else{
+                        homehtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball_x.gif" width="16" height="16" alt="'+player+'" />';
+                    }
+                });
+            }
+        }
+
+        if(awayShootOutScore>0){
+            if(awayside=="2"){
+                //解析进球
+                jShootOut = jAway.children('ShootOut');
+                jQuery(jShootOut).find('PenaltyShot').each(function(){
+                    var jPenaltyShot = jQuery(this);
+                    var player=jPenaltyShot.attr('player');
+                    var Outcome=jPenaltyShot.attr('Outcome');
+                    if(Outcome=="Scored"){
+                        awayhtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball.gif" width="16" height="16" alt="'+player+'" />';
+                    }else{
+                        awayhtmlshoot+='<img src="http://img1.cache.netease.com/sports/2009/goal/ball_x.gif" width="16" height="16" alt="'+player+'" />';
+                    }
+                });
+            }
+        }
+        homehtmlshoot+='</td>';
+        awayhtmlshoot+='</td>';
+        htmlshoot+=homehtmlshoot+'<td class="cGreen">点球</td>'+awayhtmlshoot;
+        jQuery('#shoot_'+mid).empty().append(htmlshoot).show(); 
+        }
+    });
+}
+
+function loadLatestMatch() {
+    jQuery.ajax({
+    url: '/8/match/header/right/2013/36.html?'+Date.parse(new Date()),
+    type: 'GET',
+    dataType: 'html',
+    timeout: 3000,
+    error: function(){},
+    success: function(datas){
+        jQuery('#latestMatch').empty().html(datas);
+    }});
+}
+//-->
+</script>
+</head>
+<body>
+<!-- 导航开始 -->
+<style type="text/css">
+<!--
+.NTES_nav_ {width:960px; line-height:30px; margin:0 auto; clear:both;}
+.NTES_nav_ .nav_link {float:left; color:#B3B3B3;}
+.NTES_nav_ .nav_link a,.NTES_nav_ .nav_link a:visited {padding:0 3px; color:#2b2b2b;}
+.NTES_nav_ .nav_link a:hover {color:#ba2636;}
+.NTES_nav_ .rightCon {float:right;}
+.NTES_nav_ .rightCon .rss{display:inline; float:right; margin:8px 6px 0 6px;}
+.NTES_nav_ .NTES_link {float:left; color:#B3B3B3;}
+.NTES_nav_ .NTES_link a,.NTES_nav_ .NTES_link a:visited {padding:0 2px 0 3px; color:#1E50A2;}
+.NTES_nav_ .NTES_link a:hover {color:#ba2636;}
+-->
+</style>
+<div class="NTES_nav_" style="height:30px; overflow:hidden;">
+  <span class="nav_link">
+    <a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://g.163.com/a?CID=15&Values=2603933113&Redirect=http://163.39.net/">健康</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a>
+  </span>
+  <span class="rightCon">
+    <a href="http://www.163.com/rss"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img3.cache.netease.com/cnews/img07/rss.gif" style="width: 26px; height: 14px;"/></a> 
+    <span class="NTES_link">|<script language="JavaScript" src="http://p.mail.163.com/mailinfo/ntes_mail_info_0225.js" charset="GBK"></script><noscript><a href="http://email.163.com/"> 免费邮箱</a>-<a href="http://reg.163.com/">通行证登录</a></noscript></span> 
+  </span> 
+</div>
+<div class="slNav clearfix">
+<div class="slNavT clearfix">
+<div class="t1"><h3 class="c2"><a href="http://sports.163.com">体育首页</a></h3><h3 class="c2"><a href="http://sports.163.com/world/">国际足球</a></h3></div>
+<div class="t2">
+<ul>
+<li><h3><a href="/" target="_self">首页</a></h3></li>
+<li id="m1"><h3 onmouseover="tabDivcnt(1,8);"><a href="/8/schedule.html" target="_self">英超</a></h3></li>
+<li id="m2"><h3 onmouseover="tabDivcnt(2,8);"><a href="/21/schedule.html" target="_self">意甲</a></h3></li>
+<li id="m3"><h3 onmouseover="tabDivcnt(3,8);"><a href="/23/schedule.html" target="_self">西甲</a></h3></li>
+<li id="m4"><h3 onmouseover="tabDivcnt(4,8);"><a href="/22/schedule.html" target="_self">德甲</a></h3></li>
+<li id="m5"><h3 onmouseover="tabDivcnt(5,8);"><a href="/24/schedule.html" target="_self">法甲</a></h3></li>
+<li id="m6"><h3 onmouseover="tabDivcnt(6,8);"><a href="/5/schedule.html" target="_self">欧冠</a></h3></li>
+<li id="m7"><h3 onmouseover="tabDivcnt(7,8);"><a href="/6/schedule.html" target="_self">欧联</a></h3></li>
+<li id="m7"><h4 onmouseover="tabDivcnt(8,8);"><a href="http://sports.163.com/live/" target="_blank">比分直播</a></h4></li>
+<li><h3><a href="http://help.3g.163.com/special/00963VO1/3ggoal.html">手机版</a></h3> </li>
+<li><h3><a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">足彩</a></h3> </li>
+</ul>
+</div>
+</div>
+<div class="slNavB clearfix">
+<div class="t1"><h3 id="time"></h3>
+<script type="text/javascript">
+setInterval(function() {
+	var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    var weekDay = '日一二三四五六'.charAt(date.getDay());
+	document.getElementById('time').innerHTML = '今天 ' + year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second + ' 星期' + weekDay;
+},1000);
+</script></div>
+<div class="t2 clearfix">
+
+<!--英超-->
+<ul id="menu_1" style="display:none;">
+<li><a  href="/8/schedule.html" target="_self">赛程</a> | <a href="/8/stat/standings/2013_3.html" target="_self">积分榜</a> | <a href="/8/stat/teamrank/2013/goals_3.html" target="_self">球队榜</a> | <a href="/8/stat/playerrank/2013/goals_3.html" target="_self">球员榜</a> | <a href="/8/team/" target="_self">资料库</a> | <a href="http://sports.163.com/yc/">新闻</a> | <a href="http://sports.163.com/special/00051K89/yctpklm.html">图库</a> | <a href="http://v.sports.163.com/yc/">视频</a> | <a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">彩票</a></li>
+</ul>
+<!--意甲-->
+<ul id="menu_2" style="display:none; margin-left:5px;">
+<li><a  href="/21/schedule.html" target="_self">赛程</a> | <a href="/21/stat/standings/2013_3.html" target="_self">积分榜</a> | <a href="/21/stat/teamrank/2013/goals_3.html" target="_self">球队排行榜</a> | <a href="/21/stat/playerrank/2013/goals_3.html" target="_self">球员排行榜</a> | <a href="/21/team/" target="_self">资料库</a> | <a href="http://sports.163.com/yj/">新闻</a> | <a href="http://sports.163.com/special/00051K89/yjtpklm.html">图库</a> | <a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">彩票</a></li>
+</ul>
+<!--西甲-->
+<ul id="menu_3" style="display:none; margin-left:10px;">
+<li><a  href="/23/schedule.html" target="_self">赛程</a> | <a href="/23/stat/standings/2013_3.html" target="_self">积分榜</a> | <a href="/23/stat/teamrank/2013/goals_3.html" target="_self">球队排行榜</a> | <a href="/23/stat/playerrank/2013/goals_3.html" target="_self">球员排行榜</a> | <a href="/23/team/" target="_self">资料库</a> | <a href="http://sports.163.com/xj/">新闻</a> | <a href="http://sports.163.com/special/00051K89/xjtpklm.html">图库</a> | <a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">彩票</a></li>
+</ul>
+<!--德甲-->
+<ul id="menu_4" style="display:none; margin-left:15px;">
+<li><a href="/22/schedule.html" target="_self">赛程</a> | <a href="/22/stat/standings/2013_3.html" target="_self">积分榜</a> | <a href="/22/stat/teamrank/2013/goals_3.html" target="_self">球队排行榜</a> | <a href="/22/stat/playerrank/2013/goals_3.html" target="_self">球员排行榜</a> | <a href="/22/team/" target="_self">资料库</a> | <a href="http://sports.163.com/dj/">新闻</a> | <a href="http://sports.163.com/special/00051K89/djtpklm.html">图库</a> | <a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">彩票</a></li>
+</ul>
+<!--法甲-->
+<ul id="menu_5" style="display:none; margin-left:20px;">
+<li><a href="/24/schedule.html" target="_self">赛程</a> | <a href="/24/stat/standings/2013_3.html" target="_self">积分榜</a> | <a href="/24/stat/teamrank/2013/goals_3.html" target="_self">球队排行榜</a> | <a href="/24/stat/playerrank/2013/goals_3.html" target="_self">球员排行榜</a> | <a href="/24/team/" target="_self">资料库</a> | <a href="http://sports.163.com/world/">新闻</a> | <a href="http://sports.163.com/special/00051K89/gjzqtpklm.html">图库</a> | <a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">彩票</a></li>
+</ul>
+<!--欧冠-->
+<ul id="menu_6" style="display:none; margin-left:25px;">
+<li><a href="/5/schedule.html" target="_self">赛程</a> | <a href="/5/stat/standings/2013_3.html" target="_self">积分榜</a> | <a href="/5/stat/teamrank/2013/goals_3.html" target="_self">球队排行榜</a> | <a href="/5/stat/playerrank/2013/goals_3.html" target="_self">球员排行榜</a> | <a href="/5/team/" target="_self">资料库</a> | <a href="http://sports.163.com/gjb/">新闻</a> | <a href="http://sports.163.com/special/00051K89/gjbtpklm.html">图库</a> | <a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">彩票</a></li>
+</ul>
+<!--欧联赛-->
+<ul id="menu_7" style="display:none; margin-left:30px;">
+<li><a href="/6/schedule.html" target="_self">赛程</a> | <a href="/6/stat/standings/2013_3.html" target="_self">积分榜</a> | <a href="/6/stat/teamrank/2013/goals_3.html" target="_self">球队排行榜</a> | <a href="/6/stat/playerrank/2013/goals_3.html" target="_self">球员排行榜</a> | <a href="/6/team/" target="_self">资料库</a> | <a href="http://sports.163.com/ol/">新闻</a> | <a href="http://sports.163.com/special/00051K89/lmbtpklm.html">图库</a> | <a href="http://caipiao.163.com/order/jczq/?from=deportes_4" target="_blank">彩票</a></li>
+</ul>
+</div>
+<div class="t3" id="tc"></div>
+</div>
+</div>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+//图层带内容切换
+function tabDivcnt(num,len) {
+	for(var id = 1;id<=len;id++) {
+		var ss= "m"+id;
+		var snav ="menu_"+id;
+		if(id==num){
+			try{document.getElementById(ss).className='on'}catch(e){};
+			try{document.getElementById(snav).style.display="block"}catch(e){};
+		}else{
+			try{document.getElementById(ss).className=""}catch(e){};
+			try{document.getElementById(snav).style.display="none"}catch(e){};
+		}
+	}  
+}
+
+function flush(t,o){
+	clearInterval(window.intervalProcess);
+	if(t > 0){
+		intervalProcess = setTimeout( function(){
+			window.location.hash = parseInt(t);
+			window.location.reload();
+			},t*1000);
+	}
+	var as = document.getElementById('tc').getElementsByTagName('a');
+	as[0].className = '';
+	as[1].className = '';
+	as[2].className = '';
+	o.className = 'on';
+}
+
+/*
+	cid		联赛id	
+	type	子类型	： 0不选中 1赛程 2积分榜 3球员排行榜 4球队排行榜
+	isrefresh	是否带刷新	
+*/
+var intervalProcess;
+function setTab(cid,type,isrefresh){
+	switch(cid){//cid转换
+		case 8: n = 1;break;
+		case 21: n = 2;break;
+		case 23: n = 3;break;
+		case 22: n = 4;break;
+		case 24: n = 5;break;
+		case 5: n = 6;break;
+		case 6: n = 7;break;
+		default : n =0;
+	}
+	
+	if(n) {
+		tabDivcnt(n,7);
+		var o = document.getElementById('menu_'+ n).getElementsByTagName('a');
+		try{o[type-1].className = 'on';}catch(e){};
+	}
+
+	if(isrefresh){
+		var timer = parseInt( window.location.hash.substr(1) ) >  30 ? parseInt( window.location.hash.substr(1) ) : 90;
+		s1 = s2 = s3 ='';
+		if(timer == 90)
+			s3=' class="on"';
+		else if(timer == 60)
+			s2=' class="on"';
+		else 
+			s1=' class="on"';
+		document.getElementById('tc').innerHTML = '页面刷新：<a'+ s1 +' href="javascript:void(0);" onclick="flush(0,this);" target="_self">关</a> | <a'+ s2 +' href="javascript:void(0);" onclick="flush(60,this);" target="_self">60秒</a> | <a'+ s3 +' href="javascript:void(0);" onclick="flush(90,this);" target="_self">90秒</a>';
+		intervalProcess = setTimeout( function(){
+			window.location.reload();
+		},timer*1000);
+	}
+}
+//--><!]]>
+</script>
+
+<!-- 导航结束 -->
+<div class="pArea clearfix">
+	<div class="goal_crumbs">
+		<a href="/">国际足球直播系统</a> &gt; 
+					<a href="/8/schedule.html">英超</a> &gt; 
+							<span>战报</span> 
+					</div>
+<!--赛事导航-->
+<div class="pArea clearfix">
+  <div class="matchNav clearfix">
+    <div class="icoContainer"> </div>
+    <div class="scrollBtn" id="matchNavScrollLeftBtn">&lt;</div>
+    <div class="matchContainer">
+    	<ul id="matchNavList" class="clearfix"></ul>
+    </div>
+    <div class="scrollBtn" id="matchNavScrollRightBtn">&gt;</div>
+    <div class="rightButtons"><div class="zone"><a href="http://sports.163.com/live/" target="_blank">比分直播</a></div><span></span><span id="matchListSwitchBtn" class="matchListSwitchBtn"></span> </div>
+    <div id="matchCalendar" style="display:none;">
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="http://img1.cache.netease.com/combo/3.3.0/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+var matchNavigatorMatchIdString = '8';
+var matchNavigatorJsonDataPath = '/';
+</script> 
+<script type="text/javascript" src="http://img1.cache.netease.com/sports/2009/goal/match_nsvigator.js"></script>
+<span class="blank9"></span>
+<div class="area clearfix">
+<div class="col1">
+<div class="col1Bg clearfix">
+<span class="blank3"></span>
+<div class="leftList">
+<div class="t1 clearfix">
+<span class="c1" id="c_mathstat">
+    04-27 23:10 开赛 (完场)
+<br> 
+	</span>
+</span>
+<span class="c2" id="c_home"><a href="/8/team/31.html">水晶宫</a></span>
+<span class="c3" id="c_score">
+0-2
+</span>
+<span class="c4" id="c_away"><a href="/8/team/43.html">曼城</a></span>
+<span class="c5" id="c_tv">
+	<span id="c_tv" class="c5"> 
+		<br>
+		</span>
+</span>
+</div>
+<div class="t2 clearfix">
+<div class="c1">
+	<a href="/8/team/31.html" target="_blank">
+		<img src="http://img1.cache.netease.com/sports/2009/goal/logo/team/70/t31.gif" width="70" height="70" onerror="this.src='http://img1.cache.netease.com/sports/2009/goal/logo/default_team_70.gif'"/>
+	</a>
+</div>
+<div class="c2">
+<table width="95%" border="0" cellspacing="0" cellpadding="1" class="soTb01">
+  <tr id="goal_695252"></tr>
+</table>
+<span class="blank3"></span>
+<table width="95%" border="0" cellspacing="0" cellpadding="1" border="0">
+   <tr id="shoot_695252"></tr>
+</table>
+</div>
+<div class="c3">
+	<a href="/8/team/43.html" target="_blank">
+		<img src="http://img1.cache.netease.com/sports/2009/goal/logo/team/70/t43.gif" width="70" height="70" onerror="this.src='http://img1.cache.netease.com/sports/2009/goal/logo/default_team_70.gif'"/>
+	</a>
+</div>
+</div>
+</div>
+<div class="leftList2">
+<!--时间轴-->
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="FootBall_TimeLine" width="684" height="80" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+    <param name="movie" value="http://swf.ws.126.net/sports/flash/FootBall_TimeLine.swf?url=/8/match/general/2013/695252.xml" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#ffffff" />
+    <param name="allowScriptAccess" value="sameDomain" />
+    <embed src="http://swf.ws.126.net/sports/flash/FootBall_TimeLine.swf?url=/8/match/general/2013/695252.xml" quality="high" bgcolor="#ffffff"
+        width="684" height="80" name="FootBall_TimeLine" align="middle" play="true" loop="false" quality="high" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer">
+    </embed>
+</object>
+</div>
+</div>
+</div>
+<div class="col2" id="latestMatch">
+</div>
+</div><div class="areaEnd"></div>
+<span class="blank9"></span>
+<div class="leftList3">
+<ul>
+<li ><h3><a href="/8/match/preview/2013/695252.html" target="_self">前瞻</a></h3></li><li class="on"><h3><a href="/8/match/report/2013/695252.html" target="_self">战报</a></h3></li><li ><h3><a href="/8/match/live/2013/695252.html" target="_self">直播间</a></h3></li><li><h3><a href="/8/match/stat/2013/695252.html" target="_self">统计/回放</a></h3></li><li ><h3><a href="/8/match/star/2013/695252.html" target="_self">球员特写</a></h3></li><li ><h3><a href="/8/match/news/2013/695252.html" target="_self">滚动新闻</a></h3></li><li ><h3><a href="/8/match/photo/2013/695252.html" target="_self">图集</a></h3></li>
+</ul>
+</div>
+
+<div class="area2 clearfix">
+<div class="col1">
+
+<div class="endContent">
+<h1 id="h1title"><a href="http://sports.163.com/14/0428/01/9QSMJK1R00051CCL.html">英超-图雷传射哲科闪击 曼城客场2-0胜距榜首3分</a></h1>
+<span class="info">2014-04-28 01:02:48　来源: <a href="http://sports.163.com/" target="_blank">网易体育</a>　  作者：小风　 <a id="endpageUrl1" class="cDRed" href="http://comment.sports.163.com/sports2_bbs/9QSMJK1R00051CCL.html">有 <span id="replycounttop"></span> 人参与</a> <a href="http://help.3g.163.com/live/">手机看赛事</a></span>
+
+<span class="blank12"></span>
+<div id="endText">
+	<div>
+		<p>网易体育4月27日报道：</p><p>北京时间4月27日23点10分，英超第36轮的一场焦点战事在塞尔赫斯特公园球场开战，曼城客战水晶宫。最终，凭借哲科的闪电破门和图雷的传射建功，曼城客场2比0取胜水晶宫。此役之后，蓝月亮依旧排名第3，但少赛一轮的他们和榜首的利物浦只有3分的差距。</p><p class="f_center"><object id="FPlayer1398621634624" width="490" height="394" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" thumbnail="http://vimg1.ws.126.net/image/snapshot/2014/4/N/L/V9PUUBQNL_logo.jpg"><param name="movie" value="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="allownetworking" value="all" /><param name="wmode" value="opaque" /><param name="flashvars" value="sid=V93KRLVIG&topicid=0005&hiddenR=true&cl=yc&vid=V9PUUBQNK&coverpic=http://vimg2.ws.126.net/image/snapshot/2014/4/N/L/V9PUUBQNL.jpg&pltype=7&autoplay=false" /><!--[if !IE]><--><object id="FPlayer1398621634624" width="490" height="394" data="http://v.163.com/swf/video/NetEaseFlvPlayerV3.swf" type="application/x-shockwave-flash"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="allownetworking" value="all" /><param name="wmode" value="opaque" /><param name="flashvars" value="sid=V93KRLVIG&topicid=0005&hiddenR=true&cl=yc&vid=V9PUUBQNK&coverpic=http://vimg2.ws.126.net/image/snapshot/2014/4/N/L/V9PUUBQNL.jpg&pltype=7&autoplay=false" /></object><!--<![endif]--></object><script type="text/javascript"> if (/(iPhone|iPad|iPod|Android)/ig.test(navigator.userAgent)){ var str1 = '<video controls="controls" autoplay="autoplay" preload="auto" width="490" height="394">'; var str2 = '<source type="video/mp4" src="http://flv.bn.netease.com/videolib3/1404/28/mYudE9652/SD/mYudE9652-mobile.mp4"> 您的浏览器暂时无法播放此视频.</video>';document.getElementById("FPlayer1398621634624").parentNode.innerHTML = str1 + str2;}</script><br  /><a href="http://v.sports.163.com/video/2014/4/N/K/V9PUUBQNK.html" target="_blank">全场集锦-亚亚图雷传射建功 水晶宫0-2曼城</a></p><p></div>
+<!-- 图集开始 0005/113985 -->
+<link href="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_wz_1.0.css" rel="stylesheet" type="text/css">
+<link href="http://img1.cache.netease.com/utf8/microblog/plugin/css/wb2.0.5.css" charset="utf-8" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wb2.2.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/utf8/microblog/plugin/js/wbshare1.0.3.js" charset="utf-8"></script>
+<style type="text/css">#gallery113985 .nph_photo_view{ height:400px;}</style>
+<div class="nph_gallery" id="gallery113985">
+<div class="nph_bg">
+    <div id="modePhoto113985" class="nph_photo">
+        <div class="nph_photo_view">
+            <div class="nph_cnt" id="photoView113985"><i></i><img src="http://img1.cache.netease.com/cnews/img/gallery11/bg06.png" id="photo113985" onerror="this.src=this.src.replace(/600x450_|900x600_/, '');" /></div>
+            <div class="nph_photo_prev"><a href="#" hidefocus="true" class="nph_btn_pphoto" id="photoPrev113985" target="_self"></a></div>
+            <div class="nph_photo_next"><a href="#" hidefocus="true" class="nph_btn_nphoto" id="photoNext113985" target="_self"></a></div>
+            <div class="nph_photo_loading" id="photoLoading113985"></div>
+            <div class="nph_photo_viewlarge" data-link="http://sports.163.com/photoview/00D80005/113985.html"></div>        </div>
+        <div class="nph_cnt">
+            <div id="setInfo113985"><span id="photoType113985" class="nph_set_cur"><span class="nph_c_lh" id="photoIndex113985"></span>/11</span></div>
+            <div class="nph_photo_desc" id="photoDesc113985"></div>
+        </div>
+<!-- --><div class="nph_cnt clearfix">
+<!--     --><div class="nph_photo_thumb" id="scrl113985">
+<!--         --><div class="clearfix">
+<!--             --><div class="nph_scrl">
+<!--                 --><div class="nph_scrl_thumb">
+<!--  11  66666666       --><div class="nph_scrl_main"><ul class="nph_list_thumb" id="thumb113985"></ul></div>
+<!--  11  66    66       --><div class="nph_scrl_bar clearfix">
+<!--  11  66        3333333  --><div class="nph_scrl_bd">
+<!--  11  66             33      --><div class="nph_scrl_ct">
+<!--  11  66666666       33          --><a href="" hidefocus="true" class="nph_btn_scrl" id="bar113985">
+<!--  11  66    66  3333333              --><b class="nph_btn_lt"></b><b class="nph_btn_rt"></b><span class="nph_btn_bd"><span></span></span>
+<!--  11  66    66       33  .com    --></a>
+<!--  11  66    66       33      --></div>
+<!--  11  66666666  3333333  --></div>
+<!--                     --></div>
+<!--                 --></div>
+<!--             --></div>
+<!--         --></div>
+<!--     --></div>
+<!-- --></div>
+    </div>
+    <div class="nph_photo_ctrl">
+        <div style="float:right;margin-top:-3px;">&nbsp;|&nbsp;&nbsp;<a href="http://yuetu.163.com/?f=ArticlePhoto#sports" class="cBlue"><img src="http://img1.cache.netease.com/cnews/img/gallery13/wz/img/yuetu_logo_btm.png?1" style="vertical-align:middle;"></a></div>
+        <div class="nph-share-top js-nph-pop" style="float:right;margin:0;">
+            <span class="cBlue">分享到<em class="nph-poplist-arr"></em></span>
+            <div class="nph-poplist" id="nph_share113985">
+                <ul class="clearfix">
+                    <li class="first"><a href="javascript:" class="ntshare-t163"><span class="inner"><i class="nph-share-icon nph-share-163"></i>网易微博<span class="count" style="display:none;">0</span></span></a></li>
+                    <li><a href="javascript:" class="ntshare-sina"><span class="inner"><i class="nph-share-icon nph-share-sina"></i>新浪微博</span></a></li>
+                    <li><a href="javascript:" class="ntshare-qzone"><span class="inner"><i class="nph-share-icon nph-share-qzone"></i>腾讯空间</span></a></li>
+                    <li><a href="javascript:" class="ntshare-renren"><span class="inner"><i class="nph-share-icon nph-share-renren"></i>人人网</span></a></li>
+                    <li class="last"><a href="javascript:" class="ntshare-youdao"><span class="inner"><i class="nph-share-icon nph-share-youdao"></i>有道云笔记</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <ul style="float:right;">
+            <li><a href="http://sports.163.com/photo/?f=ArticlePcenter" class="cBlue">体育图片中心</a>&nbsp;&nbsp;|&nbsp;</li>            <li><a href="http://sports.163.com/photoview/00D80005/113985.html?f=ArticlePview" class="nph_icon_pset">查看图集</a>&nbsp;&nbsp;|&nbsp;</li>
+        </ul>
+    </div>
+<!-- 图片数据 start-->
+<textarea class="hidden" id="photoList113985">
+<li>
+<a href="#p=9QSNOL6500D80005" hidefocus="true"><img data-id="113985" src="http://img4.cache.netease.com/photo/0005/2014-04-28/s_9QSNOL6500D80005.jpg" alt="图雷滑跪庆祝进球" /></a>
+<h2>图雷滑跪庆祝进球</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0005/2014-04-28/600x450_9QSNOL6500D80005.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0005/2014-04-28/t_9QSNOL6500D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSNOKTO00D80005" hidefocus="true"><img data-id="113985" src="http://img3.cache.netease.com/photo/0005/2014-04-28/s_9QSNOKTO00D80005.jpg" alt="图雷长途奔袭" /></a>
+<h2>图雷长途奔袭</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0005/2014-04-28/600x450_9QSNOKTO00D80005.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0005/2014-04-28/t_9QSNOKTO00D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSJMQJ700D80005" hidefocus="true"><img data-id="113985" src="http://img4.cache.netease.com/photo/0005/2014-04-28/s_9QSJMQJ700D80005.jpg" alt="图雷破门瞬间" /></a>
+<h2>图雷破门瞬间</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0005/2014-04-28/600x450_9QSJMQJ700D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSJMQJ700D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSJMQC600D80005" hidefocus="true"><img data-id="113985" src="http://img4.cache.netease.com/photo/0005/2014-04-28/s_9QSJMQC600D80005.jpg" alt="图雷激情庆祝" /></a>
+<h2>图雷激情庆祝</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0005/2014-04-28/600x450_9QSJMQC600D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSJMQC600D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSJMQUN00D80005" hidefocus="true"><img data-id="113985" src="http://img4.cache.netease.com/photo/0005/2014-04-28/s_9QSJMQUN00D80005.jpg" alt="哲科首开纪录" /></a>
+<h2>哲科首开纪录</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0005/2014-04-28/600x450_9QSJMQUN00D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSJMQUN00D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSJMR4S00D80005" hidefocus="true"><img data-id="113985" src="http://img3.cache.netease.com/photo/0005/2014-04-28/s_9QSJMR4S00D80005.jpg" alt="哲科头球轰炸" /></a>
+<h2>哲科头球轰炸</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0005/2014-04-28/600x450_9QSJMR4S00D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSJMR4S00D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSJMQNR00D80005" hidefocus="true"><img data-id="113985" src="http://img3.cache.netease.com/photo/0005/2014-04-28/s_9QSJMQNR00D80005.jpg" alt="哲科和纳斯里庆祝" /></a>
+<h2>哲科和纳斯里庆祝</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0005/2014-04-28/600x450_9QSJMQNR00D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSJMQNR00D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSNOKO600D80005" hidefocus="true"><img data-id="113985" src="http://img3.cache.netease.com/photo/0005/2014-04-28/s_9QSNOKO600D80005.jpg" alt="曼城客场轻取对手" /></a>
+<h2>曼城客场轻取对手</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0005/2014-04-28/600x450_9QSNOKO600D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSNOKO600D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSNOKJ700D80005" hidefocus="true"><img data-id="113985" src="http://img3.cache.netease.com/photo/0005/2014-04-28/s_9QSNOKJ700D80005.jpg" alt="加西亚和孔帕尼庆祝胜利" /></a>
+<h2>加西亚和孔帕尼庆祝胜利</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0005/2014-04-28/600x450_9QSNOKJ700D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSNOKJ700D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSJMPTE00D80005" hidefocus="true"><img data-id="113985" src="http://img3.cache.netease.com/photo/0005/2014-04-28/s_9QSJMPTE00D80005.jpg" alt="阿奎罗带球突破" /></a>
+<h2>阿奎罗带球突破</h2>
+<p></p>
+<i title="img">http://img3.cache.netease.com/photo/0005/2014-04-28/600x450_9QSJMPTE00D80005.jpg</i>
+<i title="timg">http://img4.cache.netease.com/photo/0005/2014-04-28/t_9QSJMPTE00D80005.jpg</i>
+</li>
+<li>
+<a href="#p=9QSJMQ7R00D80005" hidefocus="true"><img data-id="113985" src="http://img4.cache.netease.com/photo/0005/2014-04-28/s_9QSJMQ7R00D80005.jpg" alt="佩莱格里尼" /></a>
+<h2>佩莱格里尼</h2>
+<p></p>
+<i title="img">http://img4.cache.netease.com/photo/0005/2014-04-28/600x450_9QSJMQ7R00D80005.jpg</i>
+<i title="timg">http://img3.cache.netease.com/photo/0005/2014-04-28/t_9QSJMQ7R00D80005.jpg</i>
+</li>
+</textarea>
+<!-- 图片数据 end-->
+    <input type="hidden" value="9QSNOL6500D80005,9QSNOKTO00D80005,9QSJMQJ700D80005,9QSJMQC600D80005,9QSJMQUN00D80005,9QSJMR4S00D80005,9QSJMQNR00D80005,9QSNOKO600D80005,9QSNOKJ700D80005,9QSJMPTE00D80005,9QSJMQ7R00D80005," name="imgIds" />
+</div>
+
+
+
+                                                                        
+
+<div id="photoLayout113985" class="nph_photo_layout">
+    <script type="text/javascript">//<![CDATA[
+    // 图片加载后自适应容器
+    window.nph_fitImg=function(a,b,c){var d=a.parentNode.getBoundingClientRect(),e=a.width,f=a.height,g=b||d.width,h=c||d.height,i={wrap:g/h,img:e/f},j={width:0,height:0,left:0,top:0};i.img<i.wrap?(j.width=g,j.height=Math.round(j.width/i.img),j.left=0,j.top=Math.round((h-j.height)/2)):i.img>i.wrap?(j.height=h,j.width=Math.round(j.height*i.img),j.top=0,j.left=Math.round((g-j.width)/2)):(j.width=g,j.height=h,j.left=0,j.top=0),a.style.width=j.width+"px",a.style.height=j.height+"px",a.style.marginTop=j.top+"px",a.style.marginLeft=j.left+"px",a.style.visibility="visible"};
+    //]]></script>
+    <div class="nph_layout_bg"></div>
+    <div class="nph_layout_htp">
+        <div class="nph_layout_htp_top clearfix"><span>图集已浏览完毕</span><div class="nph_btn_again">重新浏览</div><a href="javascript:" class="nph_layout_close"></a></div>
+        <div class="nph_layout_htp_ad250" style="display:none;"></div>
+        <div class="nph_layout_htp_title"><a href="http://yuetu.163.com/">悦图推荐</a></div>
+        <div class="nph_layout_htp_bd">
+            <div class="nph_layout_htp_bd_t">
+                <a class="nph_htp_yuetu" href="http://yuetu.163.com/?f=ArticleHtp#sports&s=0005/113981">
+                    <img alt="英超第36轮：利物浦0-2切尔西" src="about:blank" data-src="http://img4.cache.netease.com/photo/0005/2014-04-27/600x450_9QSC62UU00D80005.jpg" style="visibility:hidden;" onload="nph_fitImg(this,590,250);" />
+                    <h4 style="font-size:18px;">英超第36轮：利物浦0-2切尔西</h4>
+                </a>
+            </div>
+            <div class="nph_layout_htp_bd_b clearfix">
+                <a class="nph_htp_yuetu" style="width:292px;_width:289px;height:100%;margin-right:6px;background:#333;text-align:center;float:left;" href="http://yuetu.163.com/?f=ArticleHtp#sports&s=0005/113979">
+                    <img alt="莫耶斯塑像惊现安菲尔德" src="about:blank" data-src="http://img4.cache.netease.com/photo/0005/2014-04-27/400x300_9QS5OIFU00D80005.jpg" height="228" />
+                    <h4>莫耶斯塑像惊现安菲尔德</h4>
+                </a>
+                <a class="nph_htp_yuetu" style="width:292px;_width:289px;height:100%;margin-right:0px;background:#333;text-align:center;float:left;" href="http://yuetu.163.com/?f=ArticleHtp#sports&s=0005/113928">
+                    <img alt="红蓝军大战!穆帅服软 利物浦被冠军?" src="about:blank" data-src="http://img3.cache.netease.com/photo/0005/2012-11-09/8FT9S7BH00D80005.jpg" height="228" />
+                    <h4>红蓝军大战!穆帅服软 利物浦被冠军?</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery11/ntes_ui_scroll.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_wz_1.0.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/gallery_share_menu_1.0.min.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/img/gallery13/wz/share_0.1.js" charset="gb2312"></script>
+<script type="text/javascript">//<![CDATA[
+NTES.ready(function ($) { new nph.Gallery({ sn: "113985", photoViewMode: 2  }); });
+window._ntshare2 && new window._ntshare2("#nph_share113985", {
+    url: document.location.href,
+    title: document.title,
+    summary: "\u5317\u4EAC\u65F6\u95F4\u0034\u6708\u0032\u0037\u65E5\u0032\u0033\u70B9\u0031\u0030\u5206\uFF0C\u82F1\u8D85\u7B2C\u0033\u0036\u8F6E\u7684\u4E00\u573A\u7126\u70B9\u6218\u4E8B\u5728\u585E\u5C14\u8D6B\u65AF\u7279\u516C\u56ED\u7403\u573A\u5F00\u6218\uFF0C\u66FC\u57CE\u5BA2\u6218\u6C34\u6676\u5BAB\u3002\u6700\u7EC8\uFF0C\u51ED\u501F\u54F2\u79D1\u7684\u95EA\u7535\u7834\u95E8\u548C\u56FE\u96F7\u7684\u4F20\u5C04\u5EFA\u529F\uFF0C\u66FC\u57CE\u5BA2\u573A\u0032\u6BD4\u0030\u53D6\u80DC\u6C34\u6676\u5BAB\u3002\u6B64\u5F79\u4E4B\u540E\uFF0C\u84DD\u6708\u4EAE\u4F9D\u65E7\u6392\u540D\u7B2C\u0033\uFF0C\u4F46\u5C11\u8D5B\u4E00\u8F6E\u7684\u4ED6\u4EEC\u548C\u699C\u9996\u7684\u5229\u7269\u6D66\u53EA\u6709\u0033\u5206\u7684\u5DEE\u8DDD\u3002",
+    pic: function() { return $('#photo113985').attr('src'); },
+    t163: {
+        source: encodeURIComponent("网易图片库"),
+        title: encodeURIComponent(document.title),
+        link: encodeURIComponent(document.location.href),
+        check1stImg: false,
+        togImg: true,
+        method: 'click',
+        keyfrom: 'share163tu.click',
+        images: function() { return $('#photo113985').attr('src'); }
+    }
+});
+//]]></script>
+<!-- 图集后贴图 -->
+<div class="WZTJ_htpGG" style="display:none;">
+<iframe 
+src="http://img1.126.net/channel4/html/tanx590250_sports.html" width="590" height="250" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+<script type="text/javascript">//<![CDATA[
+NTES.ready(function(a){if(window._nph_htpgg_inited)return!1;var b=function(a){a&&a.parentNode&&a.parentNode.removeChild(a)};a.each(a("div[id^=photoLayout]"),function(c,d){var e=a(d).$(".nph_layout_htp_ad250")[0],f=a(".WZTJ_htpGG")[0].cloneNode(!0);b(a(d).$(".nph_layout_htp_bd_t")[0]),e&&e.appendChild(f)&&(e.style.display="block"),f.style.display="block"}),window._nph_htpgg_inited=!0});
+//]]></script><img src="http://img2.cache.netease.com/nocache/statistic/mod003.gif" width="0" height="0" border="0" />
+<!-- 图集结束 0005/113985 --><div id="endText"></p><p><span style="text-indent: 2em;">首发上，曼城虽然缺少中场大脑席尔瓦，不过迎回了图雷，佩帅在锋线上选择用哲科搭档阿奎罗，后者上轮破荒。水晶宫方面，普利斯依然信任近期5连胜的班底，锋线上有枪手旧将查马克。</span></p><p><a href="http://sports.163.com/14/0428/02/9QST507900051CCL.html"><b><span style="text-indent: 2em;">&gt;&gt;&gt;</span>哲科4分钟头球闪击+近8战5球</b></a></p><p><b>第4分钟，曼城取得领先！米尔纳快发界外球，经过阿奎罗的过渡后，图雷右脚传中至后点，哲科力压两名后卫头槌攻门得手，曼城1比0水晶宫。</b></p><p>哲科<span style="text-indent: 2em;">头槌破门也是本赛季他个人的第12个联赛进球，各项赛事进球数为23个。</span><span style="text-indent: 2em;">值得一提的是，近8场比赛，哲科一共贡献5个进球，在阿奎罗经历伤病、内格雷多遭遇球荒的情形下，他是曼城阵中最被信任的前锋。要知道近8场联赛，是蓝月亮从欧冠赛场铩羽而归，期待联赛强势反弹的阶段。</span></p><p><b><a href="http://sports.163.com/14/0428/02/9QSS5QJC00051CCL.html"><span style="text-indent: 2em;">&gt;&gt;&gt;</span>图雷奔袭60米碾压式破门</a></b></p><p><b>第43分钟，图雷成功后场抢断，科特迪瓦人在对手拦阻前将球先后做给哲科和纳斯里，经过队友的传递之后，图雷如一道黑色闪电直插对手禁区。水晶宫后防德拉尼上前倒地拦挡未果，丹恩的封堵也不够及时，最终曼城中场以左脚的爆射完成破门。整个过程一气呵成，图雷整个冲刺路程将近60米，而水晶宫的整条后防线几乎都参与了对他的防守，但依旧无可奈何。</b></p><p>这是图雷本赛季斩获19粒联赛入球，科特迪瓦中场的这份数据在曼城队中排名第一，在整个英超联赛中排名第3（同第2的斯图里奇就只差1球）。</p><p><b><a href="http://sports.163.com/14/0428/01/9QSPFGAJ00051CCL.html">&gt;&gt;&gt;2012重演?曼城欲复制净胜球夺冠神迹</a></b></p><p>周日晚上的英超赛事，利物浦主场0比2不敌切尔西，曼城做客2比0取胜水晶宫。一来一回，曼城同利物浦的积分榜差距缩小到3分，考虑到蓝月亮比红军少赛一场，按照理论上讲，曼城在积分上并没有吃亏。而按照英超联盟的规则，如果出现两队积分相同的情形，排名依照净胜球多少而决定。</p><p><span style="text-indent: 2em;">目前，曼城以58个净胜球领先利物浦8个。</span><b>曼城如果和利物浦同样出现剩下比赛全部取胜的情形，蓝月亮目前占优的8个净胜球将起到决定性地作用，而这又同两年前（2011-2012赛季）曼城最后时刻登顶的经历相似。</b></p><p><b><a href="http://sports.163.com/14/0428/04/9QT21MQ000051CCL.html">&gt;&gt;&gt;佩帅:冠军将在最后一轮才揭晓</a></b></p><p>赛后，曼城主帅佩莱格里尼表示对于赛果比较满意，但同时指出蓝月亮争冠还得再接再厉，他表示：“现在最重要的是要努力到赛季结束，我们会看看谁是最好的球队。足球界从来就没有大热门，利物浦3分领先我们，我们少赛一场，那场比赛我们必须拿下，所以我认为没有热门。现在主动权掌握在我们手中，在输给利物浦的时候我们失去了一次机会。三支球队都还有很艰难的比赛要打，就像我赛季初说的，冠军会在最后一轮出来。”</p><p>水晶宫（451）：1-斯佩罗尼；3-马里亚帕、6-丹恩、27-德兰尼、2-沃德；13-庞琼、5-耶迪纳克、28-莱德利、7-博拉斯（72’21 11-因斯）、29-查马克（68’12 15-盖尔）；30-杰罗姆（69’11 17-穆雷）</p><p>曼城（4411）：1-哈特；5-萨巴莱塔、4-孔帕尼、26-德米凯利斯、13-科拉罗夫；14-加西亚、42-图雷（65’46 25-费尔南迪尼奥）、7-米尔纳、8-纳斯里；16-阿奎罗（77’52 35-约维蒂奇）；10-哲科（88’01 9-内格雷多）</p>
+	</div>
+</div>
+<span class="blank12"></span>
+<link rel="stylesheet" type="text/css" href="http://sports.163.com/special/00050AP2/nbaysydcss.css" />
+<div class="atleLP">
+	<div class="clearfix">
+    <h2 class="left sports-tt"><a href="http://sports.163.com/">体育头条</a></h2>
+    <div class="right scI"> <a href="http://sports.163.com/world/">国际足球</a> | <a href="http://sports.163.com/yc/">英超</a> | <a href="http://sports.163.com/special/footballtalk/total.html">超级颜论</a> | <a href="http://caipiao.163.com/order/jczq/?referered=http%3A%2F%2Fsports.163.com%2F13%2F0921%2F02%2F998TE4QE00051CCL.html">足彩</a>
+    </div>
+</div>
+<div class="clearfix aBlock uB">
+    <div class="imgNews"> 
+   <a href="http://sports.163.com/photoview/00D80005/113981.html" title="利物浦0-2切尔西"><img src="http://img3.cache.netease.com/sports/2014/4/28/20140428091152ebe99.jpg" width="160" height="110" alt="利物浦0-2切尔西"/></a>
+      <h3><a href="http://sports.163.com/photoview/00D80005/113981.html">利物浦0-2切尔西</a></h3>
+    </div>
+<div class="mainNews">
+																		<h3><a href="http://goal.sports.163.com/8/match/report/2013/695254.html" class="atlecB">利物浦0-2切尔西</a> <a target="_blank" href="http://sports.163.com/14/0427/22/9QSEV1R700051CCL.html">杰队致命失误</a> <a target="_blank" href="http://sports.163.com/14/0427/23/9QSG5H4900051CCL.html">穆帅振臂怒吼</a></h3>
+																		<p><span>[交锋]</span> <a href="http://sports.163.com/14/0428/01/9QSMK9B400051CCL.html">穆帅:我们双杀冠军</a> <a target="_blank" href="http://sports.163.com/14/0428/01/9QSO1SPG00051CCL.html"><em class='cDRed'>罗杰斯讽刺:不屑那样踢</em></a> | <a target="_blank" href="http://sports.163.com/14/0427/23/9QSI81NA00051CCL.html">蓝军变杀四狂魔</a></p>
+												<p><span>[关注]</span> <a href="http://sports.163.com/14/0428/06/9QT8DEBS00051CCL.html">直击-利物浦球迷讽切尔西无历史</a> | <a target="_blank" href="http://sports.163.com/14/0428/08/9QTHPFLG00051CCL.html">蓝军粉丝高唱杰拉德引斗殴</a></p>
+																		<h3 class="pt10h"><a href="http://goal.sports.163.com/8/match/report/2013/695252.html" class="atlecB">曼城2-0距榜首3分</a> <a target="_blank" href="http://sports.163.com/14/0428/01/9QSNCC6O00051CCL.html">获争冠主动权</a> <a target="_blank" href="http://sports.163.com/14/0428/01/9QSPFGAJ00051CCL.html">神迹重演?</a></h3>
+																		<p><span>[人物]</span> <a href="http://sports.163.com/14/0428/02/9QSS5QJC00051CCL.html">黑色闪电!图雷奔袭60米碾压式破门</a> | <a target="_blank" href="http://sports.163.com/14/0428/02/9QST507900051CCL.html">哲科4分钟闪击+近8战5球</a></p>
+											</div>
+  </div>
+  <div class="clearfix aBlock">
+    <div class="imgNews">     
+         <a href="http://sports.163.com/photoview/00D80005/113985.html" title="水晶宫0-2曼城"><img src="http://img5.cache.netease.com/sports/2014/4/28/201404280212395d7d1.jpg" width="160" height="110" class="pt10h" alt="水晶宫0-2曼城"/></a>
+      <h3><a href="http://sports.163.com/photoview/00D80005/113985.html">水晶宫0-2曼城</a></h3>
+         <a href="http://sports.163.com/photoview/00D80005/113947.html" title="曼联4-0诺维奇"><img src="http://img6.cache.netease.com/sports/2014/4/27/20140427031951426da.jpg" width="160" height="110" class="pt10h" alt="曼联4-0诺维奇"/></a>
+      <h3><a href="http://sports.163.com/photoview/00D80005/113947.html">曼联4-0诺维奇</a></h3>
+    </div>
+    <div class="mainNews pt10h">
+         <h3><a href="http://sports.163.com/14/0428/14/9QU4V3Q800051CCL.html" class="atlecB" title="肢体语言出卖吉格斯 牛津专家:首秀充满焦虑担忧">肢体语言出卖吉格斯 牛津专家:首秀充满焦虑担忧</a></h3>
+      <ul>
+           <li><a href="http://sports.163.com/14/0428/14/9QU37BTU00051CCL.html" title="温格:争四如同玩轮盘赌 吉鲁:拿到第4就是成功">温格:争四如同玩轮盘赌 吉鲁:拿到第4就是成功</a></li>
+           <li><a href="http://sports.163.com/14/0428/12/9QTV5UBU00051CCL.html" title="弟媳门主角挺吉格斯:你是个垃圾 但会是个好教练">弟媳门主角挺吉格斯:你是个垃圾 但会是个好教练</a></li>
+           <li><a href="http://sports.163.com/14/0428/11/9QTQ3D1H00051CCL.html" title="曝范加尔催促曼联本周签约 合约3年总值2500万镑">曝范加尔催促曼联本周签约 合约3年总值2500万镑</a></li>
+           <li><a href="http://sports.163.com/14/0428/10/9QTO6QLE00051CCL.html" title="莫耶斯美国度假玩手机 英媒:没看看曼联的比分吗">莫耶斯美国度假玩手机 英媒:没看看曼联的比分吗</a></li>
+           <li><a href="http://sports.163.com/14/0428/08/9QTHPFLG00051CCL.html" title="安菲尔德外球迷掐架 蓝军粉丝高唱杰拉德引斗殴">安菲尔德外球迷掐架 蓝军粉丝高唱杰拉德引斗殴</a></li>
+      </ul>
+      <ul class="mt-2h">
+           <li><a href="http://sports.163.com/14/0428/08/9QTFRIPR00051CCL.html" title="懦夫大骗子!吉格斯遭父亲怒骂:有什么脸带曼联?">懦夫大骗子!吉格斯遭父亲怒骂:有什么脸带曼联?</a></li>
+           <li><a href="http://sports.163.com/14/0428/06/9QT8DEBS00051CCL.html" title="直击-利物浦球迷震撼高歌90分钟 讽切尔西无历史">直击-利物浦球迷震撼高歌90分钟 讽切尔西无历史</a></li>
+           <li><a href="http://sports.163.com/14/0428/06/9QT82KQT00051CCL.html" title="苏神当选PFA英超赛季最佳球员 阿扎尔最佳新人奖">苏神当选PFA英超赛季最佳球员 阿扎尔最佳新人奖</a></li>
+           <li><a href="http://zx.caipiao.163.com/article/14/0417/10/9Q1AVVPR00052DT2.html#from=spfoot" title="周四投注分析:汉诺威难克敌 葡超升班马求保级">周四投注分析:汉诺威难克敌 葡超升班马求保级</a></li>
+           <li><a href="http://zx.caipiao.163.com/article/14/0417/10/9Q1CNL7U00052DT2.html#from=spfoot" title="小宝竞彩推荐:瑞超高看主队 信哥德堡埃尔夫斯堡">小宝竞彩推荐:瑞超高看主队 信哥德堡埃尔夫斯堡</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="col2">
+<div class="rightTitle">
+  <h2>本场数据统计<a href="/8/match/stat/2013/695252.html" target="_blank">[详细]</a></h2>
+</div>
+<div class="rightList2">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="1" class="daTb03">
+<tbody>
+  <tr>
+    <th  style="width:80px"><a href="/8/team/31.html">水晶宫</a></th>
+    <th>数据</th>
+    <th  style="width:80px"><a href="/8/team/43.html">曼城</a></th>
+  </tr>
+</tbody>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="1" class="daTb03">
+<tbody>
+  <tr class="bg">
+    <td>0</td>
+    <td>进球</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>射门</td>
+    <td>16</td>
+  </tr>
+  <tr class="bg">
+    <td>2</td>
+    <td>射正</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>射偏</td>
+    <td>0</td>
+  </tr>
+  <tr class="bg">
+    <td>0</td>
+    <td>被封堵射门</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>角球</td>
+    <td>8</td>
+  </tr>
+  <tr class="bg">
+    <td>10</td>
+    <td>任意球</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>界外球</td>
+    <td>22</td>
+  </tr>
+  <tr class="bg">
+    <td>9</td>
+    <td>犯规</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>越位</td>
+    <td>0</td>
+  </tr>
+  <tr class="bg">
+    <td>4</td>
+    <td>扑救</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>抢断</td>
+    <td>26</td>
+  </tr>
+  <tr class="bg">
+    <td>3</td>
+    <td>黄牌</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>红牌</td>
+    <td>0</td>
+  </tr>
+  <tr class="bg">
+    <td>46.3%</td>
+    <td>控球率</td>
+    <td>53.7%</td>
+  </tr>
+  <tr>
+    <td>76.8%</td>
+    <td>传球成功率</td>
+    <td>80.0%</td>
+  </tr>
+  <tr class="bg">
+    <td>0.0%</td>
+    <td>传中成功率</td>
+    <td>33.3%</td>
+  </tr>
+  <tr>
+    <td>72.0%</td>
+    <td>抢断成功率</td>
+    <td>80.8%</td>
+  </tr>
+  <tr class="bg">
+    <td>41.5%</td>
+    <td>头球成功率</td>
+    <td>58.5%</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<span class="blank9"></span>
+
+<div class="rightTitle">
+	<h2>球员信息汇总</h2>
+</div>
+<div class="rightList2">
+    <div class="bg" style="text-align:center">
+      <ul id="qyxx-tab" class="qyxx-tab clearfix">
+        <li class="on">水晶宫</li>
+        <li class="">曼城</li>
+      </ul>
+    </div>
+    <div id="qyxx-content">
+      <div class="qyxx-content on">
+        <div class="nonebg th">首发球员信息</div>
+									<div class="nonebg">
+										<span class="active-player">1</span><a href="/8/player/11554.html">斯佩罗尼</a>
+												</div>
+												<div class="bg">
+										<span class="active-player">2</span><a href="/8/player/55494.html">沃德</a>
+								    				<span class="yellow-card" title="71分钟">&nbsp;&nbsp;&nbsp;</span>    												</div>
+												<div class="nonebg">
+										<span class="active-player">3</span><a href="/8/player/20145.html">马里亚帕</a>
+												</div>
+												<div class="bg">
+										<span class="active-player">6</span><a href="/8/player/19188.html">Scott</a>
+								    				<span class="yellow-card" title="56分钟">&nbsp;&nbsp;&nbsp;</span>    												</div>
+												<div class="nonebg">
+										<div class="replaced">
+					<span class="inactive-player">7</span><a href="/8/player/55452.html">博拉斯</a>
+					<span class="arrow-down" title="73分钟">&nbsp;&nbsp;</span>
+    													</div>
+				<div class="replacing">
+					<span class="corner clear"></span><span class="active-player">0</span><a href="/8/player/86176.html">Thomas</a>
+					<span class="arrow-up" title="73分钟">&nbsp;&nbsp;</span>
+    													</div>
+				</div>
+												<div class="bg">
+										<span class="active-player">13</span><a href="/8/player/19197.html">庞琼</a>
+												</div>
+												<div class="nonebg">
+										<span class="active-player">15</span><a href="/8/player/59115.html">耶迪纳克</a>
+												</div>
+												<div class="bg">
+										<span class="active-player">27</span><a href="/8/player/7906.html">德拉尼</a>
+								    				<span class="yellow-card" title="24分钟">&nbsp;&nbsp;&nbsp;</span>    												</div>
+												<div class="nonebg">
+										<span class="active-player">28</span><a href="/8/player/18805.html">莱德利</a>
+												</div>
+												<div class="bg">
+										<div class="replaced">
+					<span class="inactive-player">29</span><a href="/8/player/15675.html">查马克</a>
+					<span class="arrow-down" title="69分钟">&nbsp;&nbsp;</span>
+    													</div>
+				<div class="replacing">
+					<span class="corner clear"></span><span class="active-player">16</span><a href="/8/player/104547.html">盖勒</a>
+					<span class="arrow-up" title="69分钟">&nbsp;&nbsp;</span>
+    													</div>
+				</div>
+												<div class="nonebg">
+										<div class="replaced">
+					<span class="inactive-player">30</span><a href="/8/player/18804.html">杰罗姆</a>
+					<span class="arrow-down" title="69分钟">&nbsp;&nbsp;</span>
+    													</div>
+				<div class="replacing">
+					<span class="corner clear"></span><span class="active-player">17</span><a href="/8/player/20529.html">穆雷</a>
+					<span class="arrow-up" title="69分钟">&nbsp;&nbsp;</span>
+    													</div>
+				</div>
+					        <div class="nonebg th">替补球员</div>
+		<div id="homeNotStarted">
+		</div>
+		</div>
+		
+	<div class="qyxx-content">
+        <div class="nonebg th">首发球员信息</div>
+                			    				<div class="nonebg">
+    			    			    				<span class="active-player" title="69分钟">1</span><a href="/8/player/15749.html">哈特</a>
+															</div>
+    			    		    			    				<div class="bg">
+    			    			    				<span class="active-player" title="69分钟">4</span><a href="/8/player/17476.html">孔帕尼</a>
+															</div>
+    			    		    			    				<div class="nonebg">
+    			    			    				<span class="active-player" title="69分钟">5</span><a href="/8/player/20658.html">萨巴莱塔</a>
+										        				<span class="yellow-card" title="33分钟">&nbsp;&nbsp;&nbsp;</span>        														</div>
+    			    		    			    				<div class="bg">
+    			    			    				<span class="active-player" title="33分钟">7</span><a href="/8/player/15157.html">米尔纳</a>
+															</div>
+    			    		    			    				<div class="nonebg">
+    			    			    				<span class="active-player" title="33分钟">8</span><a href="/8/player/28554.html">纳斯里</a>
+															</div>
+    			    		    			    				<div class="bg">
+    			    			    				<div class="replaced">
+    					<span class="inactive-player">10</span><a href="/8/player/42544.html">哲科</a>
+						<span class="arrow-down">&nbsp;&nbsp;</span>
+													    							<span class="soccer" title="4分钟">&nbsp;&nbsp;&nbsp;</span>
+    																		    				</div>
+    				<div class="replacing">
+    					<span class="corner clear"></span><span class="active-player">9</span><a href="/8/player/42892.html">内格雷多</a>
+						<span class="arrow-up" title="88分钟">&nbsp;&nbsp;</span>
+        										    				</div>
+					</div>
+    			    		    			    				<div class="nonebg">
+    			    			    				<span class="active-player" title="88分钟">13</span><a href="/8/player/42593.html">科拉罗夫</a>
+															</div>
+    			    		    			    				<div class="bg">
+    			    			    				<span class="active-player" title="88分钟">14</span><a href="/8/player/19534.html">加西亚</a>
+															</div>
+    			    		    			    				<div class="nonebg">
+    			    			    				<div class="replaced">
+    					<span class="inactive-player">16</span><a href="/8/player/37572.html">阿奎罗</a>
+						<span class="arrow-down">&nbsp;&nbsp;</span>
+												    				</div>
+    				<div class="replacing">
+    					<span class="corner clear"></span><span class="active-player">35</span><a href="/8/player/50442.html">约维蒂奇</a>
+						<span class="arrow-up" title="79分钟">&nbsp;&nbsp;</span>
+        										    				</div>
+					</div>
+    			    		    			    				<div class="bg">
+    			    			    				<span class="active-player" title="79分钟">26</span><a href="/8/player/15312.html">德米凯利斯</a>
+															</div>
+    			    		    			    				<div class="nonebg">
+    			    			    				<div class="replaced">
+    					<span class="inactive-player">42</span><a href="/8/player/14664.html">亚亚·图雷</a>
+						<span class="arrow-down">&nbsp;&nbsp;</span>
+													    							<span class="soccer" title="43分钟">&nbsp;&nbsp;&nbsp;</span>
+    																		    				</div>
+    				<div class="replacing">
+    					<span class="corner clear"></span><span class="active-player">25</span><a href="/8/player/27789.html">费尔南迪尼奥</a>
+						<span class="arrow-up" title="66分钟">&nbsp;&nbsp;</span>
+        										    				</div>
+					</div>
+    			    		        <div class="nonebg th">替补球员</div>
+            <div id="awayNotStarted">
+			</div>
+	</div>
+</div>
+</div>
+    <span class="blank9"></span>
+    <div class="rightTitle"><h2>英超实时积分榜<a href="/8/stat/standings/2013_3.html">[详细]</a></h2></div>
+    <div class="rightList2">
+        <table width="100%" border="0" cellspacing="0" cellpadding="1" class="daTb03">
+          <tr>
+            <th>排名</th>
+            <th>球队</th>
+            <th>净胜球</th>
+            <th>积分</th>
+          </tr>
+                        <tr class="bg">
+                <td>1</td>
+                <td><a href="/8/team/14.html">利物浦</a></td>
+                <td>50</td>
+                <td>80</td>
+              </tr>
+                        <tr class="bg">
+                <td>2</td>
+                <td><a href="/8/team/8.html">切尔西</a></td>
+                <td>43</td>
+                <td>78</td>
+              </tr>
+                        <tr class="bg">
+                <td>3</td>
+                <td><a href="/8/team/43.html">曼城</a></td>
+                <td>58</td>
+                <td>77</td>
+              </tr>
+                        <tr class="bg">
+                <td>4</td>
+                <td><a href="/8/team/3.html">阿森纳</a></td>
+                <td>21</td>
+                <td>70</td>
+              </tr>
+                        <tr class="bg">
+                <td>5</td>
+                <td><a href="/8/team/11.html">埃弗顿</a></td>
+                <td>21</td>
+                <td>69</td>
+              </tr>
+                        <tr class="bg">
+                <td>6</td>
+                <td><a href="/8/team/6.html">托特纳姆</a></td>
+                <td>3</td>
+                <td>66</td>
+              </tr>
+                        <tr class="bg">
+                <td>7</td>
+                <td><a href="/8/team/1.html">曼联</a></td>
+                <td>20</td>
+                <td>60</td>
+              </tr>
+                        <tr class="bg">
+                <td>8</td>
+                <td><a href="/8/team/20.html">南安普敦</a></td>
+                <td>7</td>
+                <td>52</td>
+              </tr>
+                        <tr class="bg">
+                <td>9</td>
+                <td><a href="/8/team/4.html">纽卡斯尔</a></td>
+                <td>-15</td>
+                <td>46</td>
+              </tr>
+                        <tr class="bg">
+                <td>10</td>
+                <td><a href="/8/team/110.html">斯托克城</a></td>
+                <td>-11</td>
+                <td>44</td>
+              </tr>
+                        <tr class="bg">
+                <td>11</td>
+                <td><a href="/8/team/31.html">水晶宫</a></td>
+                <td>-15</td>
+                <td>43</td>
+              </tr>
+                        <tr class="bg">
+                <td>12</td>
+                <td><a href="/8/team/80.html">斯旺西</a></td>
+                <td>-1</td>
+                <td>39</td>
+              </tr>
+                        <tr class="bg">
+                <td>13</td>
+                <td><a href="/8/team/88.html">赫尔城</a></td>
+                <td>-9</td>
+                <td>37</td>
+              </tr>
+                        <tr class="bg">
+                <td>14</td>
+                <td><a href="/8/team/21.html">西汉姆联</a></td>
+                <td>-11</td>
+                <td>37</td>
+              </tr>
+                        <tr class="bg">
+                <td>15</td>
+                <td><a href="/8/team/35.html">西布朗维奇</a></td>
+                <td>-12</td>
+                <td>36</td>
+              </tr>
+                        <tr class="bg">
+                <td>16</td>
+                <td><a href="/8/team/7.html">阿斯顿维拉</a></td>
+                <td>-17</td>
+                <td>35</td>
+              </tr>
+                        <tr class="bg">
+                <td>17</td>
+                <td><a href="/8/team/56.html">桑德兰</a></td>
+                <td>-20</td>
+                <td>32</td>
+              </tr>
+                        <tr class="bg">
+                <td>18</td>
+                <td><a href="/8/team/45.html">诺维奇</a></td>
+                <td>-32</td>
+                <td>32</td>
+              </tr>
+                        <tr class="bg">
+                <td>19</td>
+                <td><a href="/8/team/54.html">富勒姆</a></td>
+                <td>-42</td>
+                <td>31</td>
+              </tr>
+                        <tr class="bg">
+                <td>20</td>
+                <td><a href="/8/team/97.html">加的夫城</a></td>
+                <td>-38</td>
+                <td>30</td>
+              </tr>
+                  </table>
+    </div>
+
+</div>
+
+<div class="areaEnd2"></div>
+
+<span class="blank9 blankW"></span>
+</div>
+<!-- Tie Begin -->
+<script type="text/javascript">
+var docId = "9QSMJK1R00051CCL";
+var tieBoard = "sports2_bbs";
+</script>
+<link href="http://img1.cache.netease.com/tie/css/tieanywhere2.x.css" rel="stylesheet" type="text/css" />
+<div id="tieArea">
+    <div class="tie-title">
+        <span class="name">跟贴区</span>
+        <a class="f14px cBlue tieLink" target="_blank" href="">有<span class="cDRed fB tieCount"></span>人参与<span class="cDRed">(点击查看)</span></a>
+    </div>
+    <div id="tie-ajaxPortal" style="display: none;">
+        <iframe id="tie-portal" name="tie-portal"></iframe>
+        <form action="" method="post" target="tie-portal"></form>
+    </div>
+    <div id="tie-data">
+        <div class="replies"><p class="tips">跟贴读取中...</p></div>
+    </div>
+    <div id="tie-reply">
+        <div class="userInfo">
+            <div class="tie-nicknamePost"><a href="#" class="toLoginMode">点击登录</a> | <label>昵称：</label><input name="nickname" type="text" class="input" /></div>
+            <div class="tie-logon"><a href="#" class="toWaterList" target="_blank"><strong class="userName"></strong></a>&nbsp;发言 | <a href="#" target="_self" id="modifyNickname">修改昵称</a> | <a href="#" target="_blank" class="toWaterList">我的网易跟贴</a> | <a target="_self" href="#" class="logout">退出</a></div>
+            <form method="post" action="https://reg.163.com/logins.jsp" class="tie-login" target="_self">
+                <span class="toNicknameMode"><a href="#">昵称</a> |</span>
+                <label>网易通行证：<input type="text" class="input" name="username" /></label>
+                <label>密码：<input type="password" class="input" name="password" /></label>
+                <label><input type="checkbox" name="savelogin" value="1" checked="checked" /> <span>自动登录</span></label>
+                <input type="hidden" value="search" name="product" /><input type="hidden" value="1" name="type" /><input type="hidden" name="url" />
+                <input type="submit" class="button" value="登 录" />
+                <a href="http://reg.163.com/reg0.shtml?url=" class="tieReg">注册</a>
+            </form>
+        </div>
+        <form class="tie-post" action="http://comment.news.163.com/reply/dopost.jsp" method="post" target="_self">
+            <textarea name="body" class="tieBody" cols="80" rows="8">文明上网，登录发贴</textarea>
+            <div class="send">
+                <p>网友评论仅供其表达个人看法，并不表明网易同意其观点或证实其描述。</p>
+                <span>
+                    <input type="hidden" name="board" />
+                    <input type="hidden" name="username" />
+                    <input type="hidden" name="threadid" />
+                    <input type="hidden" name="url" />
+                    <a href="http://news.163.com/special/00013GHE/commenthelp.html" class="fB">如何使用跟贴</a>
+                    <input type="submit" class="toPost" value="马上发表" />
+                </span>
+            </div>
+        </form>
+    </div>
+    <div id="tie-nicknameWin" class="tie-win">
+        <div class="title"> <span class="text">修改昵称</span> <a href="#" class="close" target="_self"><img src="http://comment.news.163.com/images/close_ico.png" alt="关闭窗口" /></a> </div>
+        <div class="body">
+            <form action="http://comment.news.163.com/reply/alterNickname.jsp" method="post" target="tie-portal">
+                <input name="nickname" type="text" class="input" maxlength="12" />
+                <input type="submit" class="toPost" value="确 定" />
+                <label>跟贴昵称修改后，论坛昵称也会变哦</label>
+            </form>
+        </div>
+    </div>
+    <div id="tie-quoteWin" class="tie-win">
+        <div class="title blue"> <span class="text">盖楼回复</span> <a href="#" class="close"><img src="http://comment.news.163.com/images/close_ico.png" alt="关闭窗口" /></a> </div>
+        <div class="body">
+            <div class="userInfo">
+                <div class="tie-nicknamePost"><a href="#" class="toLoginMode">点击登录</a> | <label>昵称：</label><input name="nickname" type="text" class="input" /></div>
+                <form method="post" action="https://reg.163.com/logins.jsp" class="tie-login" target="_self">
+                    <span class="toNicknameMode"><a href="#">昵称</a> |</span>
+                    <label>网易通行证：<input type="text" class="input" name="username" /></label>
+                    <label>密码：<input type="password" class="input" name="password" /></label>
+                    <label><input type="checkbox" name="savelogin" value="1" checked="checked" /> <span>自动登录</span></label>
+                    <input type="hidden" value="search" name="product" /><input type="hidden" value="1" name="type" /><input type="hidden" value="" name="url" /><input type="submit" class="button" value="登 录" />
+                    <a href="http://reg.163.com/reg0.shtml?url=" class="tieReg">注册</a>
+                </form>
+                <div class="tie-logon"><a target="_blank" class="toWaterList" href=""><strong class="userName"></strong></a> 发言 | <a target="_self" href="#" class="logout">退出</a></div>
+            </div>
+            <form class="tie-post" action="http://comment.news.163.com/reply/dopost.jsp" method="post">
+                <textarea name="body" rows="8" cols="80" class="tieBody">文明上网，登录发贴</textarea>
+                <div>
+                    <input type="submit" class="toPost" value="马上发表" />
+                    <input type="hidden" name="username"/>
+                    <input name="board" type="hidden" />
+                    <input name="threadid" type="hidden" />
+                    <input name="url" type="hidden" />
+                    <input name="quote" value="" type="hidden" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="tie-repostWin" class="tie-win">
+        <div class="title blue"> <span class="text">复制收藏</span> <a href="#" target="_self" class="close"><img src="http://comment.news.163.com/images/close_ico.png" alt="关闭窗口" /></a> </div>
+        <div class="body">
+            <p class="tips"> <span class="success">复制成功，按CTRL+V发送给好友、论坛或博客。</span> <span class="failed">浏览器限制，请复制链接和标题给好友、论坛或博客。</span> </p>
+            <p class="replyCopy"> <a href="" class="repostUrl"></a> <br/><span class="docTitle"></span> </p>
+            <div style="text-align: center;"><input type="button" class="toConfirm close" value="" /></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/tie/js/tieanywhere2.x-min.js?2010031210" charset="gb2312"></script>
+<script type="text/javascript">//<![CDATA[
+var tieChannel = "sports";
+if(typeof tieBoard == "undefined"){
+ 	tieBoard = "sports2_bbs";
+}
+var isShowComments = true;
+var isStrict = true;
+(function() {
+    var _tmp = $tie.HotTieArea.prototype.initView;
+    $tie.HotTieArea.prototype.initView = function(data) {  
+        _tmp(data);
+        var joincount=data.thread.rcount;
+        if(typeof(data.joincount)!="undefined"){
+          joincount=data.joincount;
+        }
+        $("span.tieCount, strong.tieCount").attr("innerHTML", joincount);
+        $("#replycounttop, #replycount001, #replycountbottom").attr("innerHTML", joincount);
+    };
+    var tieArea = new $tie.HotTieArea($("#tieArea"), docId , tieBoard , tieChannel, isStrict);
+    tieArea[isShowComments ? "showPage" : "initView"]();
+})();
+//]]></script>
+
+<!-- Tie End -->
+</div>
+<span class="blank9"></span>
+<!--极光系统锚点统计 -->
+
+<script>!function(i){function n(){this.proc={inca:function(n,t,a){var e=a.start||1;i("a",t).each(function(i,t){o(n+c(e++),t)})},subdiv:function(n,t,e){for(var f=1,r=e.level||1,u=[t],s=0;r>s;s++){var l=[];i.each(u,function(n,t){var e=0;"a"==t.tagName.toLowerCase()||/ntes-nav-select/.test(t.className)||i.each(t.children,function(i,n){a(n)&&(l.push(n),e++)}),e||l.push(t)}),u=l}i.each(u,function(i,t){o(n+c(f++),t)})},uniq:function(i,n,t){o(i+c(t.start||1),n,t.all)},form:function(n,t){var a=i(">form",t);a[0]&&a.addEvent("submit",function(){r.call(this,n+"1")})},tabgroup:function(n,t,a){var e=i(a.h,t),f=i(a.b,t);if(e&&f){var r=a.step||10,u=2;o(n+"1",t),e.each(function(i,t){o(n+c(u+i*r),t)}),f.each(function(i,t){o(n+c(u+i*r+1),t)})}},tabgroups:function(n,t,e){var f=e.union||"",r={};if(/^[\s\d,]+$/.test(f)){var u=0;i.each(f.split(/\s*,\s*/),function(i,n){if(n=parseInt(n))for(var t=0;n>t;t++)r[u++]=i})}var s=2;o(n+"1",t);var l=parseInt(e.step)||10,h=i(e.h,t);if(h&&d){i.each(h,function(i,t){o(n+c(i*l+s),t)});var d=i(e.b,t);i.each(d,function(t,e){var f=t*l+s+1,u=e.children;if(0==u.length)u=[e];else for(;1==u.length;)u=u[0].children;var h=0;i.each(u,function(i,t){a(t)&&("undefined"!=typeof r[i]&&(h=r[i]),o(n+c(f+h),t),h++)})})}}}}function t(){var i=_ntes_page_data.getRunTime()||0;return 0>i?0:i}function a(i){var n=i.className,t=i.tagName.toLowerCase(),a={script:1,style:1,link:1,img:1,hr:1,br:1},e=!0;return a[t]?e=!1:/blank\d/.test(n)&&(e=!1),e}function e(n){m||(d&&window._ntes_sendInfo?(i.each(g,function(i,n){u(n)}),m=!0):g.push(n)),m&&u(n)}function c(i){return 10>i?i.toString():i>62?"z":String.fromCharCode(i+(36>i?55:61))}function f(i,n){if(!n)return i;var t=i.length-1,a=i.charCodeAt(t);return 58>a?a-=48:91>a?a-=55:123>a&&(a-=61),i.substr(0,t)+c(a+n)}function o(i,n,t){n&&n.setAttribute((t?"_":"")+"jcid",i)}function r(i){if(i){var n="";"a"==this.tagName.toLowerCase()&&(n=this.getAttribute("href")||""),p++;var a="/ntes_p?"+_+"&_nct="+t()+"&_nah="+escape(n)+"&_nat={id}_"+i;e(a)}}function u(i){_ntes_sendInfo("cl",_ntes_src_addr+i.replace("{id}",d))}function s(i,n,t){for(var a=0;"a"!=i.tagName.toLowerCase();){if(t=i.getAttribute("_jcid"))return t;if(i=i.parentNode,!i.tagName||a++>5)return null}for(;i&&i!=n&&!(t=i.getAttribute("jcid"));)i=i.parentNode;return t}function l(n,t,a){if("iframe"!=n.tagName.toLowerCase())t(n,a);else{var e,c=h(n),f=function(){if("function"==typeof e&&e.call(this),c=h(n)){var f=c.body;i(f).addEvent("click",function(i){var n=i.target;r.call(n,s(n,f))}),t(f,a)}};c&&/^http/.test(c.location.href)?f():n.attachEvent?n.attachEvent("onload",f):(e=n.onload,n.onload=f)}}function h(i){var n;try{n=i.contentDocument}catch(t){}if(!n&&i.contentWindow){try{"object"==typeof i.contentWindow.document&&(n=i.contentWindow.document)}catch(t){}if(!n)return null}var a=1;try{n.location&&(a=0)}catch(t){}return a?null:n}var d,v,_="_nacc=siteclick&_npurl="+escape(document.URL),p=0,m=!1,g=[],b=document.body;n.prototype={init:function(n,a){n&&5==n.length&&(d=n),v||(v=Math.random()<(a||.1),v&&(i("body").addEvent("click",function(i){var n=i.target;r.call(n,s(n,b))}),i.ready(function(){function n(){a&&(e("/ntes_u?"+a+"&_nct="+t()+"&_mcn="+p+c),a=0)}var a=_+"&_nch={id}",c="",f="";if(window.NTES_logger_start_time){var o=NTES_logger_start_time.getTime();f="&_msl="+((new Date).getTime()-o),i(window).addEvent("load",function(){c="&_msl="+((new Date).getTime()-o)})}e("/ntes_u?"+a+f),_ntes_bindEvent(window,"beforeunload",n);var r=window.navigator.userAgent.toLowerCase();!/compatible/.test(r)&&/firefox/.test(r)&&_ntes_bindEvent(window,"unload",n)}),this.retain&&this.area(b,this.retain)))},area:function(n,t){var a=this,e=function(i,n){a.area(i,n)};for(var c in t){var f=t[c],o=0;/(.*?)\*$/.test(c)&&(c=RegExp.$1,o=1);var r=c?/^#/.test(c)?i(c):i(c,n):[n];i.util.isArray(r)||(r=[r]);for(var u=0;u<r.length;u++){var s=o?f[0]:f[u];if(s&&r[u])if(s.i)for(var h=s.s||1,d=0;h>d;d++)f[u].j=d,this.zone(r[u+d],s);else l(r[u],e,s)}}},zone:function(n,t){var a=f(t.i,t.j),e=this.proc[t.f||"uniq"],c=t.p||{};n&&e&&(c.dyn?i(n).addEvent("mouseover",function(){for(var i=n.children[0];i&&i.children[0];)i=i.children[0];i&&!i.getAttribute("jdyn")&&(e(a,n,c),i.setAttribute("jdyn",1))}):l(n,function(i){e(a,i,c)}))},batch:function(i){v?this.area(b,i):this.retain=i}},window._aCM=new n}(NTES),function(){_aCM.init("tyg09"),setTimeout(function(){_aCM.batch({".nav_link":[{"":[{"":[{i:"111",f:"inca"}]}]}],".rightCon":[{"":[{"":[{i:"211",f:"inca"}]}]}],".slNavT":[{".c2":[{"":[{i:"311",f:"inca"}]},{"":[{i:"321",f:"inca"}]}],li:[{">h3":[{i:"331",f:"inca"}]},0,0,0,0,0,0,0,0,{">h3":[{i:"3C1",f:"inca"}]}],"#m1":[{">h3":[{i:"341",f:"inca"}]}],"#m2":[{">h3":[{i:"351",f:"inca"}]}],"#m3":[{">h3":[{i:"361",f:"inca"}]}],"#m4":[{">h3":[{i:"371",f:"inca"}]}],"#m5":[{">h3":[{i:"381",f:"inca"}]}],"#m6":[{">h3":[{i:"391",f:"inca"}]}],"*#m7":[{">h4":[{i:"3A1",f:"inca"}]},{">h4":[{i:"3B1",f:"inca"}]}]}],".t2":[0,{"#menu_1":[{">li":[{i:"411"}]}],"#menu_2":[{">li":[{i:"421"}]}],"#menu_3":[{">li":[{i:"431"}]}],"#menu_4":[{">li":[{i:"441"}]}],"#menu_5":[{">li":[{i:"451"}]}],"#menu_6":[{">li":[{i:"461"}]}],"#menu_7":[{">li":[{i:"471"}]}]}],".goal_crumbs":[{"":[{"":[{i:"511",f:"inca"}]}]}],".matchNav":[{">.icoContainer":[{"":[{i:"611",f:"inca"}]}],">.matchContainer":[{"":[{i:"621",p:{dyn:1}}]}],".zone":[{"":[{i:"631",f:"inca"}]}]}],".area":[{".leftList":[{"":[{i:"711",f:"inca",p:{dyn:1}}]}],"#latestMatch":[{"":[{i:"721",f:"inca",p:{dyn:1}}]}]}],".leftList3":[{li:[{">h3":[{i:"811",f:"inca"}]},{">h3":[{i:"821",f:"inca"}]},{">h3":[{i:"831",f:"inca"}]},{">h3":[{i:"841",f:"inca"}]},{">h3":[{i:"851",f:"inca"}]},{">h3":[{i:"861",f:"inca"}]}]}],".area2":[{"#h1title":[{"":[{i:"911",f:"inca"}]}],".info":[{"":[{i:"921",f:"inca"}]}],"*#endText":[{".f_center":[{i:"931",f:"inca"}],".nph_photo_view":[{i:"932",f:"inca"}],".nph_cnt":[0,{i:"933",f:"inca"}],".nph_photo_thumb":[{i:"934"}],".nph_photo_ctrl>div":[{i:"935",f:"inca"}],".nph-poplist":[{i:"936",f:"inca"}],ul:[0,0,{i:"937",f:"subdiv"}],".nph_layout_htp_top":[{i:"938",f:"inca"}],".nph_layout_htp_title":[{i:"939",f:"inca"}],".nph_layout_htp_bd_b":[{i:"93A",f:"inca"}]}],".atleLP":[{".left":[{i:"941"}],".right":[{i:"942",f:"inca"}],".imgNews":[{i:"943",f:"subdiv"},{i:"945",f:"subdiv"}],".mainNews":[{i:"944",f:"subdiv"},{i:"946",f:"subdiv",p:{level:2}}]}],h2:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,{"":[{i:"951"}]}],".daTb03":[{th:[{i:"961",f:"inca"},0,{i:"962",f:"inca"}]}],"#qyxx-content":[{".nonebg":[0,{i:"971",f:"inca"},{i:"973",f:"inca"},{i:"975",f:"inca"},{i:"977",f:"inca"},{i:"979",f:"inca"},{i:"97B",f:"inca"},0,{i:"97C",f:"inca"},0,0,0,0,{i:"97D",f:"inca"},{i:"97F",f:"inca"},{i:"97H",f:"inca"},{i:"97J",f:"inca"},{i:"97L",f:"inca"},{i:"97N",f:"inca"},0,{i:"97O",f:"inca"}],".bg":[{i:"972",f:"inca"},{i:"974",f:"inca"},{i:"976",f:"inca"},{i:"978",f:"inca"},{i:"97A",f:"inca"},0,0,0,{i:"97E",f:"inca"},{i:"97G",f:"inca"},{i:"97I",f:"inca"},{i:"97K",f:"inca"},{i:"97M",f:"inca"}]}]}],"#tieArea":[{">.tie-title":[{"":[{i:"A11",f:"inca"}]}],"#tie-ajaxPortal":[{"":[{i:"A21"}]}],".replies":[{".inner":[{i:"A31",f:"inca",s:10}]}],"#tie-reply":[{".tie-nicknamePost":[{i:"A41",f:"inca"}],".tie-logon":[{i:"A42",f:"inca"}],".tie-login":[{i:"A43",f:"inca"}],span:[0,0,{i:"A44",f:"inca"}]}],"#tie-nicknameWin":[{">.title":[{i:"A51",f:"inca"}],form:[{i:"A52"}]}],"#tie-quoteWin":[{">.title":[{i:"A61",f:"inca"}],".tie-nicknamePost":[{i:"A62",f:"inca"}],".tie-login":[{i:"A63",f:"inca"}],".tie-logon":[{i:"A64",f:"inca"}],div:[0,0,0,0,0,{i:"A65"}]}],"#tie-repostWin":[{">.title":[{i:"A71",f:"inca"}],".tips":[{i:"A72"}],".replyCopy":[{i:"A73"}],div:[0,0,{i:"A74"}]}]}],">.foot":[{"":[{"":[{i:"B11",f:"inca"}]}]}]})},50)}(NTES);</script>
+<!-- 页脚开始 -->
+<div class="foot">
+<div class="text">
+策划：柏森 林涛 张运彬 胡晓 刘锋  美术：梁柱鹏 吴毅 谢守熠 杨烽亮  技术：吴肇宣 李乐 刘冠伟 陈子明  <a href="http://bbs3.news.163.com/board/postlist.jsp?b=idea">给网易提意见</a>
+</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://help.163.com/">帮助中心</a><br />
+网易公司版权所有<br />
+<span class="cRed">&copy;1997-2014</span>
+</div>
+<!-- Dicky Lau -->
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0505010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0505010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<!-- NetEase Analytics code 2006-06-27 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    _ntes_nacc = "sports"; //站点ID。
+    neteaseTracker();
+</script>
+</body>
+</html>
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.1.js"></script>
+
+
+<!-- 页脚结束 -->
+
+<script type="text/javascript">
+//<![CDATA[  		
+new NTES.ui.Slide($("#qyxx-tab li"), $("#qyxx-content > .qyxx-content"), "on", "mouseover");
+//]]>
+</script>
+<script type="text/javascript">
+var index=0;
+function loadPlayerXmlInfo(){
+	jQuery.ajax(
+	{
+	url: '/8/match/player/2013/695252.json',
+	type: 'GET',
+	dataType: 'json',
+	timeout: 3000,
+	error: function(){
+		},
+	success: function(datas){
+			 if(datas.length>0){
+			 	 var html=''; 
+				 var substiution = datas[0]["substiution"];
+				 
+				 var hp_1 = datas[0]["homePlayer"].player_1;
+				 var hp_2 = datas[0]["homePlayer"].player_2;
+				 var hp_3 = datas[0]["homePlayer"].player_3;
+				 var hp_4 = datas[0]["homePlayer"].player_4;
+				 var hp_5 = datas[0]["homePlayer"].player_5;
+				 var hp_6 = datas[0]["homePlayer"].player_6;
+				 var hp_7 = datas[0]["homePlayer"].player_7;
+				 var hp_8 = datas[0]["homePlayer"].player_8;
+				 var hp_9 = datas[0]["homePlayer"].player_9;
+				 var hp_10 = datas[0]["homePlayer"].player_10;
+				 var hp_11 = datas[0]["homePlayer"].player_11;
+				 var hp_12 = datas[0]["homePlayer"].player_12;
+				 var hp_13 = datas[0]["homePlayer"].player_13;
+				 var hp_14 = datas[0]["homePlayer"].player_14;
+				 var hp_15 = datas[0]["homePlayer"].player_15;
+				 var hp_16 = datas[0]["homePlayer"].player_16;
+				 var hp_17 = datas[0]["homePlayer"].player_17;
+				 var hp_18 = datas[0]["homePlayer"].player_18;
+				 html+=returnPlayerHtml(hp_1,substiution);
+				 html+=returnPlayerHtml(hp_2,substiution);
+				 html+=returnPlayerHtml(hp_3,substiution);
+				 html+=returnPlayerHtml(hp_4,substiution);
+				 html+=returnPlayerHtml(hp_5,substiution);
+				 html+=returnPlayerHtml(hp_6,substiution);
+				 html+=returnPlayerHtml(hp_7,substiution);
+				 html+=returnPlayerHtml(hp_8,substiution);
+				 html+=returnPlayerHtml(hp_9,substiution);
+				 html+=returnPlayerHtml(hp_10,substiution);
+				 html+=returnPlayerHtml(hp_11,substiution);
+				 html+=returnPlayerHtml(hp_12,substiution);
+				 html+=returnPlayerHtml(hp_13,substiution);
+				 html+=returnPlayerHtml(hp_14,substiution);
+				 html+=returnPlayerHtml(hp_15,substiution);
+				 html+=returnPlayerHtml(hp_16,substiution);
+				 html+=returnPlayerHtml(hp_17,substiution);
+				 html+=returnPlayerHtml(hp_18,substiution);
+				 jQuery('#homeNotStarted').html(html);
+				 
+				 index=0;
+				 html=''; 
+				 hp_1 = datas[0]["awayPlayer"].player_1;
+				 hp_2 = datas[0]["awayPlayer"].player_2;
+				 hp_3 = datas[0]["awayPlayer"].player_3;
+				 hp_4 = datas[0]["awayPlayer"].player_4;
+				 hp_5 = datas[0]["awayPlayer"].player_5;
+				 hp_6 = datas[0]["awayPlayer"].player_6;
+				 hp_7 = datas[0]["awayPlayer"].player_7;
+				 hp_8 = datas[0]["awayPlayer"].player_8;
+				 hp_9 = datas[0]["awayPlayer"].player_9;
+				 hp_10 = datas[0]["awayPlayer"].player_10;
+				 hp_11 = datas[0]["awayPlayer"].player_11;
+				 hp_12 = datas[0]["awayPlayer"].player_12;
+				 hp_13 = datas[0]["awayPlayer"].player_13;
+				 hp_14 = datas[0]["awayPlayer"].player_14;
+				 hp_15 = datas[0]["awayPlayer"].player_15;
+				 hp_16 = datas[0]["awayPlayer"].player_16;
+				 hp_17 = datas[0]["awayPlayer"].player_17;
+				 hp_18 = datas[0]["awayPlayer"].player_18;
+				 html+=returnPlayerHtml(hp_1,substiution);
+				 html+=returnPlayerHtml(hp_2,substiution);
+				 html+=returnPlayerHtml(hp_3,substiution);
+				 html+=returnPlayerHtml(hp_4,substiution);
+				 html+=returnPlayerHtml(hp_5,substiution);
+				 html+=returnPlayerHtml(hp_6,substiution);
+				 html+=returnPlayerHtml(hp_7,substiution);
+				 html+=returnPlayerHtml(hp_8,substiution);
+				 html+=returnPlayerHtml(hp_9,substiution);
+				 html+=returnPlayerHtml(hp_10,substiution);
+				 html+=returnPlayerHtml(hp_11,substiution);
+				 html+=returnPlayerHtml(hp_12,substiution);
+				 html+=returnPlayerHtml(hp_13,substiution);
+				 html+=returnPlayerHtml(hp_14,substiution);
+				 html+=returnPlayerHtml(hp_15,substiution);
+				 html+=returnPlayerHtml(hp_16,substiution);
+				 html+=returnPlayerHtml(hp_17,substiution);
+				 html+=returnPlayerHtml(hp_18,substiution);
+				 jQuery('#awayNotStarted').html(html);
+			 }
+		}
+	}
+	);
+}
+
+function returnPlayerHtml(data,substiution){
+    if(typeof(data) != "undefined"){
+		var html = "";
+		var started = data.gameStarted;
+		if(started!="1"){
+    		index++;
+    		if(index%2==0){
+    			html+='<div class="bg">';
+    		}else{
+    			html+='<div class="nonebg">';
+    		}
+    		html+='<span class="inactive-player">'+data.jerseyNum+'</span><a href="/8/player/'+data.playerOfficialId+'.html">'+data.player+'</a>';
+		}
+		return html;
+	} 
+	return '';
+}
+loadPlayerXmlInfo();
+</script>
+<script src="http://img1.cache.netease.com/sports/img12/olympic_lib/nui.js"></script>
+<script src="http://img1.cache.netease.com/sports/img12/olympic_lib/nui-widget-min.js"></script>
+<script src="http://img1.cache.netease.com/f2e/sports/tag/tag.475108.min.js"></script>

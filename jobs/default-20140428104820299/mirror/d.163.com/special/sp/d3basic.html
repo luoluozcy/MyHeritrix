@@ -1,0 +1,915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>【暗黑破坏神3】基础介绍_暗黑3中文网（Diablo3）_凯恩之角</title>
+<meta name="keywords" content="基础知识,游戏介绍,暗黑3配置,暗黑3下载,暗黑破坏神3,暗黑3,Diablo3,暗黑3官网,暗黑3战网,暗黑3什么时候出,暗黑破坏神3中文版">
+<meta name="description" content="暗黑破坏神3基础介绍，带你全面快速了解游戏的最新变化！">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta content="all" name="robots" />
+<meta name="author" content="网易" />
+<link href="http://img1.cache.netease.com/game/css09/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+<link href="http://img3.cache.netease.com/game/diablo3/diablo3v4.css" rel="stylesheet" type="text/css" />
+<link href="http://img3.cache.netease.com/game/diablo3/diablo3t2.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/game/blizzard/diablo3/css/diablo3-guide.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://img1.cache.netease.com/game/blizzard/static/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	var $j = jQuery.noConflict();
+	 $j(document).ready(function(){
+		 
+		var d3Href = location.href;
+		var menuHref = $j('.guide-menu-content li').find('a');
+		for(i=0;i<menuHref.length;i++){
+			if(menuHref[i] == d3Href ){				
+				menuHref.eq(i).parents('ul').prev('h3').addClass('open');
+				menuHref.eq(i).parent('li').css('background','#12110f');				
+				}
+			};
+			
+		$j('.guide-menu-content').hide();
+		$j('.open').next('.guide-menu-content').slideDown('fast');			
+		$j('.guide-menu h3').click(function(){
+			if($j(this).attr('class')=='open')
+				return;
+			$j('.open').next('.guide-menu-content').slideUp('fast');
+			$j('.open').removeAttr('class');
+			$j(this).next('.guide-menu-content').slideDown('fast');
+			$j(this).attr('class','open');
+		});
+	})
+</script>
+<style type="text/css">
+body, html { background:#000;}
+.guide-content li { line-height:20px;}
+.guide-content img { border: 1px solid #2A241C; box-shadow: 0 0 10px #000; padding: 1px; }
+.guide-content table { border-collapse: separate;}
+.guide-content .no-border { border:0; box-shadow:none; padding: 0;}
+</style>
+</head>
+<body>
+<div id="game">
+<div id="hd"> 
+<div class="NTES_nav_ NTES_bg_">
+    <span class="NTES_logo"><a href="http://game.163.com/"><img alt="游戏专题" src="http://img1.cache.netease.com/subject/images/newlogo100628/game.gif" /></a></span>
+	<span class="nav_link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://t.163.com/">微博</a></span>
+    <div class="top_search">
+	  <form target="_blank" id="formtop" name="nisearch_top" method="get" action="http://news.yodao.com/search">
+<input type="hidden" value="game.163" name="keyfrom"/>
+<input type="hidden" value="user163" name="suser"/>
+<input type="hidden" value="gbk" name="ue"/>
+<label><span class="hidden">搜索</span><input type="text" class="textBox" value="请输入关键词" onfocus="this.value=''" id="searchInput_top" name="q"/></label>
+		<noscript><select name="site" class="left">
+            <option value="网易" selected="selected">新闻</option>
+            <option value="">网页</option>
+        </select></noscript>
+        <div id="divSelect" class="left">
+        </div>
+<input type="submit" class="btn" value="搜索" name="Submit"/><input type="hidden" value="page" id="in" name="in"/>
+</form>
+<a href="http://www.163.com/rss"><img width="26" height="14" border="0" alt="Rss" class="rss" src="http://img1.cache.netease.com/cnews/img07/rss.gif" /></a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+        (function NTES_Nav(){
+            function $_G(id){
+                return document.getElementById(id);
+            }
+            function clickselect(e){
+                e = e || window.event;
+                e.cancelBubble = true;
+                var name = this.innerHTML;
+                var txt = document.createTextNode(name);
+                selected.removeChild(selected.firstChild);
+                selected.appendChild(txt);
+                select_main.style.display = "none";
+                var title = this.getAttribute("title");
+                $_G("siteName").value = title;
+                if (title == "网易") {
+				document.nisearch_top.action = "http://news.yodao.com/search";
+				}
+				else {document.nisearch_top.action = "http://www.yodao.com/search";
+				}
+            }
+            function a_mouseover () {
+                this.className = "active";
+            }
+            function a_mouseout () {
+                this.className = "";
+            }
+            $_G("divSelect").innerHTML = '<input id="siteName" type="hidden" value="网易" name="site" /><div id="select_area" class="select_box"><span id="selected" class="search_site">新闻</span><div id="select_main" class="select_list"><a title="网易">新闻</a><a title="">网页</a></div></div>';
+            var select_area = $_G("select_area"), selected = $_G("selected"), select_main = $_G("select_main"), select_list = select_main.getElementsByTagName("a"), len = select_list.length;
+            select_area.onclick = select_main.onmouseover = function(){
+                select_main.style.display = "block";
+            }
+            select_main.onmouseout = function(){
+                select_main.style.display = "none";
+            }
+            
+            for (var i = 0; i < len; i++) {
+                select_list[i].onclick = clickselect;
+                select_list[i].onmouseover = a_mouseover;
+                select_list[i].onmouseout = a_mouseout;
+            }
+        })();
+//]]>
+</script> 
+</div>
+<div id="bd">
+<div class="bd_banner">
+<div class="area_link area">
+<object width="400"  height="150" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="flashVote" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+<param value="http://swf.ws.126.net/game/flash11/d3.swf" name="movie"/>
+<param value="high" name="quality"/>
+<param value="#ffffff" name="bgcolor"/>
+<param value="sameDomain" name="allowScriptAccess"/>
+<embed  width="400"  height="150" align="middle" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="sameDomain" wmode="transparent" quality="high" loop="true" play="true" name="flashVote" bgcolor="#ffffff" src="http://swf.ws.126.net/game/flash11/d3.swf"/>
+</object>
+<div>
+<a href="http://d.163.com/">暗黑破坏神3</a> 
+<a href="http://s.163.com/">星际争霸2</a> 
+<a href="http://w.163.com/">魔兽世界</a> 
+<a href="http://www.battlenet.com.cn/">战网</a>
+</div>
+</div>
+<style>
+.shouye-bd #db-folding-menu li,.shouye-bd #db-folding-menu1 li {width:108px;position:relative;}
+.shouye-bd li a {display:block;background: #2F2317;}
+.shouye-bd li .db-folding-menu {background: #2F2317;}
+.shouye-bd #db-folding-menu .jiantou ,.shouye-bd #db-folding-menu1 .jiantou {position:absolute;right:5px;;top:0;width:10px;height:20px;background: url(http://img3.cache.netease.com/game/diablo3/db/images/multi_language/sprite.png) 0 0 no-repeat;_background: url(http://img3.cache.netease.com/game/diablo3/db/images/multi_language/sprite.gif) 0 0 no-repeat;background-position:5px -272px;}
+.shouye-bd li .db-folding-menu:hover {background:#1E140A;}
+.shouye-bd li {position:relative;overflow:visible;}
+.shouye-bd li {background:none;}
+.shouye-bd li .db-folding-menu-content {position: absolute;right: -108px;_right: -111px;top: -2px;width: 106px;z-index: 1000;border:1px solid #5f4c38;background:#000;padding:0 0 0 1px;display:none;}
+.shouye-bd li .db-folding-menu-content li {_margin-right:0;}
+#emo{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 0 no-repeat;}
+#emo:hover{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 -345px no-repeat;}
+#renwu{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 -69px no-repeat;}
+#renwu:hover{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 -414px no-repeat;}
+#shipin{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 -138px no-repeat;}
+#shipin:hover{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 -483px no-repeat;}
+#hero{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 -207px no-repeat;}
+#hero:hover{ background:url(http://img3.cache.netease.com/game/img11/D3_YL/images/d3_nav_bg.jpg) 0 -276px no-repeat;}
+</style>
+<div class="area_nav area">
+  <div class="nav_main clearfix">
+    <ul class="clearfix">
+      <li class="shou"> <a class="shouye" href="http://d.163.com" id="shouye"  target="_self"></a>
+      <div class="shouye-bd clearfix" id="shouye_content">
+          <div class="hd"></div>
+          <ul class="clearfix" id="db-folding-menu">
+            <li class="first clearfix"><a class="first db-folding-menu" href="http://db.d.163.com/tw/calculator/barbarian.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />技能模拟器</a>
+                    <span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/cn/calculator/barbarian.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />简体</a></li>
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/calculator/barbarian.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />繁体</a></li>
+                                <li class="clearfix"><a  href="http://db.d.163.com/en/calculator/barbarian.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />英文</a></li>
+                       </ul>
+</li>
+            <li class="clearfix"><a class="" href="http://db.d.163.com/computing_tools/computing.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />装备模拟器</a></li>
+          </ul>
+          <div class="ft"></div>
+        </div>
+      </li>
+      <li> <a class="jichu" href="http://d.163.com/special/sp/d3basic.html" id="jichu" target="_self"></a>
+<div class="shouye-bd clearfix" id="jichu_content">
+          <div class="hd"></div>
+          <ul class="clearfix">
+            <li class="first clearfix"><a class="first" href="http://d.163.com/special/sp/d3quests.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />游戏攻略</a></li>
+          </ul>
+          <div class="ft"></div>
+        </div></li>
+      <li> <a class="juese" id="juese" href="http://d.163.com/special/sp/d3char.html" target="_self"></a>
+        <div class="shouye-bd clearfix" id="juese_content">
+          <div class="hd"></div>
+          <ul class="clearfix">
+            <li class="first clearfix"><a class="first" href="http://d.163.com/special/sp/d3barindex.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/bar1.jpg" />野蛮人</a></li>
+            <li class="clearfix"><a class="" href="http://d.163.com/special/sp/d3dhindex.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/dh.jpg" />猎魔人</a></li>
+            <li class="clearfix"><a class="" href="http://d.163.com/special/sp/d3wizardindex.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/wid.jpg" />魔法师</a></li>
+            <li class="clearfix"><a class="" href="http://d.163.com/special/sp/d3wdindex.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/wd.jpg" />巫　医</a></li>
+            <li class="clearfix"><a class="" href="http://d.163.com/special/sp/d3monkindex.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/monk.jpg" />武　僧</a></li>
+            <li class="clearfix"><a class="" href="http://d.163.com/special/sp/skillbasic.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />技　能</a></li>
+          </ul>
+          <div class="ft"></div>
+        </div>
+      </li>
+      <li> <a class="zhuangbei" id="zhuangbei" href="http://d.163.com/special/sp/d3item.html" target="_self"></a></li>
+      <li> <a class="emo" id="emo" href="http://wiki.d.163.com" target="_self"></a></li>
+      <li> <a class="renwu" id="renwu" href="http://d.163.com/special/sp/files.html" target="_self"></a></li>
+      <li> <a class="shipin" id="shipin" href="http://d.163.com/special/sp/d3videos.html" target="_self"></a></li>
+      <li> <a class="hero" id="hero" href="http://hero.d.163.com" target="_blank"></a></li>
+      <li> <a class="xiazai" id="xiazai" href="http://db.d.163.com/" target="_self"></a>        <div class="shouye-bd clearfix" id="xiazai_content">
+          <div class="hd"></div>
+          <ul class="clearfix" id="db-folding-menu1">
+            <li class="first clearfix"><a class="first db-folding-menu" href="http://db.d.163.com/skill/barbarian/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />技能</a>
+                    <span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+            <li class="clearfix"><a class="" href="http://db.d.163.com/skill/barbarian/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/bar1.jpg" />野蛮人</a>
+                    <span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/skill/barbarian/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />主动技能</a></li>
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/skill/barbarian/passive/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />被动技能</a></li>
+                       </ul>
+</li>
+            <li class="clearfix"><a class="db-folding-menu" href="http://db.d.163.com/skill/demon-hunter/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/dh.jpg" />猎魔人</a>
+                    <span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/skill/demon-hunter/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />主动技能</a></li>
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/skill/demon-hunter/passive/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />被动技能</a></li>
+                       </ul>
+</li>
+            <li class="clearfix"><a class="db-folding-menu" href="http://db.d.163.com/skill/wizard/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/wid.jpg" />魔法师</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/skill/wizard/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />主动技能</a></li>
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/skill/wizard/passive/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />被动技能</a></li>
+                       </ul>
+</li>
+            <li class="clearfix"><a class="db-folding-menu" href="http://db.d.163.com/skill/witch-doctor/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/wd.jpg" />巫　医</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/skill/witch-doctor/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />主动技能</a></li>
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/skill/witch-doctor/passive/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />被动技能</a></li>
+                       </ul>
+</li>
+            <li class="clearfix"><a class="db-folding-menu" href="http://db.d.163.com/skill/monk/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/newchar/monk.jpg" />武　僧</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/skill/monk/active/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />主动技能</a></li>
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/skill/monk/passive/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />被动技能</a></li>
+                       </ul>
+</li>
+                       </ul>
+</li>            <li class="clearfix"><a class="db-folding-menu" href="http://db.d.163.com/item/helm/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />护甲</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/helm/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />头部</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/helm/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />头盔</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/spirit-stone/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />炼气石</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/voodoo-mask/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />巫毒面具</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/wizard-hat/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />秘术帽</a></li>
+                       </ul>
+</li>
+                                <li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/pauldrons/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />肩膀</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/pauldrons/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />护肩</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/chest-armor/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />身躯</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/chest-armor/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />胸甲</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/cloak/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />斗蓬</a></li>
+                       </ul></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/bracers/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />手腕</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/bracers/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />护腕</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/gloves/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />手掌</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/gloves/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />手套</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/belt/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />腰部</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/belt/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />腰带</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/mighty-belt/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />重型腰带</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/pants/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />腿部</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/pants/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />裤子</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/boots/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />脚部</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/boots/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />靴子</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/amulet/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />珠寶</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/amulet/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />护身符</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/ring/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />戒指</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/shield/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />副手</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/shield/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />盾</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/mojo/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />咒物</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/orb/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />法器</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/quiver/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />箭筒</a></li>
+                       </ul></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/enchantress-focus/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />追隨者</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/enchantress-focus/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />巫女法器</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/scoundrel-token/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />盗贼道具</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/templar-relic/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />骑士圣物</a></li>
+                       </ul></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="db-folding-menu" href="http://db.d.163.com/item/axe-1h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />武器</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/axe-1h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/db/images/icons/list/22.jpg" />单手</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/axe-1h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />斧</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/dagger/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />匕首</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/mace-1h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />钉鎚</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/spear/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />矛</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/sword-1h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />剑</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/ceremonial-knife/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />祭祀刀</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/fist-weapon/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />拳套武器</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/mighty-weapon-1h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />重型武器</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/axe-2h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/db/images/icons/list/32.jpg" />双手</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/axe-2h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />斧</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/mace-2h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />钉鎚</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/polearm/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />长柄武器</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/staff/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />法杖</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/sword-2h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />剑</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/daibo/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />武杖</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/mighty-weapon-2h/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />重型武器</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/bow/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/db/images/icons/list/42.jpg" />远程</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/bow/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />弓</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/crossbow/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />弩</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/hand-crossbow/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />弩槍</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/wand/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />魔杖</a></li>
+                       </ul>
+</li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/item/potion/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />其他</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/potion/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />消耗品</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/potion/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />药水</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/tome/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />制作</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/tome/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />锻炼书页</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/blacksmith-plan/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />铁匠设计图</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/jeweler-design/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />珠宝匠设计图</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/crafting-material/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />制作材料</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/dye/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />染料</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/gem/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />宝石</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/quest/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />任務</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/item/misc/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />杂项</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/artisan/blacksmith/recipe/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png" />工匠</a>
+<span class="jiantou"></span>
+                    <ul class="db-folding-menu-content">
+<li class="clearfix"><a class="" href="http://db.d.163.com/artisan/blacksmith/recipe/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/db/images/icons/list/72.jpg" />铁匠</a></li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/artisan/jeweler/recipe/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/db/images/icons/list/82.jpg" />珠宝匠</a></li>
+                       </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/npc/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">NPC</a> <span class="jiantou"></span>
+  <ul class="db-folding-menu-content" style="display: none; ">
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/npc/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">NPC</a></li>
+  </ul>
+</li>
+<li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/boss/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">怪物</a> <span class="jiantou"></span>
+  <ul class="db-folding-menu-content" style="display: none; ">
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/boss/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">首领</a></li>
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/unique/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">独特</a><span class="jiantou"></span>
+  <ul class="db-folding-menu-content" style="display: none; ">
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/unique/index.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">不死</a></li>
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/unique/human.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">人类</a></li>
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/unique/beast.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">野兽</a></li>
+        <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/unique/demon.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">恶魔</a></li>
+  </ul></li>
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/normal/" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">普通</a><span class="jiantou"></span>
+  <ul class="db-folding-menu-content" style="display: none; ">
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/normal/index.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">不死</a></li>
+       <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/normal/unknown.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">未知</a></li>
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/normal/human.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">人类</a></li>
+    <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/normal/beast.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">野兽</a></li>
+        <li class="clearfix"><a class="" href="http://db.d.163.com/tw/monster/normal/demon.html" target="_self"><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/indexbullet.png">恶魔</a></li>
+  </ul></li>
+  </ul>
+</li>
+          </ul>
+          <div class="ft"></div>
+        </div>
+</li>
+      <li class="lt"> <a class="luntan" href="http://bbs.d.163.com" target="_blank"></a></li>
+    </ul>
+  </div>
+  <div> </div>
+</div>
+<script type="text/javascript">
+function db_folding_menu(id) {
+    var lis = document.getElementById(id).getElementsByTagName("li");
+    for (var i = 0; i < lis.length; i++) {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf("msie 6.0") > -1 || ua.indexOf("msie 7.0") > -1 || ua.indexOf("msie 8.0") > -1) {
+            lis[i].onmouseenter = function() {
+                node = this.getElementsByTagName("ul")[0];
+                if (node && /\bdb-folding-menu-content\b/.test(node.className)) {
+                    node.style.display = "block";
+                    node.parentNode.getElementsByTagName("a")[0].style.background = "#1E140A";
+                }
+            }
+            lis[i].onmouseleave = function() {
+                node = this.getElementsByTagName("ul")[0];
+                if (node && /\bdb-folding-menu-content\b/.test(node.className)) {
+                    node.style.display = "none";
+                    node.parentNode.getElementsByTagName("a")[0].style.background = "#2F2317";
+                }
+            }
+        } else {
+            lis[i].onmouseover = function() {
+                node = this.getElementsByTagName("ul")[0];
+                if (node && /\bdb-folding-menu-content\b/.test(node.className)) {
+                    node.style.display = "block";
+                    node.parentNode.getElementsByTagName("a")[0].style.background = "#1E140A";
+                }
+            }
+            lis[i].onmouseout = function() {
+                node = this.getElementsByTagName("ul")[0];
+                if (node && /\bdb-folding-menu-content\b/.test(node.className)) {
+                    node.style.display = "none";
+                    node.parentNode.getElementsByTagName("a")[0].style.background = "#2F2317";
+                }
+            }
+        }
+    }
+}
+db_folding_menu("db-folding-menu");
+db_folding_menu("db-folding-menu1");
+</script>
+<div class="area_location area"><a href="http://d.163.com/">凯恩之角</a> &gt; <a href="http://d.163.com/special/sp/d3basic.html">基础介绍</a> &gt; 总览</div>
+<!-- Begin Diablo III Guide -->
+<div class="guide">
+<!-- Begin Guide Menu -->
+<style type="text/css">
+/* 顶部图 */
+.guide-top-img { background:url("http://img1.cache.netease.com/game/blizzard/diablo3/images/guide-top-all.jpg") no-repeat 0 0; }
+</style>
+<div class="guide-top-img">
+<p class="guide-text">《暗黑破坏神3》不仅是一款经典的动作类角色扮演游戏，而且是暗黑破坏神系列的完美延续。玩家可在五种不同的职业中（野蛮人、巫医、魔法师、武僧和猎魔人）选择创建自己的角色，每种职业各有一套完整独特的技能体系。</p>
+</div>
+<span class="clear"></span>
+<div class="guide-menu">
+<h2 class="guide-menu-title">基本资料</h2>
+<h3>基础知识</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/sp/d3basic.html">游戏特色</a></li>
+<li><a href="http://d.163.com/special/sp/gameplayset.html">游戏设置</a></li>
+<li><a href="http://d.163.com/special/sp/fundamentals.html">基础操作</a></li>
+<li><a href="http://d.163.com/special/sp/choosingclass.html">角色职业</a></li>
+<li><a href="http://d.163.com/special/sp/zhuanjiamoshi.html">专家模式</a></li>
+<li><a href="http://d.163.com/special/sp/healthsystem.html">治疗系统</a></li>
+<li><a href="http://d.163.com/special/sp/d3exp.html">等级经验</a></li>
+<li><a href="http://d.163.com/special/sp/diff.html">游戏难度</a></li>
+<li><a href="http://d.163.com/special/sp/d3diancang.html">典藏版</a></li>
+<li><a href="http://d.163.com/special/sp/d3ps.html"><font color="#ff0000">主机版</font></a></li>
+</ul>
+<h3>特色系统</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/sp/achievements.html">成就系统</a></li>
+<li><a href="http://d.163.com/special/sp/d3banner.html">战旗系统</a></li>
+<li><a href="http://d.163.com/special/sp/followers.html">追随者系统</a></li>
+<li><a href="http://d.163.com/special/sp/crafting.html">工匠系统</a></li>
+<li><a href="http://d.163.com/special/sp/d3blacksmith.html">铁匠</a></li>
+<li><a href="http://d.163.com/special/sp/d3jeweler.html">珠宝匠</a></li>
+<li><a href="http://d.163.com/special/d3mystic/">灵谕师</a></li>
+<li><a href="http://d.163.com/12/0821/00/89D0K1IC00314P0B.html">巅峰等级</a></li>
+<li><a href="http://d.163.com/12/1015/17/8DSFHJLA00314LE2.html">炼狱装置</a></li>
+</ul>
+<h3>战网功能</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/14/0409/17/9PDIG7NK00314PC9.html">战网概述</a></li>
+<li><a href="http://d.163.com/special/sp/playingwithfriends.html">组队游戏</a></li>
+<li><a href="http://d.163.com/13/0403/06/8RH2SJS900314P0B.html">社交功能</a></li>
+<li><a href="http://d.163.com/13/0113/16/8L452LN500314Q1F.html">PVP对抗</a></li>
+</ul>
+<h3>地图场景</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/d3maps/">场景介绍</a></li>
+<li><a href="http://d.163.com/special/sp/d3quests.html">任务系统</a></li>
+<li><a href="http://d.163.com/special/waypoint/">传送小站</a></li>
+<li><a href="http://d.163.com/special/act1gonglue/">第一幕</a></li>
+<li><a href="http://d.163.com/special/act2gonglue/">第二幕</a></li>
+<li><a href="http://d.163.com/special/act3gonglue/">第三幕</a></li>
+<li><a href="http://d.163.com/special/act4gonglue/">第四幕</a></li>
+<li><a href="http://d.163.com/special/d3world/">世界地图</a></li>
+<li><a href="http://d.163.com/special/d3npcs/">重要NPC</a></li>
+</ul>
+<h3>怪物资料</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/d3monster/">基础介绍</a></li>
+<li><a href="http://d.163.com/special/monstertr/">怪物词缀</a></li>
+<li><a href="http://d.163.com/special/thebutcher/">屠夫</a></li>
+<li><a href="http://d.163.com/special/belial/">彼列</a></li>
+<li><a href="http://d.163.com/special/azmodan/">阿兹莫丹</a></li>
+<li><a href="http://d.163.com/special/diablo/">迪亚波罗</a></li>
+<li><a href="http://d.163.com/special/sp/d3treasureseeker.html">藏宝哥布林</a></li>
+</ul>
+<h3>故事背景</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/bookofcainjs/">凯恩之书</a></li>
+<li><a href="http://d.163.com/special/sp/cainjournal.html">凯恩日记</a></li>
+<li><a href="http://d.163.com/special/sp/d3timeline.html">历史年表</a></li>
+</ul>
+<h3>发展历史</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/sp/patchnotes.html">补丁列表</a></li>
+<li><a href="http://d.163.com/13/0518/14/8V5P451S00314P0B.html">周年庆</a></li>
+<li><a href="http://d.163.com/special/sp/d3history.html">游戏开发</a></li>
+<li><a href="http://d.163.com/special/d3hellfire/">暗黑1和地狱火</a></li>
+<li><a href="http://d.163.com/special/d3diablo2exp/">暗黑2和毁灭之王</a></li>
+<li><a href="http://d.163.com/special/diablo15year/">暗黑15周年</a></li>
+</ul>
+<h3>暴雪相关</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/sp/basic_blizzard.html">关于暴雪</a></li>
+<li><a href="#">开发团队</a></li>
+<li><a href="http://d.163.com/special/d3bashiok/">社区经理</a></li>
+<li><a href="http://d.163.com/special/jaywilson/">Jay Wilson</a></li>
+</ul>
+<h3>黑暗深渊</h3>
+<ul class="guide-menu-content">
+<li><a href="http://d.163.com/special/cauldronofjordan/">乔丹金炉</a></li>
+<li><a href="http://d.163.com/special/salvagecube/">分解盒</a></li>
+<li><a href="http://d.163.com/special/d3pvp/">竞技场</a></li>
+<li><a href="http://d.163.com/special/sp/encounters.html">遭遇战</a></li>
+<li><a href="http://d.163.com/special/chartitle/">角色头衔</a></li>
+<li><a href="http://d.163.com/special/interface/">界面迭代</a></li>
+<li><a href="http://d.163.com/special/paimaihangjiaocheng/">拍卖行教程</a></li>
+<li><a href="http://d.163.com/special/xianjinpaimaihang/">现金拍卖行</a></li>
+<li><a href="http://d.163.com/special/sp/magicfind.html">寻宝几率</a></li>
+<li><a href="http://d.163.com/12/1011/21/8DILKJC000314P0B.html">怪物强度</a></li>
+<li><a href="http://d.163.com/special/sp/nephalemvalor.html">涅法雷姆之勇</a></li>
+</ul>
+</div>
+<!-- End Guide Menu -->
+<!-- Begin Guide Content -->
+<div class="guide-content">
+<!-- width: 730px; boxstyle: guide-box; -->
+<h1><!-- Guide Title --><span class="title3">基础介绍</span></h1>
+<table width="730" border="0" cellpadding="0" cellspacing="0" class="ah_s_show1">
+    <tr>
+            <td scope="col"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                          <td>
+                         <p> 我们非常骄傲的呈献原始暗黑破坏神中黑暗、阴沉的气氛和令人着迷的物品探索。 《暗黑破坏神II》中增加了更多样化的世界环境与怪物、更多不同的职业和独特的元素，最终也成为了与《暗黑破坏神》齐名的独创代名词（宝石、符文、套装物品等等）。
+                           <br />
+　　
+《暗黑破坏神III》传承了系列的传奇经典，更新增了更多的元素来继续创造我们眼中的庇护所世界。</p></td>
+                          <td width="240" align="center"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic34.jpg" alt="暗黑3LOGO" width="210" height="138" /></td>
+                </tr>
+                    </table>
+              <p>透过易懂的界面、快速的节奏，和众多暗黑迷期盼的惊心动魄的游戏内容，《暗黑破坏神3》势将成为《暗黑破坏神2》最完美的续集。此外，该游戏的诸多新特点，均将让《暗黑破坏神》系列的游戏体验攀升到另一个高峰！ </p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">游戏特色</span></p>
+              <p>　《暗黑破坏神3》中的<a href="http://d.163.com/13/0918/02/99189LBT00314P0B.html">拍卖行功能已在2014年3月18日正式关闭</a>。同时，全新的 2.0 补丁为游戏带来了质变，让游戏的内容和趣味性再次提升。</p>
+              <ul>
+                <li><span class="f12px">六种强大的职业可供选择，包括野蛮人、巫医、魔法师、武僧、猎魔人和圣教军（需购买资料片才可使用）； 
+                          </span>
+                <li><span class="f12px">全新3D图像引擎及 Havok 物理引擎技术将带来无与伦比的视觉效果；                     
+                        </span>
+                <li><span class="f12px">「神圣之殿」里，室内、室外场景的新地图；资料片场景「卫斯玛彻」则更加雄伟和充满哥特式的主题风格；
+                        </span>
+                <li><span class="f12px">充斥着陷阱、障碍及可破坏性元素的互动环境；                     
+                        </span>
+                <li><span class="f12px">既定路线下无限可能的随机场景以及事件，使游戏过程妙趣横生；                     
+                        </span>
+                <li><span class="f12px">种类繁多的恶魔怪兽，拥有独特的攻击方式和习性；
+                        </span>
+                <li><span class="f12px">全新任务系统加上角色定制化的选项，为您打造动作类角色扮演游戏的终极体验；
+                        </span>
+                <li><span class="f12px">可透过战网（Battle.net）的支援，进行多人游戏，包括共同作战及竞技场对战模式；
+                        </span>
+                <li><span class="f12px">游戏取消了单机离线模式，全部游戏过程需要联接战网进行；
+                        </span>
+                <li><span class="f12px">资料片中全新的探险模式和赏金任务，玩家可根据自己的喜好自由地探索整个世界，并完成一系列奖励丰厚的赏金任务！
+                        </span>
+                <li><span class="f12px">资料片加入新的涅法雷姆秘境，让玩家在全新的完全随机的环境中，挑战自己的实力！
+                        </span>
+                <li><span class="f12px">新的难度系统，取代传统的普通、噩梦、地狱、炼狱，让玩家对自己的游戏难度拥有完全的控制权。
+                        </span>       
+              </ul>
+              <p>游戏提供的截图功能依旧保留，使用键盘 <span class="rare">Prt Scr</span> 键会自动截图保存在 <span class="rare">我的文档 --&gt; DiabloIII</span> 目录下。</p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">故事背景</span></p>
+              <p align="left">烈焰地狱的恶魔们长久渴望着入侵人类的世界，而其中二个位阶较低的地狱魔王阿兹莫丹与彼列推翻并驱逐了合称三大罪恶之源的恐惧之王迪亚波罗、憎恨之王墨菲斯托，以及毁灭之王巴尔，这三兄弟则被放逐到了人类定居的庇护所世界。 <br />
+                    　　这三大魔王以各种阴谋诡计腐化人心，将庇护所当成与天堂交战对抗的工具。 </p>
+              <p align="left">人类历经千辛万苦阻止迪亚菠萝与他兄弟的阴谋，但却也因此而付出了惨重的代价。无以计数的男女老幼因这三位魔王而惨死，甚至连原本保护着庇护所安危，不受天堂与地狱侵扰的上古神器「世界之石」，也在最终决战之后被打成了碎片。 <br />
+                　　然而，健忘似乎是人类的本性。这二十年来，庇护所的居民过着相对和平许多的生活，完全没意识到恐怖的恶魔正在暗处虎视眈眈、冀图腐化人心、夺取人类的灵魂。现在几乎已没有人还记得，人类当年侥幸躲过的恐怖厄运。或者，更正确的说法是，人类当年侥幸拖延的恐怖厄运。 <br />
+                　　只是，再拖延也没多久了。如今，天空闪着妖异的亮光，预告世界末日的降临。即便三大罪恶之源已经消灭，地狱的爪牙以及自甘堕落成为恶魔奴仆的人类，正以惊人的速度在庇护所各地现身，有如蝗灾般四处扩散肆虐。不用多久，人类的聚落与部队就会被一一孤立，淹没在罪恶、谎言与鲜血之中。 <br />
+                　　谁能挺身对抗地狱邪魔？ </p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">故事线</span></p>
+              <p><a href="http://d.163.com/special/sp/d3timeline.html">暗黑3游戏故事线</a>发生在暗黑2世界之石之役胜利后的20年。普通人没有意识到那些大多数曾直面过地狱恶魔军团的战士们最后都精神失常。一些人也许知道曾经发生过一场冲突，但对于绝大多数人来说对抗迪亚波罗的战争依然是谜。 </p>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>　　野蛮人因守护亚瑞特山脉的世界之石而赢得了地位和荣耀。但当他们目睹巴尔及其爪牙玷污世界之石并导致其毁灭时，这群自豪的野蛮人心若碎尘。他们离开被摧毁的故乡变成游民，他们在庇护所世界中游荡，将自己投入无尽的战斗之中以忘却痛失家园的痛苦。<br />
+                    　　泰瑞尔在摧毁世界之石后发生了什么没人知道。迪卡&middot;凯恩这样的学者推测一股巨大的恶魔势力将从燃烧地狱中涌入庇护所，但并没有实际发生过这样的入侵。凯恩花费了数年时间研究发生的一切，并将协助我们迎接无法避免的决战。</td>
+                  <td width="240" align="center"><a href="http://d.163.com/11/1211/10/7L03AHAA00314NO2.html" target="_blank"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic42.jpg" alt="完整开场动画" width="210" height="138" border="0" /></a></td>
+                </tr>
+              </table>
+              <p align="left">一颗巨大的彗星陨落在崔斯特瑞姆大教堂中，而某个不幸的灵魂遭受了此毁灭性的打击。地狱军团正在集结，此地不再安宁。 同时，暴雪在2011年12月，首次公布了暗黑破坏神3完整开场动画，剧情预示着一场灾难的降临。而随着游戏的进行，大家会发现这一切背后隐藏着一个巨大的阴谋，并且即便是游戏结束，你也会发现，故事还远远没有终结......</p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">资料片《死神之镰》剧情</span></p>
+             <p>随着迪亚布罗的战败，魔王们的精华被禁锢在了黑色灵魂石中。天堂和人间似乎又恢复了往日的和平与安宁，然而好景不长……</p>
+                           <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>　　遗留在至高天中的黑色灵魂石散发出不和谐的嘈杂之音，现为凡人的前审判天使泰瑞尔认为这是一个不祥的征兆。他令人偷偷盗走了黑色灵魂石，并准备隐匿在卫斯玛彻附近沼泽遗迹的地下深处 —— 一个他认为人类和天使都找不到的地方。然而就在这时，一个熟悉的身影出现了 —— 曾经失踪许久的智慧天使玛瑟尔出现在了他的面前，并以死亡天使的身份重返。<br />
+　　玛瑟尔夺走了禁锢着地狱领主们的黑色灵魂石，而同时一场人间炼狱般的灾难已悄然降临卫斯玛彻和庇护所世界……</td>
+                               <td width="240" align="center" style="border:none"><a href="http://d.163.com/13/0821/20/96R2QBMC00314NO2.html" target="_blank"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic45s.jpg" alt="资料片开场动画" width="210" height="138" border="0" /></a></td></tr></table>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">基础操作</span></p>
+              <p align="left">《暗黑破坏神3》的操作方式十分简单，只要点选鼠标按钮即可完成绝大多数的操作。 </p>
+              <div align="center"><a href="http://d.163.com/special/sp/fundamentals.html" target="_blank"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic1s1.jpg" alt="暗黑3基础操作" width="500" height="227" border="0" /><br />
+                <span class="f12px">点击浏览详细内容</span></a></div>
+              <p>在你要前往的目的地上点选鼠标左键，你的人物就会往该处移动，并且自动避开沿途的障碍物。你也可以按住鼠标按键不放、或是移动鼠标来改变行进的方向。 </p>
+              <p>庇护所是个辽阔而忙碌的世界，你必定会找到许多值得互动的东西。要检查一件东西能不能与你互动，只要把鼠标光标移到它上头（光标会有高亮度标示），然后点选鼠标按键。 </p>
+              <p> 是的，就这么简单，不论铁门、木门还是宝箱，都只要用鼠标点击它们就能打开。而物品的互动方式也一样，点击它们就能捡起；跟相遇的人物互动亦是如此，点击他们即可开始交谈、聆听他们的对话。用鼠标左键就能搞定一切。 只不过，《暗黑破坏神3》里可不是每样需要&ldquo;互动&rdquo;的东西，都会乖乖站在原地等你去点它们。 </p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">怪物</span></p>
+              <p>暗黑3将包括海量种类的怪物。这些怪物会以更智能的方式行动且各具特色。游戏中还会出现更多&quot;头目&quot;、遭遇战以增进游戏体验。而&quot;特色&quot;指的是：比如骷髅刀盾手会使用盾牌格挡来保护骷髅弓箭手；食尸鬼会沿着峭壁爬上来攻击玩家；而荒诞怪则会从体内爆出一大群八目鳗。<br />
+　　怪物攻击玩家没有一定的规律，也没有仇恨一说。各种难度下BOSS的攻击技能没有变化。在剧情模式中首次击杀各个章节的最终BOSS时，将会得到一件传奇装备作为奖励。</p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">&ldquo;壮观的&rdquo;死亡特效</span></p>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                          <td scope="col"><p align="left">暗黑3将带给我们多种不同的死亡动画，包括了致命一击的特殊动画及Boss类怪物杀死玩家时的惨烈特效。 尸体不再是静态的，你的一切动作都可能对尸体产生影响，例如改变他们的位置或造型。但是目前还没有发现尸体对玩家产生影响的例子，例如阻断道路等等。同时一些怪物死后会有联动效果，例如衍生新的小怪，或者是爆炸、冰冻等效果。</p></td>
+                          <td width="240" align="center" scope="col"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic35s.jpg" alt="死亡特效" width="210" height="138" border="0" /></td>
+                </tr>
+              </table>
+              <p>同时角色的死亡惩罚不再苛刻，玩家角色死亡时不会丢失经验值，只会在角色等级达到10级后，损失10%物品耐久度。同时游戏中还有检查点用来自动保存游戏进度，当玩家角色死亡后可以选择在尸体旁边原地复活，返回最近的检查点复活或回到村庄复活。原地复活可以最多连续使用三次，每间隔一定时间可以增加一次原地复活的机会，组队时被队友复活则不受此限制。另外，如果是&quot;专家&quot;模式的话，死亡后角色将无法重生。</p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">难度等级</span></p>
+              <p align="left">暗黑破坏神3中将有四个难度等级，依次为普通、噩梦、地狱和炼狱（<a href="http://d.163.com/11/0817/21/7BMK60OE00314LE2.html">炼狱难度</a>在2011年GamesCom上公布）。玩家需要达到一定的级别才可以进入到下一难度，分别是普通（0），噩梦（30），地狱（50），炼狱（60）。</p>
+                            <p>　　资料片《死神之镰》和补丁 2.0 中对难度系统进行了大改动。全新的难度系统取代了普通、噩梦、地狱和炼狱难度。新的动态难度机制使得怪物的等级和玩家（以及队伍的队长）等级相同，同时难度分为了普通、困难、专家、大师和苦痛。苦痛难度还分为 6 个不同的档位。难度越高，玩家在游戏中获得的奖励越丰富，同样怪物也将更加强大。</p>
+              <p>当任何《暗黑破坏神3》英雄达到10级后，都可以通过创建角色页面来创建专家级模式的英雄。专家级英雄角色在游戏内容方面和普通模式角色没有区别，仅有一个最关键的不同之处：<span class="red">如果你的专家级英雄死亡了，那这个角色就真的永久死亡了</span>。你将永远无法再使用他们来进行游戏。想要成功的体验专家级英雄角色只有唯一的一个方法：千万别死。 </p>
+              <p>　　专家级英雄角色可使用专家级限定的金币拍卖场，但不可以购买或出售物品给非专家级英雄角色。他们不可以使用现金拍卖场。专家级英雄角色仅可与你账号中其他专家级英雄分享使用储物箱中的物品。不过，在<span class="cYellow">2014年3月18日，暴雪关闭了所有服务器上的现金和拍卖行</span>。</p>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">物品装备</span></p>
+              <p align="left">暗黑破坏神3的物品装备系统发生了一些非常重要的变化，建议<a href="http://d.163.com/special/sp/d3item.html">点击这里查看物品装备详细介绍</a>。 </p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td scope="col"><ul>
+                           <li><span class="f12px">每个角色有不同的物品装备外观。 </span>
+                            <li><span class="f12px">游戏内增加了共享储物箱，装备转移更加方便，并可以通过金币扩充容量并按职业快速选择。                                 
+                          </span>                          
+                          <li><span class="f12px">物品掉落按玩家区分，每个玩家只能看到自己的掉落，所有物品仍可以在捡起后进行交易。                                 
+                          </span>
+                          <li><span class="f12px"><a href="http://d.163.com/special/sp/d3potions.html">药水</a>大改，增加了很多限制，例如冷却时间、级别限制，同时出现了<a href="http://d.163.com/special/sp/d3healthglobe.html">血球</a>。</span>
+                          <li class="f12px">60级以后大部分的锻造和掉落的传奇物品都是账号绑定。</li>
+                          <li class="f12px">蓝色和金色物品将不再需要鉴定，其他类型物品直接点击鼠标右键进行鉴定。</li>
+                          </ul></td>
+                          <td width="240" align="center"><a href="http://d.163.com/11/0801/03/7ABECM5U00314LQB.html" target="_blank"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic36.jpg" alt="点击图片放大" width="210" height="138" border="0" /></a></td>
+                        </tr>
+              </table>
+<p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">NPC</span></p>
+<p align="left"> 暗黑3中的NPC比前作略多，每个场景都有可以用于基础交易、修理的NPC，同时还增加了很多介绍背景故事以及珠宝、工匠这类功能性NPC（<a href="http://d.163.com/special/sp/d3npcs.html">具体可以在NPC栏目中查看</a>）：
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td scope="col"><ul>
+                                      <li><span class="f12px"><a href="http://d.163.com/special/sp/d3cain.html">凯　恩</a> -- 他回来了，依然会让你停下来听他讲故事。不幸的是，很快就离开了我们。
+                                      </span>
+                                      <li><span class="f12px"><a href="http://d.163.com/special/sp/d3leah.html">莉　娅</a> -- 重要角色，凯恩的侄女， 
+                                    最终被母亲爱德莉雅利用变身为暗黑破坏神。
+                                      </span>
+                                      <li><span class="f12px"><a href="http://d.163.com/special/sp/d3artisan.html">工　匠</a> -- 铁匠和珠宝匠将是你游戏过程中重要的帮手。
+                                      </span>
+                                      <li><span class="f12px"><a href="http://d.163.com/special/sp/d3tyl.html">泰瑞尔</a> -- 游戏剧情的关键人物，自愿来到凡间帮助玩家。                                                                        
+                                      </span>
+                                      <li><span class="f12px"><a href="http://d.163.com/special/sp/followers.html" target="_blank">追随者</a> -- 三种不同的追随者，完整的剧情、丰富的装备和技能体系。有独立的性格，会和玩家进行交流。
+                                      </span>
+                                    </ul>                                      </td>
+                                    <td width="240" align="center" scope="col"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic37.jpg" alt="追随者" width="210" height="138" border="0" /></td>
+                                  </tr>
+              </table>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">世界地图</span></p>
+              <p align="left">庇护所世界地图最早出现在暗黑2游戏手册中；但暴雪又制作了一幅更美观的地图，划分了大陆并标明了主要据点。其中很多地点都可以在暗黑3中重温，包括有<a href="http://d.163.com/special/sp/d3tristram.html">崔斯特瑞姆</a>。与崔斯特瑞姆相邻在前作游戏中无法探索的区域也有机会踏入。 （<a href="http://d.163.com/special/sp/d3maps.html">目前已知各个场景详细介绍</a>）</p>
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                                    <td valign="middle" scope="col"><p align="left">暗黑破坏神3中将一共包含四幕，每一幕都有自己独特的风格。我们已经看过了斯科沃思的详细图片以及<a href="http://d.163.com/special/sp/d3caldeum.html">卡迪安</a>及崔斯特瑞姆。较之<a href="http://d.163.com/special/sp/d3tristramcathedral.html">地下城</a>来说，户外场景的随机性较小，地形相对固定。但这些场景会出现很多随机事件，某些事件颇具深度，例如地下城入口的遭遇战。你还会遇上互动性的环境 -- 致命的陷阱和障碍以及可摧毁的场景元素。而户外地区的数量可谓&quot;惊人&quot;。 </p>
+                                                                        <p>　　资料片《死神之镰》中加入了第五幕和一系列全新的场景。著名的卫斯玛彻，阴暗的鲜血沼泽和光暗交界之处的混沌要塞，都将一一映入玩家的眼帘之中。</p></td>
+                                    <td width="240" align="center" scope="col"><a href="http://d.163.com/special/sp/d3maps.html" target="_blank"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic38.jpg" alt="暗黑3地图" width="210" height="138" border="0" /></a></td>
+                      </tr>
+              </table>
+                   
+                    <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">地下城</span></p>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                      <td valign="top"><p>暗黑3中的地下城会非常随机化，你每次在游戏中可能会碰到不同的地下城。地下城并不是你的必然选择，但往往在里面会有意想不到的收获。每个地下城都必然会有一些特殊的事件或在第二层中的宝箱。</p>
+<p>而常规意义上的地下城将是剧情主要的呈现地区，玩家穿梭在各个地下城中寻找事件的真相，并最终面对头目！</p></td>
+                                      <td width="240" align="center"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic39.jpg" alt="地下城" width="210" height="138" border="0" /></td>
+                                    </tr>
+              </table>
+<p><span class="title3">交通系统</span></p>
+<ul><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/wp.jpg" alt="地下城" width="34" height="34" border="0" align="left"class="no-border" />游戏中主要的快速交通系统将是小站，相对于前作，小站设计得更加密集。资料片《死神之镰》中，玩家如果想要返回以往去过的小站，甚至不需要通过附近的小站，即可在地图上直接传送。</ul>
+<p>《死神之镰》中新加入的探险模式中，玩家可以自由穿梭在所有章节的任意场景中。可以根据自己的喜好或游戏节奏自由地在游戏中探索和战斗！现在，整个世界就是你的战场！</p>
+<p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">游戏彩蛋</span></p>
+<p align="left">暗黑3中有很多有趣的彩蛋设计，找到并完成这些彩蛋除了经验和装备奖励外，还将可以获得成就奖励！网站中为大家整理了其中情节较为丰富的彩蛋资料，同时还有一些则需要玩家去在游戏中探索了，例如隐藏在第三幕某个洞穴中的巫妖王头盔。</p>
+<ul>
+  <li><a href="http://d.163.com/12/0518/13/81PQ1SN700314LE2.html">开发者地狱</a>（有成就）</li>
+  <li><a href="http://d.163.com/12/0517/10/81MUJPAU00314LE2.html">欢乐谷</a>（有成就）</li>
+  <li><a href="http://d.163.com/11/1111/10/7IIR7F4A00314NL1.html">StarCow</a></li>
+  <li><a href="http://d.163.com/12/0522/09/823NTGEC00314LE2.html">黑岩日志</a></li>
+</ul>
+<p>在这其中，值得一提的当属欢乐谷，虽然暴雪一再否认，但是类似奶牛关的场景还是回来了，而且这次更加生动可爱！而且玩家在资料片新加入的涅法雷姆秘境中，将遇到真正的地狱奶牛！</p>
+<div align="center"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic40.jpg" alt="欢乐谷" width="500" height="233" border="0" /><br />
+              <span class="f12px">准备开启奇妙之旅！</span></div>
+<p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">任务</span></p>
+  <p align="left">暗黑3开发团队想要改进暗黑2中任务的处理方式，他们想让主线任务有趣、重要而且能带动故事情节发展。玩家的<SPAN id="rlt_9" onClick="sendmsg('pw_ajax.php','action=relatetag&tagname=角色',this.id)">角色</SPAN>不仅仅是个跑龙套的，任务也不会无足轻重；它会推动故事的发展。
+              同时还穿插了很多随机事件，完成这些事件将可以获得丰厚的经验值和金钱奖励。
+                    <br />
+  　　游戏中的战役模式下，任务奖励有经验值和金币，一些任务会提供物品类奖励。在最初的测试阶段，任务也曾经会给与符合当前难度的物品奖品，但后来这一设定被暂时移除。
+  当角色满级后（70），依然可以获得任务带来的经验值奖励。<br />
+  　　在探险模式中，每次游戏时会出现一些赏金任务，要求玩家在特定的章节地图上完成一些任务。赏金任务的类型多种多样：有清理地下城，协助NPC，击杀特定怪物，完成特定事件，调查诅咒宝箱和诅咒祭坛等。完成任务之后不但有丰富的经验和金钱作为奖励，还可以获得可用于开启涅法雷姆秘境的钥匙碎片。
+  <p align="left">暗黑3中所有任务都可以单人完成，没有什么任务是必须通过多人合作来完成的，这点与魔兽世界不同。每个场景都有与故事情节有关的数量众多的主线任务，暴雪反复强调暗黑破坏神3将有非常非常丰富的故事内容！
+<p>值得注意的一点，目前的任务系统设置可以在一定的程度上防止快速MF的发生，你必须要完成固定的流程才能触发BOSS战斗或其他场景事件。同时，任务进度可以保存并更改你需要开始的任务进度，前提是你已经完成过至少一次任务流程。</p>
+<p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">单人和组队游戏</span></p>
+<p align="left">暗黑破坏神3将不再支持离线单机游戏，所有的游戏过程都必须联网进行。也就是说，暗黑破坏神系列正式进入到了网络时代。但与一般传统意义上的网络游戏不同，你可以在一个封闭的房间内独自完成整个游戏流程，不需要借助任何其他人的帮助。</p>
+              <p align="left">战网上每个游戏中的最大人数是 4 人。随着角色的增加，游戏中的怪物将会变得更强大，同时在多人游戏时，无法使用追随者。</p>
+              <p>暗黑破坏神3开启了名为<a href="http://d.163.com/12/0502/09/80G7SAU000314P0B.html">全球畅玩</a>的功能，你可以使用同一客户端登陆全球三大服务器中的任何一个，并且最重要的是，可以使用任何你喜欢的语言种类，例如使用繁体中文客户端在美服进行游戏。</p>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td><div align="left">
+                          <p><strong class="rare">Battle.Net 2.0</strong> </p>
+                          <p>暴雪表明在战网2.0中将做非常大的改动，移除局域网模式。这一举措是为了鼓励玩家参与线上游戏，包括成就，好友列表/黑名单以及社区支持。 玩家可以通过实名好友系统方便的与朋友进行交流，特别是跨游戏交流。组队更加方便，你可以快速邀请别人加入你的游戏。通过战旗系统快速的加入当前战斗，以及丰富的成就系统供玩家寻找新的乐趣。同时，战网全球通用，你无需为多次购买不同服务器的账号及付费问题烦恼。</p>
+                        </div></td>
+                        <td width="240" align="center"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic43.jpg" alt="暗黑3战网" width="210" height="138" border="0" /></td>
+                </tr>
+              </table>
+              <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">发售相关信息</span></p>
+              <p align="left"><strong class="rare">Beta 测试</strong></p>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>
+                          <p align="left">在2011年8月2日，暴雪正式放出了暗黑破坏神3测试的<a href="http://us.blizzard.com/en-us/company/events/diablo3-announcement/index.html#summary">官方页面地址</a>，上面陆续放出关于测试的相关信息。</p>
+                          <p align="left">暗黑破坏神3自2011年4月开始，陆续进行过各种阶段性封闭测试。测试自2011年9月6日正式开始，直到2012年5月1日测试正式结束。期间经历了成就系统、技能系统、现金拍卖行系统等重要功能上线，并进行了为期3天的公测，全程经历18个补丁版本。我们整理了完整详细的测试过程和游戏变化，<a href="http://d.163.com/special/sp/betalicheng.html" target="_blank"><strong>推荐阅读</strong>！</a></p></td>
+                        <td width="240" align="center" valign="middle"><a href="http://d.163.com/special/sp/betalicheng.html"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic44.jpg" alt="暗黑3测试" width="210" height="138" border="0" /></a></td>
+                      </tr>
+              </table>
+        <p><strong class="rare">发售日期</strong></p>
+                    <p>2011年9月23日，在没有任何征兆的情况下暴雪宣布暗黑3发售延期。至此，暴雪正式把暗黑3的发售日期定为了2012年一季度，并且多次强调将努力实现这个目标！（<a href="http://d.163.com/11/0923/20/7ELQ3FPO00314LE2.html" target="_blank">全文内容</a>）</p>
+                    <p>2012年2月10日，暴雪的2011年四季度财报会议，暴雪总裁 <a href="http://wiki.d.163.com/index.php?title=Mike_Morhaime">Mike   Morhaime</a> 再次宣布《暗黑破坏神3》将于012年二季度上线。这比之前的预计时间又推迟了一个月。（<a href="http://d.163.com/12/0210/06/7PSNP1KO00314LE2.html" target="_blank">全文内容</a>）</p>
+              <p>2012年2月24日，时任暗黑3游戏总监 <a href="http://wiki.d.163.com/index.php?title=Jay_Wilson">Jay Wilson</a> 通过论坛发表了一篇有关游戏发售时间的蓝贴，这是第一次如此正式的谈及发售日期。在这之后，暴雪很快将会宣布游戏发售日期！（<a href="http://d.163.com/12/0224/09/7R12PN8U00314P0B.html" target="_blank">全文内容</a>）</p>
+              <p>2012年3月15日，暴雪宣布万众期待的暗黑破坏神3将于2012年5月15日正式发售！（<a href="http://d.163.com/12/0315/18/7SLKG9H300314P0B.html" target="_blank">全文内容</a>）</p>
+              <p>2014年3月25日，令人期待的《暗黑破坏神3》首部资料片《死神之镰》正式发售！（<a href="http://d.163.com/14/0325/02/9O5AUNL600314P0B.html">全文内容</a>）</p>
+              <p align="left"><strong><span class="rare">系统及配置</span></strong></p>
+<p align="left">暗黑破坏神3的游戏配需只求并不高（最低配置），<a href="http://d.163.com/11/0907/23/7DCTBPTM00314M8O.html">游戏配置详细资料</a>点击这里：</p>
+                      <ul><li class="bliz">
+                        <span class="f12px bliz"><strong class="">PC<br />
+                        </strong>系统: Windows&reg; XP/Windows Vista&reg;/Windows&reg; 7 (Latest Service Packs) with   DirectX&reg; 9.0c<br />
+                        处理器: Intel Pentium&reg; D 2.8 GHz 或 AMD AthlonTM 64 X2 4400+<br />
+                        显卡: NVIDIA&reg; GeForce&reg; 7800 GT or ATI Radeon&trade; X1950 Pro 或更好
+                        </span></li>
+                        <li class="f12px bliz"><strong>Mac<br />
+                        </strong></U>OS: Mac&reg; OS X 10.6.8 或更新<br />
+  处理器: Intel&reg; Core 2 Duo<br />
+  显卡: NVIDIA&reg; GeForce&reg; 8600M GT or ATI Radeon&trade; HD 2600 或更好
+</li>
+              </ul>
+<p align="left"><strong class="rare">游戏售价</strong></p>
+                    <p>暗黑破坏神3全球各地区发售价格根据地区政策及货币种类存在差异，下表列出了全球多个国家和地区的发售价格。<br>
+  <span class="unique">&#12288;&#12288;注意：暗黑破坏神3沿用了终身制收费方式，玩家在购买客户端后，将自动获得战网游戏资格，无需支付后续费用（资料片除外）。目前已经公布代理的各国家地区都采用了这种规则！</span></p>
+  <table align="center" width="700" cellspacing="2" cellpadding="2" bordercolor="#2a241c" border="1">
+  <tbody><tr>
+<td width="170" style="width:100px;"></td>
+<td align="center" bgcolor="#12100E" class="title3">普通版</td>
+<td align="center" bgcolor="#12100E" class="title3">典藏版</td>
+</tr>
+<tr>
+<td align="center" bgcolor="#12100E"><a target="_blank" href="http://tw.battle.net/d3/zh/">台湾地区</a>*</td>
+<td style="font-size:12px; width:200px;">1599 新台币（约330元人民币）</td>
+<td style="font-size:12px; width:200px;">2999 新台币（约642元人民币）</td>
+</tr>
+<tr>
+  <td align="center" bgcolor="#12100E">香港地区*</td>
+  <td style="font-size:12px; width:200px;">529 港币</td>
+  <td style="font-size:12px; width:200px;">919 港币</td>
+</tr>
+<tr>
+<td align="center" bgcolor="#12100E"><a target="_blank" href="http://us.battle.net/en/">美服地区</a></td>
+<td style="font-size:12px; width:200px;">59.99 美元（约379元人民币）</td>
+<td style="font-size:12px; width:200px;">99.99 美元（约632元人民币）</td>
+</tr>
+<tr>
+  <td align="center" bgcolor="#12100E">韩国地区</td>
+  <td style="font-size:12px; width:200px;">55,000 韩元（约303元人民币）</td>
+  <td style="font-size:12px; width:200px;">99,000 韩元（约545元人民币）</td>
+  </tr>
+<tr>
+  <td align="center" bgcolor="#12100E">法国地区</td>
+  <td style="font-size:12px; width:200px;">45.14 欧元 （约378元人民币）</td>
+  <td style="font-size:12px; width:200px;">&nbsp;</td>
+  </tr>
+<tr>
+  <td align="center" bgcolor="#12100E">德国地区</td>
+  <td style="font-size:12px; width:200px;">54.90 欧元 （约459元人民币）</td>
+  <td style="font-size:12px; width:200px;">89.99 欧元 （约754元人民币）</td>
+  </tr>
+<tr>
+  <td align="center" bgcolor="#12100E">英国地区</td>
+  <td style="font-size:12px; width:200px;">32.97 英镑 （约330元人民币）</td>
+  <td style="font-size:12px; width:200px;">69.99 英镑 （约700元人民币）</td>
+  </tr>
+</tbody></table>
+  <p align="left"><strong class="rare">游戏分级</strong><br>
+              &#12288;&#12288;暗黑3的分级应针对17岁以上的用户，而德国的USK 18+分级或类似的分级会很大程度上限制游戏的发售。</p>
+                    <ul>
+                      <li><strong align="left">美国</strong><strong> (<a href="http://en.wikipedia.org/wiki/Entertainment_Software_Rating_Board" title="http://en.wikipedia.org/wiki/Entertainment_Software_Rating_Board">ESRB</a>)</strong> - &quot;M&quot; 成人（玩家必须至少为17周岁）</li>
+                      <li><strong>欧洲</strong><strong> (<a href="http://en.wikipedia.org/wiki/PEGI" title="http://en.wikipedia.org/wiki/PEGI">PEGI</a>)</strong> - 17+ (玩家必须至少16周岁)</li>
+                      <li><strong>德国 (<a href="http://en.wikipedia.org/wiki/Unterhaltungssoftware_Selbstkontrolle" title="http://en.wikipedia.org/wiki/Unterhaltungssoftware_Selbstkontrolle">USK</a>)</strong> - USK 17+ (玩家必须至少16周岁)</li>
+                      <li><strong>韩国</strong> - 18+</li>
+                    </ul>
+                    <p><img src="http://img1.cache.netease.com/game/diablo3/d3/ico/bullet.jpg" /> <span class="title3">资料片和电影</span></p>
+              <p align="left">暗黑破坏神3之后又是什么谁都不知道，但很明显暴雪一定会为它加上资料片。他们曾提过暗黑3中将会有更"终极"的结局，因此最有可能是资料片，也可能会是一款MMO线上游戏或是一部暗黑破坏神电影。</p>
+                    <p align="left">Mike Morhaime 表示他们想每年都做一个暗黑3资料片，并确认计划为暗黑3定制多部资料片。 <br />
+                    　　2011年9月3日，暴雪在投资者会议上正式宣布，会在暗黑3正式发行后的3年内，推出首个资料片！<br />
+                    　　传说，将会继续！</p>
+<div align="center"><img src="http://img1.cache.netease.com/game/diablo3/d3/newbasic/newbasic41.jpg" alt="暗黑3资料片" width="500" height="217" border="0" /></div></td>
+    </tr>
+  </table>
+<!-- Table -->
+</div>
+<!-- End Guide Content -->
+<span class="clear"></span>
+</div>
+<!-- End Diablo III Guide -->
+<div class="area_switch area">
+<div class="mod"> <a class="switch_1" id="switch" onclick="aSwitch()"></a> </div>
+</div>
+</div>
+<div id="ft"> 
+<div class="foot">
+<div class="text"><a href="http://t.163.com/zt/feedback">意见反馈</a>　</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script> 
+</div>
+</div>
+</div>
+<script language="javascript" type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script> 
+<script language="javascript" type="text/javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_ui_0.x.js" charset="gb2312"></script> 
+<script language="javascript" type="text/javascript">
+//<![CDATA[
+new NTES.ui.PopupLayer(NTES("#shouye"), NTES("#shouye_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#jichu"), NTES("#jichu_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#juese"), NTES("#juese_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#zhuangbei"), NTES("#zhuangbei_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#changjing"), NTES("#changjing_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#emo"), NTES("#emo_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#renwu"), NTES("#renwu_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#shipin"), NTES("#shipin_content"), "mouseover",100);
+new NTES.ui.PopupLayer(NTES("#xiazai"), NTES("#xiazai_content"), "mouseover",100);
+//]]>
+function aSwitch(){
+var a=document.getElementById("switch");
+if(a.className=='switch_1')
+{a.className='switch_2';}
+else
+{a.className='switch_1';}
+}
+</script> 
+<script type="text/javascript" src="http://img3.cache.netease.com/game/diablo3/db/js/tooltip/d3tips.js"></script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0516010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0516010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "game"; //站点ID。
+    neteaseTracker();
+    </script>
+<!-- big data statistics -->
+
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.a2B3QdwltfdN.6.js"></script>
+</body>
+</html>

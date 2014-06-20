@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>买房指南_网易秦皇岛房产买房指南</title>
+<base target="_blank" />
+<meta name="keywords" content="买房指南,秦皇岛买房指南,秦皇岛房产,秦皇岛房地产,网易秦皇岛,秦皇岛网易" />
+<meta name="description" content="买房指南,秦皇岛买房指南,秦皇岛房产,秦皇岛房地产,网易秦皇岛,秦皇岛网易" />
+<link href="http://img1.cache.netease.com/house/css09/style.css" rel="stylesheet" type="text/css" />
+<link href="http://img1.cache.netease.com/cnews/img09/channel_nav.css" rel="stylesheet" type="text/css"/>
+<link href="http://img1.cache.netease.com/house/css09/list/list091222.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="nav_top" class="mod">
+	<span id="top"><!--为返回顶部所作--></span>
+	<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.3.css" />
+<script charset="gb2312" src="http://img3.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"><font color="#FFFFFF">微博</font></a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0608.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script>
+</div>
+<div class="ad960">
+<div><embed src="http://file.ws.126.net/house/qhd/swf/20131112/yztd96070.swf" quality="high" bgcolor="#ffffff" width="960" height="70" wmode="transparent" name="homeSwf_1" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"style="background-color:#FFFFFF;"/></div>
+</div>
+<span class="blank9"></span>
+<style type="text/css">
+.n12nav {width:960px; margin:0 auto; height:67px; background:url(http://img2.cache.netease.com/home/2012/12/27/2012122714104759b08.png) no-repeat; position:relative;}
+.n12nav a:link {color:#262626;}
+.n12nav a:visited {color:#262626;}
+.n12nav .n121lian{ width:90px; height:67px; float:left; }
+.n12nav .n122lian{ width:90px; height:67px; float:left; margin-left:190px; }
+.n12nav .n123lian{ width:90px; height:67px; float:left; margin-left:190px; }
+.n12nav .n124lian{ width:90px; height:67px; float:left; margin-left:135px; float:left;}
+.n12nav .nnews { width:190px; height:50px; position:absolute; top:13px; left:90px; line-height:20px; text-align:left;}
+.n12nav .nnews a { margin-left:8px;}
+.n12nav .nbuyh { width:190px; height:50px; position:absolute; top:13px; left:369px; line-height:20px; text-align:left;}
+.n12nav .nbuyh a { margin-left:8px;}
+.n12nav .nbbs { width:135px; height:50px; position:absolute; top:13px; left:650px; line-height:20px; text-align:left;}
+.n12nav .nbbs a { margin-left:10px;}
+.n12nav .necdc { width:85px; height:50px; position:absolute; top:13px; left:875px; line-height:20px; text-align:left;}
+.n12nav .necdc a { margin-left:15px;}
+</style><div class="channel">
+	<span class="logo"><a href="http://qhd.house.163.com" title="网易秦皇岛房产"><img src="http://img4.cache.netease.com/house/2012/12/6/201212061512204dbd2.gif" width="190" height="24" alt="秦皇岛房产" /></a></span>
+        <span class="clogo"><a href="http://qhd.house.163.com/special/02380414/xf.html" title="新房"><img src="http://img4.cache.netease.com/house/2012/12/27/20121227170353737fc.jpg" alt="新房" /></a></span>
+    <p class="position cGray"><a href="http://www.163.com">网易首页</a> &gt; <a href="http://qhd.house.163.com/">秦皇岛房产</a> &gt; <a href="http://qhd.house.163.com/special/02380414/xf.html" title="新房">新房</a></p>
+         </div>
+<!--首页展开型导航-->
+<div class="n12nav">
+<div class="n121lian"><a href="http://qhd.house.163.com/news"><img src="http://img1.cache.netease.com/home/2012/12/27/20121227141153093c4.png" /></a></div>
+<div class="n122lian"><a href="http://qhd.house.163.com/xf"><img src="http://img6.cache.netease.com/home/2012/12/27/201212271411350e56d.png" /></a></div>
+<div class="n123lian"><img src="http://img1.cache.netease.com/home/2012/12/27/201212271412151c5d0.png" /></div>
+<div class="n124lian"><img src="http://img4.cache.netease.com/house/2012/12/28/2012122810090972cdf.png" /></div>
+  <div class="nnews">
+  	<a href="http://qhd.house.163.com/special/023802R6/wrtt.html">往日头条</a> <a href="http://qhd.house.163.com/special/023802R6/rdzt.html">易周探点</a> <a href="http://qhd.house.163.com/special/023802R6/wygq.html">网易高清</a> <br />
+<a href="http://qhd.house.163.com/special/023802R6/yizhoukan.html">易周刊</a> <a  href="http://qhd.house.163.com/special/0238sp/dhdcjd.html">对话地产界</a><a >数据分析</a> 
+  </div>
+  <div class="nbuyh">
+  <a href="http://qhd.house.163.com/special/023802R6/lskd.html">楼盘活动</a> <a href="http://qhd.house.163.com/special/023802R6/fjbb.html">房价播报</a> <a href="http://qhd.house.163.com/special/023802R6/lydc.html">旅游地产</a><br /> 
+<a href="http://qhd.house.163.com/special/023802R6/mfzn.html">买房指南</a> <a href="http://qhd.house.163.com/special/023802R6/xykf.html">小易看房</a> <a href="http://qhd.house.163.com/special/023802R6/hxjs.html">户型鉴赏</a> 
+  </div>
+  
+  <div class="nbbs">
+  <a >业主杂谈</a> <a>论坛排行</a> <br />
+<a >精华贴　</a> <a >家装在线</a>
+  </div>
+  <div class="necdc">
+  <a >小易博客</a><br />
+	<a>地产名博</a>
+  </div>
+</div>
+<!--首页展开型导航end--><span class="blank12"></span>
+<div class="area">
+		<div class="titleBar ui_s1"><h2>买房指南</h2></div>
+        <span class="blank3"></span>
+<!-----1---->
+            <div class="textListbg clearfix">
+            <ul class="textList">
+  
+ 
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0718/21/943K7JTR023803SG.html">6+1产品受广大消费者欢迎的十二大原因</a><span>07-18 21:34</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0522/09/8VFI3SNV023803SG.html">80后买房注意八件事情 专家提醒需审时度势</a><span>05-22 09:30</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0515/08/8UTFFKN2023803SG.html">年轻月光族选房指南花最少的钱买高性价比房</a><span>05-15 08:58</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0514/08/8UQSTJ5L023803SG.html">装修陷阱防不胜防10个常见家装偷工减料手法</a><span>05-14 08:55</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0508/08/8UBDNIEO023803SG.html">四大关键点教你选择有巨大升值潜力二手房</a><span>05-08 08:41</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0506/15/8U70D5AL023803SG.html">搬新房需谨慎 壹品天城为大家介绍搬家禁忌</a><span>05-06 15:31</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0428/08/8THM8932023803SG.html">对于开发商打折五花八门 教你如何理性购房</a><span>04-28 08:49</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0417/09/8SLCJRVQ023803SG.html">盘点成功购房准则 购买小房型作投资须谨慎</a><span>04-17 09:02</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0417/09/8SLCF4KS023803SG.html">楼市步入她时代 女性购房应学会鉴赏样板房</a><span>04-17 09:00</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0411/17/8S6RKRNE023803SG.html">交房的时间日益接近我们要知道的验房8个要点</a><span>04-11 17:36</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0410/09/8S3DQFQ9023803SG.html">专家支招贷款买房方案 三类人群可对号入座</a><span>04-10 09:37</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0410/09/8S3DO2MJ023803SG.html">阴阳合同削弱国五条力度但买房形成纠纷较多</a><span>04-10 09:36</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0402/08/8REN63GU023803SG.html">楼市调控政策变动易生纠纷购房者应提前约定</a><span>04-02 08:36</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0402/08/8REN3M1C023803PO.html">选房子怎么来分辨好坏户型由五大标准来衡量</a><span>04-02 08:35</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0328/09/8R1TCFQM023803SG.html">律师提醒买房人买房连环单最有可能出现陷阱</a><span>03-28 09:15</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0326/09/8QSPE6D5023803PO.html">小户型装修必知四原则瞬间变身时尚大气蜗居</a><span>03-26 09:29</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0326/09/8QSPANTV023803SG.html">防折扣当中的数字游戏买房也要学会讨价还价</a><span>03-26 09:28</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0318/10/8Q88FRE9023803SG.html">给置业的菜鸟们的建议 挑选户型楼层有窍门</a><span>03-18 10:08</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0318/10/8Q884TTU023803SG.html">置业支招：客户购买房时10个要注意的事情</a><span>03-18 10:02</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0312/16/8PPFS21L023803SG.html">专家谈五大典型的购房陷阱虚送面积榜上有名</a><span>03-12 16:29</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0312/16/8PPFKNA7023803SG.html">80后青年置业八大注意专家提醒务必审时度势</a><span>03-12 16:25</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0312/09/8POOCB64023803SG.html">买房选购户型之“八项注意” 切忌大而无当</a><span>03-12 09:38</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0311/10/8PM7T74G023803SG.html">购房者纠结楼市新政 新盘和二手房哪个划算</a><span>03-11 10:12</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0311/10/8PM7PTRQ023803SG.html">购房九大陷阱及其对策 让你看清开发商真面目</a><span>03-11 10:10</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0311/10/8PM7JOO6023803SG.html">国五条细则颁布一周 二手房交易关键词全解读</a><span>03-11 10:07</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0311/10/8PM7HPQC023803SG.html">置业指南：选房有妙招 12点教你选套好房子</a><span>03-11 10:06</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0306/10/8P9BIB7F023803SG.html">不得不防六大购房陷阱解析 谨防虚假广告宣传</a><span>03-06 10:06</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0306/10/8P9BD597023803SG.html">选房应把握四大黄金原则 不为明天的升值买单</a><span>03-06 10:03</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0306/10/8P9B7E0M023803SG.html">买房不得不防的骗局大揭秘挑选户型楼层有诀窍</a><span>03-06 10:00</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0304/09/8P45S8IM023803SG.html">购买房屋时切勿将房款打到房产中介账户</a><span>03-04 09:50</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0304/09/8P45MQQH023803SG.html">看房迷雾重重：样板间最迷魂 不限购有陷阱</a><span>03-04 09:47</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0304/09/8P45IQ59023803SG.html">怎样买房划算 市民的10年买房史给出答案</a><span>03-04 09:45</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0304/09/8P45GVAD023803SG.html">装修返修排行榜:墙面开裂和瓷砖空鼓排前列</a><span>03-04 09:44</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0304/09/8P45BT9G023803SG.html">五名医生死亡 燃气热水器如何变成杀人之器</a><span>03-04 09:41</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0304/09/8P459VCJ023803SG.html">买房该出手时就出手 警惕被透支升值空间</a><span>03-04 09:40</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0304/09/8P458LJ2023803SG.html">如何破解开发商四大骗局 教你选套好房子</a><span>03-04 09:39</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0304/09/8P456ILE023803SG.html">置业指南:80后的月光族该如何变身首次置业者</a><span>03-04 09:38</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0227/09/8ON8R74H023803SG.html">春节精明置业宝典：如何选择理想楼盘有诀窍</a><span>02-27 09:32</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0227/09/8ON8PQ7K023803SG.html">白领装修最爱浪漫简约 装修风格的三组关键词</a><span>02-27 09:31</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0227/09/8ON8OEMC023803SG.html">开发商瞄准回家置业者 售楼部这个春节不放假</a><span>02-27 09:30</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0227/09/8ON8MVD5023803SG.html">告别“春运囧途” 回乡置业需注意哪些问题？</a><span>02-27 09:30</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0227/09/8ON90POS023803SG.html">小户型=小面积 买小户型看清陷阱别被忽悠了</a><span>02-27 09:35</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0227/09/8ON8L8O2023803SG.html">春节期间买房是个大好时机 买房防骗有诀窍</a><span>02-27 09:29</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0227/09/8ON8J18C023803SG.html">买二手房应留意四个问题 莫轻信中介口头承诺</a><span>02-27 09:27</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0227/09/8ON8GQ63023803SG.html">专家建议：买房越早越好 春节购房谨防陷阱</a><span>02-27 09:26</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0225/11/8OI9FGLK023803SG.html">买房没有买成 中介却要索赔“跑腿费”没依据</a><span>02-25 11:07</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0225/11/8OI9C879023803SG.html">买房须知：三房改建四房或成“违法建筑”</a><span>02-25 11:05</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0225/11/8OI980TM023803SG.html">离婚后房屋转让计算个税税务总局解答热点</a><span>02-25 11:03</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0225/10/8OI8SF1S023803SG.html">北京“公维”使用已近4亿元 三招可加速提取</a><span>02-25 10:56</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0225/10/8OI8QU59023803SG.html">买房要谨慎：切忌不能购买的七种“便宜房”</a><span>02-25 10:56</span></li>
+			</ul>
+			<span class="blank15"></span>
+			<ul class="textList">
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0225/10/8OI8V881023803SG.html">2013年买房者之让卖房者泪流满面的砍价宝典</a><span>02-25 10:58</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0225/10/8OI8JR30023803SG.html">躺着中状元开发商黄怒波否认将10年捐500亿</a><span>02-25 10:52</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0225/10/8OI8BG0F023803SG.html">开发商不按期交房怎么办 有问题买房前多看看</a><span>02-25 10:47</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0221/15/8O8G9HCD023803SG.html">房子和股票回报率PK 手中闲钱买房还是炒股</a><span>02-21 15:53</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0221/15/8O8G3CCA023803SG.html">不堪“忽悠压力”离职 售楼员曝楼市4种假象</a><span>02-21 15:50</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0221/15/8O8FJP9G023803SG.html">“得房率”你真的明白吗 其实并非越高越好</a><span>02-21 15:42</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0221/15/8O8F40V4023803SG.html">新房拿到手你会怎么办 专家:新房勿长期闲置</a><span>02-21 15:33</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0221/15/8O8F7H7B023803SG.html">虚假宣传、合同陷阱多 春节买房慎防购房陷阱</a><span>02-21 15:35</span></li>
+			<li class="list-left"><a href="http://qhd.house.163.com/13/0221/15/8O8F68TJ023803SG.html">焦点购房：春节买房擦亮双眼，慎防购房陷阱</a><span>02-21 15:34</span></li>
+			<li class="list-right"><a href="http://qhd.house.163.com/13/0221/15/8O8ES9S2023803SG.html">房地产优惠促销暗藏陷阱 零首付还款负担加重</a><span>02-21 15:29</span></li>
+			</ul>
+			<span class="blank6"></span>
+        	</div>
+			<span class="blank20"></span>
+</div>
+<div><embed src="http://file.ws.126.net/house/qhd/swf/20131112/dhdcj96070.swf" quality="high" bgcolor="#ffffff" width="960" height="70" wmode="transparent" name="homeSwf_1" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></div>
+<span class="blank20"></span>
+<style type="text/css">
+body,td,th {
+	font-size: 12px;
+	color: #535353;
+}
+a:link {
+	color: #535353;
+	text-decoration: none;
+}
+a:visited {
+	color: #535353;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #CC0000;
+}
+a:active {
+	text-decoration: none;
+	color: #CC0000;
+}
+</style><table width="960" height="38" border="0" bgcolor="" style="border:1px #D9D9D9 solid"> 
+<tr> 
+<td height="32" bgcolor="#F7F7F7">
+<div style="height:8px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+<table width="930" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><p align="left" style="margin-top:0; margin-bottom:0;"><B>友情链接：</B><a href="http://www.qhdglw.com/" target="_blank">果岭湾官方网</a> |<a href="http://www.ql59900.com"  target="_blank"> 强力装饰 </a>|<a href="http://www.zhijia100.com/"  target="_blank"> 家居导购 </a>| <a href="http://www.romzhijia.net/romlist/34_0_0_1_10/"  target="_blank"> HTC G14刷机包 </a>|<a href="http://haikou.wofang.com/"  target="_blank"> 海口房产 </a>|<a href="http://sanya.wofang.com/"  target="_blank"> 三亚房产 </a>|<a href="http://www.biluota.com/"  target="_blank"> 碧螺塔酒吧公园 </a>|<a href="http://www.edfdc.com/esf/"  target="_blank"> 黄石二手房 </a>|<a href="http://house.hushi114.com"  target="_blank"> 唐山房产 </a>|<a href="http://www.beidaihe.com.cn/"  target="_blank"> 秦皇岛海燕国旅 </a>|<a href="http://www.qhdhaochi.com"  target="_blank"> 秦皇岛美食 </a>|<a href="http://cn.uniwords.com.cn/native-translation/"  target="_blank"> 母语翻译 </a>|</td>
+    </tr>
+  </table><div style="height:5px;overflow:hidden;background:#F7F7F7;width:900px;"></div>
+  
+</tr> 
+</table>
+<style type="text/css">
+.nav_channel_end {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -67px repeat; height:37px; line-height:38px; overflow:hidden; width:960px; margin:0 auto;}
+.nav_channel_end .rightS {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) right -141px no-repeat; display:block; width:8px; height:37px; float:right; overflow:hidden;}
+.nav_channel_end .nav {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -30px no-repeat; height:37px; float:left; line-height:38px; color:#1E50A2; overflow:hidden;}
+.nav_channel_end .nav a {padding:0 5px; float:none; font-weight:normal; background:none;}
+.nav_channel_end .nav .firstNode {margin-left:8px; background:none;}
+.nav_channel_end .goHome {float:right; width:77px; height:18px; background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg1001.jpg) left -178px no-repeat; overflow:hidden; margin:10px 5px 0 0; line-height:19px; text-align:left; text-indent:10px;}
+.nav_channel_end .nav a,.nav_channel_end .nav a:visited {color:#1E50A2;}
+.nav_channel_end .nav a:hover {color:#BA2636;}
+.nav_channel_end .search {float:right; display:inline; width:128px; height:20px; margin:8px 13px 0 0; overflow:hidden;}
+.nav_channel_end .search .textBox {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg.jpg) right -202px no-repeat; width:106px; height:20px; line-height:21px; text-indent:4px; padding:2px 0 0 0; border:none; line-height:18px; color:#727171; float:left;}
+.nav_channel_end .search .btn {background:url(http://img1.cache.netease.com/cnews/img09/endnav_bg.jpg) left -178px no-repeat; width:22px; height:20px; border:none; text-indent:-100em; cursor:pointer; float:left;}
+</style><br>
+<div class="nav_channel_end">
+	<span class="nav"><a href="http://www.163.com/" class="firstNode">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://auto.163.com/">汽车</a>-<a href="http://tech.163.com">科技</a>-<a href="http://digi.163.com/">数码</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://house.163.com/">房产</a>-<a href="http://game.163.com/">游戏</a>-<a href="http://book.163.com/">读书</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://travel.163.com/">旅游</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/blogs/">博客</a>-<a href="http://t.163.com/">微博</a>-<a href="http://help.3g.163.com/">手机版</a>
+    </span><span class="rightS"></span><span class="cBlue"><a target="_self" href="#top" class="goHome">返回顶部</a></span>
+</div>
+<span class="blank9"></span>
+<div class="foot" style="text-align:center">
+<div class="text" style="text-align:center"><a href="http://post.news.163.com/msg/housemail.jsp">联系电话:400-0335-163</a><br/><a>&nbsp;&nbsp;(秦皇岛远赫广告有限公司)</a>　</div>
+<a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a> - <a href="http://sitemap.163.com/">网站地图</a><br />
+网易公司版权所有<br />
+<span class="cRed">&copy;1997-2012</span>
+</div>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+_ntes_nacc = "house"; //站点ID。
+neteaseTracker();
+</script>
+</body>
+</html>

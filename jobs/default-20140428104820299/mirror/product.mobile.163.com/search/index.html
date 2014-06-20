@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>手机列表_网易手机</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="手机列表" />
+	<link type="text/css" rel="stylesheet" href="http://img1.cache.netease.com/f2e/mobile/chanpinku/css/search_result.562874.css" />
+	<base target="_blank" />
+</head>
+
+<body>
+<div class="mobile_nav_wrap">
+		<link type="text/css" rel="stylesheet" media="screen" href="http://img4.cache.netease.com/common/css/common_nav_v2.2.8.css" />
+	<div class="ntes-nav" id="js_N_nav">
+    <div class="ntes-nav-main clearfix">
+        <div class="c-fl">
+            <div class="ntes-nav-select ntes-nav-select-wide ntes-nav-app js_N_navSelect c-fl" tabindex="0">
+                <a href="http://m.163.com/#f=topnav" class="ntes-nav-select-title ntes-nav-entry-bgblack">应用<em class="ntes-nav-select-arr"></em></a>
+                <div class="ntes-nav-select-pop">
+                    <ul class="ntes-nav-select-list clearfix">
+                        <li><a href="http://m.163.com/newsapp/#f=topnav"><span><em class="ntes-nav-app-newsapp">网易新闻</em></span></a></li>
+                        <li><a href="http://music.163.com/#f=topnav"><span><em class="ntes-nav-app-msc">网易云音乐</em></span></a></li>
+                        <li><a href="http://yuedu.163.com/#f=topnav"><span><em class="ntes-nav-app-yuedu">网易云阅读</em></span></a></li>
+                        <li><a href="http://note.youdao.com/#f=topnav"><span><em class="ntes-nav-app-note">有道云笔记</em></span></a></li>
+                        <li><a href="http://3g.163.com/links/4145#f=topnav"><span><em class="ntes-nav-app-ht">网易花田</em></span></a></li>
+                        <li><a href="http://open.163.com/#f=topnav"><span><em class="ntes-nav-app-open">网易公开课</em></span></a></li>
+                        <li><a href="http://caipiao.163.com/mobile/client_cp.jsp#from=yingyong"><span><em class="ntes-nav-app-cp">网易彩票</em></span></a></li>
+                        <li class="last"><a href="http://cidian.youdao.com/?vendor=topnav"><span><em class="ntes-nav-app-cd">有道词典</em></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <a class="ntes-nav-entry-wide c-fl" href="http://www.163.com/" title="网易首页">网易首页</a>
+        </div>
+        <div class="c-fr">
+            <div class="c-fl">
+                <div class="c-fl" id="js_N_navLoginBefore">
+                    <div id="js_N_navHighlight" class="js_loginframe ntes-nav-login">
+                        <a href="http://reg.163.com/" class="ntes-nav-login-title">登录</a>
+                        <div class="ntes-nav-loginframe-pop"  id="js_N_login_wrap" style="display:none">
+                            <div class="ntes-loginframe clearfix">
+                                <div class="ntes-loginframe-blank clearfix">
+                                    <span class="ntes-loginframe-tips">网易邮箱/通行证用户可直接登录</span><br>
+                                    <label class="ntes-loginframe-label clearfix"><span class="loginframe-hidden">账号：</span><input id="js_loginframe_username" type="text" class="ntes-loginframe-label-ipt" placeholder="网易通行证/登录邮箱"></label>
+                                </div>
+                                <div class="ntes-loginframe-blank clearfix">
+                                    <label class="ntes-loginframe-label clearfix"><span class="loginframe-hidden">密码：</span><input type="password" class="ntes-loginframe-label-ipt" placeholder="请输入密码"></label>
+                                    <span class="ntes-loginframe-label mt6 mb12 clearfix">
+                                        <label class="c-fl"><input type="checkbox" name="autologin" class="ntes-loginframe-checkbox"><span class="c-fl">十天内免登录</span></label>
+                                        <a href="http://reg.163.com/RecoverPassword.shtml?f=www" class="c-fr">忘记密码？</a>
+                                    </span>
+                                    <button class="ntes-loginframe-btn">登　录</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="ntes-nav-entry-wide c-fl" href="http://reg.email.163.com/mailregAll/reg0.jsp?from=163&regPage=163">注册免费邮箱</a>
+                </div>
+                <div class="c-fl" id="js_N_NavLoginAfter" style="display:none">
+                    <span class="left mr6">欢迎您，</span>
+                    <div id="js_N_logined_warp" class="js_N_navSelect ntes-nav-logined" tabindex="0">
+                        <span class="ntes-nav-select-title ntes-nav-logined-userinfo"><span id="js_N_navUsername"></span><em class="ntes-nav-select-arr"></em></span>
+                        <div id="js_login_suggest_wrap" class="ntes-nav-select-pop">
+                            <ul id="js_logined_suggest" class="ntes-nav-select-list clearfix">
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="ntes-nav-entry-wide c-fl" target="_self" href="http://reg.163.com/Logout.jsp" id="js_N_navLogout">安全退出</a>
+                </div>
+            </div>
+            <ul class="ntes-nav-inside">
+                <li>
+                    <a href="http://t.163.com/#f=topnav" class="c-fl ntes-nav-entry ntes-nav-entry-bgblack"><em class="ntes-nav-entry-wblog">微博</em><span class="ntes-nav-msg" id="js_N_navWbMsg"></span></a>
+                </li>
+                <li>
+                    <div class="ntes-nav-select js_N_navSelect c-fl" tabindex="0">
+                        <a id="js_mail_url" href="http://email.163.com/#f=topnav" class="ntes-nav-select-title ntes-nav-entry-bgblack"><em class="ntes-nav-entry-mail">邮箱</em><em class="ntes-nav-select-arr"></em><span class="ntes-nav-msg" id="js_N_navMailMsg"></span></a>
+                        <div class="ntes-nav-select-pop ntes-nav-select-pop-mail">
+                            <ul class="ntes-nav-select-list clearfix">
+                                <li><a href="http://email.163.com/#f=topnav"><span>免费邮箱</span></a></li>
+                                <li><a href="http://vipmail.163.com/#f=topnav"><span>VIP邮箱</span></a></li>
+                                <li><a href="http://qiye.163.com/#f=topnav"><span>企业邮箱</span></a></li>
+                                <li><a href="http://reg.email.163.com/mailregAll/reg0.jsp?from=163&regPage=163"><span>免费注册</span></a></li>
+                                <li class="last"><a href="http://reg.email.163.com/unireg/call.do?cmd=register.entrance&amp;flow=mobile&amp;from=ntes_nav"><span>快速注册</span></a></li>
+                            </ul>
+                        </div>
+                    </div>                   
+                </li>
+                <li>
+                    <div class="ntes-nav-select js_N_navSelect c-fl" tabindex="0">
+                        <a href="http://pay.163.com/" class="ntes-nav-select-title ntes-nav-entry-bgblack"><em class="ntes-nav-entry-money">支付</em><em class="ntes-nav-select-arr"></em></a>
+                        <div class="ntes-nav-select-pop ntes-nav-select-pop-temp">
+                            <ul class="ntes-nav-select-list clearfix">
+                                <li><a href="http://pay.163.com/#f=topnav"><span>一卡通充值</span></a></li>
+                                <li><a href="http://ecard.163.com/script/index#f=topnav"><span>一卡通购买</span></a></li>
+                                <li class="last"><a href="http://analytics.163.com/ntes_clck?urlid=454&sign=c03a07caa005eecc65356644a11332ba&url=https%3A%2F%2Fepay.163.com%2Findex.jsp#f=topnav"><span>网易宝</span></a></li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </li>
+                <li>
+                    <a class="ntes-nav-entry ntes-nav-entry-bgblack c-fl" href="http://www.163.com/rss/#f=topnav"><em class="ntes-nav-entry-rss">rss</em></a>
+                </li>
+            </ul>
+        </div>    
+    </div>
+</div>
+<script src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<script charset="gbk" type="text/javascript" src="http://img1.cache.netease.com/common/script/commonnav_v_1.0.1.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    (function () {
+        var nav_value = {
+            platform: ""
+        };
+        var nav = {
+            detect: function () {
+                if (navigator.platform.indexOf("Win") > -1) {
+                    nav_value.platform = "ua-win";
+                } else if (navigator.platform.indexOf("Mac") > -1) {
+                    nav_value.platform = "ua-mac";
+                } else if (navigator.platform.indexOf("iPad") > -1 || navigator.platform.indexOf("iPhone") > -1) {
+                    nav_value.platform = "ua-ios";
+                } else {
+                    return false
+                }
+                ;
+            },
+            init: function () {
+                this.detect();
+                if (nav_value.platform) {
+                    $("html").addCss(nav_value.platform);
+                };
+            }
+        };
+        nav.init();
+    })();
+
+    NTES.ready(function () {
+        var App = NTESCommonNavigator.core.Controller,
+		    Event = NTESCommonNavigator.core.Event.Base,
+		    ModelEvent = NTESCommonNavigator.core.Event.Model,
+		    app = NTESCommonNavigator.utils.app = App();//添加全局登录响应.
+        app.bind(Event.DATA_CHANGED, function (data) {
+        });
+        app.bind(ModelEvent.MAIL_INFO_LOADED, function (data) {
+            if ($("#js_N_navMailMsg").style.display == "block") {
+                $("#js_mail_url").addEvent("click", function () {
+                    $("#js_N_navMailMsg").style.display = "none";
+                })
+            }
+        });
+        app.bind(ModelEvent.WEIBO_INFO_LOADED, function (data) {
+            if ($("#js_N_navWbMsg").style.display == "block") {
+                $($("#js_N_navWbMsg").parentNode).addEvent("click", function () {
+                    $("#js_N_navWbMsg").style.display = "none";
+                })
+            }
+        });
+        app.refresh();
+    });
+    //]]>
+</script>
+	<div class="N-nav-channel">
+    <a class="first" href="http://news.163.com/">新闻</a><a href="http://sports.163.com/">体育</a><a href="http://sports.163.com/nba/">NBA</a><a href="http://ent.163.com/">娱乐</a><a href="http://money.163.com/">财经</a><a href="http://money.163.com/stock/">股票</a><a id="_link_auto" href="http://auto.163.com/">汽车</a><a href="http://tech.163.com/">科技</a><a href="http://mobile.163.com/">手机</a><a href="http://digi.163.com/">数码</a><a href="http://lady.163.com/">女人</a><a href="http://bbs.163.com/">论坛</a><a href="http://v.163.com/">视频</a><a href="http://travel.163.com/">旅游</a><a id="houseUrl" href="http://house.163.com/">房产</a><a href="http://home.163.com/" id="homeUrl">家居</a><a href="http://edu.163.com/">教育</a><a href="http://book.163.com/">读书</a><a id="_link_game" href="http://game.163.com/">游戏</a><a href="http://t.163.com/">微博</a><a href="http://caipiao.163.com/#from=dh">彩票</a><a href="http://baoxian.163.com/car/#from=dh">车险</a><a href="http://www.familydoctor.com.cn/">健康</a><a class="last" href="http://m.163.com/">应用</a>
+</div>
+
+	<div class="area top-gg-area">
+		<div class="gg-head-1"><iframe width="145" scrolling="no" height="90" frameborder="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=mobile&cat=products&type=logo145x90&location=1"></iframe></div>
+		<div class="gg-head-2"><iframe width="700" scrolling="no" height="90" frameborder="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=mobile&cat=products&type=column700x90&location=1"></iframe></div>
+		<div class="gg-head-3"><iframe width="145" scrolling="no" height="90" frameborder="no" marginheight="0" marginwidth="0" border="0" src="http://g.163.com/r?site=netease&affiliate=mobile&cat=products&type=logo145x90&location=2"></iframe></div>
+	</div>
+	<div class="channel">
+		<div class="clearfix">
+			<strong><a href="http://mobile.163.com/" name="top"><img width="107" height="24" src="http://img1.cache.netease.com/mobile/img09/sy1131/logo.gif" alt="网易手机"><br>网易手机</a></strong>
+			<h2 class="product">产品库</h2>
+			<div class="bread">
+				<a target="_self" href="http://mobile.163.com/">网易手机</a>
+				<span>&gt;</span>
+				<a target="_self" href="http://product.mobile.163.com/">手机大全</a>
+				<span>&gt;</span>
+				机型搜索
+			</div>
+		</div>
+	</div>
+</div>
+ <div class="mobile_bd">
+ 	<!-- 搜索 -->
+ 	<div class="mobile_search">
+<form target="blank" action="/mobile/view!search.action?sxtxs=130,200,300,400,500&price=[000000 TO 001000]" method="post" name="mobileSearch">
+	<label class="direct">产品直达</label>
+	<div class="select_mock_box sel_brand">
+		<select id="brand_sel" name="parentid">
+			<option value=" ">请选择品牌</option>
+			<option value="BlackBerry">H-黑莓</option>
+			<option value="HTC">H-HTC</option>
+			
+		</select>
+	</div>
+	<div class="select_mock_box sel_product">
+		<select id="product_sel" name="productid">
+			<option>-请选择型号-</option>
+		</select>
+	</div>
+	<label class="screen">筛选</label>
+	<div class="select_mock_box sel_name">
+		<select id="osid_sel" name="os">
+			<option value="a">安卓android</option>
+			<option value="w">Windows Phone</option>
+			<option value="i">苹果iPhone</option>
+			<option value="3">塞班SymbianV3</option>
+			<option value="5">塞班SymbianV5</option>
+		</select>
+	</div>
+	<div class="select_mock_box sel_price">
+		<select id="price_sel" name="price">
+			<option value="0000t1000">1000元以下</option>
+			<option value="1000t1500">1000-1500</option>
+			<option value="1500t2000">1500-2000</option>
+			<option value="2000t2500">2000-2500</option>
+			<option value="2500t3000">2500-3000</option>
+			<option value="3000t3500">3000-3500</option>
+			<option value="3500t4000">3500-4000</option>
+			<option value="4000t0000">4000元以上</option>
+		</select>
+	</div>
+	<div class="model_find">
+		<input type="text" value="机型搜索"/><a href="javascript:;" title="搜索" >搜索</a>
+	</div>
+</form>
+</div>
+
+ 	<!-- 菜单下面 -->
+ 	<div class="mobile_main clearfix">
+ 		<div class="mobile_main_full">
+ 			<div class="mobile_selector close">
+	<div class="mobile_select_params">
+		<dl class="mobile_sel_type mobile_sel_system">
+			<dt class="mobile_sel_title">系统</dt>
+			<dd>
+				<a href="javascript:;" target="_self" data_value="android" data_text="Android" class="mobile_sel_item android"><span>Android</span></a>
+				<a href="javascript:;" target="_self" data_value="ios" data_text="iOS" class="mobile_sel_item ios"><span>iOS</span></a>
+				<a href="javascript:;" target="_self" data_value="windows" data_text="windows" class="mobile_sel_item windows"><span>Windows Phone</span></a>
+				<a href="javascript:;" target="_self" data_value="s60v3" data_text="symbian V3" class="mobile_sel_item s60v3"><span>symbian V3</span></a>
+				<a href="javascript:;" target="_self" data_value="s60v5" data_text="symbian V5" class="mobile_sel_item s60v5"><span>symbian V5</span></a>
+
+				<a href="javascript:;" target="_self" class="mobile_item_more">
+					<span>其他</span>
+				</a>
+				<ul class="mobile_item_other">
+					<li><a href="javascript:;" target="_self" data_value="blackberry" data_text="BlackBerry" class="mobile_sel_item"><span>BlackBerry</span></a></li>
+					<li><a href="javascript:;" target="_self" data_value="webos" data_text="Web OS" class="mobile_sel_item"><span>Web OS</span></a></li>
+					<li><a href="javascript:;" target="_self" data_value="palmos" data_text="Palm OS" class="mobile_sel_item"><span>Palm OS</span></a></li>
+					<li><a href="javascript:;" target="_self" data_value="bada" data_text="bada" class="mobile_sel_item"><span>bada</span></a></li>
+					<li><a href="javascript:;" target="_self" data_value="ohter" data_text="其他" class="mobile_sel_item"><span>其他</span></a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl class="mobile_sel_type mobile_sel_price">
+			<dt class="mobile_sel_title">价格 <span>(元)</span></dt>
+			<dd>
+				<div class="mobile_sel_slider_con">
+					<div class="mobile_slider">
+						<div id="mobile_slide_price" class="bound_slide_cnt" >
+							<div class="bs_lower_bound bs_bound_tip" ></div>
+							<div class="bs_upper_bound bs_bound_tip"></div>
+							<div class="bs_hound"></div>
+							<a href="javascript:;" target="_self" class="bs_left_ctrl bs_ctrl" >←</a>
+							<a href="javascript:;" target="_self" class="bs_right_ctrl bs_ctrl" >→</a>			
+						</div>
+					</div>
+					<a href="javascript:;" target="_self" data_value="0,0" data_text="价格不限" class="mobile_sel_item unlimited_sel_item selected"><span>不限</span></a>
+				</div>
+			</dd>
+		</dl>
+		<dl class="mobile_sel_type mobile_sel_size">
+			<dt class="mobile_sel_title">屏幕尺寸 <span>(英寸)</span></dt>
+			<dd>
+				<div class="mobile_sel_slider_con">
+					<div class="mobile_slider">
+						<div id="mobile_slide_size" class="bound_slide_cnt" >
+							<div class="bs_lower_bound bs_bound_tip" ></div>
+							<div class="bs_upper_bound bs_bound_tip"></div>
+							<div class="bs_hound"></div>
+							<a href="javascript:;" target="_self" class="bs_left_ctrl bs_ctrl" >←</a>
+							<a href="javascript:;" target="_self" class="bs_right_ctrl bs_ctrl" >→</a>			
+						</div>
+					</div>
+					<a href="javascript:;" target="_self" data_value="0,0" data_text="屏幕尺寸不限" class="mobile_sel_item unlimited_sel_item selected"><span>不限</span></a>
+				</div>
+			</dd>
+		</dl>
+		<dl class="mobile_sel_type mobile_sel_brands">
+			<dt class="mobile_sel_title">品牌</dt>
+			<dd>
+				<a href="javascript:;" target="_self" data_value="Samsung" data_text="三星" class="mobile_sel_item mobile_brand_sumsung"><span>三星</span></a>
+				<a href="javascript:;" target="_self" data_value="Nokia" data_text="诺基亚" class="mobile_sel_item mobile_brand_nokia"><span>诺基亚</span></a>
+				<a href="javascript:;" target="_self" data_value="HTC" data_text="HTC" class="mobile_sel_item mobile_brand_htc"><span>HTC</span></a>
+				<a href="javascript:;" target="_self" data_value="Apple" data_text="苹果" class="mobile_sel_item mobile_brand_apple"><span>苹果</span></a>
+				<a href="javascript:;" target="_self" data_value="Huawei" data_text="华为" class="mobile_sel_item mobile_brand_huawei"><span>华为</span></a>
+				<a href="javascript:;" target="_self" data_value="SONY" data_text="索尼" class="mobile_sel_item mobile_brand_sony"><span>索尼</span></a>
+				<a href="javascript:;" target="_self" data_value="Motorola" data_text="摩托罗拉" class="mobile_sel_item mobile_brand_moto"><span>摩托罗拉</span></a>
+				<a href="javascript:;" target="_self" data_value="Lenovo" data_text="联想" class="mobile_sel_item mobile_brand_lenovo"><span>联想</span></a>
+				<a href="javascript:;" target="_self" data_value="OPPO" data_text="OPPO" class="mobile_sel_item mobile_brand_oppo"><span>OPPO</span></a>
+				<a href="javascript:;" target="_self" data_value="meizu" data_text="魅族" class="mobile_sel_item mobile_brand_meizu"><span>魅族</span></a>
+				<a href="javascript:;" target="_self" class="mobile_item_more">其他</a>
+<ul class="mobile_item_other">
+			<li><h3><span>A</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Alcatel" data_text="阿尔卡特" class="mobile_sel_item"><span>阿尔卡特</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="AUX" data_text="奥克斯" class="mobile_sel_item"><span>奥克斯</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="orsus" data_text="奥盛" class="mobile_sel_item"><span>奥盛</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Elitek" data_text="埃立特" class="mobile_sel_item"><span>埃立特</span></a></li>
+					<li><h3><span>B</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Beluga" data_text="Beluga" class="mobile_sel_item"><span>Beluga</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Bird" data_text="波导" class="mobile_sel_item"><span>波导</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="szboway" data_text="邦华" class="mobile_sel_item"><span>邦华</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Basicom" data_text="宝捷讯" class="mobile_sel_item"><span>宝捷讯</span></a></li>
+					<li><h3><span>C</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="CECT" data_text="CECT" class="mobile_sel_item"><span>CECT</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="SKYWORTH" data_text="创维" class="mobile_sel_item"><span>创维</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="CHANGHONG" data_text="长虹" class="mobile_sel_item"><span>长虹</span></a></li>
+					<li><h3><span>D</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="disney" data_text="迪士尼" class="mobile_sel_item"><span>迪士尼</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Dmobo" data_text="Dmobo" class="mobile_sel_item"><span>Dmobo</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Eastcom" data_text="东信" class="mobile_sel_item"><span>东信</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Dopod" data_text="多普达" class="mobile_sel_item"><span>多普达</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Telsda" data_text="大唐" class="mobile_sel_item"><span>大唐</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Daxian" data_text="大显" class="mobile_sel_item"><span>大显</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Dbtel" data_text="迪比特" class="mobile_sel_item"><span>迪比特</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="dongfanglong" data_text="东方龙" class="mobile_sel_item"><span>东方龙</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Toshiba" data_text="东芝" class="mobile_sel_item"><span>东芝</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="DESAY" data_text="德赛" class="mobile_sel_item"><span>德赛</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="doov" data_text="朵唯" class="mobile_sel_item"><span>朵唯</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Dell" data_text="戴尔" class="mobile_sel_item"><span>戴尔</span></a></li>
+					<li><h3><span>F</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Philips" data_text="飞利浦" class="mobile_sel_item"><span>飞利浦</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Pantech" data_text="泛泰" class="mobile_sel_item"><span>泛泰</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="fujitsu" data_text="富士通" class="mobile_sel_item"><span>富士通</span></a></li>
+					<li><h3><span>G</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="GT" data_text="GT佳通" class="mobile_sel_item"><span>GT佳通</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Kongprofit" data_text="港利通" class="mobile_sel_item"><span>港利通</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Gaoxinqi" data_text="高新奇" class="mobile_sel_item"><span>高新奇</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="GAOKE" data_text="高科" class="mobile_sel_item"><span>高科</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Google" data_text="谷歌" class="mobile_sel_item"><span>谷歌</span></a></li>
+					<li><h3><span>H</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="HP" data_text="惠普" class="mobile_sel_item"><span>惠普</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="BlackBerry" data_text="黑莓" class="mobile_sel_item"><span>黑莓</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="vita" data_text="华唐" class="mobile_sel_item"><span>华唐</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="ASUS" data_text="华硕" class="mobile_sel_item"><span>华硕</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="huayu" data_text="华禹" class="mobile_sel_item"><span>华禹</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="htw" data_text="恒基伟业" class="mobile_sel_item"><span>恒基伟业</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Hisense" data_text="海信" class="mobile_sel_item"><span>海信</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Haier" data_text="海尔" class="mobile_sel_item"><span>海尔</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="acer" data_text="宏碁" class="mobile_sel_item"><span>宏碁</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Hantel" data_text="汉泰" class="mobile_sel_item"><span>汉泰</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="HKC" data_text="HKC" class="mobile_sel_item"><span>HKC</span></a></li>
+					<li><h3><span>I</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="i-mate" data_text="i-mate" class="mobile_sel_item"><span>i-mate</span></a></li>
+					<li><h3><span>J</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="gigabyte" data_text="技嘉" class="mobile_sel_item"><span>技嘉</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Ztel" data_text="杰特Ztel" class="mobile_sel_item"><span>杰特Ztel</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Gionee" data_text="金立" class="mobile_sel_item"><span>金立</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Jinpeng" data_text="金鹏" class="mobile_sel_item"><span>金鹏</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Kyocera" data_text="京瓷" class="mobile_sel_item"><span>京瓷</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Cayon" data_text="嘉源" class="mobile_sel_item"><span>嘉源</span></a></li>
+					<li><h3><span>K</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Konka" data_text="康佳" class="mobile_sel_item"><span>康佳</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Kejian" data_text="科健" class="mobile_sel_item"><span>科健</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Coolpad" data_text="酷派" class="mobile_sel_item"><span>酷派</span></a></li>
+					<li><h3><span>L</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="langxin" data_text="朗讯" class="mobile_sel_item"><span>朗讯</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Rowa" data_text="乐华" class="mobile_sel_item"><span>乐华</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Lingrui" data_text="凌锐" class="mobile_sel_item"><span>凌锐</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="langchao" data_text="浪潮" class="mobile_sel_item"><span>浪潮</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="LG" data_text="LG" class="mobile_sel_item"><span>LG</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Lianchuang" data_text="联创" class="mobile_sel_item"><span>联创</span></a></li>
+					<li><h3><span>M</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="mobiado" data_text="mobiado" class="mobile_sel_item"><span>mobiado</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="BenQSiemens" data_text="明基" class="mobile_sel_item"><span>明基</span></a></li>
+					<li><h3><span>N</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="NEO" data_text="NEO" class="mobile_sel_item"><span>NEO</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Soutec" data_text="南方高科" class="mobile_sel_item"><span>南方高科</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Newsmy" data_text="纽曼" class="mobile_sel_item"><span>纽曼</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="kingwon" data_text="诺亚信" class="mobile_sel_item"><span>诺亚信</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="NEC" data_text="NEC" class="mobile_sel_item"><span>NEC</span></a></li>
+					<li><h3><span>O</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="O2" data_text="O2" class="mobile_sel_item"><span>O2</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="OKWAP" data_text="OKWAP" class="mobile_sel_item"><span>OKWAP</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="HOSIN" data_text="欧新" class="mobile_sel_item"><span>欧新</span></a></li>
+					<li><h3><span>P</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Palm" data_text="Palm" class="mobile_sel_item"><span>Palm</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="putian" data_text="普天" class="mobile_sel_item"><span>普天</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Pulid" data_text="普莱达" class="mobile_sel_item"><span>普莱达</span></a></li>
+					<li><h3><span>Q</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="HEDY" data_text="七喜" class="mobile_sel_item"><span>七喜</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Cosun" data_text="侨兴" class="mobile_sel_item"><span>侨兴</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="UNIS" data_text="清华紫光UNIS" class="mobile_sel_item"><span>清华紫光UNIS</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="qigi" data_text="琦基" class="mobile_sel_item"><span>琦基</span></a></li>
+					<li><h3><span>S</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Sagem" data_text="萨基姆" class="mobile_sel_item"><span>萨基姆</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Soyea" data_text="数源" class="mobile_sel_item"><span>数源</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="SED" data_text="桑达" class="mobile_sel_item"><span>桑达</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="cking" data_text="盛泰" class="mobile_sel_item"><span>盛泰</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Capitel" data_text="首信" class="mobile_sel_item"><span>首信</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Sanyang" data_text="三洋" class="mobile_sel_item"><span>三洋</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Mitsubishi" data_text="三菱" class="mobile_sel_item"><span>三菱</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Panasonic" data_text="松下" class="mobile_sel_item"><span>松下</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="SonyEricss" data_text="索尼爱立信" class="mobile_sel_item"><span>索尼爱立信</span></a></li>
+					<li><h3><span>T</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="TCL" data_text="TCL" class="mobile_sel_item"><span>TCL</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="TSD" data_text="TSD" class="mobile_sel_item"><span>TSD</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Telsda" data_text="天时达" class="mobile_sel_item"><span>天时达</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="tianyu" data_text="天语" class="mobile_sel_item"><span>天语</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Top" data_text="托普" class="mobile_sel_item"><span>托普</span></a></li>
+					<li><h3><span>U</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="UT" data_text="UT斯达康" class="mobile_sel_item"><span>UT斯达康</span></a></li>
+					<li><h3><span>V</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="vivo" data_text="vivo" class="mobile_sel_item"><span>vivo</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Vertu" data_text="VERTU" class="mobile_sel_item"><span>VERTU</span></a></li>
+					<li><h3><span>W</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Malata" data_text="万利达" class="mobile_sel_item"><span>万利达</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="VK" data_text="唯开" class="mobile_sel_item"><span>唯开</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Vcall" data_text="唯科" class="mobile_sel_item"><span>唯科</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Microsoft" data_text="微软" class="mobile_sel_item"><span>微软</span></a></li>
+					<li><h3><span>X</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Siemens" data_text="西门子" class="mobile_sel_item"><span>西门子</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Xoceco" data_text="厦华" class="mobile_sel_item"><span>厦华</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Amoi" data_text="夏新" class="mobile_sel_item"><span>夏新</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="xinyoutong" data_text="新邮通" class="mobile_sel_item"><span>新邮通</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Panda" data_text="熊猫" class="mobile_sel_item"><span>熊猫</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="SHARP" data_text="夏普" class="mobile_sel_item"><span>夏普</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="HYUNDAI" data_text="现代" class="mobile_sel_item"><span>现代</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Newchabridge" data_text="新中桥" class="mobile_sel_item"><span>新中桥</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="MIUI" data_text="小米" class="mobile_sel_item"><span>小米</span></a></li>
+					<li><h3><span>Y</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="EY" data_text="亿通" class="mobile_sel_item"><span>亿通</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="unistar" data_text="友信达" class="mobile_sel_item"><span>友信达</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="ETEN" data_text="倚天" class="mobile_sel_item"><span>倚天</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="UCOO" data_text="优酷" class="mobile_sel_item"><span>优酷</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Unitone" data_text="友利通" class="mobile_sel_item"><span>友利通</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Yicheer" data_text="亿城" class="mobile_sel_item"><span>亿城</span></a></li>
+					<li><h3><span>Z</span></h3></li>
+				<li><a href="javascript:;" target="_self" data_value="Zhongtian" data_text="ZTC中天" class="mobile_sel_item"><span>ZTC中天</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Zhongxing" data_text="中兴" class="mobile_sel_item"><span>中兴</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="VK" data_text="中桥" class="mobile_sel_item"><span>中桥</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="ZXTC" data_text="中讯天创" class="mobile_sel_item"><span>中讯天创</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="Zhenhua" data_text="振华欧比" class="mobile_sel_item"><span>振华欧比</span></a></li>
+				<li><a href="javascript:;" target="_self" data_value="DEC" data_text="中恒" class="mobile_sel_item"><span>中恒</span></a></li>
+			</ul>
+			</dd>
+		</dl>
+		<dl class="mobile_sel_type mobile_sel_design">
+			<dt class="mobile_sel_title">外观设计</dt>
+			<dd>
+				<a href="javascript:;" target="_self" data_value="zhiban" data_text="直板" class="mobile_sel_item mobile_design_normal"><span>直板</span></a>
+				<a href="javascript:;" target="_self" data_value="fangai" data_text="翻盖" class="mobile_sel_item mobile_design_fold"><span>翻盖</span></a>
+				<a href="javascript:;" target="_self" data_value="huagai" data_text="滑盖" class="mobile_sel_item mobile_design_slide"><span>滑盖</span></a>
+				<a href="javascript:;" target="_self" data_value="cefangai" data_text="侧翻盖" class="mobile_sel_item mobile_design_slideside"><span>侧翻盖</span></a>
+				<a href="javascript:;" target="_self" data_value="xuanzhuanping" data_text="旋转屏" class="mobile_sel_item mobile_design_rotate"><span>旋转屏</span></a>
+				<!-- <a href="javascript:;" target="_self" class="mobile_item_more">其他</a>
+				<ul class="mobile_item_other">
+					<li><a href="javascript:;" target="_self" data_value="ohter" data_text="其他" class="mobile_sel_item"><span>其他</span></a></li>
+				</ul> -->
+			</dd>
+		</dl>
+		<!-- <dl class="mobile_sel_type mobile_sel_publish">
+			<dt class="mobile_sel_title">上市时间</dt>
+			<dd>
+				<div class="mobile_slider">
+					<div id="mobile_slide_pubtime" class="bound_slide_cnt" >
+						<div class="bs_lower_bound bs_bound_tip" ></div>
+						<div class="bs_upper_bound bs_bound_tip"></div>
+						<div class="bs_hound"></div>
+						<a href="javascript:;" target="_self" class="bs_left_ctrl bs_ctrl" >←</a>
+						<a href="javascript:;" target="_self" class="bs_right_ctrl bs_ctrl" >→</a>			
+					</div>
+				</div>
+			</dd>
+		</dl> -->
+		<dl class="mobile_sel_type mobile_sel_mode">
+			<dt class="mobile_sel_title">网络制式</dt>
+			<dd>
+				<a href="javascript:;" target="_self" data_value="gsm" data_text="GSM" class="mobile_sel_item mobile_mode_gsm"><span>GSM</span></a>
+				<a href="javascript:;" target="_self" data_value="td_scdma" data_text="TD-SCDMA" class="mobile_sel_item mobile_mode_scdma"><span>TD-SCDMA</span></a>
+				<a href="javascript:;" target="_self" data_value="wcdma" data_text="WCDMA" class="mobile_sel_item mobile_mode_wcdma"><span>WCDMA</span></a>
+				<a href="javascript:;" target="_self" data_value="cdma" data_text="CDMA" class="mobile_sel_item mobile_mode_cdma"><span>CDMA</span></a>
+				<a href="javascript:;" target="_self" data_value="cdma2000" data_text="LTE" class="mobile_sel_item mobile_mode_lte"><span>LTE</span></a>
+				<!-- <a href="javascript:;" target="_self" class="mobile_item_more">其他</a>
+				<ul class="mobile_item_other">
+					<li><a href="javascript:;" target="_self" data_value="lte" data_text="LTE" class="mobile_sel_item"><span>LTE</span></a></li>
+					<li><a href="javascript:;" target="_self" data_value="ohter" data_text="其他" class="mobile_sel_item"><span>其他</span></a></li>
+				</ul> -->
+			</dd>
+		</dl>
+		<dl class="mobile_sel_type mobile_sel_cmpts">
+			<dt class="mobile_sel_title">高级功能</dt>
+			<dd>
+				<a href="javascript:;" target="_self" data_value="gps" data_text="GPS" class="mobile_sel_item mobile_cmpt_gps"><span>GPS</span></a>
+				<a href="javascript:;" target="_self" data_value="double" data_text="双卡双待" class="mobile_sel_item mobile_cmpt_double"><span>双卡双待</span></a>
+				<a href="javascript:;" target="_self" data_value="gyro" data_text="陀螺仪" class="mobile_sel_item mobile_cmpt_gyro"><span>陀螺仪</span></a>
+				<a href="javascript:;" target="_self" data_value="bluetooth" data_text="蓝牙" class="mobile_sel_item mobile_cmpt_bluetooth"><span>蓝牙</span></a>
+				<a href="javascript:;" target="_self" data_value="nfc" data_text="NFC" class="mobile_sel_item mobile_cmpt_nfc"><span>NFC</span></a>
+				<a href="javascript:;" target="_self" data_value="wifi" data_text="WIFI" class="mobile_sel_item mobile_cmpt_wifi"><span>WIFI</span></a>
+				<a href="javascript:;" target="_self" data_value="hdmi" data_text="HDMI" class="mobile_sel_item mobile_cmpt_hdmi"><span>HDMI</span></a>
+<!-- 				<a href="javascript:;" target="_self" class="mobile_item_more">其他</a>
+				<ul class="mobile_item_other">
+					<li><a href="javascript:;" target="_self" class="mobile_sel_item"><span>品牌1</span></a></li>
+				</ul> -->
+			</dd>
+		</dl>
+	</div>
+	<div class="mobile_stretch">
+		<a class="btn" href="javascript:;" target="_self"></a>
+	</div>
+	<div class="mobile_sel_btns">
+		<a href="javascript:;" target="_self" class="mobile_btn_search">搜索</a>
+	</div>
+</div>
+
+
+ 			<!-- 内文 -->
+ 			<div class="mobile_searching">
+ 				<div class="mobile_selected_items">
+					<div class="select_panel">
+						<span>已选条件</span>
+						<span class="param_already">
+							<a class="selected" data_line="price" data_text="价格不限" data_value="0,0" title="" target="_self" href="javascript:;">价格不限</a> <a class="selected" data_line="pmsize" data_text="屏幕尺寸不限" data_value="0,0" title="" target="_self" href="javascript:;">屏幕尺寸不限</a>
+						</span>
+						<span>共有 <em>46</em> 部手机</span>
+					</div>
+				</div>
+ 				<div class="mobile_searching_head clearfix">
+ 					<div class="mobile_searching_soft">
+ 						<label>排序</label>|
+	 					<a href="javascript:;" target="_self" class="desc" data_value="h">热度<em>↑</em><strong>↓</strong></a>
+	 					<a href="javascript:;" target="_self" class="desc" data_value="t">上市时间<em>↑</em><strong>↓</strong></a>	
+	 					<a href="javascript:;" target="_self" class="asc" data_value="p">价格<em>↑</em><strong>↓</strong></a>
+	 					<a href="javascript:;" target="_self" class="desc" data_value="s">评星<em>↑</em><strong>↓</strong></a>	
+ 					</div>
+ 					<div class="mobile_searching_change">
+						<a href="javascript:;" target="_self" data_value="infolist" class="current"><span class="btn_list">切换到列表</span></a>
+						<a href="javascript:;" target="_self" data_value="piclist"><span class="btn_graphic">切换到大图</span></a>
+					</div>
+ 				</div>
+ 				<div class="mobile_searching_content">
+ 					<div class="search_loading"><span>正在努力加载中...</span></div>
+ 					<div class="search_no_result">
+ 						<strong class="warning_text">很抱歉，没有找到符合条件的产品~</strong>
+ 						<strong class="recommend_text">您可以分别试一试：
+ 							<span><a href="javascript:;" target="_self" title="HTC">HTC</a><em>(138个)</em></span>、
+ 							<span><a href="javascript:;" target="_self" title="500-999元">500-999元</a><em>(1641个)</em></span>、
+ 							<span><a href="javascript:;" target="_self" title="智能">智能</a><em>(1119个)</em></span>
+ 							或：
+ 							<span><a href="javascript:;" target="_self" title="重新设置条件">重新设置条件</a></span>
+ 						</strong>
+ 					</div>
+ 					<div id="search_list_content" class="viewgroup current"></div>
+					<div id="search_pic_content" class="viewgroup"></div>
+ 				</div>
+
+ 				<div class="mobile_pageno mbt">
+ 					<div class="page_main">
+						<a class="num current" _page="1" href="javascript:;" target="_self">1</a>
+					</div>
+					<div class="jumpage">
+						<span>到第</span><input type="text" class="input"><span>页</span><input type="button" value="确定" class="submit">
+					</div>
+				</div>
+ 			</div>
+ 			<!-- 热门机型 -->
+ 			<div class="mobile_hot_mod mbt">
+	<h3 class="mobile_title"><span class="title">热门机型</span></h3>
+	<div class="mobile_hot_main">
+		<div class="lst_img clearfix">
+			<ul class="clearfix">
+									<li><a href="/MIUI/000BMWII/#shot"><img src="http://s.cimg.163.com/i/img1.ph.126.net%2Ff66smQzwwEy8qiSMMvrNmg%3D%3D%2F6599269889423291884.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="小米 红米"></a><h4><a href="/MIUI/000BMWII/">小米 红米</a></h4></li>
+									<li><a href="/Samsung/000BKcLN/#shot"><img src="http://s.cimg.163.com/i/img3.ph.126.net%2FjTwLbXq0jKSa4TTcG0Cxyw%3D%3D%2F6597619522470066233.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="三星 GALAXY S Ⅲ(I9300)"></a><h4><a href="/Samsung/000BKcLN/">三星 GALAXY S Ⅲ(I9300)</a></h4></li>
+									<li><a href="/HTC/000BMMRe/#shot"><img src="http://s.cimg.163.com/i/img1.ph.126.net%2Fr3nxKd0m0cDD5Vetzb9XRw%3D%3D%2F6597922987680513670.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="HTC One(M7/32GB)"></a><h4><a href="/HTC/000BMMRe/">HTC One(M7/32GB)</a></h4></li>
+									<li><a href="/Apple/000BMWIb/#shot"><img src="http://s.cimg.163.com/i/img1.ph.126.net%2FTKW1JF6BGpWiicap7monnA%3D%3D%2F1974828436702291147.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="苹果 iPhone 5S"></a><h4><a href="/Apple/000BMWIb/">苹果 iPhone 5S</a></h4></li>
+									<li><a href="/Nokia/000BMWKc/#shot"><img src="http://s.cimg.163.com/i/img1.ph.126.net%2F6U3tYkSQN2Z2Y2fbRDCCVw%3D%3D%2F6597420510866539363.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="诺基亚 X"></a><h4><a href="/Nokia/000BMWKc/">诺基亚 X</a></h4></li>
+									<li><a href="/Samsung/000BMDbY/#shot"><img src="http://s.cimg.163.com/i/img1.ph.126.net%2FllpUMFLcbNeZJNgZtkLMmg%3D%3D%2F6597389724541891051.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="三星 W2013"></a><h4><a href="/Samsung/000BMDbY/">三星 W2013</a></h4></li>
+									<li><a href="/Samsung/000BLCXE/#shot"><img src="http://s.cimg.163.com/i/img7.ph.126.net%2FRuDpTxJg5Y-jYYp_vYowbA%3D%3D%2F1333346964696225247.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="三星 GALAXY Note2"></a><h4><a href="/Samsung/000BLCXE/">三星 GALAXY Note2</a></h4></li>
+									<li><a href="/Nokia/000BJeNH/#shot"><img src="http://s.cimg.163.com/i/img6.ph.126.net%2Fgby8Ktd5w0AdG4U3AYKuMw%3D%3D%2F6597488680586526016.jpg.100x70.auto.jpg" onerror="this.src='http://s.cimg.163.com/i/img1.cache.netease.com%2Ff2e%2Fmobile%2Fchanpinku%2Fimages%2Fb_mobile_nophoto.jpg.10000x120.auto.jpg'" alt="诺基亚 Lumia 900"></a><h4><a href="/Nokia/000BJeNH/">诺基亚 Lumia 900</a></h4></li>
+							</ul>
+		</div>
+	</div>
+</div>
+ 		</div>
+ 	</div>
+ </div>
+
+<!-- 底部 -->
+<div class="N-nav-bottom">
+    <div class="N-nav-bottom-main">
+        <span class="N-nav-bottom-copyright"><span class="N-nav-bottom-copyright-icon">&copy;</span> 1997-<script type="text/javascript">document.write(new Date().getFullYear())</script> 网易公司版权所有</span> <a href="http://corp.163.com/">About NetEase</a> | <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> | <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> | <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> | <a href="http://help.163.com/ ">客户服务</a> | <a href="http://gb.corp.163.com/gb/legal.html">隐私政策</a> | <a href="http://emarketing.biz.163.com/">网络营销</a> | <a href="http://sitemap.163.com/">网站地图</a> | <a href="http://t.163.com/zt/feedback">意见反馈</a> | <a href="http://www.bjjubao.org/index.htm">不良信息举报</a>
+    </div>
+</div>
+<!-- <script charset="utf-8" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" type="text/javascript"></script> -->
+<script src="http://img1.cache.netease.com/f2e/mobile/chanpinku/js/component.A2a5XgCWJhc6.1.js"></script> 
+<script charset="utf-8" src="http://img1.cache.netease.com/f2e/mobile/chanpinku/js/cpk.563011.min.js" type="text/javascript"></script>
+
+<script charset="utf-8" src="http://img1.cache.netease.com/f2e/mobile/chanpinku/js/cmpbox.562640.min.js" type="text/javascript"></script>
+
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0509010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack();
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0509010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	_ntes_nacc = "mobile"; //站点ID。
+	neteaseTracker();
+	neteaseClickStat();
+</script>
+<script charset="utf-8" src="http://img1.cache.netease.com/f2e/component/slider/slider.548707.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="http://img1.cache.netease.com/f2e/component/ajax_back/ajax_back.527781.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="http://img1.cache.netease.com/f2e/mobile/chanpinku/js/search_option.556672.min.js" type="text/javascript"></script>
+</body>
+</html>

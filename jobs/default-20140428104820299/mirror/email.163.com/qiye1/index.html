@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>网易企业邮箱 - 中国第一大电子邮件服务商</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="http://email.163.com/favicon.ico" />
+		<style type="text/css">
+			/* reset */
+			body{line-height:1.666;color:#7A8698;}
+			body,select,input,h1,h2,h3{font-size:12px}
+			body,input,select{font-family:verdana}
+			body,h1,h2,h3,ul,li,form,p,img{margin:0;padding:0;border:0}
+			input{margin:0;padding:0}
+			input,img{line-height:normal}
+			ul,li{list-style:none}
+			article,aside,footer,header,hgroup,nav,section{display: block}
+			a{;color:#7A8698;text-decoration:none}
+			a:hover{text-decoration:underline}
+			.ipt-c{width:16px;height:16px;vertical-align:middle;padding:0}
+
+			.main .login,
+			.main .title,
+			.ico,
+			.btn{background-image: url(http://mimg.127.net/index/qiye/img/global.png);_background-image: url(http://mimg.127.net/index/qiye/img/global_ie6.png);background-repeat:no-repeat;}
+			/* 行内元素 */
+			.ipt-wraper,
+			.ico,
+			.ipt-t,
+			.copy-item{display:inline-block;+display:inline;+zoom:1;vertical-align:top}
+
+			/* 输入框 */
+			.ipt-t{line-height:0;font-size:0;border-radius:2px;position:relative;+zoom:1;height:38px;border:1px solid #778793;background-color:#8A99A5;box-shadow:0 0 2px RGBA(0,0,0,.25) inset;font-family:"Microsoft Yahei";margin-right: 7px;}
+			.ipt-t input{width:191px;outline:none;background:none;border:none;height:19px;margin:0;padding:10px 5px;_padding-bottom:7px;font-size:16px;line-height:normal;font-weight:bold;color:#fff;}
+			.ipt-t .placeholder{display:none;position:absolute;left:10px;top:8px;line-height:normal;font-size:16px;color:#fff}
+			.showPlaceholder .placeholder{display: block}
+			.ipt-t-hover{}
+			.ipt-t-hover label{}
+			.ipt-t-focus{border-color:#445563;background-color: #627586;}
+			.ipt-t-focus label{}
+			/* 图标 */
+			.ico-checkbox{width:13px;height:13px;background-position:-528px 0}
+			.ico-why{width:14px;height:14px;background-position:-560px 0}
+			.ico-rArr{width:4px;height:7px;background-position:-576px 0}
+			/* 按钮 */
+			.btn{border:0;width:102px;height:40px}
+			.btn-login{background-position:-192px 0}
+			.btn-login-hover{background-position:-304px 0}
+			.btn-login-active{background-position:-416px 0}
+
+			.page,html,body{width:100%;height:100%}
+			.page{min-width:898px;min-height:435px;position:relative;+zoom:1;z-index: 10}
+			.theme{position: absolute;width:100%;top:0;left:0;bottom:45px;z-index: 1}
+			.theme-bgx,
+			.theme-bgc,
+			.theme-bg{position: absolute;left:0;top:0;width:100%;height:100%;background-position: center bottom;background-repeat: no-repeat;}
+			.theme-bgc{z-index:1;background-repeat: repeat;background-color: #cddce7;}
+			.theme-bgx{z-index:2;background-repeat: repeat-x;background-image: url(http://mimg.127.net/index/qiye/img/bgx.jpg);}
+			.theme-bg{z-index:3;background-image: url(http://mimg.127.net/index/qiye/img/bg.jpg);}
+			/* 输入框 */
+			.ipt-wraper .ipt-c{visibility:hidden;position:absolute}
+			.ipt-wraper .ico-checkbox{position:relative;top:1px;margin-right:3px}
+			.ipt-wraper-checked .ico-checkbox{background-position:-544px 0}
+			/* 顶部 */
+			header{position:relative;z-index:11;height:55px}
+			header .bg{position:absolute;z-index:2;left:0;top:0;width:100%;height:55px;background-color:#122436;opacity:0.7;filter:alpha(opacity=70);_filter:alpha(opacity=100);_background-color:#1b1b1b}
+			header .inner{position:relative;z-index:3;width:898px;margin:0 auto}
+			header h1{position:absolute;top:12px;left:1px;opacity:0.7;filter:alpha(opacity=70);_background-image:url(http://mimg.127.net/index/qiye/img/ntes_logo_ie6.png);}
+			header h2{position: absolute;line-height: 24px;font-size:18px;font-family: "Microsoft Yahei";color:#fff;opacity:0.7;filter:alpha(opacity=70);font-weight: normal;left:133px;top:16px;}
+			header .sptln{position: absolute;height: 25px;width:0;font-style: 0;line-height: 0;border-left:1px solid #fff;opacity:0.2;filter:alpha(opacity=20);left:111px;top:15px;}
+			header h1 img{_visibility:hidden;}
+			header .ext{position:absolute;right:0;line-height:normal;top:20px;opacity:0.5;filter:alpha(opacity=50);}
+			header .link{margin-left:20px;color:#fff;}
+			/* 主要 */
+			.main{position:relative;z-index:10;top:50%;margin-top: -255px}
+			.main .inner{width:898px;margin:0 auto;position:relative;+zoom:1;padding-top: 57px;}
+			.main .title{position: absolute;left:0;top:-57px;width:183px;height:43px;background-position: 0 0;}
+			.main a{color:#7A8698}
+			.main a .ico-rArr{margin-left:4px}
+			.main a:hover{color:#2475B5}
+			.main a .ico-rArr,
+			.main a:hover .ico-rArr{background-position:-592px 0}
+			.main .login{position: relative;+zoom:1;background-position: 0 -48px;height: 125px;width:560px;margin:0 auto;padding-top:43px;padding-left: 37px}
+			.main .error{line-height: normal;color: #c30;position: absolute;top: 22px;left: 37px;}
+			.main .login .ft{position: absolute;top:145px;left:0;}
+			.main .options{line-height: normal;margin-top: 10px}
+			.main .options .help{margin-left: 4px;}
+			.main .ft{width:597px;line-height: normal;text-align: center;}
+			.main .ft,
+			.main .ft a{color:#293f65}
+			.main .ft .first{position: absolute;top:0;left: 2px;}
+			.main .ft .ext{position: absolute;top:0;right: 2px;}
+			.main .ft .ext .num{color:#2476B6}
+			.main .ft .ico{vertical-align: middle;+zoom:1;line-height: 0;font-size: 0px;position:absolute;top:5px;right:-8px}
+			.main .ft a{position: relative;+zoom:1;}
+			.main .first .ico{right:-7px;}
+
+			/* 版权 */
+			.copyright{text-align:left;position:absolute;z-index:10;bottom:0;left:0;width:100%;height:45px;}
+			.copyright .bg{position:absolute;left:0;top:0;width:100%;height:100%;background-color:#fff;}
+			.copyright .inner{padding-top:16px;width:680px;margin:0 auto;position:relative;z-index:2;text-align: center;}
+			.copyright,.copyright a{color:#999}
+			.copy-title{display:none}
+			.copy-item{margin-right:18px;vertical-align:top;opacity:0.4;filter:alpha(opacity=40)}
+			.copy-item-img{margin-right:0;position:absolute;right:0;top:15px;opacity:0.65;filter:alpha(opacity=65)}
+			.copy-item .sptln{margin-right:18px}
+		</style>
+		<!--[if lte IE 8]>
+			<style type="text/css">
+				.ico-logo{background-image:url(http://mimg.127.net/index/qiye/img/logo_ie6.png)}
+				.ipt-t label{top:12px}
+				.ipt-wraper .ipt-c{position:relative;visibility:visible}
+				.ipt-wraper .ico-checkbox{display:none}
+				.copy-item-img{filter:none}
+				.ipt-t .placeholder{top:11px}
+				.ipt-wraper .ipt-c{top:-1px;margin-right:2px}
+			</style>
+		<![endif]-->
+		<!--[if IE 7]>
+			<style type="text/css">
+				.ipt-wraper .ipt-c{top:1px}
+				.main .ft .ico{top:3px;right:-8px}
+			</style>
+		<![endif]-->
+		<!--[if IE 6]>
+			<style type="text/css">
+				.copyright,.copyright a{color:#7d7d7d}
+				.copy-item{filter:none}
+				.copy-item-img{filter:alpha(opacity=65)}
+				.ipt-wraper{font-family:"simsun"}
+				.main .ft .ico{top:2px;right:-8px}
+			</style>
+		<![endif]-->
+		<script id="jsOption" type="text/javascript">
+			//配置
+			var gOption = {
+				"sCookieDomain" : "email.163.com",//cookie域
+				"product" : "mailqiye",//http登录产品
+				"sDomain" : "163.com",//当前域名
+				"gad" : "email.163.com"
+			}
+		</script>
+		<script id="jsBase" type="text/javascript" src="http://mimg.127.net/index/lib/scripts/base_v3.js"></script>
+		<script id="jsBaseInner" type="text/javascript">
+			//判断cookie
+			fCheckCookie();
+			//HTML5初始化
+			fHtml5Tag();
+			// 判断UA版本，据此进行跳转
+			var bForcepc = fGetQuery("dv") == "pc";
+			var bPreviewPc = fGetQueryHash("preview_dv") =="pc";//附件预览
+			(function fBrowserRedirect(){
+				var sUserAgent = navigator.userAgent.toLowerCase();
+				var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+				var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+				var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+				var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+				var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+				var bIsAndroid = sUserAgent.match(/android/i) == "android";
+				var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+				var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+				if(bIsIpad){
+					var sUrl = location.href;
+					if(!bForcepc && !bPreviewPc){
+						window.location.href = "http://ipad.email.163.com/";
+					}
+				}
+				if(bIsIphoneOs){
+					var sUrl = location.href;
+					if(!bForcepc && !bPreviewPc){
+						window.location.href = "http://smart.mail.163.com/";
+					}
+				}
+				if(bIsAndroid){
+					top.location.href = 'http://mail.163.com/html/android_device/v1.htm?smart=' + encodeURIComponent('http://smart.mail.163.com/') + '&pad=' + encodeURIComponent('http://ipad.email.163.com/');
+				}
+				if(bIsMidp||bIsUc7||bIsUc||bIsCE||bIsWM){
+					var sUrl = location.href;
+					if(!bForcepc && !bPreviewPc){
+						window.location.href = "http://m.mail.163.com/";
+					}
+				}
+			})();
+		</script>
+	</head>
+
+	<body>
+		<div class="page">
+			<!-- 头 -->
+			<header>
+				<div class="inner">
+					<h1><a href="http://www.163.com/" target="_blank"><img src="http://mimg.127.net/index/qiye/img/ntes_logo.png" alt="网易NetEase" width="87" height="27" /></a></h1>
+					<span class="sptln"></span>
+					<h2>中国第一大电子邮件服务商</h2>
+					<p class="ext"><a class="link" href="http://email.163.com/?from=qiyemail" title="免费邮" target="_blank">免费邮</a><a class="link" href="http://vipmail.163.com/?from=qiyemail" title="收费邮" target="_blank">收费邮</a><a class="link" href="http://qiye.163.com/service-solution.htm#4" title="" target="_blank">帮助</a></p>
+				</div>
+				<div class="bg"></div>
+			</header>
+			<!-- 主要内容 -->
+			<div class="main">
+				<div class="inner">
+					<form class="login" name="frmLogin" method="post" id="loginFormQiye" onsubmit="return fSubmit();" target="_top">
+						<input type="hidden" name="account_name" id="txtUserNameqiye" value="">
+						<input type="hidden" name="domain" id="txtUserDomainqiye" value="">
+						<input type="hidden" name="password" id="txtPasswordqiye" value="">
+						<input type="hidden" id="qiyeall_secure" name="all_secure" value="1">
+						<input type="hidden" id="qiye_secure" name="secure" value="1">
+						<input type="hidden" id="idInput">
+						<input type="hidden" id="domainQiye">
+						<img class="title" src="http://mimg.127.net/p/t.gif" alt="网易企业邮箱—qiye.163.com">
+						<!-- 错误提示 -->
+						<div id="divError" class="error" style="display:none"></div>
+						<!-- 帐号 -->
+						<div class="ipt ipt-t user" id="idInputLine">
+							<input type="text" id="userNameIpt">
+							<label for="userNameIpt" class="placeholder" id="idPlaceholder">请输入完整的邮箱地址</label>
+						</div><!-- 密码
+						 --><div class="ipt ipt-t user" id="pwdInputLine">
+							<input type="password" id="pwdInput">
+							<label for="pwdInput" class="placeholder" id="pwdPlaceholder">密码</label>
+						</div><!-- 登录按钮
+						 --><button id="btnSubmit" title="登录" class="btn btn-login" type="submit"></button>
+						<!-- 相关选项 -->
+						<div class="options">
+							<label class="ipt-wraper" style="width:80px;margin-right:130px;"><input tabindex="5" type="checkbox" class="ipt ipt-c" id="rmbUser"><b class="ico ico-checkbox"></b>记住帐号</label><label class="ipt-wraper ipt-wraper-checked" style="width:100px;margin-right:21px;"><input tabindex="6" type="checkbox" class="ipt ipt-c" id="chkSSL" checked="true"><b class="ico ico-checkbox"></b>SSL安全登录</label><label class="ipt-wraper"><input tabindex="6" id="allSSL" type="checkbox" class="ipt ipt-c"><b class="ico ico-checkbox"></b>全程SSL<a id="lnkWhySSL" class="help" target="_blank" title="什么是SSL登录" tabindex="6" href="http://qiye.163.com/service-solution.htm#4"><img src="http://mimg.127.net/p/t.gif" class="ico ico-why" alt="什么是SSL登录"></a></label>
+						</div>
+						<div class="ft"><a class="first" href="http://qiye.163.com/mail/buy-price.htm" target="_blank" tabindex="9">立即购买网易企业邮箱<b class="ico ico-rArr"></b></a><a href="http://qiye.163.com/admin.jsp" target="_blank">进入管理员登录页面<b class="ico ico-rArr"></b></a><span class="ext">服务热线：<span class="num">400-6281-163</span></span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- 底 -->
+			<footer class="copyright">
+				<div class="inner">
+					<h2 class="copy-title">底部版权</h2>
+					<ul class="copy-list">
+						<li class="copy-item"><a href="http://corp.163.com/index_gb.html" target="_blank">关于网易</a></li><li class="copy-item"><a href="http://e.weibo.com/163qiye" target="_blank">官方微博</a></li><li class="copy-item"><a href="http://qiyemail.blog.163.com/" target="_blank">官方博客</a></li><li class="copy-item"><a href="http://help.163.com/" target="_blank">客户服务</a></li><li class="copy-item"><a href="http://corp.163.com/gb/legal/legal.html" target="_blank">相关法律</a></li><li class="copy-item"><span class="sptln">|</span>网易公司版权所有&nbsp;&copy;&nbsp;1997-2013</li><li class="copy-item copy-item-img"><a id="KX_IMG" href="https://ss.cnnic.cn/verifyseal.dll?sn=e12051044010020841301459&ct=df&pa=997669" target="_blank"><img src="http://mimg.127.net/logo/knet.png" alt="可信网站，身份验证"></a></li>
+					</ul>
+				</div>
+				<div class="bg"></div>
+			</footer>
+			<!-- 主题背景 -->
+			<div class="theme" id="theme">
+				<div class="theme-bgc" id="themeBgc"></div><!-- 整页背景 -->
+				<div class="theme-bgx" id="themeBgx"></div><!-- 重复背景 -->
+				<div class="theme-bg" id="themeBg"></div><!-- 中间大背景 -->
+			</div>
+			<!--ssl链接预加载-->
+			<img src="https://ssl.mail.163.com/httpsEnable.gif" width="0" height="0" />
+		</div>
+		<!-- Devilfish -->
+		<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			_ntes_nacc = "163mail";
+			neteaseTracker();
+		</script>
+
+		<script type="text/javascript">
+
+			// 初始化登录区域
+			var oMain = $id("main"),
+			oMainHd = $id("mainHd"),
+			gCurrentDomain = "qiye",											//当前域
+			gLoginInfo = {},															//用户登录信息
+			bIsEuid = false,															//是否有euid
+			sPreUrl,																		//附件预览
+			sPreUid,																		//附件预览
+			sPreReason,																	//登录原因
+			sUid,																			//uid
+			sEnUsername,																//反编码&替换后的euid
+			oErr = $id("divError"),
+			oFormQiye = $id("loginFormQiye"),								//免费邮登录表单
+			oDomainQiye = $id("domainQiye"),
+			oUserName = $id("idInput"),											//有euid时调用
+			oUserIpt = $id("userNameIpt"),										//用户名
+			oTxtPwd = $id("pwdInput"),											//密码
+			oErr = $id("divError"),													//错误提示
+			oIdL = $id("idInputLine"),
+			oIdLabel = $id("idPlaceholder"),
+			oPwL = $id("pwdInputLine"),
+			oPwLabel = $id("pwdPlaceholder");
+
+			/****
+			初始化 开始
+			*****/
+
+			//事件绑定：各种事件绑定，包括SSL的复选框
+			(function(){
+
+				window.onresize = function(){
+					fInitTheme();
+				};
+
+				// 初始化复选框选中事件
+				$id("rmbUser").parentNode.onclick = function(){fCheckboxChange($id("rmbUser"))};
+
+				//帐号
+				fEventListen(oUserIpt,"focus",function(){
+					// cava oUserIpt.className += " ipt-t-focus";
+				});
+				fEventListen(oUserIpt,"blur",function(){
+					// cava oUserIpt.className = "ipt ipt-t";
+				});
+				//密码输入框
+				fEventListen(oTxtPwd,"focus",function(){
+					// cava oTxtPwd.className += " ipt-t-focus";
+				});
+				fEventListen(oTxtPwd,"blur",function(){
+					// cava oTxtPwd.className = "ipt ipt-t";
+				});
+				//安全登录
+				fEventListen($id("allSSL"),"click",function(){
+					fCheckboxChange($id("allSSL"));
+					fSecureLinkage($id("allSSL"), "chkSSL");
+				});
+				fEventListen($id("chkSSL"),"click",function(){
+					fCheckboxChange($id("chkSSL"));
+					fSecureLinkage($id("chkSSL"), "allSSL");
+				});
+				//提交按钮
+				fEventListen($id("btnSubmit"),"mouseover",function(){
+					$id("btnSubmit").className += " btn-login-hover";
+				});
+				fEventListen($id("btnSubmit"),"mousedown",function(){
+					$id("btnSubmit").className = "btn btn-login btn-login-active";
+				});
+				fEventListen($id("btnSubmit"),"mouseout",function(){
+					$id("btnSubmit").className = "btn btn-login";
+				});
+
+				//点击双击文字
+				fEventListen(oIdLabel, 'dblclick', function(){
+					oUserIpt.focus();
+				});
+				fEventListen(oIdLabel, 'click', function(){
+					oUserIpt.focus();
+				});
+				fEventListen(oPwLabel, 'dblclick', function(){
+					oTxtPwd.focus();
+				});
+				fEventListen(oPwLabel, 'click', function(){
+					oTxtPwd.focus();
+				});
+
+				//帐号
+				fEventListen(oUserIpt,'focus',function(){
+					fCls(oIdL, 'ipt-t-hover', 'add');
+				});
+				fEventListen(oUserIpt,'blur',function(){
+					fCls(oIdL, 'ipt-t-hover', 'remove');
+				});
+				fEventListen(oTxtPwd,'focus',function(){
+					fCls(oPwL, 'ipt-t-hover', 'add');
+				});
+				fEventListen(oTxtPwd,'blur',function(){
+					fCls(oPwL, 'ipt-t-hover', 'remove');
+				});
+
+				var sEventName = '';
+				var bIsIe = false;
+				if(document.body.onpropertychange === null){
+					sEventName = 'propertychange';
+					var bIsIe = true;
+				}else{
+					sEventName = 'input';
+					fCheckAlways();
+				}
+				var el = document.createElement('div');
+				el.setAttribute('oninput', 'return;')
+				if(typeof el.oninput === 'function'){
+					sEventName = 'input';
+					if(bIsIe){
+						fCheckAlways();
+					}
+				}
+				fEventListen(oUserIpt, sEventName, fIdInputEvent);
+				fEventListen(oTxtPwd, sEventName, fIdInputEvent);
+			})();
+
+			fInitTheme();
+
+			fGetLoginInfo();
+
+			fGetQiyeMsg();
+
+			//判断用户
+			sUid = fGetQueryHash("uid");
+			if( sUid != null ){
+				oUserIpt.value = sUid;
+			}
+
+			fKX();
+
+			fSwitchTab();
+
+			/****
+			初始化 结束
+			*****/
+
+			function fInitTheme(){
+				// ie6 需要计算高度
+				var oTheme = $id("theme");
+				oTheme.style.height = (document.documentElement.clientHeight - 45) + "px";
+			}
+
+			function fCheckboxChange(oInput){
+				if(oInput.checked){
+					fCls(oInput.parentNode,"ipt-wraper-checked","add");
+					oInput.checked = true;
+				}else{
+					fCls(oInput.parentNode,"ipt-wraper-checked","remove");
+					oInput.checked = false;
+				}
+			}
+
+			//阻止事件触发
+			function fE(fFunc, oE, oThat){
+				var e = oE,
+				relatedTarget = e.toElement || e.relatedTarget;
+				while(relatedTarget && relatedTarget != oThat){
+					relatedTarget = relatedTarget.parentNode;
+				}
+				if(!relatedTarget){
+					fFunc();
+				}
+			}
+
+			//SSL&全程SSL联动
+			function fSecureLinkage(obj, id){
+				if(obj.checked && obj.id == "allSSL" ){
+					$id(id).checked = true;
+				}
+				if( !obj.checked && obj.id == "chkSSL" ){
+					$id(id).checked = false;
+				}
+				fCheckboxChange(obj);
+				fCheckboxChange($id(id));
+			}
+
+			// 提交
+			function fSubmit() {
+				oUserIpt.value = fTrim(oUserIpt.value);
+				if( oUserIpt.value ==""){
+					oErr.style.left = '37px';
+					oErr.style.display = '';
+					oErr.innerHTML = "请输入你的帐号";
+					oUserIpt.focus();
+					// cava oUserIpt.className += " ipt-t-focus";
+					return false;
+				}
+				var aQiyeAcc = oUserIpt.value.split('@');
+				if(aQiyeAcc[1]){
+					oDomainQiye.value = aQiyeAcc[1];
+				}
+				if( oDomainQiye.value.length =="") {
+					oErr.style.left = '37px';
+					oErr.style.display = '';
+					oErr.innerHTML = "请输入域名";
+					oUserIpt.focus();
+					return false;
+				}
+				if( oTxtPwd.value.length =="") {
+					oErr.style.left = '246px';
+					oErr.style.display = '';
+					oErr.innerHTML = "请输入你的密码";
+					oTxtPwd.focus();
+					// cava oTxtPwd.className += " ipt-t-focus";
+					return false;
+				}
+				//获取previewurl
+				if (sPreUrl != null)
+				{
+					var nPreUid= window.location.hash.indexOf("&preview_uid"),
+					nPreUrl= window.location.hash.indexOf("preview_url");
+					sPreUrl = window.location.hash.substring(nPreUrl+12,nPreUid);
+					sPreUrl = unescape(sPreUrl);
+				}
+				if (oUserIpt.value != sEnUsername)
+				{
+					bIsEuid = false;
+				}
+				oUserName.value = bIsEuid ? oUserName.value : oUserIpt.value;//把用户名传给oUserName 传个http登录的entry
+				fSetAction();
+				fSaveLoginInfo();
+				if($id("chkSSL").checked){
+					$id("qiye_secure").value = 1;
+				}else{
+					$id("qiye_secure").value = 0;
+				}
+				fCheckqiye();//企业邮登录
+				return false;//!免费邮登录
+			}
+
+			//处理action
+			function fSetAction(){
+				//SSl登录action
+				if($id("chkSSL").checked){
+					oFormQiye.action = "https://entry.qiye.163.com/domain/domainEntLogin";
+				}else{
+					oFormQiye.action = "http://entry.qiye.163.com/domain/domainEntLogin";
+				}
+			}
+
+			//登录信息写入cookie
+			function fSaveLoginInfo(){
+				gLoginInfo[gCurrentDomain] = {username : oUserIpt.value, style : -1};
+				var aCookie = [];
+				for(var d in gLoginInfo){
+					aCookie.push(d + ";"+ gLoginInfo[d].username +";" + gLoginInfo[d].style);
+				}
+				fSetCookie("nts_mail_user", oUserIpt.value ,true);//错误转向调用
+				if($id("rmbUser").checked){
+					fSetCookie("qiyeLoginInfo", aCookie.join("|"), true);
+					fSetCookie("qiyeDomain", oDomainQiye.value , true);
+				}else{
+					fSetCookie("qiyeLoginInfo", "", true);
+					fSetCookie("qiyeDomain", "", true);
+				}
+			}
+
+			//企业邮登录
+			function fCheckqiye(){
+				$id("txtUserNameqiye").value = oUserIpt.value;
+				$id("txtUserDomainqiye").value = oDomainQiye.value;
+				$id("txtPasswordqiye").value = oTxtPwd.value;
+				if($id("allSSL").checked){
+					$id("qiyeall_secure").value = 1;
+				}else{
+					$id("qiyeall_secure").value = 0;
+				}
+				$id("loginFormQiye").submit();
+			}
+
+			//企业邮登录返回Msg
+			function fGetQiyeMsg(){
+				var msg = {
+					"ERR.LOGIN.USERORPASSNULL":"参数错误:帐号或者密码为空",
+					"ERR.LOGIN.DOMAINNULL":"参数错误:未指定的域邮箱参数",
+					"ERR.LOGIN.PASSERR":"帐号和密码不匹配",
+					"ERR.LOGIN.ILLEGALACCOUNT":"该帐号属于群发名单或者别名，不允许登录",
+					"ERR.LOGIN.USERNOTEXIST":"该帐号不存在，请你确认域名和帐号",
+					"ERR.LOGIN.SUPERADMINDOMAINERR":"该超级管理员并未申请任何域名邮箱",
+					"ERR.LOGIN.SYSTEMBUSY":"登录系统繁忙，请你稍后再试",
+					"ERR.LOGIN.IPDENY":"登录失败，你的IP在黑名单中，请你联系管理员",
+					"ERR.LOGIN.USRSTATUS1":"该帐号已被禁用，请联系管理员",
+					"ERR.LOGIN.USRSTATUS2":"帐号已过期，请联系管理员",
+					"ERR.LOGIN.DOMAINNOTEXIST":"该域名未注册",
+					"ERR.LOGIN.USRSTATUS5":"该帐号已被管理员删除，请联系管理员",
+					"SUC.LOGIN.USRUNLOCK":"该帐号已解除冻结状态，请你再次输入用户和密码继续",
+					"ERR.LOGIN.DOMAINEXPED":"该域名邮箱已经过期了",
+					"ERR.LOGIN.DOMAINNOTREGISTER":"该域名尚未通过，请以超级管理员登录",
+					"ERR.LOGIN.DOMAINSTATUS1":"该域名邮箱已被禁用，请你联系客服",
+					"ERR.SESSIONNULL":"会话已经失效，请你重新登录操作",
+					"ERR.SYSTEM":"系统繁忙，请你稍后再试",
+					"SYSTEM.BUSY":"登录系统繁忙，请你稍后再试",
+					"ERR.ADMINREQUIRE":"非法权限，该帐号无法执行这个操作",
+					"ERR.PARAMNULL":"系统发生错误：参数为空",
+					"ERR.ERR.PARAMTOOLONG":"参数过长",
+					"ERR.ILLEGAL":"系统非法操作",
+					"ERR.REQ.VERIFYCODE":"密码出错次数过多,请稍后再试"
+				};
+				oErr.innerHTML = fGetQuery("msg") != null ? String(msg[fGetQuery("msg")]) : "";
+				oErr.style.display = '';
+			}
+
+			//添加删除class 120802
+			function fCls(o, sCls, sFunc){
+				var oTar = o;
+				var nRes = oTar.className.indexOf(sCls);
+				if(sFunc == 'add'){
+					if(nRes == -1){
+						oTar.className = oTar.className + ' ' + sCls;
+					}else{
+						return;
+					}
+				}
+				if(sFunc == 'remove'){
+					if(nRes != -1){
+						var sCls = '\\s' + sCls
+						var rCls = new RegExp(sCls, 'g');
+						oTar.className = oTar.className.replace(rCls, '');
+					}else{
+						return;
+					}
+				}
+			}
+
+			function fIdInputEvent(){
+				if(oUserIpt.value==''){
+					fCls(oIdL, 'showPlaceholder', 'add');
+				}else{
+					fCls(oIdL, 'showPlaceholder', 'remove');
+				}
+				if( oTxtPwd.value == '' ){
+					fCls(oPwL, 'showPlaceholder', 'add');
+				}else{
+					fCls(oPwL, 'showPlaceholder', 'remove');
+				}
+			}
+
+			function fCheckAlways(){
+				window.oIntervalCheckAlways = setInterval(
+					function(){
+						fIdInputEvent();
+					},500
+				);
+			}
+
+			//读取cookie中用户登录信息-加载时调用
+			function fGetLoginInfo(){
+				var sCookie = fGetCookie("qiyeLoginInfo");
+				if(sCookie){
+					var aCookie = sCookie.split("|");
+					for(var i=0;i<aCookie.length;i++){
+						var aDomainInfo = aCookie[i].split(";");
+						if(aDomainInfo.length == 3){
+							gLoginInfo[aDomainInfo[0]] = {username : aDomainInfo[1], style : aDomainInfo[2]};
+						}
+					}
+				}
+			}
+
+			//重写可信标识
+			function fKX(){
+				var oKX = $id('KX_IMG');
+				var sHref = 'https://ss.cnnic.cn/verifyseal.dll?sn=e12051044010020841301459&ct=df&pa=';
+				var sPa = RndNum_CNNIC(6);
+				oKX.href = sHref + sPa;
+				function RndNum_CNNIC(k){
+					for (var rnd = "", i = k; i--; ){
+						rnd += Math.floor( Math.random() * 10 );
+					}
+					return rnd;
+				}
+			}
+
+			//读取用户名-企业邮域名-风格信息等-切换tab时调用
+			function fSwitchUserInfo() {
+				oTxtPwd.value = "";
+				if(gLoginInfo[gCurrentDomain]){
+					oUserIpt.value = gLoginInfo[gCurrentDomain].username;
+					if( gLoginInfo[gCurrentDomain].style == 4 || gLoginInfo[gCurrentDomain].style == 1 || gLoginInfo[gCurrentDomain].style == "" ){
+						gLoginInfo[gCurrentDomain].style = -1;
+					}
+				}else{
+					oUserIpt.value = '';
+				}
+				if((fGetCookie("qiyeDomain") != "") && (fGetCookie("qiyeDomain") != undefined)){
+					oDomainQiye.value = fGetCookie("qiyeDomain");//读取企业邮域名
+				}
+			}
+
+			//tab切换
+			function fSwitchTab(sDomain) {
+				fCheckboxChange($id("rmbUser"));
+				fCheckboxChange($id("chkSSL"));
+				fCheckboxChange($id("allSSL"));
+				fSwitchUserInfo();//读取用户名-风格信息等
+				//检查是否输入
+				if( oUserIpt.value=="") {
+					oUserIpt.focus();
+				} else {
+					oTxtPwd.focus();
+				}
+			}
+
+			//设置Cookie
+			function fSetCookie(name, value, isForever, domain){
+				var sDomain = ";domain=" + (domain || gOption["sCookieDomain"] );
+				var sPath = ";path=/qiye";
+				document.cookie = name + "=" + escape(value) + sDomain + (isForever?";expires="+  (new Date(2099,12,31)).toGMTString():"") + sPath;
+			}
+
+		</script>
+	</body>
+</html>

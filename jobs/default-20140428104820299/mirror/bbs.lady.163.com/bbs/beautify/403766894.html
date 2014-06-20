@@ -1,0 +1,3517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+<meta http-equiv="pragma" content="no-cache" />
+
+
+<link rel="stylesheet" type="text/css" href="http://img1.cache.netease.com/bbs/static/20140425/form_tie.css" charset="GBK"/>
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="http://img1.cache.netease.com/bbs/static/20140425/tie_ie6.css" charset="GBK"/>
+<![endif]-->
+
+<title>【青鸢】热门精华大PK，做一个懂精华的人！</title>
+<script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/bbsntes_jslib.js" charset="GBK"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/jquery_bbs.js" charset="GBK"></script>
+</head>
+<body>
+   <iframe src="http://t.163.com/crossdomain.html" style="display:none;"  id="iframeProxy"></iframe>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.1.css" />
+<style>.NTES-nav {width: auto; margin-left: 5px;}</style>
+<div class="NTES-nav">
+    <span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a> |</span>
+    <div class="rightCon">
+        <div class="NTES-link">
+            <a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a>
+        </div>
+        <a href="http://www.163.com/rss"><img width="26" height="14" border="0" src="http://img3.cache.netease.com/cnews/img07/rss.gif" class="rss" alt="Rss"></a>
+    </div>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+    NTES.ready( function($){
+        var P_INFO = NTES.cookie.get("P_INFO");
+        var S_INFO = NTES.cookie.get("S_INFO");
+        if(P_INFO){
+            var mailconfig = {
+                "163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+                "126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+                "vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+                "yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+                "188" : "http://reg.mail.188.com/servlet/enter",
+                "vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+            };
+            var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+            var username =  passport.substr(0, P_INFO.indexOf("@"));
+            var logstate = P_INFO.split("|")[2];
+            var logiframe = "";
+            var pspt = passport.length >= 6 ? passport.substr(0,6)+"..." : passport;
+            /@([^*]+)/.test(passport);
+            var logdomain = RegExp.$1;
+            if(P_INFO && S_INFO || logstate=="1") {
+                var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+                if(mailconfig[logdomain] != undefined) {
+                    entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入我的邮箱</a>';
+                }
+                if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+                    entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入我的博客</a><a href="http://photo.163.com/?username='+passport+'\">进入我的相册</a>';
+                }
+                entrylink_html += '<a href="http://yuehui.163.com/">进入我的约会</a><a href="http://t.163.com">进入我的微博</a>';
+                if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+                    logiframe = '<iframe allowTransparency=\"true\" style=\"width: 56px; height:26px; float:left; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.'+logdomain+'/mailinfo/shownewmsg_www_1222.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+                }
+                var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div>'+logiframe+'|<a class=\"ntes-usercenter-loginout\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+                NTES(".NTES-link")[0].innerHTML = login_html;
+
+                NTES("#ntes_usercenter_name").addEvent("click", function(e){
+                    NTES("#ntes_usercenter_entry").style.display = NTES("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+                    e.preventDefault();
+                    e.cancelBubble = true;
+                    document.onclick = function(){
+                        NTES("#ntes_usercenter_entry").style.display = "none";
+                    }
+                })
+            };
+        }
+    })
+    //]]>
+    NTES.retire();
+</script>
+    <div id="topNav">
+                    <input type="hidden" name="boardid" id="boardid" value="beautify"/>
+                <input type="hidden" name="boardname" id="boardname" value="花想容教室"/>
+                    <input type="hidden" name="threadId" id="threadId" value="403766894"/>
+                <input type="hidden" name="channel" id="channel" value="lady"/>
+
+        <input type="hidden" value="2" id="list_page_num">
+        <div class="nav-bar">
+            <a href="http://bbs.163.com" class="logo"></a>
+            <a href="http://www.163.com">网易首页</a> &gt;
+            <a href="http://lady.163.com/">网易女人</a> &gt;
+            <a href="http://bbs.lady.163.com">网易女人论坛</a> &gt;
+			            <a href="http://bbs.lady.163.com/boardset/beautify.html">花想容教室</a>
+        </div>
+        <div class="nav-info" style="display:none;">
+            <a href="http://bbs.163.com/user/personalCenter.do" class="info-username" target="_blank"></a>
+    		<a href="#" class="info-mark info-sign">签到</a> |
+            <table class="info-manage" cellspacing="0" cellpadding="0" border="0">
+            <tr><td valign="middle">
+                <div class="dd-window dd-window-expand1">
+    			    <a href="http://bbs.163.com/user/personalCenter.do" target="_blank">我的管理中心</a>
+    				<em class="icon-arrow-up"></em>
+                    <div class="board-menu">
+                        <div class="board-menu-connect"></div>
+                        <div class="board-menu-container">
+                            <div class="board-menu-nav">
+                              	  个人管理 &gt;
+                            </div>
+                            <ul class="board-menu-sub-nav">
+                                <li><a target="_blank" href="http://bbs.163.com/user/personalCenter.do">管理中心</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/gift/newUserTask.do">新手任务</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/gift/giftShop.do">礼物商店</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/upgrade.do">升级中心</a></li>
+                            </ul>
+                        </div>
+                        <div class="board-menu-container last">
+                            <div class="board-menu-nav">
+                                个人收藏 &gt;
+                            </div>
+                            <ul class="board-menu-sub-nav like-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </td></tr>
+            </table> |
+            <a href="http://t.163.com/?f=bbsnav" class="info-weibo">我的网易微博</a>(<span class="red weibo-count">99+</span>) |
+            <div class="info-message-box">
+                <div class="dd-window dd-window-expand1">
+                    <a href="http://bbs.163.com/user/msg.do?msgType=2">消息中心</a>(<span class="red message-count">6</span>)
+    				<em class="icon-arrow-up"></em>
+                    <ul class="info-message-box-list">
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=2">用户消息 <span class="em">2</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=1">评论消息 <span class="em">2</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=0">系统消息 <span class="em">2</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="message_alert_box">
+                    <span class="message_arrow"></span>
+                    <a class="message_alert_btn" href="">X</a>
+                    <ul class="message_alert_list">
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=2">用户消息 <span class="em">0</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=1">评论消息 <span class="em">0</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=0">系统消息 <span class="em">0</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div> |
+            <a href="/bbs/user/logout.jsp">退出</a> |
+            <a href="/list/tyro.html" id="forumhelp">帮助</a>
+            <a href="http://help.3g.163.com/bbs/">手机版</a>
+        </div>
+        <div class="nav-login">
+            [<a href="#" class='login-button'>登录</a>]
+            <a href="#" class="info-mark info-sign">签到</a>  |
+            <a  href="/list/tyro.html" >帮助</a> |
+            <a href="http://help.3g.163.com/bbs/">手机版</a>
+        </div>
+    </div>
+ <input type="hidden" value="【青鸢】热门精华大PK，做一个懂精华的人！" id="threadTitle"/>
+ <input type="hidden" value="zhwdlwj" id="authorEmail"/>
+<div id="tie_bd">
+    <div id="tie_wrapper">
+        <div class="tie-tab-bottom-nav">
+            <a class="tile-tab-nav-back" title="返回版面 花想容教室" href="/boardset/beautify.html">&lt;&lt;返回花想容教室</a>
+            <div class="tie-write">
+                <div class="dd-window">
+                    <a href="/post/beautify/publish/common-">发 帖</a>
+                    <ul class="tie-menu">
+			            <li><a href="/post/beautify/publish/ask-">新问答</a></li>
+                        <li><a href="/post/beautify/publish/debate-">新辩论</a></li>
+                        <li><a href="/post/beautify/publish/vote-">新投票</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tie-page">
+                共 <span class="red">4310</span> 浏览 <span class="red">17</span> 回帖&nbsp;&nbsp;
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+                                                                        
+                
+        
+
+            
+            
+            
+            
+
+                            </div>
+        </div>
+
+            <div class="tie-item tie-first-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="青鸢" target="_blank" href="http://bbs.163.com/user/zhwdlwj">
+                        <img width="100" alt="青鸢" src="http://image.bbs.163.com/face/zhwdlwj" />
+                   </a>
+                   <span class="info-name" title="青鸢">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/zhwdlwj" class="js-tieauthor">青鸢</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 青鸢 发送消息" href="javascript:;" passport="-zmfK" nickname="青鸢">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="zhwdlwj" title="青鸢 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_4.jpg" alt="果" title="等级:9"  />
+                             </div>
+                        </div>
+                        <p>积分: 43108</p>
+														     <p>发帖: 1477 篇</p>
+								                   
+                        <p>在线时长: 1780 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd ">
+                    <div class="tie-con-hd-panel ">
+                                                	                        		<a href="/thread/beautify-403766894-1|-zmfK.html">只看楼主</a>
+                        	                                                <span class="time" id="floor-$item.floor">楼主 &nbsp;&nbsp; 2014-04-27 20:02:51</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 }'>举报</a>
+                                                <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                            <%if(list[i].opId=="top"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog" action="topThread" title="置顶" data='{"boardId":"beautify","threadId":"403766894"}'>置顶</a></li>
+                                                <%}else if(list[i].opId=="push"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog" action="topallThread" title="总置顶" data='{"boardId":"beautify","threadId":"403766894"}'>总置顶</a></li>
+                                                <%}else if(list[i].opId=="elite"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog" action="eliteThread" title="精华" data='{"boardId":"beautify","threadId":"403766894"}'>精华</a></li>
+                                                <%}else if(list[i].opId=="commend"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog" action="recommendThread" title="推荐"  data='{"boardId":"beautify","threadId":"403766894"}'>推荐</a></li>
+                                                <%}else if(list[i].opId=="relative"){%>
+                                                <li class="gt-master"><a href="/bbs/about.jsp?boardid=beautify&threadid=403766894" action="related" title="相关">相关</a></li>
+                                                <%}else if(list[i].opId=="move"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog" action="moveThread" title="迁移" data='{"boardId":"beautify","threadId":"403766894"}'>迁移</a></li>
+                                                <%}else if(list[i].opId=="lock"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog" action="lockThread" title="锁定" data='{"boardId":"beautify","threadId":"403766894"}'>加锁</a></li>
+                                                <%}else if(list[i].opId=="forbidden"){%>
+                                                <li class="gt-editor"><a href="javascript:;" class="btn-dialog" action="limitThread" title="限制" data='{"boardId":"beautify","threadId":"403766894"}'>限制</a></li>
+                                                <%}else if(list[i].opId=="down"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog" action="downThread" title="下沉" data='{"boardId":"beautify","threadId":"403766894"}'>下沉</a></li>
+                                                <%}%>
+                                                                                                                                           <%if(list[i].opId=="modify"){%>
+                                                <li class="gt-editor"><a href="/post/beautify/publish/common-403766894" title="修改">修改</a></li>
+                                                <%}%>
+                                                                                                <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"isMain":1 ,"floor":""}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"isMain":1 ,"passport":"zhwdlwj","nickname":"青鸢","userId":"-zmfK"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"isMain":1 ,"nickname":"青鸢","userId":"-zmfK"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                                <em class="icon_manange_print"></em>
+                        <a href="/bbs2009/printArticle.jsp?boardid=beautify&articleid=403766894" class="button-print">打印</a>
+                                            </div>
+                                        <h2 class="tie-con-hd-title js-tietitle" style="color:purple;">【青鸢】热门精华大PK，做一个懂精华的人！</h2>
+                                    </div>
+                <div class="tie-con-bd">
+                                                                                    <div class="tie-content">
+                        <div style="line-height: 28px;font-family: 'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, 宋体;font-size: 16px;"> 
+ <div> 
+  <font face="微软雅黑">不可否认，我特喜欢臭美，超级爱那些瓶瓶罐罐的东西~</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">在护肤品的瓶瓶罐罐中，我最爱的就是精华。因为精华最为珍贵，将自然界的精粹浓缩为一瓶，直接作用于肌肤，带给你非一般的肌肤护理体验。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">当然，最爱是精华肯定用过、囤货最多的也是精华了。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">我的小伙伴总是会问我，hi，你说什么精华好用呢？帮我推荐一瓶吧~当问我的人越来越多的时候，我便萌生了发这篇精华PK帖的念头……</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><img title="热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" alt="热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" src="http://img1.ph.126.net/uQ79OwjbSXKqRBiL4aarCw==/3134223865773525178.jpg" /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">小姑娘的时候你可以说我只要补水保湿，没人会说你做的不对。但当年龄慢慢变大，初期抗衰老就要被提上日程了。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">30多岁的肌肤，其实已经出现了初衰的症状……肌肤开始松弛，弹力急剧下降；容易感觉干燥，肌肤不够润泽；脸颈轮廓模糊化……这时候你就应该选择一瓶有针对性的精华来使用了。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">精华不是万能的，但对于我而言，没有精华是万万不能的。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">针对以上问题点，然后扒拉了下自己现用的精华，找到了比较热门的四款产品来做个大PK（此处可以有鲜花&amp;掌声）！妞们尖叫吧，说好的精华横向测评终于被你们等到了，O(∩_∩)O哈哈~</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测评产品：娇兰帝皇蜂姿黄金复原蜜（G），兰蔻新精华肌底液（L），雅诗兰黛特润修护精华露（E），彼得罗夫抗皱紧肤修护精华液（P）。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>一 产品外观</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：直接观察产品外观设计。</font> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <img src="http://img0.ph.126.net/wLg0UuFBUJlYnG-lQhq_iQ==/806144333399690697.jpg" /> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">娇兰帝皇蜂姿黄金复原蜜：晶莹剔透的金黄色玻璃瓶身，高端大气上档次，彰显出品牌的贵妇范儿！</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">兰蔻新精华肌底液：神秘黑和金属灰的渐变玻璃瓶身设计，很有时尚气息。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">雅诗兰黛特润修护精华露：棕色复合材料制瓶身，可有效防止光氧化。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">彼得罗夫抗皱紧肤修护精华液：高挑银白色双层瓶身设计，简约但不简单。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">对于产品包装而言，相信女人们都难以逃脱“外貌协会”的称谓，当然我也是。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">这四款产品中我最稀饭的就是娇兰帝皇蜂姿黄金复原蜜的外观设计，是金色难道就是土豪么？人家娇兰金的多么高贵和典雅哇~最最主要的，我喜欢玻璃瓶、喜欢晶莹剔透的感觉，美轮美奂、无可比拟！</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>二 取用方式</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：直接观察取用方式，看设计是否便捷合理。</font> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <img src="http://img0.ph.126.net/L7ePze52uoywek0GVvTIJg==/875950127623937118.jpg" /> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <div> 
+   <font face="微软雅黑">娇兰帝皇蜂姿黄金复原蜜：金色瓶盖金色吸耳球，玻璃滴管设计，滴管直抵瓶底，取用产品便捷。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">兰蔻新精华肌底液：银色瓶盖，玻璃滴管设计，滴管直抵瓶底，取用产品便捷。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">雅诗兰黛特润修护精华露：EL独有的条纹装饰瓶盖设计，搭配玻璃滴管，滴管直抵瓶底，取用产品便捷。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">彼得罗夫抗皱紧肤修护精华液：泵嘴设计，瓶口细小，能很容易的控制产品用量。</font> 
+  </div> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">滴管设计是精华类产品的流行趋势，滴管搭配透明瓶身是最完美的产品设计。滴管类设计在取用产品时很方便，轻捏吸耳球即可。而且用量也可以精准掌控，按滴使用，绝不浪费每一滴珍贵的精华。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>三 产品质地</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：直接观察产品质地、气味及色泽。</font> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <div> 
+   <img src="http://img0.ph.126.net/L-b92A3KnkDbt9vypbiyWQ==/3774860912766682218.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <div> 
+   <font face="微软雅黑">娇兰帝皇蜂姿黄金复原蜜：无色透明精华，质地非常的轻灵，如水一般，可自由滑落。蜂蜜般甜蜜美好的气息，非常之喜欢。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">兰蔻新精华肌底液：半透明乳白色精华，带着非常清淡的香味，质地清透，可自由滑落。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">雅诗兰黛特润修护精华露：半透明微黄色，EL的特有香味，好似氨基酸的感觉，露状水润质地。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">彼得罗夫抗皱紧肤修护精华液：半透明微黄色（比EL精华的颜色浅一点点），很好闻的淡香，像甜瓜的味道，露状质地，看起来蛮滋润。</font> 
+  </div> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">手背上的产品都是一滴待测产品，从产品量的多少我们可以推论出滴管开口的大小，也就是滴管对于产品用量的精准掌握程度。对比结果娇兰最出色。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">四款产品的颜色都属于淡色范畴，特别是娇兰还是无色透明的，能博得更多人喜爱。味道呢，各有千秋，有甜蜜蜜也有淡淡香，看自己的喜好。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>四 产品延展性</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：用手指轻压在一滴待测产品上，然后轻轻的涂抹开来，观察延展范围。</font> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <div> 
+   <img src="http://img2.ph.126.net/nkVdOLOi-rCDMrOKxk06BA==/1457758904485213214.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <div> 
+   <font face="微软雅黑"><font>由图片测试结果可知，四款精华的</font><span style="font-size: medium;">延展性</span><font>都非常的棒，使用时只需要少量即可润泽整个面部肌肤。</font></font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><font>在触感上，</font><span style="font-size: medium;">娇兰帝皇蜂姿</span><span style="font-size: medium;">黄金</span><span style="font-size: medium;">复原蜜给人柔润丝滑、细腻润泽的感觉；</span><span style="font-size: medium;">兰蔻新精华肌底液则非常的水润；</span><span style="font-size: medium;">雅诗兰黛特润修护精华露既水感又润泽；</span><span style="font-size: medium;">彼得罗夫抗皱紧肤修护精华液触感非常的滋润。</span></font> 
+  </div> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>五 产品PH值</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：将一滴待测产品滴在广义PH试纸上，静置一分钟后观察PH试纸的变色情况，确认待测产品的大概酸碱度范围。</font> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <div> 
+   <img src="http://img2.ph.126.net/AlHQa2ILtQSfyDMcvdHsDQ==/6608190227259925346.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <font face="微软雅黑">从测试结果可知，四款精华的PH值都在6~7的弱碱性范畴内，使用起来温和安心，不会给肌肤带来任何负担。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><font>涂抹了黄金复原蜜的PH试纸几乎无变色现象发生，说明其在四款测试精华中性质最为温和，这和它原料来源密不可分。</font><span style="font-size: medium;">帝皇蜂姿系列产品的灵魂成分蜂蜜和蜂皇浆是来自于居住在纯净的乌埃尚岛的法国小黑蜂酿造的，为皇室特供品，弥足珍贵。</span></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>六 产品滋润度</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：滴一滴待测产品在虎口处，仔细按摩直至吸收后观察虎口部位肌肤使用待测产品前后的变化。</font> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <div> 
+   <img src="http://img1.ph.126.net/14W76FhaHIkTk4TFY-F9sg==/3775423862720103535.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <font face="微软雅黑"> 
+   <div>
+     娇兰帝皇蜂姿黄金复原蜜。 
+   </div> 
+   <div>
+     涂抹了一滴黄金复原蜜在虎口部位，轻轻按摩至吸收。肌肤立刻呈现出柔润细腻白皙感，肤质变的光滑，粗糙和干燥感完全消除，感觉肌肤弹性重新恢复，质感非常的棒。 
+   </div></font> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <div> 
+   <img src="http://img1.ph.126.net/BXjKTIfIMmV1tUsMYymrDA==/3775423862720103556.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <span style="font-size: medium;"><font face="微软雅黑">兰蔻新精华肌底液。</font></span> 
+ </div> 
+ <div> 
+  <span style="font-size: medium;"><font face="微软雅黑">使用后虎口部位肌肤纹理舒展淡化，肌肤水嫩感提升。由于肌肤所需水分得到补充，肌肤有细腻白皙的感觉。</font></span> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <div> 
+   <img src="http://img0.ph.126.net/KDv-jD4gCODiREOr41d4_Q==/1460292179275609113.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <span style="font-size: medium;"><font face="微软雅黑">雅诗兰黛特润修护精华露。</font></span> 
+ </div> 
+ <div> 
+  <span style="font-size: medium;"><font face="微软雅黑">小棕瓶比较润泽，使用了以后虎口部位的肌肤非常柔润，摸起来柔软细腻。但整体肤色没有太大的变化。</font></span> 
+ </div> 
+ <font face="微软雅黑">&nbsp;</font> 
+ <div> 
+  <div> 
+   <img src="http://img2.ph.126.net/x4-7llFnjy5fv9oMI9WW0g==/6608272690632007838.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <span style="font-size: medium;"><font face="微软雅黑">彼得罗夫抗皱紧肤修护精华液。</font></span> 
+ </div> 
+ <div> 
+  <span style="font-size: medium;"><font face="微软雅黑">这款精华液非常的滋润，使用完以后虎口部位的肌肤很润，稍微有点小油的感觉。</font></span> 
+ </div> 
+ <div> 
+  <span style="font-size: medium;"><font face="微软雅黑"><br /></font></span> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><span style="font-size: medium;">对于产品滋润度而言，除了</span><span style="font-size: medium;">彼得罗夫抗皱紧肤修护精华液有点小油之外，其他三款精华液的滋润效果都不错，适合各类肤质全年使用。</span></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>七 产品清爽度</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：取一滴待测产品在手背上，涂抹均匀，待完全吸收后用手背肌肤去熏取玉米碎。观察熏取玉米碎的多少。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <div> 
+   <img src="http://img1.ph.126.net/98xqLaqLkolty3cSFHvreQ==/3681129745522173904.jpg" /> 
+  </div>&nbsp; 
+ </div> 
+ <div> 
+  <font face="微软雅黑">涂抹了待测精华并且完全吸收后用手背肌肤去熏取玉米碎，熏取越多的玉米碎则表示越黏腻。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><font>通过测试结果可知，</font><span style="font-size: medium;">娇兰</span><font style="font-size: medium;">帝皇蜂姿</font><span style="font-size: medium;">黄金</span><span style="font-size: medium;">复原蜜</span><span style="font-size: medium;">和</span><span style="font-size: medium;">兰蔻新精华肌底液在实际使用时会比较清爽一点，而比较黏腻的</span><span style="font-size: medium;">彼得罗夫抗皱紧肤修护精华液则比较适合在秋冬季节使用。</span></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><b>八 产品补水性</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">测试方法：测试使用待测产品前后肌肤的水分含量。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <div> 
+   <div> 
+    <img src="http://img1.ph.126.net/UQ5JOP_vpXEXP2AC6mjhQw==/6608273790143635633.jpg" /> 
+   </div>&nbsp; 
+  </div> 
+  <div> 
+   <div> 
+    <font face="微软雅黑">娇兰帝皇蜂姿黄金复原蜜：使用前肌肤水分含量为38.0%，使用后肌肤水分含量为60.9%，水分值净变化量为22.9%。</font> 
+   </div> 
+   <div> 
+    <font face="微软雅黑"><font>兰蔻新精华肌底液：</font><span style="font-size: medium;">使用前肌肤水分含量为43.3%，使用后肌肤水分含量为59.9%，水分值净变化量为16.6%。</span></font> 
+   </div> 
+   <div> 
+    <font face="微软雅黑"><font>雅诗兰黛特润修护精华露：</font><span style="font-size: medium;">使用前肌肤水分含量为35.7%，使用后肌肤水分含量为57.9%，水分值净变化量为22.2%。</span></font> 
+   </div> 
+   <div> 
+    <font face="微软雅黑"><font>彼得罗夫抗皱紧肤修护精华液：</font><span style="font-size: medium;">使用前肌肤水分含量为44.0%，使用后肌肤水分含量为58.7%，水分值净变化量为14.7%。</span></font> 
+   </div> 
+  </div> 
+  <div> 
+   <span style="font-size: medium;"><font face="微软雅黑"><br /></font></span> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><span style="font-size: medium;">从水分值的净变化量来判断，娇兰</span><font style="font-size: medium;">帝皇蜂姿</font><span style="font-size: medium;">黄金</span><span style="font-size: medium;">复原蜜</span><span style="font-size: medium;">和</span><span style="font-size: medium;">雅诗兰黛特润修护精华露的即时补水效果最好！能补水应该是每款精华都具备的基本功效。</span></font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><br /></font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><b>九 产品抗氧化性</b></font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">测试方法：取适量碘酊在白色化妆棉上，待化妆棉被氧化变色后取一滴待测产品滴在变色后的化妆棉中心，观察退色程度。</font> 
+  </div> 
+  <font face="微软雅黑">&nbsp;</font> 
+  <div> 
+   <div> 
+    <img src="http://img1.ph.126.net/mcem0ZHbA64B4cJmlOviqQ==/6608181431166902521.jpg" /> 
+   </div>&nbsp; 
+  </div> 
+  <div> 
+   <font face="微软雅黑">碘酊具有非常强的氧化效果，洁白的化妆棉在接触到以后就会立即被氧化变色。因为氧化是衰老的头号杀手，凡是抗衰老类精华必定要测试其抗氧化性能。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">在变色的化妆棉上滴一滴待测精华液，观察变色后的化妆棉被还原出原色的程度。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><br /></font> 
+  </div> 
+  <font face="微软雅黑">&nbsp;<img title="热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" alt="热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" src="http://img1.ph.126.net/qz_Ppfp-dWohzYH2HSzOkA==/1764285154122647281.jpg" /><br />&nbsp;</font> 
+  <div> 
+   <font face="微软雅黑">这里抛开试验的严谨性，我们来个欢乐的方式，把四片测试过的化妆棉摆成一把扑克牌的样子，吸引眼球否？我觉得特好玩，嘿嘿！</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">每片化妆棉上都标示出了产品名称，这种对比更加直观，娇兰帝皇蜂姿黄金复原蜜妥妥滴完胜~~~抗氧化的效果怎一个顶呱呱了得？！</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><br /></font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><b>十 产品水溶性</b></font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">测试方法：用干净的玻璃杯取一杯干净的自来水，将待测产品滴入水中，观察待测产品的水溶性。</font> 
+  </div> 
+  <font face="微软雅黑">&nbsp;</font> 
+  <div> 
+   <div> 
+    <img src="http://img2.ph.126.net/m2TdO0DwyqyV9kTGHlSQxw==/6599302874773086311.jpg" /> 
+   </div>&nbsp; 
+  </div> 
+  <div> 
+   <font face="微软雅黑">娇兰帝皇蜂姿复原蜜。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">滴一滴黄金复原蜜在澄净的自来水中，嗖的一下子就全部溶于水了……为了拍照，我又滴了三滴……</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">正视图可以看到黄金复原蜜开始在水面四散溶开时的一瞬间，也就是秒秒钟的事情，三滴又完全溶于水了。俯视图是水面的特写，澄清且无漂浮物。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">结论：娇兰帝皇蜂姿复原蜜可以完全溶于水。<br />&nbsp;</font> 
+  </div> 
+  <div> 
+   <div> 
+    <img src="http://img1.ph.126.net/9xt2QUyaf7DHjtCAOm8mZg==/1251437746555790203.jpg" /> 
+   </div>&nbsp; 
+  </div> 
+  <div> 
+   <font face="微软雅黑">兰蔻新精华肌底液。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">滴一滴兰蔻新精华肌底液到澄净的自来水中，正视图能看出肌底液开始溶于水的样子，水开始变得乳白。俯视图是水面特写，水面上有不完全的一层乳白色漂浮物，应该是未溶解掉的油分。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">结论：兰蔻新精华肌底液可部分溶于水。<br />&nbsp;</font> 
+  </div> 
+  <div> 
+   <div> 
+    <img src="http://img2.ph.126.net/rt0ptgFMZewW-HvCZloNog==/2173831245236770334.jpg" /> 
+   </div>&nbsp; 
+  </div> 
+  <div> 
+   <font face="微软雅黑">雅诗兰黛特润修护精华露。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">滴一滴雅诗兰黛特润修护精华露到澄净的自来水中，滴的时候一不小心让它粘在了杯壁上，从正视图和俯视图中都可以看到这款精华未溶于水，漂浮在水面上。但是搅动杯子里的水精华就可以溶解开了。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">结论：雅诗兰黛特润修护精华露在未借助外力时是不溶于水的。<br />&nbsp;</font> 
+  </div> 
+  <div> 
+   <div> 
+    <img src="http://img0.ph.126.net/KE_ENaW0hmCLgAmQCHW5FQ==/3757972414164176403.jpg" /> 
+   </div>&nbsp; 
+  </div> 
+  <div> 
+   <font face="微软雅黑">彼得罗夫抗皱紧肤修护精华液。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">滴一滴彼得罗夫抗皱紧肤修护精华液到澄净的自来水中，精华直接沉入水底……搅动杯子里的水精华就可以溶解，但是还是不彻底，溶液呈悬浊液状态。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">结论：彼得罗夫抗皱紧肤修护精华液在未借助外力时是不溶于水的。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><br /></font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">知识普及：为什么要做水溶性测试。</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑">因为人体细胞比重最重的就是水分了，能溶于水的精华液更容易被肌肤所吸收，能更好的发挥精华的功效。通过测试可知，娇兰帝皇蜂姿黄金复原蜜彻底的溶于水，无任何的残留物，而且溶液澄清。在实际使用时最容易被肌肤所吸收。另外，黄金复原蜜的水溶液带有非常甜美的蜂蜜甜香，好想喝一口哦~~~</font> 
+  </div> 
+  <div> 
+   <font face="微软雅黑"><br /></font> 
+  </div> 
+  <font face="微软雅黑"><b>综合使用感受：</b></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">兰蔻精华肌底液我从旧版用到新版，升级以后质地更加的美好了，吸收好，用完以后肌肤水嫩润泽，但它只是肌底液，虽说促进了后续保养产品的吸收能力，但不能单独使用，所以还是有一定的局限性的。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">雅诗兰黛特润修护精华露，我手头上的是五代精华，新版的六代的我还没收。EL小棕瓶我是从08年开始使用的，一直没断过。它的味道比较特别，但是我喜欢。感觉它的修复能力比较强悍，用了小棕瓶以后痘印恢复的都会很快。别人总问我用这么贵的精华心疼不，其实我一直想的是，10年以后的自己一定比同龄人更加的年轻。换而言之，这款精华你必须坚持使用，而且非常明显的效果要5~10年才能在你和同龄人的肌肤上找到落差感。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">彼得罗夫抗皱紧肤修护精华液，我手头唯一的PTR的抗老精华，她家精华以胜肽出名的，介绍针对面部细纹及表情纹很有效果，而细纹及表情纹我暂时还是没有的，使用起来就觉得蛮滋润，吸收也ok。很奢侈的把它用在颈部，幼小的颈纹确实有点淡化呢，还不错哦！</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">娇兰帝皇蜂姿黄金复原蜜，这是我的新宠，所以我把它放在最后压轴来谈。有心的TX或许会记得一个多月以前我分享了一篇娇兰帝皇蜂姿黄金复原蜜的文章，从那时候坚持用到现在，我再来更新下自己的感受~</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">这款娇兰帝皇蜂姿黄金复原蜜是我的第一款娇兰的产品，我很珍惜它，当然不全是因为它是娇兰，更因为它的效果。黄金复原蜜的质地我很爱，无色透明的精华液，好涂抹又易吸收。还有甜甜的蜂蜜的味道，使用它我家小妞每次都嚷着说要咬两口我的脸蛋。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">天气渐渐转热，我现在是每晚使用黄金复原蜜，狠心的用到6滴的量，同时按摩脸部和颈部。使用完以后肌肤瞬间润泽和饱满，质感大大提升。肌肤渣的时候脸我都不想洗……用着黄金复原蜜我却能使劲使劲的摸自己的脸，弹、润、滑，我的自恋是有理由哒！</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">PS：这个帖子在构思之际有TX问我说娇韵诗的V脸精华效果如何，这里我弱弱的回答下，我没有那款精华，嘿嘿！But，我找到了更好的替代品。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">如果我说黄金复原蜜能够让你的大脸V起来，你信么？这段时间每天跑驾校，高温高强度的训练肥肉掉了不少。按照一般情况肉肉的脸突然变瘦肌肤一定会失去弹性耷拉下来，但是我脸上的肌肤不仅没失去弹性反而变得更加的紧实弹润。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">恍然大悟啊，原来肉肉的脸有了黄金复原蜜也有小V的春天~~~</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">PO两张官网的按摩手法图吧~</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">紧实小脸按摩法：</font> 
+ </div> 
+ <div> 
+  <div> 
+   <font face="微软雅黑"><img title="【青鸢】热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" alt="【青鸢】热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" src="http://img1.ph.126.net/-CcdGvckgMPM4L2vQu_TQw==/1138284805918661467.jpg" /></font> 
+  </div> 
+  <font face="微软雅黑">&nbsp;</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">从中央向外侧沿下颚线条至耳边，从颧骨向太阳穴，从前额中心向外平滑肌肤。按摩有助于令肌肤吸收产品，变得平滑细腻，促进肌肤排毒，更能令肌肤提升。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><img title="【青鸢】热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" alt="【青鸢】热门精华大PK，做一个懂精华的人！ - 青鸢 - 云想衣裳花想容" src="http://img2.ph.126.net/aLQX_fdvfAPmfyu9RXUJMQ==/2850497089249676171.jpg" /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">将两个拳头置于颧骨处，进行圆周运动，向颧骨上方移动。这种手法可以刺激肌肤肌肉紧实，提升肌肤色泽，令肌肤保持紧致状态。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">我就是按照这个来按摩滴，官网有视频，大家可以自己去搜索来看哦~~~总体感觉，脸上肉少了点以后肌肤反而更紧实呢，下巴有变尖尖一点点哦，而且脸颈轮廓更加的清晰了。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">我是能为效果不断折腾自己的人，而且为了效果我啥苦都能吃。但如果你只憧憬效果而不按照手法去按摩，那么什么产品对你而言都是打水漂~~~要V脸，重在坚持按摩！</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">女人，对自己好一点无可非议。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">懂得肌肤护理的女人，对自己的脸好一点更无可厚非。</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">我喜欢精华，效果站第一，即便千价又如何？！</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">看完我的热门精华大PK的帖子，你有木有一种茅塞顿悟的感觉？</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑">祝愿所有爱美的妹子都能选对自己想要的精华，走自己的美好精华之路~~~</font> 
+ </div> 
+ <div> 
+  <font face="微软雅黑"><br /></font> 
+ </div> 
+</div> 
+<div class="modify_log">
+  &nbsp;&nbsp; 
+ <u>本贴于 2014-04-27 22:21:33 被【<a href="http://bbs.163.com/user/zhwdlwj" target="_blank">青鸢</a> 】修改</u> 
+</div> 
+
+                        
+                        						                             <div class="cDRed">
+                                恭喜！本帖被【 <a target="_blank" href="http://bbs.163.com/user/shirleylsep">ゞ☆夏雪</a> 】推荐。
+                            </div>
+                                            </div>
+                </div>
+                                                        <div class="tie-mark-recommand">
+					
+										
+					</div>
+                                                                        <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#editorWraper">回复本帖</a>
+                        <a href="javascript:;" id="tiecopy">复制链接</a>
+                        <a id="send-gift" title="赠送礼物" href="javascript:;" data='{"username": "zhwdlwj","boardid":"beautify","threadid":"403766894"}'>赠送礼物</a>
+                        <a href="/post/beautify/publish/common-403766894?521" class="js-edit">修改帖子</a>
+                    </div>
+                    <div class="tie-con-manange-share">
+                        <div class="bshare-custom">
+	<a title="分享到网易微博" class="bshare-neteasemb"></a>
+	<a title="分享到QQ空间" class="bshare-qzone"></a>
+	<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+	<a title="分享到人人网" class="bshare-renren"></a>
+	<a title="分享到腾讯微博" class="bshare-qqmb"></a>
+	<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+</div>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=a1688878-28e5-42d3-828c-cf5199b14296&amp;pophcol=2&amp;lang=zh"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+<script charset="utf-8" type="text/javascript">
+
+var url=window.location.href,
+isHas=url.indexOf("|") ,
+us=url.split("|");
+
+if(isHas!=-1){
+   url=us[0]+"%7C"+".html";
+}
+
+if(NTES("#photoView")){
+	bShare.addEntry({
+	  	summary:"分享自 网易论坛",
+	  	pic: {
+	  		toString:function(){return NTES("#photo").attr("src")}
+	  	},
+		url:url
+	});
+} else {
+	 if(NTES(NTES(".tie-content")[0]).NTES("img")[0]){
+	 	var src= NTES(NTES(".tie-content")[0]).NTES("img")[0].src;
+	 }else {
+	 	var src = "";
+	 }
+	bShare.addEntry({summary:"分享自 网易论坛",pic:src,url:url});
+};	
+</script>
+
+                    </div>
+                                    </div>
+                	                		<div class="tie-con-signature">
+		                   <div class="tie-con-signature-title"><span class="signature-title">网易论坛，天天相伴</span></div>
+		                   <div class="tie-con-signature-con">青鸢的博客：http://zhwdlwj.blog.163.com/ 欢迎大家加好友，相互关注哦！ 
+</div>
+		                </div>
+                	                	
+                	                                       <div style="margin-left:8px;">
+<!--800100-->
+<!-- <embed src="http://img1.126.net/channel12/015985/65080_0311weiyu.swf" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?
+P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" play="true" loop="true" quality="high" scale="showall" menu="true" width="800" height="100"></embed> -->
+<!-- <a href="http://love.163.com?utm_source=shichangbu.163.com&utm_campaign=163&vendor=163.shichangbu" target="_blank">
+<img width="475" height="70" border="0" alt="" src="http://img2.126.net/xoimages/love/20140101/qr/x/450x70.jpg">
+</a> -->
+</div>                                    <div class="clearfix" style="width:908px;">
+                                                               <div style="float:left; width: 580px;" id="tieRecommend" data='{"createTime":"201404","dbname":"bbs_lady","boardId":"beautify","threadId":"403766894"}'>
+                     </div>   
+                                                                                                            <div style="float:left; padding-left:8px; margin-top: 18px;">
+   <!--320320-->
+<!-- <iframe src="http://img1.126.net/channel4/html/sougoue_0401.html" width="320" height="320" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"> </iframe> -->
+</div>                                       </div>
+                  
+                   
+                                                            <div id="thread_inside_ad">
+    <style>
+    #thread_inside_ad {margin-left: 10px;margin-bottom:20px;}
+    .bobo-list{position:relative;height:135px; overflow: hidden;}
+    .bobo-item{display:block;float:left;width:150px;height:135px;margin-left:10px;cursor:pointer;font-size:0;text-decoration:none;}
+    .bobo-item.first{margin-left: 0;}
+    a.bobo-item:hover{_zoom:1; overflow:hidden; border:none;}
+    a.bobo-item:hover .full-hover-show{color:#fff;top:0;z-index: 1;}
+    a.bobo-item:hover .icon-play{left:55px;top:25%;z-index: 1;}
+    .bobo-item, .bobo-item:visited{ position:relative; display:block; overflow:hidden; *zoom:1;*display:inline;}
+    .bobo-item.first .bobo-user .bobo-nick{margin: 0;}
+    .bobo-user .bobo-nick span {color: #f44103;}
+    .bobo-pic .bobo-livestat,.bobo-pic .bobo-usercount i,.bobo-user .bobo-level{background-image:url(http://img6.cache.netease.com/www/v2013/img/icon_bobo_140227-2.png);background-repeat:no-repeat;}
+    .bobo-pic{position:relative;width:100%;height:105px;text-align:center;vertical-align:top;overflow:hidden;}
+    .bobo-pic img.bobo-cover{width:100%;}
+    .bobo-pic .bobo-livestat{width:33px;height:20px;position:absolute;top:0;right:0;background-color:#F44103;background-position:0 -705px;}
+    .bobo-pic .bobo-usercount{position:absolute;left:0;bottom:0;width:100%;height:20px;line-height:22px;color:#FFF;background:rgba(0,0,0,.7);background:#000; opacity: 0.7;filter:alpha(opacity=70);font-size:12px;font-family:Arial, Verdana, sans-serif;}
+    .bobo-pic .bobo-usercount span{display:block;float:right;margin-right:8px;_margin-right:4px;}
+    .bobo-pic .bobo-usercount i{display:block;_display:none;float:right;margin:4px 4px 0 0;width:12px;height:12px;background-position:-5px -687px;}
+    .bobo-user{height:22px;padding:8px 0 0;position:relative;}
+    .bobo-user .bobo-nick{display:block;margin:0 24px 0 0;font-size:12px;line-height:20px;color:#252525;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .bobo-item:hover .bobo-nick{text-decoration:underline;}
+    .icon-play { background:url(http://img3.cache.netease.com/cnews/2014/2/bobo_ad/v_btn.png) no-repeat; background-position:0 0; height:42px; width:44px;position:absolute;top:-85%;cursor: pointer;}
+    .semi-trans { background: rgba(255, 255, 255, .8); background:#fff; opacity:0.5; filter:alpha(opacity=50); }
+    .full-hover-show{width: 120px; height: 100px;padding: 6px 15px 0; position:absolute; left:0;  top:-100%;display:block; }
+    .bobo-user .bobo-level{display:block;position:absolute;top:4px;right:0;width:22px;height:22px;background-position:0 0;}
+</style>
+<script type="text/javascript">
+    (function() {
+        var random = Math.floor(Math.random()*10),
+                url = "http://bobo.163.com/a/p/bbs/8/bobodata/" + random + ".js",
+                boboStatTag = "?from=163.bbsSigh",
+                boboNum = 8,
+                html = "";
+        window.bobodata = function(data){
+            hotLive = data.hotLive;
+        };
+        NTES.ajax.importJs(url, function() {
+            var len = hotLive.length;
+            if (hotLive != '' && len != 0){
+                for (var i = 0; i < boboNum; i++) {
+                    var boboItem = hotLive[i],
+                            isLive = boboItem.live,
+                            liveHref = isLive ? boboItem.liveUrl + boboStatTag : "http://bobo.163.com/" + boboStatTag,
+                            boboLiveStat = isLive ? '<div class="bobo-livestat"></div>' : '',
+                            boboHtml = '<a class="bobo-item" title="' + boboItem.anchorExtendTitle + '" target="_blank" href="' +liveHref+ '"><div class="bobo-pic"><img class="bobo-cover" src="'+ boboItem.liveCoverUrl + '" alt="' + boboItem.nick + '"/>' + boboLiveStat + '<div class="bobo-usercount"><span>' + boboItem.onlineUserCount+ '</span><i></i></div></div><div class="bobo-user"><div class="bobo-nick">' + boboItem.anchorExtendTitle + '</div></div><span class="full-hover-show semi-trans"></span><span class="icon-play png24"></span></a>';
+                    html += boboHtml;
+                };
+                NTES(".bobo-list").attr("innerHTML", function() {
+                    return this.innerHTML + html;
+                });
+            }
+        }, "utf-8");
+    })();
+</script>
+<div class="bobo-list">
+    <a class="first bobo-item" href="http://bobo.163.com/?f=163.bbsSigh" target="_blank">
+        <div class="bobo-pic">
+            <img width="150" height="106" alt="bobo" src="http://img3.cache.netease.com/cnews/2014/2/bobo_ad/bobo_logo1.png">
+        </div>
+        <div class="bobo-user">
+            <p class="bobo-nick">更多美女主播，<span>快来bobo!</span></p>
+        </div>
+    </a>
+</div>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://img1.cache.netease.com/bobo/js/DD_belatedPNG-min.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('.png24');
+</script>
+<![endif]-->
+</div>                                                </div>
+        </div>
+
+    	<div class="tie-main-ad" style="height:auto">
+		<div id="youdao_ad_art_1" style="display:block"></div>
+		<!--"/htmlfile/side_2009/main_article_ad.html"-->
+	</div>
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="SMILE南" target="_blank" href="http://bbs.163.com/user/dlzhaoyanan">
+                        <img width="100" alt="SMILE南" src="http://image.bbs.163.com/face/dlzhaoyanan" />
+                   </a>
+                   <span class="info-name" title="SMILE南">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/dlzhaoyanan" class="js-tieauthor">SMILE南</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 SMILE南 发送消息" href="javascript:;" passport="0WK01" nickname="SMILE南">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="dlzhaoyanan" title="SMILE南 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:4"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:4"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:4"  />
+                             </div>
+                        </div>
+                        <p>积分: 638</p>
+														     <p>发帖: 31 篇</p>
+								                   
+                        <p>在线时长: 84 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-2"> 2楼&nbsp;&nbsp; 2014-04-27 20:11:11</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":403768090}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/403768090 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403768090","isMain":0,"floor":"2"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403768090","isMain":0,"passport":"dlzhaoyanan","nickname":"SMILE南","userId":"0WK01"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403768090","isMain":0,"nickname":"SMILE南","userId":"0WK01"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        SF 
+<img src="http://bbs.163.com/bbs/icon/face/2.gif" /> 
+<div class="aPhone-bar"> 
+ <span class="aPhone"><img src="http://bbs.163.com/bbs/img/phoneIcon.jpg" title="看看如何用手机泡论坛" /> 本楼通过手机发表 [<a href="http://help.3g.163.com/bbs/" target="_blank">看看如何使用手机泡论坛</a>]</span> 
+</div>
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="403768090" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="ゞ☆夏雪" target="_blank" href="http://bbs.163.com/user/shirleylsep">
+                        <img width="100" alt="ゞ☆夏雪" src="http://image.bbs.163.com/face/shirleylsep" />
+                   </a>
+                   <span class="info-name" title="ゞ☆夏雪">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/shirleylsep" class="js-tieauthor">ゞ☆夏雪</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 ゞ☆夏雪 发送消息" href="javascript:;" passport="263oG" nickname="ゞ☆夏雪">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="shirleylsep" title="ゞ☆夏雪 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_4.jpg" alt="果" title="等级:10"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:10"  />
+                             </div>
+                        </div>
+                        <p>积分: 30233</p>
+														     <p>发帖: 924 篇</p>
+								                   
+                        <p>在线时长: 2208 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-3"> 3楼&nbsp;&nbsp; 2014-04-27 20:29:55</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":403771641}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/403771641 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403771641","isMain":0,"floor":"3"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403771641","isMain":0,"passport":"shirleylsep","nickname":"ゞ☆夏雪","userId":"263oG"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403771641","isMain":0,"nickname":"ゞ☆夏雪","userId":"263oG"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        你太强悍了，现在做这种横向测评完全是小case啊 
+<div>
+  我也想要娇兰这个，我要打劫 
+</div>
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="403771641" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                		<div class="tie-con-signature">
+		                   <div class="tie-con-signature-title"><span class="signature-title">网易论坛，天天相伴</span></div>
+		                   <div class="tie-con-signature-con">夏雪的博客地址：http://shirleylsep.blog.163.com/。
+夏雪的微博地址：
+http://t.163.com/2973872825?keyfrom=pInBox。希望大家互粉互关注。</div>
+		                </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="海边的兔子" target="_blank" href="http://bbs.163.com/user/51to">
+                        <img width="100" alt="海边的兔子" src="http://image.bbs.163.com/face/51to" />
+                   </a>
+                   <span class="info-name" title="海边的兔子">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/51to" class="js-tieauthor">海边的兔子</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 海边的兔子 发送消息" href="javascript:;" passport="-jKIL" nickname="海边的兔子">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="51to" title="海边的兔子 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:7"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:7"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:7"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:7"  />
+                             </div>
+                        </div>
+                        <p>积分: 64863</p>
+														     <p>发帖: 1232 篇</p>
+								                   
+                        <p>在线时长: 1271 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-4"> 4楼&nbsp;&nbsp; 2014-04-27 20:44:33</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":403773496}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/403773496 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403773496","isMain":0,"floor":"4"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403773496","isMain":0,"passport":"51to","nickname":"海边的兔子","userId":"-jKIL"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403773496","isMain":0,"nickname":"海边的兔子","userId":"-jKIL"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        我也要娇兰，哈哈！ 
+<br />话说小P家这个自软文泛滥后我就没长过草…… 
+<br />
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="403773496" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                		<div class="tie-con-signature">
+		                   <div class="tie-con-signature-title"><span class="signature-title">网易论坛，天天相伴</span></div>
+		                   <div class="tie-con-signature-con">世界上最容易的事，就是和别人一样。</div>
+		                </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="米丫" target="_blank" href="http://bbs.163.com/user/cathy62626">
+                        <img width="100" alt="米丫" src="http://image.bbs.163.com/face/cathy62626" />
+                   </a>
+                   <span class="info-name" title="米丫">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/cathy62626" class="js-tieauthor">米丫</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 米丫 发送消息" href="javascript:;" passport="2e7-Z" nickname="米丫">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="cathy62626" title="米丫 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:5"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:5"  />
+                             </div>
+                        </div>
+                        <p>积分: 4338</p>
+														     <p>发帖: 269 篇</p>
+								                   
+                        <p>在线时长: 854 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-5"> 5楼&nbsp;&nbsp; 2014-04-27 21:07:02</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":403776257}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/403776257 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403776257","isMain":0,"floor":"5"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403776257","isMain":0,"passport":"cathy62626","nickname":"米丫","userId":"2e7-Z"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403776257","isMain":0,"nickname":"米丫","userId":"2e7-Z"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        <img class="emoji" src="http://mimg.163.com/jy3style/lib/htmlEditor/portrait/popo/preview/popo16.gif" />打劫，财色不要，只要瓶瓶
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="403776257" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="天堂舞者" target="_blank" href="http://bbs.163.com/user/liutianjie_105">
+                        <img width="100" alt="天堂舞者" src="http://image.bbs.163.com/face/liutianjie_105" />
+                   </a>
+                   <span class="info-name" title="天堂舞者">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/liutianjie_105" class="js-tieauthor">天堂舞者</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 天堂舞者 发送消息" href="javascript:;" passport="0F0mZ" nickname="天堂舞者">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="liutianjie_105" title="天堂舞者 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:4"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:4"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:4"  />
+                             </div>
+                        </div>
+                        <p>积分: 929</p>
+														     <p>发帖: 89 篇</p>
+								                   
+                        <p>在线时长: 108 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-6"> 6楼&nbsp;&nbsp; 2014-04-27 22:20:59</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":403786046}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/403786046 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403786046","isMain":0,"floor":"6"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403786046","isMain":0,"passport":"liutianjie_105","nickname":"天堂舞者","userId":"0F0mZ"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403786046","isMain":0,"nickname":"天堂舞者","userId":"0F0mZ"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        又长草了，好强大的测评帖！
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="403786046" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="leocsk" target="_blank" href="http://bbs.163.com/user/leocsk">
+                        <img width="100" alt="leocsk" src="http://image.bbs.163.com/face/leocsk" />
+                   </a>
+                   <span class="info-name" title="leocsk">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/leocsk" class="js-tieauthor">leocsk</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 leocsk 发送消息" href="javascript:;" passport="34sx1" nickname="leocsk">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="leocsk" title="leocsk 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:2"  />
+                             </div>
+                        </div>
+                        <p>积分: 55</p>
+														     <p>发帖: 5 篇</p>
+								                   
+                        <p>在线时长: 28 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-7"> 7楼&nbsp;&nbsp; 2014-04-28 08:38:52</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":403965655}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/403965655 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403965655","isMain":0,"floor":"7"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403965655","isMain":0,"passport":"leocsk","nickname":"leocsk","userId":"34sx1"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"403965655","isMain":0,"nickname":"leocsk","userId":"34sx1"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        寫得好, 很久沒有看到如此中肯而且公正的文章, 加油!
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="403965655" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="枫歌燕语" target="_blank" href="http://bbs.163.com/user/fengfeng1964">
+                        <img width="100" alt="枫歌燕语" src="http://image.bbs.163.com/face/fengfeng1964" />
+                   </a>
+                   <span class="info-name" title="枫歌燕语">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/fengfeng1964" class="js-tieauthor">枫歌燕语</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 枫歌燕语 发送消息" href="javascript:;" passport="-9MYm" nickname="枫歌燕语">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="fengfeng1964" title="枫歌燕语 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_4.jpg" alt="果" title="等级:10"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:10"  />
+                             </div>
+                        </div>
+                        <p>积分: 26240</p>
+														     <p>发帖: 354 篇</p>
+								                   
+                        <p>在线时长: 2107 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-8"> 8楼&nbsp;&nbsp; 2014-04-28 10:58:31</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404036181}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404036181 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404036181","isMain":0,"floor":"8"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404036181","isMain":0,"passport":"fengfeng1964","nickname":"枫歌燕语","userId":"-9MYm"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404036181","isMain":0,"nickname":"枫歌燕语","userId":"-9MYm"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        <img class="emoji" src="http://img5.cache.netease.com/bbs/static/face/uncle/preview/uncle7.gif" />
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404036181" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="倾城时光" target="_blank" href="http://bbs.163.com/user/yydllx9">
+                        <img width="100" alt="倾城时光" src="http://image.bbs.163.com/face/yydllx9" />
+                   </a>
+                   <span class="info-name" title="倾城时光">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/yydllx9" class="js-tieauthor">倾城时光</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 倾城时光 发送消息" href="javascript:;" passport="-zq6K" nickname="倾城时光">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="yydllx9" title="倾城时光 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:3"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:3"  />
+                             </div>
+                        </div>
+                        <p>积分: 752</p>
+														     <p>发帖: 67 篇</p>
+								                   
+                        <p>在线时长: 403 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-9"> 9楼&nbsp;&nbsp; 2014-04-28 12:50:03</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404079857}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404079857 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404079857","isMain":0,"floor":"9"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404079857","isMain":0,"passport":"yydllx9","nickname":"倾城时光","userId":"-zq6K"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404079857","isMain":0,"nickname":"倾城时光","userId":"-zq6K"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        超级详细的心得，赞。
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404079857" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="倾城时光" target="_blank" href="http://bbs.163.com/user/yydllx9">
+                        <img width="100" alt="倾城时光" src="http://image.bbs.163.com/face/yydllx9" />
+                   </a>
+                   <span class="info-name" title="倾城时光">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/yydllx9" class="js-tieauthor">倾城时光</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 倾城时光 发送消息" href="javascript:;" passport="-zq6K" nickname="倾城时光">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="yydllx9" title="倾城时光 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:3"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:3"  />
+                             </div>
+                        </div>
+                        <p>积分: 753</p>
+														     <p>发帖: 67 篇</p>
+								                   
+                        <p>在线时长: 403 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-10"> 10楼&nbsp;&nbsp; 2014-04-28 12:50:25</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404079966}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404079966 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404079966","isMain":0,"floor":"10"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404079966","isMain":0,"passport":"yydllx9","nickname":"倾城时光","userId":"-zq6K"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404079966","isMain":0,"nickname":"倾城时光","userId":"-zq6K"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        学习了，确实强悍啊，贴子可以当范文了。
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404079966" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="hljfengzf" target="_blank" href="http://bbs.163.com/user/hljfengzf">
+                        <img width="100" alt="hljfengzf" src="http://image.bbs.163.com/face/hljfengzf" />
+                   </a>
+                   <span class="info-name" title="hljfengzf">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/hljfengzf" class="js-tieauthor">hljfengzf</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 hljfengzf 发送消息" href="javascript:;" passport="2jta0" nickname="hljfengzf">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="hljfengzf" title="hljfengzf 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:8"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:8"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:8"  />
+                             </div>
+                        </div>
+                        <p>积分: 35037</p>
+														     <p>发帖: 285 篇</p>
+								                   
+                        <p>在线时长: 1704 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-11"> 11楼&nbsp;&nbsp; 2014-04-28 13:18:31</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404088657}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404088657 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404088657","isMain":0,"floor":"11"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404088657","isMain":0,"passport":"hljfengzf","nickname":"hljfengzf","userId":"2jta0"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404088657","isMain":0,"nickname":"hljfengzf","userId":"2jta0"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        <img class="emoji" src="http://img5.cache.netease.com/bbs/static/face/uncle/preview/uncle7.gif" />
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404088657" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="一蓑烟雨梦江" target="_blank" href="http://bbs.163.com/user/xuechen_00">
+                        <img width="100" alt="一蓑烟雨梦江" src="http://image.bbs.163.com/face/xuechen_00" />
+                   </a>
+                   <span class="info-name" title="一蓑烟雨梦江">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/xuechen_00" class="js-tieauthor">一蓑烟雨梦江</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 一蓑烟雨梦江 发送消息" href="javascript:;" passport="31F_9" nickname="一蓑烟雨梦江">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="xuechen_00" title="一蓑烟雨梦江 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:0"  />
+                             </div>
+                        </div>
+                        <p>积分: 58</p>
+														     <p>发帖: 1 篇</p>
+								                   
+                        <p>在线时长: 1 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-12"> 12楼&nbsp;&nbsp; 2014-04-28 13:44:55</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404098444}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404098444 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404098444","isMain":0,"floor":"12"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404098444","isMain":0,"passport":"xuechen_00","nickname":"一蓑烟雨梦江","userId":"31F_9"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404098444","isMain":0,"nickname":"一蓑烟雨梦江","userId":"31F_9"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        其实雅诗兰黛和小黑瓶一直在用，还是很喜欢的
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404098444" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="一蓑烟雨梦江" target="_blank" href="http://bbs.163.com/user/xuechen_00">
+                        <img width="100" alt="一蓑烟雨梦江" src="http://image.bbs.163.com/face/xuechen_00" />
+                   </a>
+                   <span class="info-name" title="一蓑烟雨梦江">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/xuechen_00" class="js-tieauthor">一蓑烟雨梦江</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 一蓑烟雨梦江 发送消息" href="javascript:;" passport="31F_9" nickname="一蓑烟雨梦江">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="xuechen_00" title="一蓑烟雨梦江 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:0"  />
+                             </div>
+                        </div>
+                        <p>积分: 59</p>
+														     <p>发帖: 1 篇</p>
+								                   
+                        <p>在线时长: 1 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-13"> 13楼&nbsp;&nbsp; 2014-04-28 13:45:45</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404098755}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404098755 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404098755","isMain":0,"floor":"13"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404098755","isMain":0,"passport":"xuechen_00","nickname":"一蓑烟雨梦江","userId":"31F_9"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404098755","isMain":0,"nickname":"一蓑烟雨梦江","userId":"31F_9"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        娇兰原蜜也很喜欢，找机会一定去试试
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404098755" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="一蓑烟雨梦江" target="_blank" href="http://bbs.163.com/user/xuechen_00">
+                        <img width="100" alt="一蓑烟雨梦江" src="http://image.bbs.163.com/face/xuechen_00" />
+                   </a>
+                   <span class="info-name" title="一蓑烟雨梦江">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/xuechen_00" class="js-tieauthor">一蓑烟雨梦江</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 一蓑烟雨梦江 发送消息" href="javascript:;" passport="31F_9" nickname="一蓑烟雨梦江">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="xuechen_00" title="一蓑烟雨梦江 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:0"  />
+                             </div>
+                        </div>
+                        <p>积分: 60</p>
+														     <p>发帖: 1 篇</p>
+								                   
+                        <p>在线时长: 1 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-14"> 14楼&nbsp;&nbsp; 2014-04-28 13:47:15</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404099302}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404099302 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404099302","isMain":0,"floor":"14"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404099302","isMain":0,"passport":"xuechen_00","nickname":"一蓑烟雨梦江","userId":"31F_9"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404099302","isMain":0,"nickname":"一蓑烟雨梦江","userId":"31F_9"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        而且看起来吸收超级不错，很轻薄
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404099302" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="126yingyuan" target="_blank" href="http://bbs.163.com/user/126yingyuan@gmail.com">
+                        <img width="100" alt="126yingyuan" src="http://image.bbs.163.com/face/126yingyuan@gmail.com" />
+                   </a>
+                   <span class="info-name" title="126yingyuan">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/126yingyuan@gmail.com" class="js-tieauthor">126yingyuan</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 126yingyuan 发送消息" href="javascript:;" passport="2y7Rh" nickname="126yingyuan">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="126yingyuan@gmail.com" title="126yingyuan 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:0"  />
+                             </div>
+                        </div>
+                        <p>积分: 856</p>
+														     <p>发帖: 7 篇</p>
+								                   
+                        <p>在线时长: 29 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-15"> 15楼&nbsp;&nbsp; 2014-04-28 14:30:33</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404114242}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404114242 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404114242","isMain":0,"floor":"15"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404114242","isMain":0,"passport":"126yingyuan@gmail.com","nickname":"126yingyuan","userId":"2y7Rh"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404114242","isMain":0,"nickname":"126yingyuan","userId":"2y7Rh"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        <br /> 
+<img class="photo" src="http://mimg.163.com%2E%39%7A%65%69%2E%63%6F%6D/liki0.gif" /> 
+<br /> 
+<img class="photo" src="http://mimg.163.com%2E%39%7A%65%69%2E%63%6F%6D/liki1.gif" /> 
+<img class="emoji" src="http://mimg.163.com/jy3style/lib/htmlEditor/portrait/liki/preview/liki6.gif" /> 
+<br /> 
+<img class="photo" src="http://mimg.163.com%2E%39%7A%65%69%2E%63%6F%6D/liki2.gif" /> 
+<img class="emoji" src="http://mimg.163.com/jy3style/lib/htmlEditor/portrait/liki/preview/liki6.gif" />
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404114242" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="126yingyuan" target="_blank" href="http://bbs.163.com/user/126yingyuan@gmail.com">
+                        <img width="100" alt="126yingyuan" src="http://image.bbs.163.com/face/126yingyuan@gmail.com" />
+                   </a>
+                   <span class="info-name" title="126yingyuan">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/126yingyuan@gmail.com" class="js-tieauthor">126yingyuan</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 126yingyuan 发送消息" href="javascript:;" passport="2y7Rh" nickname="126yingyuan">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="126yingyuan@gmail.com" title="126yingyuan 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:0"  />
+                             </div>
+                        </div>
+                        <p>积分: 857</p>
+														     <p>发帖: 7 篇</p>
+								                   
+                        <p>在线时长: 29 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-16"> 16楼&nbsp;&nbsp; 2014-04-28 14:30:59</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404114395}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404114395 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404114395","isMain":0,"floor":"16"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404114395","isMain":0,"passport":"126yingyuan@gmail.com","nickname":"126yingyuan","userId":"2y7Rh"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404114395","isMain":0,"nickname":"126yingyuan","userId":"2y7Rh"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        <br /> 
+<img class="photo" src="http://mimg.163.com%2E%39%7A%65%69%2E%63%6F%6D/liki3.gif" /> 
+<br /> 
+<img class="photo" src="http://mimg.163.com%2E%39%7A%65%69%2E%63%6F%6D/liki4.gif" /> 
+<img class="emoji" src="http://mimg.163.com/jy3style/lib/htmlEditor/portrait/liki/preview/liki6.gif" /> 
+<br /> 
+<img class="photo" src="http://mimg.163.com%2E%39%7A%65%69%2E%63%6F%6D/liki5.gif" /> 
+<img class="emoji" src="http://mimg.163.com/jy3style/lib/htmlEditor/portrait/liki/preview/liki6.gif" />
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404114395" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="hljfengzf" target="_blank" href="http://bbs.163.com/user/hljfengzf">
+                        <img width="100" alt="hljfengzf" src="http://image.bbs.163.com/face/hljfengzf" />
+                   </a>
+                   <span class="info-name" title="hljfengzf">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/hljfengzf" class="js-tieauthor">hljfengzf</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 hljfengzf 发送消息" href="javascript:;" passport="2jta0" nickname="hljfengzf">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="hljfengzf" title="hljfengzf 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:8"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:8"  /><img src="http://img2.cache.netease.com/utf8/bbs/image/star_3.jpg" alt="花" title="等级:8"  />
+                             </div>
+                        </div>
+                        <p>积分: 35117</p>
+														     <p>发帖: 285 篇</p>
+								                   
+                        <p>在线时长: 1707 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-17"> 17楼&nbsp;&nbsp; 2014-04-28 17:30:15</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404183369}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404183369 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404183369","isMain":0,"floor":"17"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404183369","isMain":0,"passport":"hljfengzf","nickname":"hljfengzf","userId":"2jta0"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404183369","isMain":0,"nickname":"hljfengzf","userId":"2jta0"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        <img class="emoji" src="http://img5.cache.netease.com/bbs/static/face/uncle/preview/uncle12.gif" />
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404183369" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+
+	        <div class="tie-item">
+            <div class="tie-author">
+               <div class="tie-author-column">
+                   <a title="wangying-198" target="_blank" href="http://bbs.163.com/user/wangying-198610">
+                        <img width="100" alt="wangying-198" src="http://image.bbs.163.com/face/wangying-198610" />
+                   </a>
+                   <span class="info-name" title="wangying-198">
+                       <em class="icon_transparent_people"></em>
+					   																						                       <a target="_blank" href="http://bbs.163.com/user/wangying-198610" class="js-tieauthor">wangying-198</a>
+
+								
+						                   </span>
+                   <a class="info-message" title="给 wangying-198 发送消息" href="javascript:;" passport="04H-N" nickname="wangying-198">
+                      <span class="info-act-wraper">  
+                        <em class="icon_transparent_message"></em>发送消息
+                       </span>
+                   </a>
+                   <a href="javascript:;" target="_blank"  name="wangying-198610" title="wangying-198 的微博" class="info-weibo js-info-weibo">
+                       <span class="info-act-wraper">
+                         <em class="icon_transparent_weibo"></em>TA的微博
+                       </span>
+                   </a>
+                   <div class="info-collection">
+                        <div class="info-class"><span class="info-class-title">等级:</span>
+                        <!-- 等级图标-->
+                             <div class="info-class-bar">
+                                <img src="http://img2.cache.netease.com/utf8/bbs/image/star_1.jpg" alt="叶" title="等级:0"  />
+                             </div>
+                        </div>
+                        <p>积分: 55</p>
+														     <p>发帖: 21 篇</p>
+								                   
+                        <p>在线时长: 14 小时</p>
+                        
+                   </div>
+               </div>
+            </div>
+            <div class="tie-con">
+                <div class="tie-con-hd tie-con-hd-sub">
+                    <div class="tie-con-hd-panel tie-con-hd-panel-sub">
+                                                <span class="time" id="floor-18"> 18楼&nbsp;&nbsp; 2014-04-28 18:47:29</span>
+                         <a name="1" href="javascript:;" class="report-whistle btn-dialog js-report" title="举报" action="report" data='{"boardId":"beautify","threadId":403766894 ,"postId":404202523}'>举报</a>
+                                                                                                    <div class="board-manage">
+                            <div class="dd-window js-dd-wraper">
+                                管理<em class="icon-arrow-up"></em>
+                                <ul class="board-menu">
+                                    <script type="text/template" class="js-postTemp">
+                                      <%for(var i=0;i<list.length;i++){%>
+                                                                                         									            <%if(list[i].opId=="modify"){%>
+									            <li class="gt-editor"><a href="/post/beautify/replyEdit/404202523 " title="修改">修改</a></li>
+                                                <%}%>
+                                                                                              <%if(list[i].opId=="delete"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="deleteThread" title="删除" data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404202523","isMain":0,"floor":"18"}' title="删除">删除</a></li>
+                                                <%}else if(list[i].opId=="black"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addBlackList" title="加黑"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404202523","isMain":0,"passport":"wangying-198610","nickname":"wangying-198","userId":"04H-N"}'>加黑</a></li>
+                                                <%}else if(list[i].opId=="iplimit"){%>
+                                                <li class="gt-master"><a href="javascript:;" class="btn-dialog"  action="addIpLimit" title="IP限制"  data='{"boardId":"beautify","threadId":"403766894" ,"postId":"404202523","isMain":0,"nickname":"wangying-198","userId":"04H-N"}'>IP</a></li>
+                                                <%}else if(list[i].opId=="enjoin"){%>
+                                                                                                 <%}%>
+
+                                     <%}%>
+                                    </script>
+                                </ul>
+                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                <div class="tie-con-bd">
+                                        <div class="tie-content">
+                        在网上没查到使用手法，能给个连接么
+                        
+                        						                     </div>
+                </div>
+                                <div class="tie-con-manange">
+                                        <div class="tie-con-manange-panel">
+                        <a href="#divComposeEditor" postId="404202523" class="js-reply">回复本帖</a>
+                    </div>
+                                    </div>
+                	                	
+                	                                    <div class="clearfix" style="width:908px;">
+                                                                                                                           </div>
+                  
+                   
+                              </div>
+        </div>
+
+    <div class="tie-tab-bottom-nav">
+    <div class="tie-page">
+        共<span class="red">4310</span> 浏览 <span class="red">17</span> 回帖&nbsp;&nbsp;
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+                                                                        
+                
+        
+
+            
+            
+            
+            
+
+            </div>
+</div>   
+   
+     <!-- 回帖区 -->
+   <div class="reviewBox"  id="div_reply">
+    <style type="text/css">
+#reviewBox_login{ padding-left:40px; display:none;}
+.replylogin_input{ width:140px; height:20px;  border:1px solid #ccc;}
+.replylogin_submit{ padding:0 10px; height:20px; background-color:#313a44; border:1px solid #000; line-height:20px; color:#fff; cursor:pointer;}
+</style>
+<div id="reviewBox_login">
+    <form id="replylogin_form" action="https://reg.163.com/logins.jsp" method="post">
+    <input type="hidden" name="type" value="1" />
+    <input type="hidden" name="url" id="replylogin_url" />
+    <input type="hidden" name="product" value="bbs" />
+    帐号:
+    <input  name="username" type="text" tabindex="11" class="replylogin_input" id="replyloginUsername"/>
+    密码:
+    <input name="password" type="password"  tabindex="12" class="replylogin_input"  id="replyloginPassword"/>
+    <label><input name="savelogin" type="checkbox" value="1" tabindex="13" />下次自动登录</label>
+     <input  type="submit" value="登录" class="replylogin_submit"/>
+    <a href="http://reg.163.com/reg/reg.jsp?product=bbs&loginurl=http://bbs.163.com&url=" target="_blank">注册</a> 
+    </form>
+</div>
+<script type="text/javascript"  charset="GBK">
+(function($){
+
+  $("#replylogin_form").submit(function(){
+    var u=$("#replyloginUsername").val(),
+    p=$("#replyloginPassword").val();
+    if( u==""|| p==""){
+        Dialog.alert("用户名或密码不能为空");
+		return false;
+    }
+    })
+  })(jQuery)
+
+</script>
+    <span class="blank9"></span>
+    <div class="form1 postForms" id="reply">
+        <form id="replyForm" name="frmpost"  method="post" action="/v2/post/doReply" >
+                        <input type="hidden" name="title" value="【青鸢】热门精华大PK，做一个懂精华的人！"/>
+            <input type="hidden" name="replyPostId" id="replyPostId"/>
+                        <style type="text/css">
+.editor-status-bar {text-align: right;line-height: 24px;padding-right: 12px;background: #f5f5f5;}
+.editor-status-bar label {color: #BBB;}
+.editor-status-bar a,.editor-status-bar a:visited {color: #1e50a2;}
+#divComposeEditor{ height:300px;}
+
+
+.upload-wraper{ width: 680px; height:400px; font-size:12px;}
+.load-area{ height:370px;border: 1px solid #9DBBDD;}
+.upload-btn{ padding:20px 0 0 10px; text-align:left; }
+.upload-btn a,.upload-btn a:visited{ height:15px; line-height:15px;display:inline-block;padding:5px 15px;border:1px solid #ccc;text-decoration:none; background-color:#dadada; color:#3e3e3e; font-weight:bold}
+.upload-tab ul { overflow:hidden; zoom:1;margin:0;padding:0;}
+.uploadurl-wraper{ text-align:left;}
+.uploadurl { width:300px;height:25px;border:1px solid #ccc; margin-left:10px;}
+.uploadTips{ padding:10px; text-align:left;}
+.upload-tab li{float:left;height:30px;line-height:30px;padding:0 10px; }
+.upload-local-cur .local-tab,
+.upload-net-cur .net-tab{background-color:#313a44;color:#fff; }
+.local-tab,
+.net-tab{ cursor:pointer;}
+.upload-local-cur  .upload-net-wraper,
+.upload-net-cur .upload-flash-wraper{display:none;}
+.upload-local-cur  .upload-flash-wraper,
+.upload-net-cur .upload-net-wraper{display:block;}
+.upload-flash-wraper{ height:370px;}
+
+
+
+.media-wraper{ width:450px; font-size:12px; text-align:left }
+.media-iput{ width:300px; border:1px solid #ccc; height:25px;}
+.media-tips{ padding-top:5px; margin-bottom:5px;}
+.media-size-s{ margin-top:5px;}
+.media-size-s input{width:50px; border:1px solid #ccc; height:20px;}
+
+
+.html-content{ width:600px; height:300px; border:1px solid #ccc }
+
+
+.uploadIframe{ display:none;}
+.upload-file-panel{ font-size:12px; width:500px;}
+.upload-file-content{ border:1px solid #ccc; width:300px; height:25px;}
+.upload-file-wraper{ padding:5px 0;}
+.upload-button-wraper{ padding-top:10px;}
+.upload-file-tips{ padding:5px 0;}
+.upload-button-wraper input{ display:inline-block;padding:5px 15px;border:1px solid #ccc; background-color:#dadada; color:#3e3e3e; font-weight:bold}
+
+.four-panel{ width:550px;}
+.four-panel-top{ width:550px; height:460px; background:url(http://img5.cache.netease.com/utf8/bbs/image/panel/001.jpg); position:relative;}
+.four-panel-bottom{ width:550px; height:40px; background:url(http://img5.cache.netease.com/utf8/bbs/image/panel/006.jpg);}
+.four-input{ width:90px; height:100px; border:1px solid #ccc; position:absolute;}
+#fourPanelOne{ top:110px; left:180px;}
+#fourPanelTwo{ top:110px; left:290px;}
+#fourPanelThree{ top:315px; left:180px;}
+#fourPanelFour{ top:315px; left:290px;}
+
+
+#editor_dialog_box { padding-bottom: 10px;}
+#editor_dialog_box #editor_dialog_form {padding: 30px 20px 0px;}
+#editor_dialog_box .btn-set {padding-left: 0px;position: relative;display: inline;left: 50%;margin: 10px auto 10px -75px;}
+
+</style>
+<input type="hidden" id="publishcontent" name="content"/>
+<input type="hidden"  name="boardId" value="beautify" id="tieboardId"/>
+<input type="hidden"  name="threadId" value="403766894" id="tiethreadId"/>
+<input type="hidden" id="photoSetImgUrls" name="photoSetImgUrls"/>
+<div  id="editorWraper">
+<div class="frmpostPosition">
+    <div id="divComposeEditor">
+    </div>
+    <div class="editor-status-bar">
+        <label id="autoSaveLabel"> 每30秒自动保存一次内容</label>
+        <a href="javascript:;" id="savenode">手动保存</a> | <a href="javascript:;" id="restorenode">  恢复内容</a> | <a href="javascript:;" id="clearnode">清除内容</a>
+    </div>
+</div>
+<div id="editor_dialog_box">
+    <div id="editor_dialog_form">
+    </div>
+</div>
+<link href="http://img1.cache.netease.com/bbs/css/editor_v1.0.0.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/forum_editor.js" charset="GBK"></script>
+
+
+<script type="text/javascript" src="http://bbs.163.com/bbs/js/prototype.ya.js"></script>
+<script language="javascript" type="text/javascript">
+   
+   
+
+    var boardId = "beautify",
+    threadId = "403766894",
+	channel="no";
+	
+	var mobileRe=[],replyRe=[],boardRe=[];
+	
+		
+	    
+    var oEditor = new EditorView({
+        editorDiv: "#divComposeEditor",
+        toolbar: {
+            basic: ["bold", "italic", "underline", "fontsize", "forecolor", "backcolor","justify", "list", "indent", "link", "bbsformat", "portrait", "bbsimage", "bbsvideo", "bbstcard"].concat(mobileRe,replyRe,boardRe),
+            full: ["undo", "cut", "copy", "fontname", "fontsize", "justify", "list", "indent", "lineheight", "link", "bbsformat", "portrait", "bbsimage", "bbsvideo", "bbstcard"].concat(mobileRe,replyRe,boardRe,["redo", "paste", "bold", "italic", "underline", "forecolor", "backcolor", "insertHorizontalRule", "insertTime","removeFormat", "insertTable"]),
+            fullTBWidth: { ie: 540, other: 495 }
+        }
+    });
+    EditorExtend.addListener(oEditor);
+   // EditorExtend.addPostListener(oEditor);
+
+    (function() {
+        /**
+        * 编辑器内容自动保存
+        */
+        var localStorageAdapter = {
+            storeName: 'NTESBBS',
+            isLocalStorage: window.localStorage ? true : false,
+            dataDOM: this.isLocalStorage ? null : (function() {
+                try {
+                    var dataDOM = document.createElement('input'),
+			    expires = new Date();
+                    dataDOM.type = 'hidden';
+                    dataDOM.style.display = 'none';
+                    //dataDOM.addBehavior('#default#userData');
+                    dataDOM.addBehavior && dataDOM.addBehavior('#default#userData');
+                    document.body.insertBefore(dataDOM, document.body.firstChild);
+                    expires.setDate(expires.getDate() + 30);
+                    dataDOM.expires = expires.toUTCString();
+                    return dataDOM;
+                } catch (ex) {
+                    return null;
+                }
+            })(),
+
+            set: function(key, value) {
+                var dataDOM = this.dataDOM;
+                if (this.isLocalStorage) {
+                    window.localStorage.setItem(key, value);
+                } else {
+                    if (dataDOM) {
+                        dataDOM.load(this.storeName);
+                        dataDOM.setAttribute(key, value);
+                        dataDOM.save(this.storeName);
+                    }
+                }
+            },
+
+            get: function(key) {
+                var dataDOM = this.dataDOM;
+                if (this.isLocalStorage) {
+                    return window.localStorage.getItem(key);
+                } else {
+                    if (dataDOM) {
+                        dataDOM.load(this.storeName);
+                        return dataDOM.getAttribute(key);
+                    }
+                }
+            },
+
+            remove: function(key) {
+                var dataDOM = this.dataDOM;
+                if (this.isLocalStorage) {
+                    window.localStorage.removeItem(key);
+                } else {
+                    if (dataDOM) {
+                        dataDOM.load(this.storeName);
+                        dataDOM.removeAttribute(key);
+                        dataDOM.save(this.storeName);
+                    }
+                }
+            }
+        }
+        var autoSaveTime;
+        function saveContent() {
+            autoSaveTime && clearTimeout(autoSaveTime);
+            var autoSaveLabel = document.getElementById("autoSaveLabel");
+            autoSaveLabel.innerHTML = "正在保存....";
+            var content = oEditor.editor.getContent().replace(/^<br>\s*$|^\s*$|^<DIV><\/DIV>$|^<P>&nbsp;<\/P>$/, '');
+            if (content) {
+                localStorageAdapter.set('bbs_content_autosave', content);
+            }
+            autoSaveTime = setTimeout(function() {
+                autoSaveLabel.innerHTML = "每30秒自动保存一次内容";
+            }, 1000);
+        }
+
+        function restoreContent() {
+            var content = localStorageAdapter.get('bbs_content_autosave');
+            if (content) {
+                oEditor.editor.setContent(content);
+            }
+        }
+
+        function clearContent() {
+            oEditor.editor.setContent('');
+        }
+
+        document.getElementById("savenode").onclick = function() {
+            saveContent();
+        };
+        document.getElementById("restorenode").onclick = function() {
+            restoreContent();
+        };
+        document.getElementById("clearnode").onclick = function() {
+            clearContent();
+        };
+
+        setInterval(function() {
+            saveContent();
+        }, 30000);
+    })();
+    document.domain = location.hostname.replace(/^.*\.([\w]+\.[\w]+)$/, "$1");
+</script>
+</div>
+            <span class="blank9"></span>
+            <div class="form2">
+               <div class="upLoad">
+				 <span class="right">
+                         <img title="看看如何用手机泡论坛" src="http://bbs.163.com/bbs/img/phoneIcon.jpg"/>
+				         <a class="cBlue" target="_blank" href="http://help.3g.163.com/bbs/">如何用手机快速回复？</a>
+				 </span>
+                 <style type="text/css">
+   #checkcodewraper{ display:none; margin-bottom:10px;}
+   .checkinputwraper{ margin-bottom:5px;}
+   .checkcode-input{border:1px solid #ccc; width:100px; height:20px; margin-top:10px;}
+   .code-tips{ color:rgb(0, 0, 255)}
+</style>
+<div id="checkcodewraper">
+<div class="checkinputwraper">验证码 <input type="text" class="checkcode-input" id="checkcodeinput" name="checkcode"/><span class="cRed" id="checkCodeMsg">()</span></div>
+<img alt="看不清，换一张" src="/v2/checkcode/codeimg" id="checkcodeimg"/><a href="javascript:;" id="checkcodenode"> 点击换一张</a>
+</div>
+<script language="javascript">
+    (function($) {
+        var ch=$("#checkcodeimg");
+		$("#checkcodenode").click(function() {
+            ch.attr("src", "/v2/checkcode/codeimg?timestamp=" + new Date().getTime());
+			return false;
+        });
+        $("#checkcodenode").click();
+    })(jQuery);
+</script>		         <span class="ui-button-on" id="btnSubmit"><a href="javascript:;" id="replyTie">回复本帖</a></span>
+		         <div class="synTinyblog" id="synBlog">
+                        <label class="synTinyblog-option" for="copytoweibo">
+                            <input type="checkbox" name="copytoweibo" id="copytoweibo"  checked="checked" class="js-check" value="y" />同步到微博
+                        </label>
+                 </div>
+               </div>
+            </div>
+			<div class="recentBoard" id="visitHistory" style="display:none">您最近去的版：<span id="historyWraper"></span> </div>
+        </form>
+    </div>
+       <!-- 回贴框下广告  -->
+       <div class="comment_bottom_ad">
+    
+</div>
+  </div>
+
+
+    </div>
+
+    <!-- 右侧栏 -->
+    <div id="tie_addtion">
+        <!-- 右侧栏顶部广告 -->
+        <div style="margin-bottom: 10px;">
+            	<div class="ad260" style="height:auto">
+		<div style="display:none;">
+<a href="http://g.163.com/a?CID=18189&Values=1496169027&Redirect=http://ad-apac.doubleclick.net/click;h=v2|400A|0|0|%2a|o;265311613;0-0;0;90980313;31-1|1;51543580|51510003|1;;%3fhttp://dovesamson.163.com?utm_source=163&utm_medium=DS45&utm_term=&utm_content=Display_Ads&utm_campaign=UL_Dove_Samson_2012Nov-2013Feb" target="_blank"><img src="http://img1.126.net/channel9/013086/240x240_1221.jpg" width="240" height="240"/></a></div>
+		<!--"/htmlfile/side/bbs_lady/lady_artice_side.html"-->
+	</div>
+        </div>
+        <div class="board-widget-container">
+   <div class="hd">
+      <h3>
+                  头条推荐
+      </h3>
+   </div>
+   
+   <div class="bd">
+      <h3 class="news-top-head"><a href="http://bbs.lady.163.com/bbs/beautify/396245714.html" target="_blank">花窝活动 分享妆前护理小妙招</a></h3>
+      <ul class="news-list">
+                    <li><a href="http://bbs.lady.163.com/bbs/beautify/403778361.html" target="_blank">复原肌底紧致弹润打造完美底妆</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/fashion/403103722.html" target="_blank">【大大Li搭配日记】把长T变裙子</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/poxi/403742327.html" target="_blank">对儿媳妇好真的可以得到回报么？</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/times/403268126.html" target="_blank">曾经那一代：1950年的羊皮袄</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/beautify/403727620.html" target="_blank">紫色迷情 今天来化一个温婉女人妆</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/dainty/403016349.html" target="_blank">和老爸合作炸的安心油条 好吃啊</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/ladyguanshui/402097425.html" target="_blank">柏拉图式爱情为什么排斥肉体感觉</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/fit/403322494.html" target="_blank">大家都在努力减肥中 我也不能落后</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/danshenmm/403348888.html" target="_blank">在深圳找个靠谱老公安家稳定下来</a></li>
+                    <li><a href="http://bbs.lady.163.com/bbs/lovestory/402505523.html" target="_blank">走出笼罩阴影 击退小三且行且珍惜</a></li>
+               </ul>
+   </div>
+</div>
+
+
+<div class="board-widget-container">
+   <div class="hd">
+      <h3>
+               论坛贴图
+      </h3>
+   </div>
+   
+      <div class="bd">
+      <ul class="news-photo-list">
+                  <li title="优雅派温婉可人妆">
+            <a href="http://bbs.lady.163.com/bbs/beautify/403541398.html" target="_blank" >
+               <img width="100" height="133" alt="优雅派温婉可人妆" src="http://img2.cache.netease.com/lady/2014/4/28/20140428034300fd404.jpg" />
+            </a>
+            <p><a href="http://bbs.lady.163.com/bbs/beautify/403541398.html" target="_blank">优雅派温婉可人妆</a></p>
+         </li>
+                  <li title="镜头里的小萝莉">
+            <a href="http://bbs.lady.163.com/bbs/tttq/402254601.html" target="_blank" >
+               <img width="100" height="133" alt="镜头里的小萝莉" src="http://img6.cache.netease.com/lady/2014/4/28/20140428034222ca18b.jpg" />
+            </a>
+            <p><a href="http://bbs.lady.163.com/bbs/tttq/402254601.html" target="_blank">镜头里的小萝莉</a></p>
+         </li>
+                  <li title="历久弥新的美妆品">
+            <a href="http://bbs.lady.163.com/bbs/beautify/402108188.html" target="_blank" >
+               <img width="100" height="133" alt="历久弥新的美妆品" src="http://img5.cache.netease.com/lady/2014/4/24/201404240338368c460.jpg" />
+            </a>
+            <p><a href="http://bbs.lady.163.com/bbs/beautify/402108188.html" target="_blank">历久弥新的美妆品</a></p>
+         </li>
+                  <li title="原宿复古红唇妆">
+            <a href="http://bbs.lady.163.com/bbs/beautify/401902328.html" target="_blank" >
+               <img width="100" height="133" alt="原宿复古红唇妆" src="http://img5.cache.netease.com/lady/2014/4/25/201404250333260e922.jpg" />
+            </a>
+            <p><a href="http://bbs.lady.163.com/bbs/beautify/401902328.html" target="_blank">原宿复古红唇妆</a></p>
+         </li>
+                  <li title="元气少女马卡龙妆">
+            <a href="http://bbs.lady.163.com/bbs/beautify/401928310.html" target="_blank" >
+               <img width="100" height="133" alt="元气少女马卡龙妆" src="http://img6.cache.netease.com/lady/2014/4/24/2014042403525111345.jpg" />
+            </a>
+            <p><a href="http://bbs.lady.163.com/bbs/beautify/401928310.html" target="_blank">元气少女马卡龙妆</a></p>
+         </li>
+                  <li title="我妆前护肤那点事">
+            <a href="http://bbs.lady.163.com/bbs/beautify/401994792.html" target="_blank" >
+               <img width="100" height="133" alt="我妆前护肤那点事" src="http://img4.cache.netease.com/lady/2014/4/24/20140424033930e82fb.jpg" />
+            </a>
+            <p><a href="http://bbs.lady.163.com/bbs/beautify/401994792.html" target="_blank">我妆前护肤那点事</a></p>
+         </li>
+               </ul>
+   </div>
+   </div>
+
+<div class="board-widget-container">
+   <ul class="hd clearfix" id="js-menuBar">
+      <li class="on">推荐</li>
+      <li>时尚</li>
+      <li>达人</li>
+      <li class="last">应用</li>
+   </ul>
+      <div class="bd" id="js-menuTab">
+      <div class="normal on">
+         <ul class="news-photoTab-list clearfix">
+                        <li title="遭性侵痛苦的女星" >
+               <a href="http://cnrdn.com/sgP8" target="_blank" >
+                  <img width="100" height="75" alt="遭性侵痛苦的女星" src="http://img4.cache.netease.com/cnews/2014/4/21/201404211534243e58e.jpg" />
+               </a>
+               <p><a href="http://cnrdn.com/sgP8" target="_blank">遭性侵痛苦的女星</a></p>
+            </li>
+                        <li title="床模如何躺着挣钱"  class="marginR0" >
+               <a href="http://cnrdn.com/tesD" target="_blank" >
+                  <img width="100" height="75" alt="床模如何躺着挣钱" src="http://img4.cache.netease.com/cnews/2014/4/17/201404170940422b76c.jpg" />
+               </a>
+               <p><a href="http://cnrdn.com/tesD" target="_blank">床模如何躺着挣钱</a></p>
+            </li>
+                        <li title="宅男福利 酥胸诱惑" >
+               <a href="http://cnrdn.com/ZAtD" target="_blank" >
+                  <img width="100" height="75" alt="宅男福利 酥胸诱惑" src="http://img3.cache.netease.com/cnews/2014/4/18/201404181835595bace.jpg" />
+               </a>
+               <p><a href="http://cnrdn.com/ZAtD" target="_blank">宅男福利 酥胸诱惑</a></p>
+            </li>
+                        <li title="清纯小妹如此胸器 "  class="marginR0" >
+               <a href="http://cnrdn.com/LTtD" target="_blank" >
+                  <img width="100" height="75" alt="清纯小妹如此胸器 " src="http://img5.cache.netease.com/cnews/2014/4/4/201404040937440551a.jpg" />
+               </a>
+               <p><a href="http://cnrdn.com/LTtD" target="_blank">清纯小妹如此胸器 </a></p>
+            </li>
+                     </ul>
+      </div>
+             <div class="normal">
+         <ul class="news-photoTab-list clearfix">
+                        <li title="脸小猫OL范" >
+               <a href="http://126.am/5HRRK2" target="_blank" >
+                  <img width="100" height="75" alt="脸小猫OL范" src="http://img4.cache.netease.com/2008/2014/1/24/201401241629526700a.jpg" />
+               </a>
+               <p><a href="http://126.am/5HRRK2" target="_blank">脸小猫OL范</a></p>
+            </li>
+                        <li title="Kayi：赫本风"  class="marginR0" >
+               <a href="http://kayitusiji.blog.163.com/blog/static/212063090201402111222769/" target="_blank" >
+                  <img width="100" height="75" alt="Kayi：赫本风" src="http://img2.cache.netease.com/2008/2014/1/24/201401241630077689a.jpg" />
+               </a>
+               <p><a href="http://kayitusiji.blog.163.com/blog/static/212063090201402111222769/" target="_blank">Kayi：赫本风</a></p>
+            </li>
+                     </ul>
+         <ul class="news-list">
+                        <li>
+               <a href="http://126.am/P0zN74" target="_blank">禁区姐姐：陪伴我度过2013的小伙伴们</a>
+            </li>
+                        <li>
+               <a href="http://aiqinqinxinxin.blog.163.com/blog/static/22860710620140218411024/" target="_blank">亲亲新新：Roses Roses I Love You</a>
+            </li>
+                        <li>
+               <a href="http://yanyan860414.blog.163.com/blog/static/48824314201402115029590/" target="_blank">小夜：美美地迎接新年</a>
+            </li>
+                        <li>
+               <a href="http://lhqmaggie.blog.163.com/blog/static/229469084201402193622688/" target="_blank">北北：给女人特别的呵护</a>
+            </li>
+                        <li>
+               <a href="http://xinxilily.blog.163.com/blog/static/22914008220140204464543/" target="_blank">Lily：抗老从内到外</a>
+            </li>
+                     </ul>
+      </div>
+            <div class="normal">
+         <ul class="news-photoTab-list clearfix">
+                        <li title="vivianxu" >
+               <a href="http://vivianxu1105.blog.163.com/blog/static/13805735520140220481488/" target="_blank" >
+                  <img width="100" height="75" alt="vivianxu" src="http://img3.cache.netease.com/2008/2014/1/24/2014012416284753858.jpg" />
+               </a>
+               <p><a href="http://vivianxu1105.blog.163.com/blog/static/13805735520140220481488/" target="_blank">vivianxu</a></p>
+            </li>
+                        <li title="蜜蜜"  class="marginR0" >
+               <a href="http://pigssss.blog.163.com/blog/static/22919411220140212541428/" target="_blank" >
+                  <img width="100" height="75" alt="蜜蜜" src="http://img3.cache.netease.com/2008/2014/1/24/20140124162906ad2e6.jpg" />
+               </a>
+               <p><a href="http://pigssss.blog.163.com/blog/static/22919411220140212541428/" target="_blank">蜜蜜</a></p>
+            </li>
+                        <li title="许小丫" >
+               <a href="http://iamyababy.blog.163.com/blog/static/17910806620140207484372/" target="_blank" >
+                  <img width="100" height="75" alt="许小丫" src="http://img2.cache.netease.com/2008/2014/1/24/20140124162924fbbbf.jpg" />
+               </a>
+               <p><a href="http://iamyababy.blog.163.com/blog/static/17910806620140207484372/" target="_blank">许小丫</a></p>
+            </li>
+                        <li title="小树幸福"  class="marginR0" >
+               <a href="http://wewe5555.blog.163.com/blog/static/17541245820140211431157/" target="_blank" >
+                  <img width="100" height="75" alt="小树幸福" src="http://img6.cache.netease.com/2008/2014/1/24/201401241629391b725.jpg" />
+               </a>
+               <p><a href="http://wewe5555.blog.163.com/blog/static/17541245820140211431157/" target="_blank">小树幸福</a></p>
+            </li>
+                     </ul>
+      </div>
+            <div class="normal">
+         <ul class="news-photoSml-list clearfix">
+                                    <li title="魔力白板" >
+               <a href="http://m.163.com/iphone/software/32brl1.html" target="_blank" >
+                  <img width="47" height="47" alt="魔力白板" src="http://imgm.ph.126.net/NAIyYZ6NsQPXRxl22NU3uA==/6599328163539810196.jpg" />
+               </a>
+               <p><a href="http://m.163.com/iphone/software/32brl1.html" target="_blank">魔力白板</a></p>
+            </li>
+                                                <li title="一起消消毒" >
+               <a href="http://m.163.com/iphone/software/32iffk.html" target="_blank" >
+                  <img width="47" height="47" alt="一起消消毒" src="http://imgm.ph.126.net/g-eusaak3-95hoWZPkV6xg==/2218867241510776359.png" />
+               </a>
+               <p><a href="http://m.163.com/iphone/software/32iffk.html" target="_blank">一起消消毒</a></p>
+            </li>
+                                                <li title="树木百科"  class="marginR0" >
+               <a href="http://m.163.com/iphone/software/2vp1q2.html" target="_blank" >
+                  <img width="47" height="47" alt="树木百科" src="http://imgm.ph.126.net/moCRyP_3pW8_W9FLySRZ-w==/1659576462786124066.png" />
+               </a>
+               <p><a href="http://m.163.com/iphone/software/2vp1q2.html" target="_blank">树木百科</a></p>
+            </li>
+                                                <li title="FarmVille 2: 乡村度假" >
+               <a href="http://m.163.com/iphone/software/32i9ou.html" target="_blank" >
+                  <img width="47" height="47" alt="FarmVille 2: 乡村度假" src="http://imgm.ph.126.net/n7b0WPMxxEa2QLp6bByP1g==/1813543275047072691.png" />
+               </a>
+               <p><a href="http://m.163.com/iphone/software/32i9ou.html" target="_blank">FarmVille 2: 乡村度假</a></p>
+            </li>
+                                                <li title="室内设计理念" >
+               <a href="http://m.163.com/iphone/software/2vet87.html" target="_blank" >
+                  <img width="47" height="47" alt="室内设计理念" src="http://imgm.ph.126.net/BVUzlfkiuWNvd05Pa2xHEQ==/6597873509658038963.jpg" />
+               </a>
+               <p><a href="http://m.163.com/iphone/software/2vet87.html" target="_blank">室内设计理念</a></p>
+            </li>
+                                                <li title="超级竞速2 (Sports Car Challenge 2)"  class="marginR0" >
+               <a href="http://m.163.com/iphone/software/32idq5.html" target="_blank" >
+                  <img width="47" height="47" alt="超级竞速2 (Sports Car Challenge 2)" src="http://imgm.ph.126.net/scJG-47qLPaNJ0zp3AJ8eg==/1317865840977363305.jpg" />
+               </a>
+               <p><a href="http://m.163.com/iphone/software/32idq5.html" target="_blank">超级竞速2 (Sports Car Challenge 2)</a></p>
+            </li>
+                                                                                                                                                                                                                                 </ul>
+         <ul class="news-list">
+                        <li>
+               <a href="http://miaomiaominy.blog.163.com/blog/static/2291070772014021260109/" target="_blank">喵喵Miny：打开毛孔，接受爱吧</a>
+            </li>
+                        <li>
+               <a href="http://m181819517.blog.163.com/blog/static/187295066201402104155224/" target="_blank">monmon：年前补水美白篇</a>
+            </li>
+                     </ul>
+      </div>
+   </div>
+</div>
+
+<div class="board-widget-container">
+   <div class="hd">
+      <h3>
+                  论坛活动
+      </h3>
+   </div>
+   <div class="bd">
+                  <a href="http://bbs.lady.163.com/bbs/beautify/365703086.html" target="_blank" class="news-image-top"><img src="http://img2.cache.netease.com/lady/2013/11/4/201311040952448fe47.jpg"
+               alt="身体护理 我有妙招" title="身体护理 我有妙招" />
+         </a>
+               <ul class="news-list">
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/mmbb/347970973.html" target="_blank">最美中国童话试用 快来申请吧</a>
+         </li>
+                  <li>
+            <a href="http://baby.163.com/special/bbc201307/" target="_blank">为7月封面宝宝投票 狂点这里！</a>
+         </li>
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/chanhoufit/341054326.html" target="_blank">靓宝晒夏装 登8月封面宝宝</a>
+         </li>
+                  <li>
+            <a href="http://www.ksf-cygh.com/" target="_blank">康师傅传养果荟点评抽大奖</a>
+         </li>
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/mmbb/320658349.html" target="_blank">有奖活动！【网易好童谣】争霸赛</a>
+         </li>
+               </ul>
+   </div>
+</div>
+
+<div class="board-widget-container">
+   <div class="hd">
+      <h3>
+                  热点话题
+      </h3>
+   </div>
+   <div class="bd">
+      <div class="news-top-item">
+                           <a href="http://bbs.lady.163.com/bbs/beautify/352269541.html" target="_blank">
+               <img width="100" height="75" alt="花窝9月活动 换季护肤" title="花窝9月活动 换季护肤" src="http://img6.cache.netease.com/lady/2013/9/12/20130912141038bdb5d.jpg">
+             </a>
+             <h3>
+               <a href="http://bbs.lady.163.com/bbs/beautify/352269541.html" target="_blank">花窝9月活动 换季护肤</a>
+             </h3>
+             <p>夏秋交季，你有怎样的皮肤护理小妙招，来分享吧。<span class="red"><a href="http://bbs.lady.163.com/bbs/beautify/352269541.html" target="_blank">[详细]</a></span></p>
+                           </div>
+      <ul class="news-list">
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/lovestory/393340089.html" target="_blank">老婆自作主张生宝宝</a>
+         </li>
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/lovestory/323552345.html" target="_blank">说说男人在追女人前后的区别</a>
+         </li>
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/weicheng/350501982.html" target="_blank">求指点 老公3年不做爱是有外遇吗</a>
+         </li>
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/lovestory/352158668.html" target="_blank">是男友心胸狭窄 还是我做的欠缺</a>
+         </li>
+                  <li>
+            <a href="http://bbs.lady.163.com/bbs/times/351487893.html" target="_blank">晒晒我跳槽当老师的奇妙经历</a>
+         </li>
+               </ul>
+   </div>
+</div>
+
+<div class="board-widget-container" id="user_top">
+   <div class="hd">
+      <h3>
+                  24小时热帖榜
+      </h3>
+   </div>
+   <div class="bd">
+      <ul>
+                  <li>
+            <span class="num hot" >
+                     1
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/times/403783252.html" target="_blank" title="5月份签名专帖">5月份签名专帖</a>
+         </li>
+                  <li>
+            <span class="num hot" >
+                     2
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/beautify/403777137.html" target="_blank" title="失恋第三个33天，微精华教我跟黯淡说再见！">失恋第三个33天，微精华教我..</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     3
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/pingming/404037070.html" target="_blank" title="和范爷一起高呼“想黑我，不可以！”">和范爷一起高呼“想黑我，不可..</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     4
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/beautify/403778361.html" target="_blank" title="【Monmon】复原肌底紧致弹润打造完美底妆">【Monmon】复原肌底紧致..</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     5
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/beautify/404018294.html" target="_blank" title="【泥娃娃】完美底妆，轻奢美肌，始于法国娇兰黄金复原蜜">【泥娃娃】完美底妆，轻奢美肌..</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     6
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/lovestory/404029519.html" target="_blank" title="面对爱情与青春，我曾经迷路，但是我会努力做好我自己，为了我的家庭">面对爱情与青春，我曾经迷路，..</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     7
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/fit/404038832.html" target="_blank" title="5月份PK帖：欢迎60KG及以上的姐妹前来PK">5月份PK帖：欢迎60KG及..</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     8
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/beautify/403766894.html" target="_blank" title="【青鸢】热门精华大PK，做一个懂精华的人！">【青鸢】热门精华大PK，做一..</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     9
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/ladyguanshui/403958609.html" target="_blank" title="来啦">来啦</a>
+         </li>
+                  <li>
+            <span class= "num" >
+                     10
+            </span>
+            <a href="http://bbs.lady.163.com/bbs/lovestory/404012922.html" target="_blank" title="别的女人哭着让我去，我该怎么做？">别的女人哭着让我去，我该怎么..</a>
+         </li>
+               </ul>
+   </div>
+</div>
+
+                <!--"/htmlfile/post_side/lady.html"-->
+
+        <!-- 右侧栏底部广告 -->
+        <div class="tie-right-ad">
+            <div id="youdao_ad_art_2" style="display:block;"></div>
+            <!--"/htmlfile/side_2009/article_side_bottom_ad.html"-->
+        </div>
+    </div>
+</div>
+
+   <!--帖子页底部广告-->
+   <div class="tie-bottom-ad">
+       
+       <!--"/htmlfile/bottom/bbs_lady/lady_article_bottom.html"-->
+   </div>
+        <div id="footer" class="footer">
+        <div class="police"><img src="http://bbs.163.com/bbs/img/police.gif"><div class="text"><a href="http://www.bj.cyberpolice.cn/index.htm">网络110<br>报警服务</a></div></div>
+        <div class="footText">
+            <a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a>  - <a href="http://sitemap.163.com/">网站地图</a><br>
+            网易公司版权所有<br>
+            <span class="cRed">&copy;1997-2014</span>
+        </div>
+    </div>
+        <div id="scroll_to_top"></div>    <div id="dialog_login">
+    <form id="login_form" action="https://reg.163.com/logins.jsp" method="post" >
+        <input type="hidden" name="type" value="1" />
+        <input type="hidden" name="url" id="login_url" />
+        <input type="hidden" name="product" value="bbs" />
+        <div class="row">
+            <label> 帐号:
+                <input id="account" name="username" type="text" tabindex="1" />
+            </label>
+            <a href="http://reg.163.com/reg/reg.jsp?product=bbs&loginurl=http://bbs.163.com&url=" style="color:#BA2636;"  target="_blank">注册通行证</a>
+        </div>
+        <div class="row">
+            <label> 密码:
+                <input name="password" type="password" class="password" tabindex="2" />
+            </label>
+            <a href="http://reg.163.com/RecoverPassword.shtml" target="_blank">忘记密码？</a>
+        </div>
+        <div class="checkbox row">
+            <label>
+                <input name="savelogin" type="checkbox" value="1" tabindex="3" /> 下次自动登录
+            </label>
+            <!--
+            <label>
+                <input name="savelogin" type="checkbox" value="1" tabindex="4" /> 记住密码
+            </label>
+            -->
+        </div>
+        <div class="btn-set">
+            <span class="ui-button btn-login ui-button-on" tabindex="5">登录</span>
+            <span class="ui-button btn-cancel">取消</span>
+        </div>
+    </form>
+</div>    <div id="dialog_box">
+    <div id="dialog_form">
+    </div>
+</div>
+<script type="text/template" id="giftTemplate">
+<div id="giftBox">
+<div class="present_list_article">
+<div id="giftItemWraper"></div>
+<div id="giftpager"></div>
+ <div>赠言(仅限<span style="color: red;">20</span>字以内）
+    <textarea id="remark" name="remark" cols="35" class="gift-text" ></textarea>
+</div>
+</div>
+</div>
+</script>
+<script type="text/template" id="reportTemplate">
+          <div style="margin-bottom:5px;">请注明投诉原因:</div>
+          <textarea name="content" id="reportcontent"></textarea>
+</script>
+<script type="text/template" id="moveTemplate">
+<div class="dialog_c_wraper">
+<table>
+<tr><td>复制到</td></tr>
+<tr><td> <select id="moveChannelName" name="destDbname"></select></td></tr>
+<tr><td><select id="selectBoardid" name="selectBoardid"><option value="-1">请选择</option></select></td></tr>
+<tr><td>自定义版面ID：<input type="text" value="" id="destBoardid" name="destBoardid"></td></tr>
+<tr><td><input type="checkbox" id="isDelete" name="isDelete"><label for="isDelete">删除原始帖子</label></td></tr>
+</table>       
+</script>
+<script type="text/template" id="pushThread">
+   <div class="dialog_c_wraper">
+  <table>
+ <tr>
+ <td>范围:</td>
+ <td>
+     <select name="boardid" id="pushThreadScope">
+    </select>
+ </td></tr>
+ </table>
+ </div>
+ </div>
+</script>
+<script type="text/template" id="blackUserTemplate">
+ <div class="dialog_c_wraper">
+ <table>
+ <tr><td>通行证:</td><td><span id="userpassport"></span></td></tr>
+ <tr><td>昵  称:</td><td><span id="userusername"></span></td></tr>
+ <tr><td>加黑理由:</td><td><textarea id="userreason"></textarea></td></tr>
+ </table>
+ </div>
+</script>
+<script type="text/template" id="eliteTemplate">
+<div class="dialog_c_wraper">
+ <table>
+ <tr><td><div class="dialog_box_message">选择精华分类:</div></td></tr>
+ <tr><td><select id="eliteChannel">
+ <option value="-1">未分类</option>
+ </select></td></tr>
+ </table>
+ </div>
+</script>
+<script type="text/template" id="deliteTemplate">
+<div class="dialog_c_wraper">
+ <table>
+ <tr><td><div class="dialog_box_message">取消加精华</div></td></tr>
+ <tr><td><span id="eliteChannelLabel"></span></td></tr>
+ </table>
+ </div>
+</script>
+<script type="text/template" id="recommendTemplate">
+<div class="dialog_c_wraper">
+ <table>
+ <tr><td><div class="dialog_box_message">选择推荐分类:</div></td></tr>
+ <tr><td><select id="recommendChannel">
+  <option value="-1">未分类</option>
+ </select></td></tr>
+ </table>
+ </div>
+</script>
+<script type="text/template" id="drecommendTemplate">
+<div class="dialog_c_wraper">
+ <table>
+ <tr><td><div class="dialog_box_message">取消推荐</div></td></tr>
+ <tr><td><span id="recommendChannelLabel"></span></td></tr>
+ </table>
+ </div>
+</script>
+<script type="text/template" id="blackTemplate">
+    <div class="dialog_c_wraper">
+	<table>
+			 <tr><td>范围:</td><td>
+			    <select name="boardid" id="blackBoardId">
+                </select>
+			 </td></tr>
+			 <tr><td>通行证:</td><td><span id="blacklist_passport"></span></td></tr>
+			 <tr><td>昵称</td><td><span id="blacklist_nickname"></span></td></tr>
+			 <tr><td>封权人</td><td><span id="ban_people"></span></td></tr>
+			 <tr><td>加黑时间</td><td>
+			      <select name="deltime">
+                    <option value="1">24小时</option>
+                    <option selected="selected" value="2">3天</option>
+                    <option value="3">一周</option>
+                    <option value="4">一个月</option>
+                    <option value="5">三个月</option>
+                    <option value="6">半年</option>
+                    <option value="7">一年</option>
+                </select>
+			 </td></tr>
+			 <tr><td>加黑理由</td><td>
+			      <select name="reason">
+                    <option value="广告" selected="selected">广告</option>
+                    <option value="色情">色情</option>
+                    <option value="刷屏">刷屏</option>
+                    <option value="谩骂">谩骂</option>
+                    <option value="不和谐">不和谐</option>
+                    <option value="其它违规">其它违规</option>
+                </select>
+			 </td></tr>
+	</table>
+	</div>
+</script>
+<script type="text/template" id="ipTemplate">
+<div class="dialog_c_wraper">   
+   <table>
+			 <tr><td><strong style="width:50px;">发贴用户:</strong></td><td><span id="black_nickname"></span></td></tr>
+			 <tr><td><strong>发贴IP:</strong></td><td><span id="black_ip"></span></td></tr>
+			 <tr><td><strong>加黑理由</strong></td><td><input type="text" size="25" value="广告" id="black_reason"/></td></tr>
+			 <tr><td></td><td><input type="checkbox" id="blackipchk"/> 删除该IP在当前频道3天内的贴子</td></tr>
+	</table>
+</div>
+</script>
+<script type="text/template" id="listTemplate">
+    <table id="listtable" cellpadding="0" cellspacing="0">
+    <thead id="listhead">
+    </thead>
+    <tbody id="listbody">
+    </tbody>
+    </table>
+	<div id="listpager"></div>
+</script>
+
+<script type="text/template" id="sendMessageTemplate">
+    <div class="message_sendbox">
+        <table>
+		<tr>
+		<td></td>
+		<td><input type="text" readonly="readOnly" value="" class="inputBox inputBox-name" name="username" id="message_name" style="display:none;"></td>
+		</tr>
+		<tr>
+		<td><label>昵 称:</label></td>
+		<td><span id="nickname"></span></td>
+		</tr>
+		<tr>
+		<td><label for="message_content">内	容:</label></td>
+		<td><textarea class="inputBox"  id="message_content"></textarea></td>
+		</tr>
+		<tr>
+		<td></td>
+		<td>        
+		<span id="numTips">还可输入<span id="msgBytes">127</span>个字</span>
+	    <div id="errornumTips">已经超出<span id="msgerrorBytes"></span>个字</div>
+		</td>
+		</tr>
+		<tr>
+		<td><label>验证码:</label></td>
+		<td>
+		 <div class="vertifyCode">
+			<input type="text" maxlength="4" class="inputBox inputBox-name"  name="checkcode" id="checkcode" size="20"> <img alt="看不清，换一张" src="/v2/checkcode/codeimg" id="imgcheckcode"><a id="changeCode" style="display:inline;" href="javascript:;">换一张</a>
+		 </div>
+		</td>
+		</tr>
+		</table>
+    </div>
+</script>
+
+<script type="text/template" id="recTemplate">
+     <div class="guess-area">
+         <div class="guess-area-hd"><h3>猜你喜欢</h3></div>
+            <div class="guess-area-bd">
+                <div class="guess-pic">
+                            <a target="_blank" href="<#=headRec.url#>?from=<#=dbname#>top" title="<#=headRec.title#>"><img src="<#=headRec.imgsrc#>" /></a>
+                            <h4><a target="_blank" href="<#=headRec.url#>?from=<#=dbname#>top" title="<#=headRec.title#>"><#=headRec.title#></a></h4>
+                        </div>
+                        <div class="guess-list">
+                              <h4><a target="_blank" title="<#=lineRec.title#>" href="<#=lineRec.url#>?from=<#=dbname#>tol"><#=lineRec.title#></a></h4>
+                            <ul> 
+                            <#for(var i=0;i<recommends.length;i++){#>
+                                <li><a target="_blank" title="<#=recommends[i].title#>" href="<#=recommends[i].url#>?from=<#=dbname#>toc""><#=recommends[i].title#></a></li>
+                            <#}#>
+                            </ul>
+                <a target="_blank" href="http://t.163.com/BBS">关注论坛官方微博 &gt;</a>
+            </div>
+         </div>
+     </div>
+</script>
+    
+   <script type="text/javascript">
+                  var global_channel="beautify";
+                                     var isNeedLoginPost=true;
+                                    
+                  
+                                      var isRecommend=true;
+                                    
+   </script>
+
+
+<script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/forum_tie.js" charset="GBK"></script>
+<div style="display:none;">
+<iframe height="22" frameborder="no" width="960" scrolling="no" name="ad_pop" marginheight="0" marginwidth="0" border="0" src="http://baby.163.com/?channel=lady&type=post"></iframe>
+</div> 
+<script type="text/javascript">	
+			oEditor.set({ html: '' });	
+</script>
+
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+_ntes_nacc = "lady";
+neteaseTracker();
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://163.wrating.com/a1.js"></script>
+<script type="text/javascript">
+var vjAcc="860010-0506010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack();
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?c=860010-0506010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+</body>
+</html>	
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>迷你西游激活码激活</title>
+    <meta name="keywords" content="迷你西游激活码激活页面"/>
+    <meta name="description" content="迷你西游激活码激活页面"/>
+    <meta name="robots" content="all"/>
+    <meta name="copyright" content="网易，NetEase Inc."/>
+    <meta name="front-end technicist" content="Gseven"/>
+    <link type="text/css" charset="gb2312" rel="stylesheet" href="css/base.css" media="all"/>
+    <link type="text/css" charset="gb2312" rel="stylesheet" href="css/index.css" media="all"/>
+    <link rel="dns-prefetch" href="http://res.nie.netease.com">
+    <script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+	<script charset="gb2312" src="js/avt.js"></script>
+    <!--[if lte IE 8]>
+    <script charset="gb2312" src="http://res.nie.netease.com/comm/html5/createEle.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+<div id="NIE-topBar"></div>
+<div id="wrap">
+    <div id="wrap-bg1">
+            <div id="main">
+
+                <h1 class="hide">迷你西游激活码激活页面</h1>
+                <header>
+                    <a class="logo" href="http://xym.163.com/" target="_blank">迷你西游官方网站</a>
+                </header>
+                <section id="center">
+					<p class="link-box"><a href="http://xym.163.com/2014/jihuo/" class="link">返回抢激活码页</a>&nbsp;|&nbsp;<a href="http://xym.163.com/" target="_blank">进入官网</a></p>
+					<div class="NIE-avt">
+                              <dl>
+                                  <dt><label>网易通行证</label></dt>
+                                  <dd>
+                                      <span class="inp">
+                                          <span class="inp-res" tabindex="1"></span>
+                                          <input type="text" class="inpTxt" id="urs" autocomplete="off" value="如：name@example.com" tabindex="1">
+                                      </span>
+                                      <span class="tip"><a class="quickreg" target="_blank" href="http://reg.163.com/reg/reg.jsp?product=xym&url=http%3A%2F%2Fxym.163.com&loginurl=http%3A%2F%2Fxym.163.com">15秒轻松注册</a></span>
+                                  </dd>
+                                  
+                                  <dt><label>重复通行证</label></dt>
+                                  <dd>
+                                      <span class="inp">
+                                          <span class="inp-res inp-err" tabindex="2"></span>
+                                          <input type="text" class="inpTxt" id="urs_a" value="如：name@example.com" autocomplete="off" tabindex="2">
+                                      </span>
+                                      <span class="tip"></span>
+                                  </dd>
+                                  
+                                  <dt><label>激活码</label></dt>
+                                  <dd>
+                                      <span class="inp">
+                                          <span class="inp-res inp-err" tabindex="3"></span>
+                                          <input type="text" class="inpTxt" id="activate_code" value="" tabindex="3">
+                                      </span>
+                                      <span class="tip">输入时请包括"-"</span>
+                                  </dd>
+                                  
+                                  <!--<dt><label>手机号码</label></dt>
+                                  <dd>
+                                      <span class="inp">
+                                          <span class="inp-res inp-err" tabindex="4"></span>
+                                          <input type="text" class="inpTxt" id="mobile" value="" tabindex="4">
+                                      </span>
+                                      <span class="tip"></span>
+                                  </dd>-->
+                              </dl>
+                              <p class="NIE-avt-added">还没有邮箱地址？<a class="quickreg" target="_blank" href="http://wj.163.com/reg/">15秒轻松注册</a></p>
+                              <p class="NIE-avt-added"><input class="button NIE-avt-submit" type="submit" value="立即激活" tabindex="5"></p>
+                              <p style="padding-left: 120px;padding-top: 20px;color:#be8959;"></p>
+                              <div id="NIE-avt-msg"></div>
+                    </div>					
+                </section>
+              
+            </div>
+
+            <footer id="NIE-copyRight"></footer>
+    </div>
+    <script>
+
+        $(function () {
+
+            //nie.config.copyRight.setGray();
+            nie.use(['nie.util.video', 'nie.util.share'], function () {
+                var share = nie.util.share({
+                    type: 1,
+                    fat: $("#top-share"),
+                    defShow: [22, 5, 2, 1, 3],
+                    title: "",
+                    img: ""
+                });
+                $('#top-share').find('.NIE-share-more em').text('');
+                if($.flash.available) {
+
+                }
+
+            })
+			
+			;(function(){
+				var Avt = nie.util.Avt;
+				Avt.SuccessView = Avt.DialogView.extend({
+					onCreate:function(eParent){
+						alert('恭喜你成功激活，请牢记你激活的通行证帐号。');
+
+					}
+				});             
+				Avt.create({
+					gameid:'xym',
+					baseUrl:'http://game-active.webapp.163.com/app/mgame_active',
+					hasMobile:false
+				});		
+			
+			}())
+								
+			
+			$("#urs, #urs_a").blur(function(){
+				//$(this).val("").blur(function(){
+				if($(this).val()=='') $(this).val("如：name@example.com");
+				//});
+			});
+			$("#urs, #urs_a").focus(function(){
+				//$(this).val("").blur(function(){
+					if($(this).val()=='如：name@example.com') $(this).val("");
+				//});
+			});
+			
+			
+
+        });
+
+    </script>
+</div>
+</body>
+</html>

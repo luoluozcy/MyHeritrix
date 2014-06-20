@@ -1,0 +1,1 @@
+var commentData={"joincount":"3296","count":"283","diggCount":"3013","tcount":"198"}

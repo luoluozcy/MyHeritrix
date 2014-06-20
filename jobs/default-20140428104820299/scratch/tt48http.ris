@@ -1,0 +1,56 @@
+ail = function(){
+                try {
+                    var RightMailAgent = new ActiveXObject("FlashMailShell.FlashMailIEExt");
+                } 
+                catch (e) {
+                    window.open("http://fm.163.com/commend.html?tab=5?yjzf100201", "")
+                }
+                var str = NTES("#endText").innerHTML;
+                str = str.replace(/<\/?(?:embed|object|param)[^>]*>/ig, "");
+				str += "<br /><br />";
+				str += '“你也想和好友分享精彩新闻吗?请\<a href=\"http:\/\/dl.163.com\/NxMail\/Update\/installer\/flashmail-2.0beta.exe\"\>下载闪电邮\<\/a\>,并阅读\<a href=\"http:\/\/fm.163.com\/introduce.html?yjzf100201\"\>闪电邮介绍\<\/a\>”';
+				
+				if (RightMailAgent != null) {
+                    RightMailAgent.addSubject("您的好友推荐文章《"+getTitle+"》");
+                    RightMailAgent.addContent(str);
+                }
+            }
+            EndPage.copyUrl = function(){
+                var cbc = "";
+                cbc += getTitle +'\r\n' + document.URL;
+                window.clipboardData.setData("Text", cbc);
+                NTES("#IECopyUrl").innerHTML = "<span class=\"cDRed\">复制成功，请粘贴发送</span>";
+            }
+           
+		   //初始化 
+            if (NTES.browser.msie) {
+                NTES("#IEHtml").innerHTML = "<span class=\"right cDGray\"><span class=\"copyLink\" id=\"IECopyUrl\" title=\"点击复制标题和链接\"><a style=\"cursor:pointer; text-decoration:none;\">复制网址</a></span> | <a href=\"mailto:\" class=\"mail\" id=\"IEMailSend\" title=\"你也想和好友分享精彩新闻吗?请下载闪电邮(点击直接可下载)\">闪电邮转发</a></span>";
+                NTES("#IEMailSend").addEvent("click", function(e){
+                    EndPage.mail();
+                    e.preventDefault();
+                });
+                NTES("#IECopyUrl").addEvent("click", function(e){
+                    EndPage.copyUrl();
+                    e.preventDefault();
+                });
+            }
+//]]>
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+    </script>
+</body>
+</html>

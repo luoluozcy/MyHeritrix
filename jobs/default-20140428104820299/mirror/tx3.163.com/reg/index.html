@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>《天下3》游戏注册-《天下3》官方网站-网易3D旗舰网游</title>
+    <meta name="keywords" content="天下3注册,天下贰注册,天下3帐号注册，天下3帐号,天下贰账号注册,天下贰账号,天下3快速注册,天下贰快速注册" />
+    <meta name="description" content="《天下3》官方帐号注册网站，5秒快速注册，安全可靠，现在注册，还有至尊礼包等你拿！ " />
+	<meta name="robots" content="all" />
+    <meta name="author" content="网易，NetEase Inc." />
+    <meta name="copyright" content="网易，NetEase Inc." />
+    <meta name="pmid" content="274770" />
+    <meta name="editor" content="Willson" />
+    <meta name="designer" content="sadis" />
+    <meta name="front-end technicist" content="CP-T" />
+
+    <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/comm/js/nie/util/qUrs/base.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="http://res.nie.netease.com/tx3/gw/13v1/13v1reg/css/com.css" media="all" />
+    <link rel="dns-prefetch" href="http://res.nie.netease.com">
+
+    <!--[if lte IE 8]>
+        <script charset="gb2312" src="http://res.nie.netease.com/tx3/gw/13v1/13v1reg/js/html5.js"></script>
+    <![endif]-->
+    <script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+	<!--[if IE 6]>
+    <script>try{document.execCommand("BackgroundImageCache", false, true);}catch(e){}</script>
+	<![endif]-->
+</head>
+<body>
+<div id="NIE-topBar"></div>
+<div id="wrap">
+  <div id="wrap-bg1">
+    <div id="wrap-bg2">
+      <div id="wrap-bg3">      
+        <!-- 主体 Start -->
+            <!-- 头部 Start -->
+            <header>
+              <div class="inner g-clr">
+                  <h1 class="hide">天下3帐号注册</h1>
+                  <h2 class="logo">
+                      <a href="http://tx3.163.com/" target="_blank">天下3</a>
+                  </h2>
+                  <nav>
+                      <a href="http://tx3.163.com/index.html" title="官网" target="_blank">· 官网</a>
+                      <a href="http://tx3.163.com/reg/" title="注册" target="_blank">· 注册</a>
+                      <a href="http://tx3.163.com/download/" title="下载" target="_blank">· 下载</a>
+                  </nav>
+                  <div id="topShare"></div>
+              </div>
+            </header>
+            <!-- 头部 End -->
+            <!-- 中间 Start -->
+            <section id="center">
+                <div class="inner g-clr">
+                    <article>
+                        <h3>注册完毕，现在进入《天下3》立享豪礼</h3>
+                        <div class="g-clr">
+                            <section class="art_l">
+                                <div class="art_step1">
+                                    <h4 class="g-clr"><strong>01</strong><span>极速下载客户端</span></h4>
+                                    <a target="_blank" href="http://tx3.163.com/download/">游戏下载</a>
+                                </div>
+                                <div class="art_step2">
+                                    <h4 class="g-clr"><strong>02</strong><span>立即领取至尊礼盒</span></h4>
+                                    <a target="_blank" href="http://tx3.163.com/id/">立即领取</a>
+                                </div>
+                            </section>
+                            <section class="art_r">
+                                <a target="_blank" href="http://tx3.163.com/newjob/" class="art_r_btn1">十大门派各有特色</a>
+                                <a target="_blank" href="http://tx3.163.com/gexin/" class="art_r_btn2">五年巨变重启幻境</a>
+                            </section>
+                        </div>
+                    </article>
+                    <aside>
+                        <!-- Start 大通行证.快速注册 -->
+                        <div id="f1" class="NIE-quickReg">
+                            <p class="NIE-quickReg-loading">注册网易通行证加载中,请稍候.</p>
+                            <input type="hidden" name="promark" value="af20x1vz">
+                        </div>
+                        <!-- End 大通行证.快速注册 -->
+                    </aside>
+                </div>
+            </section>
+            <!-- 中间 End -->
+            <!-- 尾部 Start -->
+            <footer id="footer">
+                <div id="NIE-copyRight"></div>
+            </footer>
+            <!-- 尾部 End -->    
+        <!-- 主体 End -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--分享内容 begin-->
+<div id="shareBox" class="hide">
+	<p class="text">《天下3》五年巨变，一触即发！全新版本即将于12月5日震撼开测！现在预约新服，轻松4步，就可拥有4大特权！不仅可以抢注心爱的角色名、享受新门派飞速升级，还能在开测之后免排队、得到酷炫飞行坐骑哦！</p>
+	<img src="" />
+</div>
+<!--分享内容 end-->
+
+<script type="text/javascript">
+    $(function() {
+        nie.config.copyRight.setWhite();
+
+        nie.use(['util.share', "nie.util.qUrs"],function(){
+
+            var shareText = $('#shareBox .text').text() || '',
+                    shareImg = $('#shareBox img').attr('src') || '';
+
+            var topShare = nie.util.share({
+                fat: "#topShare",
+                type: 1,
+                defShow: [5, 2, 1, 3],
+                title: shareText,
+                img: shareImg
+            });
+            $("#topShare").find(".NIE-share-txt").remove().end().find(".NIE-share-more em").html('&nbsp;');
+
+            var o1=new nie.util.qUrs({
+                holder:"#f1",
+                "type":1,
+                "msgType":1
+            });
+        });
+
+    });
+</script>
+<script type="text/javascript" src="http://union.netease.com/gs2/union/anti/js"></script>
+<script type="text/javascript">
+	var rand2 =function(num){return Math.floor(Math.random()*num)+1;}
+	document.write("<iframe  src=\"http://gad.netease.com/gad/point?point_id=1376&s=YLpyGWa9j38uDAelwg8ZvnGfW7w%3D&cache="+rand2(9999999)+"\" width=\"0\" height=\"0\" class=\"hide\"><\/iframe>");
+</script>
+</body>
+</html>

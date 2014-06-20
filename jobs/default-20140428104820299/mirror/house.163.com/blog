@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>网易房产博客</title>
+<base target="_blank" />
+<link type="text/css" rel="stylesheet" href="http://blog.163.com/pub/services/css/blogHome.css?005" />
+<link href="http://img1.cache.netease.com/house/css09/blog/blog11.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="blog-163-com">
+<div class="g-doc" id="top">
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.8.css" />
+<script charset="gb2312" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" language="javascript" type="text/javascript"></script>
+<div class="NTES-nav">
+	<span class="nav-link NTES-nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://www.familydoctor.com.cn/"  rel="nofollow">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://caipiao.163.com/#from=dh">彩票</a>-<span class="nav-link-item" id="navMore">更多<span class="link-item-more" style="display: none;">
+			<a href="http://baoxian.163.com/car/index.html?from=dh">车险</a><a href="http://digi.163.com/">数码</a><a href="http://war.163.com/">军事</a><a href="http://fashion.163.com/">时尚</a><a href="http://travel.163.com/">旅游</a><a href="http://blog.163.com/?frompagenav">博客</a><a href="http://jiu.163.com">酒香</a>
+		</span></span>|</span>
+	<div class="rightCon">
+		<div class="NTES-link code-num">
+			<span class="left"><a href="http://email.163.com/" class="cBlue"  rel="nofollow">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue"  rel="nofollow">通行证登录</a> | </span><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin"  rel="nofollow">微博</a>
+		</div>
+	</div>
+	<a href="http://www.163.com/rss" class="NTES-nav-rss"  rel="nofollow">rss</a>
+</div>
+<script>
+//<![CDATA[
+NTES.ready( function($){
+$("#navMore").addEvent("click", function(e){
+	NTES($("#navMore .link-item-more")[0]).style.display = this.style.display == "block" ? "none" : "block";
+//	e.preventDefault();
+	e.cancelBubble = true;
+	document.onclick = function(){
+		NTES($("#navMore .link-item-more")[0]).style.display = "none";
+	}
+});
+	var P_INFO = NTES.cookie.get("P_INFO");
+	var S_INFO = NTES.cookie.get("S_INFO");
+	if(P_INFO){
+		var mailconfig = {
+			"163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+			"126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+			"yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+			"188" : "http://reg.mail.188.com/servlet/enter",
+			"vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+		};
+		var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+		var username =  passport.substr(0, P_INFO.indexOf("@"));
+		var logstate = P_INFO.split("|")[2];
+		var loginframe = "";
+		var url = "http://t.163.com/service/newMessage/" + passport + "/1/0/0/0/1";
+		var pspt = passport.length >= 6 ? passport.substr(0,6)+"…" : passport;
+		/@([^*]+)/.test(passport);
+		var logdomain = RegExp.$1;
+		if(P_INFO && S_INFO ) {
+			var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>',
+				ntes_nav_html = '<div class="NTES-nav-link-chexian"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://g.163.com/a?CID=13579&Values=505269036&Redirect=http://www.familydoctor.com.cn/">健康</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>|</div>';
+			if(mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入邮箱</a>';
+			}
+			if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+				entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入博客</a><a href="http://photo.163.com/?username='+passport+'\">进入相册</a>';
+			}
+			entrylink_html += '<a href="http://yuehui.163.com/">进入约会</a><a href="http://t.163.com">进入微博</a><a href="http://caipiao.163.com/#from=dh">进入彩票</a><a href="http://baoxian.163.com/car/index.html?from=dh">进入车险</a><a href="http://baoxian.163.com/#from=dh">进入保险</a><a href="http://mall.163.com/#from=dh">进入商城</a>';
+			if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+				loginframe = '<iframe allowTransparency=\"true\" style=\"width:45px; height:20px; float:left; *margin-top:2px; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.163.com/mailinfo/shownewmsg_www_0819.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+			}
+			var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div><span class="left c-b3">(</span>'+loginframe+'<span class="left c-b3"> | </span><span id="wbLoginAfter"><a href="http://t.163.com/?f=catopmicoblogmsg" class="NTES-nav-wbLogin" style="color:#f6f6f6;" title="进入网易微博">微博</a></span><span class="left c-b3">) | </span><a class=\"ntes-usercenter-loginout left\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+			$(".NTES-nav-link")[0].innerHTML = ntes_nav_html;
+			$(".NTES-link")[0].innerHTML = login_html;
+			$("#ntes_usercenter_name").addEvent("click", function(e){
+				$("#ntes_usercenter_entry").style.display = $("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+				e.preventDefault();
+				e.cancelBubble = true;
+				document.onclick = function(){
+					$("#ntes_usercenter_entry").style.display = "none";
+				}
+			})
+			NTES.ajax.importJs(url, function() {
+				if (typeof window.resultStatus != "undefined") {
+					if (NTES("#wbLoginAfter")) {
+						var userId = resultStatus.userId;
+						var wbName = resultStatus.name;
+						var wbNameMod = wbName.replace(/[^\x00-\xff]/g,"*?");
+						var xxlen = wbNameMod.substr(0,10).indexOf("*") < 0 ? 0 : wbNameMod.substr(0,10).match(/\*/ig).length;
+						var wbNameEnd = (wbNameMod.length <= 10) ? "" : "…";
+						var totalCount = (parseInt(resultStatus.htlCount) < 100) ? parseInt(resultStatus.htlCount) : "99";
+						var totalCountEnd = (parseInt(resultStatus.htlCount) < 100) ? totalCount : totalCount+"+";
+						if(xxlen > 0){
+							if(wbNameMod.substr(9,1) == "?"){
+								wbName = wbName.substr(0,10-xxlen) + wbNameEnd;
+							}else{
+								wbName = wbName.substr(0,9-xxlen) + wbNameEnd;
+							}
+						}else{
+							wbName = wbName.substr(0,10) + wbNameEnd;
+						}
+						if (totalCount > 0) {
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.News' class='NTES-nav-wbMsg fB' style='color:#ba2636;' title='" + wbName + "新消息："+ totalCountEnd +"'>"+ totalCountEnd +"</a>";
+						}else{
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/?f=catopmicoblogmsg.enter' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='进入网易微博'>微博</a>";
+						}
+						if(userId == 0){
+							NTES("#wbLoginAfter").innerHTML = "<a href='http://t.163.com/service/autoOpenAccount?autoFollow=1&needRedirect=1&f=catopmicoblogmsg.open' class='NTES-nav-wbLogin' style='color:#f6f6f6;' title='开通网易微博'>微博</a>";
+						}
+					};
+				};
+			}, "UTF-8");
+		};
+	}
+})
+//]]>
+</script><div class="ad960">
+<div class="left">
+<iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=house&cat=other&type=column735x100&location=1" width="735" height="100" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+<div class="right">
+<iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=house&cat=other&type=logo210x100&location=1" width="210" height="100" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+</div><span class="blank9"></span>	
+<div class="g-hd">
+		<div class="hd-logo">
+			<h1><a href="http://blog.163.com/" id="top"><img src="http://img1.cache.netease.com/house/img09/blog0731/bloglogo.gif" /><br />网易房产</a></h1>
+			<h2><a href="http://gz.house.163.com/blog/"><img src="http://img1.cache.netease.com/house/img09/blog0731/bloglogo2.gif" /></a></h2>
+			<div id="hd-more" class="hd-more">
+                <div class="arw-1">网易博客</div>
+                <ul class="ch-list" style="display:none;">
+                    <li><a href="http://blog.163.com/" target="_self">博客首页</a></li>
+                    <li><a href="http://pp.blog.163.com/" target="_self">博客拍拍</a></li>
+                    <li><a href="http://blog.163.com/public/theme/" target="_self">精美风格</a></li>
+                    <li><a href="http://q.163.com/#home" target="_self">博客圈子</a></li>
+                    <li><span class="line"></span></li>
+                    <li><a href="http://blog.163.com/findFriend.do?type=5" target="_self">找 朋 友</a></li>
+                    <li><a href="http://blog.163.com/clone/clone.html" target="_self">一键搬家</a></li>
+                    <li><a href="http://blog.163.com/services/wapblog.html" target="_self">手机博客</a></li>
+                    <li><a href="http://blog.163.com/services/emsblog.html" target="_self">短信写博</a></li>
+                    <li><span class="line"></span></li>
+                    <li><a href="http://blog.163.com/services/all.html">更多&gt;&gt;</a></li>
+                </ul>
+            </div>
+            <div class="currurl"><a href="http://www.163.com/">网易首页</a>&gt;<a href="http://gz.house.163.com/">网易地产</a>&gt;<a href="http://gz.house.163.com/blog/">房产博客</a></div>
+		</div>
+		<div class="hd-nav">
+			<ul class="nav-list">
+				<li class="first"><a href="http://gz.house.163.com/" target="_self" class="current">首页</a></li>
+				<li class="oth"><a href="http://gz.house.163.com/news/" target="_self">新闻中心</a></li>
+				<li><a href="http://gz.house.163.com/newhouse/" target="_self">新房</a></li>
+				<li class="oth"><a href="http://gz.house.163.com/esf/" target="_self">二手房</a></li>
+				<li><a href="http://gz.house.163.com/money/" target="_self">投资</a></li>
+				<li><a href="http://gz.house.163.com/home/" target="_self">家居</a></li>
+				<li class="oth"><a href="http://bbs.gz.house.163.com/" target="_self">论坛</a></li>
+				<li><a href="http://gz.house.163.com/blog/" target="_self">博客</a></li>
+				<li><a href="http://gz.house.163.com/ztlist/" target="_self">专题</a></li>
+             			</ul>
+			<div class="hd-cld">
+                <span class="arw-2" id="getCalendar">博客日历</span>
+                <div id="calendarBox" class="calendarMain">
+                    <div class="selectDate"><a id="preMonth" href="#" target="_self">上一月</a> <span id="setYear"></span>年<span id="setMonth"></span>月 <a id="nextMonth" href="#" target="_self">下一月</a></div>
+                    <div class="title">
+                        <ul><li class="endweek">日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li class="endweek">六</li></ul>
+                    </div>
+                    <div class="list">
+                        <ul id="calendarList"><li></li></ul>
+                    </div>
+                </div>
+            </div>      
+			<span class="nav-l"></span>
+			<span class="nav-r"></span>
+		</div>
+	</div>
+<div class="area">
+	<span class="blank12 bgw"></span>
+	<div class="colL">
+    	<div class="focusImg">
+        	<ul class="ficnt" id="focnt">
+            	<li class="on"><a href="http://ysunwoods.blog.163.com/blog/static/7259056720137239538405/"><img src="http://img2.cache.netease.com/house/2011/12/12/201112121031367785b.jpg" width="270" height="175" /></a><a href="http://ysunwoods.blog.163.com/blog/static/7259056720137239538405/">杨红旭：四季度房价坚挺，明年将降温 </a></li>
+            	<li ><a href="http://san.town.blog.163.com/blog/static/12229297020137230106958/"><img src="http://img2.cache.netease.com/house/2013/8/23/2013082314110761cb7.jpg" width="270" height="175" /></a><a href="http://san.town.blog.163.com/blog/static/12229297020137230106958/">李骁：改革后第三次伟大转型 </a></li>
+            	<li ><a href="http://garydens.blog.163.com/blog/static/99885833201363104025160/"><img src="http://img6.cache.netease.com/house/2012/11/13/2012111309542375452.jpg" width="270" height="175" /></a><a href="http://garydens.blog.163.com/blog/static/99885833201363104025160/">邓浩志：不能拼租房 还住得起吗？</a></li>
+            </ul>
+            <ul class="finav" id="fonav"><li class="on">1</li><li>2</li><li>3</li></ul>
+        </div>
+        <div class="blogph">
+        	<h5 class="titlebar"><span>往日头条<img src="http://img1.cache.netease.com/house/img09/blog0731/blog01.gif" /></span></h5>
+            <ul class="periodlist">
+                       <li  class="other"><em>1</em><a href="http://ysunwoods.blog.163.com/blog/static/7259056720137239538405/">杨红旭：四季度房价坚挺，明年将降温 </a></li>
+                       <li  class="other"><em>2</em><a href="http://jackzhudaming.blog.163.com/blog/static/111217680201372281520145/">朱大鸣：地方巨额债务绑架了房地产</a></li>
+                       <li  class="other"><em>3</em><a href="http://garydens.blog.163.com/blog/static/99885833201372005113275/">邓浩志:调控压缩供应量 多城新房库存告急</a></li>
+                       <li ><em>4</em><a href="http://guanggaozhw.blog.163.com/blog/static/34523261201371585452517/">张宏伟:限购会放宽 为长效调控出台做铺垫</a></li>
+                       <li ><em>5</em><a href="http://san.town.blog.163.com/blog/static/122292970201371495827752/">李骁：不该给温州放松限购乱扣帽子</a></li>
+                       <li ><em>6</em><a href="http://ysunwoods.blog.163.com/blog/static/72590567201371391825237/">杨红旭：楼市爆热情形何时会结束</a></li>
+                       <li ><em>7</em><a href="http://garydens.blog.163.com/blog/static/9988583320137853959650/">邓浩志：楼市调控新基调 不提"加强调控"</a></li>
+                       <li ><em>8</em><a href="http://chen-guoqiang.blog.163.com/blog/static/13645134420137711300381/">陈国强：每年新增土地有多少用在住宅上</a></li>
+                       <li ><em>9</em><a href="http://ysunwoods.blog.163.com/blog/static/7259056720137604245141/">杨红旭：7月住宅成交量普跌只是"假摔"</a></li>
+                       <li ><em>10</em><a href="http://ysunwoods.blog.163.com/blog/static/72590567201375814397/">杨红旭：房产税相当于给房价“吃中药”</a></li>
+                       <li ><em>11</em><a href="http://guanggaozhw.blog.163.com/blog/static/3452326120137591435840/">张宏伟：全国住宅7月成交"普跌"是假象</a></li>
+                       <li ><em>12</em><a href="http://ysunwoods.blog.163.com/blog/static/725905672013717594508/">杨红旭：政治局为何对楼市调控选择沉默？</a></li>
+                       <li ><em>13</em><a href="http://garydens.blog.163.com/blog/static/9988583320136301468187/">邓浩志：广州楼市调控新政呼之欲出？</a></li>
+                       <li ><em>14</em><a href="http://lizhanjun331.blog.163.com/blog/static/134203821201363094847680/">李战军：2013年上半年房地产市场研究</a></li>
+                       <li ><em>15</em><a href="http://garydens.blog.163.com/blog/static/99885833201362891331212/">邓浩志:房子卖得好的房企仍有3成中报预亏</a></li>
+            </ul>
+        </div>
+        <div class="optometre">
+        	<h5 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/EVRLUA.html" class="more">更多</a><span>踩盘·验房<img src="http://img1.cache.netease.com/house/img09/blog0731/blog02.gif" /></span></h5>
+            <ul class="picdeclist">
+<li>
+                	<a href="http://garygarden.blog.163.com/blog/static/2100609620102319271326/"><img height="60" width="115" alt="ppimg" src="http://img3.cache.netease.com/house/2010/4/1/20100401103231f8849.jpg" /></a><a href="http://garygarden.blog.163.com/blog/static/2100609620102319271326/" class="ztitle">踩盘偶遇吴启华</a><p>他相中了200㎡总统套房。<a href="http://garygarden.blog.163.com/blog/static/2100609620102319271326/">[详细]</a></p>
+                </li>
+			</ul>
+<ul class="titlestitle">
+                    <li ><span><a href="http://blog.163.com/elsunli@126/">李田</a></span><a href="http://blog.163.com/elsunli@126/blog/static/124723367201092243134151/" class="ztitle">元邦明月星辉--华而不抵的小复式</a></li>
+                    <li ><span><a href="http://tutengjing.blog.163.com/">图腾镜</a></span><a href="http://tutengjing.blog.163.com/blog/static/127999725201082011210937/" class="ztitle">观澜湖高端楼盘踩盘(组图)</a></li>
+                    <li ><span><a href="http://chenyunfengblog.blog.163.com/">陈云峰</a></span><a href="http://chenyunfengblog.blog.163.com/blog/static/13655217120108145250292/" class="ztitle">周末品鉴远洋·万和城(图)</a></li>
+                    <li ><span><a href="http://yangguang100yg.blog.163.com/">阳光100</a></span><a href="http://yangguang100yg.blog.163.com/blog/static/1305666962010824195133/" class="ztitle">南开时光6米挑高复式公馆</a></li>
+                    <li  class="other"><span><a href="http://pmm01.blog.163.com/">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/12365888220106128330881/" class="ztitle">特殊时期买房，要查验什么？</a></li>
+                    <li  class="other"><span><a href="http://zyjjxj.blog.163.com/">曾英杰</a></span><a href="http://zyjjxj.blog.163.com/blog/static/3467555201066105733590/" class="ztitle">南沙房地产市场五大特点</a></li>
+            </ul>
+        </div>
+        <div class="byway">
+        	<h5 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/gossip.html" class="more">更多</a><span>八卦·小道<img src="http://img1.cache.netease.com/house/img09/blog0731/blog03.gif" class="barimg" /></span></h5>
+            <ul class="piclist">
+            	<li><a href="http://street-talk.blog.163.com/blog/static/12336001620108215854205/"><img width="100" height="60" src="http://img4.cache.netease.com/house/2010/9/2/201009021403399169f.jpg" alt="赵汉忠加入星浩" /></a><a href="http://street-talk.blog.163.com/blog/static/12336001620108215854205/">赵汉忠加入星浩</a></li>
+            	<li><a href="http://lizongmiao.blog.163.com/blog/static/485574622010654530901/"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/7/9/20100709100052aeea1.jpg" alt="黄俊灿任金地总裁" /></a><a href="http://lizongmiao.blog.163.com/blog/static/485574622010654530901/">黄俊灿任金地总裁</a></li>
+           	 </ul>
+			<ul class="titlestitle">
+                    <li ><span><a target="_blank" href="http://street-talk.blog.163.com/">街谈</a></span><a href="http://street-talk.blog.163.com/blog/static/12336001620112253192141/" class="ztitle">北京约谈房企：不宣传不受限购影响</a></li>
+                    <li ><span><a target="_blank" href="http://street-talk.blog.163.com/">街谈</a></span><a href="http://street-talk.blog.163.com/blog/static/123360016201122531937979/" class="ztitle">万科30亿偷买深圳“航海学校”？</a></li>
+                    <li ><span><a target="_blank" href="http://street-talk.blog.163.com/">街谈</a></span><a href="http://street-talk.blog.163.com/blog/static/12336001620112253222858/" class="ztitle">地方房价控制目标为涨幅10%-15%</a></li>
+                    <li ><span><a target="_blank" href="http://street-talk.blog.163.com/">街谈</a></span><a href="http://street-talk.blog.163.com/blog/static/1233600162011013103718614/" class="ztitle">传上海两会不讨论房产税相关议题 </a></li>
+                    <li  class="other"><span><a target="_blank" href="http://street-talk.blog.163.com/">街谈</a></span><a href="http://street-talk.blog.163.com/blog/static/123360016201010152112691/?fangchan" class="ztitle">传有关部委将依《价格法》干预房价</a></li>
+            </ul>
+        </div>
+        <div class="geomancy">
+        	<h5 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/Geomancy.html" class="more">更多</a><span>家居·风水<img src="http://img1.cache.netease.com/house/img09/blog0731/blog04.gif" class="barimg" /></span></h5>
+            <ul class="picdeclist">
+<li>
+                	<a href="http://fuhuizhenbao.blog.163.com/blog/static/17080908420108154385681/"><img height="60" width="115" alt="ppimg" src="http://img4.cache.netease.com/house/2010/9/16/20100916083017fe612.jpg" /></a><a href="http://fuhuizhenbao.blog.163.com/blog/static/17080908420108154385681/" class="ztitle">书房收纳风水的讲究</a><p>书桌收纳不可面对主人房或卫生间的<a href="http://fuhuizhenbao.blog.163.com/blog/static/17080908420108154385681/">[详细]</a></p>
+                </li>
+			</ul>
+			<ul class="titlestitle">
+                    <li ><span><a target="_blank" href="http://www.gjzy.com.blog.163.com/">董易林</a></span><a href="http://www.gjzy.com.blog.163.com/blog/static/72921458201101912445803/" class="ztitle">结合命理所取的名字才最适合</a></li>
+                    <li ><span><a href="http://fuhuizhenbao.blog.163.com/">福慧珍宝</a></span><a href="http://fuhuizhenbao.blog.163.com/blog/static/17080908420108153226770/" class="ztitle">酒店结婚布置洞房的风水讲究</a></li>
+                    <li ><span><a href="http://fxf-azhong.blog.163.com/">馮小鳳</a></span><a href="http://fxf-azhong.blog.163.com/blog/static/49491304201081544645516/" class="ztitle">如何按五行、生肖种植物(图)</a></li>
+                    <li ><span><a href="http://fuhuizhenbao.blog.163.com/">福慧珍宝</a></span><a href="http://fuhuizhenbao.blog.163.com/blog/static/170809084201081410054108/" class="ztitle">卧室里的颜色轻淡明快为好</a></li>
+                    <li  class="other"><span><a href="http://dong.yi.qi.blog.163.com/">董易奇</a></span><a href="http://dong.yi.qi.blog.163.com/blog/static/73824844201072623830687/" class="ztitle">农历八月生肖运程</a></li>
+                    <li  class="other"><span><a href="http://www.gjzy.com.blog.163.com/">董易林</a></span><a href="http://www.gjzy.com.blog.163.com/blog/static/72921458201052310278508/" class="ztitle">老人房装饰的六大风水要点</a></li>
+            </ul>
+        </div>
+        <div class="life">
+        	<h5 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/life.html" class="more">更多</a><span>名人日记<img src="http://img1.cache.netease.com/house/img09/blog0731/blog05.gif" class="barimg" /></span></h5>      
+			<ul class="piclist">
+            	<li><a href="http://chenyunfengblog.blog.163.com/blog/static/1365521712010515250689/"><img width="100" height="60" src="http://img4.cache.netease.com/house/2010/8/4/201008040904352c5e8.jpg" alt="印尼巴厘岛之行" /></a><a href="http://chenyunfengblog.blog.163.com/blog/static/1365521712010515250689/">印尼巴厘岛之行</a></li>
+            	<li><a href="http://hongyan-cai.blog.163.com/blog/static/13339428420106176280651/"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/7/21/2010072109412653107.jpg" alt="大连巧遇叶乔波" /></a><a href="http://hongyan-cai.blog.163.com/blog/static/13339428420106176280651/">大连巧遇叶乔波</a></li>
+           	 </ul>
+			<ul class="titlestitle">
+                    <li ><span><a target="_blank" href="http://blog.163.com/zhang_yunji/">张云计</a></span><a href="http://blog.163.com/zhang_yunji/blog/static/12385436220101025104623134/" class="ztitle">感恩节的体味</a></li>
+                    <li ><span><a target="_blank" href="http://chenyunfengblog.blog.163.com/?fangchan">陈云峰</a></span><a href="http://chenyunfengblog.blog.163.com/blog/static/136552171201010197190439/?fangchan" class="ztitle">王石将担任中经联盟荣誉主席！</a></li>
+                    <li ><span><a target="_blank" href="http://feng-lun.blog.163.com/?fangchan">冯仑</a></span><a href="http://feng-lun.blog.163.com/blog/static/147024928201010161140604/?fangchan" class="ztitle">微博让每个人都是记者、是通讯社</a></li>
+                    <li ><span><a href="http://chenyunfengblog.blog.163.com/?fangchan">陈云峰</a></span><a href="http://chenyunfengblog.blog.163.com/blog/static/13655217120101044510923/?fangchan" class="ztitle">地产江湖义气人!</a></li>
+                    <li  class="other"><span><a href="http://shi-yongqing.blog.163.com/?fangchan">施永青</a></span><a href="http://shi-yongqing.blog.163.com/blog/static/13184638620101029200551/?fangchan" class="ztitle">中国早就该收紧稀土出口</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="colM">
+    	<div class="content">
+        	<h2 class="bigsize"><a href="http://jackzhudaming.blog.163.com/blog/static/111217680201372605139512/">朱大鸣：开发商杀回马枪 重返一线城市</a></h2>
+            <p><a href="http://sunny-9196271.blog.163.com/blog/static/16029932012861124466/">牛刀:政府换届后房价会断崖式下跌</a> | <a target="_blank" href="http://xiaochongfan.blog.163.com/blog/static/130566095201286111745231/">范小冲:房企避“重”就“轻”</a></p>
+            <p><a href="http://jackzhudaming.blog.163.com/blog/static/111217680201273101231686/">朱大鸣:股市崩盘房地产还能崩溃吗？</a> | <a target="_blank" href="http://guanggaozhw.blog.163.com/blog/static/3452326120128103036892/">张宏伟:房产投资回升 但不会逆转</a></p>
+            <p><a href="http://huihudichan.blog.163.com/blog/static/12390290620128495336503/">徽湖:小产权房比商品房为何便宜70%</a> | <a target="_blank" href="http://mayaoch01.blog.163.com/blog/static/12904631720127300210932/">马跃成:两把调控利剑将捅破楼市僵局</a></p>
+          <ul class="titlestitle">
+                    <li ><span><a target="_blank" href="http://yahaojingji.blog.163.com/">亚豪机构</a></span><a href="http://yahaojingji.blog.163.com/blog/static/128395914201281094051163/" class="ztitle">北京独栋别墅有高价却无旺市</a></li>
+                    <li ><span><a target="_blank" href="http://yetanblog.blog.163.com/">叶檀</a></span><a href="http://yetanblog.blog.163.com/blog/static/7566974020128711577187/" class="ztitle">国税总局对房产税态度太暧昧</a></li>
+                    <li ><span><a target="_blank" href="http://shitonghan.blog.163.com/">韩世同</a></span><a href="http://shitonghan.blog.163.com/blog/static/815517682012878420743/" class="ztitle">"秋裤"楼销售差 开发商差钱</a></li>
+                    <li  class="other"><span><a target="_blank" href="http://lgs1.blog.163.com/">李国胜</a></span><a href="http://lgs1.blog.163.com/blog/static/276736320128565553746/" class="ztitle">购房者可促现房销售</a></li>
+                    <li  class="other"><span><a target="_blank" href="http://blog.163.com/beicao_shi/">北草</a></span><a href="http://blog.163.com/beicao_shi/blog/static/138722081201284101141869/" class="ztitle">楼市外资异动缺提升经济信心</a></li>
+            </ul>
+       </div>
+       <div class="treatise">
+       		<h4 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/blogers.html" class="more">更多</a><img src="http://img1.cache.netease.com/house/img09/blog0731/blog08.gif" title="名博新论" /></h4>
+            <ul class="titlestitle hline">
+                    <li><span><a target="_blank" href="http://jackzhudaming.blog.163.com/">朱大鸣</a></span><a href="http://jackzhudaming.blog.163.com/blog/static/111217680201372605139512/" class="ztitle">开发商杀回马枪重返一线城市</a></li>
+                    <li><span><a target="_blank" href="http://garydens.blog.163.com/">邓浩志</a></span><a href="http://garydens.blog.163.com/blog/static/99885833201372613213138/" class="ztitle">广州郊区盘再现日光</a></li>
+                    <li><span><a target="_blank" href="http://guanggaozhw.blog.163.com/">张宏伟</a></span><a href="http://guanggaozhw.blog.163.com/blog/static/34523261201372610457373/" class="ztitle">新城圈地缺乏产业或致"鬼城"</a></li>
+                    <li class="other"><span><a target="_blank" href="http://jackzhudaming.blog.163.com/">朱大鸣</a></span><a href="http://jackzhudaming.blog.163.com/blog/static/111217680201372281520145/" class="ztitle">地方巨额债务绑架了房地产</a></li>
+                    <li class="other"><span><a target="_blank" href="http://ysunwoods.blog.163.com/">杨红旭</a></span><a href="http://ysunwoods.blog.163.com/blog/static/725905672013721244910/" class="ztitle">投资商业地产是个技术活</a></li>
+            </ul>
+            <ul  class="titlestitle hline" >
+                    <li><span><a target="_blank" href="http://garydens.blog.163.com/">邓浩志</a></span><a href="http://garydens.blog.163.com/blog/static/998858332013722115559207/" class="ztitle">金九银十前瞻 量价齐涨</a></li>
+                    <li><span><a target="_blank" href="http://garydens.blog.163.com/">邓浩志</a></span><a href="http://garydens.blog.163.com/blog/static/99885833201372005113275/" class="ztitle">调控压缩供应 新房库存告急</a></li>
+                    <li><span><a target="_blank" href="http://ysunwoods.blog.163.com/">杨红旭</a></span><a href="http://ysunwoods.blog.163.com/blog/static/72590567201371953159898/" class="ztitle">房价新拐点不会很快到来</a></li>
+                    <li class="other"><span><a target="_blank" href="http://mayaoch01.blog.163.com/">马跃成</a></span><a href="http://mayaoch01.blog.163.com/blog/static/12904631720137198560881/" class="ztitle">楼市泡沫于无声处听惊雷</a></li>
+                    <li class="other"><span><a target="_blank" href="http://yahaojingji.blog.163.com/">亚豪机构</a></span><a href="http://yahaojingji.blog.163.com/blog/static/12839591420137218585907/" class="ztitle">刚需盘热销创近6周新高</a></li>
+            </ul>
+            <ul  class="titlestitle" >
+                    <li><span><a target="_blank" href="http://lgs1.blog.163.com/">李国胜</a></span><a href="http://lgs1.blog.163.com/blog/static/27673632013719103857509/" class="ztitle">调控进入尾期房价更难降</a></li>
+                    <li><span><a target="_blank" href="http://guanggaozhw.blog.163.com/">张宏伟</a></span><a href="http://guanggaozhw.blog.163.com/blog/static/34523261201371585452517/" class="ztitle">限购放宽为长效调控出台铺垫</a></li>
+                    <li><span><a target="_blank" href="http://garydens.blog.163.com/">邓浩志</a></span><a href="http://garydens.blog.163.com/blog/static/998858332013714055932/" class="ztitle">广州商用公寓持续火爆</a></li>
+                    <li class="other"><span><a target="_blank" href="http://yahaojingji.blog.163.com/">亚豪机构</a></span><a href="http://yahaojingji.blog.163.com/blog/static/128395914201371583935542/" class="ztitle">8月北京刚需盘再受热捧</a></li>
+                    <li class="other"><span><a target="_blank" href="http://san.town.blog.163.com/">李骁</a></span><a href="http://san.town.blog.163.com/blog/static/122292970201371495827752/" class="ztitle">不该给温州放松限购乱扣帽子</a></li>
+            </ul>
+       </div>
+       <div class="newarticle">
+       		<h4 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/newblog.html" class="more">更多</a><img src="http://img1.cache.netease.com/house/img09/blog0731/blog09.gif" title="最新文章" /></h4>
+            <ul class="titlestitle">
+                    <li><span><a target="_blank" href="http://szbasic01.blog.163.com/">孙波</a></span><a href="http://szbasic01.blog.163.com/blog/static/123348408201101315644483/" class="ztitle">非“城”勿扰——新造城时代下区域开发攻略</a></li>
+                    <li><span><a target="_blank" href="http://blog.163.com/dongqi_777@126/">董琪</a></span><a href="http://blog.163.com/dongqi_777@126/blog/static/1671781652010112302516337/" class="ztitle">中介管理杂谈之三：培训的误区</a></li>
+                    <li><span><a target="_blank" href="http://blog.163.com/dongqi_777@126/">董琪</a></span><a href="http://blog.163.com/dongqi_777@126/blog/static/1671781652010112302411245/" class="ztitle">中介管理杂谈之二：错误薪酬阻碍企业发展</a></li>
+                    <li class="other"><span><a target="_blank" href="http://blog.163.com/dongqi_777@126/">董琪</a></span><a href="http://blog.163.com/dongqi_777@126/blog/static/1671781652010112302245520/" class="ztitle">中介管理杂谈之一：行程管理的误区</a></li>
+                    <li class="other"><span><a target="_blank" href="http://houze01.blog.163.com/">高卓</a></span><a href="http://houze01.blog.163.com/blog/static/1710966622010111054320185/" class="ztitle">“最严格调控年”危机即是转机</a></li>
+                    <li><span><a target="_blank" href="http://pmm01.blog.163.com/?fangchan">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/123658882201010307500699/?fangchan" class="ztitle">房价若大跌，许多人会跳楼</a></li>
+                    <li><span><a target="_blank" href="http://blog.163.com/elsunli@126/">李田</a></span><a href="http://blog.163.com/elsunli@126/blog/static/124723367201010289641537/" class="ztitle">广州南站地王体现西关板块潜力</a></li>
+                    <li><span><a target="_blank" href="http://longzhaoshou.blog.163.com/">吴彬</a></span><a href="http://longzhaoshou.blog.163.com/blog/static/9988282010101994727236/" class="ztitle">浅析我国城市土地资产经营面临的主要问题</a></li>
+                    <li class="other"><span><a target="_blank" href="http://garydens.blog.163.com/">邓浩志</a></span><a href="http://garydens.blog.163.com/blog/static/9988583320101099222162/" class="ztitle">广州“准地王”出让有玄机</a></li>
+                    <li class="other"><span><a href="http://longzhaoshou.blog.163.com/">吴彬</a></span><a href="http://longzhaoshou.blog.163.com/blog/static/9988282010931114739905/" class="ztitle">浅谈土地资产经营转变管理模式</a></li>
+            </ul>
+       </div>
+		<div class="statute">
+       		<h4 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/Policy.html" class="more">更多</a><img src="http://img1.cache.netease.com/house/img09/blog0731/blog10.gif" title="政策法规" /></h4>
+            <ul class="titlestitle">
+                    <li><span><a href="http://lizhanjun331.blog.163.com/">李战军</a></span><a href="http://lizhanjun331.blog.163.com/blog/static/13420382120107275262176/" class="ztitle">房地产调控政策人心向背已是一目了然</a></li>
+                    <li><span><a href="http://z-linxiao.blog.163.com/">章林晓</a></span><a href="http://z-linxiao.blog.163.com/blog/static/132856126201072511826988/" class="ztitle">进退两难的房贷政策</a></li>
+                    <li><span><a href="http://li.wenjiang.blog.163.com/">黎文江</a></span><a href="http://li.wenjiang.blog.163.com/blog/static/12111172520107265580214/" class="ztitle">房地产新政下买卖双方观望窘局分析</a></li>
+                    <li class="other"><span><a href="http://xumtszed.blog.163.com/">徐明天</a></span><a href="http://xumtszed.blog.163.com/blog/static/138011806201072503022506/" class="ztitle">房地产激怒中央搞政治体制改革</a></li>
+                    <li class="other"><span><a href="http://z-linxiao.blog.163.com/">章林晓</a></span><a href="http://z-linxiao.blog.163.com/blog/static/132856126201072375250112/" class="ztitle">楼市新政百日后的两难</a></li>
+                    <li><span><a href="http://san.town.blog.163.com/">李骁</a></span><a href="http://san.town.blog.163.com/blog/static/122292970201072355228835/" class="ztitle">李克强8天两提打击投机说明调控不会放松</a></li>
+                    <li><span><a href="http://chentaow2005.blog.163.com/">陈涛</a></span><a href="http://chentaow2005.blog.163.com/blog/static/46587337201072375958483/" class="ztitle">变堵为疏：房地产调控的出路</a></li>
+                    <li><span><a href="http://jackieshg.blog.163.com/">尚里巴人</a></span><a href="http://jackieshg.blog.163.com/blog/static/1222642392010720153029/" class="ztitle">暂停三套房贷很傻很天真</a></li>
+                    <li class="other"><span><a href="http://z-linxiao.blog.163.com/">章林晓</a></span><a href="http://z-linxiao.blog.163.com/blog/static/1328561262010718104756648/" class="ztitle">两大资金链条左右调控走向</a></li>
+                    <li class="other"><span><a href="http://sunny-9196271.blog.163.com/">牛刀</a></span><a href="http://sunny-9196271.blog.163.com/blog/static/1602993201071842017582/" class="ztitle">北京预售房款监管斩断了炒楼资金链</a></li>
+            </ul>
+       </div>
+       <div class="nvest">
+       		<h4 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/investment.html" class="more">更多</a><img src="http://img1.cache.netease.com/house/img09/blog0731/blog11.gif" title="投资置业" /></h4>
+            <ul class="titlestitle">
+                    <li><span><a target="_blank" href="http://lixn2828.blog.163.com/?fangchan">李小宁</a></span><a href="http://lixn2828.blog.163.com/blog/static/1369592592010101510170158/?fangchan" class="ztitle">豪宅的改造要诀</a></li>
+                    <li><span><a target="_blank" href="http://pmm01.blog.163.com/?fangchan">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/123658882201010168140390/?fangchan" class="ztitle">2010年底，会买房还要会理财</a></li>
+                    <li><span><a href="http://lixn2828.blog.163.com/?fangchan">李小宁</a></span><a href="http://lixn2828.blog.163.com/blog/static/13695925920101019400172/?fangchan" class="ztitle">如何挑选塔楼？</a></li>
+                    <li class="other"><span><a href="http://pmm01.blog.163.com/?fangchan">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/12365888220109258220665/?fangchan" class="ztitle">初次买房需要考虑的几个问题</a></li>
+                    <li class="other"><span><a href="http://cnfreeman.blog.163.com/">陈小生</a></span><a href="http://cnfreeman.blog.163.com/blog/static/1753104920109257914145/" class="ztitle">市场不明朗的情况下什么样的房子好卖？</a></li>
+                    <li><span><a href="http://pmm01.blog.163.com/">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/12365888220109148380568/" class="ztitle">买房，如何注意现代风水禁忌？</a></li>
+                    <li><span><a href="http://pmm01.blog.163.com/">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/12365888220109138290882/" class="ztitle">二次调控下，女性买房如何扬长避短？</a></li>
+                    <li><span><a href="http://pmm01.blog.163.com/">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/12365888220108278240924/" class="ztitle">白领丽人：有了婚房，却不想结婚</a></li>
+                    <li class="other"><span><a href="http://pmm01.blog.163.com/">高汉明</a></span><a href="http://pmm01.blog.163.com/blog/static/12365888220108258330130/" class="ztitle">越是职场压力大，越是要买房</a></li>
+                    <li class="other"><span><a href="http://jiangren0907.blog.163.com/">姜仁 </a></span><a href="http://jiangren0907.blog.163.com/blog/static/12162368420108111090299/" class="ztitle">投资商铺要三注意</a></li>
+            </ul>
+       </div>
+       <div class="plot">
+       		<h4 class="titlebar"><a href="http://gz.house.163.com/special/00873GTR/marketing.html" class="more">更多</a><img src="http://img1.cache.netease.com/house/img09/blog0731/blog12.gif" title="营销策划" /></h4>
+            <ul class="titlestitle">
+                    <li><span><a target="_blank" href="http://cnfreeman.blog.163.com/">陈小生</a></span><a href="http://cnfreeman.blog.163.com/blog/static/17531049201010169322516/?fangchan" class="ztitle">办理预售许可证要具备的21个条件</a></li>
+                    <li><span><a target="_blank" href="http://renwenbin09.blog.163.com/">任文彬</a></span><a href="http://renwenbin09.blog.163.com/blog/static/128151738201010126120963/?fangchan" class="ztitle">规模项目要分期开发的八个理由</a></li>
+                    <li><span><a href="http://hongyan-cai.blog.163.com/?fangchan">蔡鸿岩</a></span><a href="http://hongyan-cai.blog.163.com/blog/static/13339428420101079510206/?fangchan" class="ztitle">京城两个8号的“冷”与“热”</a></li>
+                    <li class="other"><span><a href="http://cnfreeman.blog.163.com/">陈小生</a></span><a href="http://cnfreeman.blog.163.com/blog/static/175310492010859854817/" class="ztitle">慈溪太屺地块进入前期准备</a></li>
+                    <li class="other"><span><a href="http://blog.163.com/liaoll_sh/">润物</a></span><a href="http://blog.163.com/liaoll_sh/blog/static/7402737520108160015/" class="ztitle">高薪就能留人才？</a></li>
+                    <li><span><a href="http://houzhenzhong2009.blog.163.com/">侯振中</a></span><a href="http://houzhenzhong2009.blog.163.com/blog/static/12161674920107267420732/" class="ztitle">终端拦截，打赢楼市营销战</a></li>
+                    <li><span><a href="http://blog.163.com/yang_leyu/">杨乐渝</a></span><a href="http://blog.163.com/yang_leyu/blog/static/12871925220107130540597/" class="ztitle">百度乐居模式让房地产营销更有效、更低碳</a></li>
+                    <li><span><a href="http://chenyunfengblog.blog.163.com/">陈云峰</a></span><a href="http://chenyunfengblog.blog.163.com/blog/static/13655217120107257150107/" class="ztitle">宏观调控下商业地产的机遇与挑战！</a></li>
+                    <li class="other"><span><a href="http://xiaochongfan.blog.163.com/">范小冲</a></span><a href="http://xiaochongfan.blog.163.com/blog/static/130566095201072352924454/" class="ztitle">面向二三线城市 打造未来生活方式</a></li>
+                    <li class="other"><span><a href="http://renwenbin09.blog.163.com/">任文彬</a></span><a href="http://renwenbin09.blog.163.com/blog/static/1281517382010721260360/" class="ztitle">谈谈异地项目销售团队之用人</a></li>
+            </ul>
+       </div>       
+    </div>
+    <div class="colR">
+        <div class="document">
+        	<h6 class="titlebar"><span>博客约稿</span></h6>
+        	<div class="titlespicpar">
+                    <h6><a href="http://163house.blog.163.com/blog/static/12326768720109183937544/" title="房产税箭已上弦 征税能降房 ">房产税箭已上弦 征税能降房 </a></h6>
+                    <p class="about">　　悬在中国房地产市场头上的利剑，真的快要落下来了。有房在手的人不乐意交房产税，没房一族则乐见房产税开征，以为房产税可以打压下房价。是这样吗？ <a href="http://163house.blog.163.com/blog/static/12326768720109183937544/" title="详细">[详细]</a></p>
+                </div>
+                <ul class="f12textlist">
+       <li><a href="http://z-linxiao.blog.163.com/blog/static/1328561262010815105141152/" title="章林晓：房产税对房价飙升无能为">章林晓：房产税对房价飙升无能为</a></li>
+       <li><a href="http://shanxc2001.blog.163.com/blog/static/1301063142010964426221/" title="单许昌：房产税不会在近期出来">单许昌：房产税不会在近期出来</a></li>
+       <li><a href="http://sun007chen.blog.163.com/blog/static/1329189422010914439333/" title="陈真诚：房产税或伤民不利政">陈真诚：房产税或伤民不利政</a></li>
+       <li><a href="http://yetanblog.blog.163.com/blog/static/756697402010915114419919/" title="叶檀：坚定支持征收房产税">叶檀：坚定支持征收房产税</a></li>
+            </ul>
+        </div>
+        <div class="oinfo">
+        	<h6 class="titlebar"><span>新博登录</span></h6>
+        	<ul class="picdeclist">
+<li>
+                	<a href="http://blog.163.com/ou_jun_wen/"><img height="56" width="76" alt="ppimg" src="http://img3.cache.netease.com/house/2010/5/24/20100524142940b3a4c.jpg" /></a><a href="http://blog.163.com/ou_jun_wen/" class="ztitle">经纬(中国)公司董事长区俊文</a><p></p>
+                </li>
+			</ul>
+            <ul class="f12textlist">
+       <li><a href="http://wangqiming2010.blog.163.com/" title="中国经营报上海站站长王其明">中国经营报上海站站长王其明</a></li>
+       <li><a href="http://jibaohongblog.blog.163.com/" title="上海望源房地产董事长季宝红">上海望源房地产董事长季宝红</a></li>
+       <li><a href="http://blog.163.com/beicao_shi/" title="资深营销企划人北草">资深营销企划人北草</a></li>
+       <li><a href="http://blog.163.com/dm-21/" title="北京国际投资公司总裁杜猛">北京国际投资公司总裁杜猛</a></li>
+            </ul>
+        </div>
+        <div class="famous">
+        	<h6 class="titlebar"><span>房产名博</span></h6>
+            <dl>
+            	<dt>【开发商】</dt>
+                <dd>
+<a href="http://renzhiqiangblog.blog.163.com/" >任志强</a><a href="http://blog.163.com/panshiyisoho/" >潘石屹</a><a href="http://feng-lun.blog.163.com/"  class="noline" >冯 仑</a></dd>
+<dd><a href="http://blog.163.com/yi_xiaodi/" >易小迪</a><a href="http://xiaochongfan.blog.163.com/" >范小冲</a><a href="http://gzyuying.blog.163.com/"  class="noline" >余 英</a></dd>
+<dd><a href="http://blog.163.com/13923865308@126/" >王恭敏</a><a href="http://tutengjing.blog.163.com/" >图腾镜</a><a href="http://blog.163.com/zhang_yunji/"  class="noline" >张云计</a></dd>
+            </dl>
+            <dl>
+            	<dt>【专家学者】</dt>
+<dd>
+<a href="http://blog.163.com/maoyushi88/" >茅于轼</a><a href="http://yetanblog.blog.163.com/" >叶檀</a><a href="http://ysunwoods.blog.163.com/"  class="noline">杨红旭</a></dd>
+<dd><a href="http://jwlbswy.blog.163.com/" >贾卧龙</a><a href="http://chen-guoqiang.blog.163.com/" >陈国强</a><a href="http://ppenggd.blog.163.com/"  class="noline">彭澎</a></dd>
+<dd><a href="http://huihudichan.blog.163.com/" >徽湖</a><a href="http://blog.163.com/yixianrongblog/" >易宪容</a><a href="http://jackzhudaming.blog.163.com/"  class="noline">朱大鸣</a></dd>
+            </dl>
+            <dl>
+            	<dt>【置业顾问】</dt>
+<dd>
+<a href="http://blog.163.com/yanyu.dan/" >颜宇丹</a><a href="http://shi-yongqing.blog.163.com/" >施永青</a><a href="http://liwjbj.blog.163.com/"  class="noline">李文杰</a></dd>
+<dd><a href="http://tigerwzz1.blog.163.com/" >王智中</a><a href="http://lizhanjun331.blog.163.com/" >李战军</a><a href="http://shitonghan.blog.163.com/"  class="noline">韩世同</a></dd>
+<dd><a href="http://gzliyuexiang.blog.163.com/" >李粤湘</a><a href="http://xiao.wenxiao.blog.163.com/" >肖文晓</a><a href="http://li.wenjiang.blog.163.com/"  class="noline">黎文江</a></dd>
+            </dl>
+            <dl>
+            	<dt>【媒体】</dt>
+<dd>
+<a href="http://huandongblog.blog.163.com/" >胡安东</a><a href="http://sheng.dalin.blog.163.com/" >盛大林</a><a href="http://tashan021.blog.163.com/"  class="noline">他  山</a></dd>
+<dd><a href="http://lizongmiao.blog.163.com/" >李宗苗</a><a href="http://yjsbb.blog.163.com/" >严家森</a><a href="http://yuanyihong168.blog.163.com/"  class="noline">袁一泓</a></dd>
+<dd><a href="http://sunny-9196271.blog.163.com/" >牛刀</a><a href="http://dongshanke01.blog.163.com/edit/" >赵磊</a><a href="http://rongmingmai1981.blog.163.com/"  class="noline">戎明迈</a></dd>
+            </dl>
+            <dl>
+            	<dt>【业内】</dt>
+<dd>
+<a href="http://guhaibo01.blog.163.com/" >顾海波</a><a href="http://ysunwoods.blog.163.com/" >杨红旭</a><a href="http://vip-58.blog.163.com/"  class="noline">韩令国</a></dd>
+<dd><a href="http://mayaoch01.blog.163.com/" >马跃成</a><a href="http://lgs1.blog.163.com/" >李国胜</a><a href="http://chuyunworkroom.blog.163.com/"  class="noline">楚芸</a></dd>
+<dd><a href="http://san.town.blog.163.com/" >李骁</a><a href="http://sun007chen.blog.163.com/" >陈真诚</a><a href="http://chenjinsong09.blog.163.com/"  class="noline">陈劲松</a></dd>
+            </dl>
+        </div>
+        <div class="subject">
+        	<h6 class="titlebar"><span>博客专题</span></h6>
+        	<div class="img145-75"><a href="http://gz.house.163.com/special/00873KAD/blog201073.html"><img src="http://img3.cache.netease.com/house/2010/8/20/20100820095406b7705.jpg" width="145" height="75" /></a></div>
+            <ul class="f12textlist">
+                    <li><a href="http://gz.house.163.com/special/blog201094/">房地产渐成富人游戏</a></li>
+                    <li><a href="http://gz.house.163.com/special/blog201092/">楼市又回暖了！</a></li>
+                    <li><a href="http://gz.house.163.com/special/blog201091/">房价要跌到2009年水平？</a></li>
+                    <li><a href="http://gz.house.163.com/special/blog201085/">新盘井喷 消费者放弃观望</a></li>
+                    <li><a href="http://gz.house.163.com/special/blog201084/">李克强两提落实调控昭示什么？</a></li>
+            </ul>
+        </div>
+        <div class="newhouse">
+        	<h6 class="titlebar"><span>名博7日谈</span></h6>
+        	<div class="titlespicpar">
+                    <h6><a href="http://gz.house.163.com/special/7daycs/">名博7日谈之陈胜</a></h6>
+                    <a href="http://gz.house.163.com/special/7daycs/"><img src="http://img3.cache.netease.com/house/2010/11/29/20101129094511e02b8.jpg" width="70" height="70" /></a>
+                    <p>陈胜，全经联会员，资深地产人。<a href="http://gz.house.163.com/special/7daycs/">[详细]</a></p>
+                </div>
+                <ul class="f12textlist">
+       <li><a href="http://gz.house.163.com/special/7dayhzw/" title="名博7日谈之黄志伟">名博7日谈之黄志伟</a></li>
+       <li><a href="http://gz.house.163.com/special/7daycbh/" title="名博7日谈之程宝海">名博7日谈之程宝海</a></li>
+       <li><a href="http://gz.house.163.com/special/7daytwd/" title="名博7日谈之铜豌豆">名博7日谈之铜豌豆</a></li>
+       <li><a href="http://gz.house.163.com/special/7daysxc/" title="名博7日谈之单许昌">名博7日谈之单许昌</a></li>
+       <li><a href="http://gz.house.163.com/special/7daylj/" title="名博7日谈之李杰">名博7日谈之李杰</a></li>
+       <li><a href="http://gz.house.163.com/special/00874IO9/7daymyc.html" title="名博7日谈之马跃成">名博7日谈之马跃成</a></li>
+            </ul>
+        </div>
+        <div class="trade">
+        	<h6 class="titlebar"><span>置业专题</span></h6>
+        	<div class="titlespicpar">
+                    <h6><a href="http://gz.house.163.com/special/00873E0R/investor0527.html">一线城市投资客现状调查</a></h6>
+                    <a href="http://gz.house.163.com/special/00873E0R/investor0527.html"><img src="http://img3.cache.netease.com/house/2010/6/25/201006251023422b46c.jpg" width="70" height="70" /></a>
+                    <p>政策有没有将炒房客逐出市场？<a href="http://gz.house.163.com/special/00873E0R/investor0527.html">[详细]</a></p>
+                </div>
+                <ul class="f12textlist">
+       <li><a href="http://gz.house.163.com/special/00874IM2/xianzhitudi0726.html" title="广州闲置土地大调查">广州闲置土地大调查</a></li>
+       <li><a href="http://gz.house.163.com/special/00874IK7/lstk0716.html" title="京沪穗300楼盘大调查">京沪穗300楼盘大调查</a></li>
+       <li><a href="http://gz.house.163.com/special/00874IJC/fqbnb0707.html" title="一线房企公布半年报">一线房企公布半年报</a></li>
+       <li><a href="http://gz.house.163.com/special/00873E0R/fangjia0706.html" title="房价下降 部长说了算?">房价下降 部长说了算?</a></li>
+       <li><a href="http://gz.house.163.com/special/00873E0R/FANGJIASHANGZHANG.html" title="房价会否报复性上涨?">房价会否报复性上涨?</a></li>
+       <li><a href="http://gz.house.163.com/special/00873E0R/face0519.html" title="新政重拳之下的楼市表情">新政重拳之下的楼市表情</a></li>
+            </ul>
+        </div>
+        <div class="vote">
+        	<h6 class="titlebar"><span>投票调查</span></h6>
+                        <!--vote begin--><form method='post' action='http://vote.house.163.com/vote/voting.jsp' target='votewin' name='frmVote48998'><input type='hidden' name='voteid' value='48998'><input type='hidden' name='markinfo' value='0'><input type='hidden' name='checktype' value='1'>房产税一出，房价即下降吗？<br><!--VOTES--><br><input type='radio' name='op' value='225256'>会降<br><input type='radio' name='op' value='225257'>不会<br></form>
+<script>function frmVote48998_submit(){
+if(document.frmVote48998.op[0].checked || document.frmVote48998.op[1].checked)
+{document.frmVote48998.submit();}
+else{alert("你没有选择选项！");return;}
+}</script>
+<input type='button' border='0' value='投票' name='submit' onClick='frmVote48998_submit()'> 【<a href='http://vote.house.163.com/vote/vote_results.jsp?voteid=48998' target='votewin'>投票结果</a>】【<a href='http://comment.gz.house.163.com/gzhouse_bbs/6J8VOA9F00873C6D.html' target='_blank'>发表评论</a>】<!--vote end-->        </div>
+    </div>
+</div>
+<div class="ad960">
+<div class="left">
+<iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=house&cat=other&type=column735x100&location=1" width="735" height="100" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+<div class="right">
+<iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=house&cat=other&type=logo210x100&location=1" width="210" height="100" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+</div><div class="area">
+    <div class="picblog">
+    	<h5 class="titlebar"><span>图片博客<img src="http://img1.cache.netease.com/house/img09/blog0731/blog06.gif" class="barimg" /></span></h5> 
+		<ul class="piclist">
+            	<li><a href="http://jwlbswy.blog.163.com/blog/static/133871428201010309239960/?fangchan"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/12/1/201012010909243e156.jpg" alt="河北曲阳千岛湖" /></a><a href="http://jwlbswy.blog.163.com/blog/static/133871428201010309239960/?fangchan">河北曲阳千岛湖</a></li>
+            	<li><a href="http://chenyunfengblog.blog.163.com/blog/static/1365521712010102111430347/?fangchan"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/11/29/20101129090235c8258.jpg" alt="中经联盟年会筹备会召开" /></a><a href="http://chenyunfengblog.blog.163.com/blog/static/1365521712010102111430347/?fangchan">中经联盟年会筹备会召开</a></li>
+            	<li><a href="http://hongyan-cai.blog.163.com/blog/static/1333942842010102111250242/?fangchan"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/11/22/2010112209094482997.jpg" alt="上海大火被烧穿的那栋楼" /></a><a href="http://hongyan-cai.blog.163.com/blog/static/1333942842010102111250242/?fangchan">上海大火被烧穿的那栋楼</a></li>
+            	<li><a href="http://banzhuantou2000.blog.163.com/blog/static/132733641201010180591236/?fangchan"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/11/18/201011181423010b536.jpg" alt="带父母去旅游——中山陵" /></a><a href="http://banzhuantou2000.blog.163.com/blog/static/132733641201010180591236/?fangchan">带父母去旅游——中山陵</a></li>
+            	<li><a href="http://banzhuantou2000.blog.163.com/blog/static/1327336412010101713916788/?fangchan"><img width="100" height="60" src="http://img4.cache.netease.com/house/2010/11/18/2010111814200315176.jpg" alt="南京总统府" /></a><a href="http://banzhuantou2000.blog.163.com/blog/static/1327336412010101713916788/?fangchan">南京总统府</a></li>
+            	<li><a href="http://banzhuantou2000.blog.163.com/blog/static/1327336412010101521632173/?fangchan"><img width="100" height="60" src="http://img4.cache.netease.com/house/2010/11/18/201011181414025121d.jpg" alt="济南大明湖夜景" /></a><a href="http://banzhuantou2000.blog.163.com/blog/static/1327336412010101521632173/?fangchan">济南大明湖夜景</a></li>
+            	<li><a href="http://fengxianquan2008.blog.163.com/blog/static/129032381201010147440966/?fangchan"><img width="100" height="60" src="http://img4.cache.netease.com/house/2010/11/15/201011150857336b281.jpg" alt="青岛观海山公园" /></a><a href="http://fengxianquan2008.blog.163.com/blog/static/129032381201010147440966/?fangchan">青岛观海山公园</a></li>
+            	<li><a href="http://liwjbj.blog.163.com/blog/static/136437180201010151952107/?fangchan"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/11/10/201011101455264c325.jpg" alt="解放碑，望过去的嘉陵江" /></a><a href="http://liwjbj.blog.163.com/blog/static/136437180201010151952107/?fangchan">解放碑，望过去的嘉陵江</a></li>
+            	<li><a href="http://hc8300.blog.163.com/blog/static/913258520101098320452/?fangchan"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/11/10/2010111014524851283.jpg" alt="花儿落了结个大倭瓜" /></a><a href="http://hc8300.blog.163.com/blog/static/913258520101098320452/?fangchan">花儿落了结个大倭瓜</a></li>
+            	<li><a href="http://renwenbin09.blog.163.com/blog/static/12815173820101042480774/?fangchan"><img width="100" height="60" src="http://img4.cache.netease.com/house/2010/11/5/201011050906257535b.jpg" alt="朋友的电影开机" /></a><a href="http://renwenbin09.blog.163.com/blog/static/12815173820101042480774/?fangchan">朋友的电影开机</a></li>
+            	<li><a href="http://mayaoch01.blog.163.com/blog/static/12904631720101023180907/?fangchan"><img width="100" height="60" src="http://img3.cache.netease.com/house/2010/11/3/201011030901465c62a.jpg" alt="短命建筑的控诉" /></a><a href="http://mayaoch01.blog.163.com/blog/static/12904631720101023180907/?fangchan">短命建筑的控诉</a></li>
+            	<li><a href="http://852619147.blog.163.com/blog/static/12653649120109309140180/?fangchan"><img width="100" height="60" src="http://img4.cache.netease.com/house/2010/11/2/20101102090430520ab.jpg" alt="威海的海草房" /></a><a href="http://852619147.blog.163.com/blog/static/12653649120109309140180/?fangchan">威海的海草房</a></li>
+           	 </ul>
+    </div>
+</div>
+<div class="ad960">
+<div class="left">
+<iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=house&cat=other&type=column735x100&location=1" width="735" height="100" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+<div class="right">
+<iframe
+src="http://pro.163.com/html.ng/site=netease&affiliate=house&cat=other&type=logo210x100&location=1" width="210" height="100" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+</div><div class="area">
+    <div class="directory">
+    	<h5 class="titlebar"><span>房产博客名录<img src="http://img1.cache.netease.com/house/img09/blog0731/blog07.gif" class="barimg" /></span></h5> 
+                <dl>
+            	<dt>【专家·学者】</dt>
+                <dd><a href="http://axj0898.blog.163.com/">艾学蛟</a><a href="http://blog.163.com/bashusongblog/">巴曙松</a><a href="http://blog.163.com/beicao_shi/">北　草</a><a href="http://hongyan-cai.blog.163.com/">蔡鸿岩</a><a href="http://chen-zhiquan.blog.163.com/">陈之泉</a><a href="http://chen-guoqiang.blog.163.com/">陈国强</a><a href="http://blog.163.com/dangguoyingblog/">党国英</a><a href="http://dongfan67.blog.163.com/">董　藩</a><a href="http://dongxiananblog.blog.163.com/">董先安</a><a href="http://duanshaoyi.blog.163.com/">段绍译</a><a href="http://dxmgzs.blog.163.com/">戴欣明</a><a href="http://fengxianquan2008.blog.163.com/">冯显泉</a><a href="http://blog.163.com/fxd_hz/" class="noline">冯晓东</a></dd><dd><a href="http://haiyan-gao.blog.163.com/">高海燕</a><a href="http://guhaibo01.blog.163.com/">顾海波</a><a href="http://tpylt163.blog.163.com/">郭士英</a><a href="http://huijq2004.blog.163.com/">回建强</a><a href="http://houning425.blog.163.com/">侯　宁</a><a href="http://huihudichan.blog.163.com/">徽　湖</a><a href="http://huganghu1958.blog.163.com/">胡　刚</a><a href="http://bjkaiyan.blog.163.com/">开　彦</a><a href="http://jiaonb01.blog.163.com/">焦南博</a><a href="http://jwlbswy.blog.163.com">贾卧龙</a><a href="http://langxianpingblog.blog.163.com/">郎咸平</a><a href="http://li-chunding.blog.163.com/">李春顶</a><a href="http://lizhanjun331.blog.163.com/" class="noline">李战军</a></dd><dd><a href="http://liuyanfei580.blog.163.com/">刘彦斐</a><a href="http://blog.163.com/maoyushi88/">茅于轼</a><a href="http://maguangyuanboke.blog.163.com">马光远</a><a href="http://ppenggd.blog.163.com/">彭　澎</a><a href="http://blog.163.com/sunfei2008@126/">孙　飞</a><a href="http://taodongblog.blog.163.com/">陶　冬</a><a href="http://tigerwzz1.blog.163.com/">王智中</a><a href="http://blog.163.com/wangdingdingblog/">汪丁丁</a><a href="http://wu-qilun.blog.163.com/">吴其伦</a><a href="http://xbswz.blog.163.com/">谢百三</a><a href="http://xieguozhongblog.blog.163.com/">谢国忠</a><a href="http://blog.163.com/xdhgood@126/">徐东华</a><a href="http://xubinism.blog.163.com/" class="noline">徐　斌</a></dd><dd><a href="http://mrxiaoshuang.blog.163.com/">晓霜先生</a><a href="http://yujin009.blog.163.com/">于　今</a><a href="http://yinkunhuablog.blog.163.com/">印堃华</a><a href="http://yetanblog.blog.163.com/">叶　檀</a><a href="http://blog.163.com/yixianrongblog/">易宪容</a><a href="http://jackzhudaming.blog.163.com/">朱大鸣</a><a href="http://zou.hengfu.blog.163.com/">邹恒甫</a><a href="http://zxm70987093.blog.163.com/">邹啸鸣</a><a href="http://zhangshuguangblog.blog.163.com/">张曙光</a><a href="http://blog.163.com/s_cheung/">张五常</a><a href="http://zft2000.blog.163.com/">郑风田</a><a href="http://blog.163.com/zhouqirenblog/">周其仁</a><a href="http://zhengyuhuangblog.blog.163.com/" class="noline">郑毓煌</a></dd>            </dl>
+         <dl>
+            	<dt>【开发商】</dt>
+                <dd><a href="http://banzhuantou2000.blog.163.com/">半砖头</a><a href="http://newcitycao.blog.163.com/">曹志伟</a><a href="http://gaunzhui01.blog.163.com/">陈宝存</a><a href="http://fangtian01.blog.163.com/">陈永明</a><a href="http://qq228100160abc.blog.163.com/">陈  波</a><a href="http://chen-jimin.blog.163.com/">陈继敏</a><a href="http://c-xuefeng.blog.163.com/">陈学峰</a><a href="http://chenyunfengblog.blog.163.com/">陈云峰</a><a href="http://cnfreeman.blog.163.com/">陈小生</a><a href="http://chuxf01.blog.163.com/">楚先锋</a><a href="http://blog.163.com/szdcz_ok/">丁成章</a><a href="http://blog.163.com/dm-21//">杜　猛</a><a href="http://whf3687.blog.163.com/blog/" class="noline">飞　鹰</a></dd>
+                <dd><a href="http://fenglinhuo2009.blog.163.com/">风林火</a><a href="http://feng-lun.blog.163.com/">冯　仑</a><a href="http://xiaochongfan.blog.163.com/">范小冲</a><a href="http://guohaichen1972.blog.163.com/">郭海臣</a><a href="http://wisdomhan01.blog.163.com/">韩建君</a><a href="http://gutongsh.blog.163.com/">顾　彤</a><a href="http://lijie405220325.blog.163.com/">李   杰</a><a href="http://lihaihu00852.blog.163.com/">李海湖</a><a href="http://long-qimeng.blog.163.com/">龙启蒙</a><a href="http://gzlinweiying.blog.163.com/">林伟营</a><a href="http://852619147.blog.163.com/">黄长乐</a><a href="http://jibaohongblog.blog.163.com/">季宝红</a><a href="http://wolfe.jiang.blog.163.com/" class="noline">姜　炜</a></dd>
+                <dd><a href="http://jinchenglong1234.blog.163.com/">金承龙</a><a href="http://linkejing0591.blog.163.com/">江南客</a><a href="http://meihenginv.blog.163.com/">美　亨</a><a href="http://blog.163.com/panshiyisoho/">潘石屹</a><a href="http://p1954.blog.163.com/">庞建国</a><a href="http://tianjunwei1201.blog.163.com/">菩提无树</a><a href="http://qingzg2000.blog.163.com/">青忠贵</a><a href="http://renwenbin09.blog.163.com/">任文彬</a><a href="http://blog.163.com/renzhiqiangblog/">任志强</a><a href="http://ssw815.blog.163.com/">宋胜伟</a><a href="http://fjsln.blog.163.com/">沈力男</a><a href="http://tutengjing.blog.163.com/">图腾镜</a><a href="http://tianbuliang2009.blog.163.com/" class="noline">田步亮</a></dd><dd><a href="http://work999room.blog.163.com/">汪　渝</a><a href="http://wangshitaisz.blog.163.com/">王世泰</a><a href="http://bill48.blog.163.com/">王永胜</a><a href="http://wangweixu07.blog.163.com/">王维旭</a><a href="http://bjwangxuexiao.blog.163.com/">王学孝</a><a href="http://wangshusenblog.blog.163.com/">王树森</a><a href="http://w-weiye.blog.163.com/">王伟业</a><a href="http://blog.163.com/13923865308@126/">王恭敏</a><a href="http://lerichina.blog.163.com/">王　忠</a><a href="http://fdczh2010.blog.163.com/">王　一</a><a href="http://zgwq8888.blog.163.com/">王智高</a><a href="http://zuogexianren01.blog.163.com/">徐  涛</a><a href="http://jtsz2008.blog.163.com/" class="noline">谢  运</a></dd><dd><a href="http://allenxiaya.blog.163.com/">夏　亚</a><a href="http://yu-zhanhui.blog.163.com/">于占汇</a><a href="http://blog.163.com/yang_leyu/">杨乐渝</a><a href="http://gzyuying.blog.163.com/">余　英</a><a href="http://yang-terry.blog.163.com/">杨子江</a><a href="http://blog.163.com/tjcal_yu/">喻海文</a><a href="http://blog.163.com/yi_xiaodi/">易小迪</a><a href="http://jemar.blog.163.com/">徐奕俊</a><a href="http://szblade.blog.163.com/">诸葛永斌</a><a href="http://jidong5199.blog.163.com/">张继东</a><a href="http://ooo0772.blog.163.com/">张弓长</a><a href="http://blog.163.com/zhang_yunji/">张云计</a><a href="http://zhoupenganblog.blog.163.com/" class="noline">周蓬安</a></dd>  </dl>
+          <dl>
+            	<dt>【记者·评论员】</dt>
+                <dd><a href="http://chenxuegen168.blog.163.com/">陈雪根</a><a href="http://chensheng802125.blog.163.com/">陈　胜</a><a href="http://chentieqiang001.blog.163.com/">陈铁枪</a><a href="http://joneshen820622.blog.163.com/">陈梦莎</a><a href="http://cao-shengjie.blog.163.com/">曹盛洁</a><a href="http://xayang.blog.163.com/">草根论者</a><a href="http://blog.163.com/dongfangyublog/">东方愚</a><a href="http://dengzhw01.blog.163.com/">邓志旺</a><a href="http://gzfengyin.blog.163.com/">冯　茵</a><a href="http://fu-shuo.blog.163.com/">傅　硕</a><a href="http://pmm01.blog.163.com/">高汉明</a><a href="http://blog.163.com/mandanny@126/">黄春申</a><a href="http://huandongblog.blog.163.com/" class="noline">胡安东</a></dd><dd><a href="http://heijuyi2008.blog.163.com/">黑居易</a><a href="http://yangfan.hen.blog.163.com/">倦  鸟</a><a href="http://desmondyan.blog.163.com/">晋　月</a><a href="http://lxz163tech.blog.163.com/">陆新之</a><a href="http://blog.163.com/ying0100/">刘红鹰</a><a href="http://blog.163.com/ajong2008/">刘佰忠</a><a href="http://liuchangying001.blog.163.com/">刘长缨</a><a href="http://liu-xianglong.blog.163.com/">刘相龙</a><a href="http://gzliyifeng.blog.163.com/">李义峰</a><a href="http://lizimo009.blog.163.com/">李子墨</a><a href="http://lizongmiao.blog.163.com/">李宗苗</a><a href="http://qinqinlibi.blog.163.com/">李　碧</a><a href="http://limingblog.blog.163.com/" class="noline">李　明</a></dd><dd><a href="http://liguangdoublog.blog.163.com/">李光斗</a><a href="http://loushigouzi.blog.163.com/">楼市狗仔</a><a href="http://luoyuan20909.blog.163.com/">罗　渊</a><a href="http://dljiangzhigang.blog.163.com/">辣　姜</a><a href="http://lu-guoyong.blog.163.com/">老　鲁</a><a href="http://bjhbjlb.blog.163.com/">柳科庆</a><a href="http://lf185140263.blog.163.com/">冷  风</a><a href="http://guoyukuanblog.blog.163.com/">郭宇宽</a><a href="http://sunny-9196271.blog.163.com/">牛　刀</a><a href="http://qiuluuu.blog.163.com/">邱　路</a><a href="http://rongmingmai1981.blog.163.com/">戎明迈</a><a href="http://blog.163.com/tianguidan/">田桂丹</a><a href="http://shihbblog.blog.163.com/" class="noline">时寒冰</a></dd><dd><a href="http://shanxc2001.blog.163.com/">单许昌</a><a href="http://fzsunchen.blog.163.com">孙　晨</a><a href="http://sun-xiaofang.blog.163.com/">孙方磊</a><a href="http://sundesijiu.blog.163.com/">孙德斯鸠</a><a href="http://chaorensuhan.blog.163.com/">苏步超</a><a href="http://cqsypl.blog.163.com/">上游评论</a><a href="http://shandawei.blog.163.com/">单大伟</a><a href="http://shi5956.blog.163.com/">师永涛</a><a href="http://sheng.dalin.blog.163.com/">盛大林</a><a href="http://tashan021.blog.163.com/">他　山</a><a href="http://tongwandou-1.blog.163.com/">铜豌豆</a><a href="http://redstartx.vip.blog.163.com/">田红星</a><a href="http://wangzipengblog.blog.163.com/" class="noline">王子鹏</a></dd><dd><a href="http://wangqiming2010.blog.163.com/">王其明</a><a href="http://fjfzwml.blog.163.com/">吴木銮</a><a href="http://longzhaoshou.blog.163.com/">吴　彬</a><a href="http://m13136021444.blog.163.com/">万志兵</a><a href="http://yjsbb.blog.163.com/">严家森</a><a href="http://yuanyihong168.blog.163.com/">袁一泓</a><a href="http://dehong-yang.blog.163.com/">阳德鸿</a><a href="http://dongshanke01.blog.163.com/">赵　磊</a><a href="http://zhuning1109.blog.163.com/">朱　宁</a><a href="http://blog.163.com/xiaoshugaojian/">笑　蜀</a><a href="http://blog.163.com/shouvet@126/">席　位</a><a href="http://xumtszed.blog.163.com/">徐明天</a><a href="http://xiaobinwenzhang.blog.163.com/" class="noline">肖　宾</a></dd><dd><a href="http://ysunwoods.blog.163.com/">杨红旭</a><a href="http://whwb5520.blog.163.com/">杨光华</a><a href="http://yechuhuaych.blog.163.com/">叶楚华</a><a href="http://wenshangxing.blog.163.com/">文上兴</a><a href="http://zenghuijuan2009.blog.163.com/">曾慧娟</a><a href="http://nddcpl01.blog.163.com/">南都评论</a><a href="http://simapingbang.blog.163.com/">司马平邦</a><a href="http://blahawk.blog.163.com">张　彦</a><a href="http://zhangjie-blog.blog.163.com/">张　杰</a><a href="http://zhangkeyu2010.blog.163.com/">张克禹</a><a href="http://520719.blog.163.com/">张　初</a></dd>          </dl>
+          <dl>
+            	<dt>【代理·策划】</dt>
+                <dd><a href="http://adu-88888.blog.163.com/">阿　杜</a><a href="http://szbasic01.blog.163.com/">百思勤</a><a href="http://bj1278.blog.163.com/">北京酋长</a><a href="http://bijianmin01.blog.163.com/">毕建民</a><a href="http://chenjinsong09.blog.163.com/">陈劲松</a><a href="http://sun007chen.blog.163.com/">陈真诚</a><a href="http://szchidu.blog.163.com/">尺度策划</a><a href="http://chenxiaotian0907.blog.163.com">陈啸天</a><a href="http://foreopen.blog.163.com/">陈　航</a><a href="http://blog.163.com/chenhui_0816/">陈　辉</a><a href="http://blog.163.com/chenyang_0556/">陈　洋</a><a href="http://chenrenke01.blog.163.com/">陈仁科</a><a href="http://yiriqv01.blog.163.com/" class="noline">曹清为</a></dd><dd><a href="http://chuyunworkroom.blog.163.com/">楚　芸</a><a href="http://hzj211.blog.163.com/">沧　海</a><a href="http://lindaoshenji.blog.163.com/">导　爹</a><a href="http://dongchengzhu2009.blog.163.com">董成竹</a><a href="http://dinglin.blog.163.com/">丁　林</a><a href="http://blog.163.com/ding-yanping/">丁延平</a><a href="http://pushway2009.blog.163.com/">邓超明</a><a href="http://garydens.blog.163.com/">邓浩志</a><a href="http://shs7.blog.163.com/">戴承良</a><a href="http://fenggl2000.blog.163.com/">冯国亮</a><a href="http://fengyu811213.blog.163.com/">风　语</a><a href="http://guxiaoligongzuoshi.blog.163.com/">顾晓立</a><a href="http://gl81887152.blog.163.com/" class="noline">高　卓</a></dd><dd><a href="http://newjinwei.blog.163.com/">金　伟</a><a href="http://say-design.blog.163.com/">靳　展</a><a href="http://jinguoliang2006.blog.163.com/blog/">晋国良</a><a href="http://ma.boning.blog.163.com/">马博宁</a><a href="http://mayaoch01.blog.163.com/">马跃成</a><a href="http://shitonghan.blog.163.com/">韩世同</a><a href="http://vip-58.blog.163.com/">韩令国</a><a href="http://huangcz8868.blog.163.com/">黄昌之</a><a href="http://blog.163.com/hongwei6353@126/">洪　维</a><a href="http://huhonglun.blog.163.com/">善财童子</a><a href="http://landcrusier.blog.163.com/">上海山人</a><a href="http://huangsuicheng01.blog.163.com/">黄穗诚</a><a href="http://blog.163.com/yuanjingjigou@126/" class="noline">黄志坚</a></dd><dd><a href="http://huangzhiwei106.blog.163.com/">黄志伟</a><a href="http://houzhenzhong2009.blog.163.com">侯振中</a><a href="http://jianghong600.blog.163.com/">江小鱼</a><a href="http://jiangren0907.blog.163.com/">姜　仁</a><a href="http://609096907.blog.163.com/">孔　锐</a><a href="http://li.wenjiang.blog.163.com/">黎文江</a><a href="http://liuguangyu0907.blog.163.com">刘光宇</a><a href="http://blog.163.com/jianke78@126/">刘恩静</a><a href="http://liutingle01.blog.163.com/">刘　轩</a><a href="http://lenial.blog.163.com/">刘玉刚</a><a href="http://blog.163.com/liuweimin_2007@126//">刘伟民</a><a href="http://wolfliao88.blog.163.com/">廖文峰</a><a href="http://ablyy6363.blog.163.com/" class="noline">李永岳</a></dd><dd><a href="http://san.town.blog.163.com/">李　骁</a><a href="http://xianheliuyun.blog.163.com/">李  强</a><a href="http://lidongyangvip.blog.163.com/">李冬阳</a><a href="http://blog.163.com/liangjiahao21@126/">梁家豪</a><a href="http://waterzhuhai.blog.163.com/">梁　峰</a><a href="http://leido2009.blog.163.com/">擂　哆</a><a href="http://blog.163.com/lunaldo@126/">卢海涛</a><a href="http://dfcy88.blog.163.com/">东方朝阳</a><a href="http://lanhh521.blog.163.com/">兰洪海</a><a href="http://lanma11.blog.163.com/">蓝　马</a><a href="http://kyt138.blog.163.com/">柯永涛</a><a href="http://minyu99.blog.163.com/">闵　昱</a><a href="http://nie-pengfei.blog.163.com/" class="noline">聂鹏飞</a></dd><dd><a href="http://tuteng1981.blog.163.com/">牛浩江</a><a href="http://blackstonechina.blog.163.com/">权京松</a><a href="http://blog.163.com/liaoll_sh/">润　物</a><a href="http://xudongping1973.blog.163.com/">入海流</a><a href="http://songyanqing10.blog.163.com/">宋延庆</a><a href="http://lp21lp21.blog.163.com/">善　哉</a><a href="http://songhy521.blog.163.com/">宋会雍</a><a href="http://mr.sg.blog.163.com/">申格联</a><a href="http://tanfanglunshi.blog.163.com/">谈房论市</a><a href="http://gdwwx.blog.163.com/">王伟雄</a><a href="http://wx0779.blog.163.com/">王　欣</a><a href="http://blog.163.com/zztv002@126/">王　硕</a><a href="http://ilikeben.blog.163.com/" class="noline">王驰宇</a></dd><dd><a href="http://bikejiangnan.blog.163.com/">王泽金</a><a href="http://wzgoffice01.blog.163.com/">王志纲</a><a href="http://lihe5813.blog.163.com/">王　鹏</a><a href="http://blog.163.com/xcgs_xsw/">王雪松</a><a href="http://bill48.blog.163.com/">王永胜</a><a href="http://feixueyanghua.blog.163.com/" >飞雪杨花</a><a href="http://weiyahua01.blog.163.com/">魏雅华</a><a href="http://xieyifeng0907.blog.163.com/">书　生</a><a href="http://blog.163.com/xiaqicaibj/">夏奇才</a><a href="http://xiexie3168.blog.163.com/">谢成龙</a><a href="http://wushaoyedeshu.blog.163.com/">谢　松</a><a href="http://blog.163.com/xu_zifang/">许子枋</a><a href="http://dream.sky.blog.163.com/" class="noline">兴华社</a></dd><dd><a href="http://hounews.blog.163.com/">徐　东</a><a href="http://xuchao0809.blog.163.com/">徐　超</a><a href="http://waterboy5200.blog.163.com/">谢新友</a><a href="http://yirenyanguofei.blog.163.com/">一人言</a><a href="http://ysx1898.blog.163.com/">杨石新</a><a href="http://yulgbj.blog.163.com">于凌罡</a><a href="http://june.yen.blog.163.com/">殷　骏</a><a href="http://yj-qin1985.blog.163.com/">张秀琴</a><a href="http://ehoo0081.blog.163.com/">张　扬</a><a href="http://zhangyuliangok.blog.163.com/">张宇良</a><a href="http://blog.163.com/zhangcunjie_1/">张存杰</a><a href="http://zhu-qi01.blog.163.com/">愚　公</a><a href="http://zhaochunlei72.blog.163.com/" class="noline">赵春雷</a></dd><dd><a href="http://muzicaoyzng.blog.163.com/">木子草央</a><a href="http://88085509.blog.163.com/">邹宗进</a><a href="http://cpmc200108.blog.163.com/">赵卓文</a><a href="http://zf636.blog.163.com/">周　帆</a><a href="http://zevzhong01.blog.163.com/">钟　炬</a><a href="http://cnestate.blog.163.com/">行走无疆</a><a href="http://jackieshg.blog.163.com/">尚里巴人</a><a href="http://blog.163.com/zhihe_cehua@yeah/">致和策划</a><a href="http://xuxinggang01.blog.163.com/">彧寒勽暖</a><a href="http://ivtfor.blog.163.com/">张朝峰</a><a href="http://guanggaozhw.blog.163.com/">张宏伟</a><a href="http://blog.163.com/zhao_sihai/">赵四海</a><a href="http://zhai-ruichao.blog.163.com/" class="noline">翟瑞超</a></dd><dd><a href="http://z-linxiao.blog.163.com/">章林晓</a><a href="http://zhangjiansh.blog.163.com/">张　健</a><a href="http://fungboblog.blog.163.com/">朱晓红</a><a href="http://huangzhoudi.blog.163.com/">黄周地</a><a href="http://blog.163.com/opop000@126/">张　鹏</a><a href="http://casszm.blog.163.com/">张　明</a><a href="http://kexingzhang406.blog.163.com/">张可兴</a></dd>       </dl>         <dl>
+				            	<dt>【建筑·设计·风水】</dt>
+                <dd><a href="http://www.gjzy.com.blog.163.com/">董易林</a><a href="http://hcxt01.blog.163.com/">华创新天</a><a href="http://dong.yi.qi.blog.163.com/">董易奇</a><a href="http://fuhuizhenbao.blog.163.com/">福慧珍宝</a><a href="http://guanwosheng.blog.163.com/">观我生</a><a href="http://haishendashi.blog.163.com/">海神大师</a><a href="http://shejishi.e-jjj.blog.163.com/">靳　涛</a><a href="http://HARMONYART.BLOG.163.COM">林英二</a><a href="http://molcmomo.blog.163.com/">莫　莫</a><a href="http://stoneshq2008.blog.163.com">石海强</a><a href="http://haohuayixue.blog.163.com/">王浩骅</a><a href="http://sapo.oo.blog.163.com/">sapo</a><a href="http://blog.163.com/zhuyi0801@126/" class="noline">良狮益友</a></dd><dd><a href="http://shejishiwj.blog.163.com/">王　建</a><a href="http://bjdpzs.blog.163.com/">文明明</a><a href="http://ycb616.blog.163.com/">俞昌斌</a><a href="http://blog.163.com/rongrong8118@126/">耀　榮</a><a href="http://88397779.blog.163.com/">姚易君</a><a href="http://zhengweijianfs.blog.163.com/">郑伟建</a><a href="http://zhoujundesigner.blog.163.com/">周　军</a><a href="http://21922995zhang.blog.163.com/">张泽中</a><a href="http://zyy535.blog.163.com/">赵渔阳</a></dd>          </dl>
+          <dl>
+            	<dt>【置业·律师】</dt>
+                <dd><a href="http://zhangahei.blog.163.com/">阿　黑</a><a href="http://lawbws.blog.163.com/">卜伟松</a><a href="http://mytophomecj.blog.163.com/">陈　靖</a><a href="http://fangchanfa148.blog.163.com/">曹燕贻</a><a href="http://jingweigz01.blog.163.com/">经纬地产</a><a href="http://cuipengowner.blog.163.com/">崔　鹏</a><a href="http://shresource.blog.163.com/">策　源</a><a href="http://c-xuefeng.blog.163.com/">陈学峰</a><a href="http://chentaow2005.blog.163.com/">陈  涛</a><a href="http://blog.163.com/dongqi_777@126/">董  琪</a><a href="http://chachawublog.blog.163.com/">茶察武</a><a href="http://djguo0905.blog.163.com">郭定基</a><a href="http://mrskendy.blog.163.com/" class="noline">郭珮珊</a></dd><dd><a href="http://13381485195.blog.163.com/">高　卓</a><a href="http://blog.163.com/davyhuang3">黄　峻</a><a href="http://gzhgd.blog.163.com/">胡广东</a><a href="http://huyihomekoo.blog.163.com/">胡　翊</a><a href="http://liwjbj.blog.163.com/">李文杰</a><a href="http://lixn2828.blog.163.com/">李小宁</a><a href="http://lilianyuanblog.blog.163.com/">李连源</a><a href="http://blog.163.com/elsunli@126/">李　田</a><a href="http://lgs1.blog.163.com/">李国胜</a><a href="http://blog.163.com/jingquezhidao@126/">李政权</a><a href="http://longbn001.blog.163.com">龙　斌</a><a href="http://hc8300.blog.163.com/blog/">龙凤剑客</a><a href="http://gzliyuexiang.blog.163.com/" class="noline">李粤湘</a></dd><dd><a href="http://liuli-law.blog.163.com/">刘  黎</a><a href="http://lzy1490.blog.163.com/">刘智勇</a><a href="http://jjjmarky.blog.163.com/">麦　劲</a><a href="http://blog.163.com/ou_jun_wen/">区俊文</a><a href="http://blog.163.com/martinou@126/">区家彦</a><a href="http://panzygz.blog.163.com/">潘仲宇</a><a href="http://renyuanlh.blog.163.com/">任　远</a><a href="http://hua-shen.blog.163.com/">申　华</a><a href="http://shi-yongqing.blog.163.com/">施永青</a><a href="http://shenruipei.blog.163.com/">沈锐培</a><a href="http://songjiannj.blog.163.com/">宋　坚</a><a href="http://taishanggong.blog.163.com/">太商公</a><a href="http://wangziliblog.blog.163.com/" class="noline">王自力</a></dd><dd><a href="http://szluotuo.blog.163.com/">王  刚</a><a href="http://garygarden.blog.163.com/">吴东周</a><a href="http://gzxuxuefeng.blog.163.com/">许学锋</a><a href="http://snow423423.blog.163.com/">许雪儿</a><a href="http://ygyxlx.blog.163.com/">谢丽娴</a><a href="http://xiao.wenxiao.blog.163.com/">肖文晓</a><a href="http://blog.163.com/yang_yongbin/">杨永斌</a><a href="http://blog.163.com/yangchao0804@yeah/">杨　超</a><a href="http://yt707.blog.163.com/">杨　焘</a><a href="http://blog.163.com/yanyu.dan/">颜宇丹</a><a href="http://zhouzhengfeng09.blog.163.com/">周争锋</a><a href="http://sameulzhou01.blog.163.com/">周　峰</a><a href="http://szfdczyls.blog.163.com/" class="noline">张茂荣</a></dd><dd><a href="http://zhu-xinyuan.blog.163.com/">朱欣苑</a><a href="http://zyjjxj.blog.163.com/">曾英杰</a><a href="http://zoutaoblog.blog.163.com/">邹　涛</a>   </dd>       </dl>
+        <dl>
+				            	<dt>【企业官博】</dt>
+                <dd><a href="http://powerlongbrand.blog.163.com/">宝龙地产</a><a href="http://cx.sh.blog.163.com/">乘星行</a><a href="http://blog.163.com/dongdichan/">东地产</a><a href="http://millkoko789.blog.163.com/">恒亮验房</a><a href="http://36728888.blog.163.com/">美林湖</a><a href="http://mytophome.com.blog.163.com/">满堂红</a><a href="http://qdpr01.blog.163.com/">青岛地产</a><a href="http://shiyibang1221.blog.163.com/">仕一邦</a><a href="http://xjjmook.blog.163.com/">新经济</a><a href="http://yangguang100yg.blog.163.com/">阳光100</a><a href="http://ccpr01.blog.163.com/">中原地产</a><a href="http://gzkeysun.blog.163.com/">啄木鸟</a></dd>
+</dl>
+		  <dl>
+            	<dt>【名人·生活】</dt>
+                <dd><a href="http://chilispace.blog.163.com/">池　磊</a><a href="http://fengshangweekly.blog.163.com/">风尚周报</a><a href="http://chenluyu.vip.blog.163.com/">陈鲁豫</a><a href="http://chenshults.blog.163.com/">陈　澍</a><a href="http://vip-huangbo.blog.163.com/">黄　渤</a><a href="http://blog.163.com/liang_wendao/">梁文道</a><a href="http://blog.163.com/ningcs@yeah/">宁财神</a><a href="http://mzjcylr.blog.163.com/">江　湖</a><a href="http://keusa.blog.163.com/">舒　然</a><a href="http://matthewhau.blog.163.com/">余以为</a><a href="http://wangmengshu2008.blog.163.com/">月普一</a><a href="http://yuanyueblog.blog.163.com/">袁　岳</a><a href="http://blog.163.com/zhaolihua_poem/" class="noline">赵丽华</a></dd>
+                <dd><a href="http://mcyanchen.blog.163.com/">陈广仁</a><a href="http://blog.163.com/fangzhouzi_vip/">方舟子</a><a href="http://mao.danqing.blog.163.com/">毛丹青</a><a href="http://kaifu163tech.blog.163.com/">李开复</a><a href="http://blog.163.com/ouning@yeah/">欧　宁</a><a href="http://blog.163.com/ergang_wang.vip/">冷血信箱</a><a href="http://zhu.dake.blog.163.com/blog/">朱大可</a><a href="http://blog.163.com/lvqiuluwei1510/">闾丘露薇</a><a href="http://zhoukecheng9.blog.163.com/">周克成</a><a href="http://zdyblog.blog.163.com/">朱德庸</a><a href="http://jiazhangke.blog.163.com/">贾樟柯</a><a href="http://zengzi74.blog.163.com/">曾子航</a><a href="http://to2x.blog.163.com/blog/" class="noline">to2x</a></dd>          </dl>    </div>
+</div>
+<!-- 首屏begin -->
+<!--/special/0001jt/nav09_end.html-->
+<style type="text/css">
+.channel-end,.channelEnd-rightS,.channelEnd-link,.channelEnd-top {background:url(http://img3.cache.netease.com/cnews/img09/endnav_bg1001.jpg);}
+.channel-end {width:960px;height:37px;overflow:hidden;margin:10px auto 0;line-height:38px;background-position:left -67px;background-repeat:repeat;}
+.channelEnd-rightS {display:block;float:right;width:8px;height:37px;overflow:hidden;background-position:right -141px;background-repeat:no-repeat;}
+.channelEnd-link {float:left;height:37px;line-height:37px;overflow:hidden;color:#1E50A2;background-position:left -30px;background-repeat:no-repeat;}
+.channelEnd-link a {float:none;padding:0 5px;font-weight:normal;background:none;}
+.channelEnd-link .firstNode {margin-left:5px; background:none;}
+.channelEnd-top {display:block;float:right;width:70px;height:37px;overflow:hidden;line-height:37px;text-indent:10px;background-position:left -30px;background-repeat:no-repeat;}
+</style>
+<div class="channel-end">
+	<span class="channelEnd-link cBlue">
+    	<a class="firstNode" href="http://www.163.com/"  rel="nofollow">网易首页</a>-<a href="http://news.163.com/"  rel="nofollow">新闻</a>-<a href="http://sports.163.com/"  rel="nofollow">体育</a>-<a href="http://ent.163.com/"  rel="nofollow">娱乐</a>-<a href="http://money.163.com/"  rel="nofollow">财经</a>-<a href="http://auto.163.com/"  rel="nofollow">汽车</a>-<a href="http://tech.163.com"  rel="nofollow">科技</a>-<a href="http://digi.163.com/"  rel="nofollow">数码</a>-<a href="http://mobile.163.com/"  rel="nofollow">手机</a>-<a href="http://lady.163.com/"  rel="nofollow">女人</a>-<a href="http://house.163.com/"  rel="nofollow">房产</a>-<a href="http://game.163.com/"  rel="nofollow">游戏</a>-<a href="http://book.163.com/"  rel="nofollow">读书</a>-<a href="http://edu.163.com/"  rel="nofollow">教育</a>-<a href="http://travel.163.com/"  rel="nofollow">旅游</a>-<a href="http://bbs.163.com/"  rel="nofollow">论坛</a>-<a href="http://v.163.com/"  rel="nofollow">视频</a>-<a href="http://blog.163.com/blogs/"  rel="nofollow">博客</a>-<a href="http://t.163.com/"  rel="nofollow">微博</a>-<a href="http://jiu.163.com"  rel="nofollow">酒香</a>-<a href="http://help.3g.163.com/"  rel="nofollow">手机版</a>
+    </span>
+    <span class="channelEnd-rightS"></span>
+    <span class="channelEnd-top cBlue"><a href="#top" target="_self"  rel="nofollow">返回顶部&uarr;</a></span>
+</div><!-- 代码 -->
+<div class="foot">
+<div class="text"><a href="http://post.news.163.com/msg/housemail.jsp" rel="nofollow">联系电话:020-85105631</a>　<a href="http://post.news.163.com/msg/housemail.jsp" rel="nofollow">主编信箱</a> <a href="http://t.163.com/zt/feedback" rel="nofollow">意见反馈</a> <a href="http://gz.house.163.com/special/gzhousemap/" rel="nofollow">广州房产站点地图</a></div>
+<a href="http://corp.163.com/" rel="nofollow">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html" rel="nofollow">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" rel="nofollow">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" rel="nofollow">招聘信息</a> - <a href="http://help.163.com/" rel="nofollow">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" rel="nofollow">隐私政策</a> - <a href="http://emarketing.biz.163.com/" rel="nofollow">网络营销</a> - <a href="http://sitemap.163.com/" rel="nofollow">网站地图</a><br />
+网易公司版权所有<br />
+
+<span class="cRed">&copy;1997-2014
+</span>
+</div></div>
+<script type="text/javascript" language="javascript" src="http://img1.cache.netease.com/cnews/js/ntes_jslib_1.x.js" charset="gb2312"></script>
+<script type="text/javascript">
+//日历Start
+function calendar(year, month){
+	//Get current Date
+	var cDate = new Date();
+	var cYear = cDate.getFullYear();
+	var cMonth = cDate.getMonth();
+	var cDay = cDate.getDate();
+	var yearDom = NTES("#setYear");
+	var monthDom = NTES("#setMonth");
+	
+	if (arguments.length > 1) {
+		this.year = year;
+		this.month = month - 1;
+	}
+	else {
+		this.year = cYear;
+		this.month = cMonth;
+		//显示日期
+		yearDom.innerHTML = cYear;
+		monthDom.innerHTML = cMonth + 1;
+	}
+	this.date = cDay;
+	this.draw(printCalendar);
+}
+//获得星期几
+calendar.prototype.getWeekStr = function(day){
+	switch (day) {
+		case 0:
+			return "星期日";
+		case 1:
+			return "星期一";
+		case 2:
+			return "星期二";
+		case 3:
+			return "星期三";
+		case 4:
+			return "星期四";
+		case 5:
+			return "星期五";
+		case 6:
+			return "星期六";
+	}
+}
+//获的月的天数
+calendar.prototype.monthDayNum = function(year, month){
+	var tdate = new Date(year, month + 1, 0);
+	return tdate.getDate();
+}
+//获的指定1号是星期几
+calendar.prototype.dayInWeek = function(year, month, date){
+	var tdate = new Date(year, month, date);
+	return tdate.getDay();
+}
+//打印日历
+calendar.prototype.draw = function(callback){
+	var year = this.year;
+	var month = this.month;
+	var currentDay = this.date;
+	var firstDayInWeek = this.dayInWeek(year, month, 1);
+	var monthDayNum = this.monthDayNum(year, month, 0);
+	callback(year, month, currentDay, firstDayInWeek, monthDayNum);
+}
+//上一月 下一月
+function calendarNP(yearID, monthID, state){
+	var yearDom = NTES(yearID);
+	var monthDom = NTES(monthID);
+	var year = parseInt(yearDom.innerHTML);
+	var month = parseInt(monthDom.innerHTML);
+	if (state == "next") {
+		month = month + 1;
+		if (month > 12) {
+			month = 1;
+			year = year + 1;
+		}
+	}
+	if (state == "previous") {
+		month = month - 1;
+		if (month == 0) {
+			month = 12;
+			year = year - 1;
+		}
+	}
+	yearDom.innerHTML = year;
+	monthDom.innerHTML = month;
+	var tcalendar = new calendar(year, month);
+}
+//显示日历
+function printCalendar(year, month, currentDay, firstDayInWeek, monthDayNum){
+	var year = year;
+	var month = month;
+	var currentDay = currentDay;
+	var firstDayInWeek = firstDayInWeek;
+	var monthDayNum = monthDayNum;
+	var displayMonth, displayDay;
+	var calendarList = NTES("#calendarList");
+	var liarray = [];
+	if (month < 10) {
+		month = month + 1
+		displayMonth = "0" + month;
+	}
+	else {
+		displayMonth = month + 1;
+	}
+	for (var i = 0; i < firstDayInWeek; i++) {
+		liarray.push("<li></li>");
+	}
+	for (var j = 1; j <= monthDayNum; j++) {
+		if (j < 10) {
+			displayDay = "0" + j;
+		}
+		else {
+			displayDay = j;
+		}
+		if (j == currentDay) {
+			liarray.push("<li><a class=\"current\" href=\"#\">" + j + "</a></li>");
+		}
+		else {
+			liarray.push("<li><a href=\"http://blog.163.com/pub/newIndex/history/" + year + "-" + displayMonth + "-" + displayDay + ".html\">" + j + "</a></li>");
+		}
+	}
+	var str = liarray.join("");
+	calendarList.innerHTML = str;
+}
+// 显示 隐藏图层
+function PopUpLayer(ctrl, content) {
+	var timerId;
+	
+	var hide = function() {
+		content.style.display = "none";
+	};
+	
+	this.hide = function(event) {
+		timerId = setTimeout(hide, 300);
+	};
+	
+	ctrl.addEvent("mouseover", function() { content.style.display = "block"; });
+	ctrl.addEvent("mouseout", this.hide);
+	content.addEvent("mouseout", this.hide);
+	content.addEvent("mouseover", function() { clearTimeout(timerId); });
+}
+var calendarLayer = new PopUpLayer(NTES("#getCalendar"), NTES("#calendarBox"));
+NTES("#preMonth").addEvent(
+	"click",
+	function(event) {
+		calendarNP("#setYear","#setMonth","previous");
+		NTES.Event.fix(event).preventDefault();
+	}
+);
+NTES("#nextMonth").addEvent(
+	"click",
+	function(event) {
+		calendarNP("#setYear","#setMonth","next");
+		NTES.Event.fix(event).preventDefault();
+	}
+);
+var newCalendar = new calendar();
+//end
+NTES("#hd-more").addEvent("mouseover", function(){ NTES("#hd-more ul.ch-list").addCss("display:block;")})
+NTES("#hd-more").addEvent("mouseout", function(){ NTES("#hd-more ul.ch-list").addCss("display:none;")})
+new NTES.ui.Slide($("#fonav > li"), $("#focnt > li"), "on", "mouseover",5000);
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript" src="http://img6.cache.netease.com/common/script/wrating.js">
+</script>
+<script type="text/javascript">
+var vjAcc="860010-0521010000";
+var wrUrl="http://163.wrating.com/";
+vjTrack("");
+</script>
+<noscript><img src="http://163.wrating.com/a.gif?a=&c=860010-0521010000" width="1" height="1"/></noscript>
+<!-- END WRating v1.0 -->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+    _ntes_nacc = "house"; //站点ID。
+    neteaseTracker();
+    </script></body>
+</html>

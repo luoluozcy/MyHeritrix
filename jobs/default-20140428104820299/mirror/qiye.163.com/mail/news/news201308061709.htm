@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>网易企业邮箱 - 企业信息化专业解决方案</title>
+		<link href="http://mimg.qiye.163.com/xm/all/index2010/css/style3.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+var sPrevTar="nothing";
+	function fChageTab(tar){
+		var sTarget=tar;
+		var sClassName="navBtn-current navBtn-"+sTarget+"-select";
+		var oTarget=document.getElementById("navBtnCurrent");
+		oTarget.className=sClassName;	
+	}
+	function fShowSubBtn(tar){
+		if(tar==""){
+		var oTarget=document.getElementById("navBtnCurrent");
+		var sClassName=String(oTarget.className);
+		var aClassSpl=sClassName.split("-");
+		var tar=aClassSpl[2];
+		}
+		var sTarget=tar;
+		var sSubTarget="navSubBtn"+sTarget;
+		if(sPrevTar!="nothing"){
+			var oPrevTarget=document.getElementById(sPrevTar);
+			oPrevTarget.style.display="none";
+			}
+		var oSubTarget=document.getElementById(sSubTarget);
+		var oTarBg=document.getElementById("navSubBtn");
+		if(tar!="index"){
+		oTarBg.className+=" navSubBtnBg";}
+		else{
+		oTarBg.className="navSubBtn";
+		}
+		oSubTarget.style.display="block";	
+		sPrevTar=sSubTarget;
+	}
+	function fChangeRightNav(oTar){
+		var oRightNav=document.getElementById("rightCont-nav");
+		for(i=0;i<oRightNav.childNodes.length;i++){
+		oRightNav.childNodes[i].className="";
+		if(i==4){oRightNav.childNodes[i].className+=" last";}
+		var sContId="serivce-client-"+i;
+		var oCont=document.getElementById(sContId);
+		oCont.style.display="none";
+		if(oRightNav.childNodes[i]==oTar){
+			oCont.style.display="block";
+		}
+		}
+		oTar.className="currenth";
+	}
+	function fHideSubBtn(){
+		if(sPrevTar!="nothing"){
+		var oPrevTarget=document.getElementById(sPrevTar);
+		var oTarBg=document.getElementById("navSubBtn");
+		oPrevTarget.style.display="none";
+		oTarBg.className="navSubBtn";
+		}
+	}
+	function fSetTheCount(){
+		sOnresizeCount=0;
+		alert("yahoo");
+	}
+	function fAdapateScreen(){
+	var oPage=document.getElementById("pager");
+	var oFoot=document.getElementById("footer");	
+	if(oPage.offsetHeight<document.documentElement.clientHeight){
+	oFoot.style.marginTop=document.documentElement.clientHeight-oPage.offsetHeight+"px";
+	}
+	else{
+	oFoot.style.marginTop="0";
+	}
+	}
+</script>
+	</head>
+
+	<body>
+		<div class="page" id="pager">
+			<div class="header">
+				<div class="topArea" onMouseOver="fHideSubBtn();">
+					<h1 class="logo bg-abg">
+						网易企业邮箱-企业信息化专业解决方案
+					</h1>
+					<div class="ctrlPart">
+						<div class="link">
+							<a href="http://www.163.com" target="_blank">网易首页</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+							<a href="http://email.163.com" target="_blank">网易免费邮</a>
+						</div>
+						<div class="btn bg-abg" style="display: none;">
+							<a class="txtB" href="">企业邮箱用户登录</a>
+						</div>
+					</div>
+					<!-- .ctrlPart -->
+				</div>
+				<!-- .topArea -->
+				<script id="navJs" type="text/javascript" src="http://qiye.163.com/mail/js/navbar.js?service,52"></script>
+			</div>
+			<!-- .header -->
+			<div class="content">
+				<div class="content-inner">
+					<div class="content-inner-bg"></div>
+					<div class="content-leftNav">
+						<div class="hotLine">
+							服务热线:400-6281-163
+						</div>
+						<div class="email">
+							kf@qiye.163.com
+						</div>
+					</div>
+					<!-- .content-leftNav -->
+					<div class="content-rightCont">
+						<h3 class="title-news-last">
+							最新公告
+						</h3>
+						<a name="theTop"></a>
+						<div class="content-news-last">
+
+							<p class="title">
+								网易企业邮箱5.0版“简爱”多地客户品鉴会诚邀您参与
+							</p>
+							<p class="time">
+								发布时间：2013-08-06
+							</p>
+
+							<p style="text-indent: 2em;">
+								您还在使用个人邮箱办公吗？或者您花费巨资搭建了企业邮箱系统、员工却在抱怨企业邮箱容量小、不好用？面对一系列问题，我们邀您参与网易企业邮箱5.0版“简爱”客户品鉴会，共同探讨企业简单轻松办公之道。通过参与会议，您将会体验到智能化的新一代企业邮箱(<a title='简爱专题' target='_blank' href='http://qiye.163.com/mail/v5/'>进入5.0版“简爱”专题</a>)，其语音输入、邮箱触点等等创新性的功能，突破传统企业邮箱办公模式，为员工沟通效率提速！同时，您还有机会获得由网易公司定制的精美礼品，欢迎参加。
+
+							</p>
+                                                        <p style="text-indent: inherit;">
+								<a title='点击看大图' target='_blank' href='http://mimg.qiye.163.com/p/official_site/2012/img/product/conference_201308061730.jpg'>
+									<img width="670" height="203" border=0 src="http://mimg.qiye.163.com/p/official_site/2012/img/product/conference_201308061730.jpg" />
+								</a>
+							</p>
+
+                                                        <p style="text-indent: inherit;">
+								<b>会议议题：</b>网易企业邮箱5.0版“简爱”，开启简单轻松工作之旅
+
+							</p>
+
+
+                                                        <p style="text-indent: inherit;color:#3688ab">
+								<b>天津会场</b>
+
+							</p>
+							
+							<p style="text-indent: inherit;">
+								<b>会议时间：</b>2013年8月20日（周二）下午14：00<br/><b>会议地点：</b>天津市津利华大酒店2层银华厅（河西区友谊路32号国展中心旁）<br/><b>参会方式：</b><a class="content-software-plugin-right-link" href="http://mimg.qiye.163.com/p/official_site/2012/doc/Invitation-20120820.doc">填写邀请函报名</a>（点此下载）<br/><b>主办单位：</b>网易企业邮箱、天津金粹恒孚科技有限公司<br/><b>咨询热线：</b>4006-116-119
+
+							</p>
+
+                                                        <p style="text-indent: inherit;color:#3688ab">
+								<b>青岛会场</b>
+
+							</p>
+							
+							<p style="text-indent: inherit;">
+								<b>会议时间：</b>2013年8月23日（周五）下午13：45<br/><b>会议地点：</b>山东省青岛市崂山区香港东路197号（青岛麒麟皇冠大酒店）<br/><b>参会方式：</b><a class="content-software-plugin-right-link" href="http://mimg.qiye.163.com/p/official_site/2012/doc/Invitation-20120823.doc">填写邀请函报名</a>（点此下载）<br/><b>主办单位：</b>网易企业邮箱、青岛天欣网络技术有限公司<br/><b>咨询热线：</b>4008266163
+
+							</p>
+							
+							<p style="text-indent: inherit;">
+								<b>您将收获</b>
+							</p>
+							<p style="text-indent: inherit;">
+								1.网易企业邮箱产品与技术总监对企业邮箱行业、产品技术、全新5.0版的分析讲解与演示。<br/>2.与网易企业邮箱负责人互动讨论在使用企业邮箱过程中遇到的问题。<br/>3.激动人心的抽奖环节，iPhone4S、iPad4等豪礼等你抽取（礼品以会议现场实际提供为准）。<br/>4.限量版网易公司定制款精美小礼品。
+							</p>
+                                                        <p style="text-indent: inherit;">
+								<b>会议背景</b>
+							</p>
+							<p style="text-indent: 2em;">
+								在信息化与国际化飞速发展的今天，企业需要高效、安全、稳定、易用的企业信息化管理平台及能够畅邮全球的电子邮件服务。网易，中国第一大电子邮件服务商，拥有超过16年邮件运营经验，在保障企业信息传输整个过程的高度安全和海外畅游基础上，提供简单易用的产品操作界面，能够大幅提升员工办公效率。2013年，在网易企业邮箱迈入第5个年头之际，推出全新5.0版本“简爱”——其化繁为简、智能高效的办公体验，已深得超过15万家企业信赖。为了深入服务于更多的企业客户，网易企业邮箱将在各地开展客户品鉴会，共同探讨简单轻松办公之道。更多精彩活动，欢迎持续关注。
+							</p>
+							
+
+							<div class="fn-clear"></div>
+						</div>
+						<!-- .content-news-last -->
+					</div>
+					<!-- .content-rightCont -->
+					<div class="btn-withArrow content-gotoTop" onMouseOver="this.className+=' btn-withArrow-hover'" onMouseOut="this.className='btn-withArrow content-gotoTop'" onClick="location.href='#'">
+						<p>
+							返回顶部
+						</p>
+						<span></span>
+					</div>
+					<div class="btn-withArrow content-list" onMouseOver="this.className+=' btn-withArrow-hover'" onMouseOut="this.className='btn-withArrow content-list'"
+						onClick="location.href='http://qiye.163.com/mail/news-list.htm'">
+						<p>
+							更多公告
+						</p>
+						<span></span>
+					</div>
+					<div class="content-coreMail" style="display: none">
+						coreMail专业邮件系统
+					</div>
+					<div class="fn-clear"></div>
+				</div>
+				<!-- .content-inner -->
+			</div>
+			<!-- .content -->
+			<div class="footer" id="footer">
+				<br />
+				<p class="linkPart">
+					<a href="http://corp.163.com/index_gb.html" target="_blank">关于网易</a>&nbsp;-&nbsp;
+					<a href="http://safesurf.china.cn/data_form.php" target="_blank">举报违法信息</a>&nbsp;-&nbsp;
+					<a href="http://help.163.com/" target="_blank">客户服务</a>&nbsp;-&nbsp;
+					<a href="http://corp.163.com/gb/legal/legal.html" target="_blank">相关法律</a>
+				</p>
+				<p class="copyright">
+					网易公司版权所有&nbsp;&copy;&nbsp;1997--
+					<script type="text/javascript" src="http://mimg.127.net/copyright/year.js"></script>
+				</p>
+			</div>
+			<!-- .footer -->
+		</div>
+		<!-- .page -->
+		<script type="text/javascript">
+fAdapateScreen();
+window.onresize=fAdapateScreen;
+</script>
+	</body>
+</html>
+

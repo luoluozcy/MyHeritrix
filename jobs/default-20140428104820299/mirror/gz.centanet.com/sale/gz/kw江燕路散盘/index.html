@@ -1,0 +1,1350 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>
+        广州江燕路散盘二手房出售房源信息,广州江燕路散盘二手房出售价格
+        - 广州二手房 - 中原地产</title>
+    <meta name="keywords" content="广州江燕路散盘二手房买卖，广州江燕路散盘二手房信息，广州江燕路散盘二手房出售" />
+    <meta name="description" content="想找最笋的广州江燕路散盘二手房房源，想了解最新的广州江燕路散盘二手房价格走势？到中原地产资讯网吧！每天及时更新，为你提供最新、最齐全的广州江燕路散盘二手房信息！ 查找二手房交易,房屋出租,房屋出售,请到中原广州二手房网" />
+    <link href="http://gz.centanet.com/jQuery/css/ui-lightness/jquery-ui-1.8.10.custom.css" rel="stylesheet"
+        type="text/css" />
+    <script src="http://gz.centanet.com/js/jquery.js" type="text/javascript"></script>
+    <script src="http://gz.centanet.com/jQuery/js/SearchControlSearchKeyword.js" type="text/javascript"
+        charset="gb2312"></script>
+    <script src="http://gz.centanet.com/jQuery/js/jquery-ui-1.8.10.custom.min.js" type="text/javascript"></script>
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+    <link rel="Bookmark" href="/favicon.ico" />
+    <link href="/style_11/struc_business.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/struc_home.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/struc_library.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/public.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/txt.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/lnk.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/struc_property.css" rel="stylesheet" type="text/css" />
+    <link href="/style_11/struc_newhouse.css" rel="stylesheet" type="text/css" />
+    <link href="http://gz.centanet.com/style_11/common.css" rel="stylesheet" type="text/css" />
+    <link href="http://gz.centanet.com/style_11/news/news.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .txtSearchKey
+        {
+            width: 340px;
+            height: 30px;
+            margin: 0px;
+            padding: 0px;
+            margin-top: -8px;
+            margin-left: -10px;
+            border: 0px;
+            line-height: 30px;
+            text-indent: 4px;
+            outline: 0px;
+        }
+    </style>
+    <script type="text/javascript">
+        var flagSearchKeyword = false;
+        var flagSearchRefNo = false;
+        var txtSearchKeyword = "请输入您需要查找的内容或关键字";
+        function searchcontrol_keyword_txtonfocus(control) {
+            if (!flagSearchKeyword) { control.value = ""; control.style.color = "#999"; }
+        }
+        function searchcontrol_keyword_txtonblur(control) {
+            if (control.value != "") { flagSearchKeyword = true; } else { flagSearchKeyword = false; }
+            if (!flagSearchKeyword) { control.value = txtSearchKeyword; control.style.color = "#999"; }
+        }
+        function GoToSearch() {
+            var key = document.getElementById("txtSearchKeys").value;
+            var strKey = "请输入关键字(楼盘名或路段名)";
+            var url;
+            if (strKey.indexOf(key) >= 0 || key.length == 0) {
+                url = "http://gz.centanet.com/sale/gz/";
+            }
+            else {
+                url = "http://gz.centanet.com/sale/gz/kw" + encodeURI(key) + "/";
+            }
+            window.location = url;
+        }
+        $(document).ready(function () {
+            $("#txtSearchKeys").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/AutoComplete.ashx",
+                        dataType: "json",
+                        data: {
+                            k: $("#txtSearchKey").val()
+                        },
+                        success: function (data) {
+                            response($.map(data.props, function (item) {
+                                return {
+                                    name: item.name,
+                                    count: item.count,
+                                    value: item.name
+                                }
+                            }));
+                        }
+                    });
+                },
+                minLength: 1,
+                select: {}
+            })
+    .data('autocomplete')._renderItem = function (ul, item) {
+        return $('<li></li>').data('item.autocomplete', item)
+                             .append('<a  style="height:24px;line-height:24px;width:330px;font-size:13px;"><span style="float:left">' + item.name + '</span><span style="float:right"></span></a>')
+                             .appendTo(ul); alert('item' + item); alert('ul' + ul);
+    };
+        });
+
+        $(function () {
+            $("#theArea").click(function () {
+                $("#clmarea1").show();
+            });
+            $("#clmarea").bind("mouseleave", function () {
+                $("#clmarea1").hide();
+            });
+        });
+    </script>
+    <script type="text/JavaScript">
+        function GetTxtValue(id) {
+            var value;
+            value = document.getElementById(id).value;
+            return value;
+        }
+
+        function GetIntValue(id) {
+            var value;
+            value = document.getElementById(id).value;
+            if (value == "") {
+                return 0;
+            }
+
+            if (isNaN(value)) {
+                return 0;
+            }
+            else {
+                return value;
+            }
+        }
+
+        function GetSearchKey() {
+            var key = document.getElementById("txtSearchKey").value;
+            var strKey = "请输入关键字(楼盘名或路段名)";
+            if (strKey.indexOf(key) >= 0 || key.length == 0) {
+                return "";
+            }
+            else {
+                return encodeURI(key);
+            }
+        }
+
+        function SetStyle(id) {
+
+            document.getElementById(id).style.backgroundColor = "#CCCCCC";
+        }
+        function SetStyleOut(id) {
+            document.getElementById(id).style.backgroundColor = "#666666";
+        }
+        
+    </script>
+    <script type="text/javascript">
+        var _bdhm_top = 0;
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        var _bdhm_tim = new Image(1, 1);
+        _bdhm_tim.id = "bdhmPerimg";
+        _bdhm_tim.src = _bdhmProtocol + "hm.baidu.com/_tt.gif?si=2601a0f4477572ee12d6c06945adc380&rnd=" + Math.round(Math.random() * 2147483647);
+        _bdhm_tim.onload = function () { _bdhm_top = 1; }
+    </script>
+</head>
+<body>
+    <form method="post" action="?option=gz%2fkw%u6c5f%u71d5%u8def%u6563%u76d8%2f" id="Form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODM4MzU4NjYyZGQ=" />
+</div>
+
+    <div>
+        <div class="wrapper">
+            <!---top--->
+            <div class="head">
+                <div class="headbox">
+                    <div class="left">
+                        <a href="http://gz.centanet.com/">
+                            <img src="http://gz.centanet.com/img_11/home/logo.jpg" alt="中原地产" style="width: 140px;
+                                height: 48px; border: 0px;" />
+                        </a>
+                    </div>
+                    <!---search--->
+                    <div class="headsearch">
+                        <div class="headsearch-input">
+                            <input id="txtSearchKeys" name="txtSearchKey" class="txtSearchKey" maxlength="30"
+                                onfocus="searchcontrol_keyword_txtonfocus(this)" onblur="searchcontrol_keyword_txtonblur(this)"
+                                onkeydown="if(event.keyCode==13){GoToSearch()}" value="请输入关键字(楼盘名或路段名)" type="text" />
+                        </div>
+                        <div class="left" style="width: 80px; height: 34px; background-color: #510303; color: #d9beb5;
+                            font-size: 16px; font-weight: bolder; text-align: center; line-height: 34px;
+                            cursor: pointer;" onclick="GoToSearch()">
+                            搜 索</div>
+                    </div>
+                    <!---weblink--->
+                    <div class="headweb">
+                        <!--<a class="phone" onclick="" target="_blank" href="#"></a>-->
+                        <div class="headerArea">
+                            <div class="web_s">
+                                <span><a title="汇瀚按揭" class="lnk_w_y" href="http://www.gzwellhead.com.cn/" target="_blank"
+                                    rel="nofollow">汇瀚按揭</a></span> <span>|</span> <span><a title="官方微博" class="lnk_w_y"
+                                        href="http://weibo.com/gzcentanet" target="_blank" rel="nofollow">官方微博</a></span>
+                                <span>|</span> <span><a title="收藏" class="lnk_w_y" href="#" onclick="javascript:window.external.AddFavorite('http://gz.centanet.com/news/','中原楼市热点')">
+                                    收藏本站</a></span>
+                            </div>
+                            <div class="web_s">
+                                <span><a class="lnk_w_y" href="http://gz.centanet.com/" target="_blank">广州</a></span>
+                                <span style="margin-top: 7px; cursor: pointer;" id="theArea">
+                                    <img src="/img_11/home/btn_up.png" /></span>
+                            </div>
+                            <!-- 兄弟连接 -->
+                            <div class="dk_options" id="clmarea1">
+                                <ul class="dk_options_inner" id="clmarea" style="z-index: 999">
+                                    <li class="dk_option_current"><a href="http://gz.centanet.com" target="_blank" style="color: #d00;">
+                                        广州</a></li>
+                                    <li><a href="http://sh.centanet.com" target="_blank">上海</a></li>
+                                    <li><a href="http://hk.centanet.com" target="_blank">香港</a></li>
+                                    <li><a href="http://sz.centanet.com" target="_blank">深圳</a></li>
+                                    <li><a href="http://bj.centanet.com" target="_blank">北京</a></li>
+                                    <li><a href="http://tj.centanet.com" target="_blank">天津</a></li>
+                                    <li><a href="http://cd.centanet.com/" target="_blank">成都</a></li>
+                                    <li><a href="http://cq.centanet.com" target="_blank">重庆</a></li>
+                                    <li><a href="http://dg.centaline.com.cn" target="_blank">东莞</a></li>
+                                    <li><a href="http://www.centaline-macau.com" target="_blank">澳门</a></li>
+                                    <li><a href="http://www.centaline.com.cn" target="_blank">更多</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---navigation--->
+            <div class="navi">
+                <ul class="mainBox_nohd">
+                    <li><a href="http://gz.centanet.com/" title="首页" class="lnk_w_y_15b">
+                        首页</a></li>
+                    <li class="current"><a href="http://gz.centanet.com/sale/gz/" title="二手房" class="lnk_w_y_15b">二手房</a></li>
+                    <li><a title="出租房" href="http://gz.centanet.com/rental/gz/" class="lnk_w_y_15b">租房</a></li>
+                    <li><a title="新房" href="http://gz.centanet.com/depart/" class="lnk_w_y_15b">新房</a></li>
+                    <li><a title="写字楼" href="http://gz.centanet.com/office/" class="lnk_w_y_15b">写字楼</a></li>
+                    <li><a title="商铺" href="http://gz.centanet.com/premise/" class="lnk_w_y_15b">商铺</a></li>
+                    <li><a title="房团购" href="http://gz.centanet.com/tuangou/" class="lnk_w_y_15b">房团购</a></li>
+                    <li><a title="楼盘百科" href="http://gz.centanet.com/wiki/" class="lnk_w_y_15b">楼盘百科</a></li>
+                    <li><a title="楼市热点" href="http://gz.centanet.com/news/" class="lnk_w_y_15b">楼市热点</a>
+                        <img src="http://gz.centanet.com/img_11/home/new.gif" alt="new" style="position: absolute;
+                            width: 22px; height: 12px;" />
+                    </li>
+                    <li><a title="网络经纪人" href="http://gz.centanet.com/agent/" class="lnk_w_y_15b">经纪人</a></li>
+                    <li><a title="楼盘视频" href="http://gz.centanet.com/cpn/" class="lnk_w_y_15b">楼盘视频</a></li>
+                    <li><a title="20周年" href="http://gz.centanet.com/20years/" class="lnk_w_y_15b">20周年</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="total_s1">
+        <div class="new_menu">
+            <div class="lp">
+                
+            </div>
+            <div class="rp">
+                <div class="txt_lp">
+                    <a href="http://gz.centanet.com/tuangou/" class="lnk_r_12bo" target="_blank">新房团购更节省</a></div>
+                <div class="txt_lp">
+                    <a href="http://gz.centanet.com/office/tzwy/ " class="lnk_r_12bo" target="_blank"
+                        style="">最具投资价值商铺</a></div>
+            </div>
+            <!-- search -->
+            <div class="property_search_b">
+                <div class="property_search_b1">
+                    <div class="txt_lp">
+                        区域：</div>
+                    <div class="property_search_b1_t1">
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_r_12bo"
+                                title="不限">
+                                不限</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/baiyun/kw江燕路散盘/" class="lnk_bl_o"
+                                title="白云">
+                                白云</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/panyu/kw江燕路散盘/" class="lnk_bl_o"
+                                title="番禺">
+                                番禺</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/haizhu/kw江燕路散盘/" class="lnk_bl_o"
+                                title="海珠">
+                                海珠</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/huadu/kw江燕路散盘/" class="lnk_bl_o"
+                                title="花都">
+                                花都</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/daguangzhou/kw江燕路散盘/" class="lnk_bl_o"
+                                title="大广州">
+                                大广州</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/tianhe/kw江燕路散盘/" class="lnk_bl_o"
+                                title="天河">
+                                天河</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/yuexiu/kw江燕路散盘/" class="lnk_bl_o"
+                                title="越秀">
+                                越秀</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/zenghuangluo/kw江燕路散盘/" class="lnk_bl_o"
+                                title="增城/黄埔/萝岗">
+                                增城/黄埔/萝岗</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a href="http://gz.centanet.com/sale/liwan/kw江燕路散盘/" class="lnk_bl_o"
+                                title="荔湾">
+                                荔湾</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="property_search_b1">
+                    <div class="txt_lp">
+                        售价：</div>
+                    <div class="property_search_b1_t1">
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_r_12bo"
+                                title="不限">
+                                不限</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s1-kw江燕路散盘/" class="lnk_bl_o"
+                                title="50万以下">
+                                50万以下</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s2-kw江燕路散盘/" class="lnk_bl_o"
+                                title="50-80万">
+                                50-80万</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s3-kw江燕路散盘/" class="lnk_bl_o"
+                                title="80-100万">
+                                80-100万</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s4-kw江燕路散盘/" class="lnk_bl_o"
+                                title="100-120万">
+                                100-120万</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s5-kw江燕路散盘/" class="lnk_bl_o"
+                                title="120-150万">
+                                120-150万</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s6-kw江燕路散盘/" class="lnk_bl_o"
+                                title="150-200万">
+                                150-200万</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s7-kw江燕路散盘/" class="lnk_bl_o"
+                                title="200-300万">
+                                200-300万</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s8-kw江燕路散盘/" class="lnk_bl_o"
+                                title="300-500万">
+                                300-500万</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/s9-kw江燕路散盘/" class="lnk_bl_o"
+                                title="500万以上">
+                                500万以上</a>
+                        </div>
+                        
+                        <div class="lp">
+                            <label>
+                                <input name="textfield" id="txtminPrice" type="text" class="list_1" size="5" value=""
+                                    onclick="return txtminPrice_onclick()" />万
+                            </label>
+                        </div>
+                        <div class="lp" style="margin-left: 5px; margin-right: 5px;">
+                            -</div>
+                        <div class="txt_lp">
+                            <label>
+                                <input name="textfield" id="txtmaxPrice" type="text" class="list_1" size="5" value="" />万
+                            </label>
+                        </div>
+                        <div class="lp">
+                            <input type="button" class="list_btn" value="确定" onclick="window.location='http://gz.centanet.com/sale/gz/?s='+GetIntValue('txtminPrice')+'-'+GetIntValue('txtmaxPrice')" /></div>
+                    </div>
+                </div>
+                <div class="property_search_b1">
+                    <div class="txt_lp">
+                        面积：</div>
+                    <div class="property_search_b1_t1">
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_r_12bo"
+                                title="不限">
+                                不限</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m1-kw江燕路散盘/" class="lnk_bl_o"
+                                title="50平米以下">
+                                50平米以下</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m2-kw江燕路散盘/" class="lnk_bl_o"
+                                title="50-80平米">
+                                50-80平米</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m3-kw江燕路散盘/" class="lnk_bl_o"
+                                title="80-100平米">
+                                80-100平米</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m4-kw江燕路散盘/" class="lnk_bl_o"
+                                title="100-120平米">
+                                100-120平米</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m5-kw江燕路散盘/" class="lnk_bl_o"
+                                title="120-150平米">
+                                120-150平米</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m6-kw江燕路散盘/" class="lnk_bl_o"
+                                title="150-200平米">
+                                150-200平米</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m7-kw江燕路散盘/" class="lnk_bl_o"
+                                title="200-300平米">
+                                200-300平米</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/m8-kw江燕路散盘/" class="lnk_bl_o"
+                                title="300平米以上">
+                                300平米以上</a>
+                        </div>
+                        
+                        <div class="lp">
+                            <label>
+                                <input name="textfield" id="txtminSize" type="text" class="list_1" size="5" value="" />平米
+                            </label>
+                        </div>
+                        <div class="lp" style="margin-left: 5px; margin-right: 5px;">
+                            -</div>
+                        <div class="txt_lp">
+                            <label>
+                                <input name="textfield" id="txtmaxSize" type="text" class="list_1" size="5" value="" />平米
+                            </label>
+                        </div>
+                        <div class="lp">
+                            <input type="button" class="list_btn" value="确定" onclick="window.location='http://gz.centanet.com/sale/gz/?m='+GetIntValue('txtminSize')+'-'+GetIntValue('txtmaxSize')" /></div>
+                    </div>
+                </div>
+                <div class="property_search_b1">
+                    <div class="txt_lp">
+                        房型：</div>
+                    <div class="property_search_b1_t1">
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_r_12bo"
+                                title="不限">
+                                不限</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/x1-kw江燕路散盘/" class="lnk_bl_o"
+                                title="一室">
+                                一室</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/x2-kw江燕路散盘/" class="lnk_bl_o"
+                                title="两室">
+                                两室</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/x3-kw江燕路散盘/" class="lnk_bl_o"
+                                title="三室">
+                                三室</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/x4-kw江燕路散盘/" class="lnk_bl_o"
+                                title="四室">
+                                四室</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/x5-kw江燕路散盘/" class="lnk_bl_o"
+                                title="五室">
+                                五室</a>
+                        </div>
+                        
+                        <div class="txt_lp">
+                            <a rel="nofollow" href="http://gz.centanet.com/sale/gz/x6-kw江燕路散盘/" class="lnk_bl_o"
+                                title="五室以上">
+                                五室以上</a>
+                        </div>
+                        
+                        <div class="lp">
+                            <label>
+                                <input name="textfield" id="txtBedroom" type="text" class="list_1" size="5" value="" />
+                            </label>
+                        </div>
+                        <div class="lp" style="margin-left: 5px; margin-right: 5px;">
+                            室</div>
+                        <div class="lp">
+                            <label>
+                                <input name="textfield2" id="txtSittingroom" type="text" class="list_1" size="5"
+                                    value="" />
+                            </label>
+                        </div>
+                        <div class="lp" style="margin-left: 5px; margin-right: 5px;">
+                            厅</div>
+                        <div class="lp">
+                            <label>
+                                <input name="textfield" id="txtToilet" type="text" class="list_1" size="5" value="" />
+                            </label>
+                        </div>
+                        <div class="lp" style="margin-left: 5px; margin-right: 5px;">
+                            卫</div>
+                        <div class="lp">
+                            <input type="button" class="list_btn" value="确定" onclick="window.location='http://gz.centanet.com/sale/gz/?x='+GetIntValue('txtBedroom')+'-'+GetIntValue('txtSittingroom')+'-'+GetIntValue('txtToilet')" /></div>
+                    </div>
+                </div>
+                <div class="property_search_b1">
+                    <div class="txt_lp" style="padding-top: 3px;">
+                        <span class="t_b_14b">筛选：</span></div>
+                    <div class="txt_lp">
+                        <label>
+                            <select name="select" class="list_1" onchange="window.location.href=this.value;">
+                                <option>找二手房</option>
+                                <option value="http://gz.centanet.com/rental/gz/">租房</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="txt_lp">
+                        <label>
+                            <input name="textfield" id="txtSearchKey" type="text" class="list_1" style="width: 300px;"
+                                title="请输入关键字(楼盘名或路段名)" value="江燕路散盘" onfocus="searchcontrol_keyword_txtonfocus(this)"
+                                onblur="searchcontrol_keyword_txtonblur(this)" onkeydown="if(event.keyCode==13){setsearchword('1');}" />
+                        </label>
+                    </div>
+                    <div class="txt_lp">
+                        <input type="button" class="btn_search" onclick="setsearchword('1');" /></div>
+                    <div class="txt_lp">
+                        <img align="absmiddle" src="http://gz.centanet.com/img_11/clear.gif">
+                        <a style="line-height: 24px; text-decoration: none; font-size: 13px; width: 30px;
+                            text-align: center; color: #999999; cursor: pointer;" onclick="window.location='http://gz.centanet.com/sale/gz/'">
+                            清空全部</a></div>
+                    <div class="txt_lp" style="padding-top: 3px; margin-left: 20px;">
+                        更多筛选：</div>
+                    <div class="txt_lp">
+                        <label>
+                            房龄</label>
+                        <label>
+                            <select name="select" class="list_1" onchange="window.location.href=this.value;"
+                                title="房龄">
+                                
+                                <option value="http://gz.centanet.com/sale/gz/kw江燕路散盘/" selected="selected">
+                                    不限</option>
+                                
+                                <option value="http://gz.centanet.com/sale/gz/l1-kw江燕路散盘/">
+                                    5年以下</option>
+                                
+                                <option value="http://gz.centanet.com/sale/gz/l2-kw江燕路散盘/">
+                                    5年-10年</option>
+                                
+                                <option value="http://gz.centanet.com/sale/gz/l3-kw江燕路散盘/">
+                                    10年以上 </option>
+                                
+                            </select>
+                        </label>
+                    </div>
+                    <div class="txt_lp">
+                        <label>
+                            楼层</label>
+                        <label>
+                            <select name="select" class="list_1" onchange="window.location.href=this.value;"
+                                title="楼层">
+                                
+                                <option value="http://gz.centanet.com/sale/gz/kw江燕路散盘/" selected="selected">
+                                    不限</option>
+                                
+                                <option value="http://gz.centanet.com/sale/gz/c1-kw江燕路散盘/">
+                                    低层</option>
+                                
+                                <option value="http://gz.centanet.com/sale/gz/c2-kw江燕路散盘/">
+                                    中层</option>
+                                
+                                <option value="http://gz.centanet.com/sale/gz/c3-kw江燕路散盘/">
+                                    高层</option>
+                                
+                                <option value="http://gz.centanet.com/sale/gz/c4-kw江燕路散盘/">
+                                    极高层</option>
+                                
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!--广告-->
+            
+            <div class="property_search_b2">
+                <a href="http://gz.centanet.com/special/special-117.html" target="_blank">
+                    <img src="http://gz.centanet.com//UploadImage/AdvertiseImage/20140418/20140418183954.jpg" alt="150万刚需购房 海珠区有得挑"
+                        title="150万刚需购房 海珠区有得挑" style="border: 0; width: 973px;
+                        height: 100px;" /></a></div>
+            
+            <!-- 内容 -->
+            <div class="property_search_b2">
+                <!-- 左边 -->
+                <div class="property_search_lp">
+                    
+                    <div class="property_search_lp" style="border-bottom-width: 3px; border-bottom-style: solid;
+                        border-bottom-color: #999;">
+                        <div class="property_search_btn">
+                            <span class="t_w_14b">出售</span></div>
+                        <div class="property_search_btn1">
+                            <a href="http://gz.centanet.com/manger/sale/gz/" class="lnk_b_o">经理笋盘</a></div>
+                        <!--广告-->
+                        
+                        <div style="width: 150px; float: left; margin-top: 2px;">
+                            <a href="http://gz.centanet.com/hot/sale/gz/" class="lnk_b_o" title="今日热门推荐">
+                                <img src="http://gz.centanet.com/img_11/btn_jr.jpg" alt="今日热门推荐" style="border: 0;" /></a></div>
+                        <div class="txt_lp" style="padding-left: 20px; padding-top: 6px;">
+                            <span class="t_g">共有</span> <span class="t_r">
+                                4</span> <span class="t_g">套房子</span></div>
+                        <div class="pages" style="margin-top: 7px;">
+                            
+                            <a visible="false" class="list_1">下一页</a>
+                            
+                        </div>
+                        <div class="txt_rp" style="padding-top: 5px;">
+                            <span class="t_g">
+                                1/1</span></div>
+                        <div class="pages" style="margin-top: 7px;">
+                            
+                            <a visible="false" class="list_1">上一页</a>
+                            
+                        </div>
+                    </div>
+                    <div class="property_search_bg">
+                        <div class="txt_lp">
+                            <input type="button" class="btn_1" /></div>
+                        <div class="txt_rp" style="margin-top: 3px;">
+                            
+                            <a style="cursor: pointer;" title="点击按发布时间排序" href="http://gz.centanet.com/sale/gz/o1-kw江燕路散盘/">
+                                <span class="property_search_bg_long">发布时间</span></a>
+                            
+                        </div>
+                        <div class="rp" style="margin-right: 5px; margin-top: 3px;">
+                            <label>
+                                <select name="select" class="list_1" onchange="window.location.href=this.value;">
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/kw江燕路散盘/" selected="selected">
+                                        不限</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o1-kw江燕路散盘/">
+                                        按发布时间</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o2-kw江燕路散盘/">
+                                        按更新时间</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o3-kw江燕路散盘/">
+                                        面积由低到高</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o4-kw江燕路散盘/">
+                                        面积由高到低</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o5-kw江燕路散盘/">
+                                        售价由低到高</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o6-kw江燕路散盘/">
+                                        售价由高到低</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o7-kw江燕路散盘/">
+                                        租价由低到高</option>
+                                    
+                                    <option value="http://gz.centanet.com/sale/gz/o8-kw江燕路散盘/">
+                                        租价由高到低</option>
+                                    
+                                </select>
+                            </label>
+                        </div>
+                        <div class="txt_rp" style="margin-top: 3px;">
+                            排序方式：</div>
+                    </div>
+                    <div id="list">
+                        
+                        <div>
+                            <div class="property_search_lp" style="cursor: pointer;" id="DBJ728-19351">
+                                <div class="property_search_pic">
+                                    <div class="pic_shop_s4">
+                                        <a href="http://gz.centanet.com/sale/details/DBJ728-19351.htm" target="_blank">
+                                            <img src="http://gz.centanet.com/postimages/6d/1c/2dd03d9c4b9dbe386141e5a7bff0_120x90.jpg" width="120" height="90" alt="江燕路散盘" border="0"
+                                                title="江燕路散盘" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic1">
+                                    <div class="property_search_pic1_txt">
+                                        <strong><a href="http://gz.centanet.com/sale/details/DBJ728-19351.htm" class="lnk_bl_o_16b" target="_blank">
+                                            好靓一房 东南靓向 厅出阳台 无税房 可改两房</a></strong></div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp">
+                                            <a href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_bl_o">
+                                                <strong style="color:#FF3300">江燕路散盘</strong>
+                                            </a>
+                                        </div>
+                                        <div class="txt_lp">
+                                            江燕路</div>
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        
+                                        <div class="txt_lp">
+                                            单价:17978元</div>
+                                        
+                                        <div class="txt_lp">
+                                            1室1厅1卫
+                                        </div>
+                                        <div class="txt_lp">
+                                            44平米</div>
+                                        
+                                        <div class="txt_lp">
+                                            建造年代：2014</div>
+                                        
+                                        <div class="txt_lp">
+                                            楼层：中层</div>
+                                        
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp" style="margin-right: 30px;">
+                                            推荐人: <a href="http://gz.centanet.com/agent/19351.htm" target="_blank">
+                                                李飞龙A</a></div>
+                                        <div class="txt_lp">
+                                            <div class="txt_lp">
+                                                <span style="background-color: #62B362; padding: 2px 4px; color: White;">
+                                                    一房一厅</span></div>
+                                            <div class="txt_lp">
+                                                <span style="background-color: #EA695A; padding: 2px 4px; color: White;">
+                                                    业主唯一物业</span></div>
+                                            <div class="txt_lp">
+                                                <span style="background-color: #6E90D7; padding: 2px 4px; color: White;">
+                                                    房产证满五年</span></div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic2">
+                                    <div class="property_search_pic2_txt">
+                                        <div class="lp">
+                                            <span class="t_r_20b">
+                                                80万
+                                                
+                                            </span>
+                                        </div>
+                                        <div class="lp" style="margin-top: 5px;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property_line" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="property_search_lp" style="cursor: pointer;" id="WSQ548-17847">
+                                <div class="property_search_pic">
+                                    <div class="pic_shop_s4">
+                                        <a href="http://gz.centanet.com/sale/details/WSQ548-17847.htm" target="_blank">
+                                            <img src="http://gz.centanet.com/postimages/17/e7/bd1a5e034ee0a38cf356f5592041_120x90.jpg" width="120" height="90" alt="江燕路散盘" border="0"
+                                                title="江燕路散盘" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic1">
+                                    <div class="property_search_pic1_txt">
+                                        <strong><a href="http://gz.centanet.com/sale/details/WSQ548-17847.htm" class="lnk_bl_o_16b" target="_blank">
+                                            江燕路小区 一房一厅 保养新净 过五年 唯一住房</a></strong></div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp">
+                                            <a href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_bl_o">
+                                                <strong style="color:#FF3300">江燕路散盘</strong>
+                                            </a>
+                                        </div>
+                                        <div class="txt_lp">
+                                            江燕路</div>
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        
+                                        <div class="txt_lp">
+                                            单价:15714元</div>
+                                        
+                                        <div class="txt_lp">
+                                            1室1厅1卫
+                                        </div>
+                                        <div class="txt_lp">
+                                            42平米</div>
+                                        
+                                        <div class="txt_lp">
+                                            建造年代：2011</div>
+                                        
+                                        <div class="txt_lp">
+                                            楼层：高层</div>
+                                        
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp" style="margin-right: 30px;">
+                                            推荐人: <a href="http://gz.centanet.com/agent/17847.htm" target="_blank">
+                                                冯秋文</a></div>
+                                        <div class="txt_lp">
+                                            <div class="txt_lp">
+                                                <span style="background-color: #62B362; padding: 2px 4px; color: White;">
+                                                    一梯两户</span></div>
+                                            <div class="txt_lp">
+                                                <span style="background-color: #EA695A; padding: 2px 4px; color: White;">
+                                                    位置安静</span></div>
+                                            <div class="txt_lp">
+                                                <span style="background-color: #6E90D7; padding: 2px 4px; color: White;">
+                                                    顶楼</span></div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic2">
+                                    <div class="property_search_pic2_txt">
+                                        <div class="lp">
+                                            <span class="t_r_20b">
+                                                66万
+                                                
+                                            </span>
+                                        </div>
+                                        <div class="lp" style="margin-top: 5px;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property_line" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="property_search_lp" style="cursor: pointer;" id="HDC615-24924">
+                                <div class="property_search_pic">
+                                    <div class="pic_shop_s4">
+                                        <a href="http://gz.centanet.com/sale/details/HDC615-24924.htm" target="_blank">
+                                            <img src="http://img.gz.centanet.com/PictureDepot/c/c24/peepwawswp/pekapepxdp/pekapepxdppype/10/2011101010273096673224-420&315.jpg" width="120" height="90" alt="江燕路散盘" border="0"
+                                                title="江燕路散盘" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic1">
+                                    <div class="property_search_pic1_txt">
+                                        <strong><a href="http://gz.centanet.com/sale/details/HDC615-24924.htm" class="lnk_bl_o_16b" target="_blank">
+                                            江燕路小区 证满五年 明厨明厕 保养清净</a></strong></div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp">
+                                            <a href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_bl_o">
+                                                <strong style="color:#FF3300">江燕路散盘</strong>
+                                            </a>
+                                        </div>
+                                        <div class="txt_lp">
+                                            江燕路</div>
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        
+                                        <div class="txt_lp">
+                                            单价:14444元</div>
+                                        
+                                        <div class="txt_lp">
+                                            1室1厅1卫
+                                        </div>
+                                        <div class="txt_lp">
+                                            45平米</div>
+                                        
+                                        <div class="txt_lp">
+                                            建造年代：2011</div>
+                                        
+                                        <div class="txt_lp">
+                                            楼层：中层</div>
+                                        
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp" style="margin-right: 30px;">
+                                            推荐人: <a href="http://gz.centanet.com/agent/24924.htm" target="_blank">
+                                                黄如锦</a></div>
+                                        <div class="txt_lp">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic2">
+                                    <div class="property_search_pic2_txt">
+                                        <div class="lp">
+                                            <span class="t_r_20b">
+                                                65万
+                                                
+                                            </span>
+                                        </div>
+                                        <div class="lp" style="margin-top: 5px;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property_line" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="property_search_lp" style="cursor: pointer;" id="RYE130-24924">
+                                <div class="property_search_pic">
+                                    <div class="pic_shop_s4">
+                                        <a href="http://gz.centanet.com/sale/details/RYE130-24924.htm" target="_blank">
+                                            <img src="http://img.gz.centanet.com/PictureDepot/c/c24/peepwawswp/pesspdpsyp/pesspdpsyppgpa/10/20128814193195890482-420&315.jpg" width="120" height="90" alt="江燕路散盘" border="0"
+                                                title="江燕路散盘" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic1">
+                                    <div class="property_search_pic1_txt">
+                                        <strong><a href="http://gz.centanet.com/sale/details/RYE130-24924.htm" class="lnk_bl_o_16b" target="_blank">
+                                            江燕路小区 交通方便 证满五年 性价比高</a></strong></div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp">
+                                            <a href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="lnk_bl_o">
+                                                <strong style="color:#FF3300">江燕路散盘</strong>
+                                            </a>
+                                        </div>
+                                        <div class="txt_lp">
+                                            江燕路</div>
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        
+                                        <div class="txt_lp">
+                                            单价:14516元</div>
+                                        
+                                        <div class="txt_lp">
+                                            2室1厅1卫
+                                        </div>
+                                        <div class="txt_lp">
+                                            62平米</div>
+                                        
+                                        <div class="txt_lp">
+                                            建造年代：2011</div>
+                                        
+                                        <div class="txt_lp">
+                                            楼层：中层</div>
+                                        
+                                    </div>
+                                    <div class="property_search_pic1_txt">
+                                        <div class="txt_lp" style="margin-right: 30px;">
+                                            推荐人: <a href="http://gz.centanet.com/agent/24924.htm" target="_blank">
+                                                黄如锦</a></div>
+                                        <div class="txt_lp">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property_search_pic2">
+                                    <div class="property_search_pic2_txt">
+                                        <div class="lp">
+                                            <span class="t_r_20b">
+                                                90万
+                                                
+                                            </span>
+                                        </div>
+                                        <div class="lp" style="margin-top: 5px;">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property_line" style="margin-top: 10px;">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="property_search_lp" style="line-height: 22px; margin: 10px 0;">
+                        <div class="pages">
+                            <div class="lp">
+                                <div class="rp">
+                                    <img src="http://gz.centanet.com/img_11/btn_uup.jpg" /><a href="#">回到顶部</a></div>
+                                <div class="pages">
+                                    <a href="http://gz.centanet.com/sale/gz/kw江燕路散盘-p1/" class="list_pages">尾页</a></div>
+                                <div class="pages">
+                                    <img src="http://gz.centanet.com/img_11/btn_down.jpg" /></div>
+                                <div class="pages">
+                                    
+                                    <a visible="false">下一页</a>
+                                    
+                                </div>
+                                
+                                <div class="pages">
+                                    
+                                    <a visible="false">上一页</a>
+                                    
+                                </div>
+                                <div class="pages">
+                                    <img src="http://gz.centanet.com/img_11/btn_down1.jpg" style="height: 16px" /></div>
+                                <div class="pages">
+                                    <a href="http://gz.centanet.com/sale/gz/kw江燕路散盘/" class="list_pages">首页</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右边 -->
+                <div class="property_search_rp">
+                    <!-- 天河区最热经纪人 -->
+                    <div>
+                        <div class="property_search_hot">
+                            <span class="t_b_14b">最热经纪人</span></div>
+                        <div class="property_search_hot_b">
+                            
+                            <div>
+                                <div class="property_search_hot_b1">
+                                    <div class="pic_shop_s3">
+                                        <img style="cursor: pointer;" src="http://img.gz.centanet.com/SalesImages/17847.jpg"
+                                            width="82" height="109" alt="冯秋文" border="0" onclick="window.open('http://gz.centanet.com/agent/17847.htm');" /></div>
+                                    <div class="property_search_hot_b2">
+                                        <div class="property_search_hot_b2">
+                                            <a href="http://gz.centanet.com/agent/17847.htm" title="冯秋文">
+                                                冯秋文</a>
+                                        </div>
+                                        <div class="property_search_hot_b2">
+                                            保利百合分行B组(2)</div>
+                                        <div class="property_search_hot_b2">
+                                            15815821930</div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="property_search_hot_b1" style="margin-top: 10px; margin-bottom: 10px;">
+                                    <div class="property_line">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="property_search_hot_b1">
+                                    <div class="pic_shop_s3">
+                                        <img style="cursor: pointer;" src="http://img.gz.centanet.com/SalesImages/24924.jpg"
+                                            width="82" height="109" alt="黄如锦" border="0" onclick="window.open('http://gz.centanet.com/agent/24924.htm');" /></div>
+                                    <div class="property_search_hot_b2">
+                                        <div class="property_search_hot_b2">
+                                            <a href="http://gz.centanet.com/agent/24924.htm" title="黄如锦">
+                                                黄如锦</a>
+                                        </div>
+                                        <div class="property_search_hot_b2">
+                                            保利百合分行B组(2)</div>
+                                        <div class="property_search_hot_b2">
+                                            15919324428</div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="property_search_hot_b1" style="margin-top: 10px; margin-bottom: 10px;">
+                                    <div class="property_line">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="property_search_hot_b1">
+                                    <div class="pic_shop_s3">
+                                        <img style="cursor: pointer;" src="http://img.gz.centanet.com/SalesImages/19351.jpg"
+                                            width="82" height="109" alt="李飞龙A" border="0" onclick="window.open('http://gz.centanet.com/agent/19351.htm');" /></div>
+                                    <div class="property_search_hot_b2">
+                                        <div class="property_search_hot_b2">
+                                            <a href="http://gz.centanet.com/agent/19351.htm" title="李飞龙A">
+                                                李飞龙A</a>
+                                        </div>
+                                        <div class="property_search_hot_b2">
+                                            江燕分行A组</div>
+                                        <div class="property_search_hot_b2">
+                                            18664686816</div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="property_search_hot_b1" style="margin-top: 10px; margin-bottom: 10px;">
+                                    <div class="property_line">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- 最新一手笋盘 -->
+                </div>
+            </div>
+            <!-- friendship -->
+            <div class="library_friend">
+                <div class="library_friend_b">
+                    <div class="library_friend_txt">
+                        <span class="t_r">热门搜索：</span></div>
+                    <div class="library_friend_txt1">
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw金碧花园/" target="_blank" class="lnk_blue">
+                                金碧花园二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw丽江花园/" target="_blank" class="lnk_blue">
+                                丽江花园二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw光大花园/" target="_blank" class="lnk_blue">
+                                光大花园二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw华南碧桂园/" target="_blank" class="lnk_blue">
+                                华南碧桂园二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw祈福新村/" target="_blank" class="lnk_blue">
+                                祈福新村二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw逸景翠园/" target="_blank" class="lnk_blue">
+                                逸景翠园二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw珠江帝景苑/" target="_blank" class="lnk_blue">
+                                珠江帝景苑二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw碧桂园凤凰城/" target="_blank" class="lnk_blue">
+                                碧桂园凤凰城二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw祈福新村月明轩/" target="_blank" class="lnk_blue">
+                                祈福新村月明轩二手房</a></div>
+                        
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/gz/kw广州碧桂园/" target="_blank" class="lnk_blue">
+                                广州碧桂园二手房</a></div>
+                        
+                    </div>
+                </div>
+                <div class="library_friend_b">
+                    <div class="library_friend_txt">
+                        <span class="t_r">广州二手房：</span></div>
+                    <div class="library_friend_txt1">
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/tianhe/" target="_blank" class="lnk_blue">天河二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/haizhu/" target="_blank" class="lnk_blue">海珠二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/yuexiu/" target="_blank" class="lnk_blue">越秀二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/liwan/" target="_blank" class="lnk_blue">荔湾二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/panyu/" target="_blank" class="lnk_blue">番禺二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/baiyun/" target="_blank" class="lnk_blue">白云二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/huadu/" target="_blank" class="lnk_blue">花都二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/zengcheng/" target="_blank" class="lnk_blue">增城二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/huangpu/" target="_blank" class="lnk_blue">黄埔二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/luogang/" target="_blank" class="lnk_blue">萝岗二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/fenghuangcheng/" target="_blank" class="lnk_blue">凤凰城二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/nanhai/" target="_blank" class="lnk_blue">南海二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/sale/shunde/" target="_blank" class="lnk_blue">顺德二手房</a></div>
+                        <div class="library_friend_txt2">
+                            <a href="http://gz.centanet.com/gzupdate.htm" target="_blank" class="lnk_blue">广州二手房最新租售</a></div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- foot -->
+            <div style="width: 969px;float:left;">
+        <div style="clear: both; border-top: 2px solid #B00000; padding: 10px 0 20px;">
+            <div style="margin: 0 auto 10px; overflow: hidden; text-align: center;">
+                <span><a href="http://gz.centanet.com/sale/gz/" target="_blank" class="lnk_blue">广州二手房信息</a></span>
+                <span><a href="http://gz.centanet.com/rental/gz/" target="_blank" class="lnk_blue">广州租房信息</a></span>
+                <span><a href="http://gz.centanet.com/words/2" target="_blank" class="lnk_blue">购房手册</a></span>
+                <span><a href="http://gz.centanet.com/sitemap.htm" target="_blank" class="lnk_blue">
+                    网站地图</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/A/1.htm" target="_blank"
+                    class="lnk_blue">
+                    A</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/B/1.htm" target="_blank"
+                    class="lnk_blue">
+                    B</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/C/1.htm" target="_blank"
+                    class="lnk_blue">
+                    C</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/D/1.htm" target="_blank"
+                    class="lnk_blue">
+                    D</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/E/1.htm" target="_blank"
+                    class="lnk_blue">
+                    E</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/F/1.htm" target="_blank"
+                    class="lnk_blue">
+                    F</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/G/1.htm" target="_blank"
+                    class="lnk_blue">
+                    G</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/H/1.htm" target="_blank"
+                    class="lnk_blue">
+                    H</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/J/1.htm" target="_blank"
+                    class="lnk_blue">
+                    J</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/K/1.htm" target="_blank"
+                    class="lnk_blue">
+                    K</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/L/1.htm" target="_blank"
+                    class="lnk_blue">
+                    L</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/M/1.htm" target="_blank"
+                    class="lnk_blue">
+                    M</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/N/1.htm" target="_blank"
+                    class="lnk_blue">
+                    N</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/O/1.htm" target="_blank"
+                    class="lnk_blue">
+                    O</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/P/1.htm" target="_blank"
+                    class="lnk_blue">
+                    P</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/Q/1.htm" target="_blank"
+                    class="lnk_blue">
+                    Q</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/R/1.htm" target="_blank"
+                    class="lnk_blue">
+                    R</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/S/1.htm" target="_blank"
+                    class="lnk_blue">
+                    S</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/T/1.htm" target="_blank"
+                    class="lnk_blue">
+                    T</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/W/1.htm" target="_blank"
+                    class="lnk_blue">
+                    W</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/X/1.htm" target="_blank"
+                    class="lnk_blue">
+                    X</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/Y/1.htm" target="_blank"
+                    class="lnk_blue">
+                    Y</a></span>
+                
+                <span><a href="http://gz.centanet.com/letters/Z/1.htm" target="_blank"
+                    class="lnk_blue">
+                    Z</a></span>
+                
+            </div>
+            <div style="margin: 0 auto 10px; overflow: hidden; text-align: center;">
+                所提供资料仅作参考用途。若因错漏而引致任何不便或损失，中原网页及中原地产概不负责。<br />
+                中原地产网gz.centanet.com版权所有 Copyright &copy; 2014 Centaline Property Agency Limited
+                网络经营许可证 粤ICP备05081598号
+                <br />
+                地址:广州市东风中路410-412号时代地产中心(TPC)9楼 ( 邮编:510040 ) 电话:020-83926688</div>
+        </div>
+    </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var seldatastr = '/sale/gz/kw江燕路散盘/';
+        var searchkw = '';
+    </script>
+    <script type="text/javascript" src="/js/search.js"></script>
+        <!-- 百度 -->
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2601a0f4477572ee12d6c06945adc380' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!-- 谷歌 -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-19321906-1']);
+        _gaq.push(['_setCampNameKey', 'shangpu']);
+        _gaq.push(['_setCampSourceKey', 'baidu']);
+        _gaq.push(['_setCampMediumKey', 'cpc']);
+        _gaq.push(['_setCampContentKey', 'esf']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })(); 
+    </script>
+</body>
+</html>

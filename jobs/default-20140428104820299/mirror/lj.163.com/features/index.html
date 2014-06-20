@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>《龙剑》特色展示站 - 《龙剑》官方网站 - 全自由动作探险网游，11月6日不删档内测</title>
+    <meta name="keywords" content="《龙剑》官方网站,龙剑官网,龙剑,网易龙剑,不删档内测,次世代,3D,动作,真实战斗,连招" />
+    <meta name="description" content="网易2013最新3D力作《龙剑》，11月6日首次不删档内测即将开启。全自由实感动作，超刺激劲爽战斗体验；可探索开放大世界，40万平方米超大场景无缝链接。" />
+   <meta name="author" content="网易，NetEase Inc." />
+	<meta name="copyright" content="网易，NetEase Inc." />
+	<meta name="pmid" content="274092" />
+	<meta name="editor" content="gzyuzhiheng" />
+	<meta name="designer" content="doudou" />
+	<meta name="animator" content="nj" />
+    <style>
+            /*
+            Copyright (c) 2011,Q(nie.163.com). All rights reserved.
+            */
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {padding:0;margin:0;}
+        fieldset,img { border:0;}
+            /* remember to define focus styles! */
+        :focus {outline:0;}
+        address,caption,cite,code,dfn,em,th,var,optgroup {font-style:normal;font-weight:normal;}
+        h1,h2,h3,h4,h5,h6 {font-size:100%;}
+        abbr,acronym {border:0;font-variant:normal;}
+        input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+        code,kbd,samp,tt {font-size:100%;}
+            /*@purpose To enable resizing for IE */
+            /*@branch For IE6-Win,IE7-Win */
+        input,button,textarea,select {*font-size:100%;}
+        body {line-height:1.5;}
+        ol,ul,li {list-style:none;}
+            /* tables still need 'cellspacing="0"' in the markup */
+        table {border-collapse:collapse;border-spacing:0;}
+        caption,th {text-align:left;}
+        sup,sub {font-size:100%;vertical-align:baseline;}
+            /* remember to highlight anchors and inserts somehow! */
+        blockquote,q {quotes:none;}
+        blockquote:before,blockquote:after,q:before,q:after {content:'';content:none;}
+
+        .clear:after{clear: both;content:'.';display: block;visibility:hidden;height:0;}
+        .clear{zoom:1; clear: both;}
+
+        html,body {height:100%;background:#000;font-family:"宋体";font-size:12px;color:#808080;line-height:22px;}
+
+        a {color:#808080;text-decoration:none;}
+        a:hover {color:#d42a00;text-decoration:underline;}
+
+        .hide{display:none;}
+
+        #wrap{position:relative;max-width:1680px;min-width:1000px;_width:expression((document.documentElement.clientWidth>1680||document.body.clientWidth>1680)?"1680px":((document.documentElement.clientWidth<1000||document.body.clientWidth<1000)?"1000px":"100%"));overflow:hidden;margin:0 auto;}
+
+        #footer{margin: 0 auto;padding-top:15px; font-family: simSun;padding-bottom: 8px;clear: both;}
+        #NIE-copyRight{margin-top: 5px;margin-bottom: 15px;}
+        #ncp-l1,#ncp-l1 a{color: #003a6f;}
+        #ncp-l2,#ncp-l2 a{color: #003a6f;}
+
+#cj-box{position:fixed;right:0;bottom:0;_position:absolute;_top:auto;_bottom:0;z-index:9999;width:324px;height:186px;
+background:url(http://res.nie.netease.com/lj/gw/13v1/images/cj.jpg) left top no-repeat;}
+#cj-box .aClose{position:absolute;width:18px;height:18px;right:5px;top:5px;background:none;}
+#cj-box .tc-txt{position:absolute;left:53px;top:176px;font-size:18px;font-family:"Microsoft Yahei";color:#424242;line-height:29px;}
+#cj-box .tc-txt .red{color:#ba0000;}
+#cj-box .tc-btn1,#cj-box .tc-btn2{position:absolute;width:111px;height:31px;left:22px;top:83px;text-indent:-9999px;overflow:hidden;}
+#cj-box .tc-btn2{top:124px}
+    </style>
+<!-- ios移动端跳转-->
+<script type="text/javascript">if(/(iPhone|iPad|android)/i.test(navigator.userAgent)){window.location.href='index_m.html';}</script>
+    <!-- jquery mix NIE (最新版本）-->
+    <script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+    <script charset="gb2312">
+        nie.config.copyRight.setWhite();
+		function getShareText(){
+			return "11月6日，你心心念念的《龙剑》终于来了！超大世界等你探索，超爽快战斗等你体验！还有大型解谜机关副本，没有空气墙的无缝大地图，超屌噢！先邀约小伙伴们，来看看我们的看家本事吧！";	
+		}
+		function getShareVideo(){
+			return "http://lj.163.com/features/weibo.jpg";	
+		}
+		function getSharePic(){
+			//return "这里是分享连接的地址";	
+		}
+        $(function(){
+
+            nie.use(["util.swfobject"], function(){
+                if($.flash.available){
+                    $('#wrap').flash({
+                        swf: "http://res.nie.netease.com/lj/qt/2013/1025_featrue/main.v2.swf?version=1",
+                        wmode:"opaque",
+                        allowscriptaccess:"always",
+						allowFullScreen:"true",
+                        width: "100%",
+                        height: 910,
+                        backgroundcolor: "#000000"
+                    });
+                }
+                else{
+                    window.location.href="http://lj.163.com/m/index.html"
+                }			
+				/*$("#cj-box").show();
+				$("#cj-box .aClose").click(function(){
+					$("#cj-box").remove();
+				});*/
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+<h1 class="hide">《龙剑》特色展示站 - 《龙剑》官方网站 - 全自由动作探险网游，11月6日不删档内测</h1>
+<h2 class="hide">网易2013最新3D力作《龙剑》，11月6日首次不删档内测即将开启。全自由实感动作，超刺激劲爽战斗体验；可探索开放大世界，40万平方米超大场景无缝链接。</h2>
+
+<div id="wrap">
+
+</div>
+<div id="footer">
+    <div id="NIE-copyRight">
+    </div>
+</div>
+<script type="text/javascript" src="http://union.netease.com/gs2/union/anti/js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>有道云笔记</title>
+    <!--[if gte IE 8]>
+    <link type="text/css" rel="stylesheet" href="styles/login.css?v=511260">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link type="text/css" rel="stylesheet" href="styles/login_ie67.css?v=511260">
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="styles/glb.ie8lt.css?v=511260">
+    <link type="text/css" rel="stylesheet" href="styles/login.ie8lt.css?v=511260">
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/colorbox.css?v=511260">
+    <link rel="stylesheet" href="styles/style.css?v=511260" />
+	<script src="scripts/jquery-1.7.2.js"></script>
+	<script src="scripts/yKit.js?511260"></script>
+    <script src="scripts/judgeBrowser.js"></script>
+	<script src="scripts/invite.js?511260"></script>
+
+	<script src="scripts/logClipper.js?511260"></script>
+	<!--[if gte IE 8]>
+	<script src="scripts/login.js?511260"></script>
+	<![endif]-->
+	<!--[if lte IE 7]>
+	<script src="scripts/login_ie67.js?511260"></script>
+	<![endif]-->
+    <script type="text/javascript">
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (!(/os=mac/i.test(window.location.href)) && (/macintosh/i.test(ua) || /mac os/i.test(ua))) {
+            if (/auto=1/i.test(window.location.href)) {
+                window.location.href = 'mac.html?auto=1';
+            } else {
+                window.location.href = 'mac.html';
+            }
+        }
+    </script>
+</head>
+<body onload="invite(); setVendor()">
+	<div id="doc2">
+		<div id="hd">
+			<div class="hd-wrap">
+				<div class="hd">
+					<h1><a href="index.html?auto=1" class="logo" alt="有道云笔记" title="有道云笔记">有道云笔记</a></h1>
+					<div class="nav">
+						<a href="index.html?auto=1" class="current logit" data-logname="index.siteNav.index">首页</a>
+						<a href="download.html?auto=1" class="logit" data-logname="index.siteNav.downloads">多平台下载</a>
+						<a href="video.html?auto=1" class="logit" data-logname="index.siteNav.video">视频介绍</a>
+						<a href="open?auto=1" target="_blank" class="logit" data-logname="index.siteNav.open">开放平台</a>
+                        <a href="http://notebbs.youdao.com/?from=guanw" target="_blank" class="logit"data-logname="index.siteNav.bbs">官方论坛</a>
+					</div>
+					<div id="loginPanel" class="login">
+                        <a href="charge/setMeal.html" class="login-vip-link logit" data-logname="index.siteNav.vipLink" target="_blank"><img src="images/vip-logo.png" alt="">扩容套餐</a><span class="vip-link-blank">&nbsp;|&nbsp;</span>
+						<a href="javascript:;" class="login-btn logit" onclick="logLogin('login1');" data-logname="index.siteNav.login">登录</a>&nbsp;|
+						<a href="http://reg.163.com/reg/reg.jsp" class="logit" data-logname="index.siteNav.reg">注册</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="bd-wrap">
+				<div class="bd">
+					<h2>随时随地，记录一切</h2>
+					<p>任何地点，设备都能访问您的个人资料；网易出品安全稳定</p>
+					<a data-vlog="/sd_index.v" href="http://download.ydstatic.com/notewebsite/downloads/YNote.exe" class="dl-btn pc-download logit" data-logname="index.windowsBanner.download-btn-windows">立即免费下载</a>
+                    <img src="images/QR-code.png" alt="多平台二维码下载" class="QR-code" />
+					<div class="multi-plat">
+						<a href="download.html?auto=1#gtiPhone" class="ios logit" data-logname="index.windowsBanner.download-btn-ios">iPhone/iPad版本</a>
+						<a href="download.html?auto=1#gtAndroid" class="android logit" data-logname="index.windowsBanner.download-btn-android">Android版本</a>
+						<a href="download.html?auto=1#gtWin" class="win logit" data-logname="index.windowsBanner.download-btn-webclipper">网页剪辑版本</a>
+					</div>
+                    <a href="mac.html?auto=1" target="_blank" class="mac-tab">Mac版发布页</a>
+					<a href="http://e.weibo.com/youdaonotemark" target="_blank" class="new-feature">微博内容永久收藏</a>
+				</div>
+			</div>
+		</div>
+		<div id="bd"  class="clearfix">
+			<div id="yao-main">
+				<div class="yao-b">
+                    <div class="feature-item">
+                        <img src="styles/images/icon-1.png" alt="自动同步的云端笔记本">
+                        <dl>
+                            <dt>随心记录   随时同步</dt>
+                            <dd>文字、手写、录音、拍照多种记录方式</dd>
+                            <dd>支持任意附件格式，学习、工作、生活尽在掌握</dd>
+                            <dd>云同步，一处记录，各终端查看</dd>
+                        </dl>
+                    </div>
+                    <div class="feature-item">
+                        <img src="styles/images/icon-2.png" alt="安全稳定的云笔记软件">
+                        <dl>
+                            <dt>云端备份   安全可靠</dt>
+                            <dd>从此不怕意外断电、电脑损坏，资料云端找回</dd>
+                            <dd>手机遗失，珍贵照片不丢失、资料加密不外泄</dd>
+                            <dd>网易出品，安全稳定</dd>
+                        </dl>
+                    </div>
+                    <div class="feature-item">
+                        <img src="styles/images/icon-3.png" alt="专业高效的移动办公工具">
+                        <dl>
+                            <dt>为中国用户贴心设计</dt>
+                            <dd>手写体验流畅，笔迹完美留存</dd>
+                            <dd>微博、QQ账号都可登录</dd>
+                            <dd>传邮件、发微博，分享变得很容易</dd>
+                        </dl>
+                    </div>
+				</div>
+			</div>
+			<div class="yao-b">
+			<div class="mod">
+				<div class="mod-bd">
+					<a href="images/video-1.html" class="play-video logit" data-logname="index.windowsBanner.play-video">视频介绍</a>
+				</div>
+			</div>
+                <div class="mod" id="slideShow">
+                    <div class="mod-bd">
+                        <div class="widget-slide" id="widgetWrapper">
+                            <div class="widget-slide-container" id="slideContainer">
+                                <a href="http://2013.soft.360.cn/" title="2013中国软件风云榜" target="_blank" class="logit" data-logname="index.slideShow.benefit"><img src="images/widget-slide-6.jpg" alt="2013中国软件风云榜"></a>
+                                <a href="http://down.apk.hiapk.com/Download.aspx?aid=235&sc=1" target="_blank" title="风度mensuno" class="logit" data-logname="index.slideShow.benefit"><img src="images/widget-slide-8.jpg" alt="风度mensuno"></a>
+                                <a href="http://notebbs.youdao.com/?from=guanw" target="_blank" title="有道云笔记论坛" class="logit" data-logname="index.slideShow.benefit"><img src="images/discuz.jpg" alt="有道云笔记论坛"></a>
+                                <a href="http://notebbs.youdao.com/plugin.php?id=yweekly:yweekly&do=weekly" target="_blank" title="有道云笔记周刊" class="logit" data-logname="index.slideShow.benefit"><img src="images/weekly.jpg" alt="有道云笔记周刊"></a>
+                            </div>
+                            <div class="widget-slide-index" data-wrapper="#widgetWrapper" data-container="#slideContainer">
+                                <a href="#slideShow">1</a>
+                                <a href="#slideShow">2</a>
+                                <a href="#slideShow">3</a>
+                                <a href="#slideShow">4</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="mod" id="awards">
+                    <h3 class="mod-hd">获奖展示</h3>
+						<ul>
+							<li>
+								<img src="images/award-2.png" alt="360软件管家2011年度装机必备">
+								<p>360软件管家<br>装机必备</p>
+							</li>
+							<li>
+								<img src="images/award-1.png" alt="苹果App Store员工最爱">
+								<p>App Store<br>员工最爱</p>
+							</li>
+							<li>
+								<img src="images/award-4.png" alt="联通wo+创新应用奖">
+								<p>联通wo+<br>创新应用奖</p>
+							</li>
+						</ul>
+                </div>
+                <div class="mod" id="updates">
+                    <h3 class="mod-hd">产品动态</h3>
+					<a href="changelog.html?auto=1" class="more">了解更多&gt;&gt;</a>
+                    <p>
+                        iPhone 3.6.0版， 全新设计，界面清新简洁，欢迎
+                        <a target="_blank" href="http://itunes.apple.com/cn/app/id450748070?ls=1&mt=8" data-vlog="/sip_index.v">立即体验！</a>
+                    </p>
+                    <p>
+                        PC 3.8版， 新增笔记本自定义排序等一系列优化，让记录更简单，欢迎 
+                        <a href="http://download.ydstatic.com/notewebsite/downloads/YNote.exe" class="pc-download"data-vlog="/sp_index.v">立即体验！</a>
+                    </p>
+                    <p>
+                         Android 3.6版，新增"我的笔记生活"，了解你的记录习惯，同时优化pad手写和清除缓存，欢迎 
+                        <a href="http://m.note.youdao.com/noteproxy/download?todo=download&platform=android&keyfrom=note.web" data-vlog="/sa_index.v">立即试用！</a>
+                    </p>
+                    <p>
+                        iPad 1.7 版， 优化了手写功能，支持再次编辑及自动美化，欢迎 
+                        <a target="_blank" href="https://itunes.apple.com/cn/app/you-dao-yun-bi-jihd/id483995181?mt=8" data-vlog="/si_index.v">立即试用！</a>
+                    </p>
+                </div>
+			</div>
+		</div>
+		<div class="ft-wrap">
+			<div class="ft">
+				<dl>
+					<dt>关于有道</dt>
+					<dd><a target="_blank" href="http://i.youdao.com/">官方博客</a></dd>
+					<dd><a target="_blank" href="license.html">服务条款</a></dd>
+					<dd><a target="_blank" href="privacy.html">隐私协议</a></dd>
+				</dl>
+				<dl>
+					<dt>用户帮助</dt>
+                    <dd><a target="_blank" href="/open/exchange.html">空间兑换</a></dd>
+                    <dd><a target="_blank" href="publicaccount.html?auto=1">公众平台</a></dd>
+					<dd><a target="_blank" href="http://notefeedback.youdao.com/web/index.html">意见反馈</a></dd>
+					<dd><a target="_blank" href="changelog.html?auto=1">历史版本</a></dd>
+					<dd><a target="_blank" href="benefit.html?auto=1">用户推荐</a></dd>
+					<dd><a target="_blank" href="help.html">帮助</a></dd>
+				</dl>
+				<dl>
+					<dt>关注我们</dt>
+					<dd><a target="_blank" href="http://weibo.com/youdaonote">新浪微博</a></dd>
+					<dd><a target="_blank" href="http://t.163.com/youdaonote">网易微博</a></dd>
+					<dd><a target="_blank" href="http://t.qq.com/youdaonote">腾讯微博</a></dd>
+					<dd><a target="_blank" href="http://page.renren.com/600923244">人人网</a></dd>
+				</dl>
+				<dl class="last">
+					<dt>联系我们</dt>
+
+					<dd>邮箱：ynotefankui@163.com</dd>
+					<dd>©2014 网易公司</dd>
+				</dl>
+	</div>
+		</div>
+	</div>
+<script src="scripts/ui.js?511260"></script>
+<script src="scripts/jquery.colorbox.js"></script>
+<script type="text/javascript" src="scripts/flowplayer-3.2.6.min.js"></script>
+<!--[if gte IE 8]>
+<script src="scripts/passport.js?511260"></script>
+<![endif]-->
+<!--[if lte IE 7]>
+<script src="scripts/passport_ie67.js?511260"></script>
+<![endif]-->
+<script src="scripts/notIeFileLoad.js?511260"></script>
+<script>
+$(function(){
+    var getCookie = function(name) {
+        var cookie = document.cookie;
+        var cookies = cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var kv = cookies[i].split('=');
+            if ($.trim(kv[0]) == name) {
+                return kv[1] && kv[1].length ? kv[1] : null;
+            }
+        }
+        return false;
+    };
+    $("a[class*='play-video']").colorbox({transition:"fade",scrolling:false});
+    if (/msie/i.test(navigator.userAgent)) {
+        $("a[class*='play-video']").click(function() {
+            try{
+                window.flowObj = flowplayer("player", "images/flowplayer-3.2.7.swf");
+            }catch(e){}
+        });
+    }
+});
+</script>
+<script>
+    //用于流程统计
+    $(document).click(function (e) {
+        var n = $(e.target),d = n.data('vlog');
+        if(!d) {return;}
+        (new Image()).src=d;
+    });
+</script>
+</body>
+</html>

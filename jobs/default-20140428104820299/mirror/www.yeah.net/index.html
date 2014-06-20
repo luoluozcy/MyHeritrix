@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="邮件，邮箱，电子邮件，电子邮箱，网易邮箱，yeah邮箱，免费邮箱，mail，email，网盘" />
+<meta name="description" content="网易YEAH免费邮箱--快乐 分享 成长。容量自动翻倍，支持50兆附件,免费开通手机号码邮箱赠送2G超大附件服务。支持各种客户端软件收发，垃圾邮件拦截率超过98%。" />
+<title>Yeah.net网易免费邮--快乐 分享 成长</title>
+<link rel="shortcut icon" href="http://mail.yeah.net/favicon.ico" />
+<style type="text/css">
+/* css reset */
+body{color:#000;background:#fff;font-size:12px;line-height:166.6%;text-align:center;}
+body,input,select,button{font-family:\5FAE\8F6F\96C5\9ED1, verdana, Simsun, STXihei;zoom:1;}
+h1,h2,h3,select,input,button{font-size:100%}
+body,h1,h2,h3,ul,li,form,p,img{margin:0;padding:0;border:0}
+input,button,select,img{margin:0;line-height:normal}
+select{padding:1px}
+ul{list-style:none}
+select,input,button,button img,label{vertical-align:middle}
+header,footer,section,aside,nav,hgroup,figure,figcaption{display:block;margin:0;padding:0;border:none}
+a{text-decoration:none;color:#848585}
+a:hover{color:#000}
+.fontWeight{font-weight:700;}
+#styleConfText,
+#remAutoLoginTxt,
+.domain,
+.nouserselect{-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+/* noscript */
+.noscriptTitle{line-height:32px;font-size:24px;color:#d90000;padding:20px 0;font-weight:700;background:#fff;}
+.noscriptLink{text-decoration:underline;color:#005590;font-size:14px;font-weight:400}
+/* global */
+html,body{width:100%;height:100%;overflow:hidden;}
+body{position:relative;}
+.mainUi,
+.bgimg{width:100%;height:100%;position:absolute;left:0;top:0;}
+.bgimg img{display:none;position:absolute;top:0;left:0;-ms-interpolation-mode:bicubic}
+.bgimg{z-index:0;background-color:#a3a7ab;}
+.mainUi{z-index:1;}
+.logo{width:261px;height:80px;position:absolute;left:50%;top:50%;background:url(http://mimg.127.net/index/yeah/img/yeahlogo.png);text-indent:-9999px;margin-left:-130px;margin-top:-90px}
+
+/* login */
+.login{height:88px;width:100%;color:#fff;position:absolute;bottom:61px;left:0;z-index:1;}
+.login-inner{line-height:20px;width:677px;height:88px;overflow:visible;margin:0 auto;position:relative;top:0px;text-align:center;white-space:nowrap;font-size:14px;}
+.loginFormIpt{background:#444;background:rgba(68, 68, 68, .6);border:1px solid #ddd;border-radius:5px;height:38px;width:268px;position:absolute;/*overflow:hidden;*/font-size:14px;box-shadow:inset 0px 0px 8px rgba(0, 0, 0, 0.4);z-index: 1}
+.placeholder{color:#ccc;position:absolute;left:0px;top:0px;line-height:38px;height:38px;width:268px;text-align:left;text-indent:16px;visibility:hidden;}
+.loginFormIpt input{position:absolute;left:2px;padding:7px 14px;border:none;height:24px;line-height:24px;width:240px;background:none;color:#ccc;outline:0;font-size:16px;font-family:verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+.loginFormIpt-over{border-color:#fff;}
+.loginFormIpt-focus,
+.loginFormIpt-over{background:rgba(68, 68, 68, .7)}
+.loginFormIpt-focus{border-color:#bf0b10;}
+.loginFormIpt-focus .placeholder{color:#b4c0d2;}
+.loginFormTdIpt:focus{outline:0;}
+.loginFormIpt .loginFormTdIpt-focus{color:#fff;font-weight:700;}
+.showPlaceholder .placeholder{visibility:visible;cursor:text;}
+.domain{position:absolute;top:0px;left:16px;color:#ccc;font-size:16px;line-height:38px;line-height:39px\9;height:38px;width:100px;text-align:left;font-weight:700;display:none;z-index:2;overflow:hidden;font-family:Verdana, "Helvetica Neue", Helvetica,  Arial, sans-serif;}
+#idInputLine{left:0;top:0;overflow: hidden;}
+#pwdInputLine{left:284px;top:0}
+#idInputTest{visibility:hidden;float:left;font-size:16px;font-weight:700;font-family:verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#capsLockHint{position: absolute; top: 39px; left: 0px;padding: 4px 8px; font-size:12px; line-height: 12px; background-color: #ffffcc; border: 1px solid #d7d7d7; color: #555; z-index: 2;}
+.formSubmit{position:absolute;top:0px;right:0;width:108px;height:40px;line-height:38px;border:1px solid #850e11;background:#bf0b10;color:#fff;font-size:16px;cursor:pointer;border-radius:5px;}
+.formSubmit:hover{background:#d20c12;}
+.formSubmit{
+	background-image:-webkit-linear-gradient(top, #d51a1f, #b20106);
+	background-image:-moz-linear-gradient(top, #d51a1f, #b20106);
+	background-image:-o-linear-gradient(top, #d51a1f, #b20106);
+	background-image:linear-gradient(top, #d51a1f, #b20106);
+	box-shadow:inset 0px 0px 1px #fff;
+}
+.formSubmit:active{
+	background:#b20106;
+	background-image:-webkit-linear-gradient(top, #b20106, #d51a1f);
+	background-image:-moz-linear-gradient(top, #b20106, #d51a1f);
+	background-image:-o-linear-gradient(top, #b20106, #d51a1f);
+	background-image:linear-gradient(top, #b20106, #d51a1f);
+}
+.loginLink{position:absolute;top:51px;left:0;text-decoration:none;color:#eee;}
+.loginLink:hover{color:#fff;}
+.loginFormCheckInner{position:absolute;top:51px;left:0;color:#eee;zoom:1;cursor:pointer;}
+.loginFormConfLink,
+.loginLink,
+.yxLoginBtn,
+.copyright,
+.loginFormCheckInner{text-shadow:0px 1px 1px #000}
+#remAutoLoginTxt{white-space: nowrap; word-break: keep-all;}
+
+.loginFormCbx{background:rgba(68, 68, 68, .5);border:none;}
+.loginLink-reg{text-decoration:underline;left:214px;}
+.loginFormCheckInner input{vertical-align:baseline}
+
+#icoDarr{position:absolute;right:0;display:block;height:7px;width:8px;bottom:4px;overflow:hidden;}
+#icoDarr i{box-shadow:0px 1px 2px rgba(0, 0, 0, .5)}
+
+#icoCheckbox{position:relative;display:inline-block;height:13px;width:13px;overflow:hidden;border:1px solid #ddd;background:#666;top:0.2em;left:0;border-radius:4px;background:rgba(102, 102, 102, 0.4);vertical-align:baseline}
+.loginFormCheckInner i{display:none;}
+.show i{display:block;}
+#icoCheckbox.show{background:rgba(102, 102, 102, 0.6);}
+.loginFormSslText{position:relative;top:0px;}
+
+.loginFormConf{position:absolute;top:51px;right:122px;text-decoration:none;color:#eee;}
+.loginFormConfLink{color:#eee;display:block;position:relaitve;padding-right:10px;}
+.loginFormConfLink:hover{color:#fff;}
+.loginFormVerList{width:442px;height:70px;overflow:hidden;background:#fff;border:1px solid #666;position:absolute;color:#666;padding-left:2px;background:rgba(255, 255, 255, 0.8);display:none;}
+.loginFormVerList li{float:left;display:inline;overflow:hidden;line-height:32px;line-height:33px\9;margin-right:2px;margin-top:2px;}
+.loginFormVerList li a{width:150px;height:32px;overflow:hidden;display:block;position:relative;text-align:left;text-indent:25px;}
+.loginFormVerList li a:hover{background:#d9d9d9;}
+.verSelected{color:#222;font-weight:700;}
+.verSelected .icoTickRed{display:block;}
+.icoTickRed{width:13px;height:13px;overflow:hidden;position:absolute;left:7px;top:9px;display:none;}
+
+/*yixin*/
+.yxLoginBtn,
+#loginByYX,
+.loginByYX-link,
+.yxCode-btn{background: url(http://mimg.127.net/index/yeah/img/yixin_ico.png) no-repeat;}
+.yxLoginBtn{position:absolute;top:51px;right:0;padding-left:18px;background-position: -253px -46px;color: #eee;}
+.yxLoginBtn:hover{color:#fff;}
+#loginByYX{position: absolute;top:-83px;right:-14px;width: 253px; height: 115px;padding-top:23px; background-position: 0 0; font-size: 12px; text-align: left; font-family: simsun; zoom:1; z-index: 2;}
+#yxCode{float:left; display: inline; margin-left:30px; background-color: #fff;}
+.loginByYX-txt,
+.loginByYX-txt-err{position: absolute; top: 40px; left: 120px; color: #959595; line-height: 23px;}
+.loginByYX-txt-err{color: #626262;}
+.loginByYX-link{margin:0 3px; padding-left:16px; display: inline-block; line-height: 14px; background-position: -253px -30px;}
+.loginByYX-link,
+.loginByYX-link:hover{color:#279c7b;}
+#yxCodeRefresh{position: absolute; top: 22px; left: 29px; width: 80px; height: 80px;}
+.yxCode-mask{height: 100%; background: #fff; opacity: 0.8; filter:alpha(opacity=80);}
+.yxCode-btn{position: absolute; top: 28px; left: 7px; display: block; width: 68px; height: 28px; line-height: 28px; background-position: -253px 0; color: #6D798C; text-align: center; font-size: 14px;}
+.yxCode-btn:hover{color:#347BC7;}
+
+/* footer */
+.footer{height:60px;width:100%;overflow:hidden;border-top:1px dotted #ccc;color:#ccc;position:absolute;bottom:0;left:0;z-index:0;text-shadow:0px 1px 1px #000}
+.footerNav{line-height:normal;margin:0 auto;position:relative;top:24px;text-align:center;white-space:nowrap}
+.footerNav a{margin-left:10px;color:#ccc;}
+.footerNav a:hover{color:#eee;}
+
+/* ie6fix */
+* html .logo{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://mimg.127.net/index/yeah/img/yeahlogo.png');background:none}
+</style>
+<script id="jsOption" type="text/javascript">
+//当前域名配置
+var gOption = {
+	"sDomain" : "yeah.net",
+	"sCookieDomain" : "yeah.net",
+	"sAutoLoginUrl" : "http://mail.yeah.net/entry/cgi/ntesdoor?lightweight=1&verifycookie=1&style=-1&df=webmailyeah",
+	"sSslAction" : "https://mail.yeah.net/entry/cgi/ntesdoor?",
+	"product" : "mailyeah",
+	"url" : "http://mail.yeah.net/entry/cgi/ntesdoor?",
+	"url2" : "http://mail.yeah.net/errorpage/err_yeah.htm",
+	"gad" : "yeah.net"
+}
+</script>
+<script id="jsBase" type="text/javascript" src="http://mimg.127.net/index/lib/scripts/base_v5.min.js"></script>
+<script id="jsInit" type="text/javascript">
+fSetCookie("starttime",'',false); // starttime 登录时间统计
+fCheckCookie();
+fCheckAutoLogin();
+fAutoLogin();
+fCheckBrowser();
+fHtml5Tag();
+</script>
+</head>
+
+<body>
+<div id="mainbg" class="bgimg">
+	<img id="mainbg_img" src="" alt="" />
+	<img id="mainbg_img2" src="" alt="" />
+	<noscript><p class="noscriptTitle">浏览器不支持或禁止了网页脚本，导致您无法正常登录。<a class="noscriptLink" href="http://help.mail.163.com/faqDetail.do?code=d7a5dc8471cd0c0e8b4b8f4f8e49998b374173cfe9171305fa1ce630d7f67ac2122641eb4548bd1e" target="_blank">如何解除脚本限制</a></p></noscript>
+</div>
+<section id="mainUi" class="mainUi">
+	<header>
+		<h1 class="logo">Yeah.net 网易免费邮</h1>
+	</header>
+	<div class="login">		
+		<div class="login-inner">
+			<form id="loginyeah" name="loginyeah" method="post" action="http://mail.yeah.net/" target="frameforlogin">
+				<input type="hidden" id="savelogin" name="savelogin" value="0" />
+				<input type="hidden" id="url2" name="url2" value="http://mail.yeah.net/errorpage/err_yeah.htm" />
+				<input type="hidden" id="username" name="username" />
+				<input style="display:none;" type="checkbox" title="SSL安全登录" id="sslLogin" checked="checked" />
+				<input style="display:none;" type="checkbox" id="allssl" />
+				<div id="idInputLine" class="loginFormIpt showPlaceholder">
+					<input class="loginFormTdIpt" tabindex="1" title="请输入帐号" id="idInput" name="user" type="text" maxlength="50" value="" />
+					<label for="idInput" class="placeholder" id="idPlaceholder">邮箱帐号或手机号</label>
+					<div id="showdomain" class="domain">@yeah.net</div>
+					<div id="idInputTest"></div>
+				</div>
+				<div id="pwdInputLine" class="loginFormIpt showPlaceholder">
+					<input class="loginFormTdIpt" tabindex="2" title="请输入密码" id="pwdInput" name="password" type="password"/>
+					<label for="pwdInput" class="placeholder" id="pwdPlaceholder">密码</label>
+					<p id="capsLockHint" style="display: none">大写状态开启</p>
+				</div>
+				<button id="loginBtn" class="formSubmit" tabindex="6" type="submit">登&nbsp;&nbsp;录</button>
+				<div class="loginFormCheckInner" id="remAutoLogin">
+					<b id="icoCheckbox"></b>
+					<span id="remAutoLoginTxt"></span>
+				</div>
+				<a id="lfBtnReg" class="loginLink loginLink-reg" href="http://reg.email.163.com/mailregAll/reg0.jsp?from=yeahmail" target="_blank" tabindex="7">注册帐号</a>
+				<a class="loginLink" id="forgetPass" style="left:284px;" href="http://reg.163.com/RecoverPasswd1.shtml?from=mailyeah" target="_blank" title="找回密码">忘记密码?</a>
+				<div class="loginFormConf">
+					<a class="loginFormConfLink" id="styleConf" href="javascript:void(0);"><span id="styleConfText">默认版本</span><b id="icoDarr"></b></a>
+					<div id="styleConfBlock" class="loginFormVerList">
+						<ul>
+							<li>
+								<a id="styleconf-1" style="width:125px" class="verSelected" href="javascript:void(0);" onclick="indexLogin.setStyle(-1)"><b class="icoTickRed"></b>默认版本</a>
+							</li>
+							<li>
+								<a id="styleconf7" style="width:150px" href="javascript:void(0);" onclick="indexLogin.setStyle(7)"><b class="icoTickRed"></b>网易邮箱6.0版</a>
+							</li>
+							<li>
+								<a id="styleconf6" style="width:150px" href="javascript:void(0);" onclick="indexLogin.setStyle(6)"><b class="icoTickRed"></b><span id="jy6txt">网易邮箱6.0简约版</span></a>
+							</li>
+							<li>
+								<a id="styleconf5" style="width:125px" href="javascript:void(0);" onclick="indexLogin.setStyle(5)"><b class="icoTickRed"></b>网易邮箱5.0版</a>
+							</li>
+							<li>
+								<a id="styleconf3" style="width:150px" href="javascript:void(0);" onclick="indexLogin.setStyle(3)"><b class="icoTickRed"></b><span id="jy5txt">网易邮箱5.0简约版</span></a>
+							</li>
+						</ul>
+					</div>					
+				</div>
+				<a class="yxLoginBtn" id="yxLoginBtn" href="javascript:void(0)">二维码登录</a>
+			</form>
+			<div id="loginByYX" style="display:none">
+				<img id="yxCode" width="80" height="80" src="" />
+				<div id="yxCodeRefresh" style="display:none;">
+					<div class="yxCode-mask"></div>
+					<a id="refeshYXCodeBtn" class="yxCode-btn" href="javascript:void(0)">刷 新</a>
+				</div>
+				<div id="yxCodeTxt" class="loginByYX-txt"></div>
+				<form id="codeLoginForm" method="post" action="" autocomplete="off" target="_self"></form>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="footerNav" id="footerTxt">
+			<span class="copyright">网易公司版权所有 &copy; 1997-2014</span><a id="recordNum" href="http://img2.cache.netease.com/www/icp.jpg" target="_blank">ICP证粤B2-20090191</a><a href="http://corp.163.com/index_gb.html" target="_blank">关于网易</a><a href="http://mail.163.com/html/mail_intro" target="_blank">关于网易免费邮</a><a href="http://mail.blog.163.com/" target="_blank">邮箱官方博客</a><a href="http://help.mail.163.com" target="_blank">客户服务</a><a style="margin-right:10px" href="http://corp.163.com/gb/legal/legal.html" target="_blank">隐私政策</a>|<span id="extText"></span>
+		</div>
+	</footer>
+</section>
+<iframe class="httploginframe" src="about:blank" id="frameforlogin" name="frameforlogin" style="overflow:hidden;border:0;height:0;width:0">登录iframe</iframe>
+<script type="text/javascript">
+var oStyle = {
+	value	:	'-1'
+};
+(function(){
+	window.indexLogin = {
+		init 				: fInit,
+		changeMainBg 		: fChangeMainBg,
+		calImg 				: fCalImg,
+		reCalImg 			: fReCalImg,
+		setUserInfo 		: fSetUserInfo,
+		initInputBox 		: fInitInputBox,
+		idInputEvent 		: fIdInputEvent,
+		checkPw 			: fCheckPw,
+		checkInputAlways 	: fCheckInputAlways,
+		setStyle 			: fSetStyle,
+		submitForm 			: fSubmitForm,
+		checkHttps 			: fCheckHttps,
+		showYXCode 			: fShowYXCode,
+		emuIcon 			: fEmuIcon,
+		emuIconTick 		: fEmuIconTick,
+		shadowFix 			: fShadowFix,
+		fixNarrowScreen		: fFixNarrowScreen
+	};
+
+	var aBgImgConf = [
+		'http://mimg.127.net/index/yeah/themes/yeah_bg.jpg'
+	];
+	var aBgImgConfOnload = [];
+	var nBgImgCounter = 0,
+		bBgImgChanging = false,
+		bBgImgDraging = false;
+	var oCurrentImg;
+	var nImgOpa = 0;
+	var aShadowFix = [];
+
+	var oId, oIdL, oPw, oPwL;
+	//登录流程
+	var sLoginFunc = 'ssl',
+		bIsFirstLog = true,
+		sCoremailCookie = '';
+	// starttime 登录时间统计
+	var bStartTime = true;
+
+	function fInit(){
+		var me = this;
+
+		oId = $id('idInput');
+		oIdL = $id('idInputLine');
+		oPw = $id('pwdInput');
+		oPwL = $id('pwdInputLine');
+
+		me.changeMainBg(nBgImgCounter);
+
+		window.onresize = function(){
+			me.reCalImg();
+			me.fixNarrowScreen();
+		};
+
+		// 大写锁定开启判断
+		var oCapsLockTest = new CapsLock({
+			el : $id('pwdInput'),
+			change : function(bFlag){
+				var oHint = $id('capsLockHint');
+				if(bFlag){
+					oHint.style.display = 'block';
+				}else{
+					oHint.style.display = 'none';
+				}
+			}
+		});
+
+		me.setUserInfo();
+		me.initInputBox();
+
+		//fEventListen($id('loginyeah'),'submit',function(){return me.submitForm();});
+		$id('loginyeah').onsubmit = function(){
+			return me.submitForm();
+		};
+
+		// 模拟“十天免登录”白色勾
+		$id('icoCheckbox').innerHTML = me.emuIconTick('colorWhite');
+		// 模拟“版本选择”下拉箭头
+		$id('icoDarr').innerHTML = me.emuIcon([
+			 {x : 0, y : 0, width : 1, height : 1, color : 'f2f1ee'}
+			,{x : 1, y : 0, width : 6, height : 1, color : 'fff'}
+			,{x : 7, y : 0, width : 1, height : 1, color : 'ede9e6'}
+			,{x : 1, y : 1, width : 1, height : 1, color : 'f8f7f6'}
+			,{x : 2, y : 1, width : 4, height : 1, color : 'fff'}
+			,{x : 6, y : 1, width : 1, height : 1, color : 'f0eeec'}
+			,{x : 2, y : 2, width : 3, height : 1, color : 'fff'}
+			,{x : 5, y : 2, width : 1, height : 1, color : 'f7f6f6'}
+			,{x : 3, y : 3, width : 2, height : 1, color : 'fff'}
+			,{x : 3, y : 3, width : 2, height : 1, color : 'fff'}
+			,{x : 3, y : 4, width : 1, height : 1, color : 'd1cdc7'}
+			,{x : 4, y : 4, width : 1, height : 1, color : 'c3bcb2'}
+		]);
+		
+		me.showYXCode();
+		me.shadowFix();
+		me.fixNarrowScreen();
+	}
+
+	/**
+	 * 背景图处理
+	 * @param  {Number|String} nPic 可为具体头图下标；或为next/prev
+	 */
+	function fChangeMainBg(nPic){
+		var me = this;
+		var oBgImg = $id('mainbg_img'),
+			oBgImg2 = $id('mainbg_img2');
+		oCurrentImg = oBgImg;
+		var nPicNum = nPic;
+		if(bBgImgChanging){
+			return;
+		}else{
+			bBgImgChanging = true;
+		}
+		switch(nPicNum){
+			case 'next' :
+				nPicNum = nBgImgCounter + 1;
+				break;
+			case 'prev' :
+				nPicNum = nBgImgCounter - 1;
+				break;
+			default : ;
+		}
+		// 错误下标修正
+		if(nPicNum < 0 || nPicNum > aBgImgConf.length - 1){
+			nBgImgCounter = 0;
+			nPicNum = 0;
+		}
+		// 判断显示哪个图片
+		if(oBgImg.alt == ''){
+			_fChangeMainBgInit(oBgImg, oBgImg2, nPicNum);
+		}else{
+			_fChangeMainBgInit(oBgImg2, oBgImg, nPicNum);
+		}
+		nBgImgCounter = nPicNum;
+		return;
+		
+		function _fChangeMainBgInit(obj1, obj2, nPic){
+			// 重置属性
+			obj2.style.zIndex = 0; // 隐藏obj2显示
+			obj2.alt = '';
+			obj2.onload = function(){}
+			obj2.onerror = function(){}
+			// 显示obj1
+			obj1.alt = 'Yeah.net 网易免费邮';
+			obj1.src = '';
+			obj1.style.filter = 'alpha(opacity=0)';
+			obj1.style.opacity = 0;
+			obj1.style.zIndex = 1;
+			obj1.style.height = '';
+			obj1.style.width = '';
+			nImgOpa = 0;
+			oCurrentImg = obj1; // 记录当前对象
+			// 判断是否已加载过此图
+			if(aBgImgConfOnload[nPic]){
+				obj1.style.display = 'inline';
+				// 检测加载完毕
+				window.oBgImgCacheCheck = setInterval(function(){
+					if(obj1.width > 0){
+						clearInterval(window.oBgImgCacheCheck);
+						_fExecImgCal(aBgImgConf[nPic], obj2);
+					}
+				}, 50);
+				setTimeout(function(){
+					obj1.src = aBgImgConf[nPic];
+				}, 20);
+			}else{
+				obj1.onload = function(){
+					obj1.style.display = 'inline';
+					// 检测加载完毕
+					window.oBgImgCacheCheck = setInterval(function(){
+						if(obj1.width > 0){
+							clearInterval(window.oBgImgCacheCheck);
+							aBgImgConfOnload[nPic] = {};
+							aBgImgConfOnload[nPic]['isLoaded'] = true;
+							aBgImgConfOnload[nPic]['width'] = obj1.width;
+							aBgImgConfOnload[nPic]['height'] = obj1.height;
+							_fExecImgCal(aBgImgConf[nPic], obj2);
+						}
+					}, 50);
+				}
+				obj1.onerror = function(){  // 加载失败方案
+					obj1.style.display = 'none';
+					bBgImgChanging = false;
+				}
+				setTimeout(function(){
+					obj1.src = aBgImgConf[nPic];
+				},0)
+			}
+		}
+		
+		function _fExecImgCal(sNowPath, oExObj){
+			me.calImg(oCurrentImg, function(){
+				oExObj.src = sNowPath;
+			});
+		}
+	}
+
+	/**
+	 * 计算背景图显示状态
+	 * @param  {[type]} obj   [description]
+	 * @param  {Function} fCall 额外处理
+	 */
+	function fCalImg(obj, fCall){
+		var oImg = obj;
+		var nHeight, nWidth, nTruthHeight, nTruthWidth;
+		var nClientW = document.documentElement.clientWidth,
+			nClientH = document.documentElement.clientHeight;
+
+		if(aBgImgConfOnload[nBgImgCounter]){
+			nHeight = aBgImgConfOnload[nBgImgCounter].height;
+			nWidth = aBgImgConfOnload[nBgImgCounter].width;
+		}else{
+			nHeight = oImg.height;
+			nWidth = oImg.width;
+		}
+		// 如果图片宽大于高
+		if(nHeight < nWidth){
+			// 那么图片真实宽度等于浏览器宽度
+			nTruthWidth = nClientW;
+			// 等比例缩放高度
+			nTruthHeight = nTruthWidth * nHeight / nWidth;
+		}else{
+			// 否则图片真实高度等于浏览器高度
+			nTruthHeight = nClientH;
+			// 等比例缩放宽度
+			nTruthWidth = nTruthHeight * nWidth / nHeight;
+		}
+		// 如果浏览器高度大于图片高度
+		if(nTruthHeight < nClientH){
+			// 那么拉伸图片到浏览器一样高
+			oImg.style.height = '100%';
+			// 这个时候图片宽度就溢出屏幕 所以水平居中
+			oImg.style.width = 'auto';
+			oImg.style.marginLeft = - (nClientH * nWidth / nHeight - nClientW) / 2 + 'px';
+			oImg.style.marginTop = '0';
+		}else{
+			// 否则拉伸图片到浏览器一样宽
+			oImg.style.width = '100%';	
+			// 这个时候图片高度就溢出屏幕 所以垂直居中
+			oImg.style.height = 'auto';
+			oImg.style.marginTop = - (nClientW * nHeight / nWidth - nClientH) / 2 + 'px';
+			oImg.style.marginLeft = '0';
+		}
+		if(!bBgImgDraging){
+			_fChangeMainBgAnimation(obj);
+		}
+		
+		function _fChangeMainBgAnimation(obj){
+			window.oBgImgChanging = setInterval(function(){
+				nImgOpa = nImgOpa + 0.2;
+				try{
+					obj.style.filter = 'alpha(opacity=' + nImgOpa*100 + ')';  
+					obj.style.opacity = Number(nImgOpa);
+				}catch(e){
+					alert(e);
+					obj.style.display = 'none';
+					clearInterval(oBgImgChanging);
+					bBgImgChanging = false;
+				}
+				if(nImgOpa >= 1){
+					bBgImgChanging = false;
+					clearInterval(oBgImgChanging);
+					bBgImgDraging = false;
+					fCall && fCall();
+				}
+			}, 40);
+		}
+	}
+
+	/**
+	 * 重新计算背景图参数
+	 */
+	function fReCalImg(){
+		var me = this;
+		// 修正resize多次
+		bBgImgDraging = true;
+		// 拖动特殊处理 不判断是否加载
+		if(bBgImgDraging){
+			me.calImg(oCurrentImg);
+			bBgImgDraging = false;
+			return;
+		}
+	}
+
+	/**
+	 * 根据cookie预设用户信息
+	 */
+	function fSetUserInfo(){
+		var me = this;
+		//读取logType,设定风格
+		var sLogType = fGetCookie('logType');
+		if(sLogType == '' || sLogType == null){
+			sLogType = gUserInfo.style;
+		}
+		switch(sLogType){
+			case '7':
+				me.setStyle(7); // js6
+				break;
+			case '6':
+				me.setStyle(6); // jy6
+				break;
+			case '5':
+				me.setStyle(5); // js5
+				break;
+			case '3':
+				me.setStyle(3); // jy5
+				break;
+			default :
+				me.setStyle(-1);
+		}
+		//兼容logType并清除
+		fSetCookie('logType' , '' , false);
+		var sUser = gUserInfo.username,
+			sUid = fGetQueryHash('uid'),
+			sResult;
+		//读取nts_mail_user，设定用户名
+		if(sUser != null){
+			oId.autocomplete='on';
+		}else{
+			oId.autocomplete='off';
+		}
+		oId.focus();
+		if(sUser != '' && sUser != null){
+			sResult = sUser;
+			if( sUid != null ){
+				sResult = fCheckAccount(sUid);
+			}
+			fCls(oIdL, 'showPlaceholder', 'remove');
+			oId.value = sResult;
+			//me.idInputEvent();
+			//gMobileNumMail.getNumFromMail(oId.value);
+			oPw.focus();
+		}	
+	}
+
+	/**
+	 * 绑定输入框事件
+	 */
+	function fInitInputBox(){
+		var me = this;
+		var oLo = $id('loginBtn'),	
+			oRg = $id('lfBtnReg'),
+			oIdLabel = $id('idPlaceholder'),
+			oPwLabel = $id('pwdPlaceholder'),
+			oShowDomain = $id('showdomain'),
+			oSaveLogin = $id('savelogin'),
+			oStyleConfBlk = $id('styleConfBlock');
+		
+		// 不可选
+		fEventListen(oShowDomain,'selectstart',function(){
+			return false;
+		});
+		fEventListen(oShowDomain,'click',function(){
+			oId.focus();
+			return false;
+		});
+		fEventListen($id('remAutoLoginTxt'),'selectstart',function(){
+			return false;
+		});
+		fEventListen($id('styleConfText'),'selectstart',function(){
+			return false;
+		});
+		
+		//帐号
+		fEventListen(oIdL,'mouseover',function(){
+			fCls(oIdL, 'loginFormIpt-over', 'add');
+		});
+		fEventListen(oIdL,'mouseout',function(){
+			fCls(oIdL, 'loginFormIpt-over', 'remove');
+		});
+		fEventListen(oId,'focus',function(){
+			fCls(oId, 'loginFormTdIpt-focus', 'add');
+			fCls(oIdL, 'loginFormIpt-focus', 'add');
+		});
+		fEventListen(oId,'blur',function(){
+			fCls(oIdL, 'loginFormIpt-focus', 'remove');	
+			if(oId.value == ''){
+				fCls(oIdL, 'showPlaceholder', 'add');
+				fCls(oId, 'loginFormTdIpt-focus', 'remove');
+			}else{
+				oId.value = fCheckAccount(oId.value);
+			}
+		});
+		
+		var sEventName = '';
+		var bIsIe = false;
+		if(document.body.onpropertychange === null){
+			sEventName = 'propertychange';
+			var bIsIe = true;
+		}else{
+			sEventName = 'input';
+			me.checkInputAlways();
+		}
+		var el = document.createElement('div');
+		el.setAttribute('oninput', 'return');
+		if(typeof el.oninput === 'function'){
+			sEventName = 'input';
+			if(bIsIe){
+				me.checkInputAlways();
+			}
+		}
+		fEventListen(oId, sEventName, me.idInputEvent);
+		
+		//点击双击文字
+		fEventListen(oIdLabel, 'dblclick', function(){
+			oId.focus();
+		});
+		fEventListen(oIdLabel, 'click', function(){
+			oId.focus();
+		});
+		
+		//密码
+		fEventListen(oPwL,'mouseover',function(){
+			fCls(oPwL, 'loginFormIpt-over', 'add');
+		});
+		fEventListen(oPwL,'mouseout',function(){
+			fCls(oPwL, 'loginFormIpt-over', 'remove');
+		});
+		fEventListen(oPw,'focus',function(){
+			fCls(oPw, 'loginFormTdIpt-focus', 'add');
+			fCls(oPwL, 'loginFormIpt-focus', 'add');
+		});
+		fEventListen(oPw,'blur',function(){
+			fCls(oPwL, 'loginFormIpt-focus', 'remove');
+			if(oPw.value == ''){
+				fCls(oPwL, 'showPlaceholder', 'add');
+				fCls(oPw, 'loginFormTdIpt-focus', 'remove');
+			}
+		});
+		fEventListen(oPw, sEventName, me.checkPw);
+		//点击双击文字
+		fEventListen(oPwLabel, 'dblclick', function(){
+			oPw.focus();
+		});
+		fEventListen(oPwLabel, 'click', function(){
+			oPw.focus();
+		});
+		
+		//两周自动登录文字 + 全程ssl
+		fEventListen($id('remAutoLogin'),'click',function(){
+			if(oStyle.value == 3 || oStyle.value == 6){ // 简约5/简约6
+				$id('icoCheckbox').className = '';
+				oSaveLogin.value = 0;
+				if($id('allssl').checked){
+					$id('icoCheckbox').className = '';
+					$id('allssl').checked = false;				
+				}else{
+					$id('icoCheckbox').className = 'show';
+					$id('allssl').checked = true;		
+				}
+			}else{ // 其他风格
+				$id('allssl').checked = false;
+				$id('icoCheckbox').className = '';
+				if(oSaveLogin.value == 0){
+					$id('icoCheckbox').className = 'show';
+					oSaveLogin.value = 1;
+				}else{
+					$id('icoCheckbox').className = '';
+					oSaveLogin.value = 0;
+				}
+			}
+		});
+		//版本选择
+		fEventListen($id('styleConf'),'click',function(){
+			oStyleConfBlk.style.display = ( oStyleConfBlk.style.display == 'block' ? 'none' : 'block');
+		});
+		oStyleConfBlk.onmouseout = function(e){
+			var oE = e || window.event;
+			var that = this;
+			_fE(function(){
+				$id('styleConfBlock').style.display = 'none';
+			}, oE, that);
+		};
+		//阻止事件触发
+		function _fE(fFunc, oE, oThat){
+			var e = oE,
+			relatedTarget = e.toElement || e.relatedTarget;
+			while(relatedTarget && relatedTarget != oThat){
+				relatedTarget = relatedTarget.parentNode;
+			}
+			if(!relatedTarget){
+				fFunc();
+			}
+		}
+	}
+
+	/**
+	 * 用户名输入事件
+	 */
+	function fIdInputEvent(){
+		var oShowDomain = $id('showdomain'),
+			oInputTest = $id('idInputTest');
+		if(oId.value == ''){
+			fCls(oIdL, 'showPlaceholder', 'add');
+			oInputTest.innerHTML = '';
+			oShowDomain.style.display = 'none';
+		}else{
+			fCls(oIdL, 'showPlaceholder', 'remove');
+			fCls(oId, 'loginFormTdIpt-focus', 'add');
+			oShowDomain.style.display = 'block';
+			oInputTest.innerHTML = oId.value;
+			var tmpWidth = oInputTest.offsetWidth;
+			oShowDomain.style.left = tmpWidth + 25 + 'px';
+		}
+	}
+
+	/**
+	 * 检查密码输入框状态
+	 */
+	function fCheckPw(){
+		if(oPw.value != ''){
+			fCls(oPwL, 'showPlaceholder', 'remove');
+			fCls(oPw, 'loginFormTdIpt-focus', 'add');
+		}else{
+			fCls(oPwL, 'showPlaceholder', 'add');
+		}
+	};
+
+	/**
+	 * 持续检查输入框状态
+	 */
+	function fCheckInputAlways(){
+		var me = this;
+		window.oIntervalCheckInputAlways = setInterval(function(){
+			me.idInputEvent();
+			me.checkPw();
+		},500);
+	}
+
+	/**
+	 * 设置版本
+	 * @param  {Number} n 版本号
+	 */
+	function fSetStyle(n){
+		var me = this;
+		var oStyleConfBlk = $id('styleConfBlock'),
+			aVers = oStyleConfBlk.getElementsByTagName('a');
+		for(var i=0, l=aVers.length; i<l; i++){
+			aVers[i].className = '';
+		}
+		oStyle.value = n;
+		$id('styleconf' + n).className = 'verSelected';
+		$id('styleConfText').innerHTML = $id('styleconf' + n).innerHTML;
+		oStyleConfBlk.style.display = 'none';
+		$id('styleconf' + n).getElementsByTagName('b')[0].innerHTML = me.emuIconTick('colorRed'); // 模拟红色勾
+		// 判断是否全程ssl
+		if(n == 3 || n == 6){
+			// 简约5\简约6 显示全程ssl
+			$id('remAutoLoginTxt').innerHTML = '&nbsp;全程SSL';
+			$id('icoCheckbox').className = '';
+			$id('savelogin').value = 0;
+		}else{
+			$id('remAutoLoginTxt').innerHTML = '&nbsp;十天内免登录';
+			$id('allssl').checked = false;
+		}
+		me.shadowFix();
+	}
+
+	/**
+	 * 登录提交
+	 * @return {Boolean}
+	 */
+	function fSubmitForm(){
+		var me = this;
+		//检查输入
+		oId.value = fTrim(oId.value);
+		if(oId.value == ''){
+			alert('请输入您的帐号!');
+			oId.focus();
+			return false;
+		}
+		
+		$id('username').value = oId.value + '@' + gOption.sDomain;
+		
+		if(oPw.value.length == ''){
+			alert('请输入您的密码!');
+			oPw.focus();
+			return false;
+		}
+		
+		// starttime 登录时间统计
+		if(bStartTime){
+			var sNow = new Date().getTime();
+			fSetCookie("starttime",sNow,false);
+			bStartTime = false;
+		}
+		
+		/*//16位密码截断
+		if(oPw.value.length > 16){
+			oPw.value = oPw.value.substr(0,16);
+		}*/
+		
+		//储存登录信息
+		gUserInfo.username = oId.value;
+		gUserInfo.style = oStyle.value;
+		if(bIsFirstLog){
+			//if($id('sslLogin').checked){
+				gUserInfo.safe = 1;
+				sLoginFunc = 'ssl';
+			/*}else{
+				gUserInfo.safe = 0;
+				sLoginFunc = 'http';
+			}*/
+		}else{
+			if(sLoginFunc == 'ssl'){	
+				gUserInfo.safe = 1;
+			}else{
+				gUserInfo.safe = 0;
+			}
+		}
+		gVisitorCookie.saveInfo();
+		//弹出超时对话框
+		if(bIsFirstLog){
+			sCoremailCookie = fGetCookie('Coremail');
+			setTimeout(function(){
+				//fShowTheHttpLogin();
+				if(sLoginFunc == 'ssl'){
+					sLoginFunc = 'http'
+					me.submitForm();
+				}
+			},5000);
+		}
+		var sUrlDf = (function(){
+						var sDf = fGetQueryHash('df');
+						if(sDf == null){
+							sDf = 'webmailyeah';
+						}
+						fSetCookie('df',sDf,false);
+						return sDf;
+					})(),
+			sUrlUid = oId.value + '@' + gOption.sDomain;
+		switch(sLoginFunc){
+			case 'ssl' :
+				var oForm = $id('loginyeah');
+				oForm.action = gOption.sSslAction
+				+ fUrlP('df',sUrlDf,true)
+				+ fUrlP('from','web')
+				+ fUrlP('funcid','loginone')
+				+ fUrlP('iframe','1')
+				+ fUrlP('language','-1')
+				// + fUrlP('net',sLocationInfo)
+				+ fUrlP('passtype','1')
+				+ fUrlP('verifycookie','1')
+				+ fUrlP('product', gOption.product)
+				// + fUrlP('race',sUrlRace)
+				+ fUrlP('style', oStyle.value)
+				+ fUrlP('uid', sUrlUid)
+				+ ($id('allssl').checked ? fUrlP('allssl', 'true') : '');
+				if(bIsFirstLog){
+					bIsFirstLog = false;
+					return true;
+				}else{
+					oForm.submit();
+				}
+				break;
+			case 'http' :
+				window.sHttpAction  = gOption.url 
+				+ fUrlP('df',sUrlDf,true)
+				+ fUrlP('lightweight','1')
+				+ fUrlP('verifycookie','1')
+				+ fUrlP('from','web')
+				+ fUrlP('language','-1')
+				// + fUrlP('net',sLocationInfo)
+				// + fUrlP('race',sUrlRace)
+				+ fUrlP('style', oStyle.value)
+				+ fUrlP('uid', sUrlUid);
+				loginRequest('fEnData');
+				return false;
+				break;
+			default :;
+		}
+		return false;
+	}
+
+	/**
+	 * 易信二维码登录
+	 */
+	function fShowYXCode(){
+		var oYxLoginBtn = $id('yxLoginBtn');
+		var bShowCode = true,
+			bStartPoll = false;
+		var _fShowCodeTimeout = function(){
+			setTimeout(function(){
+				if(bShowCode){
+					$id('loginByYX').style.display = 'block';
+					fEventListen(document,'click',_fHideCode);
+					if(bStartPoll){
+						return;
+					}else{
+						yixinLogin.init();
+						bStartPoll = true;
+					}
+				}else{
+					bShowCode = true;
+				}
+			},300);
+		};
+		var _fSetShowCodeTimeout = function(){
+			bShowCode = false;
+		};
+
+		fEventListen(oYxLoginBtn,'mouseover',_fShowCodeTimeout);
+		fEventListen(oYxLoginBtn,'mouseout',_fSetShowCodeTimeout);
+
+		// 隐藏错误信息提示
+		function _fHideCode(e){
+			var evt = window.event ? window.event: e,
+				target = evt.srcElement || evt.target;
+			var bMe = false;
+			var oEle = target;
+			while(oEle.tagName.toUpperCase() != 'BODY'){ 
+				if(oEle == $id('loginByYX')){ 
+					bMe = true;
+					break;
+				}
+				oEle = oEle.parentNode;
+			}
+			if(!bMe && target.id != 'loginByYX' && target.id != 'yxLoginBtn'){
+				$id('loginByYX').style.display = 'none';
+				bShowCode = true;
+				fEventUnlisten(document,'click',_fHideCode);
+			}
+		}
+	}
+
+	/**
+	 * ssl链接预加载检测
+	 * @param  {String} s load：ssl接口正常 | err：接口错误
+	 */
+	function fCheckHttps(s){
+		var oLogin =$id('loginBtn');
+		var sTitle = '';
+		switch(s){
+			case 'load' :
+				$id('sslLogin').checked = true;
+				sTitle = '正在使用SSL方式登录';
+				break;
+			case 'err' :
+				$id('sslLogin').checked = false;
+				sTitle = '普通加密方式登录';
+				break;
+			default :;
+		}
+		oLogin.title = sTitle;
+		return;
+	}
+
+	/**
+	 * 模拟图标
+	 * @param  {Array} aPixel 参数数组
+	 * @return {String}       html字符串
+	 */
+	function fEmuIcon(aPixel){
+		var sHtml = '';
+		for(var i = 0; i < aPixel.length; i++){
+			var sPixelHtml = '<i style="position:absolute;height:' + aPixel[i].height + 'px;overflow:hidden;left:' + aPixel[i].x + 'px;top:' + aPixel[i].y + 'px;width:' + aPixel[i].width + 'px; background-color:#' + aPixel[i].color + '"></i>'
+			sHtml += sPixelHtml;
+		}
+		return sHtml;
+	}
+
+	/**
+	 * 模拟对勾图标
+	 * @param  {String} s colorWhite：白色勾 | colorRed：红色勾
+	 * @return {String}   html字符串
+	 */
+	function fEmuIconTick(s){
+		var me = this;
+		var oConf = {
+			 colorWhite : ['b2b2b2', 'fff', '8c8c8c', 'd9d9d9']
+			,colorRed : ['df8588', 'bf0b10', 'efc3c4', 'cf484c']
+		}
+		var aConf = [
+			 {x : 10, y : 3, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 9, y : 4, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 10, y : 4, width : 1, height : 1, color : oConf[s][1]}
+			,{x : 8, y : 5, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 9, y : 5, width : 2, height : 1, color : oConf[s][1]}
+			,{x : 2, y : 6, width : 1, height : 1, color : oConf[s][2]}
+			,{x : 3, y : 6, width : 1, height : 1, color : oConf[s][3]}
+			,{x : 4, y : 6, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 7, y : 6, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 8, y : 6, width : 2, height : 1, color : oConf[s][1]}
+			,{x : 10, y : 6, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 2, y : 7, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 3, y : 7, width : 2, height : 1, color : oConf[s][1]}
+			,{x : 5, y : 7, width : 2, height : 1, color : oConf[s][0]}
+			,{x : 7, y : 7, width : 2, height : 1, color : oConf[s][1]}
+			,{x : 9, y : 7, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 3, y : 8, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 4, y : 8, width : 4, height : 1, color : oConf[s][1]}
+			,{x : 8, y : 8, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 4, y : 9, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 5, y : 9, width : 2, height : 1, color : oConf[s][1]}
+			,{x : 7, y : 9, width : 1, height : 1, color : oConf[s][0]}
+			,{x : 5, y : 10, width : 2, height : 1, color : oConf[s][0]}
+		];
+		return me.emuIcon(aConf);
+	}
+
+	/**
+	 * 模拟阴影
+	 */
+	function fShadowFix(){
+		if(!(typeof document.body.style.textShadow === 'undefined')){
+			return;
+		}
+		// 清除重置
+		if(aShadowFix.length > 0){
+			for(var i=0; i<aShadowFix.length; i++){
+				var sShadowId = aShadowFix[i];
+				var oShadowObj = $id(sShadowId);
+				if(oShadowObj){
+					oShadowObj.parentNode.removeChild(oShadowObj);
+				}
+			}
+			aShadowFix = [];
+		}
+		var nShadowColor = '#000';
+		var aNeedFix = [
+			$id('remAutoLoginTxt'),
+			$id('lfBtnReg'),
+			$id('forgetPass'),
+			$id('styleConfText'),
+			$id('yxLoginBtn'),
+			$id('footerTxt')
+		];
+		for(var i=0; i<aNeedFix.length; i++){
+			_fCreateShadow(aNeedFix[i]);
+		}
+		
+		function _fCreateShadow(o){
+			var bCenter = false;
+			var oC = o.cloneNode(true);
+			var nZindex = 2;
+			var oParent = o.parentNode;
+			if(o.currentStyle){
+				if(o.currentStyle.position == 'static'){
+					o.style.position = 'relative';
+				}
+				if(o.currentStyle.zIndex != 'auto'){
+					nZindex = o.currentStyle.zIndex;
+				}
+				if(o.currentStyle.margin == '0px auto'){
+					bCenter = true;
+				}
+			}
+			o.style.zIndex = nZindex;
+			var nLeft = o.offsetLeft;
+			var nTop = o.offsetTop;
+			oC.id = o.id + 'shadow';
+			aShadowFix.push(oC.id);
+			oC.style.color = nShadowColor;
+			var aHrefArray = oC.getElementsByTagName('*');
+			for(var j=0; j<aHrefArray.length; j++){
+				var oj = aHrefArray[j];
+				if(oj){
+					if(oj.id){
+						oj.id = oj.id + 'shadow';
+						aShadowFix.push(oj.id);
+					}
+					if(oj.currentStyle){
+						if(oj.currentStyle.color != nShadowColor){
+							oj.style.color = nShadowColor;
+						}
+					}
+				}
+			}
+			if(bCenter){
+				oC.style.position = 'relative';
+				oC.style.top = nTop - (o.offsetHeight) + 'px';
+				oC.style.paddingLeft = '1px';
+				oC.style.paddingTop = '1px';
+				oC.style.zIndex = nZindex - 1;
+			}else{
+				oC.style.position = 'absolute';
+				oC.style.zIndex = nZindex - 1;
+				oC.style.left = nLeft + 1 + 'px';
+				oC.style.top = nTop + 1 + 'px';
+				oC.style.width = 'auto';
+			}
+			oParent.appendChild(oC);
+		}
+	}
+
+	/**
+	 * 特殊处理窄屏下的版本选择界面
+	 */
+	function fFixNarrowScreen(){
+		try{
+			var nCw = document.documentElement.clientWidth;
+			if(nCw < 1100){
+				$id('styleconf7').style.width = '125px';
+
+				$id('jy5txt').innerHTML = '5.0简约版';
+				$id('styleconf3').style.width = '125px';
+
+				$id('jy6txt').innerHTML = '6.0简约版';
+				$id('styleconf6').style.width = '90px';
+
+				$id('styleConfBlock').style.width = '350px';
+			}else{
+				$id('styleconf7').style.width = '150px';
+
+				$id('jy5txt').innerHTML = '网易邮箱5.0简约版';
+				$id('styleconf3').style.width = '150px';
+
+				$id('jy6txt').innerHTML = '网易邮箱6.0简约版';
+				$id('styleconf6').style.width = '150px';
+
+				$id('styleConfBlock').style.width = '442px';
+			}
+		}catch(e){}
+	}
+})(window);
+
+/**
+ * 添加删除classname
+ * @param  {Object} o     修改对象dom元素
+ * @param  {String} sCls  classname
+ * @param  {String} sFunc 修改classname方式：add/remove
+ */
+function fCls(o, sCls, sFunc){
+	var oTar = o;
+	var nRes = oTar.className.indexOf(sCls);
+	if(sFunc == 'add'){
+		if(nRes == -1){
+			oTar.className = oTar.className + ' ' + sCls;
+		}else{
+			return;
+		}
+	}
+	if(sFunc == 'remove'){
+		if(nRes != -1){
+			var sCls = '\\s' + sCls
+			var rCls = new RegExp(sCls, 'g');
+			oTar.className = oTar.className.replace(rCls, '');
+		}else{
+			return;
+		}
+	}
+}	
+	
+window.onload = function(){
+	indexLogin.init();
+	// fq统计
+	fFQ();
+	// 推广更新后台
+	loginExtAD.init();
+};
+
+</script>
+
+<!-- 预加载极速js -->
+<iframe src="http://mail.163.com/preload6.htm" style="display:none" id="frmJs5"></iframe>
+<!-- 易信二维码登录 -->
+<script type="text/javascript" src="http://mimg.127.net/index/lib/scripts/yxlogin.js"></script>
+<!-- START NetEase Devilfish 2006 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript">
+_ntes_nacc = "yeah";
+neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+<!--ssl链接预加载-->
+<img src="https://ssl.mail.yeah.net/httpsEnable.gif" width="0" height="0" style="display:block;" alt="https preload" onload="indexLogin.checkHttps('load');" onerror="indexLogin.checkHttps('err');"/>
+</body>
+</html>

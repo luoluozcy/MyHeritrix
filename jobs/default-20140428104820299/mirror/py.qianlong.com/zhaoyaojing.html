@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<style type="text/css">
+body, form, h1, ul, p, td {
+	margin:0;
+	padding:0;
+}
+
+.shitubox {
+	width: 280px;
+	height: 45px;
+	padding: 10px 10px;
+	font-size: 12px;
+}
+
+.shitubox h1 {
+	font-size: 14px;
+	height: 20px;
+}
+
+.shituintro {
+	height: 32px;
+}
+
+.setpic {
+	color: #999;
+	height: 23px;
+}
+
+.setpic strong {
+	color: #000;
+}
+
+.setpicbox {
+	font-size: 14px;
+	color: #7C7C7C;
+	float: left;
+}
+
+.q {
+    width: 200px;
+    border: 1px solid;
+    border-color: #A9A9A9 #D0D0D0 #D0D0D0 #A9A9A9;
+    padding: 0 0px 0 30px;
+    height: 22px;
+    font: 13px/22px Arial, Helvetica, sans-serif;
+    color: #888;
+    background: url(images/pic_icon.png) no-repeat 5px 1px #fff;
+}
+
+.f {
+    width: 230px;
+    height: 22px;
+    font: 13px/22px Arial, Helvetica, sans-serif;
+    color: #888;
+    border: 1px solid;
+    border-color: #A9A9A9 #D0D0D0 #D0D0D0 #A9A9A9;
+    background-color: #fff;
+}
+
+#sf {
+	width: 637px;
+	height: 50px;
+	text-align: left;
+	margin: 0 auto 33px;
+	position: relative;
+}
+
+.qborder {
+	float: left;
+	position: relative;
+}
+
+.stb,.btnactive {
+	float: left;
+	width: 39px;
+	height: 24px;
+    background: url(images/btn1.png) no-repeat right top;
+	border: none;
+	/*margin: 0 0 0 -1px;*/
+	padding: 0;
+	cursor: pointer;
+	font-size: 14px;
+	color: black;
+    outline: none;
+}
+
+.btnactive {
+    background: url(images/btn2.png) no-repeat right top;
+}
+    .bold_title {
+        font-weight: bold;
+    }
+    .blue_title {
+        color: #3467b3;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+<div class="shitubox" id="shitubox">
+	<div class="setpic">
+		<span class="bold_title">图片网址</span> | <a href="#" onclick="upload_pic()" class="blue_title">上传图片</a>
+	</div>
+	<form style="display:none" action="http://pic.sogou.com/ris_upload" class="sf" id="upload_pic" method="post" enctype="multipart/form-data">
+		<div class="setpicbox">
+			<input id="fileInput" type="file" onchange="doUpload();" name="pic_path" class="f">
+		</div>
+		<input type=submit class=stb value="搜索" >
+	</form>
+	<div id="input_url">
+		<form action="http://pic.sogou.com/ris" class="sf" id="url_form" method="get" target="_blank">
+			<div class="qborder">
+				<input name=query id="url_form_query" class="q"
+					onfocus="this.select()" size="47" maxlength="1000"
+					autocomplete="off">
+			</div>
+			<input type=submit class=stb value="搜索"
+				onmousedown="this.className='btnactive'"
+				onmouseup="this.className='stb'" onmouseout="this.className='stb'">
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="http://pic.sogou.com/js/jquery-1.6.2.min.js">
+</script>
+<script type="text/javascript">
+	var fade_time = 200;
+	function input_url() {
+		$(".setpic").html('<span class="bold_title"></span>图片网址</span> | <a href="#" onclick="upload_pic()" class="blue_title">上传图片</a>');
+		$("#upload_pic").fadeOut(fade_time, function() {
+			$("#input_url").fadeIn(fade_time);
+			//$("#url_form_query").focus();
+		});
+		return false;
+	}
+
+	function upload_pic() {
+		$(".setpic").html('<a href="#" onclick="input_url()" class="blue_title">图片网址</a> | <span class="bold_title">上传图片</strong>');
+		$("#input_url").fadeOut(fade_time, function() {
+			$("#upload_pic").fadeIn(fade_time);
+		});
+		return false;
+	}
+	function doUpload(){
+		var f = document.getElementById("upload_pic");
+		f.target="_blank";
+		//f.submit();
+		//$("#fileInput").val("");
+	}
+</script>
+</body>
+</html>

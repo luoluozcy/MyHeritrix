@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta name="description" content="网易邮箱客户端" />
+	<title>网易邮箱客户端</title>
+	<script src="http://mimg.127.net/hd/lib/html5/js/main.js"></script>
+	<link href="http://mimg.127.net/hd/all/111230_allclient/css/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+	.intro-each-cnt-icon{background-image: url(http://mimg.127.net/hd/all/111230_allclient/img/icon3.jpg);}
+	.news-inner-li, .news-inner-title, .intro-each-cnt-ctrl-btn-arr, .intro-each-cnt-ctrl-split, .intro-each-cnt-ctrl-btn, .intro-each-cnt-subtitle, .intro-each-cnt-down, .intro-each-cnt-up, .intro-each-cnt-title-h1, .intro-each-cnt-title, .intro-each-deco{background-image: url(http://mimg.127.net/hd/all/111230_allclient/img/introbg2.png);}
+	</style>
+	<script>
+	//GetElementById
+	function $id(sId){
+		return document.getElementById(sId);
+	}
+	var nCurrentShow = 1,
+	nTimer = 40,
+	nOpacity = 0.05;
+	bShowing = false;
+	function fSlideShow(nNum){
+		if(bShowing){
+			return false;
+		}
+		bShowing = true;
+		var sCurrentShowId = 'slideShow',
+		oCurrentTar = $id('slideShow' + nCurrentShow),
+		oShowTar = $id('slideShow' + nNum);
+		$id('slideBtn' + nCurrentShow).className = 'silder-ctrl-btn';
+		$id('slideBtn' + nNum).className += ' silder-ctrl-btn-on';
+		oCurrentTar.style.zIndex = 1;
+		oShowTar.style.zIndex = 2;
+		if(typeof(oShowTar.style.filter) == 'undefined'){
+			oShowTar.style.opacity = 0;
+		}else{
+			oShowTar.style.filter = 'alpha(opacity=0)';
+		}
+		oShowTar.style.display = 'block';
+		var nCurOpacity = 0
+		window.oShowInterval = setInterval(
+			function(){
+				nCurOpacity = nCurOpacity +nOpacity;
+				if(typeof(oShowTar.style.filter) == 'undefined'){
+					oShowTar.style.opacity = Number(nCurOpacity);
+				}else{
+					oShowTar.style.filter = 'alpha(opacity=' + nCurOpacity*100 + ')';
+				}
+				if(nCurOpacity >= 1){
+					nCurrentShow = nNum;
+					oCurrentTar.style.display = 'none';
+					bShowing = false;
+					clearInterval(oShowInterval);
+				}
+			},nTimer
+		);
+	}
+	function fStartShow(){
+		window.oStartShowInterval = setInterval(
+			function(){
+				var nforShow = nCurrentShow + 1;
+				if(nforShow > 4){
+					nforShow = 1
+				}
+				fSlideShow(nforShow);
+			},3000
+		);
+	}
+	function fEndShow(){
+		try{
+			if(oStartShowInterval){
+				clearInterval(oStartShowInterval);
+			}
+		}catch(e){}
+	}
+	window.onload = function(){fStartShow();}
+	</script>
+</head>
+<body>
+	<div class="page">
+		<header class="header">
+			<div class="header-title">
+				<h1>网易邮件客户端</h1><span>为您提供全方位邮件服务</span>
+			</div>
+			<nav class="header-nav">
+				<a class="header-nav-link" href="http://vipmail.163.com/?shandy" target="_blank">收费邮</a>|
+				<a class="header-nav-link" href="http://email.163.com/" target="_blank">免费邮</a>|
+				<a class="header-nav-link" href="http://qiye.163.com/" target="_blank">企业邮</a>|
+				<a style="margin-right:0;" class="header-nav-link" href="http://help.163.com/?shandy" target="_blank">帮助</a>
+			</nav>
+		</header>
+		<div class="silder" onMouseOver="fEndShow();" onMouseOut="fStartShow();">
+			<div class="silder-cnt">
+				<a class="slideShow" id="slideShow1" href="http://fm.163.com/
+" target="_blank" style="display:block;">
+					<img src="http://mimg.127.net/hd/all/111230_allclient/img/silder/1.jpg" alt="闪电邮" class="silder-cnt-img" />
+				</a>
+				<a class="slideShow" id="slideShow2" href="http://mail.163.com/android/
+" target="_blank">
+					<img src="http://mimg.127.net/hd/all/111230_allclient/img/silder/6.jpg" alt="网易邮箱安卓版" class="silder-cnt-img" />
+				</a>
+				<a class="slideShow" id="slideShow3" href="http://mailease.163.com/
+" target="_blank">
+					<img src="http://mimg.127.net/hd/all/111230_allclient/img/silder/2.jpg" alt="邮箱助手" class="silder-cnt-img" />
+				</a>
+				<a class="slideShow" id="slideShow4" href="http://mailease.163.com/
+" target="_blank">
+					<img src="http://mimg.127.net/hd/all/111230_allclient/img/silder/4.jpg" alt="联系人助手" class="silder-cnt-img" />
+				</a>
+			</div>
+			<div class="silder-ctrl">
+				<a id="slideBtn1" style="margin-left:1px;" class="silder-ctrl-btn silder-ctrl-btn-on" href="javascript:void(0);" onClick="fSlideShow(1);">1</a>
+				<a id="slideBtn2" class="silder-ctrl-btn" href="javascript:void(0)" onClick="fSlideShow(2);">2</a>
+				<a id="slideBtn3" class="silder-ctrl-btn" href="javascript:void(0)" onClick="fSlideShow(3);">3</a>
+				<a id="slideBtn4" class="silder-ctrl-btn" href="javascript:void(0)" onClick="fSlideShow(4);">4</a>
+			</div>
+		</div>
+		<div class="intro">
+			<div class="intro-each" style="margin-left:0px;">
+				<div class="intro-each-deco intro-each-deco-left"></div>
+				<section class="intro-each-cnt">
+					<div class="intro-each-cnt-title">
+						<h1 class="intro-each-cnt-title-h1 intro-each-cnt-title-h1-com">电脑客户端</h1>
+					</div>
+					<figure class="intro-each-cnt-up">
+						<figcaption class="intro-each-cnt-subtitle intro-each-cnt-subtitle-flash">闪电邮</figcaption>
+						<div class="intro-each-cnt-icon intro-each-cnt-icon-flash"></div>
+						<p class="intro-each-cnt-desc">
+							同步Web邮箱，支持多帐号，更全面快速的邮件管理。
+						</p>
+						<div class="intro-each-cnt-ctrl">
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<a class="intro-each-cnt-ctrl-btn-link" href="http://fm.163.com/
+" target="_blank">进入官网</a>
+							</div>
+							<div class="intro-each-cnt-ctrl-split"></div>
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<div class="intro-each-cnt-ctrl-btn-arr"></div>
+								<a class="intro-each-cnt-ctrl-btn-link intro-each-cnt-ctrl-btn-link-ar" href="http://fm.dl.126.net/NxMail/Update/installer/flashmail-2.0.exe" target="_blank">免费下载</a>
+							</div>
+						</div>
+					</figure>
+					<figure class="intro-each-cnt-down">
+						<figcaption class="intro-each-cnt-subtitle intro-each-cnt-subtitle-helper">邮箱助手</figcaption>
+						<div class="intro-each-cnt-icon intro-each-cnt-icon-helper"></div>
+						<p class="intro-each-cnt-desc">
+							桌面直接查看邮件，实时邮件提醒，轻松上传文件。
+						</p>
+						<div class="intro-each-cnt-ctrl">
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<a class="intro-each-cnt-ctrl-btn-link" href="http://mailease.163.com/" target="_blank">进入官网</a>
+							</div>
+							<div class="intro-each-cnt-ctrl-split"></div>
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<div class="intro-each-cnt-ctrl-btn-arr"></div>
+								<a class="intro-each-cnt-ctrl-btn-link intro-each-cnt-ctrl-btn-link-ar" href="http://download.mail.126.net/mailease/Netease_Mailease_Installer.msi" target="_blank">免费下载</a>
+							</div>
+						</div>
+					</figure>
+				</section>
+			</div>
+			<div class="intro-each">
+				<div class="intro-each-deco"></div>
+				<section class="intro-each-cnt">
+					<div class="intro-each-cnt-title">
+						<h1 class="intro-each-cnt-title-h1 intro-each-cnt-title-h1-mob">手机客户端</h1>
+					</div>
+					<figure class="intro-each-cnt-up">
+						<figcaption class="intro-each-cnt-subtitle intro-each-cnt-subtitle-mobhelper">网易邮箱Android版</figcaption>
+						<div class="intro-each-cnt-icon intro-each-cnt-icon-mobhelper"></div>
+						<p class="intro-each-cnt-desc">
+							时尚外观贴心设计，数据同步Web邮箱，新邮件即时推送。
+						</p>
+						<div class="intro-each-cnt-ctrl">
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<a class="intro-each-cnt-ctrl-btn-link" href="http://mail.163.com/android/" target="_blank">进入官网</a>
+							</div>
+							<div class="intro-each-cnt-ctrl-split"></div>
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<div class="intro-each-cnt-ctrl-btn-arr"></div>
+								<a class="intro-each-cnt-ctrl-btn-link intro-each-cnt-ctrl-btn-link-ar" href="http://client.dl.126.net/androidmail/mail.apk" target="_blank">免费下载</a>
+							</div>
+						</div>
+					</figure>
+					<figure class="intro-each-cnt-down">
+						<figcaption class="intro-each-cnt-subtitle intro-each-cnt-subtitle-chelper">联系人助手</figcaption>
+						<div class="intro-each-cnt-icon intro-each-cnt-icon-chelper"></div>
+						<p class="intro-each-cnt-desc">
+							轻松实现手机联系人和邮箱通讯录的同步，资料不再丢失。
+						</p>
+						<div class="intro-each-cnt-ctrl">
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<a class="intro-each-cnt-ctrl-btn-link" href="http://mailease.163.com/" target="_blank">进入官网</a>
+							</div>
+							<div class="intro-each-cnt-ctrl-split"></div>
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<div class="intro-each-cnt-ctrl-btn-arr"></div>
+								<a class="intro-each-cnt-ctrl-btn-link intro-each-cnt-ctrl-btn-link-ar" href="http://mailease.163.com/" target="_blank">免费下载</a>
+							</div>
+						</div>
+					</figure>
+				</section>
+			</div>
+			<div class="intro-each" style="margin-left:0;float:right;">
+				<div class="intro-each-deco intro-each-deco-right"></div>
+				<section class="intro-each-cnt">
+					<div class="intro-each-cnt-title">
+						<h1 class="intro-each-cnt-title-h1 intro-each-cnt-title-h1-bro">浏览器插件</h1>
+					</div>
+					<figure class="intro-each-cnt-up">
+						<figcaption class="intro-each-cnt-subtitle intro-each-cnt-subtitle-360">360浏览器邮件通</figcaption>
+						<div class="intro-each-cnt-icon intro-each-cnt-icon-360"></div>
+						<p class="intro-each-cnt-desc">
+							360安全浏览器提供的网易邮箱专属邮件提醒服务。
+						</p>
+						<div class="intro-each-cnt-ctrl">
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<a class="intro-each-cnt-ctrl-btn-link" href="http://mail.163.com/html/100810_360cop/index.htm" target="_blank">进入官网</a>
+							</div>
+							<div class="intro-each-cnt-ctrl-split"></div>
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<div class="intro-each-cnt-ctrl-btn-arr"></div>
+								<a class="intro-each-cnt-ctrl-btn-link intro-each-cnt-ctrl-btn-link-ar" href="http://down.360safe.com/p/360se_163.exe" target="_blank">免费下载</a>
+							</div>
+						</div>
+					</figure>
+					<figure class="intro-each-cnt-down">
+						<figcaption class="intro-each-cnt-subtitle intro-each-cnt-subtitle-ff">网易邮箱专属版，火狐Firefox浏览器</figcaption>
+						<div class="intro-each-cnt-icon intro-each-cnt-icon-ff"></div>
+						<div class="intro-each-cnt-ctrl">
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<a class="intro-each-cnt-ctrl-btn-link" href="http://mail.163.com/html/111228_firefoxnetease/" target="_blank">进入官网</a>
+							</div>
+							<div class="intro-each-cnt-ctrl-split"></div>
+							<div class="intro-each-cnt-ctrl-btn" onMouseOver="this.className+=' intro-each-cnt-ctrl-btn-on';" onMouseOut="this.className='intro-each-cnt-ctrl-btn';">
+								<div class="intro-each-cnt-ctrl-btn-arr"></div>
+								<a class="intro-each-cnt-ctrl-btn-link intro-each-cnt-ctrl-btn-link-ar" href="http://download.mail.126.net/client/ff/Firefox-setup.exe" target="_blank">免费下载</a>
+							</div>
+						</div>
+					</figure>
+				</section>
+			</div>
+		</div>
+		<section class="news">
+			<div class="news-inner">
+				<h1 class="news-inner-title">最新动态</h1>
+				<ul>
+					<li class="news-inner-li" style="margin-left:50px">
+						<a class="news-inner-li-a" href="http://fm.163.com/affiche-3.html " target="_blank">闪电邮2.3正式版全新发布，新增会议邀请等功能！</a>
+					</li>
+					<li class="news-inner-li" style="margin-left:50px">
+						<a class="news-inner-li-a" href="http://mailease.163.com/affiche.html" target="_blank">邮箱助手2.1正式版全面升级公告</a>
+					</li>
+					<li class="news-inner-li" style="margin-left:50px">
+						<a class="news-inner-li-a" href="http://m.123.163.com/bbs/viewthread.php?tid=8750&extra=page%3D1" target="_blank">网易联系人助手iPhone版介绍</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="footer-inner">
+				<a class="footerLogo" href="http://www.163.com/" target="_blank"><img src="http://mimg.127.net/logo/netease_logo.gif" alt="网易NetEase"/></a>
+				<nav class="footerNav">
+					<a href="http://corp.163.com/index_gb.html" target="_blank">关于网易</a><a href="http://mail.163.com/html/mail_intro" target="_blank">关于网易免费邮</a><a href="http://mail.blog.163.com/" target="_blank">邮箱官方博客</a><a href="http://help.163.com" target="_blank">客户服务</a><a href="http://corp.163.com/gb/legal/legal.html" target="_blank">隐私政策</a>|<span class="copyright">网易公司版权所有 &copy; 1997-<script language="javascript" src="http://mimg.127.net/copyright/year.js"></script></span>
+				</nav>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

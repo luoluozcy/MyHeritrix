@@ -1,0 +1,2381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>模拟炒股_网易财经论坛</title>
+                <link rel="stylesheet" type="text/css" href="http://img1.cache.netease.com/bbs/static/20140425/form_list.css" charset="GBK"/>
+        <!--[if IE 6]>
+        <link rel="stylesheet" type="text/css" href="http://img1.cache.netease.com/bbs/static/20140425/tie_ie6.css" charset="GBK"/>
+        <![endif]-->
+        <script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/bbsntes_jslib.js" charset="GBK"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/jquery_bbs.js" charset="GBK"></script>
+</head>
+<body>
+        <input  type="hidden" id="_path_to_boardid" value="/stock/stock13/stock1316"/>
+        <iframe src="http://t.163.com/crossdomain.html" style="display:none;"  id="iframeProxy"></iframe>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.1.css" />
+<style>.NTES-nav {width: auto; margin-left: 5px;}</style>
+<div class="NTES-nav">
+    <span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a> |</span>
+    <div class="rightCon">
+        <div class="NTES-link">
+            <a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a>
+        </div>
+        <a href="http://www.163.com/rss"><img width="26" height="14" border="0" src="http://img3.cache.netease.com/cnews/img07/rss.gif" class="rss" alt="Rss"></a>
+    </div>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+    NTES.ready( function($){
+        var P_INFO = NTES.cookie.get("P_INFO");
+        var S_INFO = NTES.cookie.get("S_INFO");
+        if(P_INFO){
+            var mailconfig = {
+                "163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+                "126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+                "vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+                "yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+                "188" : "http://reg.mail.188.com/servlet/enter",
+                "vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+            };
+            var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+            var username =  passport.substr(0, P_INFO.indexOf("@"));
+            var logstate = P_INFO.split("|")[2];
+            var logiframe = "";
+            var pspt = passport.length >= 6 ? passport.substr(0,6)+"..." : passport;
+            /@([^*]+)/.test(passport);
+            var logdomain = RegExp.$1;
+            if(P_INFO && S_INFO || logstate=="1") {
+                var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+                if(mailconfig[logdomain] != undefined) {
+                    entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入我的邮箱</a>';
+                }
+                if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+                    entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入我的博客</a><a href="http://photo.163.com/?username='+passport+'\">进入我的相册</a>';
+                }
+                entrylink_html += '<a href="http://yuehui.163.com/">进入我的约会</a><a href="http://t.163.com">进入我的微博</a>';
+                if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+                    logiframe = '<iframe allowTransparency=\"true\" style=\"width: 56px; height:26px; float:left; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.'+logdomain+'/mailinfo/shownewmsg_www_1222.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+                }
+                var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div>'+logiframe+'|<a class=\"ntes-usercenter-loginout\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+                NTES(".NTES-link")[0].innerHTML = login_html;
+
+                NTES("#ntes_usercenter_name").addEvent("click", function(e){
+                    NTES("#ntes_usercenter_entry").style.display = NTES("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+                    e.preventDefault();
+                    e.cancelBubble = true;
+                    document.onclick = function(){
+                        NTES("#ntes_usercenter_entry").style.display = "none";
+                    }
+                })
+            };
+        }
+    })
+    //]]>
+    NTES.retire();
+</script>
+            <div id="topNav">
+                    <input type="hidden" name="boardid" id="boardid" value="chaogu"/>
+                <input type="hidden" name="boardname" id="boardname" value="模拟炒股"/>
+                    <input type="hidden" name="threadId" id="threadId" value=""/>
+                <input type="hidden" name="channel" id="channel" value="stock"/>
+
+        <input type="hidden" value="2" id="list_page_num">
+        <div class="nav-bar">
+            <a href="http://bbs.163.com" class="logo"></a>
+            <a href="http://www.163.com">网易首页</a> &gt;
+            <a href="http://money.163.com/">网易财经</a> &gt;
+            <a href="http://bbs.money.163.com">网易财经论坛</a> &gt;
+			            <a href="http://bbs.money.163.com/boardset/chaogu.html">模拟炒股</a>
+        </div>
+        <div class="nav-info" style="display:none;">
+            <a href="http://bbs.163.com/user/personalCenter.do" class="info-username" target="_blank"></a>
+    		<a href="#" class="info-mark info-sign">签到</a> |
+            <table class="info-manage" cellspacing="0" cellpadding="0" border="0">
+            <tr><td valign="middle">
+                <div class="dd-window dd-window-expand1">
+    			    <a href="http://bbs.163.com/user/personalCenter.do" target="_blank">我的管理中心</a>
+    				<em class="icon-arrow-up"></em>
+                    <div class="board-menu">
+                        <div class="board-menu-connect"></div>
+                        <div class="board-menu-container">
+                            <div class="board-menu-nav">
+                              	  个人管理 &gt;
+                            </div>
+                            <ul class="board-menu-sub-nav">
+                                <li><a target="_blank" href="http://bbs.163.com/user/personalCenter.do">管理中心</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/gift/newUserTask.do">新手任务</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/gift/giftShop.do">礼物商店</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/upgrade.do">升级中心</a></li>
+                            </ul>
+                        </div>
+                        <div class="board-menu-container last">
+                            <div class="board-menu-nav">
+                                个人收藏 &gt;
+                            </div>
+                            <ul class="board-menu-sub-nav like-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </td></tr>
+            </table> |
+            <a href="http://t.163.com/?f=bbsnav" class="info-weibo">我的网易微博</a>(<span class="red weibo-count">99+</span>) |
+            <div class="info-message-box">
+                <div class="dd-window dd-window-expand1">
+                    <a href="http://bbs.163.com/user/msg.do?msgType=2">消息中心</a>(<span class="red message-count">6</span>)
+    				<em class="icon-arrow-up"></em>
+                    <ul class="info-message-box-list">
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=2">用户消息 <span class="em">2</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=1">评论消息 <span class="em">2</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=0">系统消息 <span class="em">2</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="message_alert_box">
+                    <span class="message_arrow"></span>
+                    <a class="message_alert_btn" href="">X</a>
+                    <ul class="message_alert_list">
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=2">用户消息 <span class="em">0</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=1">评论消息 <span class="em">0</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=0">系统消息 <span class="em">0</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div> |
+            <a href="/bbs/user/logout.jsp">退出</a> |
+            <a href="/list/tyro.html" id="forumhelp">帮助</a>
+            <a href="http://help.3g.163.com/bbs/">手机版</a>
+        </div>
+        <div class="nav-login">
+            [<a href="#" class='login-button'>登录</a>]
+            <a href="#" class="info-mark info-sign">签到</a>  |
+            <a  href="/list/tyro.html" >帮助</a> |
+            <a href="http://help.3g.163.com/bbs/">手机版</a>
+        </div>
+    </div>    <div id="bbs_bd">
+        <div id="bbs_nav">
+    <div id="nav_recently_visit">
+        <h3>最近访问</h3>
+        <div class="bd" id="revWraperBd">
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <div class="nav-direct-access">
+        <label> 版面直达:</label> <input type="text" id="board_keyword" />
+    </div>
+    <div id="mobile_picker" style="display: none;">
+        <select class="mobile-select" id="k_brand">
+            <option>-请选择品牌-</option>
+        </select>
+        <select class="mobile-select" id="k_series">
+            <option value="club_tech">-请选择系列-</option>
+        </select>
+        <a class="mobile-btn" id="goto_mobile_page" target="_blank">GO</a>
+    </div>
+    <div id="bbs_menu_wrapper">
+        <div id="bbs_menu">
+        </div>
+    </div>
+</div>        <div id="liquid_wrapper">
+            <!-- 版面主页 -->
+                        <div id="bbs_ad">
+       
+   			<div class="ad70" style="height: auto;">
+			<div style="padding-left:15px;display:none;"><embed src="http://img1.126.net/channel2/007372/007372_75070_0419.swf
+" 
+pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?
+P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" play="true" loop="true" quality="high" scale="showall" menu="true" width="650" height="60"></embed></div>
+			<!--"/htmlfile/header/bbs_money/stock_list_bbs.html"-->
+		</div>
+	       
+	<table border="0" width="80%" height="25" cellspacing="0"> 
+<tr> 
+<td width="50%" height="6" bgcolor="#FFFFFF"> 
+<p align="center"><font size="2" color="#695C30">[</font><font size="2"><u><a href="http://chaogu.money.163.com/" target="_blank"><font color="#ff0000">模拟炒股大赛首页</font></a></u>]</font> 　　<font size="2" color="#695C30">[</font><font size="2"><u><A href="http://bbs.money.163.com/bbs/chaogu/178641768.html" target="_blank">参赛网友需每日发表收评及炒股微博</A></u></font><font color="#695C30"><font size="2">]</font><font size="2"> 　</font></font>　<font size="2" color="#695C30">[</font><font size="2"><u><A href="http://bbs.stock.163.com/bbs/chaogu/80412814.html" target="_blank">炒股大赛常见问题解答</A></u></font><font color="#695C30"><font size="2">]</font><font size="2"> 
+　</font></font> <font size="2" color="#695C30">[</font><font size="2"><u><a href="http://bbs.stock.163.com/bbs/chaogu/86927278.html" target="_blank">修改“中文昵称”的方法</a></u><font color="#695C30">] 
+　</font></font><font size="2" color="#695C30">[</font><font size="2"><u><a href="http://bbs.stock.163.com/bbs/chaogu/87284399.html" target="_blank"><font color="#000000">无法登陆的解决办法</font></a></u></font><font size="2" color="#695C30">]</font><font color="#695C30" size="1"> 
+　</table>
+	<!--"/htmlfile/header/bbs_money/chaogu.html"-->
+
+
+
+    </div>
+    <div id="bbs_board_header"></div>
+    <div id="bbs_rank">
+                           <div id="board_manager" class="board-widget-container">
+        <div class="hd">
+            <h3>本版版主</h3>
+            <div class="more">
+			    <em></em>
+			    <a href="/bbs/bwjl/241002490,1.html" class="apply-for-mamage">申请版主</a>
+			</div>
+        </div>
+        <div class="bd">
+            <ul>
+            					                <li>
+	                    <img src="http://image.bbs.163.com/face/163_money" width="30" height="30" alt="网易财经" title="用户：网易财经">
+	                    <a href="http://bbs.163.com/user/163_money" target="_blank" title="网易财经" >网易财经</a>
+	                </li>
+	            	                <li>
+	                    <img src="http://image.bbs.163.com/face/jinqingsong" width="30" height="30" alt="坐轿" title="用户：坐轿">
+	                    <a href="http://bbs.163.com/user/jinqingsong" target="_blank" title="坐轿" >坐轿</a>
+	                </li>
+	            	                <li>
+	                    <img src="http://image.bbs.163.com/face/hy_hai@126.com" width="30" height="30" alt="娜写年华" title="用户：娜写年华">
+	                    <a href="http://bbs.163.com/user/hy_hai@126.com" target="_blank" title="娜写年华" >娜写年华</a>
+	                </li>
+	            	                    </ul>
+        </div>
+    </div>
+
+                           <div id="tie_category" class="board-widget-container">
+        <div class="hd">
+            <h3>帖子分类</h3>
+        </div>
+        <div class="bd">
+			<a title="全部" href="/tlist/chaogu-1-1-a-a.html">全部</a>
+			<a title="精华" href="/tlist/chaogu-1-1-g-a.html">精华</a>
+			<a title="推荐" href="/tlist/chaogu-1-1-r-a.html">推荐</a>
+			<a title="图片" href="/tlist/chaogu-1-1-p-a.html">图片</a>
+                    </div>
+    </div>
+
+		   		                              <div id="user_top" class="board-widget-container">
+        <div class="hd">
+            <h3>本版TOP用户</h3>
+        </div>
+        <div class="bd">
+            <ul>
+			                    	<li><span class="num hot">1</span><a href="http://bbs.163.com/user/a328066737@qq.com" title="用户:现货白银交流">现货白银交流</a><span class="count">10</span></li>
+				                	<li><span class="num hot">2</span><a href="http://bbs.163.com/user/krintis" title="用户:krintis">krintis</a><span class="count">7</span></li>
+				                	<li><span class="num hot">3</span><a href="http://bbs.163.com/user/missnus" title="用户:流流是毅丝">流流是毅丝</a><span class="count">6</span></li>
+				                	<li><span class="num">4</span><a href="http://bbs.163.com/user/2829618727@qq.com" title="用户:2829618727">2829618727</a><span class="count">6</span></li>
+				                	<li><span class="num">5</span><a href="http://bbs.163.com/user/zokowger" title="用户:zokowger">zokowger</a><span class="count">5</span></li>
+				                	<li><span class="num">6</span><a href="http://bbs.163.com/user/sgjuuhvej" title="用户:手心的沙">手心的沙</a><span class="count">5</span></li>
+				                	<li><span class="num">7</span><a href="http://bbs.163.com/user/2488054928@qq.com" title="用户:聚众张老师">聚众张老师</a><span class="count">3</span></li>
+				                	<li><span class="num">8</span><a href="http://bbs.163.com/user/wo6lwu1xr" title="用户:相逢在他乡">相逢在他乡</a><span class="count">3</span></li>
+				                	<li><span class="num">9</span><a href="http://bbs.163.com/user/normandyor" title="用户:normandyor">normandyor</a><span class="count">3</span></li>
+				                	<li><span class="num">10</span><a href="http://bbs.163.com/user/smbfrom5" title="用户:大胖子李想">大胖子李想</a><span class="count">3</span></li>
+							</ul>
+        </div>
+    </div>
+
+
+                           <div id="board_status" class="board-widget-container">
+        <div class="hd">
+            <h3>本版动态</h3>
+        </div>
+        <div class="bd">
+           <ul>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/chaogu/174898172.html" title="帖子标题：5月重启实盘一万起步">
+    						    						5月重启实盘一万起步
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2014-02-11 09:57:26">09:57</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/chaogu/320443460.html" title="帖子标题：我的实盘，5万起始资金，只爱短线">
+    						    						我的实盘，5万起始资金，只爱短线
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-07-03 16:23:46">16:23</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/chaogu/333870750.html" title="帖子标题：年初把工作辞了，现在专职炒股，大家看看我的交易！">
+    						    						年初把工作辞了，现在专职炒股，大家看看我的交易！
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-07-01 15:49:07">15:49</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/chaogu/333870750.html" title="帖子标题：年初把工作辞了，现在专职炒股，大家看看我的交易！">
+    						    						年初把工作辞了，现在专职炒股，大家看看我的交易！
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-07-01 15:48:49">15:48</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/chaogu/330822934.html" title="帖子标题：股市单细胞动物发实盘">
+    						    						股市单细胞动物发实盘
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-06-17 13:39:35">13:39</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/chaogu/325334503.html" title="帖子标题：4w资金，6月实盘，水平有限各们指教">
+    						    						4w资金，6月实盘，水平有限各们指教
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-06-05 20:07:11">20:07</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/chaogu/325292860.html" title="帖子标题：继续六月实盘操作  欢迎交流">
+    						    						继续六月实盘操作  欢迎交流
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-06-03 18:18:08">18:18</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/chaogu/324010075.html" title="帖子标题：单挑,pk贴(丑的别致，你就一小样)">
+    						    						单挑,pk贴(丑的别致，你就一小样)
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-05-31 08:25:50">08:25</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/chaogu/324010075.html" title="帖子标题：单挑,pk贴(丑的别致，你就一小样)">
+    						    						单挑,pk贴(丑的别致，你就一小样)
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-05-31 08:25:44">08:25</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/chaogu/320443460.html" title="帖子标题：我的实盘，5万起始资金，只爱短线">
+    						    						我的实盘，5万起始资金，只爱短线
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-05-16 20:44:56">20:44</div>
+                </li>
+                        </ul>
+    	</div>
+    </div>
+
+		              <div class="list-bottom-ad">
+               <div id="youdao_ad_list_1" style="display:block"></div>
+               <!--"/htmlfile/side_2009/list_side_bottom_ad.html"-->
+           </div>
+    </div>
+    <div id="bbs_list">
+           <div class="bbs-list-search">
+    <form target="_blank" name="search" action="http://bbs.163.com/bbs/search.do" method="get" class="bbs-list-search-form">
+		<input type="hidden" value="chaogu" name="boardid">
+		<input type="hidden" value="bbs" name="searchRan">
+		<input type="hidden" value="body" name="searchType" id="searchType">
+		<input type="text" value="" class="tb-keyword input-box">
+		<input type="hidden" name="q">
+	    <div class="dd-window-clickable">
+            <span class="search-body"> 帖子搜索</span>|<em class="icon-arrow-up"></em>
+            <ul class="bbs-list-search-form-menu">
+                <li><a class="search-body" href="#">全文搜索</a></li>
+                <li><a class="search-title" href="#">标题搜索</a></li>
+                <li><a class="search-author" href="#">作者搜索</a></li>
+            </ul>
+        </div>
+    </form>
+</div>	      <div class="board-list-panel">
+                 				 	   							               
+
+
+
+<div class="bbs-list-manage">
+	   <div title="模拟炒股" class="board-name">模拟炒股</div>
+	   <div class="board-write">
+	       <div class="dd-window"><a href="/post/chaogu/publish/common-"><b>发 帖</b></a>
+	       	   <ul class="board-menu">
+	       	       <li><a href="/post/chaogu/publish/ask-">新问答</a></li>
+                   <li><a href="/post/chaogu/publish/debate-">新辩论</a></li>
+                   <li><a href="/post/chaogu/publish/vote-">新投票</a></li>
+	       	   </ul>
+	       </div>
+	   </div>
+	   <a onclick="window.location.reload();return false;" href="#" class="board-refresh">刷新</a>
+	   <a id="board_focus" href="#" class="board-focus">关注本版</a>
+	   <div class="board-manage">
+	       <div class="dd-window">管理模式
+	       	<ul class="board-menu">
+	       		<li><a id="btn_batch_del" href="#" style="display: none;">批量管理</a></li>
+	       		<li><a target="_blank" href="/bbs/blacklist.jsp?boardid=chaogu">黑名单</a></li>
+	       	</ul>
+	       </div>
+	   </div>
+</div>
+<div class="board-tab-nav">
+    <ul class="board-tab">
+        <li class="on"><a title="全部" href="/tlist/chaogu-1-1-a-a.html">全部</a></li>
+        <li><a title="精华" href="/tlist/chaogu-1-1-g-a.html">精华</a></li>
+        <li><a title="推荐" href="/tlist/chaogu-1-1-r-a.html">推荐</a></li>
+        <li><a title="图片" href="/tlist/chaogu-1-1-p-a.html">图片</a></li>
+    </ul>
+        <div class="board-page" data-total="20">
+    
+    
+
+
+
+
+
+
+
+
+
+
+                
+                
+                                         								    <a href="/tlist/chaogu-1-1-a-a.html" class="on js-liston">1</a>
+
+							                                                        										                     <a href="/tlist/chaogu-2-1-a-a.html">2</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-3-1-a-a.html">3</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-4-1-a-a.html">4</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-5-1-a-a.html">5</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-6-1-a-a.html">6</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-7-1-a-a.html">7</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-8-1-a-a.html">8</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-9-1-a-a.html">9</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-10-1-a-a.html">10</a>
+
+								
+                               
+                               ...
+		   		   				          <a href="/tlist/chaogu-20-1-a-a.html">20</a>
+
+		   		   
+                
+        		   	   					           | <a href="/tlist/chaogu-2-1-a-a.html" >下一页 &gt;</a>
+
+					                
+    </div>
+</div>
+<div class="board-list-hd">
+    <div class="board-list-title">话题</div>
+    <div class="right">
+			
+        <div class="board-list-write"><a href="/tlist/chaogu-1-0-a-a.html" id="order-recent-publish">最新发表</a><em class="icon-rank-down"></em></div>
+        <div class="board-list-count">点击/回复</div>
+        <div class="board-list-reply"><a href="/tlist/chaogu-1-1-a-a.html" id="order-recent-repley"> 最新回复</a><em class="icon-rank-down"></em></div>
+    </div>
+</div>
+<div class="admin-button-area">
+    <a class="btn-del btn-del-batch">删除</a>
+    <a class="btn-batch-down">下沉</a>
+    <a class="btn-batch-lock">加锁</a>
+    <a class="btn-batch-unlock">解锁</a>
+    <a class="btn-batch-lock-down">加锁并下沉</a>
+    <a class="btn-select-all">全选</a>
+    <a class="btn-reverse">反向选择</a>
+</div>
+<div class="board-list-bd" id="board-list-bd">
+        	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://service.bbs.163.com/bbs/doings/402564707.html" class="$titlecolor" title="【有奖抢楼】五一怎么过？和TA看场男人戏" target="_blank">
+    													
+    																【有奖抢楼】五一怎么过？和TA看场男人戏
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-24 14:46</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://bbs.163.com/special/0015sp/chihuo_2014.html" class="$titlecolor" title="有奖活动：爱生活 晒零食 200元零食大礼包拿回家！" target="_blank">
+    													
+    																有奖活动：爱生活 晒零食 200元零食大礼包拿回家！
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-21 09:39</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://bbs.travel.163.com/bbs/youji/398243403.html" class="$titlecolor" title="有奖活动：爱旅行 写游记 赢云南游大奖" target="_blank">
+    													
+    																有奖活动：爱旅行 写游记 赢云南游大奖
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-15 09:49</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://bbs.baby.163.com/bbs/mmbb/399257089.html" class="$titlecolor" title="分享你的【孩子情绪管理】小妙招，赢儿童情绪管理舞台剧门票！" target="_blank">
+    													
+    																分享你的【孩子情绪管理】小妙招，赢儿童情绪管理舞台剧门票！
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-08 15:40</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+            	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        						                        <span class="icon-global-up article-icon" title="分区置顶"></span>
+																	        					<span class="article-title">
+    																												<a href="/bbs/bbs_money/376400528.html" class="$titlecolor" title="【年度好聚会】顶秀美泉豪华超值跨年红酒晚宴" target="_blank">
+														
+    																【年度好聚会】顶秀美泉豪华超值跨年红...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/cuitao528@126.com">阿拉蕾.</a><span class="date">12-23 14:03</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">187615</span>/67
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/liliman29108">liliman29108</a><span class="date"> 04-28 15:48</span>
+                            														</div>
+	    </div>
+	</div>
+            	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="174898172"/>
+                        																	    								<span class="icon-column_up article-icon" title="本版置顶"></span>
+						    					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/174898172.html" class="black" title="5月重启实盘一万起步" target="_blank">
+														
+    																5月重启实盘一万起步
+								                                                                    						</a>
+						</span>
+																					<span class="article-good"><a href="/tlist/chaogu-1-1-g-a.html" title="精华">精</a></span>
+        																				                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/hu736016">三板信联</a><span class="date">04-30 21:07</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">15740</span>/74
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/328494869@qq.com">328494869</a><span class="date"> 04-24 10:23</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403931785"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403931785.html" class="black" title="对敲走势中的风险与机遇" target="_blank">
+														
+    																对敲走势中的风险与机遇
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/normandyor">猪猪萍儿</a><span class="date">04-28 06:51</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >192</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/pf8mwlw">那个小屁孩儿</a><span class="date"> 04-28 18:15</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404190275"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404190275.html" class="black" title="【财富大手】非农提前准备，消除90%的投资者都会有的误区" target="_blank">
+														
+    																【财富大手】非农提前准备，消除90%的投...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/caifuyibai">大手点金</a><span class="date">04-28 18:00</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >22</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404008240"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404008240.html" class="black" title="如何研判反弹的性质" target="_blank">
+														
+    																如何研判反弹的性质
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/wo6lwu1xr">快乐侯小花</a><span class="date">04-28 10:07</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >111</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/normandyor">提儿爱老师</a><span class="date"> 04-28 17:49</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404155967"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404155967.html" class="black" title="股市实战中几种常见情况的应对策略" target="_blank">
+														
+    																股市实战中几种常见情况的应对策略
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/pf8mwlw">英台妹的哥</a><span class="date">04-28 16:06</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >63</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404138926"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404138926.html" class="black" title="七种致命的投资信念" target="_blank">
+														
+    																七种致命的投资信念
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/pm3taas">林小童</a><span class="date">04-28 15:27</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >87</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403039234"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403039234.html" class="black" title="斥资180万引入资本做手 万马电缆上演连环故事" target="_blank">
+														
+    																斥资180万引入资本做手 万马电缆上演连...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/haogu007">好股007</a><span class="date">04-25 11:23</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >261</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/haogu007">好股007</a><span class="date"> 04-28 14:24</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404105345"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404105345.html" class="black" title="【银国之君】2014哪些是贵金属价格大涨或者大跌的导火索" target="_blank">
+														
+    																【银国之君】2014哪些是贵金属价格大涨...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2943766493@qq.com">2943766493</a><span class="date">04-28 14:04</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >80</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404102924"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404102924.html" class="black" title="7旬大妈一夜暴富的秘密" target="_blank">
+														
+    																7旬大妈一夜暴富的秘密
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/meijiebu34">meijiebu34</a><span class="date">04-28 13:57</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >59</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404047639"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404047639.html" class="black" title="美源赵品---技术分析VS交易经验" target="_blank">
+														
+    																美源赵品---技术分析VS交易经验
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2656175306@qq.com">2656175306</a><span class="date">04-28 11:20</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >92</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404047409"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404047409.html" class="black" title="美源赵品---心急吃不了热豆腐，投资白银需谨慎" target="_blank">
+														
+    																美源赵品---心急吃不了热豆腐，投资白银...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2656175306@qq.com">2656175306</a><span class="date">04-28 11:20</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >79</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404015850"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404015850.html" class="black" title="华泰证券" target="_blank">
+														
+    																华泰证券
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2280644968@qq.com">2280644968</a><span class="date">04-28 10:20</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >102</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="404010375"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/404010375.html" class="black" title="聚众张老师：4.28现货黄金行情分析" target="_blank">
+														
+    																聚众张老师：4.28现货黄金行情分析
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2488054928@qq.com">聚众张老师</a><span class="date">04-28 10:11</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >87</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403994751"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403994751.html" class="black" title="早安帖" target="_blank">
+														
+    																早安帖
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/1025103096@qq.com">1025103096</a><span class="date">04-28 09:40</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >87</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403735300"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403735300.html" class="black" title="如何应对结构性牛市" target="_blank">
+														
+    																如何应对结构性牛市
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/pf8mwlw">谎言而已</a><span class="date">04-27 16:02</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >329</span>/4
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/wo6lwu1xr">快乐侯小花</a><span class="date"> 04-27 21:58</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403765967"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403765967.html" class="black" title="转发闪传微博活动，送Vivo X Play手机，送话费" target="_blank">
+														
+    																转发闪传微博活动，送Vivo X Play手机，...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/wangminjie_2008@126.com">wangminjie_2</a><span class="date">04-27 19:53</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >135</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403677273"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403677273.html" class="black" title="对突破行情有效性的判断策略" target="_blank">
+														
+    																对突破行情有效性的判断策略
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/op_pangel">空明上师</a><span class="date">04-27 10:03</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >215</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/pf8mwlw">墨陵别雪</a><span class="date"> 04-27 18:30</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403749451"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403749451.html" class="black" title="聚众张老师:欧元汇率处于长期均衡水平，暂无需强力干预" target="_blank">
+														
+    																聚众张老师:欧元汇率处于长期均衡水平，...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2488054928@qq.com">聚众张老师</a><span class="date">04-27 17:36</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >144</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403238935"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403238935.html" class="black" title="股指高位时如何选股操作？" target="_blank">
+														
+    																股指高位时如何选股操作？
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/krintis">美图摄影视觉</a><span class="date">04-25 22:07</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >818</span>/4
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/zhoubing213">BruceZee</a><span class="date"> 04-26 21:07</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403439573"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403439573.html" class="black" title="五招应对牛市被套" target="_blank">
+														
+    																五招应对牛市被套
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/sepolen_ep">爱情心电图</a><span class="date">04-26 16:06</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >248</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/wo6lwu1xr">相逢在他乡</a><span class="date"> 04-26 20:59</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400939608"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/400939608.html" class="black" title="小伙伴们，一起去郊游吧" target="_blank">
+														
+    																小伙伴们，一起去郊游吧
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/laozhigeidkw">绝版演绎</a><span class="date">04-21 10:24</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >352</span>/2
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/wozmsjkajd">wozmsjkajd</a><span class="date"> 04-26 19:12</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403322801"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403322801.html" class="black" title="寻找下跌底线的方法" target="_blank">
+														
+    																寻找下跌底线的方法
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/missnus">袁磊看盘</a><span class="date">04-26 10:04</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >466</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/pf8mwlw">谎言而已</a><span class="date"> 04-26 18:36</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403390642"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403390642.html" class="black" title="新浪涉黄被查 两黄小说就赚20万 挣钱何需这般黄" target="_blank">
+														
+    																新浪涉黄被查 两黄小说就赚20万 挣钱何...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/gujiexiaomin">股界小民</a><span class="date">04-26 14:13</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >332</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="386385147"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/386385147.html" class="black" title="激活人气，大家还来实盘吧，欢迎跟贴" target="_blank">
+														
+    																激活人气，大家还来实盘吧，欢迎跟贴
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/zttz1006">前进的蜗牛</a><span class="date">02-21 17:53</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">2760</span>/27
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/zttz1006">前进的蜗牛</a><span class="date"> 04-26 10:29</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402946505"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402946505.html" class="black" title="突破有效性如何研判" target="_blank">
+														
+    																突破有效性如何研判
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/krintis">叫我丝袜妹</a><span class="date">04-25 04:26</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >338</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/zokowger">韧锦花开</a><span class="date"> 04-25 23:03</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403144579"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403144579.html" class="black" title="超跌反弹赢利三种方法" target="_blank">
+														
+    																超跌反弹赢利三种方法
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/missnus">被遗弃的爷们</a><span class="date">04-25 16:05</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >231</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/sgjuuhvej">微微小玉米</a><span class="date"> 04-25 21:01</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402982363"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402982363.html" class="black" title="操作中需要避免的几种错误手法" target="_blank">
+														
+    																操作中需要避免的几种错误手法
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/missnus">流流是毅丝</a><span class="date">04-25 08:01</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >322</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/krintis">火星你好啊</a><span class="date"> 04-25 20:04</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403031509"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403031509.html" class="black" title="跌势中如何操作个股" target="_blank">
+														
+    																跌势中如何操作个股
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/krintis">邢政逼叨逼</a><span class="date">04-25 10:53</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >259</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/zokowger">小与的偶遇记</a><span class="date"> 04-25 19:28</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403159691"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403159691.html" class="black" title="盈赫资本金融课堂：年终奖理财：稳健第一" target="_blank">
+														
+    																盈赫资本金融课堂：年终奖理财：稳健第一
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/rosaly38">rosaly38</a><span class="date">04-25 17:28</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >304</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403139761"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403139761.html" class="black" title="分享一款功能齐全的自动交易软件，还能免费试用哦！" target="_blank">
+														
+    																分享一款功能齐全的自动交易软件，还能...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/jh_cai2">jh_cai2</a><span class="date">04-25 15:51</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >298</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="395664429"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/395664429.html" class="black" title="广西板块集体井喷 低估股或接棒爆炒（附股）" target="_blank">
+														
+    																广西板块集体井喷 低估股或接棒爆炒（附...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/leungshukin">leungshukin</a><span class="date">04-01 20:34</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >681</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/837613854@qq.com">白银屋03</a><span class="date"> 04-25 15:38</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403132592"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403132592.html" class="black" title="【霸者笃银10】做白银盈利的几个诀窍" target="_blank">
+														
+    																【霸者笃银10】做白银盈利的几个诀窍
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2829618727@qq.com">2829618727</a><span class="date">04-25 15:29</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >209</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403132467"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403132467.html" class="black" title="【霸者笃银10】债券基金绝非权宜之计" target="_blank">
+														
+    																【霸者笃银10】债券基金绝非权宜之计
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2829618727@qq.com">2829618727</a><span class="date">04-25 15:29</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >215</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403132358"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403132358.html" class="black" title="【霸者笃银10】优化资产配置重要手段" target="_blank">
+														
+    																【霸者笃银10】优化资产配置重要手段
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2829618727@qq.com">2829618727</a><span class="date">04-25 15:29</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >306</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403132318"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403132318.html" class="black" title="【霸者笃银10】从股市步入金市，你需要注意什么？" target="_blank">
+														
+    																【霸者笃银10】从股市步入金市，你需要...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2829618727@qq.com">2829618727</a><span class="date">04-25 15:29</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >221</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403132039"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403132039.html" class="black" title="【霸者笃银10】什么是个人理财？" target="_blank">
+														
+    																【霸者笃银10】什么是个人理财？
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2829618727@qq.com">2829618727</a><span class="date">04-25 15:28</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >291</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403131922"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403131922.html" class="black" title="1【霸者笃银10】什么是ETF？" target="_blank">
+														
+    																1【霸者笃银10】什么是ETF？
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2829618727@qq.com">2829618727</a><span class="date">04-25 15:27</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >291</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403117828"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403117828.html" class="black" title="巴菲特：伯克希尔哈撒韦或将参与住房融资活动" target="_blank">
+														
+    																巴菲特：伯克希尔哈撒韦或将参与住房融...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/a328066737@qq.com">现货白银交流</a><span class="date">04-25 14:39</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >351</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403096002"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403096002.html" class="black" title="巴菲特：伯克希尔哈撒韦或将参与住房融资活动" target="_blank">
+														
+    																巴菲特：伯克希尔哈撒韦或将参与住房融...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/a328066737@qq.com">现货白银交流</a><span class="date">04-25 13:34</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >378</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403043070"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403043070.html" class="black" title="聚众张老师：4.25现货黄金行情分析" target="_blank">
+														
+    																聚众张老师：4.25现货黄金行情分析
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2488054928@qq.com">聚众张老师</a><span class="date">04-25 11:36</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >373</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403040757"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403040757.html" class="black" title="如何快速解套，快速赚钱，不妨点击进去看一下吧，你会发现惊人的赚钱秘密！" target="_blank">
+														
+    																如何快速解套，快速赚钱，不妨点击进去...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/pengpeng521zhuzhu">pengpeng521z</a><span class="date">04-25 11:28</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >291</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403019490"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403019490.html" class="black" title="【投行说】中国令人担忧的三大风险" target="_blank">
+														
+    																【投行说】中国令人担忧的三大风险
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/a328066737@qq.com">现货白银交流</a><span class="date">04-25 10:13</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >361</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="401817012"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/401817012.html" class="black" title="【金马行洲】指标简单介绍及运用，投资者不得不知的应用！" target="_blank">
+														
+    																【金马行洲】指标简单介绍及运用，投资...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/1489520348@qq.com">1489520348</a><span class="date">04-23 13:49</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >376</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/1489520348@qq.com">1489520348</a><span class="date"> 04-25 10:12</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403008149"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403008149.html" class="black" title="乌克兰限俄罗斯48小时内解释军演 俄若进犯就开打" target="_blank">
+														
+    																乌克兰限俄罗斯48小时内解释军演 俄若进...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/a328066737@qq.com">现货白银交流</a><span class="date">04-25 09:38</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >471</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403004964"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/403004964.html" class="black" title="早安帖" target="_blank">
+														
+    																早安帖
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/1025103096@qq.com">1025103096</a><span class="date">04-25 09:27</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >320</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402919956"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402919956.html" class="black" title="渎职网警涉嫌包庇砍杀民警家属的罪犯" target="_blank">
+														
+    																渎职网警涉嫌包庇砍杀民警家属的罪犯
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/845554162@qq.com">李枫</a><span class="date">04-25 02:59</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >359</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402603558"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402603558.html" class="black" title="牛市不赚钱六原因" target="_blank">
+														
+    																牛市不赚钱六原因
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/zokowger">zokowger</a><span class="date">04-24 16:04</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >404</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/missnus">流流是毅丝</a><span class="date"> 04-24 20:56</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402715013"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402715013.html" class="black" title="恐慌中挖掘三只中小盘潜力股" target="_blank">
+														
+    																恐慌中挖掘三只中小盘潜力股
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/chaogu-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/leungshukin">leungshukin</a><span class="date">04-24 20:35</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >507</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402692580"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402692580.html" class="black" title="盈赫资本金融课堂：未来10年 你不可错过的7大造富机会" target="_blank">
+														
+    																盈赫资本金融课堂：未来10年 你不可错过...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/rosaly22">rosaly22</a><span class="date">04-24 19:41</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >481</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402481277"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402481277.html" class="black" title="散户波段操作四原则" target="_blank">
+														
+    																散户波段操作四原则
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/avcjavy">我爱芮子</a><span class="date">04-24 10:04</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >286</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/krintis">krintis</a><span class="date"> 04-24 18:31</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402622626"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/chaogu/402622626.html" class="black" title="聚众张老师：4.24现货黄金行情分析晚评" target="_blank">
+														
+    																聚众张老师：4.24现货黄金行情分析晚评
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/2488054928@qq.com">聚众张老师</a><span class="date">04-24 17:07</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >264</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    </div>
+<div class="admin-button-area">
+    <a class="btn-del btn-del-batch">删除</a>
+    <a class="btn-batch-down">下沉</a>
+    <a class="btn-batch-lock">加锁</a>
+    <a class="btn-batch-unlock">解锁</a>
+    <a class="btn-batch-lock-down">加锁并下沉</a>
+    <a class="btn-select-all">全选</a>
+    <a class="btn-reverse">反向选择</a>
+</div>
+<div class="board-list-nextpage">
+	  	   			    <a href="/tlist/chaogu-2-1-a-a.html">点击进入下一页精彩话题<em class="icon-arrow-right"></em></a>
+			</div>
+<div class="board-tab-bottom-nav">
+    <div class="board-write">
+        <div class="dd-window">
+        	<a href="/post/chaogu/publish/common-">发 帖</a>
+            <ul class="board-menu">
+                <li><a href="/post/chaogu/publish/ask-">新问答</a></li>
+                <li><a href="/post/chaogu/publish/debate-">新辩论</a></li>
+                <li><a href="/post/chaogu/publish/vote-">新投票</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="board-page" data-total="20">
+    
+    
+
+
+
+
+
+
+
+
+
+
+                
+                
+                                         								    <a href="/tlist/chaogu-1-1-a-a.html" class="on js-liston">1</a>
+
+							                                                        										                     <a href="/tlist/chaogu-2-1-a-a.html">2</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-3-1-a-a.html">3</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-4-1-a-a.html">4</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-5-1-a-a.html">5</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-6-1-a-a.html">6</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-7-1-a-a.html">7</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-8-1-a-a.html">8</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-9-1-a-a.html">9</a>
+
+								
+                                      										                     <a href="/tlist/chaogu-10-1-a-a.html">10</a>
+
+								
+                               
+                               ...
+		   		   				          <a href="/tlist/chaogu-20-1-a-a.html">20</a>
+
+		   		   
+                
+        		   	   					           | <a href="/tlist/chaogu-2-1-a-a.html" >下一页 &gt;</a>
+
+					                
+    </div>
+</div>
+<div style="display:none;">
+	<iframe height="22" frameborder="no" width="960" scrolling="no" name="ad_pop" marginheight="0" marginwidth="0" border="0" src="http://baby.163.com/?channel=&type=list"></iframe>
+</div>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+var title=document.getElementsByTagName("title")[0].innerHTML;
+neteaseTracker(true,window.location.href,title,"stock" );
+</script>
+
+
+					   					   
+             
+	      </div>
+    </div>
+
+
+        </div>
+    </div>
+    <div>
+        <!--列表页下面广告-->
+        <div class="list-bottom-ad">
+            <div style="padding-left:15px;display:none;"><embed src="http://img1.126.net/channel2/006636/006636_65080_091211.swf" 
+pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?
+P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" play="true" loop="true" quality="high" scale="showall" menu="true" width="650" height="80"></embed></div>
+            <!--"/htmlfile/bottom/bbs_money/stock_list_bottom.html"-->
+        </div>
+    </div>
+            <div id="footer" class="footer">
+        <div class="police"><img src="http://bbs.163.com/bbs/img/police.gif"><div class="text"><a href="http://www.bj.cyberpolice.cn/index.htm">网络110<br>报警服务</a></div></div>
+        <div class="footText">
+            <a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a>  - <a href="http://sitemap.163.com/">网站地图</a><br>
+            网易公司版权所有<br>
+            <span class="cRed">&copy;1997-2014</span>
+        </div>
+    </div>            <div id="scroll_to_top"></div>        <div id="dialog_login">
+    <form id="login_form" action="https://reg.163.com/logins.jsp" method="post" >
+        <input type="hidden" name="type" value="1" />
+        <input type="hidden" name="url" id="login_url" />
+        <input type="hidden" name="product" value="bbs" />
+        <div class="row">
+            <label> 帐号:
+                <input id="account" name="username" type="text" tabindex="1" />
+            </label>
+            <a href="http://reg.163.com/reg/reg.jsp?product=bbs&loginurl=http://bbs.163.com&url=" style="color:#BA2636;"  target="_blank">注册通行证</a>
+        </div>
+        <div class="row">
+            <label> 密码:
+                <input name="password" type="password" class="password" tabindex="2" />
+            </label>
+            <a href="http://reg.163.com/RecoverPassword.shtml" target="_blank">忘记密码？</a>
+        </div>
+        <div class="checkbox row">
+            <label>
+                <input name="savelogin" type="checkbox" value="1" tabindex="3" /> 下次自动登录
+            </label>
+            <!--
+            <label>
+                <input name="savelogin" type="checkbox" value="1" tabindex="4" /> 记住密码
+            </label>
+            -->
+        </div>
+        <div class="btn-set">
+            <span class="ui-button btn-login ui-button-on" tabindex="5">登录</span>
+            <span class="ui-button btn-cancel">取消</span>
+        </div>
+    </form>
+</div>    <script type="text/javascript" src="http://bbs.163.com/htmlfile/foundation_data.js" charset="GBK"></script>
+                <script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/forum_list.js" charset="GBK"></script>
+        
+        
+                <!-- START WRating v1.0 -->
+        <script type="text/javascript" src="http://163.wrating.com/a1.js"></script>
+        <script type="text/javascript">
+            var vjAcc="860010-0507010000";
+            var wrUrl="http://163.wrating.com/";
+            vjTrack();
+        </script>
+        <noscript><img src="http://163.wrating.com/a.gif?c=860010-0507010000" width="1" height="1"/></noscript>
+        <!-- END WRating v1.0 -->
+        
+
+    
+</body>
+</html>

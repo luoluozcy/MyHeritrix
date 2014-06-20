@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UPS</title>
+<link href="http://go.163.com/css/default.css" rel="stylesheet" type="text/css" />
+<script src="http://go.163.com/css/jquery-1.6.2.min.js" type="text/javascript" ></script>
+<script type="text/javascript" src="img/addEvent.js"></script>
+<script type="text/javascript" src="img/dom-drag.js"></script>
+
+<style type="text/css">
+<!--
+.STYLE3 {font-weight: bold}
+-->
+</style>
+</head>
+<style type=text/css>
+<!--
+A:link		{text-decoration: none;color:#000000;font-family: Arial}
+A:visited	{text-decoration: none; color: #663300; font-family: Arial}
+A:active	{text-decoration: underline; color: #66cc00; font-family: Arial}
+A:hover		{text-decoration: underline; color: #336600; font-family: Arial}
+
+.gb1	{
+	font-family: "宋体", "微软雅黑";
+	font-size: 14px;
+	color: #666666;
+	line-height: 20pt;
+	height:35px
+}
+.gb2	{
+	font-family: "宋体", "微软雅黑";
+	font-size: 14px;
+	color: #9e693f;
+	line-height: 14pt
+}
+.gb3	{
+	font-family: "宋体", "微软雅黑";
+	font-size: 12px;
+	color: #666666;
+	line-height: 20pt
+}
+
+.checkbox {
+	font-family: "Verdana";
+	font-size: 9pt;
+	text-decoration: none;
+	font-style: normal;
+	border: 1px solid #a7a7a7;
+	color: #000000;
+	background-color: #f2f2f2;
+	height: 25px;
+}
+
+textarea	{font-family: Arial; font-size: 9pt; background-color: #ffffff; color: #000000}
+select		{font-family: Arial; font-size: 9pt; background-color: #ffffff; color: #000000}
+input		{font-family: Arial; font-size: 9pt; color: #000000; display:inline-block}
+//-->
+.t2{ font-size: 12px;color: #000000 ;background:#C3E3F4 ;}
+.111{ BORDER-TOP: #D5EA95 1px solid ; BORDER-LEFT: #D5EA95 1px solid ; BORDER-RIGHT: #8f8f8f 1px solid ; BORDER-BOTTOM: #304618 1px solid ; FONT-SIZE: 12px;font-family:arial;background:#FFF99D ; color: #304618 }
+.222{ BORDER-bottom: #D5EA95 1px solid ; BORDER-right: #D5EA95 1px solid ; BORDER-left: #8f8f8f 1px solid ; BORDER-top: #304618 1px solid ; FONT-SIZE: 12px;font-family:arial;background:#FFF99D ; color: #304618 }
+.send{ border: #E6F1C5 1px solid; background-color: #E6F1C5 ; font-size: 12px ;}
+-->
+body{padding:0px;background:#3a261b url('img/bg.jpg') top center no-repeat;}
+
+.p0{width:100%; height:100px; background:#f00000 url(/bg.jpg) no-repeat center top;}
+.p1, .p2, .p3, .p4, .p5, .p6{width:962px;height:461px;margin:0 auto}
+
+.p1{height:259px;}
+.p2{height:255px;}
+.p3{height:555px;}
+.p4{height:648px;}
+.p5{height:973px;}
+.p6{height:700px;}
+.STYLE1 {font-family: "宋体", "微软雅黑"; font-size: 14px; color: #9e693f; line-height: 14pt; font-weight: bold; }
+.STYLE2 {color: #9e693f;font:normal normal 12px/24px Arial;}
+</style>
+
+<script type="text/javascript" src="http://minisite.163.com/css/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script type="text/javascript">
+$(function(){
+		 $('#forminfo').ajaxForm({
+            beforeSubmit:  checkForm,  // pre-submit callback
+            success:       complete,  // post-submit callback
+            dataType: 'json'
+        });
+
+        function checkForm(){
+
+			if($('#username').val() == '')
+			{
+				alert('姓名不能为空！');
+				return false;
+			}
+
+			if($('#phone').val() == '')
+			{
+				alert('手机不能为空！');
+				return false;
+			}
+
+			var email = $('#email').val();
+			if(email == "")
+			{
+				alert('邮箱不能为空！');
+				return false;
+			}
+			else
+			{
+				if (email.search(/^([\.a-zA-Z0-9_-]){1,}@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+)*.[A-Za-z0-9]+$/) == -1){
+					alert('邮箱格式不正确！');
+					return false;
+				}
+			}
+        }
+    function complete(data){
+
+		if(data.code == 1)
+		{
+			alert('恭喜您，报名成功！');
+			$('#forminfo').resetForm();
+		}
+		else
+			alert('系统错误，请重试！');
+    }
+});
+</script>
+
+<body>
+<div class="p1"><img src="img/top1.jpg" width="961" height="259" /></div>
+<div class="p2"><img src="img/top2.jpg" width="961" height="255" /></div>
+<div class="p3">
+<img src="img/title1.jpg" width="961" height="110" />
+	<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td width="70"></td>
+						<td width="820"></td>
+						<td width="71"></td>
+				</tr>
+				<tr>
+						<td></td>
+						<td class="gb1"> 　　2012年严峻的经济形势下，中小企业的竞争日趋激烈，生存环境渐趋恶劣，在面临国内外的各种压力下，劳动力成本上升，中国民营企业负担不断加重。如何让中小企业经济成长为中国经济增长的新引擎？网易企业邮协同专家、知名物流企业UPS及各中小企业代表共同探讨中小企业未来发展之路。</td>
+						<td></td>
+				</tr>
+		</table>
+	<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td width="71"></td>
+						<td width="42"><img src="img/point.jpg" width="16" height="16" /></td>
+						<td width="848" height="50" class="STYLE1">与会人员</td>
+				</tr>
+		</table>
+		<style type="text/css">
+				.p3 .box{width:820px; height:210px; padding:20px 70px 0 70px; overflow:hidden}
+				.p3 .box ul{width:820px; height:210px;}
+				.p3 .box ul li{width:362px; height:180px; border:solid 1px #e0dcdc; float:left; display:inline; margin:0 8px; position:relative; overflow:hidden; padding:14px; background:#f8f8f8}
+				.p3 .box ul li img{display:block; position:absolute}
+				.p3 .box ul li .txt{margin-left:136px; display:block; font:normal normal 14px/22px Arial; height:180px}
+				.p3 .box ul li .txt .bx{height:180px; width:90%; overflow:hidden;  position:relative;}
+				.p3 .box ul li .txt .bx #txtbs{ position:absolute}
+				.p3 .box .pl, .p3 .box .pr{width:18px; height:32px; background:url(img/V3.png) no-repeat 0 0; position:absolute; top:100px; left:40px; cursor:pointer}
+				.p3 .box .pr{background:url(img/V3.png) no-repeat -18px 0; left:auto; right:40px;}
+				
+				#leftBorder {
+				  position:relative;
+				  float:right;
+				  background:url(img/scbg.png) repeat-y 0 0;
+				  width:17px;
+				  height:100%
+				}
+				#slider {
+				  position:absolute;
+				  width:17px;
+				  height:19px;
+				  background:url(img/scbtn.png) no-repeat 1px 0;
+				  margin-left:0px;
+				  margin-top:0px;
+				  cursor:pointer;
+				}
+		</style>
+<script type="text/javascript">
+//滚动条的可以移动距离,初始位置,x,y是滑块相对父级元素的，即relative
+var hDistant= '';
+var x= '';
+var y = '';
+//两个组件
+var slider = '';
+var content = '';
+//内容的top
+var contentTop = '';
+//缓东效果的计数器
+var add = 0;
+$(function(){
+		setSlider();
+})
+function setSlider(){
+	slider  = id("slider");
+	content  = id("txtbs");
+	contentTop=content.offsetTop;
+	x=slider.offsetLeft;
+	y=slider.offsetTop;
+	hDistant=slider.parentNode.offsetHeight-slider.offsetHeight;//滑块可滑动高度
+	//x,y是相对父级元素的，即relative
+	Drag.init(slider,null,x,x,y,y+hDistant,false,false,null,null);
+	setInterval("onScroll()",30);
+}
+function id(elem){
+	return document.getElementById(elem);
+}
+//文字滚动
+function onScroll(){
+	var addY=(content.offsetHeight-id("mask").offsetHeight+18)*(slider.offsetTop-y)/hDistant;
+	var currentY=contentTop-addY+9;
+	add+=parseInt((currentY-content.offsetTop)*0.1);
+	content.style.top=add+"px";
+}
+</script>
+		<div class="box">
+				<ul>
+						<li><img src="img/temp1.jpg" width="118" height="170" />
+						<div class="txt">
+								<div id="leftBorder">
+      									<div id="slider"></div>
+      							</div><!-- /leftBorder -->
+							<div class="bx" id="mask">
+								<span  id="txtbs"><p>　　刘建新，男，中国外运长航集团有限公司高级研究员。研究生学历。长期研究我国现代物流业发展的理论与实践、国际货运代理业、大企业战略、WTO服务贸易、快递业发展等问题，参与国家、行业和国有重点企业等多项课题研究，代表行业组织参与《邮政法》修改。</p>
+									<p>　　社会职务主要有，商务部物流行业产业损害预警专家组成员、中国物流学会常务理事及特约研究员、中国交通运输协会快运分会副秘书长、中国行政管理学会理事、对外经贸大学物流研究中心特聘高级研究员等。部分著述：2001年我国物流业国家标准《物流术语》起草人之一，2005年《中国、日本、韩国流通及物流联合报告书》（三国政府联合编写，中国报告书编写组成员）、2006年《中国快递市场发展研究报告》（商务部研究院课题组，主要执笔人之一）；2005-2012年《中国物流发展报告》（中国物流与采购联合会编辑出版）之快递行业年度报告作者，2010年《中国国际货运代理业发展研究报告》编委会主任、副主编，（与对外经贸大学物流研究中心合作项目）；2009-2010年《中国快运物流发展报告》主笔（中国交通运输协会快运分会出版），《中国运输与物流发展报告（2010-2011）》主编及主要作者（中国交通运输协会快运分会出版），发表数十篇有影响的促进物流业、快递业发展的文章。2008—2011年，作者的相关论文连续被中国物流学会评选为年度中国物流论文优秀奖。</p></span>
+							</div>
+						</div>
+						</li>
+						<li>
+								<img src="img/temp2.jpg" width="118" height="170" />
+								  <div class="txt">
+								  		<div id="leftBorder">
+      											<div id="slider"></div>
+      									</div><!-- /leftBorder -->
+								  	<div class="bx" id="mask">
+								  		<span  id="txtbs"><p>蔡灿炜，现任网易企业邮箱技术总监。从事近10年的邮箱开发运营工作。曾任网易免费邮箱、网易个人收费邮箱研发负责人。负责并参与网易个人收费邮箱和企业邮箱的系统架构以及各项功能研发。。</p></span>
+								  	</div>
+								  </div>
+						</li>
+				</ul>
+				<div class="pl"></div>
+				<div class="pr"></div>
+		</div>
+</div>
+<div class="p4">
+		<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td><img src="img/title2.jpg" width="961" height="119" /></td>
+				</tr>
+		</table>
+		<form action="common.php?act=submit" method="post" id="forminfo">
+		<table width="800" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#C0C0C0" style="margin:0 auto">
+				<tr>
+						<td height="483" valign="top" bgcolor="f8f8f8"><table width="800" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+												<td height="60" colspan="6"></td>
+										</tr>
+										<tr>
+												<td width="101" height="40"></td>
+												<td width="108" height="35" class="gb1">1、您的姓名：</td>
+												<td width="230" height="35" class="gb1"><input name="username" type="text" id="username" size="20"  class="checkbox"/>
+														<span class="STYLE2">（必填）</span></td>
+												<td width="103" height="35" class="gb1">2、您的手机：</td>
+												<td width="234" height="35" class="gb1"><input name="phone" type="text" id="phone" size="20"  class="checkbox"/>
+														<span class="STYLE2">（必填）</span></td>
+												<td width="24" class="gb1"></td>
+										</tr>
+										<tr>
+												<td height="40" class="gb1"></td>
+												<td height="35" class="gb1">3、您的邮箱： </td>
+												<td height="35" class="gb1"><input name="email" type="text" id="email" size="20"  class="checkbox"/>
+														<span class="STYLE2">（必填）</span></td>
+												<td height="35" class="gb1">4、您的职位：</td>
+												<td height="35" class="gb1"><input name="job" type="text" id="job" size="20"  class="checkbox"/></td>
+												<td class="gb1"></td>
+										</tr>
+								</table>
+								<table width="800" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+												<td width="100" height="40"></td>
+												<td width="158" height="35" class="gb1">5、您所在的企业名称：</td>
+												<td height="35" colspan="3" align="left" valign="middle"><span class="gb1">
+														<input name="company" type="text" id="company" size="67"  class="checkbox"/>
+														</span></td>
+										</tr>
+										<tr>
+												<td width="100" height="40"></td>
+												<td width="158" height="35" class="gb1">6、您所在的省份、城市: </td>
+												<td width="182" height="35" align="left" valign="middle"><span class="gb1">
+														<input name="sheng" type="text" id="sheng" size="8"  class="checkbox"/>
+														<input name="shi" type="text" id="shi" size="8"  class="checkbox"/>
+														</span></td>
+												<td width="103" class="gb1">7、邮    编: </td>
+												<td width="257" align="left" valign="middle"><span class="gb1">
+														<input name="postcode" type="text" id="postcode" size="20"  class="checkbox"/>
+														</span></td>
+										</tr>
+										<tr>
+												<td width="100" height="40"></td>
+												<td width="158" height="35" class="gb1">8、您所在的企业规模:</td>
+												<td height="35" colspan="3" align="left" valign="middle" class="gb1"><select name="guimo" id="guimo" class="checkbox">
+														<option value="我独立经营">我独立经营</option>
+														<option value="2-5人">2-5人</option>
+														<option value="6-10人">6-10人</option>
+														<option value="11-19人">11-19人</option>
+														<option value="20-99人">20-99人</option>
+														<option value="100人以上">100人以上</option>
+														</select>
+														<span class="STYLE2">（必填）</span></td>
+										</tr>
+								</table>
+								<table width="800" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+												<td width="101" height="40"></td>
+												<td width="245" class="gb1">9、以下哪些较好的描述您所在的行业？</td>
+												<td width="454"><span class="gb1">
+														<select name="hangye" id="hangye" class="checkbox">
+																<option value="客户服务">客户服务</option>
+																<option value="汽车/零部件推广">汽车/零部件推广</option>
+																<option value="政府部门">政府部门</option>
+																<option value="医疗/健康">医疗/健康</option>
+																<option value="高科技">高科技</option>
+																<option value="生产制造业">生产制造业</option>
+																<option value="专业服务">专业服务</option>
+																<option value="零售">零售</option>
+																<option value="其他">其他</option>
+														</select>
+														<span class="STYLE2">（必填）</span></span></td>
+										</tr>
+								</table>
+								<br />
+								<br />
+								<table width="800" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+												<td width="101"></td>
+												<td width="22"><input name="dingyue" type="checkbox" id="dingyue" checked="checked" value="1"/></td>
+												<td width="677" height="45" class="gb3">同意订阅UPS邮件并且愿意收到关于UPS最新促销活动、新闻、重要更新和通知等信息。</td>
+										</tr>
+								</table>
+								<table width="800" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+												<td align="center"><input type="image" src="img/btn1.jpg" width="185" height="53"></td>
+										</tr>
+								</table></td>
+				</tr>
+		</table>
+		</form>
+</div>
+<div class="p5">
+		<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td><img src="img/title3.jpg" width="961" height="135" /></td>
+				</tr>
+				<tr>
+						<td align="center"><img src="img/gift.jpg" width="783" height="225" /></td>
+				</tr>
+		</table>
+		<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td><img src="img/title4.jpg" width="961" height="116" /></td>
+				</tr>
+		</table>
+		<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td width="48"></td>
+						<td width="344" valign="top" class="gb1"><br />
+								多种先进物流解决方案，将物流任务化繁为简：<br />
+								UPS TradeAbility®帮助您轻松应对复杂的国际贸易规程，预估国际货件费用；UPS Internet Shipping使物流过程更加自动化，以高效的网络系统替代大量文书工作；UPS Quantum View®使您以更加方便直观的方式全程洞悉物流进展，随时确认货物状况，一目了然，避免各种延误；对于长期大量的物流需求，UPS WorldShip® 将大大减少人工重复工作，也避免失误，为您节省时间与成本……无论您的企业规模如何，UPS都会提供适合的解决方案，为您服务。<br />
+								完善的全球物流服务，助中小企业远征海外市场：</td>
+						<td width="569" valign="top"><img src="img/p1.jpg" width="500" height="332" hspace="10" /></td>
+				</tr>
+		</table>
+		<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td width="48"></td>
+						<td width="852" class="gb1">　　密布全亚洲40余个国家和地区的航线，将亚洲与世界无缝相连，加上UPS的庞大全球网络，无论在哪里，UPS都能为您提供高效全面的物流服务，助您及时送达；设于深圳的UPS亚太航空转运中心，拥有高速的货件分拣能力，能更好满足中国企业的需求，以强大高效的物流服务能力，让您的货物在更加庞大的市场中流通，让您的企业进入以往未曾触及的发展空间；此外，海陆空多种运输服务组合，更少受时间、成本限制，灵活应对各种需求变化。<br /></td>
+						<td width="61"></td>
+				</tr>
+		</table>
+</div>
+<div class="p6"> <img src="img/title5.jpg" width="961" height="126" />
+		<table width="961" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+						<td width="71"></td>
+						<td width="191" valign="top"><img src="img/p2.jpg" width="168" height="280" /></td>
+						<td width="655" valign="top"><table width="500" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+												<td width="36"><img src="img/point.jpg" width="16" height="16" class="STYLE3" /></td>
+												<td width="464" height="35" class="gb2"><strong>基础架构牢固可靠，保障服务永不间断<br />
+														</strong></td>
+										</tr>
+										<tr>
+												<td><img src="img/point.jpg" width="16" height="16" /></td>
+												<td height="35" class="gb2"><strong>业界顶级安全技术，中国信息安全测评中心权威认可<br />
+														</strong></td>
+										</tr>
+										<tr>
+												<td><img src="img/point.jpg" width="16" height="16" /></td>
+												<td height="35" class="gb2"><strong>独创邮件协议和动技术，助力邮箱全面提速<br />
+														</strong></td>
+										</tr>
+										<tr>
+												<td><img src="img/point.jpg" width="16" height="16" /></td>
+												<td height="35" class="gb2"><strong>突破国界地域，海外业务畅邮无阻</strong></td>
+										</tr>
+								</table>
+								<table width="600" border="0"cellpadding="1" cellspacing="1" bgcolor="#C0C0C0">
+										<tr>
+												<td height="130" bgcolor="f8f8f8"><br/>
+														<table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+																<tr>
+																		<td width="35" class="gb1"></td>
+																		<td width="565" class="gb1">国际高信誉度的优质IP资源保证海外邮件投递<br />
+																				与亚马逊深度合作，大规模部署海外服务器和安全链路<br />
+																				智能选择安全链路技术保障海外邮件投递<br />
+																				DNS智能解析技术保障海外邮件接收</td>
+																</tr>
+														</table>
+														<br /></td>
+										</tr>
+								</table></td>
+						<td width="44"></td>
+				</tr>
+		</table>
+</div>
+</body><!-- START NetEase Devilfish 2006 -->
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+_ntes_nacc = "minisites";
+neteaseTracker();
+</script>
+<!-- END NetEase Devilfish 2006 -->
+</html>

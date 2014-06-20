@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网易团长</title>
+<link rel="stylesheet" href="css/old.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://pimg1.126.net/tuan/css/master.css?v=20101219" />
+<script type="text/javascript" src="http://pimg1.126.net/tuan/js/base.js"></script>
+</head>
+<style>
+	#cjscore_span{margin:0 10px;}
+		.popup_con{ padding-bottom:20px;}
+	
+	
+</style>
+
+<body>
+
+
+
+<div class="popup_tips" id="popup_tips">
+  <div class=" all_title org_title">
+    <div class="title_l"></div>
+    <div class="title_m">信息提示</div>
+    <div class="title_r"></div>
+    <div class="alertClose" id="alertClose"><a href="javascript:void(0)"><img src="http://pimg1.126.net/tuan/images/close.png"></a></div>
+  </div>
+  <div class="popup_con clearfix verify">
+  	<div class="left_img"></div>
+    <div class="right_text">
+		<div id="tiptext">
+			<span id="failuremsgspan"></span>
+			<b>你确定要取消订阅吗？</b><br/>
+			取消订阅将无法收到每天的团购信息。
+	   </div>
+      <div class="popup_btn_box"><span class="popup_btn pbtn1" id="popup_btn_confirm3" style=""><em id="popup_btn_confirm2">取消订阅</em></span>&nbsp;&nbsp;<span  id="closebtn" class="popup_btn pbtn2"><em id="cancel">关闭</em></span></div>
+   </div>
+  </div>
+</div>
+<!-- 弹出提示 -->
+<script type="text/javascript" src="http://pimg1.126.net/tuan/js/common.js?v=20101201"></script>
+<script type="text/javascript" src="http://pimg1.126.net/tuan/js/popup.js?v=20101201"></script>
+<!-- 弹出提示 -->
+<script type="text/javascript" src="http://pimg1.126.net/tuan/js/prototype.js?v=20101201"></script>
+<script  type="text/javascript" src="http://pimg1.126.net/tuan/js/active.js?v=20101222"></script>
+<script type="text/javascript" src="http://pimg1.126.net/tuan/js/favorites/favorites.js?v=20110408"></script>
+<script>
+
+var cjscore = TUAN.Util.getParameterFromUrl(window.location.href,"cjscore");
+var cjid = TUAN.Util.getParameterFromUrl(window.location.href,"cjid");
+
+function close(){
+	document.getElementById("popup_tips").style.display = "none";
+	parent.parent.pop.close(); 
+}
+
+var alertClose = document.getElementById("alertClose");
+alertClose.onclick = close;
+var closebtn = document.getElementById('closebtn');
+closebtn.onclick = close;
+
+
+document.getElementById("popup_btn_confirm3").onclick = function(){
+	//确定取消订阅
+	self.parent.unsubscribe();
+	self.close();
+};
+function gotoPersonalcenter(){
+	self.parent.location.href="http://tuan.163.com/tuan/personalcenter.do";
+	self.close();
+}
+</script>
+
+
+</body>
+</html>

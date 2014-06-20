@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>登录页-网易商城</title>
+
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/base.css?v=20140428181855"/>
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/core.css?v=20140428181855"/>
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/base.css?v=20140428181855"/>
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/core.css?v=20140428181855"/>
+<link rel="stylesheet" href="http://pimg1.126.net/health/css/login.css?v=20140428181855"/>
+<script src="http://pimg1.126.net/health/js/jquery-1.4.2.js?v=201205221605"></script>
+<script src="http://pimg1.126.net/health/js/easyCore.js?v=20140428181855"></script>
+<script src="http://pimg1.126.net/health/js/suggest.js?v=20140428181855"></script>
+</head>
+<body class="wrapNarrow">
+<div class="header4login">
+	<div class="loginTop"><a href="/"></a></div>
+</div>
+<div class="loginWrap">
+	<div class="loginBox">
+    	<form action="https://reg.163.com/logins.jsp" autocomplete="off" method="post">
+    	<div class="loginForm">
+        	<h2>登录网易通行证</h2>
+            <div class="line"></div>
+            <ul class="formList">
+            	<li class="loginErr"><span class="formTit">&nbsp;</span><em id="LoginErrInfo" class="c_red"></em></li>
+            	<li><span class="formTit">账号：</span><em><span id="useremail_box" class="suggest_box"><input name="username" type="text" class="input urs_login_input" id="username" value="如name@example.com" /></span></em></li>
+                <li><span class="formTit">密码：</span><em><input type="password" class="input" name="password" value="" /></em></li>
+                <li><span class="formTit">&nbsp;</span><em><input type="checkbox" id="AutoLogin" />&nbsp;&nbsp;<label for="AutoLogin" title="请不要在网吧或公共场所使用该功能">两周内自动登录</label></em></li>
+                <input type="hidden" value="http://mall.163.com/p/personal/my_order.html" name="url" />
+                <input type="hidden" value="http://mall.163.com//p/login.html" name="url2" />
+                <input type="hidden" value="0" name="savelogin" />
+                <li><span class="formTit">&nbsp;</span><em><input type="submit" value="登录" class="greenLoginBtn" />&nbsp;&nbsp;<a href="http://reg.163.com/getpasswd/RetakePassword.jsp">忘记密码？</a></em></li>
+                <li class="line"></li>
+                <li><span class="formTit">&nbsp;</span><em>还不是网易用户？&nbsp;&nbsp;<a href="http://reg.163.com/reg/reg.jsp?product=shop&url=http://mall.163.com/&loginurl=http://mall.163.com/p/login.html">一分钟轻松注册</a></em></li>
+            </ul>
+        </div>
+        </form>
+    </div>
+</div>
+<footer id="docFoot">
+<div id="aboutNEST">
+  <a href="http://corp.163.com/eng/about/overview.html" rel="nofollow">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html" rel="nofollow">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" rel="nofollow">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" rel="nofollow">招聘信息</a> - <a href="http://help.163.com/" rel="nofollow">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html" rel="nofollow">隐私政策</a> - <a href="http://emarketing.163.com/" rel="nofollow">网络营销</a> - <a href="/" title="网易商城">网易商城</a>
+  <br/>
+  增值电信业务经营许可证：浙B2-20110418&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lede.com/prove.html">网站相关资质证明</a><br />
+  <span class="copyTxt">网易公司版权所有 &copy;1997-2014</span>
+</div>
+</footer>
+<script>
+//填写默认值到用户名输入框
+var last = window.easyNav.account || window.LS.get("NTES_ACCOUNT") || "";
+if( last )$("#username").val(last).css("color", "#000");
+$(last ? "[name=password]" : "#username")[0].focus();
+
+//替换安全的正则表达式字符串
+function safeRegStr( str ){return String(str).replace(/([\\\(\)\{\}\[\]\^\$\+\-\*\?\|])/g, "\\$1"); }
+//从字符串中捕获参数
+function getParaFromString(str, paraName) {
+	var reg = new RegExp("(?:^|&)" + safeRegStr(paraName) + "=([^&$]*)", "gi");
+	return reg.test(str) ? decodeURIComponent(RegExp.$1) : "";
+}
+function getUrlPara(paraName) {
+		var str = window.location.search.replace(/^\?/g, ""), dstr = str;
+		try{dstr = decodeURIComponent(str);
+		}catch(e){dstr = str.replace(/"%26"/g, "&");}
+		return getParaFromString(dstr, paraName);
+	}
+if(getUrlPara("errorType")!="" && getUrlPara("errorType")){
+var err="";
+switch(parseInt(getUrlPara("errorType"),10))
+   {
+   case 412:
+     err="您尝试的次数已经太多,请过一段时间再试";
+     break
+   case 414:
+     err="您的IP登录失败次数过多,请稍后再试";
+     break
+   case 415:
+     err="您今天登录错误次数已经太多,请明天再试";
+     break
+   case 416:
+     err="您的IP今天登录过于频繁，请稍后再试";
+     break
+   case 417:
+     err="您的IP今天登录次数过多，请明天再试";
+     break
+   case 418:
+     err="您今天登录次数过多,请明天再试";
+     break
+   case 419:
+     err="您的登录操作过于频繁，请稍候再试";
+     break
+   case 420:
+     err="用户名不存在";
+     break
+   case 422:
+     err="帐号被锁定，请您解锁后再登录!";
+     break
+   case 424:
+     err="该靓号服务已到期，请您续费！";
+     break
+   case 460:
+     err="密码不正确";
+     break
+   case 500:
+     err="系统繁忙，请您稍后再试！";
+     break
+   case 503:
+     err="系统维护，请您稍后再试！";
+     break
+   case 425:
+     err="外域帐号并且在激活有效期以内";
+     break
+   case 426:
+     err="外域帐号并且已经过了激活有效期限";
+     break
+   case 427:
+     err="已超过5分钟有效期";
+     break
+   default:
+     err="";
+   }
+   $("#username").val(getUrlPara("errorUsername"));
+   $("#LoginErrInfo").text(err);
+}
+$("#AutoLogin").click(function(){
+	if($(this).attr("checked")){
+		$("[name=savelogin]").val(1)
+	}else{
+		$("[name=savelogin]").val(0)
+	}
+})
+new suggest(["@163.com","@126.com","@qq.com","@188.com","@yahoo.com","@yahoo.com.cn","@sina.com","@sohu.com","@hotmail.com"],"useremail_box","username");
+</script>

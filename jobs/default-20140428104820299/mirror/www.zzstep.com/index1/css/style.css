@@ -1,0 +1,442 @@
+/*@charset "gb2312";*/
+/**
+ * 网站地址: http://www.qietu.com
+ * ----------------------------------------------------------------------------
+ * $codex 1. id和class命名采用该版块的英文单词或组合命名，并第一个单词小写，第二个单词首个字母大写，如:thinkCss（最新产品/think+Css)
+ * $codex 2. CSS样式表各区块用注释说明
+ * $codex 3. 尽量使用英文命名原则
+ * $codex 4. 尽量不加中杠和下划线
+ * $codex 5. 尽量不缩写，除非一看就明白的单词
+ * $Author: psd2html
+ * $mailto: <psd2html@qq.com>
+ * $hack :ie 6 _  \ ie7 *+ \  ie6,ie7 *  \  ie7,firefox !important ie9, \9
+*/
+/**
+ +------------------------------------------------------------------------------
+ * 网站样式重写
+ +------------------------------------------------------------------------------
+ * @comefrom  互联网
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+ html,body{ overflow-x:hidden;}
+ body{ color:#828282; font-family:"宋体", "新宋体", Arial; font-size:12px; line-height:22px; background:#fff;}
+ * {}
+a{outline:none; text-decoration:none; color:#7b7b7b;} a:hover{ text-decoration:underline;}
+html{zoom:1;}html *{outline:0;zoom:1;} html button::-moz-focus-inner{border-color:transparent!important;} 
+body{overflow-x: hidden; font-size:12px;} body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;} table{/*border-collapse:collapse;border-spacing:0;*/} fieldset,a img{border:0;} address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;} li{list-style:none;} caption,th{text-align:left;} h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;} q:before,q:after{content:'';}
+
+/**
+ +------------------------------------------------------------------------------
+ * Public Class
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }.clearfix {display:block;}.clear{ clear:both;}/* 清除浮动*/
+.colwrapper { overflow:hidden; zoom:1 /*for ie*/; margin:5px auto; }/* 高度自适应 */ 
+.strong{ font-weight: bold;} .left{ float: left;} .right{ float: right;} .center{ margin:0 auto; text-align:center;}
+.show{ display:block; visibility:visible;}.hide{ display: none; visibility:hidden;}
+.block{ display:block;} .inline{ display:inline;}
+.transparent{filter:alpha(opacity=50); -moz-opacity:0.5;/** Firefox 3.5即将原生支持opacity属性，所以本条属性只在Firefox3以下版本有效 ***/ -khtml-opacity: 0.5; opacity: 0.5; } .break{ word-wrap:break-word;overflow:hidden; /*word-break:break-all;*/} em{ font-style:normal !important;}
+
+.tal{ text-align:left} .tar{ text-align:right;}
+
+/* 兼容IE6的定位属性fixed，固定不动样式 */
+.fixed{
+	position:fixed; 
+	clip:rect(0 100% 100% 0);
+	_position:absolute;
+	
+	/* 底部 */
+	bottom:0px;
+	left:0px;
+	_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+	
+	/* 左侧 */
+	/*left:0px;*/
+	/*_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);*/
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+}
+/* 解决固定层在IE6下闪的问题 */
+*html{
+	background-image:url(about:blank);
+	background-attachment:fixed;
+}
+
+
+/*png图片ie6下透明滤镜实现写法*/
+.pngimg{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='images/x.png');}
+
+/**
+ +------------------------------------------------------------------------------
+ * FCK 兼容解决方案
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+strike{ text-decoration:line-through !important;} strong{ font-weight:bold !important;} u{ text-decoration:underline !important;}
+
+/**
+ +------------------------------------------------------------------------------
+ * 表单样式
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+
+/**
+ +------------------------------------------------------------------------------
+ * 网站整体颜色总汇
+ +------------------------------------------------------------------------------
+ * @codex  颜色:使用颜色的名称或者16进制代码,如 
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.ff8600,ff86aa a{ color:#ff8600;}
+
+/**
+ +------------------------------------------------------------------------------
+ * 网站整字体大小
+ +------------------------------------------------------------------------------
+ * @codex   字体大小,直接使用"font+字体大小"作为名称,如
+ * @package  ORG
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.font14px{ font-size:14px;}
+.font9pt{ font-size:9pt;}
+
+
+/**
+ +------------------------------------------------------------------------------
+ * 网站整布局命名规范
+ +------------------------------------------------------------------------------
+ * @codex   id和class命名采用该版块的英文单词或组合命名 如:newRelease
+ * @package  ORG
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+ .wrapper{
+ 	width:960px; margin:0 auto; clear:both; height:auto; overflow:hidden;
+ }
+ .header{
+ 	height:90px;
+ }
+ .header .logo{
+ 	width:450px; float:left; display:inline;
+ }
+ .header .logo a{
+ 	float:left; display:inline;
+ }
+ .header .logo img{
+ 	float:left; display:inline;
+ }
+ .header .logo em{
+ 	margin:47px 0 0 0; float:left; display:inline;
+ }
+ .header .search{
+ 	width:350px; float:left; display:inline; margin:16px 0 0 0;
+ }
+ .header .search form{
+ 	height:auto; overflow:hidden;
+ }
+ .header .search .text{
+ 	width:220px; height:36px; float:left; display:inline; border:#cfcfcf solid 1px; border-right:0; padding:0 15px; color:#afafaf; *padding-top:10px; *height:26px;
+ }
+ .header .search .submit{
+ 	background:url(../imgs/img1.gif) no-repeat; width:43px; height:38px; float:left; display:inline; border:none; cursor:pointer;
+ }
+ .header .search .keywords{
+ 	clear:both;
+ }
+ .header .tel{
+ 	width:156px; float:left; display:inline; padding:30px 0 0 0; letter-spacing:-1px;
+ }
+ .header .tel em{
+ 	background:url(../imgs/img2.gif) no-repeat left center; padding:0 0 0 35px; display:block; font-size:18px; font-family:"微软雅黑", "黑体", Arial;
+ }
+ 
+ .naver{
+ 	background:url(../imgs/img3.gif) repeat-x; height:40px; font-family:"微软雅黑", "黑体", Arial; line-height:40px;
+ }
+ .naver em{
+ 	width:185px; height:40px; float:left; display:inline; background:#494949; padding:0 0 0 40px; font-size:15px; color:#fff;
+ }
+ .naver ul{
+ 	 margin-left:25px; float:left; display:inline;
+ }
+ .naver li{
+ 	float:left; display:inline;
+ }
+ .naver li a{
+ 	padding:0 17px; color:#fff; font-size:14px;
+ }
+ 
+ .hc1{
+ 	height:480px; overflow:visible;
+ }
+ .hc1 .rgt{
+ 	width:715px; float:right; display:inline; margin:20px 0 0 0; overflow:hidden;
+ }
+ .hc1 .rgt .cols{
+ 	width:110%; margin:18px 0 0 0; _margin-top:16px; height:auto; overflow:hidden;
+ }
+ .hc1 .rgt .cols .item{
+ 	width:225px; float:left; display:inline; margin:0 20px 0 0;
+ }
+ .hc1 .rgt .cols .item img{
+ 	float:left; display:inline;
+ }
+ 
+ .subnav{
+ 	width:223px; float:left; display:inline; border-left:#ededed solid 1px; border-right:#ededed solid 1px;
+ }
+ .subnav dd, .subnav dt{
+ 	padding:0 0 0 45px; height:59px; border-bottom:#ededed solid 1px;
+ }
+ .subnav dd{
+ 	background:url(../imgs/img4.gif) #f8f8f8 no-repeat right center; position:relative; border-left:#f8f8f8 solid 3px;z-index:2;
+ }
+ .subnav dt, .subnav dd strong{
+ 	line-height:59px; cursor:pointer; 
+ }
+   /*
+ 	ydj start
+ */
+  .subnav dt, .subnav dd strong a { font-weight:normal}
+    .subnav dt, .subnav dd strong  a:active{ font-weight:normal}
+  /*
+ 	ydj start
+ */
+
+ .subnav dd strong span{
+ 	background:url(../imgs/img5.gif) no-repeat left center; padding:0 0 0 10px; margin:0 0 0 5px; color:#9f9f9f;
+ }
+ .subnav dt{
+ 	font-size:14px; font-weight:bold; color:#494949;
+ }
+ .subnav .t1{
+ 	background:url(../imgs/img6.gif) no-repeat left -2px;
+ }
+ .subnav .t2{
+ 	background:url(../imgs/img7.gif) no-repeat left -2px;
+ }
+ .subnav dd.selected{
+ 	border-left:#006df6 solid 3px; position:relative; background-image:url(../imgs/img9.gif);
+ }
+ .subnav dd.selected strong a{
+ 	color:#006df6;
+ }
+ .subnav dd.selected strong span{
+ 	color:#006df6; background-image:url(../imgs/img8.gif);
+ }
+ .subnav .droper{
+ 	position:absolute; left:221px; top:0; width:530px; height:480px; background:#fff; border:#ededed solid 1px; box-shadow:#ccc 1px 2px 2px; display:none;z-index:1;
+ }
+ .subnav .droper .inner{
+ 	padding:25px; position:relative; z-index:1;padding-right:15px;
+ }
+ .subnav .droper .inner .lft{
+ 	width:215px; float:left; display:inline; color:#515151; line-height:25px;
+ }
+ .subnav .droper .inner .lft a{
+ 	color:#515151;
+ }
+ .subnav .droper .inner .rgt{
+ 	width:275px; float:left; display:inline; font-size:14px; font-family:"微软雅黑", "黑体", Arial; color:#5a5a5a;
+ }
+ .subnav .droper .inner .rgt a{
+ 	 color:#5a5a5a;
+ }
+ .subnav .droper .inner .rgt ul{
+ 	background:#efefef; padding:15px; height:auto; overflow:hidden;
+ }
+ .subnav .droper .img{
+ 	position:absolute; left:0; bottom:0; z-index:0;
+ }
+ .subnav .droper.d1{
+ 	margin-top:-60px;
+ }
+ .subnav .droper.d1 .img{
+ 	bottom:-20px; /*background:url(../imgs/img1.png) no-repeat; background:url(../imgs/img1ie6.png) no-repeat; height: 339px; width: 514px;*/
+ }
+ .subnav .droper.d2{
+ 	margin-top:-120px;
+ }
+ .subnav .droper.d2 .img{
+ 	bottom:-30px; left:25px;
+ }
+ .subnav .droper.d2 li{
+ 	width:50%; float:left; display:inline;
+ }
+ .subnav .droper.d3{
+ 	margin-top:-180px;
+ }
+ .subnav .droper.d3 .lft{
+ 	width:200px;
+ }
+ .subnav .droper.d3 .rgt{
+ 	width:255px;
+ }
+ .subnav .droper.d3 ul{
+ 	background:none !important; padding:0 !important;
+ }
+ .subnav .droper.d3 li{
+ 	width:50%; float:left; display:inline;
+ }
+ .subnav .droper.d3 .img{
+ 	bottom:-20px; left:130px;
+ }
+ .subnav .droper.d4{
+ 	margin-top:-300px;
+ }
+ .subnav .droper.d4 .lft{
+ 	width:200px;
+ }
+ .subnav .droper.d4 .rgt{
+ 	width:255px;
+ }
+ .subnav .droper.d4 .img{
+ 	bottom:-20px; left:-20px;
+ }
+ .subnav .droper.d5{
+ 	margin-top:-360px; 
+ }
+ .subnav .droper.d5 .img{
+ 	bottom:0; left:2px;
+ }
+ .subnav .droper.d6{
+ 	margin-top:-420px;
+ }
+ .subnav .droper.d6 .img{
+ 	bottom:-15px; left:30px;
+ }
+ .subnav dd.selected .droper{
+ 	display:block;
+ }
+ 
+ .hc2{
+ 	margin-top:20px;
+ }
+ .hc2 .item{
+ 	float:left; display:inline;
+ }
+ .hc2 .i1{
+ 	width:226px; margin-right:19px;
+ }
+ .hc2 .i2{
+ 	width:225px; margin-right:20px;
+ }
+ .hc2 .i3{
+ 	width:225px; margin-right:20px;
+ }
+ .hc2 .i4{
+ 	width:193px; height:216px; border:#ededed solid 1px; padding:15px;
+ }
+ .hc2 .i4 .head{
+ 	font-size:16px; color:#006df6; font-family:"微软雅黑", "黑体", Arial;
+ }
+ .hc2 .i4 ul{
+ 	margin:10px 0 10px 0; line-height:30px;
+ }
+ .hc2 .i4 ul li{
+ 	background:url(../imgs/img18.gif) no-repeat left center; padding:0 0 0 10px;
+ }
+ 
+ .hc3{
+ 	border:#ededed solid 1px; margin-top:20px; background:url(../imgs/img19.gif) repeat-x; height:158px;
+ }
+ .hc3 .img{
+ 	width:234px; float:left; display:inline; border-right:#ebebeb solid 1px;
+ }
+ .hc3 .scroll{
+ 	width:725px; float:left; display:inline; position:relative; overflow:hidden;
+ }
+ .hc3 .scroll ul{
+ 	width:50000px;
+ }
+ .hc3 .scroll li{
+ 	widows:725px; float:left; display:inline;
+ }
+ .hc3 .scroll .prev, .hc3 .scroll .next{
+ 	background:url(../imgs/img21.gif) no-repeat; width:36px; height:37px; position:absolute; left:0; top:52px; cursor:pointer;
+ }
+ .hc3 .scroll .next{
+ 	background-image:url(../imgs/img22.gif); left:auto; right:0; _right:-1px;
+ }
+ .hc3 li .quote{
+ 	width:359px; float:left; display:inline; border-right:#ebebeb solid 1px; height:110px; padding:48px 60px 0 80px ;
+ }
+ .hc3 li .quote sup, .hc3 li .quote sub{
+ 	background:url(../imgs/img30.gif) no-repeat left top; height:13px; display:block; margin-left:-20px;
+ }
+ .hc3 li .quote sub{
+ 	background:url(../imgs/img31.gif) right top no-repeat;
+ }
+ .hc3 li .author{
+ 	width:142px; padding:60px 50px 0 30px; float:left; display:inline;
+ }
+ 
+ .hc4{
+ 	border:#ededed solid 1px; padding:15px; margin-top:20px; overflow:hidden;
+ }
+ .hc4 .head{
+ 	font-size:16px; color:#006df6; font-family:"微软雅黑", "黑体", Arial;
+ }
+ .hc4 .body{
+ 	margin:10px 0 0 0; height:auto; overflow:hidden; width:110%; _width:100%;
+ }
+ .hc4 .body a{
+ 	float:left; display:inline;
+ }
+ .hc4 .body img{
+ 	border:#ededed solid 1px; margin-right:17px; float:left; display:inline;
+ }
+ .hc4 .body a.last img{
+ 	margin-right:0;
+ }
+ 
+ .hc5{
+ 	border:#ededed solid 1px; padding:15px; margin-top:20px;
+ }
+ .hc5 .head{
+ 	font-size:16px; color:#006df6; font-family:"微软雅黑", "黑体", Arial;
+ }
+ .hc5 .body{
+ 	margin:10px 0 0 0; color:#d1d1d1;
+ }
+ .hc5 .body a{
+ 	margin:0 7px;
+ }
+ 
+ .footer{
+ 	padding:25px 0; text-align:center; border-top:#f3f3f3 solid 1px; margin-top:20px;
+ }
+ 
+ .floatqq{
+ 	width:85px; position:fixed; _position:absolute; right:-85px; top:200px; border:#ededed solid 1px; background:#fcfcfc; box-shadow:#e8e8e8 1px 1px 1px; border-radius:3px;
+ }
+ .floatqq a{
+ 	height:36px; line-height:36px; display:block; padding:0 0 0 34px; border-bottom:#e8e8e8 solid 1px; background:url(../imgs/img46.gif) no-repeat left center;
+ }
+ .floatqq a.selected{
+ 	background:url(../imgs/img47.gif) no-repeat left center;
+ }
+ .floatqq a.last{
+ 	border-bottom:none;
+ }
+ .floatqq em{
+ 	background:url(../imgs/img45.gif) no-repeat; width:38px; height:123px; display:block; position:absolute; left:-38px; top:20px; cursor:pointer;
+ }
+ 
+ .d6 .img{
+ 	background:url(../imgs/img6a.png) no-repeat; _background:url(../imgs/img6.png) no-repeat; width:487px; height:547px;
+ }
+@media screen and (max-width: 650px) {    
+  
+  }
+  
+  @media screen and (max-width: 480px) {   
+	 
+  }

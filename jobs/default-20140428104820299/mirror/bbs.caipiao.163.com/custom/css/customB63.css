@@ -1,0 +1,312 @@
+﻿/* 引用htc 文件的类 */
+#lotteryList h2, #lotteryList .listWrap, .getMod, .getRinfo, .timeMod, .eachMod dl, .awardList {
+behavior: url(/custom/css/pie.htc);
+}
+
+/*
+ *用于定义窄屏
+ */
+body{background:white;}
+.wp {width: 990px;}
+#wp{margin-bottom:10px;}
+#online{margin:0;}
+#ct {background: white;}
+#hd .wp {background: none;padding:0px;}
+#hd .fastlg { padding:0px; }
+.hot_block{ width:988px;}
+
+/*
+ * 彩票论坛 自定义皮肤
+ */
+/* 纠正base.css中重复的样式 */
+.fl{ float:none}
+.fr{ float:none;}
+.pr{ position:static;}
+
+/* 防止顶部工具条折行 */
+a#user163Name,
+a#user163Name:hover{
+	word-wrap:normal;
+	white-space:nowrap;
+}
+.topNavHolder{
+	word-wrap: normal;
+}
+
+/* 顶部信息条 */
+#hd .wp{
+	border:1px solid #d9d9d9;
+	background:#f5f5f5;
+	margin-top:10px;
+	text-align:center;
+	min-width:988px;
+	width:988pxpx;
+}
+#um {
+	padding:0 10px 0 0;
+	text-align:right;
+	height:34px;
+	width:954px;
+	margin:10px auto;
+	line-height:34px;
+	background:#CE1F1C url(../images/banner-1.jpg) no-repeat 0 0;
+	color:#fff;
+	overflow:hidden
+}
+#um a{color:#fff;}
+/*彩民社区 链接*/
+#um a.lottbbs{float:left;width:150px;height:34px;text-indent:-9999px;overflow:hidden; text-align:left}
+#lsform table{
+	float:right;
+	margin-top:5px;
+}
+#extcreditmenu.a{ color:#444; padding-left:9px;}
+/* 新消息 */
+#myprompt.new{color:#FCEE84}
+/*弹出层titile*/
+.bm_h{border-color:#dbdbdb}
+
+/* 搜索 */
+	#scbar, #scbar_form, .scbar_icon_td, .scbar_txt_td, .scbar_type_td, .scbar_btn_td{background:none;}
+	#scbar{border:none;line-height:1;height:auto;}	
+	#scbar{padding-bottom:10px; text-align:left}
+	.scbar_icon_td{width:10px;}
+	.scbar_txt_td,.scbar_type_td{height:26px;border:1px solid #b4b4b4;background:#fff;}
+	.scbar_txt_td{width:260px;border-right:0;}
+	.scbar_type_td{width:50px;border-left:0;}
+	#scbar_txt{width:258px;margin-left:2px;height:16px; line-height:16px;vertical-align:middle;border:none;background:none;font-size:12px;}
+	#scbar_type{height:16px; line-height:16px; vertical-align:middle;border-left:1px solid #b4b4b4;font-size:12px;}
+	#scbar_type_menu{margin-top:0}
+	#scbar_hot{height:auto;line-height:28px;}
+	#scbar_hot a{ float:none; margin-right:5px;}
+	/* 搜索类型选择弹出层 */
+	.p_pop a:hover, .p_pop a.a, #sctype_menu .sca{background-color: #f5f5f5;color: #2b2b2b;text-decoration: none;}
+	/* 搜索按钮 */
+	#scbar_btn{background:url(../images/btn_bbs.png) no-repeat 0 0;width:53px;height:28px;}
+	#scbar_btn strong { background:none;font-weight:normal;color:#fff;}
+
+/* 统计 */
+	#chart .chart{color:#444}
+	#chart .chart em{ font-weight:bold;color:#f26c4f}
+	#chart .chart span{color:#ccc;}
+
+/*面包屑导航*/
+	.home{ display:inline-block;width:16px;height:16px; vertical-align:middle;background: url(../../custom/baseimage/common/search.png) no-repeat -8px -119px;margin-right:3px;}
+	
+/*虚线*/
+	.pi,.po{border:none;background:background:url(../images/dott.png) repeat-x 0 0;}
+
+/* 
+ *论坛首页 
+ */
+	/* 大版块标题 */
+	.mn .bm_h{background:#f4f4f4; border-color:#dbdbdb;}
+	.mn .bm_h a{color:#2b2b2b}
+	/* 子版块 标题 */
+	.mn table h2{ font-weight:bold}
+	.mn table h2 a{color:#2b2b2b}
+	/* 子版块左侧图标 */
+	.fl_icn{width:55px;height:58px;}
+	/*底部在线会员*/
+	#online .bm_h{ border:0}
+	#online #onlinelist{border-top:1px solid #cdcdcd}
+	/*面包屑*/
+	#pt .z {padding-left: 10px;}
+
+/* 
+ *帖子列表页 
+ */
+	/* 收藏本版 订阅*/
+	#ct .bml,#ct .bml .bm_h{ border:0; background:none}
+	#ct .bml .bm_h h1{display:inline-block;*display:inline;*zoom1;}
+	#ct .bml .bm_h .y{float:none;margin-left:10px;}
+	/*版块标题*/
+	h1.xs2 a{ font-weight:bold}
+	/*顶部分类 选中状态*/
+	.ttp .a a{border-color:#f5a72b;background:#ffeabf;color: #2b2b2b;}
+	/*帖子标题 */
+	#threadlist tbody th{ text-align:left}
+	#threadlist tbody th a{ color:#2b2b2b}
+	.tl th, .tl td {border-bottom:1px solid #dbdbdb;}
+	/*发帖人链接*/
+	.by a{color:#2b2b2b}
+	
+/* 
+ *帖子详细页 
+ */
+	/*左侧*/
+	.pls{background:#f5f5f5;border-right: 1px solid #dcdcdc;}
+	.ad .pls {background:#dcdcdc;padding: 0;height: 4px;}
+	.ad .plc {background:#dcdcdc;padding: 0;overflow: hidden;}
+	.bui .m img {margin-bottom:0;}
+	/*帖子标题*/
+	h1.ts a{color:#2b2b2b;font:bold 15px/24px "Microsoftt Yahei",Simsun,sans-serif}
+	/*左侧发帖人名字*/
+	.authi .xw1{ font-size:14px;}
+	/*左侧 查看及回复 数字*/
+	#postlist  .pls .xi1{ font-size:16px;}
+	/*帖子 分类信息*/
+	.cgtl caption{background: #f5f5f5;border-top: 1px solid #dcdcdc;}
+	.cgtl td, .cgtl th, .cgtl caption {border-bottom: 1px solid #dcdcdc;}
+	/*满意答案*/
+	.psth {padding:0;text-indent:50px;width: 285px;height:25px; line-height:25px;background:url(../images/flag_bbs.png) no-repeat 0 0;color: #fff;font-weight:bold;font-size: 12px;}
+	/*回帖推荐*/
+	#postlist h3.xs1{background-position:0 -25px;}
+	/*满意答案 回帖推荐*/
+	.psta{width:70px;}
+	.psta img{width:60px;height:60px;}
+	.psti{margin-left:90px;}
+	.psti .xw1{margin-right:20px;}
+	a.bestAnswer{ display:inline-block;width:98px; text-align:center;background:url(../images/btn_bbs.png) no-repeat 0 -53px;height:24px;line-height:24px;color:#fff; font-weight:bold}
+	/*未解答 已解答*/
+	.rsld, .rusld{background: url(../../custom/images/rwd.png) no-repeat 0 0; text-indent:-999px; overflow:hidden}
+	.rsld {background-position: 0 -122px;}
+	/*浅灰色文字*/
+	.pi em,.xg1, .xg1 a{color:#b5b5b5}
+	/*个人资弹出料框 去掉阴影*/
+	.bui{box-shadow:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow:none;}
+
+/* 
+ *个人资料设置 
+ */
+ 	.ct2_a{ border:0; background:none}
+	/*左侧导航*/
+	.ct2_a{padding:0;}
+	.ct2_a .appl{width:140px;background:#dcdcdc;padding:0;margin:10px 0 0 0;overflow:hidden;}
+	.ct2_a .appl .tbn{margin:1px;background:#f5f5f5;}
+	.ct2_a .appl h2.mt{padding:5px 10px;font-weight:bold;border-bottom:1px solid #dcdcdc;}
+	.ct2_a .appl ul{padding:10px 0 10px 10px;}
+	.ct2_a .appl li a{color:#2b2b2b;padding-left:10px;}
+	.ct2_a .appl li{border:0;margin:0;}
+	.ct2_a .appl li.a{border:1px solid #dcdcdc;border-right:0;margin:0 -1px 0 0;font-weight:bold;padding:0}
+	/*右侧*/
+	.ct2_a .mn {width:808px;border:1px solid #CDCDCD;background:#fff;margin:10px 0 0 0;padding-top:0}
+	.ct2_a .mn .bm{padding:0 20px;}
+	.ct2_a .tb {margin:0 -20px 10px -20px;padding-left:10px;}
+	.tb{border-bottom: 1px solid #dcdcdc;background:#f5f5f5;}
+	.tb li{height:30px; line-height:30px;}
+	.tb a{border:0;border-right: 1px solid #dcdcdc;height:14px;line-height:14px;display:inline-block;margin:8px 0;background:none;color:#2b2b2b}
+	.tb a:visited{color:#2b2b2b}
+	.tb .a{border-left:1px solid #dcdcdc;border-right:1px solid #dcdcdc;background-color:#fff;}
+	.tb .a a,.tb .a a:visited, .tb .current a,.tb .current a:visited {border:0;background:#fff;}
+	/*tab右浮动切换*/
+	.tb .y{padding:0;line-height:normal}
+	.tb .y select{margin:3px 5px 0 0;}
+	/*tab右浮动 按钮*/
+	.tb .o{float:right;margin:4px 0 3px 0; border:0;}
+	.tb .o a {margin:0;}
+	/*用户组 tab切换右侧选项*/
+	.tb .showmenu{padding-right:10px;border:none;background: url(../../custom/baseimage/common/arrwd.gif) no-repeat 100% 50%;}
+	.tb .showmenu a{border:0; background:none}
+	.tfm th {width:90px; text-align:left}
+	.tfm .p {text-align: left;width:150px;}
+	.exfm {border:1px solid #dcdcdc;background:#f5f5f5;}
+	.tbms {padding: 5px 10px 5px 26px;border: 1px dashed #ffd7a8;}
+	.pml .newpm ,.pml .hover {background: #fffdec;}
+	/*积分 用户组table*/
+	.dt td, .dt th,.tscr td ,.tfx td{ text-align:center}
+	.tdat th{ text-align:left;}
+	.tdat td{text-align:left;}
+	/*好友列表 在线成员*/
+	.buddy li{padding: 10px 10px 10px 90px;height:70px;}
+	.buddy .avt {margin-left: -80px;}
+	/*好友列表 我的黑名单*/
+	.bmn {border:1px solid #dcdcdc;background:#f5f5f5;}
+	/*XXX的帖子*/
+	.bw0_all th,.tl th { text-align:left}
+	/*私人消息*/
+	.pml dl {padding-left:90px;}
+	.xlda .m {margin: 8px 0 8px -80px;}
+	.nts {padding-left: 0px;}
+	.xlda dl{padding-left:80px;}
+	.xlda dl .m{height:80px;}
+	
+	
+	.ct2_a #tba {padding:0;margin:8px 0 0 0;}
+	.tdats .c1 #c1, .tdats .c2 #c2, .tdats .c3 #c3, .tdats .c4 #c4 {height: 35px;}
+	
+	/*短消息设置 筛选设置链接*/
+	a.xi2:link, a.xi2:visited {color:#1E50A2;}
+
+/* 
+ *个人空间 
+ */
+#uhd {background:#f5f5f5;}
+#uhd .h {padding:10px 0 0 100px;}
+#uhd .avt {margin-left: -75px;}
+#uhd .tb a,#uhd .tb a:visited{ border:0;color:#2b2b2b}
+#uhd .tb .a{border:1px solid #dcdcdc; border-bottom:0;}
+#uhd .tb .a a{ border:0}
+#uhd .mt {padding:5px 0;font-size: 14px; font-weight:bold;color:#1E50A2;}
+.avt img {width: 60px;height: 60px;border-color: #F2F2F2 #CDCDCD #CDCDCD #F2F2F2;}
+
+/*发帖*/
+#postbox{padding-top:10px;}
+#post_extra_tb label span{ font-weight:normal;color:#2b2b2b!important;}
+.pg_post .ct2_a .appl{margin-right:0;}
+.pg_post .ct2_a .appl h3{ font-weight:bold}
+.ct2_a .sadd {width:300px}
+.edt .bbar a{ display:inline-block; line-height:20px;height:20px;}
+/*论坛导航弹出层*/
+.flb span a.flbc:hover{ background-position:0 0}
+
+/*回帖奖励*/
+#post_extra_tb label{ background:none;color:#2b2b2b;}
+#post_extra_tb label.a {background:#f5f5f5;border-bottom:none;}
+
+/*宽度自适应 红色按钮*/
+	 input.pn,button.pn{overflow:visible;padding:0;}
+	.pnpost .pn,.pn,a.pn,.tb .o,.tb .o a{display:inline-block;border:0;background:url(../images/btn_bbs.png) no-repeat 0 -29px;height:22px;line-height:22px;color:#fff!important;font-weight:bold;border-right:1px solid #c10a0d}
+	.pn em,.pn span,a.pn strong,.tb .o a {display:block;line-height:23px;padding:0 8px 0 10px;background:url(../images/btn_bbs.png) no-repeat left -29px;}
+	.pn:active,.pnc:active{background-position:0 -29px;}
+	/*大按钮*/
+	#postbox #postsubmit{height:31px;line-height:31px;background:none;border-right:0;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;color:#1E50A2;}
+	#postbox #postsubmit span{background-position:0 -79px;line-height:31px;font-size:14px;border-right:1px solid #c10a0d}
+	#postbox #postsubmit em{line-height:31px;font-size:14px;background:none;color:#1E50A2;}
+
+/*footer*/	
+#ft {margin:0 auto; border-top:0;padding-top:0;}
+#ct{margin:0;}
+
+/*搜索结果页*/
+	.sttl{padding-left:15px;}
+	.sttl h2,.sttl em,.sttl span{ font-weight:bold}
+	/*满意答案*/
+	a.myAnswer{ position:relative}
+	a.myAnswer span{ display:none;}
+	a.myAnswer:hover span{ display:inline-block; position:absolute;left:20px;top:-22px;color:#2b2b2b;background:#fee9b9; border:1px solid #f0ca63; font-size:12px;width:60px; text-align:center}
+
+/*增加发帖按钮帖子图标*/
+#newspecial_menu .satisfy, #sti .satisfy { background-image: url(../images/satisfysmall.gif); }
+
+
+/*作者名文字溢出隐藏*/
+.tl .by cite{ width:100px;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+
+/*发帖人用户名太长时折行*/
+.authi{ padding-right:10px; white-space:nowrap; overflow:hidden;text-overflow:ellipsis;word-wrap:normal }
+
+#topNav .fl{ float:left; border:none; background:none}
+#topNav .dropMenuBoxActive{
+	padding:0;
+	border:1px solid #dcdddd;
+	border-bottom-width:0;
+	background-color:#fff;
+}
+#myCoupon .tip{background: none;
+    border: none;
+    font-size: 16px;
+    height: 48px;
+    line-height: 48px;
+    margin-bottom: 10px;
+    padding: 0;
+    position: static;
+    text-align: center;
+    width: auto;}
+	
+#funcTab li{word-wrap:normal}
+
+/*SEO链接重置*/
+.relatedlink,.relatedlink:hover{text-decoration:none !important;color:inherit !important;border-bottom:inherit;*border-bottom:none;}

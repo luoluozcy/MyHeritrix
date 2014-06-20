@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta property="qc:admins" content="27354635321361636375" />
+<meta name="keywords" content="网易云音乐，音乐，播放器，网易，下载，播放，DJ，免费，明星，精选，歌单，识别音乐，收藏，分享音乐，音乐互动，高音质，320K，音乐社交" />
+<meta name="description" content="网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。" />
+<title>网易云音乐 发现好音乐</title>
+<script type="text/javascript">
+var GRef = '';
+var GAbroad = false;
+var GUser={};
+window.NEJ_CONF = {p_csrf:{cookie:'__csrf',param:'csrf_token'}};
+//线上环境参数配置
+window.MUSIC_CONFIG = {
+pushHost:'web.push.126.net',
+pushPort:'6003',
+pushKey:'3b97981848064bbabeaaf2fb1eab7368'
+};
+GUtil = {
+getBase:function(){
+return 'http://'+location.hostname;
+},
+getPathAndHash:function(_url){//获取URL path 之后的所有内容,并将/#/替换成/m/使之成为path的一部分
+if(!_url) return '';
+var _reg0 = /^https?:\/\/.*?\//i,
+_reg1 = /\/?#\/?/i;
+return _url.replace(_reg0,'/').replace(_reg1,'/m/');
+},
+composeRefer:function(_url,_ref){//对所有的页面请求都加上ref参数表示被嵌套的来源
+if(!_ref) return _url;
+var _hi = _url.indexOf('#'),
+_si = _url.indexOf('?');
+if(_si>0&&(_si<_hi||_hi<0)){
+return _url.substring(0,_si+1)+'ref='+_ref+'&'+_url.substring(_si+1);
+}else if(_hi>0&&(_si<0||_si>_hi)){
+return _url.substring(0,_hi)+'?ref='+_ref+_url.substring(_hi);
+}else{
+return _url+'?ref='+_ref;
+}
+}
+};(function(){
+var _ua = window.navigator.userAgent,
+_isMobile = /(mobile|mobi|wap|iphone)/i.test(_ua) && !/(ipad)/i.test(_ua),
+_isAndroid = /android/i.test(_ua),
+_igList = [/^\/xiami$/],//不需要以单页面打开的列表，比如某些活动页面
+_pn = location.pathname,
+_idx = _pn.lastIndexOf('/'),
+_pReg = /\s*(\w+)\s*=\s*(\d+)\s*/,
+_redirect2mobile = function(){
+var _type,_murl,
+_params = {},
+_hash = location.hash,
+_mReg = /^#.*(share|song|playlist|dj|album|mv|topic)/,
+_base = 'http://'+location.hostname,
+_sindex = _hash.lastIndexOf('?'),
+_search = _sindex>-1?_hash.substring(_sindex+1):'';
+if(!_hash.length||!_mReg.test(_hash)||!_search){
+location.href = _base+'/m/';
+return;
+}else{
+_type = RegExp.$1;
+}
+for(var plist=_search.split('&'),i=plist.length,value;i>=0;i--){
+value = plist[i];
+if(_pReg.test(value)) _params[RegExp.$1] = RegExp.$2;
+}
+if(_type=='dj'){
+_murl = '/m/program/'+_params.id+'/0';
+}else if(_type=='share'){
+_murl = '/m/share/'+_params.uid+'/'+_params.id;
+}else if(_type=='playlist'){
+_murl = '/m/playlist/'+_params.id+'/0';;
+}else{
+_murl = '/m/'+_type+'/'+_params.id;
+}
+location.href = _base+_murl;
+};
+if(_isMobile || _isAndroid){
+_redirect2mobile();
+return;
+}
+if(!_pn||_pn=='/') return;
+for(var i in _igList){
+if(_igList[i].test(_pn)) return;
+}
+if(top==self){
+location.href = '/#'+GUtil.getPathAndHash(location.href);
+return;
+}
+//搜索引擎过来的内容页连接
+if(top==self&&/^\/static\/(song|playlist|album|artist)/i.test(_pn)){
+location.href = '/#'+_pn.substring(0,_idx).replace('/static/','/')+'?id='+_pn.substring(_idx+1);
+}
+})();
+(function(){
+var _addEvent = function(_node,_type,_cb){
+if(_node.addEventListener){
+_node.addEventListener(_type,_cb);
+}else if(_node.attachEvent){
+_node.attachEvent('on'+_type,_cb);
+}
+},
+_onAnchorClick = function(_event){//截获所有<a>标签的点击事件，自定义页面的跳转
+_event = _event||window.event;
+var _el = _event.target||_event.srcElement,
+_base = location.protocol+'//'+location.host;
+while(_el&&_el!=document){
+if(_el.tagName&&_el.tagName.toLowerCase()=='a'){
+//fix ie6下有时javascript:;不能阻止默认事件的bug.
+if(_el.href.indexOf('javascript:')>=0){
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+return;
+}
+//新窗口打开的链接、云音乐单页面形式的链接、站外的链接不做拦截处理。
+if(_el.target=='_blank'
+||_el.target=='blank'
+||(_el.href.charAt(0)!='/'&&_el.href.indexOf(location.hostname)<0)
+||_el.href==_base
+||_el.href.indexOf(_base+'/#')>=0) return;
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+location.dispatch2(_el.href);
+break;
+}else{
+_el = _el.parentNode;
+}
+}
+};
+_addEvent(document,'click',_onAnchorClick);
+//扩展一个js中直接使用的页面跳转的方法，以拦截js中的页面跳转行为
+location.dispatch2 = function(_url,_replace){
+var delegate = false;
+try{
+delegate = !!top.GDispatcher;
+}catch(e){
+delegate = false;
+}
+if(delegate){
+top.GDispatcher.dispatch(_url,_replace);
+}else{
+_url = GUtil.composeRefer(_url,GRef);
+//邮箱音乐盒中，每次链接的跳转都要将proxy.html的地址合并到hash中
+if(GRef&&GRef=='mail'){
+var _hindex,_sindex,
+_reg = /(http:\/\/.+\/proxy.html)/,
+_hreg = /#(.*?)$/,
+_href = decodeURIComponent(location.href);
+if(!_reg.test(decodeURIComponent(_url))&&_reg.test(_href)){
+_hindex = _url.indexOf('#');
+_sindex = _url.lastIndexOf('?');
+if(_hindex>0){
+_url = _url+(_sindex>_hindex?'&':'?')+'proxy='+encodeURIComponent(RegExp.$1);
+}else{
+_url = _url+'#proxy='+encodeURIComponent(RegExp.$1);
+}
+}
+}
+if(_replace){
+location.replace(_url);
+}else{
+location.href = _url;
+}
+}
+};
+})();</script>
+<base href="http://music.163.com/" target="_top">
+<link rel="shortcut icon" href="http://s1.music.126.net/music.ico?v1" />
+<link href="http://s2.music.126.net/s/2/core.css?e905c970711c99f8cb0474edcaf265d5" type="text/css" rel="stylesheet"/><link href="http://s2.music.126.net/s/2/pt_discover_index.css?b331d9684df50e3c0cdccf0c635705ea" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div id="g_top" class="m-top">
+<div class="wrap">
+<h1 class="logo"><a hidefocus="true" href="#">网易云音乐</a></h1>
+<ul class="m-nav" id="g_nav">
+<li class="fst">
+<span><a hidefocus="true" href="#" class="z-slt"><em>发现音乐</em><sub class="cor">&nbsp;</sub></a></span>
+</li>
+<li>
+<span><a data-res-action="bilog" data-log-action="page" data-log-json='{"type":"my"}' hidefocus="true" href="/my/" ><em>我的音乐</em><sub class="cor">&nbsp;</sub></a></span>
+</li>
+<li>
+<span><a hidefocus="true" href="/friend" ><em>朋友</em><sub class="cor">&nbsp;</sub><i class="dot u-icn u-icn-68 f-alpha j-t" style="display:none;"></i></a></span>
+</li>
+<li class="lst">
+<span><a data-res-action="bilog" data-log-action="page" data-log-json='{"type":"downloadapp"}' hidefocus="true" href="/download" ><em>下载客户端</em><sub class="cor">&nbsp;</sub></a></span><sup class="hot">&nbsp;</sup>
+</li>
+</ul>
+<div class="m-tophead f-pr" id="g_user">
+<a hidefocus="true" href="#" class="link" data-action="login">登录</a>
+<div class="m-tlist" id="g_subnav" style="display:none;">
+<ul class="f-cb">
+<li><a hidefocus="true" class="itm-1" href="#" data-action="login" data-type="mobile"><i class="icn icn-mb"></i><em>手机号登录</em></a></li>
+<li><a hidefocus="true" class="itm-2" href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Login&forcelogin=true" target="_blank" data-action="login" data-type="sina"><i class="icn icn-sn"></i><em>新浪微博登录</em></a></li>
+<li><a hidefocus="true" class="itm-2" href="http://music.163.com/api/sns/authorize?snsType=6&clientType=web2&callbackType=Login&forcelogin=true" target="_blank" data-action="login" data-type="tencent"><i class="icn icn-tc"></i><em>腾讯微博登录</em></a></li>
+<li><a hidefocus="true" class="itm-3" href="#" data-action="login" data-type="netease"><i class="icn icn-wy"></i><em>网易通行证登录</em></a></li>
+</ul>
+</div>
+</div>
+<div class="m-srch f-pr j-suggest" id="g_search">
+<div class="srchbg">
+<span class="parent">
+<input type="text" class="txt j-flag" value=""/>
+<label class="ph j-flag">单曲/歌手/专辑/歌单/用户</label>
+</span>
+</div>
+<span class="j-flag" style="display:none;">&nbsp;</span>
+<div class="u-lstlay j-flag" style="display:none;"></div>
+</div>
+</div>
+</div>
+<div id="g_nav" class="m-subnav">
+<div class="wrap">
+<ul class="nav">
+<li><a hidefocus="true" href="/discover" class="z-slt"><em>推荐</em></a></li>
+<li><a hidefocus="true" href="/discover/toplist" ><em>排行榜</em></a></li>
+<li><a hidefocus="true" href="/discover/playlist/" ><em>歌单</em></a></li>
+<li><a hidefocus="true" href="/discover/djchannel/" ><em>DJ节目</em></a></li>
+<li><a hidefocus="true" href="/discover/artist/" ><em>歌手</em></a></li>
+<li><a hidefocus="true" href="/discover/album/" ><em>新碟上架</em></a></li>
+</ul>
+</div>
+</div>
+<div class="n-ban d-flag" id="index-banner" style="background-image:url(http://p3.music.126.net/u703XyzrVJ2l-3XPMVHihw==/5997835929704434.jpg); background-repeat: repeat-x">
+<div class="wrap">
+<div class="ban f-pr" style="z-index:10;">
+<a hidefocus="true" class="active d-flag"
+href="http://music.163.com/#/topic?id=27001"
+>
+<img class="d-flag" src="http://p3.music.126.net/SE4FTXqnVQXqLPrJ5sXqPQ==/6003333487843140.jpg">
+</a>
+<a hidefocus="true" href="javascript:void(0)" class="btnl click-flag f-alpha">&lt;</a>
+<a hidefocus="true" href="javascript:void(0)" class="btnr click-flag f-alpha">&gt;</a>
+<div class="dots f-cb">
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha z-slt" data-index="0"></a>
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha " data-index="1"></a>
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha " data-index="2"></a>
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha " data-index="3"></a>
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha " data-index="4"></a>
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha " data-index="5"></a>
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha " data-index="6"></a>
+<a hidefocus="true" href="#" class="pg click-flag pg-flag f-alpha " data-index="7"></a>
+</div>
+</div>
+<div class="download f-pr">
+<a href="/download" class="btn" hidefocus="true">下载客户端</a>
+<p>点击进入 PC/iPhone/Android 下载页面</p>
+<span class="shadow"></span><span class="shadowr"></span>
+</div>
+</div>
+</div>
+<div class="g-bd1 f-cb">
+<div class="g-mn1">
+<div class="g-mn1c">
+<div class=" g-wrap3">
+<div class="n-rcmd">
+<div class="v-hd2">
+<a href="/discover/playlist/" class="tit f-ff2 f-tdn">推荐歌单</a>
+<div class="tab">
+<a href="/discover/playlist/?cat=%E6%B5%81%E8%A1%8C" class="s-fc3">流行</a>
+<span class="line">|</span>
+<a href="/discover/playlist/?cat=%E6%91%87%E6%BB%9A" class="s-fc3">摇滚</a>
+<span class="line">|</span>
+<a href="/discover/playlist/?cat=%E6%B0%91%E8%B0%A3" class="s-fc3">民谣</a>
+<span class="line">|</span>
+<a href="/discover/playlist/?cat=%E7%94%B5%E5%AD%90" class="s-fc3">电子</a>
+<span class="line">|</span>
+<a href="/discover/playlist/?cat=%E7%88%B5%E5%A3%AB" class="s-fc3">爵士</a>
+</div>
+<span class="more"><a href="/discover/playlist/" class="s-fc3">更多</a><i class="cor s-bg s-bg-6">&nbsp;</i></span>
+</div>
+<ul class="m-cvrlst f-cb">
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p4.music.126.net/rrCGGMJTj4lGBjOG5QeDmQ==/5975845697113506.jpg?param=140y140">
+<a title="《我是歌手》双年巅峰会" href="/playlist?id=11271748" class="msk"
+data-res-id="11271748"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|0|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="11271748"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">284872</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=11271748" title="《我是歌手》双年巅峰会"
+data-res-id="11271748"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|0|featured|user-playlist">《我是歌手》双年巅峰会</a></p>
+<p><span class="s-fc4">by</span> <a title="小石榴不错哟" class="nm nm-icn f-thide s-fc3" href="/user/home?id=58005">小石榴不错哟</a> <sup class="u-icn u-icn-84"></sup>
+</p>
+</li>
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p3.music.126.net/qfLXYq-d5KjFabuHzFUzgA==/5869193069175392.jpg?param=140y140">
+<a title="中国好歌曲-全集" href="/playlist?id=7537859" class="msk"
+data-res-id="7537859"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|1|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="7537859"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">425665</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=7537859" title="中国好歌曲-全集"
+data-res-id="7537859"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|1|featured|user-playlist">中国好歌曲-全集</a></p>
+<p><span class="s-fc4">by</span> <a title="皓西卡" class="nm nm-icn f-thide s-fc3" href="/user/home?id=5786544">皓西卡</a> </p>
+</li>
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p4.music.126.net/HznMDgxbsjlNl9PX8Q4Yqw==/5981343255211589.jpg?param=140y140">
+<a title="美到窒息的钢琴前奏♪" href="/playlist?id=10338999" class="msk"
+data-res-id="10338999"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|2|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="10338999"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">280256</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=10338999" title="美到窒息的钢琴前奏♪"
+data-res-id="10338999"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|2|featured|user-playlist">美到窒息的钢琴前奏♪</a></p>
+<p><span class="s-fc4">by</span> <a title="DJ雪莉" class="nm nm-icn f-thide s-fc3" href="/user/home?id=80086">DJ雪莉</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+</li>
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p4.music.126.net/NQxrImeVR2MgFC1UqbW7_w==/5962651557479657.jpg?param=140y140">
+<a title="《来自星星的你》原声" href="/playlist?id=7894695" class="msk"
+data-res-id="7894695"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|3|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="7894695"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">624559</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=7894695" title="《来自星星的你》原声"
+data-res-id="7894695"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|3|featured|user-playlist">《来自星星的你》原声</a></p>
+<p><span class="s-fc4">by</span> <a title="我是慢慢" class="nm nm-icn f-thide s-fc3" href="/user/home?id=1150940">我是慢慢</a> <sup class="u-icn u-icn-84"></sup>
+</p>
+</li>
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p4.music.126.net/N8yDNOUdKF-QMYRAFPRo_Q==/6048413464451516.jpg?param=140y140">
+<a title="韩国女团19禁MV" href="/playlist?id=8728369" class="msk"
+data-res-id="8728369"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|4|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="8728369"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">382035</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=8728369" title="韩国女团19禁MV"
+data-res-id="8728369"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|4|featured|user-playlist">韩国女团19禁MV</a></p>
+<p><span class="s-fc4">by</span> <a title="fx-girls" class="nm nm-icn f-thide s-fc3" href="/user/home?id=2425759">fx-girls</a> <sup class="u-icn u-icn-84"></sup>
+</p>
+</li>
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p4.music.126.net/oyN-rRiRU1Z9PMuOUUdPoQ==/5947258394803838.jpg?param=140y140">
+<a title="献给盛夏的民谣" href="/playlist?id=11006773" class="msk"
+data-res-id="11006773"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|5|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="11006773"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">139799</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=11006773" title="献给盛夏的民谣"
+data-res-id="11006773"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|5|featured|user-playlist">献给盛夏的民谣</a></p>
+<p><span class="s-fc4">by</span> <a title="chensin" class="nm nm-icn f-thide s-fc3" href="/user/home?id=7834651">chensin</a> </p>
+</li>
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p4.music.126.net/W4jVPIW6xrjiR8Bq7xfs5Q==/6022025185449586.jpg?param=140y140">
+<a title="换掉你的铃声！【高大上铃声80首】" href="/playlist?id=9467593" class="msk"
+data-res-id="9467593"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|6|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="9467593"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">413413</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=9467593" title="换掉你的铃声！【高大上铃声80首】"
+data-res-id="9467593"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|6|featured|user-playlist">换掉你的铃声！【高大上铃声80首】</a></p>
+<p><span class="s-fc4">by</span> <a title="KilitZaman" class="nm nm-icn f-thide s-fc3" href="/user/home?id=3803343">KilitZaman</a> <sup class="u-icn u-icn-84"></sup>
+</p>
+</li>
+<li>
+<div class="u-cover u-cover-1">
+<img src="http://p3.music.126.net/RDXqntcIjcG8SERg-mcjgQ==/6033020301896509.jpg?param=140y140">
+<a title="旅行音乐，把春天装进MP3。" href="/playlist?id=10851364" class="msk"
+data-res-id="10851364"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|7|featured|user-playlist"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="13"
+data-res-id="10851364"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">90059</span>
+</div>
+</div>
+<p class="dec">
+<a class="tit f-thide s-fc0" href="/playlist?id=10851364" title="旅行音乐，把春天装进MP3。"
+data-res-id="10851364"
+data-res-type="13"
+data-res-action="log"
+data-res-data="recommendclick|7|featured|user-playlist">旅行音乐，把春天装进MP3。</a></p>
+<p><span class="s-fc4">by</span> <a title="西于" class="nm nm-icn f-thide s-fc3" href="/user/home?id=1322216">西于</a> <sup class="u-icn u-icn-84"></sup>
+</p>
+</li>
+</ul>
+</div>
+<div class="n-dj">
+<div class="v-hd2">
+<a href="/discover/djchannel/" class="tit f-ff2 f-tdn">DJ节目</a>
+<span class="more"><a href="/discover/djchannel/" class="s-fc3">更多</a><i class="cor s-bg s-bg-6">&nbsp;</i></span>
+</div>
+<ul class="m-cvrlst m-cvrlst-2 f-cb" id="program-list">
+<li>
+<div class="u-cover u-cover-2">
+<img class="j-img" data-src="http://p4.music.126.net/lgsa9G71gX_Tt5l6ARH7dA==/5927467185539926.jpg?param=210y160">
+<a href="/dj?id=673138" class="msk" title="【故事】青春只是年少时无知的浮夸"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="17"
+data-res-id="673138"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">22</span>
+</div>
+</div>
+<p class="dec">
+<a title="【故事】青春只是年少时无知的浮夸" class="tit f-thide s-fc0 tit-icn" href="/dj?id=673138" title="【故事】青春只是年少时无知的浮夸">【故事】青春只是年少时无知的浮夸</a>
+<i class="u-icn u-icn-53"></i>
+</p>
+<p><span class="s-fc4">by</span> <a title="NJ黑羽" class="nm nm-icn f-thide s-fc3" href="/user/home?id=1227177">NJ黑羽</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+</li>
+<li>
+<div class="u-cover u-cover-2">
+<img class="j-img" data-src="http://p3.music.126.net/GjnY1xOk3Iry29KDbfP-tg==/6030821278647851.jpg?param=210y160">
+<a href="/dj?id=673137" class="msk" title="动听948“人文音乐课“系列—专访袁惟仁"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="17"
+data-res-id="673137"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">132</span>
+</div>
+</div>
+<p class="dec">
+<a title="动听948“人文音乐课“系列—专访袁惟仁" class="tit f-thide s-fc0 tit-icn" href="/dj?id=673137" title="动听948“人文音乐课“系列—专访袁惟仁">动听948“人文音乐课“系列—专访袁惟仁</a>
+<i class="u-icn u-icn-53"></i>
+</p>
+<p><span class="s-fc4">by</span> <a title="动听948" class="nm nm-icn f-thide s-fc3" href="/user/home?id=9637197">动听948</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+</li>
+<li>
+<div class="u-cover u-cover-2">
+<img class="j-img" data-src="http://p4.music.126.net/wp9FUhcwWMJg-XGw8oBsEg==/6040716883274844.jpg?param=210y160">
+<a href="/dj?id=673062" class="msk" title="致我未来的丈夫"></a>
+<div class="bottom">
+<a class="icon-play f-fr" title="播放" href="javascript:;"
+data-res-type="17"
+data-res-id="673062"
+data-res-action="play"></a>
+<span class="icon-headset"></span>
+<span class="nb">1384</span>
+</div>
+</div>
+<p class="dec">
+<a title="致我未来的丈夫" class="tit f-thide s-fc0 tit-icn" href="/dj?id=673062" title="致我未来的丈夫">致我未来的丈夫</a>
+<i class="u-icn u-icn-53"></i>
+</p>
+<p><span class="s-fc4">by</span> <a title="DJ雪莉" class="nm nm-icn f-thide s-fc3" href="/user/home?id=80086">DJ雪莉</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+</li>
+</ul>
+</div>
+<div class="n-new">
+<div class="v-hd2">
+<a href="/discover/album/" class="tit f-ff2 f-tdn">新碟上架</a>
+<span class="more"><a href="/discover/album/" class="s-fc3">更多</a><i class="cor s-bg s-bg-6">&nbsp;</i></span>
+</div>
+<div class="n-disk">
+<div class="inner" id="album-roller">
+<a hidefocus="true" href="#" class="click-flag pre s-bg s-bg-7 f-tdn">&nbsp;</a>
+<div class="roll f-pr">
+<ul class="f-cb roller-flag" style="left:-645px;">
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/UUonGQzG-kxN9HAlQIwP_g==/5818615534384045.jpg?param=100y100">
+<a title="酷" href="/album?id=2786515" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786515"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="酷" href="/album?id=2786515" class="s-fc0 tit">酷</a></p>
+<p class="f-thide"><a href="/artist?id=8327" class="tit s-fc3" title="李宇春">李宇春</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/uTY_Ae87FnxLfPkv2rbi5g==/6001134464552360.jpg?param=100y100">
+<a title="The Origin" href="/album?id=2786277" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786277"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="The Origin" href="/album?id=2786277" class="s-fc0 tit">The Origin</a></p>
+<p class="f-thide"><a href="/artist?id=126982" class="tit s-fc3" title="Infinite">Infinite</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/nT9cTYRLaJSVqmbQptgJ_A==/5920870115735215.jpg?param=100y100">
+<a title="未体験Future" href="/album?id=2781424" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2781424"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="未体験Future" href="/album?id=2781424" class="s-fc0 tit">未体験Future</a></p>
+<p class="f-thide"><a href="/artist?id=126737" class="tit s-fc3" title="F.T Island">F.T Island</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/dm9L2j8UrSFe-R2CjXYS1w==/5892282813442535.jpg?param=100y100">
+<a title="We Are One (Ole Ola) (The Official 2014 FIFA World Cup Song)" href="/album?id=2759177" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2759177"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="We Are One (Ole Ola) (The Official 2014 FIFA World Cup Song)" href="/album?id=2759177" class="s-fc0 tit">We Are One (Ole Ola) (The Official 2014 FIFA World Cup Song)</a></p>
+<p class="f-thide"><a href="/artist?id=41143" class="tit s-fc3" title="Pitbull">Pitbull</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/Fl6LFG6vE21d4tRzR4zrnw==/6037418348348318.jpg?param=100y100">
+<a title="Fly Rasta" href="/album?id=2786256" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786256"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="Fly Rasta" href="/album?id=2786256" class="s-fc0 tit">Fly Rasta</a></p>
+<p class="f-thide"><a href="/artist?id=46301" class="tit s-fc3" title="Ziggy Marley">Ziggy Marley</a></p>
+</li>
+</ul>
+<ul class="f-cb roller-flag" style="left:0px;">
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/d1oFVXwQUuST3Tvy-j4nEQ==/6063806627464648.jpg?param=100y100">
+<a title="From Here To Now To You Live" href="/album?id=2794225" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2794225"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="From Here To Now To You Live" href="/album?id=2794225" class="s-fc0 tit">From Here To Now To You Live</a></p>
+<p class="f-thide"><a href="/artist?id=35330" class="tit s-fc3" title="Jack Johnson">Jack Johnson</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/nFaceEZrGEnK5-5WDvmhDQ==/6039617371655471.jpg?param=100y100">
+<a title="Truth(通常盤)" href="/album?id=2794183" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2794183"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="Truth(通常盤)" href="/album?id=2794183" class="s-fc0 tit">Truth(通常盤)</a></p>
+<p class="f-thide"><a href="/artist?id=126524" class="tit s-fc3" title="CNBLUE">CNBLUE</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/plf7Dtaq1D6vHrf1vz2AtQ==/5886785255314511.jpg?param=100y100">
+<a title="步步惊情 电视原声带" href="/album?id=2786678" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786678"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="步步惊情 电视原声带" href="/album?id=2786678" class="s-fc0 tit">步步惊情 电视原声带</a></p>
+<p class="f-thide"><a href="/artist?id=122455" class="tit s-fc3" title="群星">群星</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/4k8CUZtTkRDGyvzXhHYeqg==/5980243743656671.jpg?param=100y100">
+<a title="梁博" href="/album?id=2794201" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2794201"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="梁博" href="/album?id=2794201" class="s-fc0 tit">梁博</a></p>
+<p class="f-thide"><a href="/artist?id=166010" class="tit s-fc3" title="梁博">梁博</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/4YAWhEHqnc5Tu7SzdVURVQ==/6030821278625561.jpg?param=100y100">
+<a title="Fighter / Gift" href="/album?id=2786987" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786987"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="Fighter / Gift" href="/album?id=2786987" class="s-fc0 tit">Fighter / Gift</a></p>
+<p class="f-thide"><a href="/artist?id=160729" class="tit s-fc3" title="中島美嘉">中島美嘉</a></p>
+</li>
+</ul>
+<ul class="f-cb roller-flag" style="left:645px;">
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/vDqUsaFD2d72sUfbwnr9tw==/5847202836693476.jpg?param=100y100">
+<a title="太平山下" href="/album?id=2732217" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2732217"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="太平山下" href="/album?id=2732217" class="s-fc0 tit">太平山下</a></p>
+<p class="f-thide"><a href="/artist?id=3062" class="tit s-fc3" title="黄耀明">黄耀明</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/lS2_Sv7EP5uuseCu5CuFxQ==/6033020301867764.jpg?param=100y100">
+<a title="大当家 电视原声带" href="/album?id=2786911" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786911"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="大当家 电视原声带" href="/album?id=2786911" class="s-fc0 tit">大当家 电视原声带</a></p>
+<p class="f-thide"><a href="/artist?id=122455" class="tit s-fc3" title="群星">群星</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/287v-vS_GEPmR5TyCtZLQg==/5883486720419458.jpg?param=100y100">
+<a title="Meet the Vamps" href="/album?id=2786423" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786423"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="Meet the Vamps" href="/album?id=2786423" class="s-fc0 tit">Meet the Vamps</a></p>
+<p class="f-thide"><a href="/artist?id=837191" class="tit s-fc3" title="The Vamps">The Vamps</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/r6e_a6oPv6hCuz7tQCjK-w==/5772436046020156.jpg?param=100y100">
+<a title="你给我听好" href="/album?id=2793003" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2793003"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="你给我听好" href="/album?id=2793003" class="s-fc0 tit">你给我听好</a></p>
+<p class="f-thide"><a href="/artist?id=2116" class="tit s-fc3" title="陈奕迅">陈奕迅</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/dF78fyecQwoi-uEUjFkLiQ==/6064906139059723.jpg?param=100y100">
+<a title="Everyday Robots" href="/album?id=2791466" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2791466"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="Everyday Robots" href="/album?id=2791466" class="s-fc0 tit">Everyday Robots</a></p>
+<p class="f-thide"><a href="/artist?id=31197" class="tit s-fc3" title="Damon Albarn">Damon Albarn</a></p>
+</li>
+</ul>
+<ul class="f-cb roller-flag" style="left:1290px;">
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/PqGlgO8Pb8eOcafbfGmDZA==/6064906138902525.jpg?param=100y100">
+<a title="Indie Cindy" href="/album?id=2771367" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2771367"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="Indie Cindy" href="/album?id=2771367" class="s-fc0 tit">Indie Cindy</a></p>
+<p class="f-thide"><a href="/artist?id=98542" class="tit s-fc3" title="Pixies">Pixies</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p4.music.126.net/e54x1mNPuRwI2yhYhetxhg==/6048413464607690.jpg?param=100y100">
+<a title="危险世界" href="/album?id=2759704" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2759704"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="危险世界" href="/album?id=2759704" class="s-fc0 tit">危险世界</a></p>
+<p class="f-thide"><a href="/artist?id=2738" class="tit s-fc3" title="方大同">方大同</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/hhreaJNsyr7GY6rM3oBUvQ==/5959353022707524.jpg?param=100y100">
+<a title="PLAY" href="/album?id=2786008" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786008"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="PLAY" href="/album?id=2786008" class="s-fc0 tit">PLAY</a></p>
+<p class="f-thide"><a href="/artist?id=758041" class="tit s-fc3" title="乐童音乐家">乐童音乐家</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/q-V2SNRZhYo9sgftJm-olA==/5961552045955874.jpg?param=100y100">
+<a title="勾三搭四" href="/album?id=2786478" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786478"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="勾三搭四" href="/album?id=2786478" class="s-fc0 tit">勾三搭四</a></p>
+<p class="f-thide"><a href="/artist?id=3681" class="tit s-fc3" title="李志">李志</a></p>
+</li>
+<li>
+<div class="u-cover u-cover-alb1">
+<img class="j-img" data-src="http://p3.music.126.net/5wSC_YCSUbbeODJb34Dapg==/6013229092532171.jpg?param=100y100">
+<a title="Demolicious" href="/album?id=2786535" class="msk"></a>
+<a href="javascript:;" class="icon-play f-alpha f-fr" title="播放"
+data-res-type="19"
+data-res-id="2786535"
+data-res-action="play"></a>
+</div>
+<p class="f-thide"><a title="Demolicious" href="/album?id=2786535" class="s-fc0 tit">Demolicious</a></p>
+<p class="f-thide"><a href="/artist?id=93187" class="tit s-fc3" title="Green Day">Green Day</a></p>
+</li>
+</ul>
+</div>
+<a hidefocus="true" href="#" class="click-flag nxt s-bg s-bg-8 f-tdn">&nbsp;</a>
+</div>
+</div>
+</div>
+<div class="n-bill">
+<div class="v-hd2">
+<a href="/discover/toplist" class="tit f-ff2 f-tdn">榜单</a>
+<span class="more"><a href="/discover/toplist" class="s-fc3">更多</a><i class="cor s-bg s-bg-6">&nbsp;</i></span>
+</div>
+<div class="n-bilst" id="top-flag">
+<dl class="blk ">
+<dt class="top">
+<div class="cver u-cover u-cover-4">
+<img class="j-img" data-src="http://p3.music.126.net/c2ADyyL-bQjUPimhTUD-Nw==/6047313953046304.jpg?param=100y100">
+<a href="/discover/toplist?id=3779629" class="msk" title="云音乐新歌榜"></a>
+</div>
+<div class="tit">
+<a href="/discover/toplist?id=3779629" title="云音乐新歌榜"><h3 class="f-fs1 f-thide">云音乐新歌榜</h3></a>
+<div class="btn">
+<a href="javascript:;" class="s-bg s-bg-9 f-tdn" hidefocus="true" title="播放"
+data-res-type="13"
+data-res-id="3779629"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629">播放</a>
+<a href="javascript:;" hidefocus="true" class="s-bg s-bg-10 f-tdn subscribe-flag " data-plid="3779629" title="收藏">收藏</a>
+</div>
+</div>
+</dt>
+<dd>
+<ol>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">1</span>
+<a href="/song?id=28409097" class="nm s-fc0 f-thide" title="酷">酷</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28409097"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28409097"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28409097"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">2</span>
+<a href="/song?id=28406900" class="nm s-fc0 f-thide" title="和你在一起2013版[Live]">和你在一起2013版[Live]</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406900"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406900"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28406900"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">3</span>
+<a href="/song?id=28403111" class="nm s-fc0 f-thide" title="特别的人（Special Person）">特别的人（Special Person）</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28403111"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28403111"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28403111"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">4</span>
+<a href="/song?id=28387590" class="nm s-fc0 f-thide" title="陪你走到底">陪你走到底</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28387590"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28387590"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28387590"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">5</span>
+<a href="/song?id=28387594" class="nm s-fc0 f-thide" title="同桌的你">同桌的你</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28387594"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28387594"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28387594"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">6</span>
+<a href="/song?id=28310081" class="nm s-fc0 f-thide" title="要死就一定要死在你手里">要死就一定要死在你手里</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28310081"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28310081"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28310081"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">7</span>
+<a href="/song?id=28406011" class="nm s-fc0 f-thide" title="如果缘只到遇见 ">如果缘只到遇见 </a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406011"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406011"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28406011"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">8</span>
+<a href="/song?id=28302100" class="nm s-fc0 f-thide" title="送你一朵山茶花">送你一朵山茶花</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28302100"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28302100"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28302100"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">9</span>
+<a href="/song?id=28406660" class="nm s-fc0 f-thide" title="没差 ">没差 </a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406660"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406660"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28406660"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">10</span>
+<a href="/song?id=28391038" class="nm s-fc0 f-thide" title="200%">200%</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28391038"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28391038"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3779629"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28391038"
+data-res-action="subscribe"></a>
+</div>
+</li>
+</ol>
+<div class="more"><a href="/discover/toplist?id=3779629" class="s-fc0">查看全部&gt;</a></div>
+</dd>
+</dl>
+<dl class="blk ">
+<dt class="top">
+<div class="cver u-cover u-cover-4">
+<img class="j-img" data-src="http://p3.music.126.net/hzwSccwihF1s3o9TqiHTjA==/5901078906483408.jpg?param=100y100">
+<a href="/discover/toplist?id=3778678" class="msk" title="云音乐热歌榜"></a>
+</div>
+<div class="tit">
+<a href="/discover/toplist?id=3778678" title="云音乐热歌榜"><h3 class="f-fs1 f-thide">云音乐热歌榜</h3></a>
+<div class="btn">
+<a href="javascript:;" class="s-bg s-bg-9 f-tdn" hidefocus="true" title="播放"
+data-res-type="13"
+data-res-id="3778678"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678">播放</a>
+<a href="javascript:;" hidefocus="true" class="s-bg s-bg-10 f-tdn subscribe-flag " data-plid="3778678" title="收藏">收藏</a>
+</div>
+</div>
+</dt>
+<dd>
+<ol>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">1</span>
+<a href="/song?id=233931" class="nm s-fc0 f-thide" title="泡沫">泡沫</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="233931"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="233931"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="233931"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="5003">
+<span class="no no-top">2</span>
+<a href="/song?id=25706282" class="nm s-fc0 f-thide" title="夜空中最亮的星">夜空中最亮的星</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="25706282"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="25706282"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="25706282"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">3</span>
+<a href="/song?id=28242996" class="nm s-fc0 f-thide" title="喜欢你">喜欢你</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28242996"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28242996"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28242996"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="5003">
+<span class="no">4</span>
+<a href="/song?id=28031119" class="nm s-fc0 f-thide" title="Let It Go">Let It Go</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28031119"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28031119"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28031119"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">5</span>
+<a href="/song?id=165026" class="nm s-fc0 f-thide" title="时间都去哪儿了">时间都去哪儿了</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="165026"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="165026"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="165026"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">6</span>
+<a href="/song?id=28341146" class="nm s-fc0 f-thide" title="你不是真正的快乐">你不是真正的快乐</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28341146"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28341146"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28341146"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">7</span>
+<a href="/song?id=28302226" class="nm s-fc0 f-thide" title="龙卷风">龙卷风</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28302226"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28302226"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28302226"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">8</span>
+<a href="/song?id=28059417" class="nm s-fc0 f-thide" title="他不懂">他不懂</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28059417"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28059417"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28059417"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">9</span>
+<a href="/song?id=28406900" class="nm s-fc0 f-thide" title="和你在一起2013版[Live]">和你在一起2013版[Live]</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406900"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406900"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28406900"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="5003">
+<span class="no">10</span>
+<a href="/song?id=26548584" class="nm s-fc0 f-thide" title="Happy">Happy</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="26548584"
+data-res-action="play"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="26548584"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="3778678"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="26548584"
+data-res-action="subscribe"></a>
+</div>
+</li>
+</ol>
+<div class="more"><a href="/discover/toplist?id=3778678" class="s-fc0">查看全部&gt;</a></div>
+</dd>
+</dl>
+<dl class="blk blk-1">
+<dt class="top">
+<div class="cver u-cover u-cover-4">
+<img class="j-img" data-src="http://p3.music.126.net/X5zDEiCGcJw5drUKH1mCvQ==/5972547162256487.jpg?param=100y100">
+<a href="/discover/toplist?id=2884035" class="msk" title="网易原创歌曲榜"></a>
+</div>
+<div class="tit">
+<a href="/discover/toplist?id=2884035" title="网易原创歌曲榜"><h3 class="f-fs1 f-thide">网易原创歌曲榜</h3></a>
+<div class="btn">
+<a href="javascript:;" class="s-bg s-bg-9 f-tdn" hidefocus="true" title="播放"
+data-res-type="13"
+data-res-id="2884035"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035">播放</a>
+<a href="javascript:;" hidefocus="true" class="s-bg s-bg-10 f-tdn subscribe-flag " data-plid="2884035" title="收藏">收藏</a>
+</div>
+</div>
+</dt>
+<dd>
+<ol>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">1</span>
+<a href="/song?id=28427580" class="nm s-fc0 f-thide" title="Where Are You Going">Where Are You Going</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28427580"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28427580"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28427580"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">2</span>
+<a href="/song?id=28377414" class="nm s-fc0 f-thide" title="镜中">镜中</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28377414"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28377414"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28377414"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no no-top">3</span>
+<a href="/song?id=28406327" class="nm s-fc0 f-thide" title="Kissing the Ring of angel">Kissing the Ring of angel</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406327"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28406327"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28406327"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">4</span>
+<a href="/song?id=5234839" class="nm s-fc0 f-thide" title="南国">南国</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="5234839"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="5234839"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="5234839"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">5</span>
+<a href="/song?id=28138323" class="nm s-fc0 f-thide" title="No Matter Sunday Monday">No Matter Sunday Monday</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28138323"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28138323"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28138323"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">6</span>
+<a href="/song?id=28315772" class="nm s-fc0 f-thide" title="让我牵起你的手">让我牵起你的手</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28315772"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28315772"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28315772"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">7</span>
+<a href="/song?id=28387138" class="nm s-fc0 f-thide" title="她说每个人的心中都有一首歌">她说每个人的心中都有一首歌</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28387138"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28387138"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28387138"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="5003">
+<span class="no">8</span>
+<a href="/song?id=27770843" class="nm s-fc0 f-thide" title="你说着过去不值一提的美好">你说着过去不值一提的美好</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="27770843"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="27770843"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="27770843"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="0">
+<span class="no">9</span>
+<a href="/song?id=28095150" class="nm s-fc0 f-thide" title="春天">春天</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28095150"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="28095150"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="28095150"
+data-res-action="subscribe"></a>
+</div>
+</li>
+<li onmouseover="this.className='z-hvr'" onmouseout="this.className=''" data-test="5003">
+<span class="no">10</span>
+<a href="/song?id=26090198" class="nm s-fc0 f-thide" title="北京地图">北京地图</a>
+<div class="oper">
+<a href="#" class="s-bg s-bg-11" title="播放" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="26090198"
+data-res-action="play"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="u-icn u-icn-81" title="添加到播放列表" hidefocus="true"
+data-res-copyright="1"
+data-res-type="18"
+data-res-id="26090198"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="2884035"></a>
+<a href="#" class="s-bg s-bg-12" title="收藏" hidefocus="true"
+data-res-type="18"
+data-res-id="26090198"
+data-res-action="subscribe"></a>
+</div>
+</li>
+</ol>
+<div class="more"><a href="/discover/toplist?id=2884035" class="s-fc0">查看全部&gt;</a></div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="g-sd1">
+<div class="n-myinfo n-myinfo-1 s-bg s-bg-1">
+<p class="note s-fc3">登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
+<a id="index-enter-default" href="#" onclick="top.login();return false;" class="btn s-bg s-bg-2 f-tdn" tabindex="1">用户登录</a>
+</div>
+<div class="n-singer">
+<h3 class="v-hd3">
+<span class="f-fl">入驻歌手</span><i class="tip f-fl s-bg s-bg-3"></i>
+</h3>
+<ul class="n-enter f-cb" id="singer-list">
+<li>
+<a href="/user/home?id=650120" class="itm f-tdn">
+<div class="head"><img class="j-img" src="http://p3.music.126.net/WMLt7nOyj0TbxDyr54i_4w==/3145702767070115.jpg?param=62y62"></div>
+<div class="ifo">
+<h4><span class="nm f-fs1 f-ib f-thide">呉墨愁Momo</span></h4>
+<p class="f-thide s-fc3">《中国好声音》选手吴莫愁</p>
+</div>
+</a>
+</li>
+<li>
+<a href="/user/home?id=188304" class="itm f-tdn">
+<div class="head"><img class="j-img" src="http://p4.music.126.net/BvFxS88342IznhCjp6jJKg==/5783431162155757.jpg?param=62y62"></div>
+<div class="ifo">
+<h4><span class="nm f-fs1 f-ib f-thide">尚雯婕</span></h4>
+<p class="f-thide s-fc3">原创电子唱作人</p>
+</div>
+</a>
+</li>
+<li>
+<a href="/user/home?id=560438" class="itm f-tdn">
+<div class="head"><img class="j-img" src="http://p3.music.126.net/GnMukOWNujsqVOsUbzqEEQ==/2761973208994063.jpg?param=62y62"></div>
+<div class="ifo">
+<h4><span class="nm f-fs1 f-ib f-thide">戴佩妮</span></h4>
+<p class="f-thide s-fc3">创作型华语女歌手</p>
+</div>
+</a>
+</li>
+<li>
+<a href="/user/home?id=200645" class="itm f-tdn">
+<div class="head"><img class="j-img" src="http://p4.music.126.net/VIxIhQPW2wTREM_DfToHUA==/2107763790458943.jpg?param=62y62"></div>
+<div class="ifo">
+<h4><span class="nm f-fs1 f-ib f-thide">羽泉组合</span></h4>
+<p class="f-thide s-fc3">国内知名演唱组合 羽泉</p>
+</div>
+</a>
+</li>
+<li>
+<a href="/user/home?id=31001" class="itm f-tdn">
+<div class="head"><img class="j-img" src="http://p4.music.126.net/fSti4LbA6xlEhSDX0PZ5Kg==/2097868185805892.jpg?param=62y62"></div>
+<div class="ifo">
+<h4><span class="nm f-fs1 f-ib f-thide">李霄云</span></h4>
+<p class="f-thide s-fc3">2009年快乐女声亚军</p>
+</div>
+</a>
+</li>
+</ul>
+<div class="more2"><a href="/discover/artist/signed/" class="s-fc3">更多入驻歌手&gt;</a></div>
+</div>
+<div class="n-dj n-dj-1">
+<h3 class="v-hd3">热门DJ</h3>
+<ul class="n-hotdj f-cb" id="hotdj-list">
+<li>
+<a href="/user/home?id=116137" class="cver"><img class="j-img" src="http://s4.music.126.net/style/web2/img/default_avatar_40.jpg" data-src="http://p4.music.126.net/_eYpn4kuH4LEVPDGJLRCsg==/2043992116044940.jpg?param=40y40"></a>
+<div class="info">
+<p><a href="/user/home?id=116137" class="nm-icn f-thide s-fc0">林海</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+<p class="f-thide s-fc3">著名音乐节目主持人</p>
+</div>
+</li>
+<li>
+<a href="/user/home?id=6319019" class="cver"><img class="j-img" src="http://s4.music.126.net/style/web2/img/default_avatar_40.jpg" data-src="http://p4.music.126.net/l4vawTgJF-MQCrgYwFobFQ==/5688873162237781.jpg?param=40y40"></a>
+<div class="info">
+<p><a href="/user/home?id=6319019" class="nm-icn f-thide s-fc0">青春975</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+<p class="f-thide s-fc3">湖南电台青春975官方账号</p>
+</div>
+</li>
+<li>
+<a href="/user/home?id=202716" class="cver"><img class="j-img" src="http://s4.music.126.net/style/web2/img/default_avatar_40.jpg" data-src="http://p3.music.126.net/ufBAXWD36Tb8-N9gRqT21A==/1996713116054140.jpg?param=40y40"></a>
+<div class="info">
+<p><a href="/user/home?id=202716" class="nm-icn f-thide s-fc0">DJ阿峰</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+<p class="f-thide s-fc3">楚天音乐广播DJ</p>
+</div>
+</li>
+<li>
+<a href="/user/home?id=155063" class="cver"><img class="j-img" src="http://s4.music.126.net/style/web2/img/default_avatar_40.jpg" data-src="http://p4.music.126.net/mzcLotYRQC3na_dylWWjwA==/2038494557918425.jpg?param=40y40"></a>
+<div class="info">
+<p><a href="/user/home?id=155063" class="nm-icn f-thide s-fc0">宁静嘎嘎</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+<p class="f-thide s-fc3">中央人民广播电台都市之声主持人/音乐监制</p>
+</div>
+</li>
+<li>
+<a href="/user/home?id=3888289" class="cver"><img class="j-img" src="http://s4.music.126.net/style/web2/img/default_avatar_40.jpg" data-src="http://p4.music.126.net/dUXcxvdIbne69p6DtarwNw==/5682276092465550.jpg?param=40y40"></a>
+<div class="info">
+<p><a href="/user/home?id=3888289" class="nm-icn f-thide s-fc0">颜仲坤的知音时代</a> <sup class="u-icn u-icn-1"></sup>
+</p>
+<p class="f-thide s-fc3">著名音乐人</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="template-box" style="display:none;"> <textarea name="ntp" id="m-wgt-create"><div class="lyct m-crgd f-cb f-tc">
+<p>歌单名：<input type="text" class="u-txt j-flag"></p>
+<div class="u-err f-vhide j-flag"><i class="u-icn u-icn-25"></i>错误提示</div>
+<p class="tip s-fc4">可通过“收藏”将音乐添加到新歌单中</p>
+<div class="btn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"><i>新 建</i></a>
+<a href="javascript:;" class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true"><i>取 消</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment"><div class="u-title u-title-1">
+<h3><span class="f-ff2">评论</span></h3><span class="sub s-fc3">共<span class="j-flag">0</span>条评论</span>
+</div>
+<div class="m-cmmt">
+<div class="iptarea">
+<div class="head"><img src="http://s4.music.126.net/style/web2/img/default_avatar.jpg?param=50y50"></div>
+<div class="j-flag"></div>
+</div>
+<div class="cmmts j-flag"></div>
+<div class="j-flag"></div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment2"><div class="dbox dbox-cmt">
+<span class="darr"><i class="bd">◆</i><i class="bg">◆</i></span>
+<div class="m-cmmt m-cmmt-s">
+<div class="iptarea j-flag">
+</div>
+<div class="cmmts">
+<div class="j-flag"></div>
+<div class="dmore dmore-cmt f-cb">
+<div class="dhas s-fc3">后面还有<span class="j-flag">0</span>条评论，<a data-type="viewmore" class="s-fc3 f-ff1" href="javascript:void(0)">查看更多&gt;</a></div>
+<a data-type="cc" class="dtoggle" href="javascript:void(0)">收起<i data-type="cc" class="u-icn u-icn-61"></i></a>
+</div>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment3"><div class="dcmt">
+<p><span class="f-fw1">评论</span> (<span class="j-flag"></span>)</p>
+<div class="m-cmmt m-cmmt-s">
+<div class="iptarea j-flag">
+</div>
+<div class="cmmts j-flag">
+</div>
+<div class="j-flag">
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item"> {list beg..end as y}
+{var x=xlist[y]}
+<div class="itm" data-id="${x.commentId}">
+<div class="head">
+<a href="/user/home?id=${x.user.userId}"><img src="${x.user.avatarUrl}?param=50y50"></a>
+</div>
+<div class="cntwrap">
+<div class="">
+<div class="cnt f-brk">
+<a href="/user/home?id=${x.user.userId}" class="s-fc7">${escape(x.user.nickname)}</a>
+{if x.user.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.user.expertTags && x.user.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;<a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7">${escape(x.beRepliedUser.nickname)}</a>
+{if x.beRepliedUser.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.beRepliedUser.expertTags && x.beRepliedUser.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')} （${timeformat(x.time)}）
+</div>
+</div>
+<div class="rp">
+{if GUser&&GUser.userId&&(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+<span class="dlt"><a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="delete">删除</a><span class="sep">|</span></span>
+{/if}
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply">回复</a>
+</div>
+</div>
+</div>
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item-2"> {list beg..end as y}
+{var x=xlist[y]}
+<div class="itm" data-id="${x.commentId}">
+<div class="head">
+<a href="/user/home?id=${x.user.userId}"><img src="${x.user.avatarUrl}?param=50y50"></a>
+</div>
+<div class="cntwrap">
+<div class="f-brk">
+<a href="/user/home?id=${x.user.userId}" class="s-fc7">${escape(x.user.nickname)}</a>
+{if x.user.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.user.expertTags && x.user.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;<a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7">${escape(x.beRepliedUser.nickname)}</a>
+{if x.beRepliedUser.authStatus==1}<sup class="u-icn u-icn-1"></sup>
+{elseif x.beRepliedUser.expertTags && x.beRepliedUser.expertTags.length>0}<sup class="u-icn u-icn-84"></sup>{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')} （${timeformat(x.time)}）
+</div>
+<div class="rp">
+{if GUser&&GUser.userId&&(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+<span class="dlt">
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="delete">删除</a><span class="sep">|</span>
+</span>
+{/if}
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply">回复</a>
+</div>
+</div>
+</div>
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-input-1"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag">评论</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+<div class="corr u-arr"><em class="arrline">◆</em><span class="arrclr">◆</span></div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-2"> <div class="rept m-quk m-quk-1 f-pr">
+<div class="iner">
+<div class="corr u-arr u-arr-1"><em class="arrline">◆</em><span class="arrclr">◆</span></div>
+<div class="m-cmmtipt m-cmmtipt-1 f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr j-wrap">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag">回复</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-3"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)">回复</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-4"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap f-pr">
+<textarea class="u-txt area j-flag"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag" style="display:none;"></i>
+<a class="f-fr u-btn u-btn-1 j-flag" href="javascript:void(0)">发送</a><span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-5"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)">评论</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-subscribe"><div class="lyct lyct-1 m-favgd f-cb">
+<div class="tit j-flag"><i class="u-icn u-icn-33"></i>新歌单</div>
+<div class="j-flag">
+<div class="u-load s-fc4"><i class="icn"></i> 加载中...</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-subscribe-item"><ul>
+{list beg..end as y}
+{var x=xlist[y]}
+<li data-id="${x.id}" class="xtag {if x.trackCount+size>1000}dis{/if}">
+<div class="item f-cb">
+<div class="left">
+<a href="javascript:void(0)" class="avatar" target="_blank">
+<img alt="" src="${x.coverImgUrl}?param=40y40">
+</a>
+</div>
+<p class="name f-thide"><a class="s-fc0" href="javascript:void(0)" target="_blank">${escape(cutStr(x.name,40))}</a></p>
+<p class="s-fc3">${x.trackCount}首</p>
+</div>
+</li>
+{/list}
+</ul>
+</textarea>
+<textarea name="ntp" id="m-wgt-forward"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare">
+<div class="u-txtwrap f-pr">
+<label style="display: block;" class="j-flag">说点什么</label>
+<textarea class="u-txt area j-flag" text = ><&#47;textarea>
+</div>
+<div class="oper f-cb j-flag">
+<div class="face f-fl f-pr">
+<i class="u-icn u-icn-36 f-fl j-flag"></i>
+<i class="u-icn u-icn-41 j-flag"></i>
+</div>
+<span class="zs f-fr s-fc3 j-flag">140</span>
+</div>
+<div class="btnwrap">
+<a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#"><i>转发</i></a>
+<a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="#"><i>取消</i></a>
+</div>
+<div class="j-flag u-err"><i class="u-icn u-icn-25"></i><span></span></div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-import-ok"><div class="lyct f-cb f-tc">
+<p class="f-fs3 f-ff2"><i class="u-icn u-icn-76"></i>&nbsp;&nbsp;歌曲同步完成</p>
+<div class="lybtn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 j-flag" hidefocus="true"><i>查看我的音乐</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-atlist"> <div class="u-atlist">
+{if suggests.length == 0}
+<p>轻敲空格完成输入</p>
+{else}
+<p>选择最近@的人或直接输入</p>
+{/if}
+<div class="lst">
+{list suggests as suggest}
+<a href="javascript:;" data-index=${suggest_index} class="f-thide j-sgt">${suggest.nickname}</a>
+{/list}
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-receiverInput"> <div class="ct f-pr">
+<div class="u-txtwrap f-pr">
+<div class="u-txt txtwrap j-flag">
+{if receiver}
+<div class="blk s-fc3 j-receiver">${receiver.nickname}<a href="#" class="cls" title="删除">&times;</a></div>
+{/if}
+<span class="holder-parent j-flag" style="float:left">
+<input type="text" class="txt j-flag" />
+<label class="holder j-flag">选择或输入好友昵称</label>
+</span>
+</div>
+</div>
+<ul class="full j-flag" style="_height:182px;display:none">
+{list users as user}
+<li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}><a href="#"><img src=${user.avatarUrl}>${user.nickname}</a></li>
+{/list}
+</ul>
+<div class="j-flag" style="position:absolute;left: -1000px;width:auto;"></div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-receiverList"> {list users as user}
+<li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}><a href="#"><img src=${user.avatarUrl}>${user.nickname}</a></li>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-sharewin"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare">
+<ul class="m-tabs1 j-flag">
+<li><a href="#"><em>分享给大家</em></a></li>
+<li><a href="#"><em>私信分享</em></a></li>
+</ul>
+<div class="f-cb j-flag">
+<div class="share f-fr">
+<span class="f-fl s-fc3">同时分享到：</span>
+<ul class="u-logo u-logo-s f-cb">
+<li><a class="u-slg u-slg-sn j-t" data-action="sns" data-type="2" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Binding&forcelogin=true" title="新浪微博"></a></li>
+<li><a class="u-slg u-slg-tc j-t" data-action="sns" data-type="6" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=6&clientType=web2&callbackType=Binding&forcelogin=true" title="腾讯微博"></a></li>
+<li style="display:none;"><a class="u-slg u-slg-wy j-t" data-action="sns" data-type="7" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=7&clientType=web2&callbackType=Binding&forcelogin=true" title="网易微博"></a></li>
+<li><a class="u-slg u-slg-qz j-t" data-action="sns" data-type="5" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=5&clientType=web2&callbackType=Binding&forcelogin=true" title="QQ空间"></a></li>
+<li><a class="u-slg u-slg-rr j-t" data-action="sns" data-type="4" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=4&clientType=web2&callbackType=Binding&forcelogin=true" title="人人网"></a></li>
+<li><a class="u-slg u-slg-db j-t" data-action="sns" data-type="3" hidefocus="true" href="http://music.163.com/api/sns/authorize?snsType=3&clientType=web2&callbackType=Binding&forcelogin=true" title="豆瓣网"></a></li>
+</ul>
+</div>
+</div>
+<div class="u-err j-flag" style="display:none">最多选择10位好友</div>
+<div class="j-flag"></div>
+<div class="u-txtwrap f-pr">
+<textarea class="u-txt area j-flag" placeholder="说点什么吧" data-action="txt"><&#47;textarea>
+</div>
+<div class="oper f-cb">
+<div class="face f-fl f-pr">
+<i class="u-icn u-icn-36 f-fl j-flag" data-action="emot"></i>
+<i class="u-icn u-icn-41 j-flag" data-action="at"></i>
+</div>
+<span class="f-fr s-fc4 j-flag">140/140</span>
+</div>
+<div class="btnwrap">
+<a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#" data-action="share"><i>分享</i></a>
+<a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="#" data-action="close"><i>取消</i></a>
+</div>
+<div class="u-err j-flag"><i class="u-icn u-icn-25"></i><span></span></div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-search-suggest">{macro listArtists(artists)}
+{list artists as art}
+${art.name|mark}&nbsp;
+{/list}
+{/macro}
+<div class="m-schlist">
+<p class="note s-fc3"><a class="s-fc3 xtag" href="/search/#/?s=${keyword}&type=1002">搜“${keyword|cutStr}” 相关用户</a> &gt;</p>
+<div class="rap">
+{list result.order as index}
+{var lst=result[index]}
+{if !!lst&&!!lst.length}
+<div class="itm f-cb">
+{if index=="songs"}
+<h3 class="hd"><i class="icn u-icn u-icn-26"></i><em class="f-fl">单曲</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as song}
+<li><a class="s-fc0 f-thide xtag" href="/song?id=${song.id}">${song.name|mark}-${listArtists(song.artists)}</a></li>
+{/list}
+</ul>
+{elseif index=="artists"}
+<h3 class="hd"><i class="icn u-icn u-icn-27"></i><em class="f-fl">歌手</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as artist}
+<li><a class="s-fc0 f-thide xtag" href="/artist?id=${artist.id}">${artist.name|mark}</a></li>
+{/list}
+</ul>
+{elseif index=="albums"}
+<h3 class="hd"><i class="icn u-icn u-icn-28"></i><em class="f-fl">专辑</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as album}
+<li><a class="s-fc0 f-thide xtag" href="/album?id=${album.id}">${album.name|mark}-${album.artist.name|mark}</a></li>
+{/list}
+</ul>
+{elseif index=="playlists"}
+<h3 class="hd"><i class="icn u-icn u-icn-29"></i><em class="f-fl">歌单</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as playlist}
+<li><a class="s-fc0 f-thide xtag" href="/playlist?id=${playlist.id}">${playlist.name|mark}</a></li>
+{/list}
+</ul>
+{/if}
+</div>
+{/if}
+{/list}
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-unbind-alert"><div class="lyct f-cb f-tc">
+<p class="f-fs1"><i class="u-icn u-icn-89 j-flag"></i><span class="f-fw1">&nbsp;&nbsp;&nbsp;<span class="j-flag">你的账号已解绑成功</span></span></p>
+<p class="mesg j-flag">&nbsp;</p>
+<div class="lybtn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"><i>我知道了</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-layer-tip"><div class="lyct f-cb f-tc">
+<p class="f-fs1 j-flag">message</p>
+<div class="lybtn">
+<a hidefocus="true" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" href="javascript:;"><i>我知道了</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-portrait"><div class="m-emts z-show">
+<div class="j-flag emtwrap f-cb"></div>
+<div class="page">
+<a href="#" hidefocus="true" class="j-flag u-btn u-btn-prv"></a><em class="j-flag s-fc3">1/2</em><a href="#" hidefocus="true" class="j-flag u-btn u-btn-nxt"></a>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="jst-portrait">{list plist as item}
+<span title="${item.key}" class="emtitm"><img data-text="${item.key}" data-url="${item.key|purl}" class="f-alpha" src="${item.key|purl}"></span>
+{/list}
+</textarea>
+</div>
+<div class="g-ft">
+<div class="m-ft">
+<div class="wrap">
+<a class="logo f-tdn" href="http://music.163.com/recruit" target="_blank">
+<span class="s-fc3">独立音乐人招募计划</span><br>
+<span class="s-fc4">加入我们 即将与超过亿万乐迷互动</span>
+</a>
+<div class="copy">
+<p>
+<a href="http://music.163.com/about/" target="_blank">关于网易</a><span>-</span>
+<a href="http://help.163.com/" target="_blank">客户服务</a><span>-</span>
+<a href="http://music.163.com/html/web2/service.html" target="_blank">服务条款</a><span>-</span>
+<a href="http://sitemap.163.com/" target="_blank">网站导航</a>
+</p>
+<p>网易公司版权所有©1997-2014&nbsp;&nbsp;粤B2-20090191-18</p>
+</div>
+<a id="g_feedback" href="#" class="fback s-fc4" onclick="nm.x.feedback();return false;" hidefocus="true"><i class="u-icn u-icn-3"></i>意见反馈</a>
+</div>
+</div>
+</div>
+<a title="回到顶部" class="m-back" href="#" id="g_backtop" hidefocus="true" style="display:none;">回到顶部</a>
+<script type="text/javascript">
+window.Gbanners =
+[
+{
+picUrl : "http://p3.music.126.net/SE4FTXqnVQXqLPrJ5sXqPQ==/6003333487843140.jpg",
+url : "http://music.163.com/#/topic?id=27001",
+backgroundUrl : "http://p3.music.126.net/u703XyzrVJ2l-3XPMVHihw==/5997835929704434.jpg",
+targetType : "1003"
+},
+{
+picUrl : "http://p3.music.126.net/JjLL7064QlZdGRte6bjUwg==/6007731534474960.jpg",
+url : "/dj?id=673143",
+backgroundUrl : "http://p3.music.126.net/Bn9NoSNN3sZcfW7EIUhBlg==/6007731534474962.jpg",
+targetType : "1001"
+},
+{
+picUrl : "http://p3.music.126.net/IHFAV6aAkvKYLRkwueEfzg==/5787829208803697.jpg",
+url : "/dj?id=673114",
+backgroundUrl : "http://p4.music.126.net/Ap2ABdUS4Mroik0qVP-10A==/5847202836708352.jpg",
+targetType : "1001"
+},
+{
+picUrl : "http://p4.music.126.net/7LTa3lAJ-SzSo8PZQfE_1Q==/5974746185516295.jpg",
+url : "/playlist?id=12100561",
+backgroundUrl : "http://p3.music.126.net/N16vdEcbyw3S4brXtBvpkw==/5773535557650037.jpg",
+targetType : "1000"
+},
+{
+picUrl : "http://p3.music.126.net/3aIJjX4nhEj5DPco0o3R7g==/5917571580884812.jpg",
+url : "/playlist?id=11913321",
+backgroundUrl : "http://p3.music.126.net/AxfS1IvvqRA_GZi26tWbWQ==/6045114929796629.jpg",
+targetType : "1000"
+},
+{
+picUrl : "http://p4.music.126.net/aOelhDtU0mb235ed2YqsoQ==/5969248627386198.jpg",
+url : "/dj?id=673153",
+backgroundUrl : "http://p3.music.126.net/zZ0nGDUfXNv71nJgnItPnQ==/5969248627386199.jpg",
+targetType : "1001"
+},
+{
+picUrl : "http://p3.music.126.net/LI_HNL9nGa0Je1pYXnYfAQ==/6029721767024504.jpg",
+url : "/dj?id=675003",
+backgroundUrl : "http://p3.music.126.net/pUimShbmkIm8UdCt2pqSgA==/5973646673895211.jpg",
+targetType : "1001"
+},
+{
+picUrl : "http://p4.music.126.net/Mo29q4VzgSnxuM2EtIsUig==/5927467185536387.jpg",
+url : "/dj?id=675051",
+backgroundUrl : "http://p3.music.126.net/4MG-fnECt12F3L_8uQNgXg==/6056110046082030.jpg",
+targetType : "1001"
+}
+];
+</script>
+<script src="http://s3.music.126.net/s/2/core.js?3b6a5133b4fa5626aed2b4b5185c381b" type="text/javascript"></script><script src="http://s3.music.126.net/s/2/pt_discover_index.js?6aa08ef825e26b7470c0b206d2a92e64" type="text/javascript"></script>
+</body>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-38766552-1'],['_setLocalGifPath', '/UA-38766552-1/__utm.gif'],['_setLocalRemoteServerMode']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = 'http://wr.da.netease.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();//fix ipad下的一个bug
+if (navigator.userAgent.indexOf('iPad') != -1) {
+iframeHeight = Math.max(
+Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
+Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
+Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+);
+top.document.body.style.height = iframeHeight + 20 + 'px';
+}</script>
+</html>

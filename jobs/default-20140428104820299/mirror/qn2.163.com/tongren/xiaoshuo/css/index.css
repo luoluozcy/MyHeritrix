@@ -1,0 +1,168 @@
+@charset "gb2312";
+/*=reset Start*/
+article,aside,audio,bdi,canvas,command,datalist,details,figcaption,figure,footer,header,hgroup,keygen,mark,meter,nav,output,progress,rp,rt,ruby,section,source,summary,time,track,vedio,title {display:block}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,figure {padding:0;margin:0;}
+fieldset,img{border:0;}
+:focus {outline:0;}
+address,caption,cite,code,dfn,em,th,var,optgroup {font-style:normal;font-weight:normal;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;}
+abbr,acronym {border:0;font-variant:normal;}
+input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+code,kbd,samp,tt {font-size:100%;}
+input,button,textarea,select {*font-size:100%;}
+body {line-height:1.5;min-width:1000px;}
+ol,ul,li {list-style:none;}
+table {border-collapse:collapse;border-spacing:0;}
+caption,th {text-align:left;}
+sup,sub {font-size:100%;vertical-align:baseline;}
+blockquote,q {quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after {content:'';content:none;}
+a{color:#565656;text-decoration:none; }
+a:hover{ color:red;text-decoration:none}
+strong{ font-weight:bold;}
+
+body{font:12px/1.7 simSun,"Microsoft YaHei",Arial;background:#fff;color:#565656;}
+
+.fl{ display:inline; float: left; }
+.fr{ display:inline; float: right; }
+.g-clr{ zoom: 1; }
+.g-clr:after{ display: block; clear: both; height: 0; content: "\0020"; }
+.g-thide { text-indent: -9999px; }
+.thide{ position: absolute; top:-9999px; left:-9999px; text-indent: -9999px; }
+.hide{ display: none; }
+
+#footer {clear:both;height:80px;width:100%;padding-top:20px;overflow:hidden;color:#000;}
+#NIE-copyRight a{color:#000;}
+#footer a:hover { text-decoration:underline; }
+/*=reset End*/
+
+/*----------------------
+      Layout
+-----------------------*/
+/*=layout Start*/
+#wrap{max-width:1920px;min-width:1000px;_width:expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":(document.documentElement.clientWidth<1000||document.body.clientWidth<1000)?"1000px":"100%");margin:0 auto;/*overflow:hidden;*/}
+#wrap-bg{ background:url(../images/bg.jpg) no-repeat top; }
+
+
+/*header*/
+header{position:relative; overflow:hidden;width:1000px;margin:0 auto;height:510px;}
+.logo{position:absolute;width:220px;height:80px;left:58px;top:48px;text-indent:-9999px;}
+.topNav{position:absolute;left:700px;top:2px;width:205px;font-size:12px;color:#fff;}
+.topNav li{float:left;height:20px;width:68px}
+.topNav li a,.topNav li a:visited{color:#fff;text-decoration:none}
+.topNav li a:hover{color:#375AA0;text-decoration:none;}
+/*center*/
+#center{width:1000px;min-height:1372px;position:relative;margin:0 auto;margin-top:8px;font-family:"Microsoft YaHei"; font-size:14px;line-height:24px;}
+
+.share{padding-bottom:10px; text-align: left;}
+#topShare {width:110px; position:absolute;top:299px;left:151px;background:url(../images/share.jpg) no-repeat; height:23px;z-index:2;display:hidden;}
+#topShare .NIE-share-iconBtn a {display:inline-block;float:left;width:22px;height:23px;margin:0;background:url(../images/share.jpg) no-repeat;}
+#topShare .NIE-share1 .NIE-share-iconBtn a img { visibility: hidden; }
+#topShare .NIE-share-more {width:0;display:none;}
+#topShare .NIE-share-more em{width:0;display:none;}
+
+#topShare .NIE-share-iconBtn a.a_0 {background-position:0 0 !important}
+#topShare .NIE-share-iconBtn a.a_1 {background-position:-22px 0 !important}
+#topShare .NIE-share-iconBtn a.a_2 {background-position:-44px 0 !important}
+#topShare .NIE-share-iconBtn a.a_3 {background-position:-66px 0 !important;}
+#topShare .NIE-share-iconBtn a.a_4 {background-position:-88px 0 !important;}
+#topShare .NIE-share-iconBtn a.a_0:hover {background-position:0 -23px !important}
+#topShare .NIE-share-iconBtn a.a_1:hover {background-position:-22px -23px !important}
+#topShare .NIE-share-iconBtn a.a_2:hover {background-position:-44px -23px !important}
+#topShare .NIE-share-iconBtn a.a_3:hover {background-position:-66px -23px !important}
+#topShare .NIE-share-iconBtn a.a_4:hover {background-position:-88px -23px !important}
+
+#nav{width:800px;height:152px;position:absolute;overflow:hidden;left:90px;top:358px;background:url(../images/nav.jpg) no-repeat;}
+#nav a{text-indent:-9999px;float:left;overflow:hidden;display:block;height:132px;width:152px;background:url(../images/nav.jpg) no-repeat;margin:0;}
+#nav a:hover,#nav a.current{background:url(../images/nav.jpg) no-repeat;}
+#nav a#nav1{height:152px;width:180px;background-position:0 0;}
+#nav a#nav1:hover,#nav a#nav1.current{background-position:0 -152px;}
+#nav a#nav2{width:155px;background-position:-180px 0;}
+#nav a#nav2:hover,#nav a#nav2.current{background-position:-180px -152px;}
+#nav a#nav3{background-position:-332px 0;}
+#nav a#nav3:hover,#nav a#nav3.current{background-position:-332px -152px;}
+#nav a#nav4{background-position:-484px 0;}
+#nav a#nav4:hover,#nav a#nav4.current{background-position:-484px -152px;}
+#nav a#nav5{background-position:-636px 0;}
+#nav a#nav5:hover,#nav a#nav5.current{background-position:-636px -152px;}.intro{color:#2A2A2A;font-size:16px;line-height:22px;font-weight:bold;position:absolute;font-family:"Microsoft YaHei";top:353px;left:67px;}
+
+
+.one{height:270px;width:100%;}
+.banner{width:305px;height:267px;left:9px;position:absolute;}
+#news_pic{width:305px;height:267px;margin:0 auto;overflow:hidden;}
+#news_pic img{width:305px;height:267px;}
+
+#newspic_num{position:absolute;right:5px;top:238px;height:15px;z-index:5;}
+#newspic_num a{overflow:hidden;display:block;width:15px;height:15px;background:url(../images/hotlinks.png) no-repeat -20px 0;_background-image:url(../images/hotlinks.gif);float:left;text-indent:-999em;margin:0 2px;_margin:0 2px;}
+#newspic_num a:hover,#newspic_num a.current{background-position:0 0;}
+
+.main{width:365px;height:250px;left:336px;position:absolute;}
+.main-top{max-height:130px;overflow:hidden;margin-bottom:10px;}
+.main-bottom{max-height:120px;overflow:hidden;}
+.main-bottom li{height:24px;line-height:24px;overflow:hidden;}
+
+#center p{line-height:20px;}
+#center p.title{font-size:16px;line-height:50px;font-weight:bold;font-family:"Microsoft YaHei";}
+.blue{color:#253C86;}
+.red{color:#B1240C;}
+.right{float:right;height:24px;line-height:24px;}
+
+#dsjx{width:280px;height:270px;left:719px;position:absolute;background:url(../images/dsjx.jpg) no-repeat;text-indent:-9999px;display:block;}
+
+.two{position:relative;height:520px;width:100%;background:url(../images/lc.png) no-repeat;text-indent:-9999px;}
+.btn{position:absolute;display:block;width:176px;height:65px;background:url(../images/index_btn.jpg) no-repeat;text-indent:-9999px;top:435px;}
+#lb1{left:565px;background-position:0 0;}
+#lb1:hover{background-position:0 -65px;}
+#lb2{left:778px;background-position:-176px 0;}
+#lb2:hover{background-position:-176px -65px;}
+
+.three{height:578px;width:100%;margin-top:10px;overflow:hidden;}
+.three-left{width:705px;float:left;height:528px;margin-top:50px;margin-left:26px;_margin-left:15px;}
+.left-top{height:205px;width:100%;overflow:hidden;}
+.dp{float:left;width:300px;margin-top:45px;height:144px;overflow:hidden;}
+.dp li{float:left;width:100%;line-height:24px;height:24px;}
+.dp li a{width:148px;text-align:left;height:24px;display:inline-block;}
+.dp li span{width:148px;text-align:center;height:24px;display:inline-block;}
+.zcp{float:right;width:365px;height:195px;}
+
+#zcp_nav{width:60px;height:15px;overflow:hidden;position:relative;left:300px;top:5px;}
+#zcp_nav a{background:url(../images/zcplink.png) no-repeat -20px 0;_background-image:url(../images/zcplink.gif);width:15px;display:block;height:15px;text-indent:-999em;overflow:hidden;float:left;margin-right:5px;}
+#zcp_nav a.current,#zcp_nav a:hover{background-position:0 0;}
+#zcp_nav a#zcp_nav1{}
+#zcp_nav a#zcp_nav2{}
+#zcp_nav a#zcp_nav3{}
+
+#zcp_content{width:350px;height:155px;overflow:hidden;position:relative;left:3px;top:32px;}
+#zcp_content .zcp_wrap,#zcp_content .zcp_content{width:350px;height:155px;}
+#zcp_content .zcp_wrap{display:none;}
+#zcp_content .zcp_wrap.current{display:block}
+
+.zcp-pic{display:block;width:113px;height:155px;float:left;}
+.zcp-pic img{width:113px;height:155px;}
+.zcp-box{float:right;width:225px;height:155px;overflow:hidden;}
+.zcp-box p.zcp-title{line-height:50px;font-size:24px;color:#000;font-weight:bold;margin-bottom:5px;}
+.zcp-box p.zcp-zj{margin:10px 0;height:30px;}
+.zcp-box p{line-height:24px;}
+
+.more{position:absolute;left:634px;color:#000;top:1092px;line-height:20px;font-size:12px;font-family:"Microsoft YaHei";}
+
+.wordleft{text-align:left;}
+.wordcenter{text-align:center;}
+.wordright{text-align:right;}
+.zpmc{width:202px;}
+.zjmc{width:270px;}
+.zuozhe{width:140px;}
+.gxsj{width:93px;}
+
+.left-bottom{height:230px;width:705px;margin-top:180px;}
+#center p.big{font-family:"Microsoft YaHei"; font-size:24px;line-height:48px;width:100%;height:48px;text-align:center;}
+.cszpgx li{float:left;line-height:20px;}
+.li_title{height:30px;line-height:30px;text-align:center;color:#253C86;}
+
+.three-right{width:210px;float:right;height:480px;margin-top:80px;margin-right:25px;_margin-right:12px;}
+.three-right .hg{width:210px;height:480px;overflow:hidden;}
+.three-right .hg li{float:left;width:100%;height:24px;line-height:24px;}
+.three-right .hg li a{width:136px;text-align:left;height:24px;line-height:24px;display:inline-block;}
+.three-right .hg li span{width:70px;text-align:center;height:24px;line-height:24px;display:inline-block;}
+
+#center p.dpbig{font-family:"Microsoft YaHei"; font-size:24px;line-height:48px;width:300px;margin-top:40px;height:48px;text-align:center;}

@@ -1,0 +1,723 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="keywords" content="企业邮箱,企业邮箱登录,登录企业邮箱,163企业邮箱,企业信箱,网易企业邮箱,企业邮局,企业电子邮箱,企业邮件,企业内部邮箱,中国企业邮箱,企业邮箱网站,购买企业邮箱,反垃圾邮件,电子邮件,Email,邮箱,传真邮件,电子商务,集团邮箱,集团邮局, 集团邮件" />
+<meta name="description" content="网易企业邮箱，最专业最稳定，反垃圾技术最优秀，收发速度最快，界面操作最简洁的企业邮箱，由自主研发国内首个全中文电子邮件系统以及具有十年邮箱运营经验的网易倾力打造。" />
+<meta name="title" content="网易企业邮箱 - 企业信息化专业解决方案">
+<title>网易企业邮箱 - 企业信息化专业解决方案</title>
+<link rel="icon" href="favicon.ico" />
+<link rel="Shortcut Icon" href="favicon.ico" />
+<link href="http://mimg.qiye.163.com/xm/all/index2010/css/style3.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#main_img{filter:progid:dximagetransform.microsoft.wipe(gradientsize=1.0,wipestyle=4, motion=forward)};
+.ahover{
+	background-position:-900px -720px;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+</style>
+<script type="text/javascript" src="http://analytics.163.com/ntes.js"></script>
+<script type="text/javascript" src="mail/js/qiye_util.js"></script>
+<script type="text/javascript" src="data/news/top.js"></script>
+<script type="text/javascript" src="mail/js/data_util.js"></script>
+<script type="text/javascript">
+	try{
+		if(top.location.href!=window.location.href){
+			top.location.href=window.location.href;
+		}
+	}catch(e){
+		window.location.href="blank.htm";
+	}
+	var sPrevTar="nothing";
+	function fChageTab(tar){
+		var sTarget=tar;
+		var sClassName="navBtn-current navBtn-"+sTarget+"-select";
+		var oTarget=document.getElementById("navBtnCurrent");
+		oTarget.className=sClassName;	
+	}
+	function fShowSubBtn(tar){
+		if(tar==""){
+		var oTarget=document.getElementById("navBtnCurrent");
+		var sClassName=String(oTarget.className);
+		var aClassSpl=sClassName.split("-");
+		var tar=aClassSpl[2];
+		}
+		var sTarget=tar;
+		var sSubTarget="navSubBtn"+sTarget;
+		if(sPrevTar!="nothing"){
+			var oPrevTarget=document.getElementById(sPrevTar);
+			oPrevTarget.style.display="none";
+			}
+		var oSubTarget=document.getElementById(sSubTarget);
+		var oTarBg=document.getElementById("navSubBtn");
+		if(tar!="index"){
+		oTarBg.className+=" navSubBtnBg";}
+		else{
+		oTarBg.className="navSubBtn";
+		}
+		oSubTarget.style.display="block";	
+		sPrevTar=sSubTarget;
+	}
+	function fHideSubBtn(){
+		if(sPrevTar!="nothing"){
+		var oPrevTarget=document.getElementById(sPrevTar);
+		var oTarBg=document.getElementById("navSubBtn");
+		oPrevTarget.style.display="none";
+		oTarBg.className="navSubBtn";
+		}
+	}
+	function fShowPopUp(){
+		var oTarget=document.getElementById("popup");
+		var oPopup=document.getElementById("popupTable");
+		var oMask=document.getElementById("mask");
+		if(oTarget.style.display=="block"){
+			oTarget.style.display="none";
+		}
+		else{
+			oTarget.style.display="block";
+			var nBodyHeight=document.body.offsetHeight;
+			var nBodyTop=document.body.scrollTop;
+			if(nBodyTop=="0"){nBodyTop=document.documentElement.scrollTop;}
+			if(nBodyHeight=="0"){nBodyHeight=document.body.scrollHeight;}
+			oTarget.style.height=nBodyHeight+"px";
+			oMask.style.height=nBodyHeight+"px";
+			oPopup.style.top=document.body.scrollHeight/2-oPopup.offsetHeight/2-(document.body.scrollHeight-document.documentElement.clientHeight)/2+nBodyTop+"px";
+		}
+	}
+	function fShowPopUpAccount(formId){
+		var oTarget=document.getElementById("popup");
+		var oPopup=document.getElementById("popupAccount");
+		var oPopupEn=document.getElementById("popupAccount_en");
+		var oMask=document.getElementById("mask");
+		if(oTarget.style.display=="block"){
+			//oPopup.style.display="none";
+			oTarget.style.display="none";
+			oMask.style.display="none";
+			//getId("loginform").style.display="none";
+			//getId("loginform_en").style.display="none";
+			getId("msgpid").style.display="none";
+			getId("msgpid_en").style.display="none";
+			//getId("popupAccount_en").style.display="none";
+		}
+		else{
+			//getId((formId || "loginform")).style.display="block";
+			oTarget.style.display="block";
+			oPopup.style.display="block";
+			var nBodyHeight=document.body.offsetHeight;
+			var nBodyTop=document.body.scrollTop;
+			if(nBodyTop=="0"){nBodyTop=document.documentElement.scrollTop;}
+			if(nBodyHeight=="0"){nBodyHeight=document.body.scrollHeight;}
+			oTarget.style.height=nBodyHeight+"px";
+			//oMask.style.height=nBodyHeight+"px";
+			var body = (document.documentElement || document.body);
+			oMask.style.width = body.scrollWidth + "px";
+			oMask.style.height = body.scrollHeight + "px";
+			oMask.style.display = "";
+			oPopup.style.top=document.body.scrollHeight/2-oPopup.offsetHeight/2-(document.body.scrollHeight-document.documentElement.clientHeight)/2+nBodyTop+"px";
+			oPopupEn.style.top=document.body.scrollHeight/2-oPopup.offsetHeight/2-(document.body.scrollHeight-document.documentElement.clientHeight)/2+nBodyTop+"px";
+			var form = getId((formId || "loginform"));
+			focusForm(form);
+		}
+	}
+	window.onresize = function() {
+		var high = document.body.scrollHeight;
+		var wide = document.body.scrollWidth;
+		//document.getElementById("divMask").style.height = high + 20 + "px";
+		//document.getElementById("divMask").style.width = wide;
+	}
+	window.onload = function(){
+		showLoginMsg();
+	}
+	function qu(ev){
+		ev = ev || window.event;
+		if(ev.keyCode == 13){
+			getId("query_num").blur();
+			q();
+		}
+	}
+	function q(){
+		var id = "query_num";
+		var num = getId(id).value;
+		num = parseInt(num.trim());
+		if(isNaN(num)){
+			alert("请输入正确的数字");
+			getId(id).focus();
+			getId(id).select();
+			return;
+		}
+		if(num > 2000){
+			location.href = "mail/buy-price.htm#than500";
+			return;
+		}
+		Register.query(num);
+	}
+</script>
+<script type="text/javascript">
+var youdao_conv_id = 272676; 
+</script> 
+<script type="text/javascript" src="http://conv.youdao.com/pub/conv.js"></script>
+</head>
+
+<body class="index">
+	<div class="page">
+		<div class="header">
+			<div class="topArea" onmouseover="fHideSubBtn();">
+				<h1 class="logo bg-abg">网易企业邮箱-企业信息化专业解决方案</h1>
+				<div class="ctrlPart">
+					<div class="link">
+						<a href="javascript:void(0)" onclick="fShowPopUpAccount()">企业邮箱用户登录</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="https://mail.qiye.163.com/mailapp/qiyeurs/#/login" target="_blank">账号密保平台</a>
+					</div>
+					<a  href="javascript:Register.showDiv('f_register');" style="float:right;width:122px;height:23px;line-height:22px;text-align:left;text-indent:11px;color:#fff;background:url(http://mimg.qiye.163.com/xm/all/index2010/img/btn_try.gif) no-repeat 0 0;margin-top:10px">立即免费试用7天</a>
+				</div><!-- .ctrlPart -->
+			</div><!-- .topArea -->
+			<div class="nav">
+				<div class="navBtn bg-abg">
+					<ul>
+						<li><a href="index.htm" class="navBtn-index" onmouseover="fShowSubBtn('index');">首页</a></li>
+						<li class="sprt"></li>
+						<li><a href="mail/intro-email.htm" class="navBtn-intro" onmouseover="fShowSubBtn('intro');">产品介绍</a></li>
+						<li class="sprt"></li>
+						<li><a href="mail/buy-price.htm" class="navBtn-buy" onmouseover="fShowSubBtn('buy');">产品购买</a></li>
+						<li class="sprt"></li>
+						<li><a href="mail/join-dstrib.htm" class="navBtn-join" onmouseover="fShowSubBtn('join');">经销商与加盟</a></li>
+						<li class="sprt"></li>
+						<li><a href="mail/help-solution.htm" class="navBtn-help" onmouseover="fShowSubBtn('help');">帮助中心</a></li>
+						<li class="sprt"></li>
+						<li><a href="mail/enterprise-comm.htm" class="navBtn-enterprise" onmouseover="fShowSubBtn('enterprise');">企业服务</a></li>
+					</ul>
+					<div class="navBtn-current navBtn-index-select" id="navBtnCurrent" onmouseover="fShowSubBtn('');">
+						<div class="navBtn-current-left"></div>
+						<div class="navBtn-current-cont"></div>
+						<div class="navBtn-current-right"></div>
+					</div>
+				</div><!-- .navBtn -->
+				<div class="navPic">
+					<div class="navPic-left bg-abg"></div>
+					<div class="navPic-cont">
+						<div class="navPic-img" onmouseover="fHideSubBtn();">
+							<a href="mail/intro-case.htm" id="main_a" target="_blank"><img id="main_img" src="http://mimg.qiye.163.com/xm/all/index2010/img/index1.png" alt="网易企业邮" /></a>
+							<a class="picNav-1 on" onclick="change_img(0)" id="pic_nav_1" href="javascript:void(0);" style="display:;">1</a>
+							<a class="picNav-2" onclick="change_img(1)" id="pic_nav_2" href="javascript:void(0);" style="display: none;">2</a>
+							<a class="picNav-3" onclick="change_img(2)" id="pic_nav_3" href="javascript:void(0);" style="display: none;">3</a>
+							<a class="picNav-4" onclick="change_img(3)" id="pic_nav_4" href="javascript:void(0);" style="display: none;">4</a>
+							<a class="picNav-5" onclick="change_img(4)" id="pic_nav_5" href="javascript:void(0);" style="display: none;">5</a>
+							<div class="picNav-big" id="nav_buttom"></div>
+						</div>
+						<div class="navSubBtn" id="navSubBtn">
+							<p id="navSubBtnindex" class="navSubBtn-index">&nbsp;</p>
+							<p id="navSubBtnintro" class="navSubBtn-intro"><a href="mail/intro-email.htm">邮箱介绍</a><span>|</span><a href="mail/intro-advantage.htm">产品优势</a><span>|</span><a href="mail/intro-function.htm">功能介绍</a><span>|</span><a href="mail/intro-case.htm">成功案例</a><span>|</span><a href="mail/intro-partner.htm">合作机构</a></p>
+							<p id="navSubBtnbuy" class="navSubBtn-buy"><a href="mail/buy-price.htm">产品报价</a><span>|</span><a href="mail/buy-flow.htm">购买流程</a></p>
+							<p id="navSubBtnjoin" class="navSubBtn-join"><a href="mail/join-dstrib.htm">经销商分布</a><span>|</span><a href="http://qiye.163.com/mail/join-engineer.htm">销售工程师查询</a><span>|</span><a href="mail/join-dealer.htm">经销商加盟</a></p>
+							<p id="navSubBtnhelp" class="navSubBtn-help"><a href="mail/help-solution.htm">常见问题</a><span>|</span><a href="mail/help-dns.htm">DNS设置</a><span>|</span><a href="mail/help-client.htm">客户端设置</a><span>|</span><a href="mail/help-manual.htm">下载用户手册</a><span>|</span><a href="mail/help-login-solution.htm">登录问题</a><span>|</span><a href="mail/help-other-solution.htm">其他问题</a><span>|</span><a href="mail/help-reset.htm">管理员登录密码</a></p>
+							<p id="navSubBtnenterprise" class="navSubBtn-enterprise"><a href="service/">企业服务首页</a><span>|</span><a href="mail/enterprise-client.htm">企业闪电邮</a><span>|</span><a href="mail/enterprise-plugin.htm">企业通讯录插件</a><span>|</span><a href="mail/enterprise-comm.htm">网易即时通</a><span>|</span><a href="http://qiye.163.com/network_disk/" target="_blank">企业网盘</a><span>|</span><a href="mobile/yixin/" target="_blank">移动应用</a></p>
+						</div>
+					</div><!-- .navPic-cont -->
+					<div class="navPic-right bg-abg" onmouseover="fHideSubBtn();"></div>
+				</div><!-- .navPic -->
+			</div><!-- .nav -->
+		</div><!-- .header -->	
+		<div class="content">
+			<div class="content-advantage">
+				<div class="content-advantage-border">
+					<div class="content-advantage-bg">
+						<ul class="content-advantage-list">
+							<li onmouseover="this.className='beSelectd'" onmouseout="this.className=''" onclick="location.href='mail/intro-advantage.htm'">
+							<div class="ico-advantage ico-advantage-1">
+							<div class="advantage-desp">统一管理&nbsp;企业保障</div>
+							</div>
+							<div class="advantage-txt">邮箱管理权在公司，保证重要业务资料不丢失。</div>
+							</li>
+							<li class="sprt"></li>
+							<li onmouseover="this.className='beSelectd'" onmouseout="this.className=''" onclick="location.href='mail/intro-advantage.htm'">
+							<div class="ico-advantage ico-advantage-2">
+							<div class="advantage-desp">企业名片&nbsp;形象代言</div>
+							</div>
+							<div class="advantage-txt advantage-txt2">统一的邮箱账号后缀，有利于塑造企业形象，方便业务联络。</div>
+							</li>
+							<li class="sprt"></li>
+							<li onmouseover="this.className='beSelectd'" onmouseout="this.className=''" onclick="location.href='mail/intro-advantage.htm'">
+							<div class="ico-advantage ico-advantage-3">
+							<div class="advantage-desp">金牌客户服务</div>
+							</div>
+							<div class="advantage-txt">国内唯一获得“中国最佳客户服务奖”的互联网企业。</div>
+							</li>
+							<li class="sprt"></li>
+							<li onmouseover="this.className='beSelectd'" onmouseout="this.className=''" onclick="location.href='mail/intro-advantage.htm'">
+							<div class="ico-advantage ico-advantage-4">
+							<div class="advantage-desp">安全稳定的系统</div>
+							</div>
+							<div class="advantage-txt">采用大型矩阵式服务器架构，安全稳定，收发邮件通畅无阻。</div>
+							</li>
+							<li class="sprt"></li>
+							<li onmouseover="this.className='beSelectd'" onmouseout="this.className=''" onclick="location.href='mail/intro-advantage.htm'">
+							<div class="ico-advantage ico-advantage-5">
+							<div class="advantage-desp">反垃圾反病毒能力</div>
+							</div>
+							<div class="advantage-txt">垃圾邮件正确捕获率高达99.95%，病毒邮件过滤接近100%。</div>
+							</li>
+							<li class="sprt"></li>
+							<li onmouseover="this.className='beSelectd'" onmouseout="this.className=''" onclick="window.open('mail/promotion20111101safe.htm')">
+							<div class="ico-advantage ico-advantage-6">
+							<div class="advantage-desp">国家权威安全证书</div>
+							</div>
+							<div class="advantage-txt advantage-txt6">中国信息安全测评中心权威证书，EAL2级信息安全独家资质。</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="content-advantage-bottom"></div>
+			</div><!-- .content-advantage -->
+			<div class="content-modBlock">
+				<div class="content-modBlock-price content-modBlockBg">
+					<div class="fn-clear">
+						<div class="ipt-txt"><p style="width:155px;"><input type="text" id="query_num" value="请输入企业用户人数" onkeyup="qu(event)" onmouseover="this.value='';this.onmouseover='';"/></p><span></span></div>
+						<a class="check" onmouseover="this.className+=' check-hover'" onmouseout="this.className='check'" onclick="q()">查询试用</a>
+					</div>
+					<div class="fn-clear">
+						<div class="btn-withArrow btn1" onmouseover="this.className='btn-withArrow btn-withArrow-hover btn1'" onmouseout="this.className='btn-withArrow btn1'" onclick="location.href='mail/buy-price.htm'"><p>产品报价</p><span></span></div>
+						<div class="btn-withArrow btn2" onmouseover="this.className='btn-withArrow btn-withArrow-hover btn2'" onmouseout="this.className='btn-withArrow btn2'" onclick="location.href='mail/buy-flow.htm'"><p>购买流程</p><span></span></div>
+					</div>
+				</div>
+				<div class="content-modBlock-question content-modBlockBg">
+					<ul>
+						<li><strong>·</strong><a href="mail/help-solution.htm">什么是企业邮箱？</a></li>
+						<li><strong>·</strong><a href="mail/help-solution.htm">哪些企业需要购买企业邮箱？</a></li>
+						<li><strong>·</strong><a href="mail/help-solution.htm">为什么要使用企业邮箱？</a></li>
+						<li><strong>·</strong><a href="mail/help-solution.htm">企业邮箱比自建邮箱有哪些优势？</a></li>
+					</ul>
+				</div>
+				<div class="content-modBlock-contact content-modBlockBg">
+					<div class="email">kf@qiye.163.com</div>
+				</div>
+			</div><!-- .content-modBlock -->
+			<div class="content-friendlyLink">
+				<table class="content-friendlyLink-cont">
+					<tbody>
+						<tr>
+							<th class="friendlyLink-title" style="cursor:pointer;" onclick="location.href='mail/intro-case.htm'">合作案例</th>
+							<td><img src="http://mimg.qiye.163.com/xm/all/index2010/img/link.jpg" alt="合作案例" /></td>
+							<td><img src="http://mimg.qiye.163.com/xm/all/index2010/img/link2.jpg" alt="合作案例" /></td>
+							<td><img src="http://mimg.qiye.163.com/xm/all/index2010/img/link3.jpg" alt="合作案例" /></td>
+							<td align="right"><a style="text-align:right" href="http://www.coremail.cn/" target="_blank"><img src="http://mimg.qiye.163.com/xm/all/index2010/img/link5.jpg" alt="Coremail" /></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!-- .content-friendlyLink -->	
+			<div class="content-news">
+				<div class="content-news-title" style="cursor:pointer;" onclick="location.href='mail/news-list.htm'">最新公告</div>
+				<script type="text/javascript">
+				<!--
+				fInsertIndexTop();
+				//-->
+				</script>
+				<a class="content-news-each more" href="mail/news-list.htm">更多&gt;&gt;</a>
+			</div><!-- .content-news -->
+			<div class="content-news-shadow"></div>
+		</div><!-- .content -->	
+		<div class="footer">
+			<br/>
+			<p class="linkPart">
+				<a href="http://corp.163.com/index_gb.html" target="_blank">关于网易</a>&nbsp;-&nbsp;
+				<a href="http://e.weibo.com/163qiye" target="_blank">官方微博</a>&nbsp;-&nbsp;
+				<a href="http://qiyemail.blog.163.com/" target="_blank">官方博客</a>&nbsp;-&nbsp;
+                                <a href="http://sitemap.163.com/" target="_blank">网站地图</a>&nbsp;-&nbsp;
+				<a href="http://help.163.com/" target="_blank">客户服务</a>&nbsp;-&nbsp;
+				<a href="http://corp.163.com/gb/legal/legal.html" target="_blank">相关法律</a>
+			</p>
+			<p class="copyright">网易公司版权所有&nbsp;&copy;&nbsp;1997--<script type="text/javascript" src="http://mimg.127.net/copyright/year.js"></script>
+			<a id="KX_IMG" style="position:relative;left:4px;top:4px" href="https://ss.knet.cn/verifyseal.dll?sn=e12051044010020841301459&ct=df&pa" target="_blank">
+				<img src="http://mimg.127.net/logo/knet.png" alt="可信网站，身份验证" />
+			</a>
+			</p>
+		</div><!-- .footer -->
+	</div><!-- .page -->
+	<!--<iframe style="display: none;" src="mail/register.htm"></iframe>-->
+	<div class="popup" id="popup" style="display:none;">
+		
+		<div class="popTable" id="popupAccount"  style="display:none; zoom:1;">
+			<iframe frameborder="0" scrolling="0" style="width:100%;height:180px;position:absolute;top:0;" src="about:blank"></iframe>
+			<form style="position: relative;background:#fff;" id="loginform" action="" method="post" target="_blank" onsubmit="frmvalidator();return false;">
+				<input type="submit" name="" value="" style="display: none;"/>
+				<div class="title"><p>企业用户登录：</p><a href="javascript:void(0);" onclick="fShowPopUpAccount();">关闭</a></div>
+				<div id="msgpid" style="height: 16px !important; height: 14px; background-color: #ffefa4; border: 1px #FF9900 solid; text-align: left; padding: 2px 8px; padding-right: 20px; line-height: 150%; color: #dc6800; display: none"></div>
+				<div class="fn-clear" style="margin:20px 0 0 150px;"><span style="line-height:30px;height:30px;display:block;float:left;">用户名：</span>
+					<div style="display:block;float:left;" class="ipt-txt"><p style="width:100px;"><input type="text" id="txt_account_name" name="account_name"/></p><span></span></div>
+					<span style="line-height:30px;height:30px;display:block;float:left;width:15px;">@</span>
+					<div style="display:block;float:left;" class="ipt-txt"><p style="width:100px;"><input type="text" id="txt_domain_name" name="domain"/></p><span></span></div>
+				</div>
+				<div class="fn-clear" style="margin:10px 0 0 150px;"><span style="line-height:30px;height:30px;display:block;float:left;">密&nbsp;&nbsp;&nbsp;码：</span><div style="display:block;float:left;" class="ipt-txt"><p style="width:230px;"><input type="password" id="txt_password" name="password"/></p><span></span></div></div>
+				<div class="fn-clear" style="margin:10px 0 0 150px;">
+					<label style="margin-left:40px;" for="remUsername"><input id="remUsername" type="checkbox"/>记住用户名</label>
+					<label for="secure"><input type="checkbox" id="secure" name="secure" value="1" onclick="checksecure(this,'all_secure')"/>SSL安全登录 </label>
+					<label for="all_secure"><input type="checkbox" id="all_secure" name="all_secure" value="1" onclick="checksecure(this,'secure')"/>全程SSL </label>
+					<a style="font-size:12px;font-family:Arial;font-weight:700;" href="service-solution.htm#4" target="_blank">?</a>
+				</div>
+				<div class="fn-clear" style="margin-bottom:10px;">
+					<div style="margin-left:220px;float:left;display:inline;" class="btn-crystal" onclick="frmvalidator()" onmouseover="this.className='btn-crystal btn-crystal-hover'" onmouseout="this.className='btn-crystal'"><p>&nbsp;登录&nbsp;</p><span></span></div>
+					<div style="margin-left:20px;float:left;" class="btn-crystal" onclick="switchVersion(1)" onmouseover="this.className='btn-crystal btn-crystal-hover'" onmouseout="this.className='btn-crystal'"><p>&nbsp;English&nbsp;</p><span></span></div>
+				</div>
+			</form>
+		</div><!-- .popTable -->
+		
+		<div class="popTable" id="popupAccount_en"  style="display: none; zoom:1;">
+			<iframe frameborder="0" scrolling="0" style="width:100%;height:180px;position:absolute;top:0;" src="about:blank"></iframe>
+			<form style="position: relative;background:#fff;" id="loginform_en" action="" method="post" target="_blank" onsubmit="frmvalidator_en();return false;">
+				<input type="hidden" name="language" value="1" />
+				<input type="submit" name="" value="" style="display: none;"/>
+				<div class="title"><p>User login：</p><a href="javascript:void(0);" onclick="fShowPopUpAccount();">close</a></div>
+				<div id="msgpid_en"
+					style="height: 16px !important; height: 14px; background-color: #ffefa4; border: 1px #FF9900 solid; text-align: left; padding: 2px 8px; padding-right: 20px; line-height: 150%; color: #dc6800; display: none">
+				</div>
+				<div class="fn-clear" style="margin:20px 0 0 150px;"><span style="line-height:30px;height:30px;display:block;float:left;">Username：</span>
+					<div style="display:block;float:left;" class="ipt-txt"><p style="width:100px;"><input type="text" id="txt_account_name_en" name="account_name"/></p><span></span></div>
+					<span style="line-height:30px;height:30px;display:block;float:left;width:15px;">@</span>
+					<div style="display:block;float:left;" class="ipt-txt"><p style="width:100px;"><input type="text" id="txt_domain_name_en" name="domain"/></p><span></span></div>
+				</div>
+				<div class="fn-clear" style="margin:10px 0 0 150px;"><span style="line-height:30px;height:30px;display:block;float:left;">Password：</span><div style="display:block;float:left;" class="ipt-txt"><p style="width:230px;"><input type="password" id="txt_password_en" name="password"/></p><span></span></div></div>
+				<div class="fn-clear" style="margin:10px 0 0 150px;">
+					<label style="margin-left:40px;" for="remUsername_en"><input id="remUsername_en" type="checkbox"/>Remember username</label>
+					<label for="secure_en"><input type="checkbox" id="secure_en" name="secure" value="1" onclick="checksecure(this,'all_secure_en')"/>SL login </label>
+                    <label for="all_secure_en"><input type="checkbox" id="all_secure_en" name="all_secure" value="1" onclick="checksecure(this,'secure_en')"/>All SSL </label>
+					<a style="font-size:12px;font-family:Arial;font-weight:700;" href="service-solution.htm" target="_blank">?</a>
+				</div>
+				<div class="fn-clear" style="margin-bottom:10px;">
+					<div style="margin-left:220px;float:left;display:inline;" class="btn-crystal" onclick="frmvalidator_en();" onmouseover="this.className='btn-crystal btn-crystal-hover'" onmouseout="this.className='btn-crystal'"><p>&nbsp;Sign in&nbsp;</p><span></span></div>
+					<div style="margin-left:20px;float:left;" class="btn-crystal" onclick="switchVersion(0)" onmouseover="this.className='btn-crystal btn-crystal-hover'" onmouseout="this.className='btn-crystal'"><p>&nbsp;简体中文版&nbsp;</p><span></span></div>
+				</div>
+			</form>
+		</div><!-- .popTable -->
+		<div class="inner" id="mask" ></div>
+	</div><!-- .popup -->
+	
+	<script language="javascript">	
+	
+	//重写可信标识
+	function fKX(){
+		function RndNum_CNNIC(k){
+			for (var rnd = "", i = k; i--; ){
+				rnd += Math.floor( Math.random() * 10 );
+			}
+			return rnd;
+		}
+		var oKX = document.getElementById('KX_IMG');
+		var oKXimg = oKX.getElementsByTagName('img')[0];
+		var sHref = 'https://ss.knet.cn/verifyseal.dll?sn=e12051044010020841301459&ct=df&pa=';
+		var sPa = RndNum_CNNIC(6);
+		oKX.href = sHref + sPa;
+	}
+	fKX();
+	
+	//从cookie中获取用户名和域名
+	var cookie = document.cookie;
+	var arr = cookie.split(";");
+	for(var i=0;i<arr.length;i++){
+		var items = arr[i].split("=");
+		if(items[0].trim()=="qiye_account" && items.length>1){
+			var val = items[1].trim();
+			if(val == "")continue;
+			var pos = val.indexOf("@");
+			if(pos == -1){
+				getId("txt_account_name").value=val;
+				getId("txt_account_name_en").value=val;
+			}else{
+				var account_name = val.substring(0,pos);
+				var domain = val.substring(pos+1,val.length);
+				getId("txt_account_name").value=account_name;
+				getId("txt_domain_name").value=domain;
+				getId("txt_account_name_en").value=account_name;
+				getId("txt_domain_name_en").value=domain;
+			}
+			getId("remUsername").checked="checked";
+			getId("remUsername_en").checked="checked";
+			break;
+		}		
+	}
+	function switchVersion(ver){
+		if(ver == 0){
+			getId("popupAccount_en").style.display = "none";
+			getId("popupAccount").style.display = "";
+			focusForm(getId("loginform"));
+		}else{
+			getId("popupAccount_en").style.display = "";
+			getId("popupAccount").style.display = "none";
+			focusForm(getId("loginform_en"));
+		}
+	}
+	function focusForm(form){
+		if(form.account_name.value==""){
+			form.account_name.focus();
+		}else if(form.domain.value==""){
+			form.domain.focus();
+		}else{
+			form.password.focus();
+		}
+	}
+	//登录提交
+	function frmvalidator() {
+		getId("msgpid").style.display = 'none';
+		var account_name = getId("txt_account_name").value;
+		var domain_name = getId("txt_domain_name").value;
+		var password = getId("txt_password").value;
+		if (account_name == null || account_name == "") {
+			getId("msgpid").innerHTML = "请您输入用户名";
+			getId("msgpid").style.display = 'block';
+			getId("txt_account_name").focus();
+			return false;
+		}
+		if (domain_name == null || domain_name == "") {
+			getId("msgpid").innerHTML = "请您输入域名";
+			getId("msgpid").style.display = 'block';
+			getId("txt_domain_name").focus();
+			return false;
+		}
+		if (password == null || password == "") {
+			getId("msgpid").innerHTML = "请您输入密码";
+			getId("msgpid").style.display = 'block';
+			getId("txt_password").focus();
+			return false;
+		}
+		var url = "http://entry.qiye.163.com/domain/domainEntLogin";
+		if(getId("secure").checked || getId("all_secure").checked){
+			url = "https://entry.qiye.163.com/domain/domainEntLogin";
+		}
+		if(getId("remUsername").checked){
+			var host=location.hostname;
+			if(host.substring(0,5)=="mail."){
+				host=host.replace("mail.","");
+			}
+			var exp  = new Date();    
+    		exp.setTime(exp.getTime() + 86400 * 365 * 10);
+			document.cookie="qiye_account="+account_name+"@"+domain_name+";domain="+host+";path=/;expires="+exp.toGMTString();
+		}else{
+			document.cookie="qiye_account=";
+		}
+		getId("loginform").action = url;
+		fShowPopUpAccount();
+		getId("loginform").submit();
+		
+		getId("txt_password").value = "";
+		if(!getId("remUsername").checked){
+			getId("txt_account_name").value="";
+			getId("txt_domain_name").value="";
+		}
+	}
+	//登录提交
+	function frmvalidator_en() {
+		getId("msgpid_en").style.display = 'none';
+		var account_name = getId("txt_account_name_en").value;
+		var domain_name = getId("txt_domain_name_en").value;
+		var password = getId("txt_password_en").value;
+		if (account_name == null || account_name == "") {
+			getId("msgpid_en").innerHTML = "Please input your account";
+			getId("msgpid_en").style.display = 'block';
+			getId("txt_account_name_en").focus();
+			return false;
+		}
+		if (domain_name == null || domain_name == "") {
+			getId("msgpid_en").innerHTML = "Please input your domain";
+			getId("msgpid_en").style.display = 'block';
+			getId("txt_domain_name_en").focus();
+			return false;
+		}
+		if (password == null || password == "") {
+			getId("msgpid_en").innerHTML = "Please input your password";
+			getId("msgpid_en").style.display = 'block';
+			getId("txt_password_en").focus();
+			return false;
+		}
+		var url = "http://entry.qiye.163.com/domain/domainEntLogin";
+		if(getId("secure_en").checked || getId("all_secure_en").checked){
+			url = "https://entry.qiye.163.com/domain/domainEntLogin";
+		}
+		if(getId("remUsername_en").checked){
+			var host=location.hostname;
+			var exp  = new Date();    
+    		exp.setTime(exp.getTime() + 86400 * 365 * 10);
+			document.cookie="qiye_account="+account_name+"@"+domain_name+";domain="+host+";path=/;expires="+exp.toGMTString();
+		}else{
+			document.cookie="qiye_account=";
+		}
+		getId("loginform_en").action = url;
+		fShowPopUpAccount()
+		getId("loginform_en").submit();
+		
+		getId("txt_password_en").value = "";
+		if(!getId("remUsername_en").checked){
+			getId("txt_account_name_en").value="";
+			getId("txt_domain_name_en").value="";
+		}
+	}
+var msg = {
+"ERR.LOGIN.USERORPASSNULL":"参数错误:用户名或者密码为空",
+"ERR.LOGIN.DOMAINNULL":"参数错误:未指定的域邮箱参数",
+"ERR.LOGIN.PASSERR":"用户名和密码不匹配",
+"ERR.LOGIN.ILLEGALACCOUNT":"该帐号属于群发名单或者别名，不允许登录",
+"ERR.LOGIN.USERNOTEXIST":"该帐号不存在，请您确认域名和帐号",
+"ERR.LOGIN.SUPERADMINDOMAINERR":"该超级管理员并未申请任何域名邮箱",
+"ERR.LOGIN.SYSTEMBUSY":"登录系统繁忙，请你稍后再试",
+"ERR.LOGIN.IPDENY":"登录失败，你的IP在黑名单中，请您联系管理员",
+"ERR.LOGIN.USRSTATUS1":"该帐号已被禁用，请联系管理员",
+"ERR.LOGIN.USRSTATUS2":"帐号已过期，请联系管理员",
+"ERR.LOGIN.USRSTATUS5":"该帐号已被管理员删除，请联系管理员",
+"SUC.LOGIN.USRUNLOCK":"该帐号已解除冻结状态，请您再次输入用户和密码继续",
+"ERR.LOGIN.DOMAINEXPED":"该域名邮箱已经过期了",
+"ERR.LOGIN.DOMAINNOTREGISTER":"该域名尚未通过，请以超级管理员登录",
+"ERR.LOGIN.DOMAINSTATUS1":"该域名邮箱已被禁用，请您联系客服",
+"ERR.SESSIONNULL":"会话已经失效，请您重新登录操作",
+"ERR.SYSTEM":"系统繁忙，请您稍后再试",
+"SYSTEM.BUSY":"登录系统繁忙，请您稍后再试",
+"ERR.ADMINREQUIRE":"非法权限，该帐号无法执行这个操作",
+"ERR.PARAMNULL":"系统发生错误：参数为空",
+"ERR.ERR.PARAMTOOLONG":"参数过长",
+"ERR.ILLEGAL":"系统非法操作",
+"ERR.REQ.VERIFYCODE":"密码出错次数过多,请稍后再试"
+};
+var msg_en={
+"ERR.LOGIN.PASSERR":"Username and password do not match",
+"ERR.LOGIN.USERNOTEXIST":"The account does not exist, please confirm your domain name and username",
+"ERR.LOGIN.SYSTEMBUSY":"System busy, please try again later",
+"ERR.LOGIN.IPDENY":"Login failed, your IP is in the blacklist, please contact our aministrator",
+"ERR.LOGIN.USRSTATUS1":"The account has been disabled, please contact the administrator",
+"ERR.LOGIN.USRSTATUS2":"The account has expired, please contact the administrator",
+"ERR.LOGIN.USRSTATUS5":"The account has been deleted, please contact the administrator",
+"SUC.LOGIN.USRUNLOCK":"The account has been frozen,please enter your username and password again to continue",
+"ERR.LOGIN.DOMAINEXPED":"The domain has expired",
+"ERR.SESSIONNULL":"Session has expired, please re-login",
+"ERR.SYSTEM":"System busy, please try again later",
+"SYSTEM.BUSY":"System busy, please try again later"
+};
+function getParam(key){
+	if(!key)return null;
+	var url = window.location.href;
+	var arr = url.split("?");
+	if(arr.length<2){
+		return null;
+	}
+	arr = arr[1].split("&");
+	for(var i=0;i<arr.length;i++){
+		if(arr[i].indexOf(key+"=")==0){
+			return arr[i].replace((key+"="),"");
+		}
+	}
+	return null;
+}
+function showMsg(msg, version){
+	getId('msgpid'+version).innerHTML = msg;
+	fShowPopUpAccount('loginform' + version);
+	getId('msgpid'+version).style.display="block";
+}
+function showLoginMsg(){
+	var param = getParam("msg");
+	if(param){
+		var lang=getParam("hl");
+		if(lang=="en"){
+			param = msg[param]?msg[param]:"System busy, please try again later!";
+			showMsg(param,"_en");
+		}else{
+			param = msg[param]?msg[param]:"登录失败,请重新登录!";
+			showMsg(param,"");
+		}
+	}
+}
+function checksecure(obj, id){
+	if(obj.checked){
+		getId(id).checked = false;
+	}
+}
+</script>
+
+<script type="text/javascript">
+
+//图片滚动展示 Start
+	function ImgClass(imgUrl, aUrl){
+		this.img = new Image();
+		this.img.src = imgUrl;
+		this.a = {};
+		this.a.src = aUrl;
+	}
+	
+	/* 轮播图 */
+        //var obj3 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/banner_201304241839.png","http://qiye.163.com/mail/v5/");
+        //var obj3 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/banner_20130901.jpg","http://qiye.163.com/mobile");
+        //var obj3 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/banner_20131231.jpg","http://qiye.163.com/mail/promotion20131230.htm");
+        //var obj1 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/banner_201307301828.png","http://qiye.163.com/mail/promotion201307301041.htm");
+	var obj1 = new ImgClass("http://mimg.qiye.163.com/xm/all/index2010/img/index2.jpg","http://qiye.163.com/mail/news/news201310301405.htm");
+        var obj2 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/banner_20131209.jpg","http://qiye.163.com/mobile/yixin/");
+        var obj3 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/banner_20140411.jpg","http://qiye.163.com/mail/promotion201404101058.htm");
+	//var obj2 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2011/img/index9_2.jpg","http://qiye.163.com/mail/promotion20111101safe.htm");
+        //var obj2 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/qiyetech/index_20120911.png","http://qiye.163.com/mail/promotion201209071816.htm");
+        //var obj3 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/conference_201308061730.jpg","http://qiye.163.com/mail/news/news201308061709.htm");
+	//var obj3 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/qiyetech/banner_20120131.jpg","http://qiye.163.com/mail/promotion201201311306.htm");
+        //var obj3 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/product/conference_201305031539.jpg","http://qiye.163.com/mail/news/news201305031802.htm");
+	//var obj4 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/qiyetech/index_201205071142.png","http://qiye.163.com/mobile");
+	var obj5 = new ImgClass("http://mimg.qiye.163.com/xm/all/index2010/img/index1.png", "http://qiye.163.com/mail/promotion20110130.htm");
+	var objArr = [obj3, obj2, obj1, obj5];
+	var counts = 4;
+	/*var obj4 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/qiyetech/index_201205071142.png","http://qiye.163.com/mobile");
+	var obj5 = new ImgClass("http://mimg.qiye.163.com/p/official_site/2012/img/qiyetech/index_20120514.png","http://go.163.com/2012/0514/ups/index2.html");
+	var objArr = [obj5];
+	var counts = 1;*/
+	
+	var tt = null;
+	var curIndex = 0;
+	var mainImage = getId("main_img");
+	var mainA = getId("main_a");
+	
+	function change_img(index) {
+		curIndex = index;
+		if(tt)window.clearInterval(tt);
+		if (document.all) {
+			mainImage.filters[0].Apply();
+			try{
+				mainImage.filters[0].Play(duration = 2);
+			}catch(e){
+			}
+		}
+		mainImage.src = objArr[curIndex].img.src;
+		mainA.href = objArr[curIndex].a.src;
+
+		for ( var i = 0; i < counts; i++) {
+			var id = "pic_nav_" + (i + 1);
+			getId(id).className = "picNav-" + (i + 1);
+		}
+		var cur = getId("pic_nav_" + (curIndex + 1));
+		cur.className += " on";
+		curIndex++;
+		if (curIndex >= counts) {
+			curIndex = 0;
+		}
+		tt = setTimeout(function(){change_img(curIndex);}, 5000);
+	}
+	function ImageShow() {
+		if (counts > 1) {
+			for(var i=0;i<counts;i++){
+				var id = "pic_nav_" + (i + 1);
+				var pic = getId(id);
+				pic.style.display = "";
+			}
+		}
+		change_img(curIndex);
+	}
+	ImageShow();
+</script>
+
+<!-- 登记试用信息 Start -->
+<script type="text/javascript" src="http://qiye.163.com/mail/js/register_140409.js"></script>
+<!-- 登记试用信息 End -->
+
+<!-- START NetEase Devilfish -->
+<script type="text/javascript">
+_ntes_nacc = "qiye";
+neteaseTracker();
+neteaseClickStat();
+</script>
+<!-- END NetEase Devilfish -->
+
+<script type="text/javascript">
+document.write(unescape("%3Cscript src='" + "http://services.qiye.163.com/service/static/js/access.js?v=131112' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

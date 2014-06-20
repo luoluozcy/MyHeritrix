@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title></title>
+<style type="text/css">
+/*= reset*/
+html,body,div,p{border:0;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;padding:0;vertical-align:baseline;}
+/*= base*/
+html,body{height:100%;}
+body{color:#000;font:12px/170% simsun,arial,"Lucida Grande","Lucida Sans Unicode";}
+a {text-decoration:none;}
+a:hover{text-decoration:underline;}
+body{width:280px;}
+img,input{float:left;*display:inline;margin-right:5px;margin-bottom:10px;border:none;padding:0;}
+input{height:24px;line-height:24px;}
+.token_img{width:84px;height:24px;}
+#token_value{width:105px;padding:0 5px;background:#3b7aa5;color:#fff;}
+#getkey,#copykey{width:65px;height:24px;background:url(http://res.nie.netease.com/wh/qt/14/0315_fab/images/sprite.png) no-repeat;cursor:pointer;}
+#getkey{background-position:-255px -278px;}
+#copykey{background-position:-255px -303px;}
+#cdkey{width:170px;padding:0 5px;background:#3b7aa5;color:#fff;}
+#NIE-flashcopier{top:0 !important;}
+</style>
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).last.js"></script>
+<script type="text/javascript">
+function getGiftByCtoken(args){
+	var root='https://get-cdkey.webapp.163.com/',
+		product=args["product"],
+		tokenImg=args["tokenImg"],
+		tokenInput=args["tokenInput"],
+		getKeyBtn=args["getKeyBtn"],
+		successFunc=args["success"],
+		inputError=args["inputError"],
+		errorFunc=args["error"],
+		get_token=function(){
+			var imgsrc="http://get-cdkey.webapp.163.com/get_ctoken/?random="+Math.random();
+			$(tokenImg).attr("src",imgsrc);
+		}
+	get_token();
+	$(tokenImg).bind("click",get_token);
+	$(getKeyBtn).bind("click",function(){
+		if($("#token_value").val().length<=0){
+			alert("请先输入验证码")
+			return;
+		}else{
+			var OK_STAT = 1;
+			var INPUT_ERROR = 0;
+			$.ajax({
+				"url": root+ "get_cdkey",
+				"dataType": "jsonp",
+				"data": {
+					"product": product,
+					"ctoken": $(tokenInput).val()
+				},
+				"success": function(data){
+					if(data.status === OK_STAT){
+						successFunc(data.cdkey);
+					}else if(data.status === INPUT_ERROR){
+						inputError(data.msg);
+					}else{
+						errorFunc(data.msg);
+					}
+				}
+			});
+		}
+	});
+}
+$(function(){
+	getGiftByCtoken({
+		product:269,//产品号
+		tokenImg:"#token_img",//验证码图片id或者类名
+		tokenInput:"#token_value",//填写验证码的容器的id或者类名
+		getKeyBtn:"#getkey",//点击领取序列号的按钮的id或者类名
+		success:function(key){//成功callback
+			$("#cdkey").val(key);
+		},
+		inputError:function(msg){//填写错误callback
+			alert(msg);
+		},
+		error:function(msg){//错误callback
+			alert(msg);
+		}
+	});
+	nie.use(['util.clipBoard'],function(){
+		$('#copykey').click(function(){
+			var v=$('#cdkey').val();
+			v.match(/\d+/)?$.clipBoard($('#cdkey').val(),"复制成功！"):alert('请先输入正确的验证码。');
+		});
+	});
+});
+</script>
+</head>
+<body>
+<!--
+用于武魂2014v2版fab，地址：http://wh.163.com/fab/include/14v2/fab.html
+-->
+<p style="color:#2abfff">活动方式：游戏门派出生地附近NPC“小精灵”激活。（地图标记“新手礼包”）</p>
+<p>
+	<img class="test" id="token_img" onclick="get_token();" />
+	<input type="text" id="token_value" />
+	<input type="button" id="getkey" title="领取" value="" />
+</p>
+<p>
+	<input type="text" id="cdkey" readonly value="请先输入验证码"/>
+	<input type="button" id="copykey" title="复制" value="" />
+</p>
+</body>
+</html>

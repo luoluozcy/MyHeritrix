@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>网易充值一卡通服务中心-在线购卡官方网站</title>
+    <meta name="keywords" content="网易点卡，一卡通，游戏点卡，游戏充值" />
+    <meta name="description" content="网易充值一卡通服务中心，网易一卡通在线购卡官方网站，网易游戏充值指定网站！价格便宜，购卡9.6折；安全方便，鼠标轻触点卡到手；饱受玩家推荐，性价比最高的网易点卡充值中心。" />
+
+    <link href="http://res.nie.netease.com/pay/gw/10v1/style/global.css" rel="stylesheet" type="text/css" />
+    <link href="http://res.nie.netease.com/pay/gw/10v1/style/subpage.css" rel="stylesheet" type="text/css" />
+    
+
+    
+<script type="text/javascript" src="/js/jquery.js?21811"></script>
+<script language="javascript" type="text/javascript" src="/js/autours_min.js?22559"></script>
+<script language="javascript" type="text/javascript" src="/js/check_sn.js?21852"></script>
+<script src="/js/rsa/jsbn.js" type="text/javascript"></script>
+<script src="/js/rsa/jsbn2.js" type="text/javascript"></script>
+<script src="/js/rsa/rsa.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+    function showStep(step) {
+        $("#successMsg").hide();
+        $.each(["#step1", "#step2", "#step3", "#show_success"], function(i, v) {
+            $(v).hide();
+        });
+        $(step).show();
+    }
+
+
+    function setConfirmInfo() {
+        $('#confirmUrs').text($('#ursName').val());
+
+        var ptsTypeDesc = {"1": "通用","3": "专用"};
+        var ptsDesc = ptsTypeDesc[$('#ptsType').val()] + '点数';
+        if ($('#ptsType').val() == '3') {
+            var specialAccDesc = {"xyq": "梦幻西游","xy2": "大话西游II"};
+            ptsDesc = specialAccDesc[$("input[name='special_account']:checked")[0].id] + ptsDesc;
+        }
+        $('#confirmPtsDesc').text(ptsDesc);
+    }
+	function encryptPwd(){
+		var pub_key = "-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7z3PdApJhLsKuj1kQ8YNMoIRF\nTVcNHGyJQtcId0pbO8g5kwNsBzLmPUo/bMpyaZRKWnuBmkZK33TurbCq6d1VaC0U\nmGr2roog/ZDjzJVxo6/vGAOz+KzX99tDdd8D8LuqZPAiJ/KuxtFDXEwLJz9PbDAm\nVPrVczMw6OZao+IzhwIDAQAB\n-----END PUBLIC KEY-----"
+		var rsa_key = RSA.getPublicKey(pub_key);
+		var ciphertext = RSA.encrypt($("#cardPass").val(), rsa_key);
+		return ciphertext;
+	}
+
+    function checkCommonVar() {
+        
+        if ($('#ursName').val() == "" || $('#ursName2').val() == "") {
+            $('#errMsg').text('请输入要充值的通行证账号');
+            $('#errLab').show();
+            return false;
+        }
+
+        if ($('#ursName').val() != $('#ursName2').val()) {
+            $('#errMsg').text('通行证账号不一致');
+            $('#errLab').show();
+            return false;
+        }
+        
+
+        if ($('#cardNo').val().length != 13) {
+            $('#errMsg').text('请输入正确的13位卡号');
+            $('#errLab').show();
+            return false;
+        }
+
+        if ($('#cardPass').val().length != 9) {
+            $('#errMsg').text('请输入正确的9位密码');
+            $('#errLab').show();
+            return false;
+        }
+
+        var sn = $('#cardNo').val();
+        if(sn.substr(0,2)=='55') {   
+            $('#cardPass').val(encryptPwd());
+            $('#addPoint').attr('action', 'http://app.ecard.163.com/vipbar_card/app/show_confirm/?');
+            $('#addPoint').submit();
+            return;
+        }
+        return true;
+    }
+
+    $('#cardNo').keyup(function() { 
+        checkSn(this);
+        if ($(this).val().length == 13) {
+            $('#errLab').hide();
+            $("#successMsg").hide();
+        }
+    });
+
+    $('#cardPass').keyup(function() { 
+        checkSnPwd(this);
+        if ($(this).val().length == 9) {
+            $('#errLab').hide();
+            $("#successMsg").hide();
+        }
+    });
+
+    $('#ursName, #ursName2').change(function() { 
+        $('#errLab').hide();
+        $("#successMsg").hide();
+    });
+
+    
+
+    $('#trans2Common').click(function(){
+        if (!checkCommonVar()) {
+            return;
+        }
+        $('#ptsType').val("1");
+        setConfirmInfo();
+        showStep('#step3');
+    });
+    $('#trans2Special').click(function(){
+        if (!checkCommonVar()) {
+            return;
+        }
+        $('#ptsType').val("3");
+        showStep('#step2');
+    });
+    $('#specialConfirm').click(function(){
+        setConfirmInfo();
+        showStep('#step3');
+    });
+    $('#specialBack').click(function(){
+        showStep('#step1');
+    });
+    $('#transCancel').click(function(){
+        showStep('#step1');
+    });
+
+    $('#transSubmit').click(function(){
+        $("#special_game").attr('value', $("input[name='special_account']:checked")[0].id)
+        $('#addPoint').submit();
+    });
+});
+
+</script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="logo"><a href="#" title="网易充值中心首页">网易充值中心</a></div>
+        <div class="banner"><div id="abc">
+<a target="_blank" href=" http://gad.netease.com/gad/access?project_id=631874&s=FTko4fnf7%2FhbRXOr%2FKVKd7dej7Q%3D&code_type=1"><img border=0 alt="" src="/images/banner/20140417_mnxy.jpg"/></a>
+</div>
+</div>
+        <div class="blank9 clearFloat"></div>
+        <div class="navbar">
+            <div class="barbg1">
+                <div class="barbg2">
+                    <ul class="menu">
+                        <li><h3><a href="http://pay.163.com">首页</a></h3></li>
+                        <li ><h3><a href="http://pay.163.com/servlet/controller?operation=queryaccount">查询服务</a></h3></li>
+                        <li class="on"><h3><a href="/">购卡充值</a></h3></li>
+                        <li><h3><a href="http://jifen.163.com">优惠专区</a></h3></li>
+                        <li><h3><a href="http://pay.163.com/jsp/cardintro.jsp">帮助中心</a></h3></li>
+                    </ul>
+                    <p class="userInfo"></p>
+                    <p><img src="http://res.nie.netease.com/pay/gw/10v1/images/tell.png" width="205" height="23" alt="热线电话：400-800-0163" /></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wap2" class="clearFloat">
+        <div class="cornertop">
+            <b class="l"></b>
+            <b class="r"></b>
+            <div class="c"></div>
+        </div>
+        <div class="block clearFloat">
+            
+<div class="leftmenu">
+    <ul>
+        <li class="s1 on"><h3><a href="/script/sn_trans/trans_show">实体卡/卡密充值</a></h3></li>
+        <li class="s2 "><h3><a href="http://ecard.163.com">在线购卡</a></h3></li>
+        <li class="s3"><h3><a href="http://app.ecard.163.com">电话/手机/宽带购卡</a></h3></li>
+        <li class="s4 "><h3><a href="/script/phone_card">手机充值卡购卡</a></h3></li>
+        
+        <li class="s7 "><h3><a href="/script/micro_pay_page">网易宝小额购卡</a></h3></li>
+        <li class="s6"><h3><a href="http://crm.163.com/cgi-bin/shop_list?a=pay">实体店购卡</a></h3></li>
+    </ul>
+</div>
+
+            <div class="content">
+                
+<div class="contTitle">
+    <h1>实体卡/卡密充值</h1>
+</div>
+
+
+<div class="area1" id="step1">
+    <form id="addPoint" action="https://ecard.163.com/script/sn_trans/trans?" method="post">
+    <input type="hidden" id="special_game" name="special_account" value="" /><table width="480" class="layoutTb1" cellspacing="0" cellpadding="0">
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="textRight f14px">您充值的账号</td>
+                <td class="textLeft"><input tabindex="1" id="ursName" name="ursName" type="text"  class="txt1" size="24" value="" autocomplete="off" />
+                <script type="text/javascript">
+                    AutoUrs.bind("ursName", {mailList:["163.com", "qq.com", "sina.com", "vip.qq.com", "126.com"],tabTo:"ursName2",cookie:""});
+                </script>
+                </td>
+            </tr>
+            <tr>
+                <td class="textRight f14px">再次输入账号</td>
+                <td class="textLeft"><input tabindex="2" id="ursName2" name="ursName2" type="text"  class="txt1" size="24" value="" autocomplete="off" />
+                <script type="text/javascript">
+                    AutoUrs.bind("ursName2", {mailList:["163.com", "qq.com", "sina.com", "vip.qq.com", "126.com"],tabTo:"cardNo",cookie:""});
+                </script>
+                </td>
+            </tr>
+            <tr>
+                <td class="textRight f14px">　充值卡卡号</td>
+                <td class="textLeft"><input tabindex="3" id="cardNo" name="cardNo" value="" type="text" class="txt1" size="24" maxlength="13" /></td>
+            </tr>
+            <tr>
+                <td class="textRight f14px">　充值卡密码</td>
+                <td class="textLeft"><input tabindex="4" id="cardPass" name="cardPass" type="password"  class="txt1" size="24" maxlength="9" /></td>
+            </tr><tr>
+                <td class="textRight f14px">&nbsp;</td>
+                <td class="textLeft">
+                    <span class="error" id="errLab" style="display:none"><strong id="errMsg"></strong></span>
+                </td>
+            </tr>
+            
+        </table>
+    <!-- 充值确认 -->
+        <div class="blank24"></div>
+        <input id="ptsType" name="trans_type" type="hidden" value=""/>
+            <input tabindex="6" id="trans2Common" type="button" class="btn2" value="充 值"/></form>
+</div>
+
+
+<!-- 选择专用点开始 -->
+<div class="area1" id="step2" style="display:none">
+	<div class="prosel">
+        <h2 class="subTitle cYellow">请选择充值成专用点的游戏：</h2>
+        <div>
+            
+			    <label><input type="radio" name="special_account" id="xyq", value="xyq" checked>梦幻西游</label>
+            
+			    <label><input type="radio" name="special_account" id="xy2", value="xy2" checked>大话西游II</label>
+            
+        </div>
+
+        <div class="blank24"></div>
+        <p class="textCenter"><input tabindex="9" id="specialConfirm" type="button" class="btn2" style="width:100px; margin-bottom:-3px;" value="确认充值"/>　<a href="#" tabindex="10" id="specialBack">返回</a></p>
+	</div>
+</div>
+<!-- 选择专用点结束 -->
+
+<!-- 充值确认开始 -->
+<div class="area1" id="step3" style="display:none">
+        <p>
+            <h2 class="subTitle cYellow">请确认充值信息</h2>
+            充入账户：<span class="cYellow" id="confirmUrs"></span> 
+            &nbsp;&nbsp;&nbsp;
+            类型：<span class="cYellow" id="confirmPtsDesc"></span>
+        </p>
+        <div class="blank24"></div>
+		<p>
+            <input tabindex="11" id="transSubmit" type="button" class="btn2" value=" 确 定 "/>
+            &nbsp;&nbsp;&nbsp;
+            <input tabindex="12" id="transCancel" type="button" class="btn2" value=" 取 消 "/>
+        </p>
+</div>
+<!-- 充值确认结束 -->
+
+            </div>
+      </div>
+        <div class="cornerbtm">
+            <b class="l"></b>
+            <b class="r"></b>
+            <div class="c"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div style="color: rgb(0, 0, 0); line-height: 200%;">客服中心: <a href="http://ecard.gm.163.com" target="_blank">http://ecard.gm.163.com</a>
+        <span style="margin-left:35px;">24小时客服热线：4008000163（仅收市话费）</span></div>
+        <p><a href="http://corp.163.com/index_eng.html">About NetEase</a> - <a href="http://corp.163.com/index_gb.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com">客户服务</a> - <a href="http://corp.163.com/gb/legal/legal.html">相关法律</a> - <a href="http://power.163.com/adpage/salescenter/index.html">广告服务</a><br />
+    网易公司版权所有 &copy;1997-2012</p>
+        <!-- START NetEase Devilfish 2010 -->
+        <script src="//analytics.163.com/ntes.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        _ntes_nacc = "ecard";
+        neteaseTracker();
+        </script> 
+        <!-- END NetEase Devilfish 2010 -->
+    </div>
+</body>
+</html>

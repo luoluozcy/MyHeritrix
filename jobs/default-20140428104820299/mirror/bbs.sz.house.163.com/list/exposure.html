@@ -1,0 +1,2288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>深圳楼市曝光台_网易房产论坛</title>
+                <link rel="stylesheet" type="text/css" href="http://img1.cache.netease.com/bbs/static/20140425/form_list.css" charset="GBK"/>
+        <!--[if IE 6]>
+        <link rel="stylesheet" type="text/css" href="http://img1.cache.netease.com/bbs/static/20140425/tie_ie6.css" charset="GBK"/>
+        <![endif]-->
+        <script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/bbsntes_jslib.js" charset="GBK"></script>
+<script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/jquery_bbs.js" charset="GBK"></script>
+</head>
+<body>
+        <input  type="hidden" id="_path_to_boardid" value=""/>
+        <iframe src="http://t.163.com/crossdomain.html" style="display:none;"  id="iframeProxy"></iframe>
+<link type="text/css" rel="stylesheet" media="screen" href="http://img1.cache.netease.com/common/css/common_nav_v1.0.1.css" />
+<style>.NTES-nav {width: auto; margin-left: 5px;}</style>
+<div class="NTES-nav">
+    <span class="nav-link"><a href="http://www.163.com/">网易首页</a>-<a href="http://news.163.com/">新闻</a>-<a href="http://sports.163.com/">体育</a>-<a href="http://sports.163.com/nba/">NBA</a>-<a href="http://ent.163.com/">娱乐</a>-<a href="http://money.163.com/">财经</a>-<a href="http://money.163.com/stock/">股票</a>-<a href="http://auto.163.com/" id="_link_auto">汽车</a>-<a href="http://tech.163.com/">科技</a>-<a href="http://mobile.163.com/">手机</a>-<a href="http://lady.163.com/">女人</a>-<a href="http://bbs.163.com/">论坛</a>-<a href="http://v.163.com/">视频</a>-<a href="http://blog.163.com/">博客</a>-<a href="http://house.163.com/" id="houseUrl">房产</a>-<a id="homeUrl" href="http://home.163.com/">家居</a>-<a href="http://edu.163.com/">教育</a>-<a href="http://book.163.com/">读书</a>-<a href="http://game.163.com/" id="_link_game">游戏</a>-<a href="http://t.163.com/">微博</a> |</span>
+    <div class="rightCon">
+        <div class="NTES-link">
+            <a href="http://email.163.com/" class="cBlue">免费邮箱</a> - <a href="http://reg.163.com/" class="cBlue">通行证登录</a>
+        </div>
+        <a href="http://www.163.com/rss"><img width="26" height="14" border="0" src="http://img3.cache.netease.com/cnews/img07/rss.gif" class="rss" alt="Rss"></a>
+    </div>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+    NTES.ready( function($){
+        var P_INFO = NTES.cookie.get("P_INFO");
+        var S_INFO = NTES.cookie.get("S_INFO");
+        if(P_INFO){
+            var mailconfig = {
+                "163.com":"http://entry.mail.163.com/coremail/fcg/ntesdoor2?verifycookie=1&lightweight=1",
+                "126.com" : "http://entry.mail.126.com/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+                "vip.126.com" : "http://reg.vip.126.com/enterMail.m",
+                "yeah.net" : "http://entry.yeah.net/cgi/ntesdoor?verifycookie=1&lightweight=1&style=-1",
+                "188" : "http://reg.mail.188.com/servlet/enter",
+                "vip.163.com" : "http://reg.vip.163.com/enterMail.m?enterVip=true-----------"
+            };
+            var passport =  P_INFO.substr(0, P_INFO.indexOf("|"));
+            var username =  passport.substr(0, P_INFO.indexOf("@"));
+            var logstate = P_INFO.split("|")[2];
+            var logiframe = "";
+            var pspt = passport.length >= 6 ? passport.substr(0,6)+"..." : passport;
+            /@([^*]+)/.test(passport);
+            var logdomain = RegExp.$1;
+            if(P_INFO && S_INFO || logstate=="1") {
+                var entrylink_html = '<a href=\"http://reg.163.com/Main.jsp?username='+passport+'\">进入通行证</a>';
+                if(mailconfig[logdomain] != undefined) {
+                    entrylink_html += '<a href=\"'+mailconfig[logdomain]+'\">进入我的邮箱</a>';
+                }
+                if(logdomain == "popo.163.com" || mailconfig[logdomain] != undefined) {
+                    entrylink_html += '<a href="http://blog.163.com/passportIn.do?entry=163">进入我的博客</a><a href="http://photo.163.com/?username='+passport+'\">进入我的相册</a>';
+                }
+                entrylink_html += '<a href="http://yuehui.163.com/">进入我的约会</a><a href="http://t.163.com">进入我的微博</a>';
+                if(logdomain == "163.com" || logdomain == "126.com" || logdomain == "yeah.net") {
+                    logiframe = '<iframe allowTransparency=\"true\" style=\"width: 56px; height:26px; float:left; vertical-align: middle;\" id=\"ifrmNtesMailInfo\" border=\"0\" src=\"http://p.mail.'+logdomain+'/mailinfo/shownewmsg_www_1222.htm\" frameBorder=\"0\" scrolling=\"no\"></iframe>';
+                }
+                var login_html = '<div class=\"ntes-usercenter\"><div class=\"ntes-usercenter-logined\"><strong id=\"ntes_usercenter_name\" class=\"ntes-usercenter-name\" title=\"欢迎你，'+passport+'\">'+pspt+'</strong></div><div id=\"ntes_usercenter_entry\" class=\"ntes-usercenter-entry\"><span class=\"user-entry\">'+entrylink_html+'</span></div></div>'+logiframe+'|<a class=\"ntes-usercenter-loginout\" href=\"http://reg.163.com/Logout.jsp?username='+passport+'\" target=\"_self\">退出</a></div>';
+                NTES(".NTES-link")[0].innerHTML = login_html;
+
+                NTES("#ntes_usercenter_name").addEvent("click", function(e){
+                    NTES("#ntes_usercenter_entry").style.display = NTES("#ntes_usercenter_entry").style.display == "block" ? "none" : "block";
+                    e.preventDefault();
+                    e.cancelBubble = true;
+                    document.onclick = function(){
+                        NTES("#ntes_usercenter_entry").style.display = "none";
+                    }
+                })
+            };
+        }
+    })
+    //]]>
+    NTES.retire();
+</script>
+            <div id="topNav">
+                    <input type="hidden" name="boardid" id="boardid" value="exposure"/>
+                <input type="hidden" name="boardname" id="boardname" value="深圳楼市曝光台"/>
+                    <input type="hidden" name="threadId" id="threadId" value=""/>
+                <input type="hidden" name="channel" id="channel" value="szhouse"/>
+
+        <input type="hidden" value="2" id="list_page_num">
+        <div class="nav-bar">
+            <a href="http://bbs.163.com" class="logo"></a>
+            <a href="http://www.163.com">网易首页</a> &gt;
+            <a href="http://sz.house.163.com/">网易房产</a> &gt;
+            <a href="http://bbs.sz.house.163.com">网易房产论坛</a> &gt;
+			            <a href="http://bbs.sz.house.163.com/boardset/exposure.html">深圳楼市曝光台</a>
+        </div>
+        <div class="nav-info" style="display:none;">
+            <a href="http://bbs.163.com/user/personalCenter.do" class="info-username" target="_blank"></a>
+    		<a href="#" class="info-mark info-sign">签到</a> |
+            <table class="info-manage" cellspacing="0" cellpadding="0" border="0">
+            <tr><td valign="middle">
+                <div class="dd-window dd-window-expand1">
+    			    <a href="http://bbs.163.com/user/personalCenter.do" target="_blank">我的管理中心</a>
+    				<em class="icon-arrow-up"></em>
+                    <div class="board-menu">
+                        <div class="board-menu-connect"></div>
+                        <div class="board-menu-container">
+                            <div class="board-menu-nav">
+                              	  个人管理 &gt;
+                            </div>
+                            <ul class="board-menu-sub-nav">
+                                <li><a target="_blank" href="http://bbs.163.com/user/personalCenter.do">管理中心</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/gift/newUserTask.do">新手任务</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/gift/giftShop.do">礼物商店</a></li>
+                                <li><a target="_blank" href="http://bbs.163.com/user/upgrade.do">升级中心</a></li>
+                            </ul>
+                        </div>
+                        <div class="board-menu-container last">
+                            <div class="board-menu-nav">
+                                个人收藏 &gt;
+                            </div>
+                            <ul class="board-menu-sub-nav like-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </td></tr>
+            </table> |
+            <a href="http://t.163.com/?f=bbsnav" class="info-weibo">我的网易微博</a>(<span class="red weibo-count">99+</span>) |
+            <div class="info-message-box">
+                <div class="dd-window dd-window-expand1">
+                    <a href="http://bbs.163.com/user/msg.do?msgType=2">消息中心</a>(<span class="red message-count">6</span>)
+    				<em class="icon-arrow-up"></em>
+                    <ul class="info-message-box-list">
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=2">用户消息 <span class="em">2</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=1">评论消息 <span class="em">2</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=0">系统消息 <span class="em">2</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="message_alert_box">
+                    <span class="message_arrow"></span>
+                    <a class="message_alert_btn" href="">X</a>
+                    <ul class="message_alert_list">
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=2">用户消息 <span class="em">0</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=1">评论消息 <span class="em">0</span></a>
+                        </li>
+                        <li>
+                            <a href="http://bbs.163.com/user/msg.do?msgType=0">系统消息 <span class="em">0</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div> |
+            <a href="/bbs/user/logout.jsp">退出</a> |
+            <a href="/list/tyro.html" id="forumhelp">帮助</a>
+            <a href="http://help.3g.163.com/bbs/">手机版</a>
+        </div>
+        <div class="nav-login">
+            [<a href="#" class='login-button'>登录</a>]
+            <a href="#" class="info-mark info-sign">签到</a>  |
+            <a  href="/list/tyro.html" >帮助</a> |
+            <a href="http://help.3g.163.com/bbs/">手机版</a>
+        </div>
+    </div>    <div id="bbs_bd">
+        <div id="bbs_nav">
+    <div id="nav_recently_visit">
+        <h3>最近访问</h3>
+        <div class="bd" id="revWraperBd">
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <div class="nav-direct-access">
+        <label> 版面直达:</label> <input type="text" id="board_keyword" />
+    </div>
+    <div id="mobile_picker" style="display: none;">
+        <select class="mobile-select" id="k_brand">
+            <option>-请选择品牌-</option>
+        </select>
+        <select class="mobile-select" id="k_series">
+            <option value="club_tech">-请选择系列-</option>
+        </select>
+        <a class="mobile-btn" id="goto_mobile_page" target="_blank">GO</a>
+    </div>
+    <div id="bbs_menu_wrapper">
+        <div id="bbs_menu">
+        </div>
+    </div>
+</div>        <div id="liquid_wrapper">
+            <!-- 版面主页 -->
+                        <div id="bbs_ad">
+       
+   			<div class="ad70" style="height: auto;">
+			
+			<!--"/htmlfile/header/bbs_sz_house/szhouse_list_bbs.html"-->
+		</div>
+	       
+
+
+
+    </div>
+    <div id="bbs_board_header"></div>
+    <div id="bbs_rank">
+                           <div id="board_manager" class="board-widget-container">
+        <div class="hd">
+            <h3>本版版主</h3>
+            <div class="more">
+			    <em></em>
+			    <a href="" class="apply-for-mamage">申请版主</a>
+			</div>
+        </div>
+        <div class="bd">
+            <ul>
+            					                <li>
+	                    <img src="http://image.bbs.163.com/face/szlsbgt" width="30" height="30" alt="鹏城鹏事" title="用户：鹏城鹏事">
+	                    <a href="http://bbs.163.com/user/szlsbgt" target="_blank" title="鹏城鹏事" >鹏城鹏事</a>
+	                </li>
+	            	                    </ul>
+        </div>
+    </div>
+
+                           <div id="tie_category" class="board-widget-container">
+        <div class="hd">
+            <h3>帖子分类</h3>
+        </div>
+        <div class="bd">
+			<a title="全部" href="/tlist/exposure-1-1-a-a.html">全部</a>
+			<a title="精华" href="/tlist/exposure-1-1-g-a.html">精华</a>
+			<a title="推荐" href="/tlist/exposure-1-1-r-a.html">推荐</a>
+			<a title="图片" href="/tlist/exposure-1-1-p-a.html">图片</a>
+                    </div>
+    </div>
+
+		   		                              <div id="user_top" class="board-widget-container">
+        <div class="hd">
+            <h3>本版TOP用户</h3>
+        </div>
+        <div class="bd">
+            <ul>
+			                    	<li><span class="num hot">1</span><a href="http://bbs.163.com/user/szlsbgt" title="用户:鹏城鹏事">鹏城鹏事</a><span class="count">7</span></li>
+				                	<li><span class="num hot">2</span><a href="http://bbs.163.com/user/liboqiu66" title="用户:liboqiu66">liboqiu66</a><span class="count">2</span></li>
+				                	<li><span class="num hot">3</span><a href="http://bbs.163.com/user/feng-snowolf" title="用户:feng-snowolf">feng-snowolf</a><span class="count">1</span></li>
+				                	<li><span class="num">4</span><a href="http://bbs.163.com/user/zhao0kyj" title="用户:zhao0kyj">zhao0kyj</a><span class="count">1</span></li>
+				                	<li><span class="num">5</span><a href="http://bbs.163.com/user/bitbeer@126.com" title="用户:约翰牛">约翰牛</a><span class="count">1</span></li>
+				                	<li><span class="num">6</span><a href="http://bbs.163.com/user/szbaofuxin" title="用户:szbaofuxin">szbaofuxin</a><span class="count">1</span></li>
+				                	<li><span class="num">7</span><a href="http://bbs.163.com/user/suqiang88@yeah.net" title="用户:suqiang88">suqiang88</a><span class="count">1</span></li>
+				                	<li><span class="num">8</span><a href="http://bbs.163.com/user/tcfashion" title="用户:tcfashion">tcfashion</a><span class="count">1</span></li>
+				                	<li><span class="num">9</span><a href="http://bbs.163.com/user/zhouguixiong2006@126.com" title="用户:zhouguixiong">zhouguixiong</a><span class="count">1</span></li>
+				                	<li><span class="num">10</span><a href="http://bbs.163.com/user/741123958@qq.com" title="用户:741123958">741123958</a><span class="count">1</span></li>
+							</ul>
+        </div>
+    </div>
+
+
+                           <div id="board_status" class="board-widget-container">
+        <div class="hd">
+            <h3>本版动态</h3>
+        </div>
+        <div class="bd">
+           <ul>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/exposure/358050638.html" title="帖子标题：英国十大神秘古老的特色迷宫">
+    						    						英国十大神秘古老的特色迷宫
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-19 11:56:23">11:56</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/exposure/359871609.html" title="帖子标题：高利息回报为饵 深圳夫妇多次抵押住房诈骗2千万">
+    						    						高利息回报为饵 深圳夫妇多次抵押住房诈骗2千万
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-19 11:56:10">11:56</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/exposure/360411529.html" title="帖子标题：中天城投发非公开发行股票预案 拟定增募资30亿">
+    						    						中天城投发非公开发行股票预案 拟定增募资30亿
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-19 11:55:58">11:55</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/exposure/360412833.html" title="帖子标题：深圳商转公业务预约存在限额 需求难满市民吐槽">
+    						    						深圳商转公业务预约存在限额 需求难满市民吐槽
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-19 11:55:50">11:55</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/exposure/359870540.html" title="帖子标题：豪宅升温影响深圳楼价 黄金周房价同比增长33%">
+    						    						豪宅升温影响深圳楼价 黄金周房价同比增长33%
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-08 16:03:39">16:03</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															精华
+														:</span>
+							    							<a href="/bbs/exposure/353090835.html" title="帖子标题：“以房养老”模式受丁克族欢迎 多数老人不买账">
+    						    						“以房养老”模式受丁克族欢迎 多数老人不买账
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-02 22:39:57">22:39</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/exposure/355266890.html" title="帖子标题：天兔验收深圳的政府工程：龙悦居">
+    						    						天兔验收深圳的政府工程：龙悦居
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-02 22:39:31">22:39</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/exposure/355265734.html" title="帖子标题：和平里阳台掉皮了？求证实。">
+    						    						和平里阳台掉皮了？求证实。
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-02 22:39:17">22:39</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/exposure/355267801.html" title="帖子标题：猛料：2013在售军产房调查！">
+    						    						猛料：2013在售军产房调查！
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-02 22:39:08">22:39</div>
+                </li>
+                            <li>
+                    <div class="title">
+                        <span class="red">
+															置顶
+														:</span>
+							    							<a href="/bbs/exposure/350886727.html" title="帖子标题：厦深铁路深圳新城站即将完工 10月测试年底通车">
+    						    						厦深铁路深圳新城站即将完工 10月测试年底通车
+    						</a>
+                    </div>
+                    <div class="time" title="操作时间:2013-10-02 22:38:43">22:38</div>
+                </li>
+                        </ul>
+    	</div>
+    </div>
+
+		              <div class="list-bottom-ad">
+               <div id="youdao_ad_list_1" style="display:block"></div>
+               <!--"/htmlfile/side_2009/list_side_bottom_ad.html"-->
+           </div>
+    </div>
+    <div id="bbs_list">
+           <div class="bbs-list-search">
+    <form target="_blank" name="search" action="http://bbs.163.com/bbs/search.do" method="get" class="bbs-list-search-form">
+		<input type="hidden" value="exposure" name="boardid">
+		<input type="hidden" value="bbs" name="searchRan">
+		<input type="hidden" value="body" name="searchType" id="searchType">
+		<input type="text" value="" class="tb-keyword input-box">
+		<input type="hidden" name="q">
+	    <div class="dd-window-clickable">
+            <span class="search-body"> 帖子搜索</span>|<em class="icon-arrow-up"></em>
+            <ul class="bbs-list-search-form-menu">
+                <li><a class="search-body" href="#">全文搜索</a></li>
+                <li><a class="search-title" href="#">标题搜索</a></li>
+                <li><a class="search-author" href="#">作者搜索</a></li>
+            </ul>
+        </div>
+    </form>
+</div>	      <div class="board-list-panel">
+                 				 	   							               
+
+
+
+<div class="bbs-list-manage">
+	   <div title="深圳楼市曝光台" class="board-name">深圳楼市曝光台</div>
+	   <div class="board-write">
+	       <div class="dd-window"><a href="/post/exposure/publish/common-"><b>发 帖</b></a>
+	       	   <ul class="board-menu">
+	       	       <li><a href="/post/exposure/publish/ask-">新问答</a></li>
+                   <li><a href="/post/exposure/publish/debate-">新辩论</a></li>
+                   <li><a href="/post/exposure/publish/vote-">新投票</a></li>
+	       	   </ul>
+	       </div>
+	   </div>
+	   <a onclick="window.location.reload();return false;" href="#" class="board-refresh">刷新</a>
+	   <a id="board_focus" href="#" class="board-focus">关注本版</a>
+	   <div class="board-manage">
+	       <div class="dd-window">管理模式
+	       	<ul class="board-menu">
+	       		<li><a id="btn_batch_del" href="#" style="display: none;">批量管理</a></li>
+	       		<li><a target="_blank" href="/bbs/blacklist.jsp?boardid=exposure">黑名单</a></li>
+	       	</ul>
+	       </div>
+	   </div>
+</div>
+<div class="board-tab-nav">
+    <ul class="board-tab">
+        <li class="on"><a title="全部" href="/tlist/exposure-1-1-a-a.html">全部</a></li>
+        <li><a title="精华" href="/tlist/exposure-1-1-g-a.html">精华</a></li>
+        <li><a title="推荐" href="/tlist/exposure-1-1-r-a.html">推荐</a></li>
+        <li><a title="图片" href="/tlist/exposure-1-1-p-a.html">图片</a></li>
+    </ul>
+        <div class="board-page" data-total="20">
+    
+    
+
+
+
+
+
+
+
+
+
+
+                
+                
+                                         								    <a href="/tlist/exposure-1-1-a-a.html" class="on js-liston">1</a>
+
+							                                                        										                     <a href="/tlist/exposure-2-1-a-a.html">2</a>
+
+								
+                                      										                     <a href="/tlist/exposure-3-1-a-a.html">3</a>
+
+								
+                                      										                     <a href="/tlist/exposure-4-1-a-a.html">4</a>
+
+								
+                                      										                     <a href="/tlist/exposure-5-1-a-a.html">5</a>
+
+								
+                                      										                     <a href="/tlist/exposure-6-1-a-a.html">6</a>
+
+								
+                                      										                     <a href="/tlist/exposure-7-1-a-a.html">7</a>
+
+								
+                                      										                     <a href="/tlist/exposure-8-1-a-a.html">8</a>
+
+								
+                                      										                     <a href="/tlist/exposure-9-1-a-a.html">9</a>
+
+								
+                                      										                     <a href="/tlist/exposure-10-1-a-a.html">10</a>
+
+								
+                               
+                               ...
+		   		   				          <a href="/tlist/exposure-20-1-a-a.html">20</a>
+
+		   		   
+                
+        		   	   					           | <a href="/tlist/exposure-2-1-a-a.html" >下一页 &gt;</a>
+
+					                
+    </div>
+</div>
+<div class="board-list-hd">
+    <div class="board-list-title">话题</div>
+    <div class="right">
+			
+        <div class="board-list-write"><a href="/tlist/exposure-1-0-a-a.html" id="order-recent-publish">最新发表</a><em class="icon-rank-down"></em></div>
+        <div class="board-list-count">点击/回复</div>
+        <div class="board-list-reply"><a href="/tlist/exposure-1-1-a-a.html" id="order-recent-repley"> 最新回复</a><em class="icon-rank-down"></em></div>
+    </div>
+</div>
+<div class="admin-button-area">
+    <a class="btn-del btn-del-batch">删除</a>
+    <a class="btn-batch-down">下沉</a>
+    <a class="btn-batch-lock">加锁</a>
+    <a class="btn-batch-unlock">解锁</a>
+    <a class="btn-batch-lock-down">加锁并下沉</a>
+    <a class="btn-select-all">全选</a>
+    <a class="btn-reverse">反向选择</a>
+</div>
+<div class="board-list-bd" id="board-list-bd">
+        	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://service.bbs.163.com/bbs/doings/402564707.html" class="$titlecolor" title="【有奖抢楼】五一怎么过？和TA看场男人戏" target="_blank">
+    													
+    																【有奖抢楼】五一怎么过？和TA看场男人戏
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-24 14:46</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://bbs.163.com/special/0015sp/chihuo_2014.html" class="$titlecolor" title="有奖活动：爱生活 晒零食 200元零食大礼包拿回家！" target="_blank">
+    													
+    																有奖活动：爱生活 晒零食 200元零食大礼包拿回家！
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-21 09:39</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://bbs.travel.163.com/bbs/youji/398243403.html" class="$titlecolor" title="有奖活动：爱旅行 写游记 赢云南游大奖" target="_blank">
+    													
+    																有奖活动：爱旅行 写游记 赢云南游大奖
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-15 09:49</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                        																		<span class="article-icon icon-notice" title="全局置顶"></span>
+					    					        					<span class="article-title">
+    																												<a href="http://bbs.baby.163.com/bbs/mmbb/399257089.html" class="$titlecolor" title="分享你的【孩子情绪管理】小妙招，赢儿童情绪管理舞台剧门票！" target="_blank">
+    													
+    																分享你的【孩子情绪管理】小妙招，赢儿童情绪管理舞台剧门票！
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/waterandhill">论坛大叔</a><span class="date">04-08 15:40</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			--
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+                	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403954686"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/403954686.html" class="black" title="深将重点发展&quot;湾区经济&quot; 前海打头阵成领头羊" target="_blank">
+														
+    																深将重点发展&quot;湾区经济&quot; 前海...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-28 08:15</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >192</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403954119"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/403954119.html" class="black" title="山海美域&quot;变脸&quot; 前海广场急速强推单价涨3000" target="_blank">
+														
+    																山海美域&quot;变脸&quot; 前海广场急速...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-28 08:13</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >189</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403320188"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/403320188.html" class="black" title="深圳史上最高骗购安居房罚单 一家庭被罚20万" target="_blank">
+														
+    																深圳史上最高骗购安居房罚单 一家庭被罚...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-26 09:51</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">3809</span>/6
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/xuehong.zh">雪晨清新</a><span class="date"> 04-26 22:54</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403320392"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/403320392.html" class="black" title="深圳等6市试点共有产权住房 或再撑起房价" target="_blank">
+														
+    																深圳等6市试点共有产权住房 或再撑起房价
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-26 09:52</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">1317</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403037341"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/403037341.html" class="black" title="深圳高端公寓逆市涨价 最高涨幅达15%" target="_blank">
+														
+    																深圳高端公寓逆市涨价 最高涨幅达15%
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-25 11:16</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >279</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="403036481"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/403036481.html" class="black" title="南山一小区居民多年来“被喝”未经处理地下水" target="_blank">
+														
+    																南山一小区居民多年来“被喝”未经处理...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-25 11:13</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">4513</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="401709607"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/401709607.html" class="black" title="深高物价高房价高压力 有多少人还在坚持&quot;深圳梦&quot;" target="_blank">
+														
+    																深高物价高房价高压力 有多少人还在坚持...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-23 08:55</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">9165</span>/30
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/szbaofuxin">szbaofuxin</a><span class="date"> 04-24 15:28</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402460362"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/402460362.html" class="black" title="前海下月出让四块地起始价57亿元 地王或定向出让腾讯" target="_blank">
+														
+    																前海下月出让四块地起始价57亿元 地王或...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-24 08:46</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >885</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402459946"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/402459946.html" class="black" title="披上学位外衣单价贵了九千 深圳学位房溢价率约为四成" target="_blank">
+														
+    																披上学位外衣单价贵了九千 深圳学位房溢...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-24 08:45</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">1397</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="402459366"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/402459366.html" class="black" title="查违办就历史遗留违建处理澄清：为&quot;小产权房&quot;确权系误读" target="_blank">
+														
+    																查违办就历史遗留违建处理澄清：为&quot...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-24 08:43</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >408</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="401708953"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/401708953.html" class="black" title="听说要旧改坪山一天建一层楼 一层能赚80多万" target="_blank">
+														
+    																听说要旧改坪山一天建一层楼 一层能赚80...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-23 08:53</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">3676</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="401269725"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/401269725.html" class="black" title="深圳房租水平全国排第三 月均租金3485元接近上海" target="_blank">
+														
+    																深圳房租水平全国排第三 月均租金3485元...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-22 08:41</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">3778</span>/2
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/efcc">efcc</a><span class="date"> 04-22 23:36</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="401306220"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/401306220.html" class="black" title="“换租潮”遏制房租涨势 租金连涨两年后首次下跌" target="_blank">
+														
+    																“换租潮”遏制房租涨势 租金连涨两年后...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-22 10:28</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">2029</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397629046"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397629046.html" class="black" title="白石洲旧改 数万租客会去哪儿 相邻片区租金或上涨" target="_blank">
+														
+    																白石洲旧改 数万租客会去哪儿 相邻片区...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-09 08:39</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">9772</span>/20
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/jun125697211">jun125697211</a><span class="date"> 04-22 07:48</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400937368"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/400937368.html" class="black" title="2014年深圳城市更新第二批计划已公布 罗湖3个" target="_blank">
+														
+    																2014年深圳城市更新第二批计划已公布 罗...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-21 10:19</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >408</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/1963012345@qq.com">1963012345</a><span class="date"> 04-21 23:04</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400935222"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/400935222.html" class="black" title="白石洲轰轰烈烈旧改难挡租房热 房租依旧涨不停" target="_blank">
+														
+    																白石洲轰轰烈烈旧改难挡租房热 房租依旧...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-21 10:15</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">1979</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/camerondiza">camerondiza</a><span class="date"> 04-21 14:28</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400939064"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/400939064.html" class="black" title="粤房地产市场降温 住宅销售面积下降超过一成" target="_blank">
+														
+    																粤房地产市场降温 住宅销售面积下降超过...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-21 10:23</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >84</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400938314"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/400938314.html" class="black" title="挤破脑袋进名校 就近入学催生高价学位房？" target="_blank">
+														
+    																挤破脑袋进名校 就近入学催生高价学位房？
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-21 10:21</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >269</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400933990"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/400933990.html" class="black" title="不动产登记深圳或全国首批试点" target="_blank">
+														
+    																不动产登记深圳或全国首批试点
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-21 10:13</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >798</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398455862"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398455862.html" class="black" title="深新房库存量达3.4万套 楼市又触近变盘敏感线" target="_blank">
+														
+    																深新房库存量达3.4万套 楼市又触近变盘...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-12 10:03</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >741</span>/4
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/zxc577807777">zxc577807777</a><span class="date"> 04-17 13:58</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400061480"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/400061480.html" class="black" title="深圳楼市持续低迷 部分楼盘变相降首付吸引买家" target="_blank">
+														
+    																深圳楼市持续低迷 部分楼盘变相降首付吸...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-17 10:18</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">4293</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/zxc577807777">zxc577807777</a><span class="date"> 04-17 13:58</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="400049092"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/400049092.html" class="black" title="宝安二手房成交价下跌超三成 优质学区房受关注" target="_blank">
+														
+    																宝安二手房成交价下跌超三成 优质学区房...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-17 08:57</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">1143</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="399487853"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/399487853.html" class="black" title="全国城市地价监测负责人：楼市拐点未到眼前" target="_blank">
+														
+    																全国城市地价监测负责人：楼市拐点未到眼前
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-16 08:41</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">1575</span>/2
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/b640130">b640130</a><span class="date"> 04-17 04:35</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="399487567"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/399487567.html" class="black" title="首季度楼市不理想 房企资金紧张楼市促销季将至" target="_blank">
+														
+    																首季度楼市不理想 房企资金紧张楼市促销...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-16 08:41</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >310</span>/1
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/qiuyichang2007">qiuyichang20</a><span class="date"> 04-17 00:50</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="399485371"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/399485371.html" class="black" title="深圳上周&quot;双低&quot;物业成交多 二手小户型投资活跃" target="_blank">
+														
+    																深圳上周&quot;双低&quot;物业成交多 二...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-16 08:35</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >448</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/627018259@qq.com">627018259</a><span class="date"> 04-17 00:03</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="399486793"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/399486793.html" class="black" title="1季度广东商品房交易同比降8% 中小户型或将更火" target="_blank">
+														
+    																1季度广东商品房交易同比降8% 中小户型...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-16 08:39</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >271</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="399484986"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/399484986.html" class="black" title="宝安两住宅区被质疑&quot;豆腐渣&quot;工程 该区回复媒体" target="_blank">
+														
+    																宝安两住宅区被质疑&quot;豆腐渣&quot;...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-16 08:34</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >189</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="399184748"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/399184748.html" class="black" title="因深地铁9号线建设需要 罗湖小区5栋房屋需拆" target="_blank">
+														
+    																因深地铁9号线建设需要 罗湖小区5栋房屋...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/gzchenshuzhen">猛男一号</a><span class="date">04-15 09:02</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >433</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="399184484"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/399184484.html" class="black" title="福田第一世界广场侧楼房闲置10年 业主为谁成谜" target="_blank">
+														
+    																福田第一世界广场侧楼房闲置10年 业主为...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/gzchenshuzhen">猛男一号</a><span class="date">04-15 08:59</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >822</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398828605"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398828605.html" class="black" title="深圳房产中介再现零首付政府提醒购房有风险" target="_blank">
+														
+    																深圳房产中介再现零首付政府提醒购房有风险
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-14 08:44</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">3128</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398828112"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398828112.html" class="black" title="居住证立法户籍制度改革 让深漂族享受市民待遇" target="_blank">
+														
+    																居住证立法户籍制度改革 让深漂族享受市...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-14 08:42</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >433</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398827884"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398827884.html" class="black" title="龙岗将重点区域土地连片开发 择华为科技城试点" target="_blank">
+														
+    																龙岗将重点区域土地连片开发 择华为科技...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-14 08:41</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >489</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398827443"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398827443.html" class="black" title="凤凰 &quot;农地&quot;去年底入市 现已进入准备建设阶段" target="_blank">
+														
+    																凤凰 &quot;农地&quot;去年底入市 现已...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-14 08:39</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >184</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398826662"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398826662.html" class="black" title="共有产权保障房带来极大想像空间 或存在风险" target="_blank">
+														
+    																共有产权保障房带来极大想像空间 或存在...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-14 08:36</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >908</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398826375"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398826375.html" class="black" title="公办养老院排长龙 深圳全国首推养老用地" target="_blank">
+														
+    																公办养老院排长龙 深圳全国首推养老用地
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/housewoman1979">收租婆</a><span class="date">04-14 08:35</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >532</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398454098"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398454098.html" class="black" title="深圳等多个城市中小银行暂停房贷 利率优惠难觅" target="_blank">
+														
+    																深圳等多个城市中小银行暂停房贷 利率优...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-12 09:49</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">4562</span>/7
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/qiuyichang2007">qiuyichang20</a><span class="date"> 04-14 08:05</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398454711"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398454711.html" class="black" title="一季度深二手房成交量降5成 6成购房者首次置业" target="_blank">
+														
+    																一季度深二手房成交量降5成 6成购房者首...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-12 09:54</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">2270</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/qiuyichang2007">qiuyichang20</a><span class="date"> 04-14 07:58</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398451479"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398451479.html" class="black" title="深圳去年人均可支配收入44653 较去年增长近10%" target="_blank">
+														
+    																深圳去年人均可支配收入44653 较去年增...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-12 09:29</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >282</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397803787"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397803787.html" class="black" title="深圳年薪平均7.2万 超北京广州仅次上海" target="_blank">
+														
+    																深圳年薪平均7.2万 超北京广州仅次上海
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-10 08:50</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">11527</span>/28
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/1170555230@qq.com">1170555230</a><span class="date"> 04-11 21:40</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="398106351"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/398106351.html" class="black" title="深地霸背后的险资锋芒 8险企一年增投地产百亿" target="_blank">
+														
+    																深地霸背后的险资锋芒 8险企一年增投地...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-11 09:20</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >399</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397803952"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397803952.html" class="black" title="就近入学被指换汤不换药 “拼爹”不成再“拼房”" target="_blank">
+														
+    																就近入学被指换汤不换药 “拼爹”不成再...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-10 08:51</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">2327</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/tangod8@126.com">泣血的心</a><span class="date"> 04-11 08:11</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="396270445"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/396270445.html" class="black" title="远洋新干线住宅建筑存在质量问题" target="_blank">
+														
+    																远洋新干线住宅建筑存在质量问题
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-03 10:40</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">1898</span>/3
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+																									<a target="_blank" href="http://bbs.163.com/user/742738906@qq.com">天玑收楼验房</a><span class="date"> 04-10 15:22</span>
+                            														</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397821978"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397821978.html" class="black" title="生命人寿同时举牌多家公司  或已成金地新东家" target="_blank">
+														
+    																生命人寿同时举牌多家公司  或已成金地...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-10 10:55</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >780</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397803514"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397803514.html" class="black" title="香港房价居高不下 七成五受访者感到苦不堪言" target="_blank">
+														
+    																香港房价居高不下 七成五受访者感到苦不...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-10 08:47</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">1830</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397642080"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397642080.html" class="black" title="金地否认拿下旧金山一项目" target="_blank">
+														
+    																金地否认拿下旧金山一项目
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-09 10:22</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >173</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397641852"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397641852.html" class="black" title="市场分析师称香港楼市今年将延续跌势" target="_blank">
+														
+    																市场分析师称香港楼市今年将延续跌势
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-09 10:20</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >133</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397641402"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397641402.html" class="black" title="8.6亿港元买下一栋旧楼盘 万科首次在港独立开发项目" target="_blank">
+														
+    																8.6亿港元买下一栋旧楼盘 万科首次在港...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-09 10:18</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >219</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397633748"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397633748.html" class="black" title="上周一手房成交环比略升 二手房量价小幅下滑" target="_blank">
+														
+    																上周一手房成交环比略升 二手房量价小幅...
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-09 09:20</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >266</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one even">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397633454"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397633454.html" class="black" title="共有产权：政府或更有动力强撑房价" target="_blank">
+														
+    																共有产权：政府或更有动力强撑房价
+								                                                                    						</a>
+						</span>
+																																									    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-09 09:17</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span class="red">2536</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    	<div class="board-list-one odd">
+	    <div class="board-list-title">
+	    	<div class="board-list-title-box">
+	    		<div class="board-list-title-wrap">
+	    			<div class="board-list-title-inner">
+                                                <input type="checkbox" class="cb-admin" value="397633322"/>
+                        																	        					<span class="article-title">
+    							                            	                            																																												<a href="/bbs/exposure/397633322.html" class="black" title="福田区青年驿站: 大学生来深求职奉送7天免费住宿" target="_blank">
+														
+    																福田区青年驿站: 大学生来深求职奉送7天...
+								                                                                    						</a>
+						</span>
+																												                                <a href="/tlist/exposure-1-1-p-a.html" title="图片" class="article-icon icon-pic"></a>
+            																		    				</div>
+    			</div>
+    		</div>
+    	</div>
+	    <div class="right">
+			   					        <div class="board-list-write"><a target="_blank" href="http://bbs.163.com/user/szlsbgt">鹏城鹏事</a><span class="date">04-09 09:16</span></div>
+
+							   
+	        <div class="board-list-count">
+	        	<div class="board-list-count-inner">
+	        			        			<span >141</span>/0
+	        			        	</div>
+	        </div>
+	        <div class="board-list-reply">
+											--
+								</div>
+	    </div>
+	</div>
+    </div>
+<div class="admin-button-area">
+    <a class="btn-del btn-del-batch">删除</a>
+    <a class="btn-batch-down">下沉</a>
+    <a class="btn-batch-lock">加锁</a>
+    <a class="btn-batch-unlock">解锁</a>
+    <a class="btn-batch-lock-down">加锁并下沉</a>
+    <a class="btn-select-all">全选</a>
+    <a class="btn-reverse">反向选择</a>
+</div>
+<div class="board-list-nextpage">
+	  	   			    <a href="/tlist/exposure-2-1-a-a.html">点击进入下一页精彩话题<em class="icon-arrow-right"></em></a>
+			</div>
+<div class="board-tab-bottom-nav">
+    <div class="board-write">
+        <div class="dd-window">
+        	<a href="/post/exposure/publish/common-">发 帖</a>
+            <ul class="board-menu">
+                <li><a href="/post/exposure/publish/ask-">新问答</a></li>
+                <li><a href="/post/exposure/publish/debate-">新辩论</a></li>
+                <li><a href="/post/exposure/publish/vote-">新投票</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="board-page" data-total="20">
+    
+    
+
+
+
+
+
+
+
+
+
+
+                
+                
+                                         								    <a href="/tlist/exposure-1-1-a-a.html" class="on js-liston">1</a>
+
+							                                                        										                     <a href="/tlist/exposure-2-1-a-a.html">2</a>
+
+								
+                                      										                     <a href="/tlist/exposure-3-1-a-a.html">3</a>
+
+								
+                                      										                     <a href="/tlist/exposure-4-1-a-a.html">4</a>
+
+								
+                                      										                     <a href="/tlist/exposure-5-1-a-a.html">5</a>
+
+								
+                                      										                     <a href="/tlist/exposure-6-1-a-a.html">6</a>
+
+								
+                                      										                     <a href="/tlist/exposure-7-1-a-a.html">7</a>
+
+								
+                                      										                     <a href="/tlist/exposure-8-1-a-a.html">8</a>
+
+								
+                                      										                     <a href="/tlist/exposure-9-1-a-a.html">9</a>
+
+								
+                                      										                     <a href="/tlist/exposure-10-1-a-a.html">10</a>
+
+								
+                               
+                               ...
+		   		   				          <a href="/tlist/exposure-20-1-a-a.html">20</a>
+
+		   		   
+                
+        		   	   					           | <a href="/tlist/exposure-2-1-a-a.html" >下一页 &gt;</a>
+
+					                
+    </div>
+</div>
+<div style="display:none;">
+	<iframe height="22" frameborder="no" width="960" scrolling="no" name="ad_pop" marginheight="0" marginwidth="0" border="0" src="http://baby.163.com/?channel=&type=list"></iframe>
+</div>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+var title=document.getElementsByTagName("title")[0].innerHTML;
+neteaseTracker(true,window.location.href,title,"house" );
+</script>
+
+
+					   					   
+             
+	      </div>
+    </div>
+
+
+        </div>
+    </div>
+    <div>
+        <!--列表页下面广告-->
+        <div class="list-bottom-ad">
+            
+            <!--"/htmlfile/bottom/bbs_sz_house/szhouse_list_bottom.html"-->
+        </div>
+    </div>
+            <div id="footer" class="footer">
+        <div class="police"><img src="http://bbs.163.com/bbs/img/police.gif"><div class="text"><a href="http://www.bj.cyberpolice.cn/index.htm">网络110<br>报警服务</a></div></div>
+        <div class="footText">
+            <a href="http://corp.163.com/">About NetEase</a> - <a href="http://gb.corp.163.com/gb/about/overview.html">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html">招聘信息</a> - <a href="http://help.163.com/ ">客户服务</a> - <a href="http://gb.corp.163.com/gb/legal.html">相关法律</a> - <a href="http://emarketing.biz.163.com/">网络营销</a>  - <a href="http://sitemap.163.com/">网站地图</a><br>
+            网易公司版权所有<br>
+            <span class="cRed">&copy;1997-2014</span>
+        </div>
+    </div>            <div id="scroll_to_top"></div>        <div id="dialog_login">
+    <form id="login_form" action="https://reg.163.com/logins.jsp" method="post" >
+        <input type="hidden" name="type" value="1" />
+        <input type="hidden" name="url" id="login_url" />
+        <input type="hidden" name="product" value="bbs" />
+        <div class="row">
+            <label> 帐号:
+                <input id="account" name="username" type="text" tabindex="1" />
+            </label>
+            <a href="http://reg.163.com/reg/reg.jsp?product=bbs&loginurl=http://bbs.163.com&url=" style="color:#BA2636;"  target="_blank">注册通行证</a>
+        </div>
+        <div class="row">
+            <label> 密码:
+                <input name="password" type="password" class="password" tabindex="2" />
+            </label>
+            <a href="http://reg.163.com/RecoverPassword.shtml" target="_blank">忘记密码？</a>
+        </div>
+        <div class="checkbox row">
+            <label>
+                <input name="savelogin" type="checkbox" value="1" tabindex="3" /> 下次自动登录
+            </label>
+            <!--
+            <label>
+                <input name="savelogin" type="checkbox" value="1" tabindex="4" /> 记住密码
+            </label>
+            -->
+        </div>
+        <div class="btn-set">
+            <span class="ui-button btn-login ui-button-on" tabindex="5">登录</span>
+            <span class="ui-button btn-cancel">取消</span>
+        </div>
+    </form>
+</div>    <script type="text/javascript" src="http://bbs.163.com/htmlfile/foundation_data.js" charset="GBK"></script>
+                <script type="text/javascript" src="http://img1.cache.netease.com/bbs/static/20140425/forum_list.js" charset="GBK"></script>
+        
+        
+        
+
+    
+</body>
+</html>
